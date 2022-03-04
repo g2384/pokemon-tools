@@ -1,0 +1,52 @@
+:root {
+  --main-bg: #19232d;
+  --main-fg: #eaeae7;
+  --link-fg: rgb(128, 194, 255);
+  --btn-bg: #505f69;
+  --btn-brdr: #3f4e58;
+  --btn-fg: #ffffff;
+  --btn-shdw: #2b665e;
+  --btn-bg-hvr: #6c7c7c;
+  --inpt-brdr: #2c3a44;
+  --chkbx-bg: #27343e;
+  --chkbx-brdr: #4f545a;
+  --chkbx-bg-hvr: gray;
+  --tr-bg-hvr: #1464a0;
+  --th-bg: #32414b;
+  --div-brdr: #3f4951;
+  --lotto-bg: rgb(79, 55, 55);
+  --feebas-bg: rgb(79, 67, 49);
+  --swarm-bg: rgb(60, 70, 81);
+  --fc-event-text-color: var(--main-fg);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: whitesmoke;
+    --fg: #333;
+    --ele-bg: whitesmoke;
+    --ele-bg-hvr: rgb(226, 226, 226);
+    --ele-brdr: #a7a7a7;
+    --ele-shdw: rgb(32, 119, 218);
+    --accent: aliceblue;
+
+    --main-bg: var(--bg);
+    --main-fg: var(--fg);
+    --link-fg: #0089ff;
+    --btn-bg: var(--ele-bg);
+    --btn-brdr: var(--ele-brdr);
+    --btn-fg: var(--fg);
+    --btn-shdw: var(--ele-shdw);
+    --btn-bg-hvr: var(--ele-bg-hvr);
+    --inpt-brdr: var(--ele-brdr);
+    --chkbx-bg: var(--ele-bg);
+    --div-brdr: #c5c5c5;
+    --chkbx-brdr: var(--ele-brdr);
+    --chkbx-bg-hvr: var(--ele-bg-hvr);
+    --tr-bg-hover: var(--accent);
+    --th-bg: var(--ele-bg);
+    --lotto-bg: #ffdada;
+    --feebas-bg: #fbedd3;
+    --swarm-bg: #e5f2ff;
+  }
+}

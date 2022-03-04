@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#dea5a4">
+    <title>BDSP Feebas Map</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/bdsp-calendar-favicon.ico">
+    <link rel="apple-touch-icon" href="./img/bdsp-calendar-apple-icon.png">
+    <link rel="image_src" href="./img/bdsp-calendar-apple-icon.png"> 
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/states.css">
+    <script src="./js/bdspSeed.js"></script>
+</head>
+
+<body>
+    <div>
+        <ol>
+            <li>If you fish with a Good/Super Rod and your lead pokemon has Illuminate/Arena Trap/No Guard, every time you fish will have a guaranteed hook!</li>
+            <li>You can catch a Machoke with No Guard in the same room you fish for feebas</li>
+        </ol>
+    </div>
+    <div id="feebas-map"> </div>
+    <script>
+        const colors = ['green', 'red', 'blue'];
+
+        function drawGrid(ctx, canvas, image) {
+            console.log(image.width, image.height)
+            canvas.width = image.width;
+            canvas.height = image.height;
+            ctx.clearRect(0, 0, image.width, image.height);
+            ctx.drawImage(image, 0, 0);
+            ctx.fillStyle = 'black';
+            for (i = 1; i < image.width / 16 + 1; i++) {
+                ctx.fillRect(16 * i, 0, 1, image.height);
+            }
+            for (i = 1; i < image.height / 16 + 1; i++) {
+                ctx.fillRect(0, 16 * i, image.width, 1);
+            }
+        }
+
+        const feebasMap = document.getElementById('feebas-map');
+        function onloadFunc() {
+            let query = window.location.search.slice(1);
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const image = new Image();
+            image.src = "Mt-Coronet-Lake-Map.png";
+            image.onload=function(){
+                canvas.style = "";
+                console.log(image)
+                drawGrid(ctx, canvas, image);
+                let today_daily = BigInt(query);
+                if (today_daily > 0x80000000) {
+                    today_daily = BigInt(0x100000000) - today_daily;
+                }
+                ctx.fillStyle = colors[0];
+                for (let tile = 0; tile < 4; tile++) {
+                    let pos = ((Number(today_daily) >> (tile * 8)) & 0xFF) % 0x84;
+                    let tile_pos = TILE_DATA[0x85 * (3 - tile) + pos];
+                    ctx.fillRect(1 + (tile_pos[0] - 0x9) * 16, 1 + (tile_pos[1] - 0x12) * 16, 15, 15);
+                }
+
+                feebasMap.innerHTML = "";
+                feebasMap.appendChild(canvas);
+            }
+        }
+        window.onload = onloadFunc();
+    </script>
+</body>
+
+</html>

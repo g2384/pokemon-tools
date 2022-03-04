@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="BDSP Daily Event Calendar">
+    <meta name="description" content="BDSP Daily Event Predictor! Feebas Finder Calculator">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BDSP Daily Event Calendar">
+    <meta property="og:description" content="BDSP Daily Event Predictor!">
+    <meta property="og:image" content="./img/bdsp-calendar-apple-icon.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="BDSP Feebas Calculator">
+    <meta property="twitter:description" content="BDSP Daily Event Predictor! Feebas Finder">
+    <meta property="twitter:image" content="./img/bdsp-calendar-apple-icon.png">
+    <meta name="theme-color" content="#dea5a4">
+    <title>BDSP Daily Event Calendar</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/states.css">
+    <style>
+        input,
+        .monospace,
+        code {
+            font-family: Consolas, 'Courier New', Courier, monospace;
+            font-size: 1em;
+        }
+
+        .fc-event-main {
+            padding: 10px 5px;
+        }
+
+        .fc-event-img img {
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/fullcalendar.min.css">
+    <script src="./js/fullcalendar.min.js"></script>
+    <script src="./js/bdspSeed.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/bdsp-calendar-favicon.ico">
+    <link rel="apple-touch-icon" href="./img/bdsp-calendar-apple-icon.png">
+    <link rel="image_src" href="./img/bdsp-calendar-apple-icon.png"> 
+</head>
+
+<body>
+    <h1>Daily Event Calendar & Feebas Finder</h1>
+    <p>For Pokémon: Brilliant Diamond & Shining Pearl (v1.1.3+)</p>
+    <div class="info">
+        <p>First, find out your seed.</p>
+        <ol>
+            <li>Obtain two consecutive lotto numbers (day 2 should be from today, check lotto number in Jubilife City)</li>
+            <li>Obtain the swarm for today. (You need to have beaten the elite four to check swarms)</li>
+        </ol>
+        <p>Calendar Seed = Event Seed + Seed Date.</p>
+        <p>Event Seed changes everyday, but Calendar Seed never changes.</p>
+        <strong>Press the "+" to add information for Day 1/2</strong><br>
+        <div id="yesterday">
+            <strong>Day 1 Information</strong><br>
+            <button class="button-2" onclick="addYesterday()">+</button>
+
+        </div><br>
+        <div id="today">
+            <strong>Day 2 Information</strong><br>
+            <button class="button-2" onclick="addToday()">+</button>
+        </div>
+        <br>
+        <button class="button-1" onclick="generate_seed()">Find My Seed</button>
+    </div>
+    <br>
+    <div id="calc-result"></div>
+    <div id="feebas-map"></div>
+    <canvas id="canvas" style="display:none;" width="288" height="544"></canvas><br>
+    <a id="todays_seed"></a>
+
+    <div class="info">
+        <label for="group-seed">Event Seed: </label>
+        <input style="width:80px;" type="text" id="group-seed" value="00000000" onchange="generate()">
+        <br>
+        <label for="start-date">Start Date:</label>
+        <input type="date" id="start-date" onchange="generate()">
+        <br>
+        <label for="day-count">Forecast </label>
+        <input style="width:80px;margin-right:5px;" type="number" id="day-count" value="10" onchange="generate()">
+        Days
+    </div>
+    <br>
+    <div id="calendar" class="fc fc-media-screen fc-direction-ltr fc-theme-standard fc-liquid-hack">
+    </div>
+
+    <footer>
+        <b>Planned Features:</b>
+        <ul>
+            <li>Great Marsh Binocular Prediction</li>
+            <li>Underground Hiker Pedestal/TM Prediction</li>
+        </ul>
+        <b>Likely Possible But Not Planned:</b>
+        <ul>
+            <li>Battle Tower Prediction</li>
+        </ul>
+        <b>Credits:</b>
+        <ul>Sprites provided by: msikma - <a href="https://github.com/msikma/pokesprite">pokesprite</a></ul>
+        <ul>Forked from: <a href="https://lincoln-lm.github.io/JS-Finder/Tools/BDSP-Daily-Event-Calendar/">lincoln-lm.github.io/JS-Finder</a></ul>
+    </footer>
+
+    <script>
+        const swarms = [
+            'Route 201 - Doduo',
+            'Route 202 - Zigzagoon',
+            'Route 203 - Cubone',
+            'Route 206 - Nosepass',
+            'Route 207 - Phanpy',
+            'Route 208 - Dunsparce',
+            'Route 209 - Snubbull',
+            'Route 213 - Absol',
+            'Route 214 - Spoink',
+            'Route 215 - Drowzee',
+            'Route 216 - Delibird',
+            'Route 217 - Swinub',
+            'Route 218 - Voltorb',
+            'Route 221 - Farfetch\'d',
+            'Route 222 - Skitty',
+            'Route 224 - Natu',
+            'Route 225 - Makuhita',
+            'Route 226 - Krabby',
+            'Route 227 - Spinda',
+            'Route 228 - Beldum',
+            'Route 229 - Pidgey',
+            'Route 230 - Corsola',
+            'Lake Verity - Surskit',
+            'Lake Valor - Lickitung',
+            'Lake Acuity - Smoochum',
+            'Valley Windworks - Electrike',
+            'Eterna Forest - Slakoth',
+            'Fuego Ironworks - Magnemite'];
+        const spheres = ['Red', 'Blue', 'Green', 'Prism', 'Pale']
+        const options = ['Lotto Number', 'Swarm', 'Drill Sphere', 'Sold Sphere'];
+        const colors = ['green', 'red', 'blue'];
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        const feebasMap = document.getElementById('feebas-map');
+        const calcResult = document.getElementById('calc-result');
+        const groupSeed = document.getElementById("group-seed");
+        const startDate = document.getElementById("start-date");
+        const image = document.createElement('img');
+        let yesterday = [];
+        let today = [];
+        let yest_count = 0;
+        let toda_count = 0;
+        image.src = "Mt-Coronet-Lake-Map.png";
+        function addYesterday() {
+            let selectDiv = document.createElement("div");
+            let select = document.createElement("select");
+            for (let i = 0; i < options.length; i++) {
+                let option = new Option(options[i], i);
+                select.appendChild(option);
+            }
+            select.style = "width:200px;";
+            select.id = `yesterday-${yest_count++}`;
+            function x() {
+                createValueSelect(select.id);
+            }
+            select.onchange = x;
+            selectDiv.appendChild(select);
+            document.getElementById("yesterday").appendChild(selectDiv);
+            createValueSelect(`yesterday-${yest_count - 1}`);
+        }
+        function addToday() {
+            let selectDiv = document.createElement("div");
+            let select = document.createElement("select");
+            for (let i = 0; i < options.length; i++) {
+                let option = new Option(options[i], i);
+                select.appendChild(option);
+            }
+            select.style = "width:200px;";
+            select.id = `today-${toda_count++}`;
+            function x() {
+                createValueSelect(select.id);
+            }
+            select.onchange = x;
+            selectDiv.appendChild(select);
+            document.getElementById("today").appendChild(selectDiv);
+            createValueSelect(`today-${toda_count - 1}`);
+        }
+        function createValueSelect(select) {
+            let value;
+            select = document.getElementById(select);
+            let selectDiv = select.parentElement;
+            while (selectDiv.childNodes.length > 1) {
+                selectDiv.removeChild(selectDiv.lastChild);
+            }
+            switch (parseInt(select.value)) {
+                case 0:
+                    value = document.createElement("input");
+                    value.style = "width:80px;";
+                    value.type = "number";
+                    value.max = "99999";
+                    value.value = "0";
+                    selectDiv.appendChild(value);
+                    break
+                case 1:
+                    value = document.createElement("select");
+                    value.style = "width:200px;";
+                    for (let i = 0; i < 0x1c; i++) {
+                        let option = new Option(swarms[i], i);
+                        value.appendChild(option);
+                    }
+                    selectDiv.appendChild(value);
+                    break
+                case 2:
+                    value = document.createElement("select");
+                    value.style = "width:100px;";
+                    for (let i = 0; i < 3; i++) {
+                        let option = new Option(spheres[i], i);
+                        value.appendChild(option);
+                    }
+                    selectDiv.appendChild(value);
+                    break
+                case 3:
+                    value = document.createElement("select");
+                    value.style = "width:100px;";
+                    for (let i = 0; i < 5; i++) {
+                        let option = new Option(spheres[i], i);
+                        value.appendChild(option);
+                    }
+                    selectDiv.appendChild(value);
+                    break
+                default:
+                    console.log(select.value);
+            }
+        }
+        image.addEventListener('load', e => {
+            canvas.width = image.width;
+            canvas.height = image.height;
+            clear();
+            addYesterday();
+        });
+        function clear() {
+            document.getElementById("todays_seed").innerText = "";
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(image, 0, 0);
+            ctx.fillStyle = 'black';
+            for (i = 1; i < image.width / 16 + 1; i++) {
+                ctx.fillRect(16 * i, 0, 1, image.height);
+            }
+            for (i = 1; i < image.height / 16 + 1; i++) {
+                ctx.fillRect(0, 16 * i, image.width, 1);
+            }
+        }
+
+        function generate_seed() {
+            clear();
+            let possible = [];
+            let lotto0 = lotto1 = swarm0 = swarm1 = drill0 = drill1 = sold0 = sold1 = null;
+            for (let i = 0; i < yest_count; i++) {
+                let type = parseInt(document.getElementById(`yesterday-${i}`).value);
+                let value = parseInt(document.getElementById(`yesterday-${i}`).parentElement.lastChild.value);
+                switch (type) {
+                    case 0:
+                        lotto0 = value;
+                        break;
+                    case 1:
+                        swarm0 = value;
+                        break;
+                    case 2:
+                        drill0 = value;
+                        break;
+                    case 3:
+                        sold0 = value;
+                        break;
+                }
+            }
+            for (let i = 0; i < toda_count; i++) {
+                let type = parseInt(document.getElementById(`today-${i}`).value);
+                let value = parseInt(document.getElementById(`today-${i}`).parentElement.lastChild.value);
+                switch (type) {
+                    case 0:
+                        lotto1 = value;
+                        break;
+                    case 1:
+                        swarm1 = value;
+                        break;
+                    case 2:
+                        drill1 = value;
+                        break;
+                    case 3:
+                        sold1 = value;
+                        break;
+                }
+            }
+            if (lotto0 == null) {
+                alert("No Day 1 Lottery Number to base seed on.\nThis is required to get results");
+                return;
+            }
+
+            // please dont copy paste my code :) 
+            for (let lotto0_val = lotto0; lotto0_val < 0x100000; lotto0_val += 100000) {
+                for (let low = 0; low < 0x1000; low++) {
+                    let yeste_seed = MRNGR((BigInt(lotto0_val) << BigInt(0xc)) | BigInt(low))
+                    let today_seed = ARNG(yeste_seed);
+                    let today_daily = Number(intabs(today_seed));
+                    let yeste_daily = Number(intabs(yeste_seed));
+
+                    if (lotto1 != null) {
+                        if (BigInt(lotto1) != (((MRNG(today_seed)) >> BigInt(0xc)) % BigInt(100000))) {
+                            continue
+                        }
+                    }
+                    if (swarm0 != null) {
+                        if (yeste_daily % 0x1c != swarm0) {
+                            continue
+                        }
+                    }
+                    if (swarm1 != null) {
+                        if (today_daily % 0x1c != swarm1) {
+                            continue
+                        }
+                    }
+                    if (drill0 != null) {
+                        if (Math.floor((yeste_daily % 999) / 333) != drill0) {
+                            continue
+                        }
+                    }
+                    if (drill1 != null) {
+                        if (Math.floor((today_daily % 999) / 333) != drill1) {
+                            continue
+                        }
+                    }
+                    if (sold0 != null) {
+                        if (Math.floor((yeste_daily % 1000) / 200) != sold0) {
+                            continue
+                        }
+                    }
+                    if (sold1 != null) {
+                        if (Math.floor((today_daily % 1000) / 200) != sold1) {
+                            continue
+                        }
+                    }
+
+                    possible.push(today_seed);
+                }
+            }
+            let message = possible.length > 1 ? possible.length < 4 ? `<p>Your tiles will be displayed with ${100 / possible.length}% certainty</p>` : '<p>Please add more information, some seeds:</p>' : "";
+            console.log(possible);
+
+            if (possible.length == 0) {
+                calcResult.innerHTML = "<p>Failed to find any seed.</p>";
+            }
+            else {
+                possible2 = possible.slice(0, Math.min(possible.length, 10));
+                possible2 = possible2.map(function(e){
+                    return e.toString(16);
+                });
+                let str = possible2.join("</code>, <code>");
+                if (possible.length == 1) {
+                    let url = window.location.protocol + "//" + window.location.pathname;
+                    let sDate = new Date(startDate.value);
+                    sDate = `${sDate.getFullYear()}${(sDate.getUTCMonth()+1).toString().padStart(2, '0')}${sDate.getDate().toString().padStart(2, '0')}`;
+                    calcResult.innerHTML = `<p>Found seed.</p><p><code>${str}</code></p><p>This is the link for you, bookmark it: <a href="${url}?${str}${sDate}">${url}?${str}${sDate}</a></p>`;
+                    groupSeed.value = str;
+                }
+                else {
+                    calcResult.innerHTML = `<p>${possible.length} Possible Seeds.</p>${message}<p><code>${str}</code></p>`;
+                }
+            }
+
+            if (possible.length == 1 && false) {
+                canvas.style = "";
+                let today_daily = possible[0];
+                groupSeed.value = today_daily.toString(16);
+                if (today_daily > 0x80000000) {
+                    today_daily = BigInt(0x100000000) - today_daily;
+                }
+                ctx.fillStyle = colors[0];
+                for (let tile = 0; tile < 4; tile++) {
+                    let pos = ((Number(today_daily) >> (tile * 8)) & 0xFF) % 0x84;
+                    let tile_pos = TILE_DATA[0x85 * (3 - tile) + pos];
+                    ctx.fillRect(1 + (tile_pos[0] - 0x9) * 16, 1 + (tile_pos[1] - 0x12) * 16, 15, 15);
+                }
+
+                feebasMap.innerHTML = "";
+                feebasMap.appendChild(canvas);
+            }
+            else if (possible.length > 1 && possible.length < 4) {
+                canvas.style = "";
+                var seed_hex = [];
+                for (let i = 0; i < 2; i++) {
+                    ctx.fillStyle = colors[i];
+                    let today_daily = possible[i];
+                    seed_hex.push(today_daily.toString(16));
+                    if (today_daily > 0x80000000) {
+                        today_daily = BigInt(0x100000000) - today_daily;
+                    }
+                    for (let tile = 0; tile < 4; tile++) {
+                        let pos = ((Number(today_daily) >> (tile * 8)) & 0xFF) % 0x84;
+                        let tile_pos = TILE_DATA[0x85 * (3 - tile) + pos];
+                        ctx.fillRect(1 + (tile_pos[0] - 0x9) * 16, 1 + (tile_pos[1] - 0x12) * 16, 15, 15);
+                    }
+                }
+                document.getElementById("todays_seed").innerText = "Possible Group Seeds: " + seed_hex.join("/");
+                feebasMap.innerHTML = "";
+                feebasMap.appendChild(canvas);
+            }
+            else {
+                //canvas.style = "display:none;";
+            }
+        }
+
+        const offset = new Date().getTimezoneOffset();
+        const swarm_pokemon = ['doduo', 'zigzagoon', 'cubone', 'nosepass', 'phanpy',
+            'dunsparce', 'snubbull', 'absol', 'spoink', 'drowzee',
+            'delibird', 'swinub', 'voltorb', 'farfetchd', 'skitty',
+            'natu', 'makuhita', 'krabby', 'spinda', 'beldum',
+            'pidgey', 'corsola', 'surskit', 'lickitung', 'smoochum',
+            'electrike', 'slakoth', 'magnemite']
+
+
+        var calendar;
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                eventContent: function (arg) {
+                    let arrayOfDomNodes = []
+                    // title event
+                    let titleEvent = document.createElement('div')
+                    if (arg.event._def.title) {
+                        titleEvent.innerHTML = arg.event._def.title;
+                        titleEvent.classList = "fc-event-title fc-sticky";
+                    }
+
+                    // image event
+                    let imgEventWrap = document.createElement('div')
+                    if (arg.event.extendedProps.image_url) {
+                        let imgEvent = `<img src="${arg.event.extendedProps.image_url}">`;
+                        imgEventWrap.classList = "fc-event-img";
+                        imgEventWrap.innerHTML = imgEvent;
+                    }
+
+                    arrayOfDomNodes = [titleEvent, imgEventWrap];
+                    return { domNodes: arrayOfDomNodes }
+                },
+            });
+            calendar.render();
+
+            var dateNow = new Date();
+            date = new Date(dateNow.getTime() - (offset * 60 * 1000));
+            startDate.value = date.toISOString().split('T')[0];
+
+            let query = window.location.search.slice(1);
+            calcResult.innerHTML = `<p>Your Calendar Seed: <code>${query}</code><p>This is the link for you, bookmark it: <a href="${window.location.href}">${window.location.href}</a></p>`;
+            if (query.length == 16) {
+                let seed = query.slice(0, 8);
+                let dateStr = query.slice(8, 18);
+                groupSeed.value = seed;
+                let pattern = /(\d{4})(\d{2})(\d{2})/;
+                let date = new Date(dateStr.replace(pattern, '$1-$2-$3'));
+                var starting_date = date;
+                
+                var time_difference = dateNow.getTime() - date.getTime();
+
+                var days_difference = time_difference / (1000 * 60 * 60 * 24);
+                
+                starting_date.setTime(dateNow.getTime());
+
+                let current_seed = BigInt("0x" + seed);
+                for (var i = 0; i < days_difference - 1; i++) {
+                    current_seed = ARNG(current_seed);
+                }
+                
+                startDate.value = dateNow.toISOString().split('T')[0];
+                var days = parseInt(document.getElementById("day-count").value);
+                generate2(days, current_seed, dateNow);
+            }
+            else {
+                generate();
+            }
+
+        });
+        function generate() {
+            var events = calendar.getEvents();
+            var len = events.length;
+            for (var i = 0; i < len; i++) {
+                events[i].remove();
+            }
+            var starting_seed = BigInt("0x" + groupSeed.value);
+            var starting_date = new Date(startDate.value);
+            starting_date.setTime(starting_date.getTime() + (offset * 60 * 1000));
+            var current_seed = starting_seed;
+            var current_date = starting_date;
+            var days = parseInt(document.getElementById("day-count").value);
+            generate2(days, current_seed, current_date);
+        }
+
+        function generate2(days, current_seed, current_date) {
+            for (var i = 0; i < days; i++) {
+                var daily = intabs(current_seed);
+                var swarm = daily % 0x1Cn;
+                var lotto = (MRNG(current_seed) >> 0xCn) % 100000n;
+
+                calendar.addEvent({
+                    title: `<b>Swarm:</b><br>${swarms[swarm].replace(" - ", "<br>")}`,
+                    image_url: `./img/${swarm_pokemon[swarm]}.png`,
+                    start: current_date,
+                    allDay: true,
+                    backgroundColor: "var(--swarm-bg)"
+                });
+
+                calendar.addEvent({
+                    title: `<b>Lotto:</b><br>${lotto}`,
+                    start: current_date,
+                    allDay: true,
+                    backgroundColor: "var(--lotto-bg)"
+                });
+
+                calendar.addEvent({
+                    title: `<b>Feebas Map:</b><br><a href='./BDSP-Feebas-Map.html?${current_seed}' target='_blank'>View Here</a>`,
+                    image_url: "./img/feebas.png",
+                    start: current_date,
+                    allDay: true,
+                    backgroundColor: "var(--feebas-bg)"
+                });
+
+                current_seed = ARNG(current_seed);
+                current_date.setDate(current_date.getDate() + 1);
+            }
+        }
+    </script>
+
+</body>
+
+</html>
