@@ -17,6 +17,7 @@
   --lotto-bg: rgb(79, 55, 55);
   --feebas-bg: rgb(79, 67, 49);
   --swarm-bg: rgb(60, 70, 81);
+  --sphere-bg: rgb(60, 81, 61);
   --fc-event-text-color: var(--main-fg);
 }
 
@@ -48,5 +49,6 @@
     --lotto-bg: #ffdada;
     --feebas-bg: #fbedd3;
     --swarm-bg: #e5f2ff;
+    --sphere-bg: #eaffe5;
   }
 }

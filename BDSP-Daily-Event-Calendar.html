@@ -20,6 +20,9 @@
     <title>BDSP Daily Event Calendar</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/states.css">
+    <link rel="stylesheet" href="./css/fullcalendar.min.css">
+    <script src="./js/fullcalendar.min.js"></script>
+    <script src="./js/bdspSeed.js"></script>
     <style>
         input,
         .monospace,
@@ -37,17 +40,40 @@
             height: 80px;
         }
 
-        body{
-            margin:0 auto;
+        body {
+            margin: 0 auto;
             max-width: 900px;
         }
+
+        .fc .fc-list-event:hover td {
+            background-color: var(--swarm-bg);
+        }
+
+        .fc-event-main .sphere {
+            width: 30px;
+            height: 30px;
+            display: block;
+        }
+
+        .fc-event-main .feebas {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            background-repeat: no-repeat;
+            background: url(./img/feebas.png);
+            background-size: 200%;
+            background-position: 50%;
+            cursor: pointer;
+        }
+
+        .fc-event-main .feebas-div {
+            display: flex;
+            align-items: center;
+        }
     </style>
-    <link rel="stylesheet" href="./css/fullcalendar.min.css">
-    <script src="./js/fullcalendar.min.js"></script>
-    <script src="./js/bdspSeed.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="./img/bdsp-calendar-favicon.ico">
     <link rel="apple-touch-icon" href="./img/bdsp-calendar-apple-icon.png">
-    <link rel="image_src" href="./img/bdsp-calendar-apple-icon.png"> 
+    <link rel="image_src" href="./img/bdsp-calendar-apple-icon.png">
 </head>
 
 <body>
@@ -106,8 +132,9 @@
             <li>Battle Tower Prediction</li>
         </ul>
         <b>Credits:</b>
-        <ul>Sprites provided by: msikma - <a href="https://github.com/msikma/pokesprite">pokesprite</a></ul>
-        <ul>Forked from: <a href="https://lincoln-lm.github.io/JS-Finder/Tools/BDSP-Daily-Event-Calendar/">lincoln-lm.github.io/JS-Finder</a></ul>
+        <p>Sprites provided by: msikma - <a href="https://github.com/msikma/pokesprite">pokesprite</a></p>
+        <p><a href="https://drayx.github.io/feebas/">Feebas Algorithm Explanation</a></p>
+        <p>Forked from: <a href="https://lincoln-lm.github.io/JS-Finder/Tools/BDSP-Daily-Event-Calendar/">lincoln-lm.github.io/JS-Finder</a></p>
     </footer>
 
     <script>
@@ -141,7 +168,7 @@
             'Eterna Forest - Slakoth',
             'Fuego Ironworks - Magnemite'];
         const spheres = ['Red', 'Blue', 'Green', 'Prism', 'Pale']
-        const options = ['Lotto Number', 'Swarm', 'Drill Sphere', 'Sold Sphere'];
+        const options = ['Lotto Number', 'Swarm', 'I buy drill with sphere', 'Trader sells sphere'];
         const colors = ['green', 'red', 'blue'];
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
@@ -255,6 +282,14 @@
             }
         }
 
+        function calc_sold_sphere(number) {
+            return Math.floor((number % 1000) / 200);
+        }
+
+        function calc_drill_sphere(number) {
+            return Math.floor((number % 999) / 333)
+        }
+
         function generate_seed() {
             clear();
             let possible = [];
@@ -324,22 +359,22 @@
                         }
                     }
                     if (drill0 != null) {
-                        if (Math.floor((yeste_daily % 999) / 333) != drill0) {
+                        if (calc_drill_sphere(yeste_daily) != drill0) {
                             continue
                         }
                     }
                     if (drill1 != null) {
-                        if (Math.floor((today_daily % 999) / 333) != drill1) {
+                        if (calc_drill_sphere(today_daily) != drill1) {
                             continue
                         }
                     }
                     if (sold0 != null) {
-                        if (Math.floor((yeste_daily % 1000) / 200) != sold0) {
+                        if (calc_sold_sphere(yeste_daily) != sold0) {
                             continue
                         }
                     }
                     if (sold1 != null) {
-                        if (Math.floor((today_daily % 1000) / 200) != sold1) {
+                        if (calc_sold_sphere(today_daily) != sold1) {
                             continue
                         }
                     }
@@ -355,14 +390,14 @@
             }
             else {
                 possible2 = possible.slice(0, Math.min(possible.length, 10));
-                possible2 = possible2.map(function(e){
+                possible2 = possible2.map(function (e) {
                     return e.toString(16);
                 });
                 let str = possible2.join("</code>, <code>");
                 if (possible.length == 1) {
                     let url = window.location.protocol + "//" + window.location.pathname;
                     let sDate = new Date(startDate.value);
-                    sDate = `${sDate.getFullYear()}${(sDate.getUTCMonth()+1).toString().padStart(2, '0')}${sDate.getDate().toString().padStart(2, '0')}`;
+                    sDate = `${sDate.getFullYear()}${(sDate.getUTCMonth() + 1).toString().padStart(2, '0')}${sDate.getDate().toString().padStart(2, '0')}`;
                     calcResult.innerHTML = `<p>Found seed.</p><p><code>${str}</code></p><p>This is the link for you, bookmark it: <a href="${url}?${str}${sDate}">${url}?${str}${sDate}</a></p>`;
                     groupSeed.value = str;
                 }
@@ -426,7 +461,8 @@
         document.addEventListener('DOMContentLoaded', function () {
             var calendarEl = document.getElementById('calendar');
             calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
+                initialView: 'dayGrid',
+                duration: { days: 7 },
                 eventContent: function (arg) {
                     let arrayOfDomNodes = []
                     // title event
@@ -455,26 +491,26 @@
             startDate.value = date.toISOString().split('T')[0];
 
             let query = window.location.search.slice(1);
-            calcResult.innerHTML = `<p>Your Calendar Seed: <code>${query}</code><p>This is the link for you, bookmark it: <a href="${window.location.href}">${window.location.href}</a></p>`;
             if (query.length == 16) {
+                calcResult.innerHTML = `<p>Your Calendar Seed: <code>${query}</code><p>This is the link for you, bookmark it: <a href="${window.location.href}">${window.location.href}</a></p>`;
                 let seed = query.slice(0, 8);
                 let dateStr = query.slice(8, 18);
                 groupSeed.value = seed;
                 let pattern = /(\d{4})(\d{2})(\d{2})/;
                 let date = new Date(dateStr.replace(pattern, '$1-$2-$3'));
                 var starting_date = date;
-                
+
                 var time_difference = dateNow.getTime() - date.getTime();
 
                 var days_difference = time_difference / (1000 * 60 * 60 * 24);
-                
+
                 starting_date.setTime(dateNow.getTime());
 
                 let current_seed = BigInt("0x" + seed);
                 for (var i = 0; i < days_difference - 1; i++) {
                     current_seed = ARNG(current_seed);
                 }
-                
+
                 startDate.value = dateNow.toISOString().split('T')[0];
                 var days = parseInt(document.getElementById("day-count").value);
                 generate2(days, current_seed, dateNow);
@@ -504,6 +540,9 @@
                 var daily = intabs(current_seed);
                 var swarm = daily % 0x1Cn;
                 var lotto = (MRNG(current_seed) >> 0xCn) % 100000n;
+                var daily_number = Number(daily);
+                var soldSphere = calc_sold_sphere(daily_number);
+                var drillSphere = calc_drill_sphere(daily_number)
 
                 calendar.addEvent({
                     title: `<b>Swarm:</b><br>${swarms[swarm].replace(" - ", "<br>")}`,
@@ -521,11 +560,17 @@
                 });
 
                 calendar.addEvent({
-                    title: `<b>Feebas Map:</b><br><a href='./BDSP-Feebas-Map.html?${current_seed}' target='_blank'>View Here</a>`,
-                    image_url: "./img/feebas.png",
+                    title: `<b>Feebas Map:</b><br><div class="feebas-div"><a href='./BDSP-Feebas-Map.html?${current_seed}' target='_blank'>View Here</a><div class="feebas" href='./BDSP-Feebas-Map.html?${current_seed}'></div></div>`,
                     start: current_date,
                     allDay: true,
                     backgroundColor: "var(--feebas-bg)"
+                });
+
+                calendar.addEvent({
+                    title: `<b>Sphere trader:</b><br><b>Sell</b><br>${spheres[soldSphere]} Sphere<img class="sphere" src="./img/${spheres[soldSphere].toLowerCase()}sphere.png"/><br><br><b>Buy drill with</b><br>${spheres[drillSphere]} Sphere S<img class="sphere" src="./img/${spheres[drillSphere].toLowerCase()}sphere.png"/>`,
+                    start: current_date,
+                    allDay: true,
+                    backgroundColor: "var(--sphere-bg)"
                 });
 
                 current_seed = ARNG(current_seed);
