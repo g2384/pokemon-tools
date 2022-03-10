@@ -38,7 +38,6 @@ namespace CrawlBulbapedia
     {
         public AnnotatedText Name { get; set; }
         public IList<AnnotatedText> OtherNames { get; set; } = new List<AnnotatedText>();
-        public string Meaning { get; set; }
     }
 
     public class AnnotatedText
@@ -46,6 +45,7 @@ namespace CrawlBulbapedia
         public string Text { get; set; }
         public string Pronounciation { get; set; }
         public string Explaination { get; set; }
+        public string Meaning { get; set; }
     }
 
     public static class Program
@@ -75,7 +75,6 @@ namespace CrawlBulbapedia
             var processedPath = "../../../../processedHTML";
             //RemoveRedundantTags(processedPath, "pokemon");
 
-            ExtractInfo(processedPath, dataPath, "pokemon");
             //ExtractInfo(processedPath, dataPath, "pokemon");
 
             //DownloadRawWebpages(dataPath, "item");
@@ -299,6 +298,14 @@ namespace CrawlBulbapedia
                                     }
                                     else
                                     {
+                                        if (itemLink.Contains("Black_Belt"))
+                                        {
+                                            itemLink = "/wiki/Black_Belt_(item)";
+                                        }
+                                        else if (itemLink.Contains("wiki/Metronome"))
+                                        {
+                                            itemLink = "/wiki/Metronome_(item)";
+                                        }
                                         itemLinks[itemName] = itemLink;
                                     }
                                 }
@@ -353,31 +360,36 @@ namespace CrawlBulbapedia
                 {
                     lanIndex = count;
                 }
-                if (text == "Title")
                 else if (text == "Title" || text == "Name")
                 {
                     titleIndex = count;
                 }
-                if (text == "Meaning")
                 else if (text == "Meaning" || text == "Origin")
                 {
                     meaningIndex = count;
                 }
-                count++;
                 count += colSpan;
             }
             foreach (var tr in trs.Skip(1))
             {
                 var tds = tr.GetChildNodes("td");
-                if (tds.Length == 3)
                 if (tds.Length > 1)
                 {
                     var names = new ForeignName();
-                    var meaning = tds[meaningIndex].InnerHtml.Trim();
-                    names.Meaning = meaning;
+                    string meaning = null;
+                    if (meaningIndex >= 0)
+                    {
+                        meaning = tds[meaningIndex].InnerHtml.Trim();
+                    }
                     var lan = tds[lanIndex].InnerText.Trim();
-                    var key = lan.ToEnum<Language>();
-                    var name = tds[titleIndex].InnerHtml.Trim();
+                    var lanSpan = tds[lanIndex].GetAttributeValue("colspan", 1);
+                    if (titleIndex == 2 && lanIndex == 0 && lanSpan == 1)
+                    {
+                        lan = lan + " " + tds[lanIndex + 1].InnerText.Trim();
+                    }
+                    var curTitleIndex = titleIndex - lanSpan + 1;
+                    var key = ConvertToLan(lan);
+                    var name = tds[curTitleIndex].InnerHtml.Trim();
                     if (name.Contains("<i>"))
                     {
                         var lines = name.Split("<br>");
@@ -387,7 +399,8 @@ namespace CrawlBulbapedia
                         {
                             Text = name1,
                             Pronounciation = pinyin1,
-                            Explaination = exp
+                            Explaination = exp,
+                            Meaning = meaning
                         };
                         names.Name = n1;
                         foreach (var line in lines.Skip(1))
@@ -413,7 +426,24 @@ namespace CrawlBulbapedia
                     {
                         names.OtherNames = null;
                     }
-                    dict.Add(key, names);
+                    if (dict.ContainsKey(key))
+                    {
+                        if (dict[key].OtherNames == null)
+                        {
+                            dict[key].OtherNames = new List<AnnotatedText>()
+                            {
+                                names.Name
+                            };
+                        }
+                        else
+                        {
+                            dict[key].OtherNames.Add(names.Name);
+                        }
+                    }
+                    else
+                    {
+                        dict.Add(key, names);
+                    }
                 }
                 else
                 {
@@ -436,9 +466,9 @@ namespace CrawlBulbapedia
                     {
                         var tdsC = tds[j];
                         tdsC.SetAttributeValue("rowspan", "1");
-                        for(var k = 1;k< rowspan; k++)
+                        for (var k = 1; k < rowspan; k++)
                         {
-                            if(i + k >= trs.Length)
+                            if (i + k >= trs.Length)
                             {
                                 continue;
                             }
@@ -457,13 +487,33 @@ namespace CrawlBulbapedia
             {
                 ll = "Brazilian Portuguese";
             }
-            if (ll.Contains("mandarin"))
+            else if(ll== "portuguese brazil")
+            {
+                ll = "Brazilian Portuguese";
+            }
+            else if(ll== "portuguese portugal")
+            {
+                ll = "Portugal Portuguese";
+            }
+            else if (ll.Contains("mandarin"))
             {
                 ll = "mandarin chinese";
             }
-            if (ll.Contains("cantonese"))
+            else if (ll.Contains("cantonese"))
             {
                 ll = "cantonese chinese";
+            }
+            else if (ll == "spanish latin america")
+            {
+                ll = "Latin America Spanish";
+            }
+            else if (ll == "spanish spain")
+            {
+                ll = "Spain Spanish";
+            }
+            else if(ll == "french europe")
+            {
+                ll = "french";
             }
             return ll.ToEnum<Language>();
         }

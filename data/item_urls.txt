@@ -134,7 +134,7 @@
 /wiki/Mental_Herb
 /wiki/Metal_Coat
 /wiki/Metal_Powder
-/wiki/Metronome
+/wiki/Metronome_(item)
 /wiki/Mewtwonite_Y
 /wiki/Micle_Berry
 /wiki/Miracle_Seed

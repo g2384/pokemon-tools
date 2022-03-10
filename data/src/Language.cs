@@ -16,6 +16,8 @@ namespace CrawlBulbapedia
         German,
         Spanish,
         French,
+        [EnumMember(Value = "French Canada")]
+        CanadaFr,
         [EnumMember(Value = "Brazilian Portuguese")]
         PortugueseBr,
         [EnumMember(Value = "Portugal Portuguese")]
@@ -33,6 +35,14 @@ namespace CrawlBulbapedia
         Dutch,
         Norwegian,
         English,
-        Hebrew
+        Hebrew,
+        Greek,
+        Hindi,
+        Indonesian,
+        Serbian,
+        Turkish,
+        Czech,
+        Romanian,
+        Hungarian
     }
 }
