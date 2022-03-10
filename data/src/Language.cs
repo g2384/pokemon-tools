@@ -32,6 +32,7 @@ namespace CrawlBulbapedia
         Danish,
         Dutch,
         Norwegian,
-        English
+        English,
+        Hebrew
     }
 }

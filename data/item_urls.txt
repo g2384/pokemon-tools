@@ -18,7 +18,7 @@
 /wiki/Big_Root
 /wiki/Binding_Band
 /wiki/Bitter_Berry
-/wiki/Black_Belt
+/wiki/Black_Belt_(item)
 /wiki/Black_Glasses
 /wiki/Black_Sludge
 /wiki/BlackGlasses
