@@ -43,8 +43,8 @@ namespace CrawlBulbapedia
     public class AnnotatedText
     {
         public string Text { get; set; }
-        public string Pronounciation { get; set; }
-        public string Explaination { get; set; }
+        public string Pronunciation { get; set; }
+        public string Explanation { get; set; }
         public string Meaning { get; set; }
     }
 
@@ -75,7 +75,7 @@ namespace CrawlBulbapedia
             var processedPath = "../../../../processedHTML";
             //RemoveRedundantTags(processedPath, "pokemon");
 
-            //ExtractInfo(processedPath, dataPath, "pokemon");
+            ExtractInfo(processedPath, dataPath, "pokemon");
 
             //DownloadRawWebpages(dataPath, "item");
             //RemoveRedundantTags(processedPath, "item");
@@ -281,6 +281,15 @@ namespace CrawlBulbapedia
                                 var itemLink = innerA.GetAttributeValue("href", "");
                                 if (!itemLink.Contains("(Pok%C3%A9walker)"))
                                 {
+                                    if (itemLink.Contains("Black_Belt"))
+                                    {
+                                        itemLink = "/wiki/Black_Belt_(item)";
+                                    }
+                                    else if (itemLink.Contains("wiki/Metronome"))
+                                    {
+                                        itemLink = "/wiki/Metronome_(item)";
+                                    }
+
                                     if (itemLinks.TryGetValue(itemName, out var link))
                                     {
                                         if (link != itemLink)
@@ -298,14 +307,6 @@ namespace CrawlBulbapedia
                                     }
                                     else
                                     {
-                                        if (itemLink.Contains("Black_Belt"))
-                                        {
-                                            itemLink = "/wiki/Black_Belt_(item)";
-                                        }
-                                        else if (itemLink.Contains("wiki/Metronome"))
-                                        {
-                                            itemLink = "/wiki/Metronome_(item)";
-                                        }
                                         itemLinks[itemName] = itemLink;
                                     }
                                 }
@@ -403,8 +404,8 @@ namespace CrawlBulbapedia
                         var n1 = new AnnotatedText()
                         {
                             Text = name1,
-                            Pronounciation = pinyin1,
-                            Explaination = exp,
+                            Pronunciation = pinyin1,
+                            Explanation = exp,
                             Meaning = meaning
                         };
                         names.Name = n1;
@@ -414,8 +415,8 @@ namespace CrawlBulbapedia
                             var n2 = new AnnotatedText()
                             {
                                 Text = name2,
-                                Pronounciation = pinyin2,
-                                Explaination = exp2
+                                Pronunciation = pinyin2,
+                                Explanation = exp2
                             };
                             names.OtherNames.Add(n2);
                         }
@@ -424,7 +425,8 @@ namespace CrawlBulbapedia
                     {
                         names.Name = new AnnotatedText()
                         {
-                            Text = name
+                            Text = name,
+                            Meaning = meaning
                         };
                     }
                     if (!names.OtherNames.Any())
