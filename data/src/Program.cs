@@ -339,6 +339,11 @@ namespace CrawlBulbapedia
             {
                 h2 = node.SelectSingleNode("//*[@id=\"Names\"]");
             }
+            if(h2 == null)
+            {
+                Console.Write(": no translation");
+                return dict;
+            }
             var table = GetNextTable(h2);
             if (table == null)
             {
@@ -514,6 +519,10 @@ namespace CrawlBulbapedia
             else if(ll == "french europe")
             {
                 ll = "french";
+            }
+            else if(ll == "portuguese" || ll == "european portuguese")
+            {
+                ll = "Portugal Portuguese";
             }
             return ll.ToEnum<Language>();
         }

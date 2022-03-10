@@ -43,6 +43,10 @@ namespace CrawlBulbapedia
         Turkish,
         Czech,
         Romanian,
-        Hungarian
+        Hungarian,
+        Arabic,
+        Bulgarian,
+        Valencian,
+        Ukrainian
     }
 }
