@@ -40,21 +40,27 @@ namespace CrawlBulbapedia
         b.join("\n")
 
         */
-            //DownloadRawWebpages();
+            var dataPath = "../../../..";
+            //DownloadRawWebpages(dataPath, "pokemon");
 
             var processedPath = "../../../../processedHTML";
-            //RemoveRedundantTags(processedPath);
+            //RemoveRedundantTags(processedPath, "pokemon");
 
-            //TODO
-            // Remove <script>
-            // add to git repo
-            // get items page
-            ExtractInfo(processedPath);
+            //ExtractInfo(processedPath, dataPath);
+
+            //DownloadRawWebpages(dataPath, "item");
+            RemoveRedundantTags(processedPath, "item");
         }
 
-        private static void RemoveRedundantTags(string targetPath)
+        private static void RemoveRedundantTags(string targetPath, string folder)
         {
-            var files = GetAllFiles(Directory.GetCurrentDirectory(), "*.html").ToArray();
+            var path = Directory.GetCurrentDirectory() +"\\"+ folder;
+            var p2 = Path.Combine(targetPath, folder);
+            if (!Directory.Exists(p2))
+            {
+                Directory.CreateDirectory(p2);
+            }
+            var files = GetAllFiles(path, "*.html").ToArray();
             var data = new List<Pokemon>();
             var itemLinks = new Dictionary<string, string>();
             foreach (var file in files)
@@ -94,7 +100,8 @@ namespace CrawlBulbapedia
                 {
                     content2.RemoveChild(l);
                 }
-                var p = Path.Combine(targetPath, file.Split("\\").Last());
+                
+                var p = Path.Combine(p2, file.Split("\\").Last());
                 var str = content2.OuterHtml;
                 File.WriteAllText(p, str);
                 var fi = new FileInfo(file).Length;
@@ -127,9 +134,9 @@ namespace CrawlBulbapedia
             return node.ChildNodes.Where(e => e.Name == childTag && e.HasClass(className)).FirstOrDefault();
         }
 
-        private static void ExtractInfo(string path)
+        private static void ExtractInfo(string sourcePath, string targetPath)
         {
-            var files = GetAllFiles(path, "*.html").ToArray();
+            var files = GetAllFiles(sourcePath, "*.html").ToArray();
             var data = new List<Pokemon>();
             var itemLinks = new Dictionary<string, string>();
             foreach (var file in files)
@@ -236,9 +243,11 @@ namespace CrawlBulbapedia
 
                 }
             }
-            File.WriteAllText("itemLinks.txt", string.Join("\n", itemLinks.Values.OrderBy(e => e)));
+            var outLinks = Path.Combine(targetPath, "item_urls.txt");
+            File.WriteAllText(outLinks, string.Join("\n", itemLinks.Values.OrderBy(e => e)));
             var json = JsonConvert.SerializeObject(data, Formatting.Indented);
-            File.WriteAllText("data3.json", json);
+            var output = Path.Combine(targetPath, "data3.json");
+            File.WriteAllText(output, json);
         }
 
         private static HtmlNode? GetNextTable(HtmlNode heldItems)
@@ -271,21 +280,35 @@ namespace CrawlBulbapedia
             }
         }
 
-        private static void DownloadRawWebpages()
+        private static void DownloadRawWebpages(string dataPath, string folder)
         {
-            var file = File.ReadAllLines("urls.txt");
+            if (!Directory.Exists(folder))
+            {
+                Directory.CreateDirectory(folder);
+            }
+            else
+            {
+                return;
+            }
+            var path = Path.Combine(dataPath, folder+"_urls.txt");
+            var file = File.ReadAllLines(path);
             foreach (var f in file)
             {
                 if (string.IsNullOrEmpty(f))
                 {
                     continue;
                 }
+                var f2 = f;
+                if (f2.StartsWith("/wiki"))
+                {
+                    f2 = "https://bulbapedia.bulbagarden.net" + f;
+                }
 
-                DownloadWebpage(f);
+                DownloadWebpage(f2, folder);
             }
         }
 
-        public static void DownloadWebpage(string url)
+        public static void DownloadWebpage(string url, string folder)
         {
             var fileName = url.Split('/').Last();
             if (File.Exists(fileName))
@@ -302,7 +325,7 @@ namespace CrawlBulbapedia
                 source = reader.ReadToEnd();
             }
 
-            File.WriteAllText(fileName + ".html", source);
+            File.WriteAllText(folder + "/" + fileName + ".html", source);
         }
     }
 }
