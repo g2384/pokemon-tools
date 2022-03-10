@@ -1,0 +1,49 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div id="filters"></div>
+    <div id="pokemons"></div>
+    <script>
+        var getJSON = function (url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.responseType = 'json';
+            xhr.onload = function () {
+                var status = xhr.status;
+                if (status === 200) {
+                    callback(null, xhr.response);
+                } else {
+                    callback(status, xhr.response);
+                }
+            };
+            xhr.send();
+        };
+        const pokemonTable = document.getElementById("pokemons");
+
+        getJSON('./data/data.json',
+            function (err, data) {
+                if (err !== null) {
+                    alert('Something went wrong: ' + err);
+                } else {
+                    displayP(data);
+                }
+            });
+        function displayP(data) {
+            console.log(data);
+            var ths = [];
+            ths = ["Name", "Held Item"];
+            var head = `<thead><tr><th>${ths.join("</th><th>")}</th></tr></thead>`;
+            for(var i=0;i<data.length;i++){
+                var n = i.Name;
+                var 
+            }
+            var body = `<tbody>${trs}</tbody>`;
+        }
+    </script>
+</body>
+
+</html>

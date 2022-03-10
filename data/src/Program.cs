@@ -1,5 +1,6 @@
 ﻿using HtmlAgilityPack;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System.Net;
 
 namespace CrawlBulbapedia
@@ -23,7 +24,7 @@ namespace CrawlBulbapedia
     public class Pokemon
     {
         public string Name { get; set; }
-        public IList<ForeignName> OtherNames { get; set; }
+        public IDictionary<Language, ForeignName> OtherNames { get; set; }
         public IList<HeldItemTable> HeldItems { get; set; } = new List<HeldItemTable>();
     }
 
@@ -34,14 +35,21 @@ namespace CrawlBulbapedia
         public string Pronounciation { get; set; }
         public List<string> OtherPronounciations { get; set; } = new List<string>();
         public string Meaning { get; set; }
-        public string Language { get; set; }
     }
 
     public static class Program
     {
-
+        public static StringEnumConverter SEConverter = new StringEnumConverter { CamelCaseText = true };
         public static void Main()
         {
+            //convert Enums to Strings (instead of Integer) globally
+            JsonConvert.DefaultSettings = (() =>
+            {
+                var settings = new JsonSerializerSettings();
+                settings.Converters.Add(SEConverter);
+                return settings;
+            });
+
             /*
          * get urls: https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number
          
@@ -165,7 +173,7 @@ namespace CrawlBulbapedia
             {
                 NullValueHandling = NullValueHandling.Ignore
             });
-            var output = Path.Combine(targetPath, "data3.json");
+            var output = Path.Combine(targetPath, "data.json");
             File.WriteAllText(output, json);
         }
 
@@ -252,9 +260,9 @@ namespace CrawlBulbapedia
         }
 
         // get translated names
-        private static IList<ForeignName> GetOtherNames(HtmlNode node)
+        private static IDictionary<Language, ForeignName> GetOtherNames(HtmlNode node)
         {
-            var dict = new List<ForeignName>();
+            var dict = new Dictionary<Language, ForeignName>();
             var h2 = node.SelectSingleNode("//*[@id=\"In_other_languages\"]");
             var table = GetNextTable(h2);
             if (table == null)
@@ -294,7 +302,7 @@ namespace CrawlBulbapedia
                     var meaning = tds[meaningIndex].InnerHtml.Trim();
                     names.Meaning = meaning;
                     var lan = tds[lanIndex].InnerText.Trim();
-                    names.Language = lan;
+                    var key = lan.ToEnum<Language>();
                     var name = tds[titleIndex].InnerHtml.Trim();
                     if (name.Contains("<i>"))
                     {
@@ -322,7 +330,7 @@ namespace CrawlBulbapedia
                     {
                         names.OtherPronounciations = null;
                     }
-                    dict.Add(names);
+                    dict.Add(key, names);
                 }
                 else
                 {
