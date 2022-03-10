@@ -23,8 +23,18 @@ namespace CrawlBulbapedia
     public class Pokemon
     {
         public string Name { get; set; }
-        public List<HeldItemTable> HeldItems { get; set; } = new List<HeldItemTable>();
+        public IList<ForeignName> OtherNames { get; set; }
+        public IList<HeldItemTable> HeldItems { get; set; } = new List<HeldItemTable>();
+    }
 
+    public class ForeignName
+    {
+        public string Name { get; set; }
+        public List<string> OtherNames { get; set; } = new List<string>();
+        public string Pronounciation { get; set; }
+        public List<string> OtherPronounciations { get; set; } = new List<string>();
+        public string Meaning { get; set; }
+        public string Language { get; set; }
     }
 
     public static class Program
@@ -46,15 +56,15 @@ namespace CrawlBulbapedia
             var processedPath = "../../../../processedHTML";
             //RemoveRedundantTags(processedPath, "pokemon");
 
-            //ExtractInfo(processedPath, dataPath);
+            ExtractInfo(processedPath, dataPath, "pokemon");
 
             //DownloadRawWebpages(dataPath, "item");
-            RemoveRedundantTags(processedPath, "item");
+            //RemoveRedundantTags(processedPath, "item");
         }
 
         private static void RemoveRedundantTags(string targetPath, string folder)
         {
-            var path = Directory.GetCurrentDirectory() +"\\"+ folder;
+            var path = Directory.GetCurrentDirectory() + "\\" + folder;
             var p2 = Path.Combine(targetPath, folder);
             if (!Directory.Exists(p2))
             {
@@ -70,7 +80,7 @@ namespace CrawlBulbapedia
                 doc.Load(file);
                 var node = doc.DocumentNode;
                 var html = node.GetChildNode("html");
-                if(html == null)
+                if (html == null)
                 {
                     throw new Exception();
                 }
@@ -81,7 +91,7 @@ namespace CrawlBulbapedia
                     throw new Exception();
                 }
                 var div = body.GetChildNodeById("div", "globalWrapper");
-                if(div == null)
+                if (div == null)
                 {
                     throw new Exception();
                 }
@@ -96,11 +106,11 @@ namespace CrawlBulbapedia
                     throw new Exception();
                 }
                 var lastTwo = content2.ChildNodes.Where(e => e.Name != "h1" && e.Id != "bodyContent").ToArray();
-                foreach(var l in lastTwo)
+                foreach (var l in lastTwo)
                 {
                     content2.RemoveChild(l);
                 }
-                
+
                 var p = Path.Combine(p2, file.Split("\\").Last());
                 var str = content2.OuterHtml;
                 File.WriteAllText(p, str);
@@ -110,32 +120,11 @@ namespace CrawlBulbapedia
             }
         }
 
-        private static HtmlNode? GetChildNodeById(this HtmlNode node, string childTag, string id)
-        {
-            return node.ChildNodes.Where(e => e.Name == childTag && e.Id == id).FirstOrDefault();
-        }
 
-        private static HtmlNode[] GetChildNodes(this HtmlNode node, string childTag)
-        {
-            return node.ChildNodes.Where(e => e.Name == childTag).ToArray();
-        }
 
-        private static HtmlNode? GetChildNode(this HtmlNode node, string childTag)
+        private static void ExtractInfo(string sourcePath, string targetPath, string folder)
         {
-            return node.ChildNodes.Where(e => e.Name == childTag).FirstOrDefault();
-        }
-
-        private static HtmlNode? GetChildNode(this HtmlNode node, string childTag, string className)
-        {
-            if (string.IsNullOrEmpty(className))
-            {
-                return node.ChildNodes.Where(e => e.Name == childTag && !e.GetClasses().Any()).FirstOrDefault();
-            }
-            return node.ChildNodes.Where(e => e.Name == childTag && e.HasClass(className)).FirstOrDefault();
-        }
-
-        private static void ExtractInfo(string sourcePath, string targetPath)
-        {
+            sourcePath = Path.Combine(sourcePath, folder);
             var files = GetAllFiles(sourcePath, "*.html").ToArray();
             var data = new List<Pokemon>();
             var itemLinks = new Dictionary<string, string>();
@@ -149,83 +138,10 @@ namespace CrawlBulbapedia
                 var name = heading.InnerText.Replace(" (Pokémon)", "");
                 Console.Write(Environment.NewLine);
                 Console.Write(name);
+                pokemon.OtherNames = GetOtherNames(node);
                 pokemon.Name = name;
-                var heldItems = node.SelectSingleNode("//*[@id=\"Held_items\"]");
-                if (heldItems != null)
-                {
-                    var heldItemsTable = GetNextTable(heldItems);
-                    if (heldItemsTable == null)
-                    {
-                        continue;
-                    }
-                    var trs = heldItemsTable.ChildNodes["tbody"].GetChildNodes("tr");
-                    var itemTables = new List<HeldItemTable>();
-                    foreach (var tr in trs.Skip(1))
-                    {
-                        var ths = tr.GetChildNodes("th");
-                        var hiTable = new HeldItemTable();
-                        foreach (var th in ths)
-                        {
-                            var text = th.GetChildNode("a").InnerText;
-                            var note = th.GetChildNode("span")?.GetAttributeValue("title", "");
-                            hiTable.Gens.Add(text);
-                            hiTable.Notes.Add(note);
-                        }
-                        var tds = tr.GetChildNodes("td");
-                        if (tds == null || tds.Length == 0)
-                        {
-                            var last = itemTables.Last();
-                            last.Gens.AddRange(hiTable.Gens);
-                            last.Notes.AddRange(hiTable.Notes);
-                        }
-                        else
-                        {
-                            foreach (var td in tds)
-                            {
-                                var innerA = td.GetChildNode("a", null);
-                                var itemName = innerA?.InnerText;
-                                if (string.IsNullOrEmpty(itemName))
-                                {
-                                    itemName = td.InnerText;
-                                }
-                                else
-                                {
-                                    var itemLink = innerA.GetAttributeValue("href", "");
-                                    if (itemLinks.TryGetValue(itemName, out var link))
-                                    {
-                                        if (link != itemLink)
-                                        {
-                                            if (!itemLink.StartsWith("/wiki/Berry#") 
-                                                && !itemLink.StartsWith("/wiki/Gold_Bottle_Cap#")
-                                                && !itemLink.StartsWith("/wiki/Gem#")
-                                                && !itemLink.StartsWith("/wiki/Potion#"))
-                                            {
-                                                throw new InvalidOperationException();
-                                            }
-                                        }
-                                    }
-                                    else
-                                    {
-                                        itemLinks[itemName] = itemLink;
-                                    }
-                                }
-                                var prob = td.GetDirectInnerText();
-                                hiTable.Name.Add(itemName);
-                                hiTable.Probability.Add(prob);
+                pokemon.HeldItems = GetHeldItemTables(node, itemLinks);
 
-
-                                var image = td.GetChildNode("a", "image")?.GetChildNode("img").GetAttributeValue("src", "");
-                                hiTable.Images.Add(image);
-                            }
-                            itemTables.Add(hiTable);
-                        }
-                    }
-                    pokemon.HeldItems = itemTables;
-                }
-                else
-                {
-                    Console.Write(": No Held Item");
-                }
 
                 data.Add(pokemon);
                 continue;
@@ -245,15 +161,191 @@ namespace CrawlBulbapedia
             }
             var outLinks = Path.Combine(targetPath, "item_urls.txt");
             File.WriteAllText(outLinks, string.Join("\n", itemLinks.Values.OrderBy(e => e)));
-            var json = JsonConvert.SerializeObject(data, Formatting.Indented);
+            var json = JsonConvert.SerializeObject(data, Formatting.Indented, new JsonSerializerSettings()
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            });
             var output = Path.Combine(targetPath, "data3.json");
             File.WriteAllText(output, json);
+        }
+
+        private static IList<HeldItemTable> GetHeldItemTables(HtmlNode node, IDictionary<string, string> itemLinks)
+        {
+            var heldItems = node.SelectSingleNode("//*[@id=\"Held_items\"]");
+            if (heldItems != null)
+            {
+                var heldItemsTable = GetNextTable(heldItems);
+                if (heldItemsTable == null)
+                {
+                    Console.Write(": No Held Item");
+                    return null;
+                }
+                var trs = heldItemsTable.ChildNodes["tbody"].GetChildNodes("tr");
+                var itemTables = new List<HeldItemTable>();
+                foreach (var tr in trs.Skip(1))
+                {
+                    var ths = tr.GetChildNodes("th");
+                    var hiTable = new HeldItemTable();
+                    foreach (var th in ths)
+                    {
+                        var text = th.GetChildNode("a").InnerText;
+                        var note = th.GetChildNode("span")?.GetAttributeValue("title", "");
+                        hiTable.Gens.Add(text);
+                        hiTable.Notes.Add(note);
+                    }
+                    var tds = tr.GetChildNodes("td");
+                    if (tds == null || tds.Length == 0)
+                    {
+                        var last = itemTables.Last();
+                        last.Gens.AddRange(hiTable.Gens);
+                        last.Notes.AddRange(hiTable.Notes);
+                    }
+                    else
+                    {
+                        foreach (var td in tds)
+                        {
+                            var innerA = td.GetChildNode("a", null);
+                            var itemName = innerA?.InnerText;
+                            if (string.IsNullOrEmpty(itemName))
+                            {
+                                itemName = td.InnerText;
+                            }
+                            else
+                            {
+                                var itemLink = innerA.GetAttributeValue("href", "");
+                                if (itemLinks.TryGetValue(itemName, out var link))
+                                {
+                                    if (link != itemLink)
+                                    {
+                                        if (!itemLink.StartsWith("/wiki/Berry#")
+                                            && !itemLink.StartsWith("/wiki/Gold_Bottle_Cap#")
+                                            && !itemLink.StartsWith("/wiki/Gem#")
+                                            && !itemLink.StartsWith("/wiki/Potion#"))
+                                        {
+                                            throw new InvalidOperationException();
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    itemLinks[itemName] = itemLink;
+                                }
+                            }
+                            var prob = td.GetDirectInnerText();
+                            hiTable.Name.Add(itemName);
+                            hiTable.Probability.Add(prob);
+
+
+                            var image = td.GetChildNode("a", "image")?.GetChildNode("img").GetAttributeValue("src", "");
+                            hiTable.Images.Add(image);
+                        }
+                        itemTables.Add(hiTable);
+                    }
+                }
+                return itemTables;
+            }
+            else
+            {
+                Console.Write(": No Held Item");
+                return null;
+            }
+        }
+
+        // get translated names
+        private static IList<ForeignName> GetOtherNames(HtmlNode node)
+        {
+            var dict = new List<ForeignName>();
+            var h2 = node.SelectSingleNode("//*[@id=\"In_other_languages\"]");
+            var table = GetNextTable(h2);
+            if (table == null)
+            {
+                Console.Write(": no translation");
+            }
+            var trs = table.ChildNodes["tbody"].GetChildNodes("tr");
+            var trTitle = trs[0];
+            var tdTitle = trTitle.GetChildNodes("th");
+            int lanIndex = -1;
+            int titleIndex = -1;
+            int meaningIndex = -1;
+            var count = 0;
+            foreach (var t in tdTitle)
+            {
+                var text = t.InnerText.Trim();
+                if (text == "Language")
+                {
+                    lanIndex = count;
+                }
+                if (text == "Title")
+                {
+                    titleIndex = count;
+                }
+                if (text == "Meaning")
+                {
+                    meaningIndex = count;
+                }
+                count++;
+            }
+            foreach (var tr in trs.Skip(1))
+            {
+                var tds = tr.GetChildNodes("td");
+                if (tds.Length == 3)
+                {
+                    var names = new ForeignName();
+                    var meaning = tds[meaningIndex].InnerHtml.Trim();
+                    names.Meaning = meaning;
+                    var lan = tds[lanIndex].InnerText.Trim();
+                    names.Language = lan;
+                    var name = tds[titleIndex].InnerHtml.Trim();
+                    if (name.Contains("<i>"))
+                    {
+                        var lines = name.Split("\n");
+                        var firstLine = lines[0];
+                        var (name1, pinyin1) = GetName(firstLine);
+                        names.Name = name1;
+                        names.Pronounciation = pinyin1;
+                        foreach (var line in lines.Skip(1))
+                        {
+                            var (name2, pinyin2) = GetName(firstLine);
+                            names.OtherNames.Add(name2);
+                            names.OtherPronounciations.Add(pinyin2);
+                        }
+                    }
+                    else
+                    {
+                        names.Name = name;
+                    }
+                    if (!names.OtherNames.Any())
+                    {
+                        names.OtherNames = null;
+                    }
+                    if (!names.OtherPronounciations.Any())
+                    {
+                        names.OtherPronounciations = null;
+                    }
+                    dict.Add(names);
+                }
+                else
+                {
+                    //throw new Exception();
+                }
+            }
+            return dict;
+        }
+
+        private static (string, string) GetName(string text)
+        {
+            var pinyinNode = new HtmlDocument();
+            pinyinNode.LoadHtml(text);
+            var p = pinyinNode.DocumentNode;
+            var p2 = p.RecursiveGetChildNode("i")?.InnerText;
+            var p3 = p.GetDirectInnerText();
+            return (p3, p2);
         }
 
         private static HtmlNode? GetNextTable(HtmlNode heldItems)
         {
             var heldItemsTable2 = heldItems.ParentNode;
-            if (heldItemsTable2.Name == "h3")
+            if (heldItemsTable2.Name == "h3" || heldItemsTable2.Name == "h2")
             {
                 var h3 = heldItemsTable2.NextSibling;
                 while (h3.Name == "#text")
@@ -262,6 +354,14 @@ namespace CrawlBulbapedia
                 }
                 if (h3.Name == "table")
                 {
+                    var t2 = h3.ChildNodes["tbody"];
+                    var t3 = t2?.ChildNodes["tr"];
+                    var t4 = t3?.ChildNodes["td"];
+                    var t5 = t4?.ChildNodes["table"];
+                    if (t5 != null)
+                    {
+                        return t5;
+                    }
                     return h3;
                 }
             }
@@ -272,7 +372,7 @@ namespace CrawlBulbapedia
         {
             if (string.IsNullOrEmpty(mask))
                 mask = "*.*";
-            var files = Directory.GetFiles(path, mask, SearchOption.AllDirectories);
+            var files = Directory.GetFiles(path, mask, SearchOption.AllDirectories).OrderBy(e => e);
             foreach (var file in files)
             {
                 if (checkFile == null || checkFile(new FileInfo(file)))
@@ -290,7 +390,7 @@ namespace CrawlBulbapedia
             {
                 return;
             }
-            var path = Path.Combine(dataPath, folder+"_urls.txt");
+            var path = Path.Combine(dataPath, folder + "_urls.txt");
             var file = File.ReadAllLines(path);
             foreach (var f in file)
             {
