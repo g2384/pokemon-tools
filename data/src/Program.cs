@@ -5,6 +5,12 @@ using System.Net;
 
 namespace CrawlBulbapedia
 {
+    public class Item
+    {
+        public string Name { get; set; }
+        public IDictionary<Language, ForeignName> OtherNames { get; set; }
+    }
+
     public class HeldItemTable
     {
         public List<string> Name { get; set; } = new List<string>();
@@ -70,9 +76,11 @@ namespace CrawlBulbapedia
             //RemoveRedundantTags(processedPath, "pokemon");
 
             ExtractInfo(processedPath, dataPath, "pokemon");
+            //ExtractInfo(processedPath, dataPath, "pokemon");
 
             //DownloadRawWebpages(dataPath, "item");
             //RemoveRedundantTags(processedPath, "item");
+            ExtractItemInfo(processedPath, dataPath, "item");
         }
 
         private static void RemoveRedundantTags(string targetPath, string folder)
@@ -182,6 +190,52 @@ namespace CrawlBulbapedia
             File.WriteAllText(output, json);
         }
 
+        private static void ExtractItemInfo(string sourcePath, string targetPath, string folder)
+        {
+            sourcePath = Path.Combine(sourcePath, folder);
+            var files = GetAllFiles(sourcePath, "*.html").ToArray();
+            var data = new List<Item>();
+            var itemLinks = new Dictionary<string, string>();
+            foreach (var file in files)
+            {
+                var pokemon = new Item();
+                var doc = new HtmlDocument();
+                doc.Load(file);
+                var node = doc.DocumentNode;
+                var heading = node.SelectSingleNode("//*[@id=\"firstHeading\"]");
+                var name = heading.InnerText.Replace(" (Pokémon)", "");
+                Console.Write(Environment.NewLine);
+                Console.Write(name);
+                pokemon.OtherNames = GetOtherNames(node);
+                pokemon.Name = name;
+
+
+                data.Add(pokemon);
+                continue;
+                var evo = node.SelectSingleNode("#Evolution");
+                if (evo != null)
+                {
+                    var evoTable = evo.NextSibling;
+                    if (evoTable == null)
+                    {
+
+                    }
+                }
+                else
+                {
+
+                }
+            }
+            var outLinks = Path.Combine(targetPath, "item_urls.txt");
+            File.WriteAllText(outLinks, string.Join("\n", itemLinks.Values.OrderBy(e => e)));
+            var json = JsonConvert.SerializeObject(data, Formatting.Indented, new JsonSerializerSettings()
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            });
+            var output = Path.Combine(targetPath, "items.json");
+            File.WriteAllText(output, json);
+        }
+
         private static IList<HeldItemTable> GetHeldItemTables(HtmlNode node, IDictionary<string, string> itemLinks)
         {
             var heldItems = node.SelectSingleNode("//*[@id=\"Held_items\"]");
@@ -274,12 +328,17 @@ namespace CrawlBulbapedia
         {
             var dict = new Dictionary<Language, ForeignName>();
             var h2 = node.SelectSingleNode("//*[@id=\"In_other_languages\"]");
+            if (h2 == null)
+            {
+                h2 = node.SelectSingleNode("//*[@id=\"Names\"]");
+            }
             var table = GetNextTable(h2);
             if (table == null)
             {
                 Console.Write(": no translation");
             }
             var trs = table.ChildNodes["tbody"].GetChildNodes("tr");
+            trs = RegulariseTable(trs);
             var trTitle = trs[0];
             var tdTitle = trTitle.GetChildNodes("th");
             int lanIndex = -1;
@@ -289,24 +348,29 @@ namespace CrawlBulbapedia
             foreach (var t in tdTitle)
             {
                 var text = t.InnerText.Trim();
+                var colSpan = t.GetAttributeValue("colspan", 1);
                 if (text == "Language")
                 {
                     lanIndex = count;
                 }
                 if (text == "Title")
+                else if (text == "Title" || text == "Name")
                 {
                     titleIndex = count;
                 }
                 if (text == "Meaning")
+                else if (text == "Meaning" || text == "Origin")
                 {
                     meaningIndex = count;
                 }
                 count++;
+                count += colSpan;
             }
             foreach (var tr in trs.Skip(1))
             {
                 var tds = tr.GetChildNodes("td");
                 if (tds.Length == 3)
+                if (tds.Length > 1)
                 {
                     var names = new ForeignName();
                     var meaning = tds[meaningIndex].InnerHtml.Trim();
@@ -357,6 +421,51 @@ namespace CrawlBulbapedia
                 }
             }
             return dict;
+        }
+
+        private static HtmlNode[] RegulariseTable(HtmlNode[] trs)
+        {
+            for (int i = 1; i < trs.Length; i++)
+            {
+                var tr = trs[i];
+                var tds = tr.GetChildNodes("td");
+                for (int j = 0; j < tds.Length; j++)
+                {
+                    var rowspan = tds[j].GetAttributeValue("rowspan", 1);
+                    if (rowspan > 1)
+                    {
+                        var tdsC = tds[j];
+                        tdsC.SetAttributeValue("rowspan", "1");
+                        for(var k = 1;k< rowspan; k++)
+                        {
+                            if(i + k >= trs.Length)
+                            {
+                                continue;
+                            }
+                            trs[i + k].ChildNodes.Insert(j, tds[j]);
+                        }
+                    }
+                }
+            }
+            return trs;
+        }
+
+        private static Language ConvertToLan(string lan)
+        {
+            var ll = lan.ToLowerInvariant();
+            if (ll == "brazil portuguese")
+            {
+                ll = "Brazilian Portuguese";
+            }
+            if (ll.Contains("mandarin"))
+            {
+                ll = "mandarin chinese";
+            }
+            if (ll.Contains("cantonese"))
+            {
+                ll = "cantonese chinese";
+            }
+            return ll.ToEnum<Language>();
         }
 
         private static (string, string, string) GetName(string text)

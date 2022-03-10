@@ -15,6 +15,23 @@ namespace CrawlBulbapedia
         ChineseC,
         German,
         Spanish,
-        French
+        French,
+        [EnumMember(Value = "Brazilian Portuguese")]
+        PortugueseBr,
+        [EnumMember(Value = "Portugal Portuguese")]
+        PortuguesePo,
+        Polish,
+        Russian,
+        Swedish,
+        Finnish,
+        [EnumMember(Value = "Latin America Spanish")]
+        SpanishLantinAmerica,
+        [EnumMember(Value = "Spain Spanish")]
+        SpanishSp,
+        Vietnamese,
+        Danish,
+        Dutch,
+        Norwegian,
+        English
     }
 }
