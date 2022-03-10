@@ -30,11 +30,16 @@ namespace CrawlBulbapedia
 
     public class ForeignName
     {
-        public string Name { get; set; }
-        public List<string> OtherNames { get; set; } = new List<string>();
-        public string Pronounciation { get; set; }
-        public List<string> OtherPronounciations { get; set; } = new List<string>();
+        public AnnotatedText Name { get; set; }
+        public IList<AnnotatedText> OtherNames { get; set; } = new List<AnnotatedText>();
         public string Meaning { get; set; }
+    }
+
+    public class AnnotatedText
+    {
+        public string Text { get; set; }
+        public string Pronounciation { get; set; }
+        public string Explaination { get; set; }
     }
 
     public static class Program
@@ -239,7 +244,7 @@ namespace CrawlBulbapedia
                                     itemLinks[itemName] = itemLink;
                                 }
                             }
-                            var prob = td.GetDirectInnerText();
+                            var prob = td.GetDirectInnerText().Trim();
                             hiTable.Name.Add(itemName);
                             hiTable.Probability.Add(prob);
 
@@ -306,29 +311,38 @@ namespace CrawlBulbapedia
                     var name = tds[titleIndex].InnerHtml.Trim();
                     if (name.Contains("<i>"))
                     {
-                        var lines = name.Split("\n");
-                        var firstLine = lines[0];
-                        var (name1, pinyin1) = GetName(firstLine);
-                        names.Name = name1;
-                        names.Pronounciation = pinyin1;
+                        var lines = name.Split("<br>");
+                        var firstLine = lines[0].Trim();
+                        var (name1, pinyin1, exp) = GetName(firstLine);
+                        var n1 = new AnnotatedText()
+                        {
+                            Text = name1,
+                            Pronounciation = pinyin1,
+                            Explaination = exp
+                        };
+                        names.Name = n1;
                         foreach (var line in lines.Skip(1))
                         {
-                            var (name2, pinyin2) = GetName(firstLine);
-                            names.OtherNames.Add(name2);
-                            names.OtherPronounciations.Add(pinyin2);
+                            var (name2, pinyin2, exp2) = GetName(line.Trim());
+                            var n2 = new AnnotatedText()
+                            {
+                                Text = name2,
+                                Pronounciation = pinyin2,
+                                Explaination = exp2
+                            };
+                            names.OtherNames.Add(n2);
                         }
                     }
                     else
                     {
-                        names.Name = name;
+                        names.Name = new AnnotatedText()
+                        {
+                            Text = name
+                        };
                     }
                     if (!names.OtherNames.Any())
                     {
                         names.OtherNames = null;
-                    }
-                    if (!names.OtherPronounciations.Any())
-                    {
-                        names.OtherPronounciations = null;
                     }
                     dict.Add(key, names);
                 }
@@ -340,14 +354,15 @@ namespace CrawlBulbapedia
             return dict;
         }
 
-        private static (string, string) GetName(string text)
+        private static (string, string, string) GetName(string text)
         {
             var pinyinNode = new HtmlDocument();
             pinyinNode.LoadHtml(text);
             var p = pinyinNode.DocumentNode;
-            var p2 = p.RecursiveGetChildNode("i")?.InnerText;
-            var p3 = p.GetDirectInnerText();
-            return (p3, p2);
+            var p2 = p.RecursiveGetChildNode("i")?.InnerText.Trim();
+            var exp = p.RecursiveGetChildNode("span")?.GetAttributeValue("title", null);
+            var p3 = p.GetDirectInnerText().Trim();
+            return (p3, p2, exp);
         }
 
         private static HtmlNode? GetNextTable(HtmlNode heldItems)

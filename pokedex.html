@@ -33,15 +33,28 @@
                 }
             });
         function displayP(data) {
-            console.log(data);
             var ths = [];
             ths = ["Name", "Held Item"];
             var head = `<thead><tr><th>${ths.join("</th><th>")}</th></tr></thead>`;
-            for(var i=0;i<data.length;i++){
-                var n = i.Name;
-                var 
+            var trs = [];
+            for (var i = 0; i < data.length; i++) {
+                var di = data[i];
+                var n = di["Name"];
+                var on = di["OtherNames"];
+                if (on != undefined) {
+                    var cn = on["Mandarin Chinese"];
+                    if (cn != undefined) {
+                        n = cn["Name"];
+                    }
+                }
+                var heldItem = di["HeldItems"];
+                if (heldItem != undefined) {
+                    var td = `<td>${n}</td><td>${heldItem}</td>`;
+                    trs.push(td);
+                }
             }
-            var body = `<tbody>${trs}</tbody>`;
+            var body = `<tbody><tr>${trs.join("</tr><tr>")}</tr></tbody>`;
+            pokemonTable.innerHTML = `<table>${head}${body}</table>`;
         }
     </script>
 </body>
