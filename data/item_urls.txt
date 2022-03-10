@@ -12,7 +12,6 @@
 /wiki/BalmMushroom
 /wiki/Berry_(item)
 /wiki/Berry_Juice
-/wiki/Beyond_the_Sea_(Pok%C3%A9walker)
 /wiki/Big_Mushroom
 /wiki/Big_Nugget
 /wiki/Big_Pearl
@@ -242,7 +241,6 @@
 /wiki/Water_Stone
 /wiki/Weakness_Policy
 /wiki/Wide_Lens
-/wiki/Winner%27s_Path_(Pok%C3%A9walker)
 /wiki/Yache_Berry
 /wiki/Yellow_Nectar
 /wiki/Yellow_Shard

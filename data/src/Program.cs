@@ -226,24 +226,27 @@ namespace CrawlBulbapedia
                             else
                             {
                                 var itemLink = innerA.GetAttributeValue("href", "");
-                                if (itemLinks.TryGetValue(itemName, out var link))
+                                if (!itemLink.Contains("(Pok%C3%A9walker)"))
                                 {
-                                    if (link != itemLink)
+                                    if (itemLinks.TryGetValue(itemName, out var link))
                                     {
-                                        if (!itemLink.StartsWith("/wiki/Berry#")
-                                            && !itemLink.StartsWith("/wiki/Gold_Bottle_Cap#")
-                                            && !itemLink.StartsWith("/wiki/Gem#")
-                                            && !itemLink.StartsWith("/wiki/Potion#")
-                                            && !link.StartsWith("/wiki/Valuable_item#Pearl")
-                                            && !itemLink.StartsWith("/wiki/Type-enhancing_item#"))
+                                        if (link != itemLink)
                                         {
-                                            throw new InvalidOperationException();
+                                            if (!itemLink.StartsWith("/wiki/Berry#")
+                                                && !itemLink.StartsWith("/wiki/Gold_Bottle_Cap#")
+                                                && !itemLink.StartsWith("/wiki/Gem#")
+                                                && !itemLink.StartsWith("/wiki/Potion#")
+                                                && !link.StartsWith("/wiki/Valuable_item#Pearl")
+                                                && !itemLink.StartsWith("/wiki/Type-enhancing_item#"))
+                                            {
+                                                throw new InvalidOperationException();
+                                            }
                                         }
                                     }
-                                }
-                                else
-                                {
-                                    itemLinks[itemName] = itemLink;
+                                    else
+                                    {
+                                        itemLinks[itemName] = itemLink;
+                                    }
                                 }
                             }
                             var prob = td.GetDirectInnerText().Trim();
@@ -407,14 +410,6 @@ namespace CrawlBulbapedia
 
         private static void DownloadRawWebpages(string dataPath, string folder)
         {
-            if (!Directory.Exists(folder))
-            {
-                Directory.CreateDirectory(folder);
-            }
-            else
-            {
-                return;
-            }
             var path = Path.Combine(dataPath, folder + "_urls.txt");
             var file = File.ReadAllLines(path);
             foreach (var f in file)
@@ -436,7 +431,8 @@ namespace CrawlBulbapedia
         public static void DownloadWebpage(string url, string folder)
         {
             var fileName = url.Split('/').Last();
-            if (File.Exists(fileName))
+            var fullPath = folder + "/" + fileName + ".html";
+            if (File.Exists(fullPath))
             {
                 return;
             }
@@ -450,7 +446,7 @@ namespace CrawlBulbapedia
                 source = reader.ReadToEnd();
             }
 
-            File.WriteAllText(folder + "/" + fileName + ".html", source);
+            File.WriteAllText(fullPath, source);
         }
     }
 }

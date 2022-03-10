@@ -40,6 +40,7 @@
             for (var i = 0; i < data.length; i++) {
                 var di = data[i];
                 var n = di["Name"];
+                var fn = n;
                 var on = di["OtherNames"];
                 if (on != undefined) {
                     var cn = on["Mandarin Chinese"];
@@ -51,7 +52,7 @@
                 if (heldItem != undefined) {
                     var items = getHeldItems(heldItem);
 
-                    var td = `<td>${n}</td><td>${items}</td>`;
+                    var td = `<td>${n}(${fn})</td><td>${items}</td>`;
                     trs.push(td);
                 }
             }
@@ -60,7 +61,7 @@
         }
 
         function getHeldItems(heldItem) {
-            var items = "";
+            var items = [];
             for (var j = 0; j < heldItem.length; j++) {
                 var hi = heldItem[j];
                 var gen = hi["Gens"];
@@ -68,10 +69,14 @@
                     return "gen = undefined";
                 }
                 if (gen.indexOf("Diamond") >= 0) {
-                    items += hi["Name"].join("; ");
+                    var ns = hi["Name"];
+                    var ps = hi["Probability"];
+                    for (var i = 0; i < ns.length; i++) {
+                        items.push(ns[i] + ps[i]);
+                    }
                 }
             }
-            return items;
+            return items.join("; ");
         }
     </script>
 </body>
