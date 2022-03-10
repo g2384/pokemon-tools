@@ -44,17 +44,34 @@
                 if (on != undefined) {
                     var cn = on["Mandarin Chinese"];
                     if (cn != undefined) {
-                        n = cn["Name"];
+                        n = cn["Name"]["Text"];
                     }
                 }
                 var heldItem = di["HeldItems"];
                 if (heldItem != undefined) {
-                    var td = `<td>${n}</td><td>${heldItem}</td>`;
+                    var items = getHeldItems(heldItem);
+
+                    var td = `<td>${n}</td><td>${items}</td>`;
                     trs.push(td);
                 }
             }
             var body = `<tbody><tr>${trs.join("</tr><tr>")}</tr></tbody>`;
             pokemonTable.innerHTML = `<table>${head}${body}</table>`;
+        }
+
+        function getHeldItems(heldItem) {
+            var items = "";
+            for (var j = 0; j < heldItem.length; j++) {
+                var hi = heldItem[j];
+                var gen = hi["Gens"];
+                if (gen == undefined) {
+                    return "gen = undefined";
+                }
+                if (gen.indexOf("Diamond") >= 0) {
+                    items += hi["Name"].join("; ");
+                }
+            }
+            return items;
         }
     </script>
 </body>

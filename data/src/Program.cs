@@ -217,11 +217,11 @@ namespace CrawlBulbapedia
                     {
                         foreach (var td in tds)
                         {
-                            var innerA = td.GetChildNode("a", null);
-                            var itemName = innerA?.InnerText;
+                            var innerA = td.GetChildNode2("a", "image"); // not image
+                            var itemName = innerA?.InnerText.Trim();
                             if (string.IsNullOrEmpty(itemName))
                             {
-                                itemName = td.InnerText;
+                                itemName = td.InnerText.Trim();
                             }
                             else
                             {
@@ -233,7 +233,9 @@ namespace CrawlBulbapedia
                                         if (!itemLink.StartsWith("/wiki/Berry#")
                                             && !itemLink.StartsWith("/wiki/Gold_Bottle_Cap#")
                                             && !itemLink.StartsWith("/wiki/Gem#")
-                                            && !itemLink.StartsWith("/wiki/Potion#"))
+                                            && !itemLink.StartsWith("/wiki/Potion#")
+                                            && !link.StartsWith("/wiki/Valuable_item#Pearl")
+                                            && !itemLink.StartsWith("/wiki/Type-enhancing_item#"))
                                         {
                                             throw new InvalidOperationException();
                                         }

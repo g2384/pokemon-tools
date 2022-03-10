@@ -28,6 +28,11 @@ namespace CrawlBulbapedia
             return node.ChildNodes.Where(e => e.Name == childTag && e.HasClass(className)).FirstOrDefault();
         }
 
+        public static HtmlNode? GetChildNode2(this HtmlNode node, string childTag, string excludedClassName)
+        {
+            return node.ChildNodes.Where(e => e.Name == childTag && !e.HasClass(excludedClassName)).LastOrDefault();
+        }
+
         public static HtmlNode? RecursiveGetChildNode(this HtmlNode node, string childTag)
         {
             foreach(var c in node.ChildNodes)
