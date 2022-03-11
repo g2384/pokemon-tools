@@ -79,11 +79,11 @@ namespace CrawlBulbapedia
             var processedPath = "../../../../processedHTML";
             //RemoveRedundantTags(processedPath, "pokemon");
 
-            ExtractInfo(processedPath, dataPath, "pokemon");
+            //ExtractInfo(processedPath, dataPath, "pokemon");
 
             //DownloadRawWebpages(dataPath, "item");
-            //RemoveRedundantTags(processedPath, "item");
-            //ExtractItemInfo(processedPath, dataPath, "item");
+            RemoveRedundantTags(processedPath, "item");
+            ExtractItemInfo(processedPath, dataPath, "item");
         }
 
         private static void RemoveRedundantTags(string targetPath, string folder)
@@ -453,7 +453,7 @@ namespace CrawlBulbapedia
                 doc.Load(file);
                 var node = doc.DocumentNode;
                 var heading = node.SelectSingleNode("//*[@id=\"firstHeading\"]");
-                var name = heading.InnerText.Replace(" (Item)", "");
+                var name = heading.InnerText.Replace(" (item)", "", StringComparison.InvariantCultureIgnoreCase);
                 Console.Write(Environment.NewLine);
                 Console.Write(name);
                 pokemon.OtherNames = GetOtherNames(node);

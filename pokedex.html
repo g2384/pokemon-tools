@@ -103,7 +103,9 @@
                 for (var j = 0, maxj = columns.length; j < maxj; ++j) {
                     var td = _td_.cloneNode(false);
                     cellValue = arr[i][columns[j]];
-                    td.appendChild(document.createTextNode(arr[i][columns[j]] || ''));
+                    var d = document.createElement('span');
+                    d.innerHTML = arr[i][columns[j]] || '';
+                    td.appendChild(d);
                     tr.appendChild(td);
                 }
                 tbody.appendChild(tr);
@@ -151,10 +153,6 @@
             }
             var result = [];
             data = pokemonData;
-            var ths = [];
-            ths = ["Name", "Held Item"];
-            var head = `<thead><tr><th>${ths.join("</th><th>")}</th></tr></thead>`;
-            var trs = [];
             for (var i = 0; i < data.length; i++) {
                 var di = data[i];
                 var n = di["Name"];
@@ -181,8 +179,23 @@
                     selected["Catch Rate"] = catchRate["Text"];
                 }
                 selected["No."] = di["No"];
+                selected["Category"] = di["Category"].replace("Pokémon", "").trim();
+                var types = di["Types"];
+                if (types != undefined) {
+                    var keys = Object.keys(types);
+                    for (var j = 0; j < keys.length; j++) {
+                        if(keys[j] == ""){
+                            selected["Types"] = types[""].join("; ");
+                        }
+                        else if(keys[j] == fn){
+                            selected["Types"] = types[fn].join("; ");
+                        }
+                        else{
+                            selected["Other Types"] = keys[j] + ": " + types[keys[j]].join("; ") + "<br />";
+                        }
+                    }
+                }
             }
-            var body = `<tbody><tr>${trs.join("</tr><tr>")}</tr></tbody>`;
             var generatedTable = buildHtmlTable(result, ["No.", "Chinese Name"]);
             pokemonTable.append(generatedTable);
             sorttable.makeSortable(generatedTable);
