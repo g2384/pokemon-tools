@@ -105,8 +105,8 @@ namespace CrawlBulbapedia
             ExtractInfo(processedPath, dataPath, "pokemon");
 
             //DownloadRawWebpages(dataPath, "item");
-            //RemoveRedundantTags(processedPath, "item");
-            //ExtractItemInfo(processedPath, dataPath, "item");
+            RemoveRedundantTags(processedPath, "item");
+            ExtractItemInfo(processedPath, dataPath, "item");
         }
 
         private static void RemoveRedundantTags(string targetPath, string folder)
@@ -239,7 +239,6 @@ namespace CrawlBulbapedia
                 NullValueHandling = NullValueHandling.Ignore
             });
             var output = Path.Combine(targetPath, "data.json");
-            output = output.StripControlChars();
             File.WriteAllText(output, json);
         }
         static public string StripControlChars(this string s)
@@ -604,52 +603,6 @@ namespace CrawlBulbapedia
                         }
                     }
                 }
-                /*
-                var trs = heldItemsTable.ChildNodes["tbody"].GetChildNodes("tr");
-                foreach (var tr in trs.Skip(1))
-                {
-                    var ths = tr.GetChildNodes("th");
-                    var hiTable = new HeldItemTable();
-                    foreach (var th in ths)
-                    {
-                        var text = th.GetChildNode("a").InnerText;
-                        var note = th.GetChildNode("span")?.GetAttributeValue("title", "");
-                        hiTable.Gens.Add(text);
-                        hiTable.Notes.Add(note);
-                    }
-                    var tds = tr.GetChildNodes("td");
-                    if (tds == null || tds.Length == 0)
-                    {
-                        var last = itemTables.Last();
-                        last.Gens.AddRange(hiTable.Gens);
-                        last.Notes.AddRange(hiTable.Notes);
-                    }
-                    else
-                    {
-                        foreach (var td in tds)
-                        {
-                            var innerA = td.GetChildNode2("a", "image"); // not image
-                            var itemName = innerA?.InnerText.Trim();
-                            if (string.IsNullOrEmpty(itemName))
-                            {
-                                itemName = td.InnerText.Trim();
-                            }
-                            else
-                            {
-                                AddItemLink(itemLinks, innerA, itemName);
-                            }
-                            var prob = td.GetDirectInnerText().Trim();
-                            hiTable.Name.Add(itemName);
-                            hiTable.Probability.Add(prob);
-
-
-                            var image = td.GetChildNode("a", "image")?.GetChildNode("img").GetAttributeValue("src", "");
-                            hiTable.Images.Add(image);
-                        }
-                        itemTables.Add(hiTable);
-                    }
-                }
-                */
 
                 foreach (var i in itemTables)
                 {
@@ -681,6 +634,7 @@ namespace CrawlBulbapedia
             var image = r.GetChildNode("a", "image")?.GetChildNode("img").GetAttributeValue("src", "");
 
             var a = r.GetChildNode2("a", "image");
+            var rCopy = GetItemProbText(r);
             var itemLink = a.GetAttributeValue("href", "");
             var name = a?.InnerText.Trim();
             if (name == null)
@@ -694,6 +648,24 @@ namespace CrawlBulbapedia
             var exp = r.GetChildNode("span", "explain");
             var itemNote = exp?.GetAttributeValue("title", "");
             return (name, prob, image, itemNote, itemLink);
+        }
+
+        private static object GetItemProbText(HtmlNode r)
+        {
+            var text = "";
+            foreach(var c in r.ChildNodes)
+            {
+                if (c.HasClass("image"))
+                {
+                    continue;
+                }
+                if(c.GetAttributeValue("title", "") == c.InnerHtml.Trim())
+                {
+                    continue;
+                }
+                text += c.InnerText;
+            }
+            return text.Trim();                
         }
 
         private static ISet<string> KK = new HashSet<string>();
@@ -719,6 +691,7 @@ namespace CrawlBulbapedia
             }
             else
             {
+                name = name.StripControlChars();
                 if (KK.Add(name))
                 {
 

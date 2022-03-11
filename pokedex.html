@@ -184,13 +184,13 @@
                 if (types != undefined) {
                     var keys = Object.keys(types);
                     for (var j = 0; j < keys.length; j++) {
-                        if(keys[j] == ""){
+                        if (keys[j] == "") {
                             selected["Types"] = types[""].join("; ");
                         }
-                        else if(keys[j] == fn){
+                        else if (keys[j] == fn) {
                             selected["Types"] = types[fn].join("; ");
                         }
-                        else{
+                        else {
                             selected["Other Types"] = keys[j] + ": " + types[keys[j]].join("; ") + "<br />";
                         }
                     }
@@ -205,24 +205,21 @@
             var items = [];
             for (var j = 0; j < heldItem.length; j++) {
                 var hi = heldItem[j];
-                var gen = hi["Gens"];
+                var gen = hi["Games"];
                 if (gen == undefined) {
                     return "gen = undefined";
                 }
-                if (gen.indexOf("Diamond") >= 0) {
+                if (gen.indexOf("diamond") >= 0) {
                     var ns = hi["Name"];
                     var ps = hi["Probability"];
-                    for (var i = 0; i < ns.length; i++) {
-                        var nsi = ns[i];
-                        for (var o = 0; o < itemsData.length; o++) {
-                            var io = itemsData[o]["Name"];
-                            if (io == nsi || io.replace(/[ \-]/g, "") == nsi) {
-                                nsi = itemsData[o]["OtherNames"]["Mandarin Chinese"]["Name"]["Text"];
-                                nsi = toSimpleChinese(nsi);
-                            }
+                    for (var o = 0; o < itemsData.length; o++) {
+                        var io = itemsData[o]["Name"];
+                        if (io == ns || io.replace(/[ \-]/g, "") == ns) {
+                            ns = itemsData[o]["OtherNames"]["Mandarin Chinese"]["Name"]["Text"];
+                            ns = toSimpleChinese(ns);
                         }
-                        items.push(nsi + ps[i]);
                     }
+                    items.push(ns + ps);
                 }
             }
             return items.join("; ");

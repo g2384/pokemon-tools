@@ -30,7 +30,7 @@ namespace CrawlBulbapedia
 
         public static HtmlNode? GetChildNode2(this HtmlNode node, string childTag, string excludedClassName)
         {
-            return node.ChildNodes.Where(e => e.Name == childTag && !e.HasClass(excludedClassName)).LastOrDefault();
+            return node.ChildNodes.Where(e => e.Name == childTag && !e.HasClass(excludedClassName)).FirstOrDefault();
         }
 
         public static HtmlNode? RecursiveGetChildNode(this HtmlNode node, string childTag)
