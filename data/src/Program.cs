@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.Diagnostics.CodeAnalysis;
 using System.Net;
+using System.Text.RegularExpressions;
 
 namespace CrawlBulbapedia
 {
@@ -238,7 +239,12 @@ namespace CrawlBulbapedia
                 NullValueHandling = NullValueHandling.Ignore
             });
             var output = Path.Combine(targetPath, "data.json");
+            output = output.StripControlChars();
             File.WriteAllText(output, json);
+        }
+        static public string StripControlChars(this string s)
+        {
+            return Regex.Replace(s, @"[^\x20-\x7F]", "");
         }
 
         private static IDictionary<int, string> _uniqueIdCheck = new Dictionary<int, string>();
@@ -515,9 +521,9 @@ namespace CrawlBulbapedia
                                 if (exp != null)
                                 {
                                     var v = exp.GetAttributeValue("title", "");
-                                    if(!template.Notes.TryAdd(g2, new List<string>() { v }))
+                                    if (!template.Notes.TryAdd(g2, new List<string>() { v }))
                                     {
-                                        if(!template.Notes[g2].Contains(v))
+                                        if (!template.Notes[g2].Contains(v))
                                         {
                                             throw new Exception();
                                         }
@@ -537,7 +543,7 @@ namespace CrawlBulbapedia
                                 };
                                 var oldT = itemTables.FirstOrDefault(e => e.Equals(newt));
                                 var found = true;
-                                if(oldT == null)
+                                if (oldT == null)
                                 {
                                     found = false;
                                     oldT = newt;
@@ -546,9 +552,9 @@ namespace CrawlBulbapedia
                                 {
                                     oldT.Games.Add(item);
                                 }
-                                foreach(var n in template.Notes)
+                                foreach (var n in template.Notes)
                                 {
-                                    if(!oldT.Notes.TryAdd(n.Key, n.Value) && !oldT.Notes[n.Key].SequenceEqual(n.Value))
+                                    if (!oldT.Notes.TryAdd(n.Key, n.Value) && !oldT.Notes[n.Key].SequenceEqual(n.Value))
                                     {
                                         throw new Exception();
                                     }
@@ -556,9 +562,9 @@ namespace CrawlBulbapedia
                                 if (!string.IsNullOrEmpty(note))
                                 {
                                     //oldT.ItemNotes.Add(note);
-                                    foreach(var g in oldT.Games)
+                                    foreach (var g in oldT.Games)
                                     {
-                                        if(oldT.Notes.ContainsKey(g))
+                                        if (oldT.Notes.ContainsKey(g))
                                         {
                                             if (oldT.Notes[g]?.Any() == true)
                                             {
@@ -578,7 +584,7 @@ namespace CrawlBulbapedia
                                         }
                                     }
                                 }
-                                if(!string.IsNullOrEmpty(oldT.Image) && oldT.Image != image)
+                                if (!string.IsNullOrEmpty(oldT.Image) && oldT.Image != image)
                                 {
                                     throw new Exception();
                                 }
@@ -645,7 +651,7 @@ namespace CrawlBulbapedia
                 }
                 */
 
-                foreach(var i in itemTables)
+                foreach (var i in itemTables)
                 {
                     if (!i.Games.Any())
                     {
@@ -690,12 +696,35 @@ namespace CrawlBulbapedia
             return (name, prob, image, itemNote, itemLink);
         }
 
+        private static ISet<string> KK = new HashSet<string>();
+
         private static string CorrectName(string name)
         {
-            if(name == "NeverMeltIce")
+            var d = new Dictionary<string, string>()
             {
-                return "Never-Melt Ice";
+                { "NeverMeltIce", "Never-Melt Ice" },
+                { "TwistedSpoon", "Twisted Spoon" },
+                { "TinyMushroom", "Tiny Mushroom" },
+                { "BalmMushroom", "Balm Mushroom" },
+                { "BrightPowder", "Bright Powder" },
+                { "DeepSeaTooth", "Deep Sea Tooth" },
+                { "DeepSeaScale", "Deep Sea Scale" },
+                { "SilverPowder", "Silver Powder" },
+                { "BlackGlasses", "Black Glasses" },
+                { "MysteryBerry", "Mystery Berry" }
+            };
+            if (d.ContainsKey(name))
+            {
+                return d[name];
             }
+            else
+            {
+                if (KK.Add(name))
+                {
+
+                }
+            }
+            return name;
         }
 
         private static void AddItemLink(IDictionary<string, string> itemLinks, string itemLink, string? itemName)
@@ -715,12 +744,33 @@ namespace CrawlBulbapedia
                 {
                     if (link != itemLink)
                     {
-                        if (!itemLink.StartsWith("/wiki/Berry#")
+                        if (link.StartsWith("/wiki/NeverMeltIce")
+                            || link.StartsWith("/wiki/TwistedSpoon")
+                            || link.StartsWith("/wiki/TinyMushroom")
+                            || link.StartsWith("/wiki/BalmMushroom")
+                            || link.StartsWith("/wiki/BrightPowder")
+                            || link.StartsWith("/wiki/DeepSeaTooth")
+                            || link.StartsWith("/wiki/DeepSeaScale")
+                            || link.StartsWith("/wiki/SilverPowder")
+                            || link.StartsWith("/wiki/BlackGlasses"))
+                        {
+                            itemLinks[itemName] = itemLink;
+                        }
+                        else if (!itemLink.StartsWith("/wiki/Berry#")
                             && !itemLink.StartsWith("/wiki/Gold_Bottle_Cap#")
                             && !itemLink.StartsWith("/wiki/Gem#")
                             && !itemLink.StartsWith("/wiki/Potion#")
                             && !link.StartsWith("/wiki/Valuable_item#Pearl")
-                            && !itemLink.StartsWith("/wiki/Type-enhancing_item#"))
+                            && !itemLink.StartsWith("/wiki/Type-enhancing_item#")
+                            && !itemLink.StartsWith("/wiki/NeverMeltIce")
+                            && !itemLink.StartsWith("/wiki/TwistedSpoon")
+                            && !itemLink.StartsWith("/wiki/TinyMushroom")
+                            && !itemLink.StartsWith("/wiki/BalmMushroom")
+                            && !itemLink.StartsWith("/wiki/BrightPowder")
+                            && !itemLink.StartsWith("/wiki/DeepSeaTooth")
+                            && !itemLink.StartsWith("/wiki/DeepSeaScale")
+                            && !itemLink.StartsWith("/wiki/SilverPowder")
+                            && !itemLink.StartsWith("/wiki/BlackGlasses"))
                         {
                             throw new InvalidOperationException();
                         }

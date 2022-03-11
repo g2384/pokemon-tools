@@ -21,14 +21,12 @@
 /wiki/Black_Belt_(item)
 /wiki/Black_Glasses
 /wiki/Black_Sludge
-/wiki/BlackGlasses
 /wiki/Blastoisinite
 /wiki/Blazikenite
 /wiki/Blue_Shard
 /wiki/Bottle_Cap
 /wiki/Brick_Piece
 /wiki/Bright_Powder
-/wiki/BrightPowder
 /wiki/Burnt_Berry
 /wiki/Cameruptite
 /wiki/Cell_Battery
@@ -48,8 +46,6 @@
 /wiki/Custap_Berry
 /wiki/Deep_Sea_Scale
 /wiki/Deep_Sea_Tooth
-/wiki/DeepSeaScale
-/wiki/DeepSeaTooth
 /wiki/Destiny_Knot
 /wiki/Detect_(move)
 /wiki/Dragon_Fang
@@ -146,7 +142,6 @@
 /wiki/MysteryBerry
 /wiki/Mystic_Water
 /wiki/Never-Melt_Ice
-/wiki/NeverMeltIce
 /wiki/Normal_Box
 /wiki/Normal_Gem
 /wiki/Nugget
@@ -208,7 +203,6 @@
 /wiki/Silk_Scarf
 /wiki/Silver_Leaf
 /wiki/Silver_Powder
-/wiki/SilverPowder
 /wiki/Sitrus_Berry
 /wiki/Slowbronite
 /wiki/Smoke_Ball
@@ -230,10 +224,8 @@
 /wiki/Throat_Spray
 /wiki/Thunder_Stone
 /wiki/Tiny_Mushroom
-/wiki/TinyMushroom
 /wiki/Toxic_Orb
 /wiki/Twisted_Spoon
-/wiki/TwistedSpoon
 /wiki/Tyranitarite
 /wiki/Ultranecrozium_Z
 /wiki/Valuable_item#Pearl
