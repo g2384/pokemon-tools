@@ -1,7 +1,6 @@
 ﻿using HtmlAgilityPack;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using System.Text.RegularExpressions;
 
@@ -13,43 +12,6 @@ namespace CrawlBulbapedia
         public IDictionary<Language, ForeignName> OtherNames { get; set; }
     }
 
-    public class HeldItemTable : IEqualityComparer<HeldItemTable>, IEquatable<HeldItemTable>
-    {
-        public string Name { get; set; }
-        public string Probability { get; set; }
-        public ISet<GameVersion> Games { get; set; } = new HashSet<GameVersion>();
-        public Dictionary<GameVersion, List<string>> Notes { get; set; } = new Dictionary<GameVersion, List<string>>();
-        public List<string> ItemNotes { get; set; } = new List<string>();
-        public string Image { get; set; }
-
-        public bool Equals(HeldItemTable? x, HeldItemTable? y)
-        {
-            if (x == null && y == x)
-            {
-                return true;
-            }
-            if (y == null)
-            {
-                return false;
-            }
-            if (x.Name == y.Name && x.Probability == y.Probability)
-            {
-                return true;
-            }
-            return false;
-        }
-
-        public bool Equals(HeldItemTable? other)
-        {
-            return Equals(this, other);
-        }
-
-        public int GetHashCode([DisallowNull] HeldItemTable obj)
-        {
-            return obj.Name.GetHashCode() ^ obj.Probability.GetHashCode();
-        }
-    }
-
     public class Pokemon
     {
         public string Name { get; set; }
@@ -59,6 +21,21 @@ namespace CrawlBulbapedia
         public AnnotatedText CatchRate { get; set; }
         public string Category { get; set; } // pokemon type
         public IDictionary<string, PokemonType[]> Types { get; set; }
+        public PokemonStat BaseStats { get; set; }
+        public PokemonStat MaxStatsAt50 { get; set; }
+        public PokemonStat MinStatsAt50 { get; set; }
+        public PokemonStat MaxStatsAt100 { get; set; }
+        public PokemonStat MinStatsAt100 { get; set; }
+    }
+
+    public class PokemonStat
+    {
+        public int HP { get; set; }
+        public int Attack { get; set; }
+        public int Defense { get; set; }
+        public int SpecialAttach { get; set; }
+        public int SpecialDefense { get; set; }
+        public int Speed { get; set; }
     }
 
     public class ForeignName
@@ -100,104 +77,19 @@ namespace CrawlBulbapedia
             //DownloadRawWebpages(dataPath, "pokemon");
 
             var processedPath = "../../../../processedHTML";
-            //RemoveRedundantTags(processedPath, "pokemon");
+            //RemoveTag.Remove(processedPath, "pokemon");
 
             ExtractInfo(processedPath, dataPath, "pokemon");
 
             //DownloadRawWebpages(dataPath, "item");
-            //RemoveRedundantTags(processedPath, "item");
+            //RemoveTag.Remove(processedPath, "item");
             //ExtractItemInfo(processedPath, dataPath, "item");
-        }
-
-        private static void RemoveRedundantTags(string targetPath, string folder)
-        {
-            var path = Directory.GetCurrentDirectory() + "\\" + folder;
-            var p2 = Path.Combine(targetPath, folder);
-            if (!Directory.Exists(p2))
-            {
-                Directory.CreateDirectory(p2);
-            }
-            var files = GetAllFiles(path, "*.html").ToArray();
-            var data = new List<Pokemon>();
-            var itemLinks = new Dictionary<string, string>();
-            foreach (var file in files)
-            {
-                var pokemon = new Pokemon();
-                var doc = new HtmlDocument();
-                doc.Load(file);
-                var node = doc.DocumentNode;
-                var html = node.GetChildNode("html");
-                if (html == null)
-                {
-                    throw new Exception();
-                }
-
-                var body = html.GetChildNode("body");
-                if (body == null)
-                {
-                    throw new Exception();
-                }
-                var div = body.GetChildNodeById("div", "globalWrapper");
-                if (div == null)
-                {
-                    throw new Exception();
-                }
-                var content = div.GetChildNodeById("div", "column-content");
-                if (content == null)
-                {
-                    throw new Exception();
-                }
-                var content2 = content.GetChildNodeById("div", "content");
-                if (content2 == null)
-                {
-                    throw new Exception();
-                }
-                var lastTwo = content2.ChildNodes.Where(e => e.Name != "h1" && e.Id != "bodyContent").ToArray();
-                foreach (var l in lastTwo)
-                {
-                    content2.RemoveChild(l);
-                }
-
-                RemoveTableByCondition(content2, "tbody", "h1", "h2", "h3", "a", "span");
-
-                var p = Path.Combine(p2, file.Split("\\").Last());
-                var str = content2.OuterHtml;
-                File.WriteAllText(p, str);
-                var fi = new FileInfo(file).Length;
-                var f2 = new FileInfo(p).Length;
-                Console.WriteLine($"{fi} -> {f2} ({Math.Round((decimal)f2 / fi, 3)})");
-            }
-        }
-
-        private static void RemoveTableByCondition(HtmlNode content2, params string[] stopAt)
-        {
-            var cs = content2.ChildNodes.ToArray();
-            foreach (var c in cs)
-            {
-                if (c.Name == "table")
-                {
-                    var inn = c.InnerText;
-                    if (inn.Contains("This section is incomplete.")
-                        || inn.Contains("This template is incomplete."))
-                    {
-                        content2.RemoveChild(c);
-                    }
-                }
-                else if (stopAt.Contains(c.Name))
-                {
-                    continue;
-                }
-                else
-                {
-                    RemoveTableByCondition(c, stopAt);
-                }
-            }
         }
 
         private static void ExtractInfo(string sourcePath, string targetPath, string folder)
         {
             sourcePath = Path.Combine(sourcePath, folder);
-            var files = GetAllFiles(sourcePath, "*.html").ToArray();
+            var files = FileHelper.GetAllFiles(sourcePath, "*.html").ToArray();
             var data = new List<Pokemon>();
             var itemLinks = new Dictionary<string, string>();
             foreach (var file in files)
@@ -445,7 +337,7 @@ namespace CrawlBulbapedia
         private static void ExtractItemInfo(string sourcePath, string targetPath, string folder)
         {
             sourcePath = Path.Combine(sourcePath, folder);
-            var files = GetAllFiles(sourcePath, "*.html").ToArray();
+            var files = FileHelper.GetAllFiles(sourcePath, "*.html").ToArray();
             var data = new List<Item>();
             foreach (var file in files)
             {
@@ -1024,18 +916,6 @@ namespace CrawlBulbapedia
                 }
             }
             return null;
-        }
-
-        public static IEnumerable<string> GetAllFiles(string path, string mask, Func<FileInfo, bool>? checkFile = null)
-        {
-            if (string.IsNullOrEmpty(mask))
-                mask = "*.*";
-            var files = Directory.GetFiles(path, mask, SearchOption.AllDirectories).OrderBy(e => e);
-            foreach (var file in files)
-            {
-                if (checkFile == null || checkFile(new FileInfo(file)))
-                    yield return file;
-            }
         }
 
         private static void DownloadRawWebpages(string dataPath, string folder)
