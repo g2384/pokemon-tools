@@ -1,13 +1,36 @@
 <html>
 
 <head>
+    <script src="./js/sorttable.min.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
 
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ebf4ff;
+        }
+
+        th {
+            background-color: rgb(22, 98, 141);
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
     <div id="filters"></div>
     <div id="pokemons"></div>
     <script>
+
         var getJSON = function (url, callback) {
             var xhr = new XMLHttpRequest();
             xhr.open('GET', url, true);
@@ -29,10 +52,70 @@
                 if (err !== null) {
                     alert('Something went wrong: ' + err);
                 } else {
-                    displayP(data);
+                    pokemonData = data;
+                    displayP();
                 }
             });
+        getJSON('./data/items.json',
+            function (err, data) {
+                if (err !== null) {
+                    alert('Something went wrong: ' + err);
+                } else {
+                    itemsData = data;
+                    displayP();
+                }
+            });
+        var pokemonData = null;
+        var itemsData = null;
+
+        var _table_ = document.createElement('table'),
+            _tr_ = document.createElement('tr'),
+            _th_ = document.createElement('th'),
+            _td_ = document.createElement('td');
+
+        function buildHtmlTable(arr) {
+            var table = _table_.cloneNode(false),
+                columns = addAllColumnHeaders(arr, table);
+            var tbody = document.createElement('tbody');
+            for (var i = 0, maxi = arr.length; i < maxi; ++i) {
+                var tr = _tr_.cloneNode(false);
+                for (var j = 0, maxj = columns.length; j < maxj; ++j) {
+                    var td = _td_.cloneNode(false);
+                    cellValue = arr[i][columns[j]];
+                    td.appendChild(document.createTextNode(arr[i][columns[j]] || ''));
+                    tr.appendChild(td);
+                }
+                tbody.appendChild(tr);
+            }
+            table.appendChild(tbody);
+            return table;
+        }
+
+        function addAllColumnHeaders(arr, table) {
+            var columnSet = [],
+                tr = _tr_.cloneNode(false);
+            var thead = document.createElement('thead');
+            for (var i = 0, l = arr.length; i < l; i++) {
+                for (var key in arr[i]) {
+                    if (arr[i].hasOwnProperty(key) && columnSet.indexOf(key) === -1) {
+                        columnSet.push(key);
+                        var th = _th_.cloneNode(false);
+                        th.appendChild(document.createTextNode(key));
+                        tr.appendChild(th);
+                    }
+                }
+            }
+            thead.appendChild(tr);
+            table.appendChild(thead);
+            return columnSet;
+        }
+
         function displayP(data) {
+            if (pokemonData == null || itemsData == null) {
+                return;
+            }
+            var result = [];
+            data = pokemonData;
             var ths = [];
             ths = ["Name", "Held Item"];
             var head = `<thead><tr><th>${ths.join("</th><th>")}</th></tr></thead>`;
@@ -42,22 +125,27 @@
                 var n = di["Name"];
                 var fn = n;
                 var on = di["OtherNames"];
+                var selected = {};
                 if (on != undefined) {
                     var cn = on["Mandarin Chinese"];
                     if (cn != undefined) {
                         n = cn["Name"]["Text"];
+                        n = toSimpleChinese(n);
                     }
                 }
+                selected["Chinese Name"] = n;
+                selected["English Name"] = fn;
                 var heldItem = di["HeldItems"];
                 if (heldItem != undefined) {
                     var items = getHeldItems(heldItem);
-
-                    var td = `<td>${n}(${fn})</td><td>${items}</td>`;
-                    trs.push(td);
+                    selected["Held Items"] = items;
+                    result.push(selected);
                 }
             }
             var body = `<tbody><tr>${trs.join("</tr><tr>")}</tr></tbody>`;
-            pokemonTable.innerHTML = `<table>${head}${body}</table>`;
+            var generatedTable = buildHtmlTable(result);
+            pokemonTable.append(generatedTable);
+            sorttable.makeSortable(generatedTable);
         }
 
         function getHeldItems(heldItem) {
@@ -72,11 +160,26 @@
                     var ns = hi["Name"];
                     var ps = hi["Probability"];
                     for (var i = 0; i < ns.length; i++) {
-                        items.push(ns[i] + ps[i]);
+                        var nsi = ns[i];
+                        for (var o = 0; o < itemsData.length; o++) {
+                            var io = itemsData[o]["Name"];
+                            if (io == nsi || io.replace(/[ \-]/g, "") == nsi) {
+                                nsi = itemsData[o]["OtherNames"]["Mandarin Chinese"]["Name"]["Text"];
+                                nsi = toSimpleChinese(nsi);
+                            }
+                        }
+                        items.push(nsi + ps[i]);
                     }
                 }
             }
             return items.join("; ");
+        }
+
+        function toSimpleChinese(t) {
+            if (t.indexOf("/") >= 0) {
+                return t.split("/")[1].trim();
+            }
+            return t;
         }
     </script>
 </body>

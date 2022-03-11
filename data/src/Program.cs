@@ -194,7 +194,6 @@ namespace CrawlBulbapedia
             sourcePath = Path.Combine(sourcePath, folder);
             var files = GetAllFiles(sourcePath, "*.html").ToArray();
             var data = new List<Item>();
-            var itemLinks = new Dictionary<string, string>();
             foreach (var file in files)
             {
                 var pokemon = new Item();
@@ -202,7 +201,7 @@ namespace CrawlBulbapedia
                 doc.Load(file);
                 var node = doc.DocumentNode;
                 var heading = node.SelectSingleNode("//*[@id=\"firstHeading\"]");
-                var name = heading.InnerText.Replace(" (Pokémon)", "");
+                var name = heading.InnerText.Replace(" (Item)", "");
                 Console.Write(Environment.NewLine);
                 Console.Write(name);
                 pokemon.OtherNames = GetOtherNames(node);
@@ -225,8 +224,6 @@ namespace CrawlBulbapedia
 
                 }
             }
-            var outLinks = Path.Combine(targetPath, "item_urls.txt");
-            File.WriteAllText(outLinks, string.Join("\n", itemLinks.Values.OrderBy(e => e)));
             var json = JsonConvert.SerializeObject(data, Formatting.Indented, new JsonSerializerSettings()
             {
                 NullValueHandling = NullValueHandling.Ignore
