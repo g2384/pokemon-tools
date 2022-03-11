@@ -21,6 +21,11 @@ namespace CrawlBulbapedia
         public AnnotatedText CatchRate { get; set; }
         public string Category { get; set; } // pokemon type
         public IDictionary<string, PokemonType[]> Types { get; set; }
+        public IDictionary<string, Stats> Stats { get; set; } = new Dictionary<string, Stats>();
+    }
+
+    public class Stats
+    {
         public PokemonStat BaseStats { get; set; }
         public PokemonStat MaxStatsAt50 { get; set; }
         public PokemonStat MinStatsAt50 { get; set; }
@@ -33,7 +38,7 @@ namespace CrawlBulbapedia
         public int HP { get; set; }
         public int Attack { get; set; }
         public int Defense { get; set; }
-        public int SpecialAttach { get; set; }
+        public int SpecialAttack { get; set; }
         public int SpecialDefense { get; set; }
         public int Speed { get; set; }
     }
@@ -105,6 +110,18 @@ namespace CrawlBulbapedia
                 pokemon.OtherNames = GetOtherNames(node);
                 pokemon.Name = name;
                 pokemon.HeldItems = GetHeldItemTables(node, itemLinks);
+                var stats = GetBaseStats(node);
+                foreach (var s in stats)
+                {
+                    pokemon.Stats[s.Item1] = new Stats()
+                    {
+                        BaseStats = s.Item2,
+                        MaxStatsAt50 = s.Item3,
+                        MinStatsAt50 = s.Item4,
+                        MaxStatsAt100 = s.Item5,
+                        MinStatsAt100 = s.Item6
+                    };
+                }
 
                 GetPokeInfo(node, pokemon);
 
@@ -133,6 +150,148 @@ namespace CrawlBulbapedia
             var output = Path.Combine(targetPath, "data.json");
             File.WriteAllText(output, json);
         }
+
+        private static Regex newLines = new Regex(@"\n+", RegexOptions.Compiled);
+
+        private static List<(string, PokemonStat, PokemonStat, PokemonStat, PokemonStat, PokemonStat)> GetBaseStats(HtmlNode node)
+        {
+            var cc = node.SelectSingleNode("//div[@id=\"mw-content-text\"]//*[@id=\"Base_stats\"]//parent::h4");
+            if (cc == null)
+            {
+                //throw new Exception();
+                //TODO fix this;
+                return new List<(string, PokemonStat, PokemonStat, PokemonStat, PokemonStat, PokemonStat)>();
+            }
+            var l = new List<(string, PokemonStat, PokemonStat, PokemonStat, PokemonStat, PokemonStat)>();
+            var nt = cc;
+            while (true)
+            {
+                nt = GetNextTable(nt, out var soStr, "h5");
+                if (string.IsNullOrEmpty(soStr))
+                {
+                    soStr = "";
+                }
+                if (nt == null)
+                {
+                    break;
+                }
+                var (baseStat, maxAt50, minAt50, maxAt100, minAt100) = GetStat(nt);
+                l.Add((soStr, baseStat, maxAt50, minAt50, maxAt100, minAt100));
+            }
+            return l;
+        }
+
+        private static (PokemonStat, PokemonStat, PokemonStat, PokemonStat, PokemonStat) GetStat(HtmlNode? nt)
+        {
+            var baseStat = new PokemonStat();
+            var maxAt50 = new PokemonStat();
+            var maxAt100 = new PokemonStat();
+            var minAt50 = new PokemonStat();
+            var minAt100 = new PokemonStat();
+            var ths = nt.GetNearestNodes("tr");
+            foreach (var th in ths)
+            {
+                var t = th.InnerText.Trim();
+                if (t.Contains("Stat"))
+                {
+                    continue;
+                }
+                if (t.Contains("At Lv. 50"))
+                {
+                    continue;
+                }
+                if (t.StartsWith("Tota"))
+                {
+                    continue;
+                }
+                if (t.Contains("Minimum stats are"))
+                {
+                    continue;
+                }
+                var sp = newLines.Split(t);
+                if (sp.Length != 3)
+                {
+                    continue;
+                }
+                if (sp[0].StartsWith("HP"))
+                {
+                    var (v1, v2, v3, v4, v5) = GetStatNumbers(sp);
+                    baseStat.HP = v1;
+                    minAt50.HP = v2;
+                    maxAt50.HP = v3;
+                    minAt100.HP = v4;
+                    maxAt100.HP = v5;
+                }
+                else if (sp[0].StartsWith("Attack"))
+                {
+                    var (v1, v2, v3, v4, v5) = GetStatNumbers(sp);
+                    baseStat.Attack = v1;
+                    minAt50.Attack = v2;
+                    maxAt50.Attack = v3;
+                    minAt100.Attack = v4;
+                    maxAt100.Attack = v5;
+                }
+                else if (sp[0].StartsWith("Defense"))
+                {
+                    var (v1, v2, v3, v4, v5) = GetStatNumbers(sp);
+                    baseStat.Defense = v1;
+                    minAt50.Defense = v2;
+                    maxAt50.Defense = v3;
+                    minAt100.Defense = v4;
+                    maxAt100.Defense = v5;
+                }
+                else if (sp[0].StartsWith("Sp. Atk"))
+                {
+                    var (v1, v2, v3, v4, v5) = GetStatNumbers(sp);
+                    baseStat.SpecialAttack = v1;
+                    minAt50.SpecialAttack = v2;
+                    maxAt50.SpecialAttack = v3;
+                    minAt100.SpecialAttack = v4;
+                    maxAt100.SpecialAttack = v5;
+                }
+                else if (sp[0].StartsWith("Sp. Def"))
+                {
+                    var (v1, v2, v3, v4, v5) = GetStatNumbers(sp);
+                    baseStat.SpecialDefense = v1;
+                    minAt50.SpecialDefense = v2;
+                    maxAt50.SpecialDefense = v3;
+                    minAt100.SpecialDefense = v4;
+                    maxAt100.SpecialDefense = v5;
+                }
+                else if (sp[0].StartsWith("Speed"))
+                {
+                    var (v1, v2, v3, v4, v5) = GetStatNumbers(sp);
+                    baseStat.Speed = v1;
+                    minAt50.Speed = v2;
+                    maxAt50.Speed = v3;
+                    minAt100.Speed = v4;
+                    maxAt100.Speed = v5;
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            return (baseStat, maxAt50, minAt50, maxAt100, minAt100);
+        }
+
+        private static (int, int, int, int, int) GetStatNumbers(string[] sp)
+        {
+            var hp = sp[0].Split(":")[1];
+            var hpv = int.Parse(hp);
+            var h2 = sp[1].Split("-");
+            var h3 = sp[2].Split("-");
+            var minv = h2[0];
+            var mv = int.Parse(minv);
+            var maxv = h2[1];
+            var mv2 = int.Parse(maxv);
+            var minv2 = h3[0];
+            var mv3 = int.Parse(minv2);
+            var maxv2 = h3[1];
+            var mv4 = int.Parse(maxv2);
+            return (hpv, mv, mv2, mv3, mv4);
+        }
+
         static public string StripControlChars(this string s)
         {
             return Regex.Replace(s, @"[^\x20-\x7F]", "");
@@ -143,7 +302,6 @@ namespace CrawlBulbapedia
         private static void GetPokeInfo(HtmlNode node, Pokemon pokemon)
         {
             var cc = node.SelectSingleNode("//div[@id=\"mw-content-text\"]/div/table[2]");
-            var crw = cc.InnerText;
 
             var tds = cc.GetNearestNodes("td", "table");
             foreach (var td in tds)
@@ -892,10 +1050,37 @@ namespace CrawlBulbapedia
             return (p3, p2, exp);
         }
 
+        private static HtmlNode? GetNextTable(HtmlNode heldItems, out string stepOverTagstr, string stepOverTag = "")
+        {
+            stepOverTagstr = null;
+            var h3 = heldItems.NextSibling;
+            while (h3.Name == "#text" || h3.Name=="p" || h3.Name == stepOverTag)
+            {
+                h3 = h3.NextSibling;
+                if (h3.Name == stepOverTag)
+                {
+                    stepOverTagstr = h3.InnerText.Trim();
+                }
+            }
+            if (h3.Name == "table")
+            {
+                var t2 = h3.ChildNodes["tbody"];
+                var t3 = t2?.ChildNodes["tr"];
+                var t4 = t3?.ChildNodes["td"];
+                var t5 = t4?.ChildNodes["table"];
+                if (t5 != null)
+                {
+                    return t5;
+                }
+                return h3;
+            }
+            return null;
+        }
+
         private static HtmlNode? GetNextTable(HtmlNode heldItems)
         {
             var heldItemsTable2 = heldItems.ParentNode;
-            if (heldItemsTable2.Name == "h3" || heldItemsTable2.Name == "h2")
+            if (heldItemsTable2.Name == "h3" || heldItemsTable2.Name == "h2" || heldItemsTable2.Name == "h4")
             {
                 var h3 = heldItemsTable2.NextSibling;
                 while (h3.Name == "#text")

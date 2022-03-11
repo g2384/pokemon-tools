@@ -174,6 +174,10 @@
                     selected["Held Items"] = items;
                     result.push(selected);
                 }
+                var stats = di["Stats"];
+                if (stats != undefined) {
+                    getStats(stats, selected);
+                }
                 var catchRate = di["CatchRate"];
                 if (catchRate != undefined) {
                     selected["Catch Rate"] = catchRate["Text"];
@@ -199,6 +203,24 @@
             var generatedTable = buildHtmlTable(result, ["No.", "Chinese Name"]);
             pokemonTable.append(generatedTable);
             sorttable.makeSortable(generatedTable);
+        }
+
+        function getStats(stats, item) {
+            var keys = Object.keys(stats);
+            if(keys.length == 0){
+                return;
+            }
+            var f = keys[0];
+            var f1 = stats[f];
+            var ma50 = f1["MaxStatsAt50"];
+            item["Max at 50 HP"] = ma50["HP"];
+            item["Max at 50 Defense"] = ma50["Defense"];
+            item["Max at 50 Attack"] = ma50["Attack"];
+            item["Max at 50 Speed"] = ma50["Speed"];
+            item["Max at 50 SpecialAttack"] = ma50["SpecialAttack"];
+            item["Max at 50 SpecialDefense"] = ma50["SpecialDefense"];
+            item["Max at 50 Total"] = ma50["Attack"] + ma50["HP"] + ma50["Defense"]
+                + ma50["Speed"] + ma50["SpecialAttack"] + ma50["SpecialDefense"];
         }
 
         function getHeldItems(heldItem) {
