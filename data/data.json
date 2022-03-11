@@ -144,7 +144,7 @@
     },
     "HeldItems": [
       {
-        "Name": "Psych Up",
+        "Name": "TM09",
         "Probability": "() (100%)",
         "Games": [
           "red",
@@ -19967,14 +19967,12 @@
         "Name": {
           "Text": "에레키드",
           "Pronunciation": "Elekid",
-          "Explanation": "*",
           "Meaning": "Transcription of Japanese name"
         },
         "OtherNames": [
           {
             "Text": "엘레키드",
-            "Pronunciation": "Elekid",
-            "Explanation": "*"
+            "Pronunciation": "Elekid"
           }
         ]
       },
@@ -20000,8 +19998,8 @@
     },
     "HeldItems": [
       {
-        "Name": "Pearl",
-        "Probability": "(: 50%)(: 5%)",
+        "Name": "Electirizer",
+        "Probability": "(Diamond: 50%)(Pearl: 5%)",
         "Games": [
           "diamond",
           "pearl"
@@ -25621,7 +25619,7 @@
     },
     "HeldItems": [
       {
-        "Name": "Ice Punch",
+        "Name": "TM33",
         "Probability": "() (100%)",
         "Games": [
           "red",
@@ -30563,7 +30561,7 @@
     },
     "HeldItems": [
       {
-        "Name": "Ice Punch",
+        "Name": "TM33",
         "Probability": "() (100%)",
         "Games": [
           "red",
@@ -34430,7 +34428,7 @@
     },
     "HeldItems": [
       {
-        "Name": "Ice Punch",
+        "Name": "TM33",
         "Probability": "() (100%)",
         "Games": [
           "red",
@@ -36339,7 +36337,7 @@
         "Image": "//archives.bulbagarden.net/media/upload/c/c9/Bag_Lagging_Tail_Sprite.png"
       },
       {
-        "Name": "Rest",
+        "Name": "TM44",
         "Probability": "() (100%)",
         "Games": [
           "ranch"
@@ -38700,8 +38698,8 @@
     },
     "HeldItems": [
       {
-        "Name": "Pearl",
-        "Probability": "(: 5%)(: 50%)",
+        "Name": "Magmarizer",
+        "Probability": "(Diamond: 5%)(Pearl: 50%)",
         "Games": [
           "diamond",
           "pearl"
@@ -44661,8 +44659,8 @@
         "Image": "//archives.bulbagarden.net/media/upload/0/0f/Bag_Leftovers_Sprite.png"
       },
       {
-        "Name": "Winner's Path",
-        "Probability": "( only, 100%)",
+        "Name": "Leftovers",
+        "Probability": "(Winner's Path only, 100%)",
         "Games": [
           "Pokéwalker"
         ],
@@ -45454,7 +45452,7 @@
     },
     "HeldItems": [
       {
-        "Name": "Detect",
+        "Name": "TM43",
         "Probability": "() (100%)",
         "Games": [
           "red",
@@ -45545,7 +45543,7 @@
     },
     "HeldItems": [
       {
-        "Name": "Detect",
+        "Name": "TM43",
         "Probability": "() (100%)",
         "Games": [
           "red",
@@ -65107,7 +65105,7 @@
     },
     "HeldItems": [
       {
-        "Name": "Ice Punch",
+        "Name": "TM33",
         "Probability": "() (100%)",
         "Games": [
           "red",
@@ -65206,8 +65204,8 @@
         "Image": "//archives.bulbagarden.net/media/upload/7/7b/Bag_Star_Piece_Sprite.png"
       },
       {
-        "Name": "Beyond the Sea",
-        "Probability": "( only, 100%)",
+        "Name": "Water Stone",
+        "Probability": "(Beyond the Sea only, 100%)",
         "Games": [
           "Pokéwalker"
         ],

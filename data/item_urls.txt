@@ -47,7 +47,6 @@
 /wiki/Deep_Sea_Scale
 /wiki/Deep_Sea_Tooth
 /wiki/Destiny_Knot
-/wiki/Detect_(move)
 /wiki/Dragon_Fang
 /wiki/Dragon_Gem
 /wiki/Dragon_Scale
@@ -89,7 +88,6 @@
 /wiki/Honey
 /wiki/Houndoominite
 /wiki/Ice_Berry
-/wiki/Ice_Punch_(move)
 /wiki/Iron_Ball
 /wiki/Jaboca_Berry
 /wiki/Kangaskhanite
@@ -165,7 +163,6 @@
 /wiki/Pretty_Feather
 /wiki/Pretty_Wing
 /wiki/Protein
-/wiki/Psych_Up_(move)
 /wiki/Psychic_Seed
 /wiki/Qualot_Berry
 /wiki/Quick_Claw
@@ -181,7 +178,6 @@
 /wiki/Red_Scarf
 /wiki/Red_Shard
 /wiki/Relic_Gold
-/wiki/Rest_(move)
 /wiki/Revival_Herb
 /wiki/Revive
 /wiki/Ribbon_Sweet
@@ -224,6 +220,10 @@
 /wiki/Throat_Spray
 /wiki/Thunder_Stone
 /wiki/Tiny_Mushroom
+/wiki/TM09
+/wiki/TM33
+/wiki/TM43
+/wiki/TM44
 /wiki/Toxic_Orb
 /wiki/Twisted_Spoon
 /wiki/Tyranitarite

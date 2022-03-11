@@ -105,8 +105,8 @@ namespace CrawlBulbapedia
             ExtractInfo(processedPath, dataPath, "pokemon");
 
             //DownloadRawWebpages(dataPath, "item");
-            RemoveRedundantTags(processedPath, "item");
-            ExtractItemInfo(processedPath, dataPath, "item");
+            //RemoveRedundantTags(processedPath, "item");
+            //ExtractItemInfo(processedPath, dataPath, "item");
         }
 
         private static void RemoveRedundantTags(string targetPath, string folder)
@@ -634,7 +634,7 @@ namespace CrawlBulbapedia
             var image = r.GetChildNode("a", "image")?.GetChildNode("img").GetAttributeValue("src", "");
 
             var a = r.GetChildNode2("a", "image");
-            var rCopy = GetItemProbText(r);
+            var prob = GetItemProbText(r);
             var itemLink = a.GetAttributeValue("href", "");
             var name = a?.InnerText.Trim();
             if (name == null)
@@ -643,29 +643,54 @@ namespace CrawlBulbapedia
             }
             name = CorrectName(name);
 
-            var prob = r.GetDirectInnerText().Trim();
+            //var prob = r.GetDirectInnerText().Trim();
 
             var exp = r.GetChildNode("span", "explain");
             var itemNote = exp?.GetAttributeValue("title", "");
             return (name, prob, image, itemNote, itemLink);
         }
 
-        private static object GetItemProbText(HtmlNode r)
+        private static string GetItemProbText(HtmlNode r)
         {
             var text = "";
-            foreach(var c in r.ChildNodes)
+            foreach (var c in r.ChildNodes)
             {
                 if (c.HasClass("image"))
                 {
                     continue;
                 }
-                if(c.GetAttributeValue("title", "") == c.InnerHtml.Trim())
+                var title = c.GetAttributeValue("title", "");
+                var inner = c.InnerHtml.Trim();
+                if (!string.IsNullOrEmpty(title))
+                {
+                    title = title.Replace("&#39;", "'");
+                    var src = c.GetAttributeValue("href", "");
+                    if (!src.Contains("(Pok%C3%A9walker)"))
+                    {
+                        title = title.StripControlChars();
+                        inner = inner.StripControlChars();
+                        if (title == inner || title.Contains(inner))
+                        {
+                            continue;
+                        }
+                        var inner2 = inner.Replace(" ", "");
+                        var src2 = src.Replace("_", "");
+                        if (!src.StartsWith("/wiki/Pok"))
+                        {
+                            if (src.Contains(inner) || src2.Contains(inner2))
+                            {
+                                continue;
+                            }
+                        }
+                    }
+                }
+                if (c.HasClass("explain"))
                 {
                     continue;
                 }
                 text += c.InnerText;
             }
-            return text.Trim();                
+            return text.Trim();
         }
 
         private static ISet<string> KK = new HashSet<string>();
@@ -960,7 +985,17 @@ namespace CrawlBulbapedia
             pinyinNode.LoadHtml(text);
             var p = pinyinNode.DocumentNode;
             var p2 = p.RecursiveGetChildNode("i")?.InnerText.Trim();
-            var exp = p.RecursiveGetChildNode("span")?.GetAttributeValue("title", null);
+            var expSpan = p.RecursiveGetChildNode("span");
+            var exp = default(string);
+            if (expSpan != null)
+            {
+                exp = expSpan.GetAttributeValue("title", null);
+                var inner = expSpan.InnerText.Trim();
+                if (exp == "*" || string.IsNullOrEmpty(inner))
+                {
+                    exp = null;
+                }
+            }
             var p3 = p.GetDirectInnerText().Trim();
             return (p3, p2, exp);
         }
