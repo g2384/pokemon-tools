@@ -32,6 +32,10 @@ namespace CrawlBulbapedia
         public string Name { get; set; }
         public IDictionary<Language, ForeignName> OtherNames { get; set; }
         public IList<HeldItemTable> HeldItems { get; set; } = new List<HeldItemTable>();
+        public int No { get; set; }
+        public AnnotatedText CatchRate { get; set; }
+        public string Category { get; set; } // pokemon type
+        public IDictionary<string, PokemonType[]> Types { get; set; }
     }
 
     public class ForeignName
@@ -79,7 +83,7 @@ namespace CrawlBulbapedia
 
             //DownloadRawWebpages(dataPath, "item");
             //RemoveRedundantTags(processedPath, "item");
-            ExtractItemInfo(processedPath, dataPath, "item");
+            //ExtractItemInfo(processedPath, dataPath, "item");
         }
 
         private static void RemoveRedundantTags(string targetPath, string folder)
@@ -162,6 +166,7 @@ namespace CrawlBulbapedia
                 pokemon.Name = name;
                 pokemon.HeldItems = GetHeldItemTables(node, itemLinks);
 
+                GetPokeInfo(node, pokemon);
 
                 data.Add(pokemon);
                 continue;
@@ -187,6 +192,228 @@ namespace CrawlBulbapedia
             });
             var output = Path.Combine(targetPath, "data.json");
             File.WriteAllText(output, json);
+        }
+
+        private static IDictionary<int, string> _uniqueIdCheck = new Dictionary<int, string>();
+
+        private static void GetPokeInfo(HtmlNode node, Pokemon pokemon)
+        {
+            var cc = node.SelectSingleNode("//div[@id=\"mw-content-text\"]/div/table[2]");
+            var crw = cc.InnerText;
+
+            var tds = cc.GetNearestNodes("td", "table");
+            foreach (var td in tds)
+            {
+                var tdStyle = td.GetAttributeValue("style", "").Replace(" ", "");
+                if (tdStyle.Contains("display:none"))
+                {
+                    continue;
+                }
+
+                if (GetBasicInfo(td, pokemon))
+                {
+                    continue;
+                }
+
+
+                td.GetChildNodeContains("a", "td", out var typeDiv, "Type");
+                if (typeDiv != null)
+                {
+                    var tds2 = typeDiv.GetNearestNodes("td", "a");
+                    var f = RemoveHiddenNodes(tds2);
+                    var types = new Dictionary<string, PokemonType[]>();
+                    if (f.Length > 1)
+                    {
+
+                    }
+                    foreach (var f5 in f)
+                    {
+                        var t = new PokemonType();
+                        var ts = f5.GetNearestNodes("small", "table");
+                        var name = ts.FirstOrDefault()?.InnerText;
+                        if (string.IsNullOrEmpty(name))
+                        {
+                            name = "";
+                        }
+                        var ft = f5.GetNearestNodes("td", "a");
+                        var f3 = RemoveHiddenNodes(ft);
+                        var typesStr = string.Join("\n", f3.Select(e => e.InnerText));
+                        var types2 = typesStr.Split("\n").Where(e => e.Trim().Length > 0).ToList();
+                        if (types2.Contains("Unknown"))
+                        {
+                            throw new Exception();
+                        }
+                        var t2 = types2.Select(e => e.ToEnum<PokemonType>()).ToArray();
+                        types.Add(name, t2);
+                    }
+                    pokemon.Types = types;
+                    if (!types.Any())
+                    {
+                        throw new Exception();
+                    }
+                    continue;
+                }
+
+                td.GetChildNodeContains("a", "td", out var crDiv, "Catch rate");
+                if (crDiv != null)
+                {
+                    var tds2 = crDiv.GetNearestNodes("td", "a");
+                    var f = RemoveHiddenNodes(tds2);
+                    if (f.Length > 1)
+                    {
+                        throw new Exception();
+                    }
+                    var f1 = f.Single();
+                    var typesStr = f1.InnerText.Trim();
+                    var cr2 = new AnnotatedText();
+                    cr2.Text = typesStr;
+                    var catchRateExp = f1.RecursiveGetChildNode("span");
+                    if (catchRateExp != null)
+                    {
+                        cr2.Explanation = catchRateExp.GetAttributeValue("title", null);
+                    }
+                    pokemon.CatchRate = cr2;
+                    continue;
+                }
+            }
+        }
+
+        private static bool GetBasicInfo(HtmlNode td, Pokemon pokemon)
+        {
+            var result = false;
+            var category = td.GetNearestNodesByTitle("a", "Pokémon category");
+            if (category != null)
+            {
+                var ctr = category.InnerText.Trim();
+                pokemon.Category = ctr;
+                result = true;
+            }
+
+            var no = td.GetNearestNodesByTitle("a", "List of Pokémon by National Pokédex number");
+            if (no != null)
+            {
+                var ctr = no.InnerText.Trim();
+                ctr = ctr.Replace("#", "");
+                if (int.TryParse(ctr, out var num))
+                {
+                    if (_uniqueIdCheck.ContainsKey(num))
+                    {
+                        throw new Exception();
+                    }
+                    _uniqueIdCheck.Add(num, "");
+                    pokemon.No = num;
+                    result = true;
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            return result;
+        }
+
+        private static HtmlNode[] RemoveHiddenNodes(HtmlNode[] nodes)
+        {
+            var r = new List<HtmlNode>();
+            foreach (var td in nodes)
+            {
+                var tdStyle = td.GetAttributeValue("style", "").Replace(" ", "");
+                if (!tdStyle.Contains("display:none"))
+                {
+                    r.Add(td);
+                }
+            }
+            return r.ToArray();
+        }
+
+        private static bool GetChildNodeContains(this HtmlNode node, string childTag, string returnTag, out HtmlNode? found, params string[] title)
+        {
+            found = null;
+            if (node == null)
+            {
+                return false;
+            }
+            foreach (var c in node.ChildNodes)
+            {
+                var t = c.GetAttributeValue("title", "");
+                if (c.Name == childTag && title.Contains(t))
+                {
+                    found = c;
+                    if (found?.Name != returnTag)
+                    {
+                        found = node;
+                    }
+                    return true;
+                }
+                else
+                {
+                    var result = c.GetChildNodeContains(childTag, returnTag, out found, title);
+                    if (result)
+                    {
+                        if (found?.Name != returnTag)
+                        {
+                            found = c;
+                        }
+                        if (found?.Name != returnTag)
+                        {
+                            found = node;
+                        }
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        private static HtmlNode? GetNearestNodesByTitle(this HtmlNode node, string childTag, params string[] title)
+        {
+            if (node == null)
+            {
+                return null;
+            }
+            foreach (var c in node.ChildNodes)
+            {
+                var t = c.GetAttributeValue("title", "");
+                if (c.Name == childTag && title.Contains(t))
+                {
+                    return c;
+                }
+                else
+                {
+                    var result = c.GetNearestNodesByTitle(childTag, title);
+                    if (result != null)
+                    {
+                        return result;
+                    }
+                }
+            }
+            return null;
+        }
+
+        private static HtmlNode[] GetNearestNodes(this HtmlNode node, string childTag, params string[] stopAt)
+        {
+            if (node == null)
+            {
+                return Array.Empty<HtmlNode>();
+            }
+            var found = new List<HtmlNode>();
+            foreach (var c in node.ChildNodes)
+            {
+                if (stopAt.Contains(c.Name))
+                {
+                    continue;
+                }
+                if (c.Name == childTag)
+                {
+                    found.Add(c);
+                }
+                else
+                {
+                    var result = GetNearestNodes(c, childTag);
+                    found.AddRange(result);
+                }
+            }
+            return found.ToArray();
         }
 
         private static void ExtractItemInfo(string sourcePath, string targetPath, string folder)
@@ -337,7 +564,7 @@ namespace CrawlBulbapedia
             {
                 h2 = node.SelectSingleNode("//*[@id=\"Names\"]");
             }
-            if(h2 == null)
+            if (h2 == null)
             {
                 Console.Write(": no translation");
                 return dict;
@@ -491,11 +718,11 @@ namespace CrawlBulbapedia
             {
                 ll = "Brazilian Portuguese";
             }
-            else if(ll== "portuguese brazil")
+            else if (ll == "portuguese brazil")
             {
                 ll = "Brazilian Portuguese";
             }
-            else if(ll== "portuguese portugal")
+            else if (ll == "portuguese portugal")
             {
                 ll = "Portugal Portuguese";
             }
@@ -515,11 +742,11 @@ namespace CrawlBulbapedia
             {
                 ll = "Spain Spanish";
             }
-            else if(ll == "french europe")
+            else if (ll == "french europe")
             {
                 ll = "french";
             }
-            else if(ll == "portuguese" || ll == "european portuguese")
+            else if (ll == "portuguese" || ll == "european portuguese")
             {
                 ll = "Portugal Portuguese";
             }
