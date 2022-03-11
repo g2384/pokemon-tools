@@ -77,12 +77,12 @@ namespace CrawlBulbapedia
             //DownloadRawWebpages(dataPath, "pokemon");
 
             var processedPath = "../../../../processedHTML";
-            //RemoveRedundantTags(processedPath, "pokemon");
+            RemoveRedundantTags(processedPath, "pokemon");
 
-            ExtractInfo(processedPath, dataPath, "pokemon");
+            //ExtractInfo(processedPath, dataPath, "pokemon");
 
             //DownloadRawWebpages(dataPath, "item");
-            //RemoveRedundantTags(processedPath, "item");
+            RemoveRedundantTags(processedPath, "item");
             //ExtractItemInfo(processedPath, dataPath, "item");
         }
 
@@ -135,6 +135,8 @@ namespace CrawlBulbapedia
                     content2.RemoveChild(l);
                 }
 
+                RemoveTableByCondition(content2, "tbody", "h1", "h2", "h3", "a", "span");
+
                 var p = Path.Combine(p2, file.Split("\\").Last());
                 var str = content2.OuterHtml;
                 File.WriteAllText(p, str);
@@ -144,7 +146,28 @@ namespace CrawlBulbapedia
             }
         }
 
-
+        private static void RemoveTableByCondition(HtmlNode content2, params string[] stopAt)
+        {
+            var cs = content2.ChildNodes.ToArray();
+            foreach (var c in cs)
+            {
+                if (c.Name == "table")
+                {
+                    if (c.InnerText.Contains("This section is incomplete."))
+                    {
+                        content2.RemoveChild(c);
+                    }
+                }
+                else if (stopAt.Contains(c.Name))
+                {
+                    continue;
+                }
+                else
+                {
+                    RemoveTableByCondition(c, stopAt);
+                }
+            }
+        }
 
         private static void ExtractInfo(string sourcePath, string targetPath, string folder)
         {

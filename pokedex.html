@@ -73,9 +73,9 @@
             _th_ = document.createElement('th'),
             _td_ = document.createElement('td');
 
-        function buildHtmlTable(arr) {
+        function buildHtmlTable(arr, order) {
             var table = _table_.cloneNode(false),
-                columns = addAllColumnHeaders(arr, table);
+                columns = addAllColumnHeaders(arr, order, table);
             var tbody = document.createElement('tbody');
             for (var i = 0, maxi = arr.length; i < maxi; ++i) {
                 var tr = _tr_.cloneNode(false);
@@ -91,7 +91,7 @@
             return table;
         }
 
-        function addAllColumnHeaders(arr, table) {
+        function addAllColumnHeaders(arr, order, table) {
             var columnSet = [],
                 tr = _tr_.cloneNode(false);
             var thead = document.createElement('thead');
@@ -99,11 +99,25 @@
                 for (var key in arr[i]) {
                     if (arr[i].hasOwnProperty(key) && columnSet.indexOf(key) === -1) {
                         columnSet.push(key);
-                        var th = _th_.cloneNode(false);
-                        th.appendChild(document.createTextNode(key));
-                        tr.appendChild(th);
                     }
                 }
+            }
+            if (order != null && order != undefined) {
+                var cs = [];
+                for (var i = 0; i < order.length; i++) {
+                    var ind = columnSet.indexOf(order[i]);
+                    if (ind >= 0) {
+                        cs.push(columnSet[ind]);
+                        columnSet.splice(ind, 1);
+                    }
+                }
+                columnSet = cs.concat(columnSet);
+            }
+            for (var i = 0; i < columnSet.length; i++) {
+                var key = columnSet[i];
+                var th = _th_.cloneNode(false);
+                th.appendChild(document.createTextNode(key));
+                tr.appendChild(th);
             }
             thead.appendChild(tr);
             table.appendChild(thead);
@@ -141,9 +155,14 @@
                     selected["Held Items"] = items;
                     result.push(selected);
                 }
+                var catchRate = di["CatchRate"];
+                if (catchRate != undefined) {
+                    selected["Catch Rate"] = catchRate["Text"];
+                }
+                selected["No."] = di["No"];
             }
             var body = `<tbody><tr>${trs.join("</tr><tr>")}</tr></tbody>`;
-            var generatedTable = buildHtmlTable(result);
+            var generatedTable = buildHtmlTable(result, ["No.", "Chinese Name"]);
             pokemonTable.append(generatedTable);
             sorttable.makeSortable(generatedTable);
         }
