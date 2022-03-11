@@ -18216,7 +18216,29 @@
         }
       }
     },
-    "HeldItems": [],
+    "HeldItems": [
+      {
+        "Name": [
+          "Berry"
+        ],
+        "Probability": [
+          "(100%)"
+        ],
+        "Gens": [
+          "Gold",
+          "Silver",
+          "Crystal"
+        ],
+        "Notes": [
+          null,
+          null,
+          null
+        ],
+        "Images": [
+          null
+        ]
+      }
+    ],
     "No": 155,
     "CatchRate": {
       "Text": "45 (11.9%)",
@@ -18472,7 +18494,6 @@
         }
       }
     },
-    "HeldItems": [],
     "No": 723,
     "CatchRate": {
       "Text": "45 (11.9%)",
@@ -18653,7 +18674,6 @@
         }
       }
     },
-    "HeldItems": [],
     "No": 724,
     "CatchRate": {
       "Text": "45 (11.9%)",
@@ -25464,7 +25484,120 @@
         ]
       }
     },
-    "HeldItems": [],
+    "HeldItems": [
+      {
+        "Name": [
+          "Pearl"
+        ],
+        "Probability": [
+          "(: 50%)(: 5%)"
+        ],
+        "Gens": [
+          "Diamond",
+          "Pearl"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/9/96/Bag_Electirizer_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Electirizer"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Omega Ruby",
+          "Alpha Sapphire"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/9/96/Bag_Electirizer_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Electirizer"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Sun",
+          "Moon"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/9/96/Bag_Electirizer_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Electirizer"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Ultra Sun",
+          "Ultra Moon"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/9/96/Bag_Electirizer_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Electirizer"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Sword",
+          "Shield"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/9/96/Bag_Electirizer_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Tamato Berry"
+        ],
+        "Probability": [
+          "(100%)"
+        ],
+        "Gens": [
+          "Pokéwalker"
+        ],
+        "Notes": [
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/9/9a/Bag_Tamato_Berry_Sprite.png"
+        ]
+      }
+    ],
     "No": 239,
     "CatchRate": {
       "Text": "45 (11.9%)",
@@ -46353,7 +46486,225 @@
         }
       }
     },
-    "HeldItems": [],
+    "HeldItems": [
+      {
+        "Name": [
+          "Moon Stone"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Ruby",
+          "Sapphire"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/a/ae/Bag_Moon_Stone_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Moon Stone"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Emerald"
+        ],
+        "Notes": [
+          "This Pokémon is only available in the Battle Frontier."
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/a/ae/Bag_Moon_Stone_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Hard Stone"
+        ],
+        "Probability": [
+          "(100%)"
+        ],
+        "Gens": [
+          "Pokémon XD"
+        ],
+        "Notes": [
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/8/82/Bag_Hard_Stone_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Moon Stone"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Diamond",
+          "Pearl",
+          "Platinum"
+        ],
+        "Notes": [
+          null,
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/a/ae/Bag_Moon_Stone_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Moon Stone"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "HeartGold",
+          "SoulSilver"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/a/ae/Bag_Moon_Stone_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Moon Stone",
+          "Comet Shard"
+        ],
+        "Probability": [
+          "(5%)",
+          "(1%)"
+        ],
+        "Gens": [
+          "Black",
+          "White"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/a/ae/Bag_Moon_Stone_Sprite.png",
+          "//archives.bulbagarden.net/media/upload/0/0b/Bag_Comet_Shard_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Moon Stone",
+          "Comet Shard"
+        ],
+        "Probability": [
+          "(5%)",
+          "(1%)"
+        ],
+        "Gens": [
+          "Black 2",
+          "White 2"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/a/ae/Bag_Moon_Stone_Sprite.png",
+          "//archives.bulbagarden.net/media/upload/0/0b/Bag_Comet_Shard_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Moon Stone"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "X",
+          "Y"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/a/ae/Bag_Moon_Stone_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Stardust",
+          "Moon Stone"
+        ],
+        "Probability": [
+          "(50%)",
+          "(5%)"
+        ],
+        "Gens": [
+          "Omega Ruby",
+          "Alpha Sapphire"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/4/4b/Bag_Stardust_Sprite.png",
+          "//archives.bulbagarden.net/media/upload/a/ae/Bag_Moon_Stone_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Stardust",
+          "Moon Stone"
+        ],
+        "Probability": [
+          "(50%)",
+          "(5%)"
+        ],
+        "Gens": [
+          "Sword",
+          "Shield"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/4/4b/Bag_Stardust_Sprite.png",
+          "//archives.bulbagarden.net/media/upload/a/ae/Bag_Moon_Stone_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Comet Shard"
+        ],
+        "Probability": [
+          "(100%)"
+        ],
+        "Gens": [
+          "Events"
+        ],
+        "Notes": [
+          "Certain items may have been given out at multiple events."
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/0/0b/Bag_Comet_Shard_Sprite.png"
+        ]
+      }
+    ],
     "No": 337,
     "CatchRate": {
       "Text": "45 (11.9%)",
@@ -47452,7 +47803,120 @@
         ]
       }
     },
-    "HeldItems": [],
+    "HeldItems": [
+      {
+        "Name": [
+          "Pearl"
+        ],
+        "Probability": [
+          "(: 5%)(: 50%)"
+        ],
+        "Gens": [
+          "Diamond",
+          "Pearl"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/8/80/Bag_Magmarizer_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Magmarizer"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Omega Ruby",
+          "Alpha Sapphire"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/8/80/Bag_Magmarizer_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Magmarizer"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Sun",
+          "Moon"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/8/80/Bag_Magmarizer_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Magmarizer"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Ultra Sun",
+          "Ultra Moon"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/8/80/Bag_Magmarizer_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Magmarizer"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Sword",
+          "Shield"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/8/80/Bag_Magmarizer_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Kelpsy Berry"
+        ],
+        "Probability": [
+          "(100%)"
+        ],
+        "Gens": [
+          "Pokéwalker"
+        ],
+        "Notes": [
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/e/eb/Bag_Kelpsy_Berry_Sprite.png"
+        ]
+      }
+    ],
     "No": 240,
     "CatchRate": {
       "Text": "45 (11.9%)",
@@ -62592,7 +63056,204 @@
         }
       }
     },
-    "HeldItems": [],
+    "HeldItems": [
+      {
+        "Name": [
+          "Berry"
+        ],
+        "Probability": [
+          "(100%)"
+        ],
+        "Gens": [
+          "Red",
+          "Blue",
+          "Yellow"
+        ],
+        "Notes": [
+          "This Pokémon must be traded to a Generation II game in order for the item to appear.",
+          "This Pokémon must be traded to a Generation II game in order for the item to appear.",
+          "This Pokémon must be traded to a Generation II game in order for the item to appear."
+        ],
+        "Images": [
+          null
+        ]
+      },
+      {
+        "Name": [
+          "King's Rock"
+        ],
+        "Probability": [
+          "(2%)"
+        ],
+        "Gens": [
+          "Gold",
+          "Silver",
+          "Crystal"
+        ],
+        "Notes": [
+          null,
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/b/ba/Bag_King%27s_Rock_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "King's Rock"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Diamond",
+          "Pearl",
+          "Platinum"
+        ],
+        "Notes": [
+          null,
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/b/ba/Bag_King%27s_Rock_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "King's Rock"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "HeartGold",
+          "SoulSilver"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/b/ba/Bag_King%27s_Rock_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "King's Rock"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Black",
+          "White"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/b/ba/Bag_King%27s_Rock_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "King's Rock"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Black 2",
+          "White 2"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/b/ba/Bag_King%27s_Rock_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "King's Rock"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "X",
+          "Y"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/b/ba/Bag_King%27s_Rock_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "King's Rock"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Sun",
+          "Moon"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/b/ba/Bag_King%27s_Rock_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "King's Rock"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Ultra Sun",
+          "Ultra Moon"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/b/ba/Bag_King%27s_Rock_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "King's Rock"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Sword",
+          "Shield"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/b/ba/Bag_King%27s_Rock_Sprite.png"
+        ]
+      }
+    ],
     "No": 61,
     "CatchRate": {
       "Text": "120 (24.9%)",
@@ -64541,7 +65202,25 @@
         }
       }
     },
-    "HeldItems": [],
+    "HeldItems": [
+      {
+        "Name": [
+          "Charcoal"
+        ],
+        "Probability": [
+          "(100%)"
+        ],
+        "Gens": [
+          "Colosseum"
+        ],
+        "Notes": [
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/b/b5/Bag_Charcoal_Sprite.png"
+        ]
+      }
+    ],
     "No": 156,
     "CatchRate": {
       "Text": "45 (11.9%)",
@@ -68108,7 +68787,6 @@
         }
       }
     },
-    "HeldItems": [],
     "No": 722,
     "CatchRate": {
       "Text": "45 (11.9%)",
@@ -69173,7 +69851,6 @@
         }
       }
     },
-    "HeldItems": [],
     "No": 27,
     "CatchRate": {
       "Text": "255 (43.9%)",
@@ -70618,7 +71295,46 @@
         }
       }
     },
-    "HeldItems": [],
+    "HeldItems": [
+      {
+        "Name": [
+          "Bitter Berry"
+        ],
+        "Probability": [
+          "(100%)"
+        ],
+        "Gens": [
+          "Red",
+          "Blue",
+          "Yellow"
+        ],
+        "Notes": [
+          "This Pokémon must be traded to a Generation II game in order for the item to appear.",
+          "This Pokémon must be traded to a Generation II game in order for the item to appear.",
+          "This Pokémon must be traded to a Generation II game in order for the item to appear."
+        ],
+        "Images": [
+          null
+        ]
+      },
+      {
+        "Name": [
+          "Metal Coat"
+        ],
+        "Probability": [
+          "(100%)"
+        ],
+        "Gens": [
+          "Events"
+        ],
+        "Notes": [
+          "Certain items may have been given out at multiple events."
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/e/ee/Bag_Metal_Coat_Sprite.png"
+        ]
+      }
+    ],
     "No": 123,
     "CatchRate": {
       "Text": "45 (11.9%)",
@@ -78386,7 +79102,193 @@
         }
       }
     },
-    "HeldItems": [],
+    "HeldItems": [
+      {
+        "Name": [
+          "Sun Stone"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Ruby",
+          "Sapphire",
+          "Emerald"
+        ],
+        "Notes": [
+          null,
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/a/ad/Bag_Sun_Stone_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Sun Stone"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Diamond",
+          "Pearl",
+          "Platinum"
+        ],
+        "Notes": [
+          null,
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/a/ad/Bag_Sun_Stone_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Sun Stone"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "HeartGold",
+          "SoulSilver"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/a/ad/Bag_Sun_Stone_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Sun Stone",
+          "Comet Shard"
+        ],
+        "Probability": [
+          "(5%)",
+          "(1%)"
+        ],
+        "Gens": [
+          "Black",
+          "White"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/a/ad/Bag_Sun_Stone_Sprite.png",
+          "//archives.bulbagarden.net/media/upload/0/0b/Bag_Comet_Shard_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Sun Stone",
+          "Comet Shard"
+        ],
+        "Probability": [
+          "(5%)",
+          "(1%)"
+        ],
+        "Gens": [
+          "Black 2",
+          "White 2"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/a/ad/Bag_Sun_Stone_Sprite.png",
+          "//archives.bulbagarden.net/media/upload/0/0b/Bag_Comet_Shard_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Sun Stone"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "X",
+          "Y"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/a/ad/Bag_Sun_Stone_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Stardust",
+          "Sun Stone"
+        ],
+        "Probability": [
+          "(50%)",
+          "(5%)"
+        ],
+        "Gens": [
+          "Omega Ruby",
+          "Alpha Sapphire"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/4/4b/Bag_Stardust_Sprite.png",
+          "//archives.bulbagarden.net/media/upload/a/ad/Bag_Sun_Stone_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Stardust",
+          "Sun Stone"
+        ],
+        "Probability": [
+          "(50%)",
+          "(5%)"
+        ],
+        "Gens": [
+          "Sword",
+          "Shield"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/4/4b/Bag_Stardust_Sprite.png",
+          "//archives.bulbagarden.net/media/upload/a/ad/Bag_Sun_Stone_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Comet Shard"
+        ],
+        "Probability": [
+          "(100%)"
+        ],
+        "Gens": [
+          "Events"
+        ],
+        "Notes": [
+          "Certain items may have been given out at multiple events."
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/0/0b/Bag_Comet_Shard_Sprite.png"
+        ]
+      }
+    ],
     "No": 338,
     "CatchRate": {
       "Text": "45 (11.9%)",
@@ -83429,7 +84331,164 @@
         }
       }
     },
-    "HeldItems": [],
+    "HeldItems": [
+      {
+        "Name": [
+          "Berry"
+        ],
+        "Probability": [
+          "(100%)"
+        ],
+        "Gens": [
+          "Red",
+          "Blue",
+          "Yellow"
+        ],
+        "Notes": [
+          "This Pokémon must be traded to a Generation II game in order for the item to appear.",
+          "This Pokémon must be traded to a Generation II game in order for the item to appear.",
+          "This Pokémon must be traded to a Generation II game in order for the item to appear."
+        ],
+        "Images": [
+          null
+        ]
+      },
+      {
+        "Name": [
+          "Poison Barb"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Diamond",
+          "Pearl",
+          "Platinum"
+        ],
+        "Notes": [
+          null,
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/d/d2/Bag_Poison_Barb_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Poison Barb"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "HeartGold",
+          "SoulSilver"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/d/d2/Bag_Poison_Barb_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Poison Barb"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "X",
+          "Y"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/d/d2/Bag_Poison_Barb_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Poison Barb"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Omega Ruby",
+          "Alpha Sapphire"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/d/d2/Bag_Poison_Barb_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Poison Barb"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Sun",
+          "Moon"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/d/d2/Bag_Poison_Barb_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Poison Barb"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Ultra Sun",
+          "Ultra Moon"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/d/d2/Bag_Poison_Barb_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Poison Barb"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Sword",
+          "Shield"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/d/d2/Bag_Poison_Barb_Sprite.png"
+        ]
+      }
+    ],
     "No": 72,
     "CatchRate": {
       "Text": "190 (35.2%)",
@@ -83499,7 +84558,145 @@
         }
       }
     },
-    "HeldItems": [],
+    "HeldItems": [
+      {
+        "Name": [
+          "Silver Leaf"
+        ],
+        "Probability": [
+          "(100%)"
+        ],
+        "Gens": [
+          "Red",
+          "Blue",
+          "Yellow"
+        ],
+        "Notes": [
+          "This Pokémon must be traded to a Generation II game in order for the item to appear.",
+          "This Pokémon must be traded to a Generation II game in order for the item to appear.",
+          "This Pokémon must be traded to a Generation II game in order for the item to appear."
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/3/37/Bag_Silver_Leaf_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Poison Barb"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Diamond",
+          "Pearl",
+          "Platinum"
+        ],
+        "Notes": [
+          null,
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/d/d2/Bag_Poison_Barb_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Poison Barb"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "HeartGold",
+          "SoulSilver"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/d/d2/Bag_Poison_Barb_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Poison Barb"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Omega Ruby",
+          "Alpha Sapphire"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/d/d2/Bag_Poison_Barb_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Poison Barb"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Sun",
+          "Moon"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/d/d2/Bag_Poison_Barb_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Poison Barb"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Ultra Sun",
+          "Ultra Moon"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/d/d2/Bag_Poison_Barb_Sprite.png"
+        ]
+      },
+      {
+        "Name": [
+          "Poison Barb"
+        ],
+        "Probability": [
+          "(5%)"
+        ],
+        "Gens": [
+          "Sword",
+          "Shield"
+        ],
+        "Notes": [
+          null,
+          null
+        ],
+        "Images": [
+          "//archives.bulbagarden.net/media/upload/d/d2/Bag_Poison_Barb_Sprite.png"
+        ]
+      }
+    ],
     "No": 73,
     "CatchRate": {
       "Text": "60 (14.8%)",

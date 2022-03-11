@@ -77,12 +77,12 @@ namespace CrawlBulbapedia
             //DownloadRawWebpages(dataPath, "pokemon");
 
             var processedPath = "../../../../processedHTML";
-            RemoveRedundantTags(processedPath, "pokemon");
+            //RemoveRedundantTags(processedPath, "pokemon");
 
-            //ExtractInfo(processedPath, dataPath, "pokemon");
+            ExtractInfo(processedPath, dataPath, "pokemon");
 
             //DownloadRawWebpages(dataPath, "item");
-            RemoveRedundantTags(processedPath, "item");
+            //RemoveRedundantTags(processedPath, "item");
             //ExtractItemInfo(processedPath, dataPath, "item");
         }
 
@@ -153,7 +153,9 @@ namespace CrawlBulbapedia
             {
                 if (c.Name == "table")
                 {
-                    if (c.InnerText.Contains("This section is incomplete."))
+                    var inn = c.InnerText;
+                    if (inn.Contains("This section is incomplete.")
+                        || inn.Contains("This template is incomplete."))
                     {
                         content2.RemoveChild(c);
                     }

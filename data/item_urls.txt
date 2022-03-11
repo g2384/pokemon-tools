@@ -99,6 +99,7 @@
 /wiki/Kangaskhanite
 /wiki/Kasib_Berry
 /wiki/Kebia_Berry
+/wiki/Kelpsy_Berry
 /wiki/King%27s_Rock
 /wiki/Lagging_Tail
 /wiki/Lansat_Berry
@@ -223,6 +224,7 @@
 /wiki/Steelixite
 /wiki/Sticky_Barb
 /wiki/Sun_Stone
+/wiki/Tamato_Berry
 /wiki/Tanga_Berry
 /wiki/Thick_Club
 /wiki/Throat_Spray
