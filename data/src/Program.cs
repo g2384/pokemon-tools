@@ -1,6 +1,7 @@
 ﻿using HtmlAgilityPack;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.Diagnostics.CodeAnalysis;
 using System.Net;
 
 namespace CrawlBulbapedia
@@ -11,20 +12,41 @@ namespace CrawlBulbapedia
         public IDictionary<Language, ForeignName> OtherNames { get; set; }
     }
 
-    public class HeldItemTable
-    {
-        public List<string> Name { get; set; } = new List<string>();
-        public List<string> Probability { get; set; } = new List<string>();
-        public List<string> Gens { get; set; } = new List<string>();
-        public List<string> Notes { get; set; } = new List<string>();
-        public List<string> Images { get; set; } = new List<string>();
-    }
-
-    public class HeldItem
+    public class HeldItemTable : IEqualityComparer<HeldItemTable>, IEquatable<HeldItemTable>
     {
         public string Name { get; set; }
         public string Probability { get; set; }
-        public string Gen { get; set; }
+        public ISet<GameVersion> Games { get; set; } = new HashSet<GameVersion>();
+        public Dictionary<GameVersion, List<string>> Notes { get; set; } = new Dictionary<GameVersion, List<string>>();
+        public List<string> ItemNotes { get; set; } = new List<string>();
+        public string Image { get; set; }
+
+        public bool Equals(HeldItemTable? x, HeldItemTable? y)
+        {
+            if (x == null && y == x)
+            {
+                return true;
+            }
+            if (y == null)
+            {
+                return false;
+            }
+            if (x.Name == y.Name && x.Probability == y.Probability)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool Equals(HeldItemTable? other)
+        {
+            return Equals(this, other);
+        }
+
+        public int GetHashCode([DisallowNull] HeldItemTable obj)
+        {
+            return obj.Name.GetHashCode() ^ obj.Probability.GetHashCode();
+        }
     }
 
     public class Pokemon
@@ -79,11 +101,11 @@ namespace CrawlBulbapedia
             var processedPath = "../../../../processedHTML";
             //RemoveRedundantTags(processedPath, "pokemon");
 
-            //ExtractInfo(processedPath, dataPath, "pokemon");
+            ExtractInfo(processedPath, dataPath, "pokemon");
 
             //DownloadRawWebpages(dataPath, "item");
-            RemoveRedundantTags(processedPath, "item");
-            ExtractItemInfo(processedPath, dataPath, "item");
+            //RemoveRedundantTags(processedPath, "item");
+            //ExtractItemInfo(processedPath, dataPath, "item");
         }
 
         private static void RemoveRedundantTags(string targetPath, string folder)
@@ -415,32 +437,6 @@ namespace CrawlBulbapedia
             return null;
         }
 
-        private static HtmlNode[] GetNearestNodes(this HtmlNode node, string childTag, params string[] stopAt)
-        {
-            if (node == null)
-            {
-                return Array.Empty<HtmlNode>();
-            }
-            var found = new List<HtmlNode>();
-            foreach (var c in node.ChildNodes)
-            {
-                if (stopAt.Contains(c.Name))
-                {
-                    continue;
-                }
-                if (c.Name == childTag)
-                {
-                    found.Add(c);
-                }
-                else
-                {
-                    var result = GetNearestNodes(c, childTag);
-                    found.AddRange(result);
-                }
-            }
-            return found.ToArray();
-        }
-
         private static void ExtractItemInfo(string sourcePath, string targetPath, string folder)
         {
             sourcePath = Path.Combine(sourcePath, folder);
@@ -495,8 +491,115 @@ namespace CrawlBulbapedia
                     Console.Write(": No Held Item");
                     return null;
                 }
-                var trs = heldItemsTable.ChildNodes["tbody"].GetChildNodes("tr");
                 var itemTables = new List<HeldItemTable>();
+                var rt = heldItemsTable.GetRegularisedTable(out var indices);
+                foreach (var r in rt)
+                {
+                    var template = new HeldItemTable();
+                    foreach (var i in indices)
+                    {
+                        if (i.Key.Contains("Game", StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            foreach (var id in i.Value)
+                            {
+                                var a = r[id].GetChildNode("a");
+                                var g = a?.InnerText.Trim();
+                                if (g == null)
+                                {
+                                    throw new Exception();
+                                }
+                                var g2 = g.ToEnum<GameVersion>();
+                                template.Games.Add(g2);
+
+                                var exp = r[id].GetChildNode("span", "explain");
+                                if (exp != null)
+                                {
+                                    var v = exp.GetAttributeValue("title", "");
+                                    if(!template.Notes.TryAdd(g2, new List<string>() { v }))
+                                    {
+                                        if(!template.Notes[g2].Contains(v))
+                                        {
+                                            throw new Exception();
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else if (i.Key.Contains("Held Item", StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            foreach (var id in i.Value)
+                            {
+                                var (name, prob, image, note, itemLink) = GetItemInfo(r[id]);
+                                var newt = new HeldItemTable()
+                                {
+                                    Name = name,
+                                    Probability = prob
+                                };
+                                var oldT = itemTables.FirstOrDefault(e => e.Equals(newt));
+                                var found = true;
+                                if(oldT == null)
+                                {
+                                    found = false;
+                                    oldT = newt;
+                                }
+                                foreach (var item in template.Games)
+                                {
+                                    oldT.Games.Add(item);
+                                }
+                                foreach(var n in template.Notes)
+                                {
+                                    if(!oldT.Notes.TryAdd(n.Key, n.Value) && !oldT.Notes[n.Key].SequenceEqual(n.Value))
+                                    {
+                                        throw new Exception();
+                                    }
+                                }
+                                if (!string.IsNullOrEmpty(note))
+                                {
+                                    //oldT.ItemNotes.Add(note);
+                                    foreach(var g in oldT.Games)
+                                    {
+                                        if(oldT.Notes.ContainsKey(g))
+                                        {
+                                            if (oldT.Notes[g]?.Any() == true)
+                                            {
+                                                if (oldT.Notes[g].Contains(note))
+                                                {
+                                                    //throw new Exception();
+                                                }
+                                                else
+                                                {
+                                                    oldT.Notes[g].Add(note);
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            oldT.Notes.Add(g, new List<string>() { note });
+                                        }
+                                    }
+                                }
+                                if(!string.IsNullOrEmpty(oldT.Image) && oldT.Image != image)
+                                {
+                                    throw new Exception();
+                                }
+                                oldT.Image = image;
+
+                                if (!found)
+                                {
+                                    itemTables.Add(oldT);
+                                }
+
+                                AddItemLink(itemLinks, itemLink, name);
+                            }
+                        }
+                        else
+                        {
+                            throw new Exception();
+                        }
+                    }
+                }
+                /*
+                var trs = heldItemsTable.ChildNodes["tbody"].GetChildNodes("tr");
                 foreach (var tr in trs.Skip(1))
                 {
                     var ths = tr.GetChildNodes("th");
@@ -527,38 +630,7 @@ namespace CrawlBulbapedia
                             }
                             else
                             {
-                                var itemLink = innerA.GetAttributeValue("href", "");
-                                if (!itemLink.Contains("(Pok%C3%A9walker)"))
-                                {
-                                    if (itemLink.Contains("Black_Belt"))
-                                    {
-                                        itemLink = "/wiki/Black_Belt_(item)";
-                                    }
-                                    else if (itemLink.Contains("wiki/Metronome"))
-                                    {
-                                        itemLink = "/wiki/Metronome_(item)";
-                                    }
-
-                                    if (itemLinks.TryGetValue(itemName, out var link))
-                                    {
-                                        if (link != itemLink)
-                                        {
-                                            if (!itemLink.StartsWith("/wiki/Berry#")
-                                                && !itemLink.StartsWith("/wiki/Gold_Bottle_Cap#")
-                                                && !itemLink.StartsWith("/wiki/Gem#")
-                                                && !itemLink.StartsWith("/wiki/Potion#")
-                                                && !link.StartsWith("/wiki/Valuable_item#Pearl")
-                                                && !itemLink.StartsWith("/wiki/Type-enhancing_item#"))
-                                            {
-                                                throw new InvalidOperationException();
-                                            }
-                                        }
-                                    }
-                                    else
-                                    {
-                                        itemLinks[itemName] = itemLink;
-                                    }
-                                }
+                                AddItemLink(itemLinks, innerA, itemName);
                             }
                             var prob = td.GetDirectInnerText().Trim();
                             hiTable.Name.Add(itemName);
@@ -571,12 +643,93 @@ namespace CrawlBulbapedia
                         itemTables.Add(hiTable);
                     }
                 }
+                */
+
+                foreach(var i in itemTables)
+                {
+                    if (!i.Games.Any())
+                    {
+                        throw new Exception();
+                    }
+                    if (!i.Notes.Any())
+                    {
+                        i.Notes = null;
+                    }
+                    if (!i.ItemNotes.Any())
+                    {
+                        i.ItemNotes = null;
+                    }
+                }
+
                 return itemTables;
             }
             else
             {
                 Console.Write(": No Held Item");
                 return null;
+            }
+        }
+
+        private static (string, string, string, string, string) GetItemInfo(HtmlNode r)
+        {
+            var image = r.GetChildNode("a", "image")?.GetChildNode("img").GetAttributeValue("src", "");
+
+            var a = r.GetChildNode2("a", "image");
+            var itemLink = a.GetAttributeValue("href", "");
+            var name = a?.InnerText.Trim();
+            if (name == null)
+            {
+                throw new Exception();
+            }
+            name = CorrectName(name);
+
+            var prob = r.GetDirectInnerText().Trim();
+
+            var exp = r.GetChildNode("span", "explain");
+            var itemNote = exp?.GetAttributeValue("title", "");
+            return (name, prob, image, itemNote, itemLink);
+        }
+
+        private static string CorrectName(string name)
+        {
+            if(name == "NeverMeltIce")
+            {
+                return "Never-Melt Ice";
+            }
+        }
+
+        private static void AddItemLink(IDictionary<string, string> itemLinks, string itemLink, string? itemName)
+        {
+            if (!itemLink.Contains("(Pok%C3%A9walker)"))
+            {
+                if (itemLink.Contains("Black_Belt"))
+                {
+                    itemLink = "/wiki/Black_Belt_(item)";
+                }
+                else if (itemLink.Contains("wiki/Metronome"))
+                {
+                    itemLink = "/wiki/Metronome_(item)";
+                }
+
+                if (itemLinks.TryGetValue(itemName, out var link))
+                {
+                    if (link != itemLink)
+                    {
+                        if (!itemLink.StartsWith("/wiki/Berry#")
+                            && !itemLink.StartsWith("/wiki/Gold_Bottle_Cap#")
+                            && !itemLink.StartsWith("/wiki/Gem#")
+                            && !itemLink.StartsWith("/wiki/Potion#")
+                            && !link.StartsWith("/wiki/Valuable_item#Pearl")
+                            && !itemLink.StartsWith("/wiki/Type-enhancing_item#"))
+                        {
+                            throw new InvalidOperationException();
+                        }
+                    }
+                }
+                else
+                {
+                    itemLinks[itemName] = itemLink;
+                }
             }
         }
 
