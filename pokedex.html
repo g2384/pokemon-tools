@@ -108,7 +108,7 @@
             if (showItems.length == 0) {
                 var q = document.location.search.substr(1);
                 if (q == '') {
-                    return;
+                    return showItems;
                 }
                 var kvp = q.match(/(.{1,2})/g);
                 showItems = kvp;
