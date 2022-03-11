@@ -44,6 +44,20 @@
             background-color: rgb(22, 98, 141);
             color: white;
         }
+
+        .filter-btns {
+            margin: 10px;
+            padding: 10px;
+            line-height: 1.5em;
+        }
+
+        .filter-btns label {
+            margin: 0 5px;
+        }
+
+        label {
+            display: inline-block;
+        }
     </style>
 </head>
 
@@ -51,6 +65,80 @@
     <div id="filters"></div>
     <div id="pokemons"></div>
     <script>
+
+        const filters = {
+            "Gen": ["Gen 1 (1 - 151):g1",
+                "Gen 2 (152 - 251):g2",
+                "Gen 3 (282 - 386):g3",
+                "Gen 4 (387 - 493):g4"]
+        }
+        const genTable = {
+            "g1": [1, 151],
+            "g2": [152, 251],
+            "g3": [282, 386],
+            "g4": [387, 493]
+        }
+
+        function addFilters() {
+            var result = "";
+            for (var k in filters) {
+                var items = filters[k];
+                result += "<div class='filter-btns " + k + "'>";
+                for (var i = 0; i < items.length; i++) {
+                    var key = items[i].split(":");
+                    result += "<label><input type='checkbox' id='item-filter-" + key[1] + "' onclick='refresh()'>" + key[0] + "</label>";
+                }
+                result += "</div>";
+            }
+            document.querySelector("#filters").innerHTML = result;
+        }
+
+        function getSettings() {
+            showItems = [];
+            for (var k in filters) {
+                var items = filters[k];
+                for (var i = 0; i < items.length; i++) {
+                    var key = items[i].split(":");
+                    var checked = document.querySelector("#item-filter-" + key[1]).checked;
+                    if (checked) {
+                        showItems.push(key[1]);
+                    }
+                }
+            }
+            if (showItems.length == 0) {
+                var q = document.location.search.substr(1);
+                if (q == '') {
+                    return;
+                }
+                var kvp = q.match(/(.{1,2})/g);
+                showItems = kvp;
+            }
+            return showItems;
+        }
+
+
+        function refresh(showItems) {
+            if (showItems == undefined) {
+                showItems = getSettings();
+            }
+            console.log(showItems);
+            displayP(showItems)
+        }
+
+        function setCheckBoxes() {
+            var q = document.location.search.substr(1);
+            if (q == '') {
+                return;
+            }
+            var kvp = q.match(/(.{1,2})/g);
+            showItems = [];
+            for (var i = 0; i < kvp.length; i++) {
+                var key = kvp[i];
+                document.querySelector("#item-filter-" + key).checked = true;
+                showItems.push(key);
+            }
+            refresh(showItems);
+        }
 
         var getJSON = function (url, callback) {
             var xhr = new XMLHttpRequest();
@@ -147,10 +235,15 @@
             return columnSet;
         }
 
-        function displayP(data) {
+        function displayP(settings) {
+            pokemonTable.innerHTML = "";
             if (pokemonData == null || itemsData == null) {
                 return;
             }
+            if (settings == undefined) {
+                settings = getSettings();
+            }
+            console.log(settings);
             var result = [];
             data = pokemonData;
             for (var i = 0; i < data.length; i++) {
@@ -159,6 +252,23 @@
                 var fn = n;
                 var on = di["OtherNames"];
                 var selected = {};
+                selected["No."] = di["No"];
+
+                var canShow = false;
+                if (settings.length > 0) {
+                    for (var k = 0; k < settings.length; k++) {
+                        if (genTable[settings[k]] != null) {
+                            var mm = genTable[settings[k]];
+                            if (selected["No."] <= mm[1] && selected["No."] >= mm[0]) {
+                                canShow = true;
+                            }
+                        }
+                    }
+                    if (!canShow) {
+                        continue;
+                    }
+                }
+
                 if (on != undefined) {
                     var cn = on["Mandarin Chinese"];
                     if (cn != undefined) {
@@ -172,7 +282,6 @@
                 if (heldItem != undefined) {
                     var items = getHeldItems(heldItem);
                     selected["Held Items"] = items;
-                    result.push(selected);
                 }
                 var stats = di["Stats"];
                 if (stats != undefined) {
@@ -182,7 +291,6 @@
                 if (catchRate != undefined) {
                     selected["Catch Rate"] = catchRate["Text"];
                 }
-                selected["No."] = di["No"];
                 selected["Category"] = di["Category"].replace("Pokémon", "").trim();
                 var types = di["Types"];
                 if (types != undefined) {
@@ -199,15 +307,21 @@
                         }
                     }
                 }
+                result.push(selected);
             }
             var generatedTable = buildHtmlTable(result, ["No.", "Chinese Name"]);
-            pokemonTable.append(generatedTable);
+            pokemonTable.appendChild(generatedTable);
             sorttable.makeSortable(generatedTable);
+            var s = settings.join("");
+            if (document.location.search.substr(1) != s) {
+                console.log(document.location.search.substr(1))
+                document.location.search = s;
+            }
         }
 
         function getStats(stats, item) {
             var keys = Object.keys(stats);
-            if(keys.length == 0){
+            if (keys.length == 0) {
                 return;
             }
             var f = keys[0];
@@ -253,6 +367,9 @@
             }
             return t;
         }
+
+        addFilters();
+        setCheckBoxes();
     </script>
 </body>
 
