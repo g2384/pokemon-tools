@@ -26361,7 +26361,60 @@
   },
   {
     "Name": "Exeggcute",
-    "OtherNames": {},
+    "OtherNames": {
+      "Japanese": {
+        "Name": {
+          "Text": "タマタマ",
+          "Pronunciation": "Tamatama",
+          "Meaning": "From <span class=\"explain\" title=\"egg\">玉子<i>tamago</i></span> and <span class=\"explain\" title=\"unexpected\">たまたま <i>tamatama</i></span>"
+        }
+      },
+      "French": {
+        "Name": {
+          "Text": "Noeunoeuf",
+          "Meaning": "A corruption of <i><span class=\"explain\" title=\"egg\">œuf</span></i> pronounced twice"
+        }
+      },
+      "Spanish": {
+        "Name": {
+          "Text": "Exeggcute",
+          "Meaning": "Same as English name"
+        }
+      },
+      "German": {
+        "Name": {
+          "Text": "Owei",
+          "Meaning": "From <i><span class=\"explain\" title=\"latin for egg\">ovum</span></i> and <i><span class=\"explain\" title=\"egg\">Ei</span></i>, pun on <i><span class=\"explain\" title=\"german for Oh dear!\">O wei!</span></i>"
+        }
+      },
+      "Italian": {
+        "Name": {
+          "Text": "Exeggcute",
+          "Meaning": "Same as English name"
+        }
+      },
+      "Korean": {
+        "Name": {
+          "Text": "아라리",
+          "Pronunciation": "Arari",
+          "Meaning": "A possible corruption of 알알의 <i>Al'al'eui</i>, where both <span class=\"explain\" title=\"&#39;egg&#39; as a noun\">알</span> and <span class=\"explain\" title=\"&#39;egg&#39; as an adjective\">알의</span> is Korean for egg; thus possibly translated as \"Eggy Egg\""
+        }
+      },
+      "Cantonese Chinese": {
+        "Name": {
+          "Text": "蛋蛋",
+          "Pronunciation": "Daahndaahn",
+          "Meaning": "Repetition of the character <span class=\"explain\" title=\"egg\">蛋 <i>daahn</i></span>"
+        }
+      },
+      "Mandarin Chinese": {
+        "Name": {
+          "Text": "蛋蛋",
+          "Pronunciation": "Dàndàn",
+          "Meaning": "Same as Cantonese name."
+        }
+      }
+    },
     "HeldItems": [
       {
         "Name": [
@@ -62386,7 +62439,60 @@
   },
   {
     "Name": "Poliwag",
-    "OtherNames": {},
+    "OtherNames": {
+      "Japanese": {
+        "Name": {
+          "Text": "ニョロモ",
+          "Pronunciation": "Nyoromo",
+          "Meaning": "From <span class=\"explain\" title=\"slithering\">ニョロニョロ <i>nyoronyoro</i></span> and <span class=\"explain\" title=\"child\">子供 <i>kodomo</i></span>"
+        }
+      },
+      "French": {
+        "Name": {
+          "Text": "Ptitard",
+          "Meaning": "From <i><span class=\"explain\" title=\"small\">petit</span></i> and <i><span class=\"explain\" title=\"tadpole\">têtard</span></i>"
+        }
+      },
+      "Spanish": {
+        "Name": {
+          "Text": "Poliwag",
+          "Meaning": "Same as English name"
+        }
+      },
+      "German": {
+        "Name": {
+          "Text": "Quapsel",
+          "Meaning": "From <i><span class=\"explain\" title=\"tadpole\">Kaulquappe</span></i>"
+        }
+      },
+      "Italian": {
+        "Name": {
+          "Text": "Poliwag",
+          "Meaning": "Same as English name"
+        }
+      },
+      "Korean": {
+        "Name": {
+          "Text": "발챙이",
+          "Pronunciation": "Balchengi",
+          "Meaning": "From <span class=\"explain\" title=\"foot\">발 <i>bal</i></span> and <span class=\"explain\" title=\"tadpole\">올챙이 <i>olchaeng'i</i></span>"
+        }
+      },
+      "Cantonese Chinese": {
+        "Name": {
+          "Text": "蚊香蝌蚪",
+          "Pronunciation": "Mānhēungfōdáu",
+          "Meaning": "From <a href=\"https://en.wikipedia.org/wiki/Mosquito_coil\" class=\"extiw\" title=\"wp:Mosquito coil\"><span class=\"explain\" title=\"mosquito coil\">蚊香</span></a> and <span class=\"explain\" title=\"tadpole\">蝌蚪</span>"
+        }
+      },
+      "Mandarin Chinese": {
+        "Name": {
+          "Text": "蚊香蝌蚪",
+          "Pronunciation": "Wénxiāngkēdǒu",
+          "Meaning": "From <a href=\"https://en.wikipedia.org/wiki/Mosquito_coil\" class=\"extiw\" title=\"wp:Mosquito coil\"><span class=\"explain\" title=\"mosquito coil\">蚊香</span></a> and <span class=\"explain\" title=\"tadpole\">蝌蚪</span>"
+        }
+      }
+    },
     "HeldItems": [
       {
         "Name": [
@@ -62424,7 +62530,68 @@
   },
   {
     "Name": "Poliwhirl",
-    "OtherNames": {},
+    "OtherNames": {
+      "Japanese": {
+        "Name": {
+          "Text": "ニョロゾ",
+          "Pronunciation": "Nyorozo",
+          "Meaning": "From <span class=\"explain\" title=\"slithering\">ニョロニョロ <i>nyoronyoro</i></span>"
+        }
+      },
+      "French": {
+        "Name": {
+          "Text": "Têtarte",
+          "Meaning": "From <span class=\"explain\" title=\"tadpole\"><i>têtard</i></span> and <span class=\"explain\" title=\"slap\"><i>tarte</i></span>"
+        }
+      },
+      "Spanish": {
+        "Name": {
+          "Text": "Poliwhirl",
+          "Meaning": "Same as English name"
+        }
+      },
+      "German": {
+        "Name": {
+          "Text": "Quaputzi",
+          "Meaning": "From <span class=\"explain\" title=\"tadpole\"><i>Kaulquappe</i></span> and <i><span class=\"explain\" title=\"peculiar\">putzig</span></i>"
+        }
+      },
+      "Italian": {
+        "Name": {
+          "Text": "Poliwhirl",
+          "Meaning": "Same as English name"
+        }
+      },
+      "Korean": {
+        "Name": {
+          "Text": "",
+          "Pronunciation": "Suryukchaengi",
+          "Explanation": "Until Generation III",
+          "Meaning": "From <span class=\"explain\" title=\"amphibious; literally &#39;water and land&#39;\">수륙(水陸) <i>su'ryuk</i></span> and <span class=\"explain\" title=\"tadpole\">올챙이 <i>olchaeng'i</i></span>"
+        },
+        "OtherNames": [
+          {
+            "Text": "",
+            "Pronunciation": "Syuryukchaengi",
+            "Explanation": "Since Generation IV"
+          }
+        ]
+      },
+      "Cantonese Chinese": {
+        "Name": {
+          "Text": "蚊香蛙",
+          "Pronunciation": "Mānhēungwā",
+          "Meaning": "From <a href=\"https://en.wikipedia.org/wiki/Mosquito_coil\" class=\"extiw\" title=\"wp:Mosquito coil\"><span class=\"explain\" title=\"mosquito coil\">蚊香</span></a> and <span class=\"explain\" title=\"frog\">蛙</span>"
+        }
+      },
+      "Mandarin Chinese": {
+        "Name": {
+          "Text": "蚊香蛙",
+          "Pronunciation": "Wénxiāngwā",
+          "Meaning": "From <a href=\"https://en.wikipedia.org/wiki/Mosquito_coil\" class=\"extiw\" title=\"wp:Mosquito coil\"><span class=\"explain\" title=\"mosquito coil\">蚊香</span></a> and <span class=\"explain\" title=\"frog\">蛙</span>"
+        }
+      }
+    },
     "HeldItems": [],
     "No": 61,
     "CatchRate": {
@@ -79077,7 +79244,67 @@
   },
   {
     "Name": "Squirtle",
-    "OtherNames": {},
+    "OtherNames": {
+      "Japanese": {
+        "Name": {
+          "Text": "ゼニガメ",
+          "Pronunciation": "Zenigame",
+          "Meaning": "From <span class=\"explain\" title=\"Japanese Pond Turtle\">銭亀 <i>zenigame</i></span>"
+        }
+      },
+      "French": {
+        "Name": {
+          "Text": "Carapuce",
+          "Meaning": "From <span class=\"explain\" title=\"shell\"><i>carapace</i></span> and <span class=\"explain\" title=\"flea, used as an endearing term for someone small or cute\"><i>puce</i></span>"
+        }
+      },
+      "Spanish": {
+        "Name": {
+          "Text": "Squirtle",
+          "Meaning": "Same as English name"
+        }
+      },
+      "German": {
+        "Name": {
+          "Text": "Schiggy",
+          "Meaning": "From <span class=\"explain\" title=\"turtle\"><i>Schildkröte</i></span>"
+        }
+      },
+      "Italian": {
+        "Name": {
+          "Text": "Squirtle",
+          "Meaning": "Same as English name"
+        }
+      },
+      "Korean": {
+        "Name": {
+          "Text": "꼬부기",
+          "Pronunciation": "Kkobugi",
+          "Meaning": "From <span class=\"explain\" title=\"kid\">꼬마 <i>kkoma</i></span> and <span class=\"explain\" title=\"turtle\">거북이 <i>geobugi</i></span>"
+        }
+      },
+      "Cantonese Chinese": {
+        "Name": {
+          "Text": "傑尼龜",
+          "Pronunciation": "Gihtnèihgwāi",
+          "Meaning": "Partial transliteration of its Japanese name, and <span class=\"explain\" title=\"turtle\">龜 <i>gwāi</i></span><br>May be taken from <span class=\"explain\" title=\"cherry\">車厘子 <i>chēlèihji</i></span>, and from <span class=\"explain\" title=\"turtle\">龜 <i>gwāi</i></span>"
+        },
+        "OtherNames": [
+          {
+            "Text": "車厘龜",
+            "Pronunciation": "Chēlèihgwāi",
+            "Explanation": "Pre-Gen VII Media"
+          }
+        ]
+      },
+      "Mandarin Chinese": {
+        "Name": {
+          "Text": "傑尼龜 / 杰尼龟",
+          "Pronunciation": "Jiéníguī",
+          "Meaning": "Partial transliteration of its Japanese name, and <span class=\"explain\" title=\"turtle\">龜 / 龟 <i>guī</i></span>"
+        }
+      }
+    },
     "HeldItems": [
       {
         "Name": [
@@ -83148,7 +83375,60 @@
   },
   {
     "Name": "Tentacool",
-    "OtherNames": {},
+    "OtherNames": {
+      "Japanese": {
+        "Name": {
+          "Text": "メノクラゲ",
+          "Pronunciation": "Menokurage",
+          "Meaning": "From <span class=\"explain\" title=\"enemy\">目の敵 <i>menokataki</i></span> and <span class=\"explain\" title=\"jellyfish\">水母 <i>kurage</i></span>"
+        }
+      },
+      "French": {
+        "Name": {
+          "Text": "Tentacool",
+          "Meaning": "Same as English name"
+        }
+      },
+      "Spanish": {
+        "Name": {
+          "Text": "Tentacool",
+          "Meaning": "Same as English name"
+        }
+      },
+      "German": {
+        "Name": {
+          "Text": "Tentacha",
+          "Meaning": "From <i>tentacle</i>"
+        }
+      },
+      "Italian": {
+        "Name": {
+          "Text": "Tentacool",
+          "Meaning": "Same as English name"
+        }
+      },
+      "Korean": {
+        "Name": {
+          "Text": "왕눈해",
+          "Pronunciation": "Wangnunhe",
+          "Meaning": "From <span class=\"explain\" title=\"big eye\">왕눈 <i>wangnoon</i></span>, and <span class=\"explain\" title=\"jellyfish\">해파리 <i>haepari</i></span> or <span class=\"explain\" title=\"sea\">해 (海) <i>hae</i></span>"
+        }
+      },
+      "Cantonese Chinese": {
+        "Name": {
+          "Text": "大眼水母",
+          "Pronunciation": "Daaihngáahnséuimóuh",
+          "Meaning": "Literally \"Big eyed jellyfish\""
+        }
+      },
+      "Mandarin Chinese": {
+        "Name": {
+          "Text": "瑪瑙水母 / 玛瑙水母",
+          "Pronunciation": "Mǎnǎoshuǐmǔ",
+          "Meaning": "Literally \"<a href=\"https://en.wikipedia.org/wiki/Agate\" class=\"extiw\" title=\"wp:Agate\">Agate</a> jellyfish\""
+        }
+      }
+    },
     "HeldItems": [],
     "No": 72,
     "CatchRate": {
