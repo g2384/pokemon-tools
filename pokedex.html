@@ -388,7 +388,10 @@
             var s = settings.join("");
             if (document.location.search.substr(1) != s) {
                 console.log(document.location.search.substr(1))
-                document.location.search = s;
+                if (history.pushState) {
+                    var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + s;
+                    window.history.pushState({ path: newurl }, '', newurl);
+                }
             }
             var result = [];
             data = pokemonData;
