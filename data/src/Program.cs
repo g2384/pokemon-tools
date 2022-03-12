@@ -159,6 +159,11 @@ namespace CrawlBulbapedia
             });
             var output = Path.Combine(targetPath, "data.json");
             File.WriteAllText(output, json);
+            var jsonTE = JsonConvert.SerializeObject(TypeEffectivenessNotes.Select(e => e.Replace("\n", "")), Formatting.Indented, new JsonSerializerSettings()
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            });
+            File.WriteAllText(Path.Combine(targetPath, "type-effective-notes.json"), jsonTE);
         }
 
         private static ISet<string> TypeEffectivenessNotes = new HashSet<string>();
@@ -207,13 +212,16 @@ namespace CrawlBulbapedia
                 else
                 {
                     var tr2 = th.GetNearestNodes("tr");
-                    if (tr2.Length != 1)
+                    foreach (var tt in tr2)
                     {
-
-                    }
-                    else
-                    {
-                        TypeEffectivenessNotes.Add(tr2[0].InnerHtml);
+                        if (tt.InnerText.Contains("Notes:"))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            TypeEffectivenessNotes.Add(tt.InnerHtml);
+                        }
                     }
                 }
             }
