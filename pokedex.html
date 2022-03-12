@@ -423,7 +423,6 @@
                 if (selected["No."] < minIndex || selected["No."] > maxIndex) {
                     continue;
                 }
-
                 if (on != undefined) {
                     var cn = on["Mandarin Chinese"];
                     if (cn != undefined) {
@@ -455,27 +454,31 @@
                 if (settings.indexOf("ca") >= 0) {
                     selected["Category"] = di["Category"].replace("Pokémon", "").trim();
                 }
-                if (settings.indexOf("te") >= 0) {
-                    var te = di["TypeEffectiveness"];
-                    if (te != undefined) {
-                        showTypeEffectiveness(te, selected);
+                var types = di["Types"];
+                var type1 = [];
+                var otherTypeStr = "";
+                if (types != undefined) {
+                    var keys = Object.keys(types);
+                    for (var j = 0; j < keys.length; j++) {
+                        if (keys[j] == "") {
+                            type1 = types[keys[j]];
+                        }
+                        else if (keys[j] == fn) {
+                            type1 = types[keys[j]];
+                        }
+                        else {
+                            otherTypeStr = keys[j] + ": " + types[keys[j]].join("; ") + "<br />";
+                        }
                     }
                 }
                 if (settings.indexOf("ty") >= 0) {
-                    var types = di["Types"];
-                    if (types != undefined) {
-                        var keys = Object.keys(types);
-                        for (var j = 0; j < keys.length; j++) {
-                            if (keys[j] == "") {
-                                selected["Types"] = beautifyType(types[keys[j]]);
-                            }
-                            else if (keys[j] == fn) {
-                                selected["Types"] = beautifyType(types[keys[j]]);
-                            }
-                            else {
-                                selected["Other Types"] = keys[j] + ": " + types[keys[j]].join("; ") + "<br />";
-                            }
-                        }
+                    selected["Types"] = beautifyType(type1);
+                    selected["Other Types"] = otherTypeStr;
+                }
+                if (settings.indexOf("te") >= 0) {
+                    var te = di["TypeEffectiveness"];
+                    if (te != undefined) {
+                        showTypeEffectiveness(te, selected, type1);
                     }
                 }
                 result.push(selected);
@@ -502,7 +505,15 @@
             return str.join(' ');
         }
 
-        function showTypeEffectiveness(te, selected) {
+        function showTypeEffectiveness(te, selected, types) {
+            /*var t1 = types[1];
+            if (t1 == undefined) {
+                t1 = "None";
+            }
+            if (types[0] == undefined) {
+                return;
+            }
+            var te = calcEffectiveness(titleCase(types[0]), titleCase(t1), true);*/
             showTypeEffectiveness2(te, selected, "E0", "Immune To");
             showTypeEffectiveness2(te, selected, "E0_5", "Resistant To");
             showTypeEffectiveness2(te, selected, "E1", "Dmg. Normally To");
@@ -525,6 +536,9 @@
                         r += "<span class='type-num'>" + num + "</span>";
                     }*/
                     r += "</span>";
+                }
+                if (r.length == 0) {
+                    r += "<span class='roundSpan type-eff type-None'>None</span>";
                 }
                 selected[text2] = r;
             }
