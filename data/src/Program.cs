@@ -22,6 +22,15 @@ namespace CrawlBulbapedia
         public string Category { get; set; } // pokemon type
         public IDictionary<string, PokemonType[]> Types { get; set; }
         public IDictionary<string, Stats> Stats { get; set; } = new Dictionary<string, Stats>();
+        public TypeEffectiveness TypeEffectiveness { get;set;}
+    }
+
+    public class TypeEffectiveness
+    {
+        public List<string> E1 { get; set; } // damaged normally by
+        public List<string> E2 { get; set; } // weak to
+        public List<string> E0 { get; set; } // immune to
+        public List<string> E0_5 { get; set; } // resistant to
     }
 
     public class Stats
@@ -122,6 +131,7 @@ namespace CrawlBulbapedia
                         MinStatsAt100 = s.Item6
                     };
                 }
+                pokemon.TypeEffectiveness = GetEffectiveness(node);
 
                 GetPokeInfo(node, pokemon);
 
@@ -149,6 +159,84 @@ namespace CrawlBulbapedia
             });
             var output = Path.Combine(targetPath, "data.json");
             File.WriteAllText(output, json);
+        }
+
+        private static ISet<string> TypeEffectivenessNotes = new HashSet<string>();
+
+        private static TypeEffectiveness GetEffectiveness(HtmlNode node)
+        {
+            var cc = node.SelectSingleNode("//div[@id=\"mw-content-text\"]//*[@id=\"Type_effectiveness\"]//parent::h3");
+            if (cc == null)
+            {
+                throw new Exception();
+            }
+            var nt = GetNextTable(cc, false, false);
+            var ths = nt.GetNearestNodes("tr");
+            var ef = new TypeEffectiveness();
+            foreach(var th in ths)
+            {
+                var inT = th.InnerText.Trim();
+                if(inT.Contains("Under normal battle conditions in Generation VIII"))
+                {
+                    continue;
+                }
+                if (string.IsNullOrEmpty(inT))
+                {
+                    continue;
+                }
+                var tds = th.RecursiveGetChildNode("tr");
+                var tds2 = tds.GetNearestNodes("span");
+                var tds3 = RemoveHiddenNodes(tds2);
+                var keyw = inT.Replace(" ", "");
+                if(keyw.Contains("Damagednormallyby"))
+                {
+                    ef.E1 = GetEffectivenessTypes(tds3);
+                }
+                else if (keyw.Contains("Weakto"))
+                {
+                    ef.E2 = GetEffectivenessTypes(tds3);
+                }
+                else if (keyw.Contains("Immuneto"))
+                {
+                    ef.E0 = GetEffectivenessTypes(tds3);
+                }
+                else if (keyw.Contains("Resistantto"))
+                {
+                    ef.E0_5 = GetEffectivenessTypes(tds3);
+                }
+                else
+                {
+                    var tr2 = th.GetNearestNodes("tr");
+                    if (tr2.Length != 1)
+                    {
+
+                    }
+                    else
+                    {
+                        TypeEffectivenessNotes.Add(tr2[0].InnerHtml);
+                    }
+                }
+            }
+            return ef;
+        }
+
+        private static List<string> GetEffectivenessTypes(HtmlNode[] sp)
+        {
+            var types = new List<string>();
+            foreach(var s in sp)
+            {
+                var s2 = newLines.Split(s.InnerText.Trim());
+                if (s2.Length == 1)
+                {
+                    types.Add(s2[0]);
+                }
+                else
+                {
+                    types.Add(s2[0] + ":" + s2[1]);
+                }
+            }
+
+            return types;
         }
 
         private static Regex newLines = new Regex(@"\n+", RegexOptions.Compiled);
@@ -1077,9 +1165,13 @@ namespace CrawlBulbapedia
             return null;
         }
 
-        private static HtmlNode? GetNextTable(HtmlNode heldItems)
+        private static HtmlNode? GetNextTable(HtmlNode heldItems, bool gotoParent = true, bool getInnerTable = true)
         {
-            var heldItemsTable2 = heldItems.ParentNode;
+            var heldItemsTable2 = heldItems;
+            if (gotoParent)
+            {
+                heldItemsTable2 = heldItems.ParentNode;
+            }
             if (heldItemsTable2.Name == "h3" || heldItemsTable2.Name == "h2" || heldItemsTable2.Name == "h4")
             {
                 var h3 = heldItemsTable2.NextSibling;
@@ -1089,13 +1181,16 @@ namespace CrawlBulbapedia
                 }
                 if (h3.Name == "table")
                 {
-                    var t2 = h3.ChildNodes["tbody"];
-                    var t3 = t2?.ChildNodes["tr"];
-                    var t4 = t3?.ChildNodes["td"];
-                    var t5 = t4?.ChildNodes["table"];
-                    if (t5 != null)
+                    if (getInnerTable)
                     {
-                        return t5;
+                        var t2 = h3.ChildNodes["tbody"];
+                        var t3 = t2?.ChildNodes["tr"];
+                        var t4 = t3?.ChildNodes["td"];
+                        var t5 = t4?.ChildNodes["table"];
+                        if (t5 != null)
+                        {
+                            return t5;
+                        }
                     }
                     return h3;
                 }
