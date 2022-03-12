@@ -238,11 +238,13 @@
             }
             if (showItems.length == 0) {
                 var q = document.location.search.substr(1);
-                if (q == '') {
-                    return showItems;
+                if (q != '') {
+                    var kvp = q.match(/(.{1,2})/g);
+                    showItems = kvp;
                 }
-                var kvp = q.match(/(.{1,2})/g);
-                showItems = kvp;
+            }
+            if (showItems.length == 0) {
+                showItems = ["g1", "en", "cr", "ty"];
             }
             return showItems;
         }
@@ -379,7 +381,7 @@
             if (pokemonData == null || itemsData == null) {
                 return;
             }
-            if (settings == undefined) {
+            if (settings == undefined || settings == null || settings.length == 0) {
                 settings = getSettings();
             }
             console.log(settings);
@@ -390,6 +392,23 @@
             }
             var result = [];
             data = pokemonData;
+            var minIndex = 1000000;
+            var maxIndex = 0;
+            if (settings.length > 0) {
+                for (var k = 0; k < settings.length; k++) {
+                    if (genTable[settings[k]] != null) {
+                        var mm = genTable[settings[k]];
+                        minIndex = Math.min(minIndex, mm[0]);
+                        maxIndex = Math.min(maxIndex, mm[1]);
+                    }
+                }
+            }
+
+            if (maxIndex < minIndex) {
+                maxIndex = 100000;
+                minIndex = 0;
+            }
+
             for (var i = 0; i < data.length; i++) {
                 var di = data[i];
                 var n = di["Name"];
@@ -398,19 +417,8 @@
                 var selected = {};
                 selected["No."] = di["No"];
 
-                var canShow = false;
-                if (settings.length > 0) {
-                    for (var k = 0; k < settings.length; k++) {
-                        if (genTable[settings[k]] != null) {
-                            var mm = genTable[settings[k]];
-                            if (selected["No."] <= mm[1] && selected["No."] >= mm[0]) {
-                                canShow = true;
-                            }
-                        }
-                    }
-                    if (!canShow) {
-                        continue;
-                    }
+                if (selected["No."] < minIndex || selected["No."] > maxIndex) {
+                    continue;
                 }
 
                 if (on != undefined) {
@@ -469,7 +477,7 @@
                 }
                 result.push(selected);
             }
-            var generatedTable = buildHtmlTable(result, ["No.", "Chinese Name", "Held Items", "Types", "Other Types", "Immune To", "Resistant To", "Dmg. Normally To", "Weak To"]);
+            var generatedTable = buildHtmlTable(result, ["No.", "English Name", "Chinese Name", "Held Items", "Catch Rate", "Types", "Other Types", "Immune To", "Resistant To", "Dmg. Normally To", "Weak To"]);
             pokemonTable.appendChild(generatedTable);
             sorttable.makeSortable(generatedTable);
         }
