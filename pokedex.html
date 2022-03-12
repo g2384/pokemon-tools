@@ -55,6 +55,10 @@
             margin: 0 5px;
         }
 
+        .filter-title {
+            font-weight: bold;
+        }
+
         label {
             display: inline-block;
         }
@@ -67,10 +71,15 @@
     <script>
 
         const filters = {
-            "Gen": ["Gen 1 (1 - 151):g1",
+            "Generation": ["Gen 1 (1 - 151):g1",
                 "Gen 2 (152 - 251):g2",
                 "Gen 3 (282 - 386):g3",
-                "Gen 4 (387 - 493):g4"]
+                "Gen 4 (387 - 493):g4"],
+            "Stats": ["Base:b1",
+                "Min at lvl 50:b2",
+                "Max at lvl 50:b3",
+                "Min at lvl 100:b4",
+                "Max at lvl 100:b5"]
         }
         const genTable = {
             "g1": [1, 151],
@@ -78,12 +87,19 @@
             "g3": [282, 386],
             "g4": [387, 493]
         }
+        const statTable = {
+            "b1": ["BaseStats", "HP", "Defense", "Attack", "Speed", "Sp. Attack", "Sp. Defense", "Total"],
+            "b2": ["MinStatsAt50", "@50min HP", "@50min Defense", "@50min Attack", "@50min Speed", "@50min Sp. Attack", "@50min Sp. Defense", "@50min Total"],
+            "b3": ["MaxStatsAt50", "@50max HP", "@50max Defense", "@50max Attack", "@50max Speed", "@50max Sp. Attack", "@50max Sp. Defense", "@50max Total"],
+            "b4": ["MinStatsAt100", "@100min HP", "@100min Defense", "@100min Attack", "@100min Speed", "@100min Sp. Attack", "@100min Sp. Defense", "@100min Total"],
+            "b5": ["MaxStatsAt100", "@100max HP", "@100max Defense", "@100max Attack", "@100max Speed", "@100max Sp. Attack", "@100max Sp. Defense", "@100max Total"],
+        }
 
         function addFilters() {
             var result = "";
             for (var k in filters) {
                 var items = filters[k];
-                result += "<div class='filter-btns " + k + "'>";
+                result += "<div class='filter-btns g-" + k + "'><span class='filter-title'>" + k + ": </span>";
                 for (var i = 0; i < items.length; i++) {
                     var key = items[i].split(":");
                     result += "<label><input type='checkbox' id='item-filter-" + key[1] + "' onclick='refresh()'>" + key[0] + "</label>";
@@ -244,6 +260,11 @@
                 settings = getSettings();
             }
             console.log(settings);
+            var s = settings.join("");
+            if (document.location.search.substr(1) != s) {
+                console.log(document.location.search.substr(1))
+                document.location.search = s;
+            }
             var result = [];
             data = pokemonData;
             for (var i = 0; i < data.length; i++) {
@@ -285,7 +306,7 @@
                 }
                 var stats = di["Stats"];
                 if (stats != undefined) {
-                    getStats(stats, selected);
+                    getStats(stats, selected, settings);
                 }
                 var catchRate = di["CatchRate"];
                 if (catchRate != undefined) {
@@ -312,29 +333,30 @@
             var generatedTable = buildHtmlTable(result, ["No.", "Chinese Name"]);
             pokemonTable.appendChild(generatedTable);
             sorttable.makeSortable(generatedTable);
-            var s = settings.join("");
-            if (document.location.search.substr(1) != s) {
-                console.log(document.location.search.substr(1))
-                document.location.search = s;
-            }
         }
 
-        function getStats(stats, item) {
+        function getStats(stats, item, settings) {
             var keys = Object.keys(stats);
             if (keys.length == 0) {
                 return;
             }
             var f = keys[0];
             var f1 = stats[f];
-            var ma50 = f1["MaxStatsAt50"];
-            item["Max at 50 HP"] = ma50["HP"];
-            item["Max at 50 Defense"] = ma50["Defense"];
-            item["Max at 50 Attack"] = ma50["Attack"];
-            item["Max at 50 Speed"] = ma50["Speed"];
-            item["Max at 50 SpecialAttack"] = ma50["SpecialAttack"];
-            item["Max at 50 SpecialDefense"] = ma50["SpecialDefense"];
-            item["Max at 50 Total"] = ma50["Attack"] + ma50["HP"] + ma50["Defense"]
-                + ma50["Speed"] + ma50["SpecialAttack"] + ma50["SpecialDefense"];
+            var k2 = Object.keys(statTable);
+            for (var i = 0; i < k2.length; i++) {
+                if (settings.indexOf(k2[i]) >= 0) {
+                    var mapped = statTable[k2[i]];
+                    var ma50 = f1[mapped[0]];
+                    item[mapped[1]] = ma50["HP"];
+                    item[mapped[2]] = ma50["Defense"];
+                    item[mapped[3]] = ma50["Attack"];
+                    item[mapped[4]] = ma50["Speed"];
+                    item[mapped[5]] = ma50["SpecialAttack"];
+                    item[mapped[6]] = ma50["SpecialDefense"];
+                    item[mapped[7]] = ma50["Attack"] + ma50["HP"] + ma50["Defense"]
+                        + ma50["Speed"] + ma50["SpecialAttack"] + ma50["SpecialDefense"];
+                }
+            }
         }
 
         function getHeldItems(heldItem) {
