@@ -62,6 +62,119 @@
         label {
             display: inline-block;
         }
+
+        .roundSpan {
+            text-align: center;
+            border-radius: 40px;
+            color: white;
+            width: 100px;
+            padding: 2px;
+            display: inline-block;
+        }
+
+        .type-eff {
+            display: block;
+            margin: 5px 0px;
+        }
+
+        .type-Fire {
+            background: #F08030;
+            border: 1px solid #9C531F;
+        }
+
+        .type-Steel {
+            background: #B8B8D0;
+            border: 1px solid #787887;
+        }
+
+        .type-Bug {
+            background: #A8B820;
+            border: 1px solid #6D7815;
+        }
+
+        .type-Rock {
+            background: #B8A038;
+            border: 1px solid #786824;
+        }
+
+        .type-Poison {
+            background: #A040A0;
+            border: 1px solid #682A68;
+        }
+
+        .type-Water {
+            background: #6890F0;
+            border: 1px solid #445E9C;
+        }
+
+        .type-Ice {
+            background: #98D8D8;
+            border: 1px solid #638D8D;
+        }
+
+        .type-Dragon {
+            background: #7038F8;
+            border: 1px solid #4924A1;
+        }
+
+        .type-Psychic {
+            background: #F85888;
+            border: 1px solid #A13959;
+        }
+
+        .type-Normal {
+            background: #A8A878;
+            border: 1px solid #6D6D4E;
+        }
+
+        .type-Fairy {
+            background: #EE99AC;
+            border: 1px solid #9B6470;
+        }
+
+        .type-Dark {
+            background: #705848;
+            border: 1px solid #49392F;
+        }
+
+        .type-Fighting {
+            background: #C03028;
+            border: 1px solid #7D1F1A;
+        }
+
+        .type-None {
+            background: #000000;
+        }
+
+        .type-Flying {
+            background: #A890F0;
+            border: 1px solid #6D5E9C;
+        }
+
+        .type-Ghost {
+            background: #705898;
+            border: 1px solid #493963;
+        }
+
+        .type-Electric {
+            background: #F8D030;
+            border: 1px solid #A1871F;
+        }
+
+        .type-Grass {
+            background: #78C850;
+            border: 1px solid #4E8234;
+        }
+
+        .type-Ground {
+            background: #E0C068;
+            border: 1px solid #927D44;
+        }
+
+        .type-num {
+            margin-left: 10px;
+            background: #FFF;
+        }
     </style>
 </head>
 
@@ -79,7 +192,9 @@
                 "Min at lvl 50:b2",
                 "Max at lvl 50:b3",
                 "Min at lvl 100:b4",
-                "Max at lvl 100:b5"]
+                "Max at lvl 100:b5"],
+            "Language": ["简中:z1", "English:en"],
+            "Others": ["Catch Rate:cr", "Category:ca", "Type:ty", "Type Effectiveness:te"]
         }
         const genTable = {
             "g1": [1, 151],
@@ -198,6 +313,8 @@
             _th_ = document.createElement('th'),
             _td_ = document.createElement('td');
 
+        var htmlColumns = ["Immune To", "Resistant To", "Dmg. Normally To", "Weak To", "Other Types", "Types"];
+
         function buildHtmlTable(arr, order) {
             var table = _table_.cloneNode(false),
                 columns = addAllColumnHeaders(arr, order, table);
@@ -206,9 +323,15 @@
                 var tr = _tr_.cloneNode(false);
                 for (var j = 0, maxj = columns.length; j < maxj; ++j) {
                     var td = _td_.cloneNode(false);
-                    cellValue = arr[i][columns[j]];
-                    var d = document.createElement('span');
-                    d.innerHTML = arr[i][columns[j]] || '';
+                    var cellValue = arr[i][columns[j]] || '';
+                    var d;
+                    if (htmlColumns.indexOf(columns[j]) >= 0) {
+                        d = document.createElement('span');
+                        d.innerHTML = cellValue;
+                    }
+                    else {
+                        d = document.createTextNode(cellValue);
+                    }
                     td.appendChild(d);
                     tr.appendChild(td);
                 }
@@ -297,8 +420,12 @@
                         n = toSimpleChinese(n);
                     }
                 }
-                selected["Chinese Name"] = n;
-                selected["English Name"] = fn;
+                if (settings.indexOf("z1") >= 0) {
+                    selected["Chinese Name"] = n;
+                }
+                if (settings.indexOf("en") >= 0) {
+                    selected["English Name"] = fn;
+                }
                 var heldItem = di["HeldItems"];
                 if (heldItem != undefined) {
                     var items = getHeldItems(heldItem);
@@ -308,31 +435,88 @@
                 if (stats != undefined) {
                     getStats(stats, selected, settings);
                 }
-                var catchRate = di["CatchRate"];
-                if (catchRate != undefined) {
-                    selected["Catch Rate"] = catchRate["Text"];
+                if (settings.indexOf("cr") >= 0) {
+                    var catchRate = di["CatchRate"];
+                    if (catchRate != undefined) {
+                        selected["Catch Rate"] = catchRate["Text"];
+                    }
                 }
-                selected["Category"] = di["Category"].replace("Pokémon", "").trim();
-                var types = di["Types"];
-                if (types != undefined) {
-                    var keys = Object.keys(types);
-                    for (var j = 0; j < keys.length; j++) {
-                        if (keys[j] == "") {
-                            selected["Types"] = types[""].join("; ");
-                        }
-                        else if (keys[j] == fn) {
-                            selected["Types"] = types[fn].join("; ");
-                        }
-                        else {
-                            selected["Other Types"] = keys[j] + ": " + types[keys[j]].join("; ") + "<br />";
+                if (settings.indexOf("ca") >= 0) {
+                    selected["Category"] = di["Category"].replace("Pokémon", "").trim();
+                }
+                if (settings.indexOf("te") >= 0) {
+                    var te = di["TypeEffectiveness"];
+                    if (te != undefined) {
+                        showTypeEffectiveness(te, selected);
+                    }
+                }
+                if (settings.indexOf("ty") >= 0) {
+                    var types = di["Types"];
+                    if (types != undefined) {
+                        var keys = Object.keys(types);
+                        for (var j = 0; j < keys.length; j++) {
+                            if (keys[j] == "") {
+                                selected["Types"] = beautifyType(types[keys[j]]);
+                            }
+                            else if (keys[j] == fn) {
+                                selected["Types"] = beautifyType(types[keys[j]]);
+                            }
+                            else {
+                                selected["Other Types"] = keys[j] + ": " + types[keys[j]].join("; ") + "<br />";
+                            }
                         }
                     }
                 }
                 result.push(selected);
             }
-            var generatedTable = buildHtmlTable(result, ["No.", "Chinese Name"]);
+            var generatedTable = buildHtmlTable(result, ["No.", "Chinese Name", "Held Items", "Types", "Other Types", "Immune To", "Resistant To", "Dmg. Normally To", "Weak To"]);
             pokemonTable.appendChild(generatedTable);
             sorttable.makeSortable(generatedTable);
+        }
+
+        function beautifyType(types) {
+            var r = ""
+            for (var i = 0; i < types.length; i++) {
+                var ty = titleCase(types[i]);
+                r += "<span class='roundSpan type-" + ty + "'>" + ty + "</span>";
+            }
+            return r;
+        }
+
+        function titleCase(str) {
+            str = str.toLowerCase().split(' ');
+            for (var i = 0; i < str.length; i++) {
+                str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+            }
+            return str.join(' ');
+        }
+
+        function showTypeEffectiveness(te, selected) {
+            showTypeEffectiveness2(te, selected, "E0", "Immune To");
+            showTypeEffectiveness2(te, selected, "E0_5", "Resistant To");
+            showTypeEffectiveness2(te, selected, "E1", "Dmg. Normally To");
+            showTypeEffectiveness2(te, selected, "E2", "Weak To");
+        }
+
+        function showTypeEffectiveness2(te, selected, text1, text2) {
+            var e0 = te[text1];
+            if (e0 != undefined) {
+                var r = "";
+                for (var i = 0; i < e0.length; i++) {
+                    var ss = e0[i].split(":");
+                    var num = "";
+                    var ty = ss[0];
+                    if (ss.length > 1) {
+                        num = ss[1];
+                    }
+                    r += "<span class='roundSpan type-eff type-" + ty + "'>" + ty;
+                    /*if (num.length > 1) {
+                        r += "<span class='type-num'>" + num + "</span>";
+                    }*/
+                    r += "</span>";
+                }
+                selected[text2] = r;
+            }
         }
 
         function getStats(stats, item, settings) {

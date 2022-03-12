@@ -159,7 +159,7 @@ namespace CrawlBulbapedia
             });
             var output = Path.Combine(targetPath, "data.json");
             File.WriteAllText(output, json);
-            var jsonTE = JsonConvert.SerializeObject(TypeEffectivenessNotes.Select(e => e.Replace("\n", "")), Formatting.Indented, new JsonSerializerSettings()
+            var jsonTE = JsonConvert.SerializeObject(TypeEffectivenessNotes, Formatting.Indented, new JsonSerializerSettings()
             {
                 NullValueHandling = NullValueHandling.Ignore
             });
@@ -220,7 +220,7 @@ namespace CrawlBulbapedia
                         }
                         else
                         {
-                            TypeEffectivenessNotes.Add(tt.InnerHtml);
+                            TypeEffectivenessNotes.Add(tt.InnerHtml.Replace("\n", ""));
                         }
                     }
                 }
