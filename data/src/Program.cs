@@ -12,6 +12,20 @@ namespace CrawlBulbapedia
         public IDictionary<Language, ForeignName> OtherNames { get; set; }
     }
 
+    public class Pokemon2
+    {
+        public string Name { get; set; }
+        public IDictionary<LanguageCode, string> OtherNames { get; set; }
+        public IList<HeldItemTable> HeldItems { get; set; } = new List<HeldItemTable>();
+        public int No { get; set; } // species_id
+        public int Id { get; set; }
+        public AnnotatedText CatchRate { get; set; }
+        public string Category { get; set; } // pokemon type
+        public IDictionary<string, PokemonType[]> Types { get; set; }
+        public IDictionary<string, Stats> Stats { get; set; } = new Dictionary<string, Stats>();
+        public TypeEffectiveness TypeEffectiveness { get; set; }
+    }
+
     public class Pokemon
     {
         public string Name { get; set; }
@@ -90,14 +104,18 @@ namespace CrawlBulbapedia
             var dataPath = "../../../..";
             //DownloadRawWebpages(dataPath, "pokemon");
 
-            var processedPath = "../../../../processedHTML";
+            //var processedPath = "../../../../processedHTML";
             //RemoveTag.Remove(processedPath, "pokemon");
 
-            ExtractInfo(processedPath, dataPath, "pokemon");
+            //ExtractInfo(processedPath, dataPath, "pokemon");
 
             //DownloadRawWebpages(dataPath, "item");
             //RemoveTag.Remove(processedPath, "item");
             //ExtractItemInfo(processedPath, dataPath, "item");
+
+            ///// parse csv from pokeapi
+
+            PokeApiParser.ConvertToData("../../../../csv", dataPath);
         }
 
         private static void ExtractInfo(string sourcePath, string targetPath, string folder)
