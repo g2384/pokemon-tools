@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html dir="ltr" class="gr__pkmn_help fa-events-icons-ready" lang="en-US">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Pokémon Type Calculator</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A Pokémon type calculator to show strengths/weaknesses of different type combinations">
+
+  <style type="text/css">
+    .Pixelated {
+      /* Firefox */
+      image-rendering: crisp-edges;
+      /* Chrome */
+      image-rendering: pixelated;
+    }
+
+    .MatchupsSection-Container {
+      display: flex;
+      justify-content: center;
+      padding: 0.125rem;
+      flex-wrap: wrap;
+    }
+
+    .TypeSelector-Container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 0.5rem;
+    }
+
+    button {
+      -webkit-appearance: none;
+    }
+
+    .inset-shadow {
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .active-squish {
+      transition: transform 50ms;
+    }
+
+    .active-squish:active:not(:disabled) {
+      transform: scale(0.95);
+    }
+
+    .search-placeholder-light::placeholder {
+      color: rgba(0, 0, 0, 0.15);
+    }
+
+    .button-shadow {
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .no-outline,
+    .no-outline:focus {
+      outline: none;
+    }
+
+    .bottom-border-thick-current {
+      border-bottom: 4px solid currentColor;
+    }
+
+    .bottom-border-thick {
+      border-bottom: 4px solid transparent;
+    }
+
+    .bottom-border-thick:focus {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    .TabBarBorder {
+      border-width: 1px;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .DashedFocus:focus {
+      outline: 2px dashed currentColor;
+      outline-offset: 4px;
+    }
+
+    .ChunkyFocus:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px white, 0 0 0 5px black;
+    }
+
+    .SimpleFocus:focus {
+      outline: none;
+      border-color: black;
+      box-shadow: inset 0 0 0 1px black;
+    }
+
+    .InnerDashedFocus:focus {
+      outline: 2px dashed currentColor;
+      outline-offset: -6px;
+    }
+
+    .text-shadow-black {
+      text-shadow: 0 0 3px black;
+    }
+
+    .subtle-hr {
+      border: 0;
+      background: rgba(0, 0, 0, 0.05);
+      height: 1px;
+    }
+
+    .no-box-shadow,
+    .no-box-shadow:focus {
+      box-shadow: none !important;
+    }
+
+    @media screen and (max-width: 30em) {
+      .HACK-hidden-ns {
+        display: none;
+      }
+    }
+
+    .ThickUnderline {
+      text-decoration-color: rgba(0, 0, 0, 0.2);
+      text-decoration-thickness: 2px;
+    }
+
+    .ThickUnderline:focus,
+    .ThickUnderline:hover {
+      text-decoration-color: currentColor;
+    }
+
+    .HACK-hidden-ns {
+      visibility: hidden;
+    }
+
+    .PokeballHeader {
+      --PokeballHeader-borderSize: 8px;
+      --PokeballHeader-circleSize: 30px;
+      border-bottom: var(--PokeballHeader-borderSize) solid black;
+      padding: 1rem;
+      padding-top: calc(0.8 * var(--PokeballHeader-circleSize));
+      padding-bottom: calc(0.8 * var(--PokeballHeader-circleSize));
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    /* The little Pokéball button */
+    .PokeballHeader:after {
+      pointer-events: none;
+      content: " ";
+      background: white;
+      border: 6px solid black;
+      box-shadow: inset 0 0 0 5px white, inset 0 0 0 7px #ccc;
+      width: var(--PokeballHeader-circleSize);
+      height: var(--PokeballHeader-circleSize);
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      bottom: calc(-0.5 * var(--PokeballHeader-borderSize));
+      transform: translateX(-50%) translateY(50%);
+    }
+
+    .type-bg {
+      background-color: var(--type-color-1, #888);
+      color: black;
+      text-shadow: 0 0 1px white, 0 0 2px white;
+    }
+
+    .type-bg-light {
+      background: var(--type-color-3, #fff);
+      color: black;
+      text-shadow: 0 0 1px white, 0 0 2px white;
+    }
+
+    . {
+      background: var(--type-color-2, #333);
+      color: white;
+      text-shadow: 0 1px 0 black, 0 0 1px rgba(0, 0, 0, 0.6),
+        0 0 2px rgba(0, 0, 0, 0.7), 0 0 3px rgba(0, 0, 0, 0.8),
+        0 0 4px rgba(0, 0, 0, 0.9);
+    }
+
+    .type.with-border-color {
+      border-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .type-fire {
+      --type-color-1: #ff9d54;
+      --type-color-2: #ff9d54;
+      --type-color-3: #fde2ab;
+    }
+
+    .type-water {
+      --type-color-1: #68abf1;
+      --type-color-2: #4f92d6;
+      --type-color-3: #9ee6ff;
+    }
+
+    .type-grass {
+      --type-color-1: #7ed874;
+      --type-color-2: #65bd55;
+      --type-color-3: #cfffc3;
+    }
+
+    .type-electric {
+      --type-color-1: #f4d23b;
+      --type-color-2: #fad143;
+      --type-color-3: #feff99;
+    }
+
+    .type-psychic {
+      --type-color-1: #ff8a90;
+      --type-color-2: #f97175;
+      --type-color-3: #ffd5e3;
+    }
+
+    .type-ice {
+      --type-color-1: #87e3d4;
+      --type-color-2: #72cfbd;
+      --type-color-3: #cbffff;
+    }
+
+    .type-dragon {
+      --type-color-1: #53a3d8;
+      --type-color-2: #116ac4;
+      --type-color-3: #95e4ff;
+    }
+
+    .type-dark {
+      --type-color-1: #a18dd5;
+      --type-color-2: #5b5464;
+      --type-color-3: #ccc4f3;
+    }
+
+    .type-fairy {
+      --type-color-1: #f08ee5;
+      --type-color-2: #eb92e4;
+      --type-color-3: #ffc7fc;
+    }
+
+    .type-normal {
+      --type-color-1: #d1dadf;
+      --type-color-2: #929da3;
+      --type-color-3: #ffffff;
+    }
+
+    .type-fighting {
+      --type-color-1: #e46a93;
+      --type-color-2: #ce436a;
+      --type-color-3: #ffb0d0;
+    }
+
+    .type-flying {
+      --type-color-1: #8fb5e6;
+      --type-color-2: #8caadc;
+      --type-color-3: #c5dcfc;
+    }
+
+    .type-poison {
+      --type-color-1: #c685e3;
+      --type-color-2: #ac66c8;
+      --type-color-3: #f6bcf9;
+    }
+
+    .type-ground {
+      --type-color-1: #f2915e;
+      --type-color-2: #d97946;
+      --type-color-3: #feca98;
+    }
+
+    .type-rock {
+      --type-color-1: #c8b78b;
+      --type-color-2: #c6b887;
+      --type-color-3: #eee6a5;
+    }
+
+    .type-bug {
+      --type-color-1: #addf4a;
+      --type-color-2: #90c127;
+      --type-color-3: #f6ffa6;
+    }
+
+    .type-ghost {
+      --type-color-1: #8293d8;
+      --type-color-2: #4e6caa;
+      --type-color-3: #b6c7ff;
+    }
+
+    .type-steel {
+      --type-color-1: #79adc2;
+      --type-color-2: #518ea3;
+      --type-color-3: #b3f3ff;
+    }
+
+    .type-none {
+      --type-color-1: #dedede;
+      --type-color-2: #808080;
+      --type-color-3: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="app" style="margin-top: 31px;">
+    <div class="sans-serif bg-near-white mid-gray min-vh-100 flex flex-column">
+      <div class="flex-auto">
+        <h1>Pokémon Type Calculator</h1>
+        <div>
+          <main>
+            <div>
+              <h2>Choose primary type</h2>
+              <div class="TypeSelector-Container" id="type1"></div>
+              <h2>Choose secondary type</h2>
+              <div class="TypeSelector-Container" id="type2"></div>
+            </div>
+            <div>
+              <div class="tc">
+                <div>
+                  <h3 class="f5 mt3 mb0 dark-gray">Takes 2× from</h3>
+                  <div class="e2">
+                  </div>
+                </div>
+                <div>
+                  <h3 class="f5 mt3 mb0 dark-gray">Takes 1× from</h3>
+                  <div id="e1">
+                  </div>
+                </div>
+                <div>
+                  <h3 class="f5 mt3 mb0 dark-gray">Takes 0× from</h3>
+                  <div class="mw5 center MatchupsSection-Container">
+                    <div class="type-ghost">ghost</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <script>
+    var type1Div = "", type2Div = "";
+    for (var i = 0; i < pokemonTypes.length - 1; i++) {
+      var type1 = pokemonTypes[i];
+      type1Div += "<input type='button' value='" + type1 + "'/>";
+    }
+    for (var j = 0; j < pokemonTypes.length; j++) {
+      var type2 = pokemonTypes[j];
+      type2Div += "<input type='button' value='" + type2 + "'/>";
+    }
+
+    document.getElementById("type1").innerHTML = type1Div;
+    document.getElementById("type2").innerHTML = type2Div;
+  </script>
+
+
+</body>
+
+</html>
