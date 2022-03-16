@@ -19,6 +19,7 @@
     <link rel="image_src" href="./img/bdsp-calendar-apple-icon.png">
     <title>Pokédex - All data on one page</title>
     <script src="./js/sorttable.min.js"></script>
+    <script src="./js/jsonToTable.js"></script>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -317,65 +318,6 @@
 
         var htmlColumns = ["Immune To", "Resistant To", "Dmg. Normally To", "Weak To", "Other Types", "Types"];
 
-        function buildHtmlTable(arr, order) {
-            var table = _table_.cloneNode(false),
-                columns = addAllColumnHeaders(arr, order, table);
-            var tbody = document.createElement('tbody');
-            for (var i = 0, maxi = arr.length; i < maxi; ++i) {
-                var tr = _tr_.cloneNode(false);
-                for (var j = 0, maxj = columns.length; j < maxj; ++j) {
-                    var td = _td_.cloneNode(false);
-                    var cellValue = arr[i][columns[j]] || '';
-                    var d;
-                    if (htmlColumns.indexOf(columns[j]) >= 0) {
-                        d = document.createElement('span');
-                        d.innerHTML = cellValue;
-                    }
-                    else {
-                        d = document.createTextNode(cellValue);
-                    }
-                    td.appendChild(d);
-                    tr.appendChild(td);
-                }
-                tbody.appendChild(tr);
-            }
-            table.appendChild(tbody);
-            return table;
-        }
-
-        function addAllColumnHeaders(arr, order, table) {
-            var columnSet = [],
-                tr = _tr_.cloneNode(false);
-            var thead = document.createElement('thead');
-            for (var i = 0, l = arr.length; i < l; i++) {
-                for (var key in arr[i]) {
-                    if (arr[i].hasOwnProperty(key) && columnSet.indexOf(key) === -1) {
-                        columnSet.push(key);
-                    }
-                }
-            }
-            if (order != null && order != undefined) {
-                var cs = [];
-                for (var i = 0; i < order.length; i++) {
-                    var ind = columnSet.indexOf(order[i]);
-                    if (ind >= 0) {
-                        cs.push(columnSet[ind]);
-                        columnSet.splice(ind, 1);
-                    }
-                }
-                columnSet = cs.concat(columnSet);
-            }
-            for (var i = 0; i < columnSet.length; i++) {
-                var key = columnSet[i];
-                var th = _th_.cloneNode(false);
-                th.appendChild(document.createTextNode(key));
-                tr.appendChild(th);
-            }
-            thead.appendChild(tr);
-            table.appendChild(thead);
-            return columnSet;
-        }
-
         function displayP(settings) {
             pokemonTable.innerHTML = "";
             if (pokemonData == null || itemsData == null) {
@@ -402,7 +344,7 @@
                     if (genTable[settings[k]] != null) {
                         var mm = genTable[settings[k]];
                         minIndex = Math.min(minIndex, mm[0]);
-                        maxIndex = Math.min(maxIndex, mm[1]);
+                        maxIndex = Math.max(maxIndex, mm[1]);
                     }
                 }
             }
@@ -483,7 +425,7 @@
                 }
                 result.push(selected);
             }
-            var generatedTable = buildHtmlTable(result, ["No.", "English Name", "Chinese Name", "Held Items", "Catch Rate", "Types", "Other Types", "Immune To", "Resistant To", "Dmg. Normally To", "Weak To"]);
+            var generatedTable = buildHtmlTable(result, ["No.", "English Name", "Chinese Name", "Held Items", "Catch Rate", "Types", "Other Types", "Immune To", "Resistant To", "Dmg. Normally To", "Weak To"], htmlColumns);
             pokemonTable.appendChild(generatedTable);
             sorttable.makeSortable(generatedTable);
         }
