@@ -26,6 +26,31 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ebf4ff;
+        }
+
+        th {
+            background-color: rgb(22, 98, 141);
+            color: white;
+        }
+
+        .shakebar, .shakebar span, td span{
+            border-collapse: initial;
+        }
+
         #calcform {
             width: 100%;
             position: relative;
@@ -77,7 +102,7 @@
         }
 
         .shakebar .success {
-            background: #00FF00;
+            background: #64ed64;
         }
 
         .shakebar .wobble3 {
@@ -93,7 +118,12 @@
         }
 
         .shakebar .wobble0 {
-            background: #FF3333;
+            background: #e03a3a;
+        }
+
+        .ball-img {
+            width: 20px;
+            height: 20px;
         }
     </style>
 
@@ -111,7 +141,8 @@
                         </div>
 
                         <div class="calcform-row">
-                            <p><label for="pokemon">Pokémon:</label><br>
+                            <p>
+                                <label for="pokemon">Pokémon:</label>
                                 <select name="pokemon" id="pokemon">
                                     <option value="460">Abomasnow</option>
                                     <option value="63">Abra</option>
@@ -1014,7 +1045,7 @@
                                 </select>
                             </p>
 
-                            <p><label for="level">Pokémon's level:</label><br>
+                            <p><label for="level">Pokémon's level:</label>
                                 <input type="text" size="3" name="level" id="level" value="20">
                             </p>
                         </div>
@@ -1027,10 +1058,10 @@
                         </div>
 
                         <div class="calcform-row">
-                            <p><label for="ball">Ball:</label><br>
-                                <select name="ball" id="ball">
-                                    <option value="show-all">Show all</option>
-                                    <option value="poke-ball" selected="">Poké Ball</option>
+                            <p><label for="ball" style="display:none;">Ball:</label><br>
+                                <select name="ball" id="ball" style="display:none;">
+                                    <option value="show-all" selected="">Show all</option>
+                                    <option value="poke-ball">Poké Ball</option>
                                     <option value="great-ball">Great Ball</option>
                                     <option value="ultra-ball">Ultra Ball</option>
                                     <option value="master-ball">Master Ball</option>
@@ -1056,7 +1087,8 @@
                                 </select>
                             </p>
 
-                            <p class="non-raid-options"><label for="status">Status:</label><br>
+                            <p class="non-raid-options">
+                                <label for="status">Status:</label>
                                 <select name="status" id="status">
                                     <option value="none">None</option>
                                     <option value="psn">Poisoned</option>
@@ -1070,7 +1102,7 @@
 
                         <div class="ball-options heavy-ball fast-ball net-ball" style="display: block;">
                             <div class="calcform-row">
-                                <p id="pick-form" style="display: none;"><label for="form">Pokémon's form:</label><br>
+                                <p id="pick-form" style="display: none;"><label for="form">Pokémon's form:</label>
                                     <select name="form" id="form">
                                         <option value="0">Clefairy</option>
                                     </select>
@@ -1084,7 +1116,7 @@
                             </div>
 
                             <div class="calcform-row">
-                                <p><label for="your-pokemon">Your Pokémon:</label><br>
+                                <p><label for="your-pokemon">Your Pokémon:</label>
                                     <select name="your-pokemon" id="your-pokemon">
                                         <option value="460">Abomasnow</option>
                                         <option value="63">Abra</option>
@@ -2606,7 +2638,10 @@
 
                                 var r = [];
                                 $(ball_results).each(function () {
-                                    var b1 = $.map(this, function (results) { return ball_names[results[0].ball]; }).join(', ');
+                                    var b1 = $.map(this, function (results) {
+                                        var bn = ball_names[results[0].ball];
+                                        return `<img class="ball-img" src="./img/${bn.replace(" ", "_")}.webp" />${bn}`;
+                                    }).join('<br>');
 
                                     var r1 = display_ball_results(this[0]);
                                     var r2 = {
@@ -2616,7 +2651,7 @@
                                     r.push(r2);
                                 });
                                 console.log(r);
-                                var generatedTable = buildHtmlTable(r, ["Ball", "Probability"], ["Probability"]);
+                                var generatedTable = buildHtmlTable(r, ["Ball", "Probability"], ["Ball", "Probability"]);
                                 $results.append(generatedTable);
                             }
 
@@ -2625,6 +2660,7 @@
 
                                 if (details) {
                                     // We want to show a shake bar for each result!
+                                    var h = [];
                                     $.each(results, function () {
                                         var $results_heading = $("<h4></h4>");
                                         var iv_string;
@@ -2634,10 +2670,12 @@
                                         else {
                                             iv_string = this.ivs[0] + "-" + this.ivs[this.ivs.length - 1];
                                         }
-                                        $results_heading.text("HP IV of " + iv_string).appendTo($results);
+                                        $results_heading.text("HP IV of " + iv_string);//.appendTo($results);
 
-                                        return display_result_info(this);
+                                        h.push($results_heading.html());
+                                        h.push(display_result_info(this));
                                     });
+                                    return h.join("");
                                 } else {
                                     // Consolidate the results into an averaged one.
                                     var averaged_result = {
@@ -2684,11 +2722,11 @@
                                     console.log(result);
                                     var $shakebar = $("<div></div>").addClass("shakebar");
                                     if (critical === 0) {
-                                        $results_p.html("You have a <strong>" + show_percent(result.success) + "%</strong> chance of capturing it per ball. " + num_balls_message(result.success) + extra_message);
+                                        $results_p.html("Chance per ball: <strong>" + show_percent(result.success) + "%</strong>.<br>" + num_balls_message(result.success) + extra_message);
                                     }
                                     else {
                                         var finalchance = critical * crit_success + (1 - critical) * result.success;
-                                        $results_p.html("You have a " + show_percent(critical) + "% chance of a critical capture, which then has a " + show_percent(crit_success) + "% chance of succeeding. Failing that, you have a " + show_percent(result.success) + "% chance of succeeding with a normal capture. All in all, this amounts to a <strong>" + show_percent(finalchance) + "%</strong> chance per ball. " + num_balls_message(finalchance) + extra_message);
+                                        $results_p.html("Critical capture = " + show_percent(critical) + "%, which then has a " + show_percent(crit_success) + "% chance of succeeding. Failing that, you have a " + show_percent(result.success) + "% chance of succeeding with a normal capture. All in all, this amounts to a <strong>" + show_percent(finalchance) + "%</strong> chance per ball.<br>" + num_balls_message(finalchance) + extra_message);
 
                                         $shakebar.append(shake_bar_chunk('success', 'Successful critical capture', '', critical * crit_success));
                                         if (crit_success < 1) {
@@ -2759,16 +2797,16 @@
                                 return "Thus, you will never capture it.";
                             }
                             else if (ball_chance === 1) {
-                                return "Thus, you are guaranteed to get it in a single ball.";
+                                return "Guaranteed!";
                             }
                             else {
                                 var fifty_num_balls = num_balls(0.5, ball_chance);
                                 var ninetyfive_num_balls = num_balls(0.95, ball_chance);
                                 if (fifty_num_balls == ninetyfive_num_balls) {
-                                    return "Thus, you have at least a 95% chance of catching it within " + ninetyfive_num_balls + " " + pluralize(ninetyfive_num_balls, "ball") + ".";
+                                    return "95% chance of catching it within " + ninetyfive_num_balls + " " + pluralize(ninetyfive_num_balls, "ball") + ".";
                                 }
                                 else {
-                                    return "Thus, you have at least a 50% chance of catching it within " + fifty_num_balls + " " + pluralize(fifty_num_balls, "ball") + " and at least a 95% chance of catching it within " + ninetyfive_num_balls + " " + pluralize(ninetyfive_num_balls, "ball") + ".";
+                                    return "50% chance of catching it within " + fifty_num_balls + " " + pluralize(fifty_num_balls, "ball") + ".<br>95% chance of catching it within " + ninetyfive_num_balls + " " + pluralize(ninetyfive_num_balls, "ball") + ".";
                                 }
                             }
                         }
