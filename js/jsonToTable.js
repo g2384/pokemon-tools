@@ -1,3 +1,8 @@
+var _table_ = document.createElement('table'),
+    _tr_ = document.createElement('tr'),
+    _th_ = document.createElement('th'),
+    _td_ = document.createElement('td');
+
 function buildHtmlTable(arr, order, htmlColumns) {
     var table = _table_.cloneNode(false),
         columns = addAllColumnHeaders(arr, order, table);
