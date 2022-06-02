@@ -1,0 +1,134 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Go Tools</title>
+    <style>
+        body {
+            padding: 10px;
+            margin: 0 auto;
+            max-width: 1000px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .stat-div {
+            margin: 10 auto;
+            max-width: 500px;
+        }
+
+        .stat {
+            max-width: 80%;
+            margin: 0 auto 16px;
+        }
+
+        .iv-div {
+            margin-top: 10px;
+        }
+
+        .iv-number {
+            font-family: Consolas, 'Courier New', Courier, monospace;
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .stat-bar {
+            display: flex;
+            background: rgba(0, 0, 0, .08);
+            border-radius: 9px;
+            margin: 2px 0px;
+        }
+
+        .stat-bar .bar:first-child {
+            border-left: none;
+            border-top-left-radius: 9px;
+            border-bottom-left-radius: 9px;
+        }
+
+        .stat-bar .bar.active {
+            background: #ee9219;
+        }
+
+        .stat-bar .bar.end {
+            border-top-right-radius: 9px;
+            border-bottom-right-radius: 9px;
+        }
+
+        .stat-bar .bar {
+            height: 18px;
+            flex: 1 1 40px;
+            border-right: 1px solid rgba(255, 255, 255, .3);
+        }
+
+        div {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        .stat-bar .bar:nth-child(5n+1) {
+            border-left: 4px solid #fff
+        }
+    </style>
+</head>
+
+<body>
+    <h2>IV Appraisal Stats Chart</h2>
+    <div>Above this percentage:
+        <input id="ivValue" type="number" value="90" min="0" max="100" onchange="updateIVChart()" />
+    </div>
+    <div class="stat-div">
+
+    </div>
+
+    <script>
+        function updateIVChart() {
+            var percentage = document.querySelector("#ivValue").value;
+            var percentage = parseInt(percentage);
+            var filtered = {};
+            for (var i = 1; i <= 15; i++) {
+                for (var j = 1; j <= 15; j++) {
+                    for (var k = 1; k <= 15; k++) {
+                        if (Math.round((i + j + k) / 45 * 100) >= percentage) {
+                            var newA = [i, j, k];
+                            newA.sort(function (a, b) {
+                                return a - b;
+                            });
+                            var key = newA.join(",");
+                            if (!(key in filtered)) {
+                                filtered[key] = newA;
+                            }
+                        }
+                    }
+                }
+            }
+            console.log(filtered);
+
+            var result = "";
+            for (const [key, value] of Object.entries(filtered)) {
+                var str = "<div class='iv-div'>";
+                var sum = value.reduce((partialSum, a) => partialSum + a, 0);
+                str += "<h4>" + Math.round(sum * 100 / 45) + "</h4>";
+                for (i of value) {
+                    str += "<div class='stat-bar'>";
+                    for (var j = 1; j < i; j++) {
+                        str += "<div class='bar active hover'></div>";
+                    }
+                    str += "<div class='bar active hover end'></div>";
+                    for (var j = i; j < 15; j++) {
+                        str += "<div class='bar'></div>";
+                    }
+                    str += "<div class='iv-number'>" + (i < 10 ? ("0" + i) : i) + "</div>";
+                    str += "</div>"
+                }
+                str += "</div>"
+                result += str;
+            }
+
+            var div = document.querySelector(".stat-div");
+            div.innerHTML = result;
+        }
+
+        updateIVChart();
+    </script>
+</body>
+
+</html>
