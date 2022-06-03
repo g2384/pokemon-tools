@@ -3,6 +3,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon Go Tools</title>
+    <link href="./css/tom-select.bootstrap5.min.css" rel="stylesheet" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
     <style>
         body {
             padding: 10px;
@@ -12,6 +14,7 @@
         }
 
         .stat-div {
+            line-height: 1em;
             margin: 10 auto;
             max-width: 500px;
         }
@@ -67,31 +70,80 @@
         .stat-bar .bar:nth-child(5n+1) {
             border-left: 4px solid #fff
         }
+
+        .iv-group {
+            margin: 2px 5px;
+            background-color: #eee;
+            border: 1px solid #888;
+            border-radius: 2px;
+            display: inline-block;
+            padding: 2px 5px;
+            width: 100px;
+            text-align: center;
+        }
     </style>
+    <script type="text/javascript" src="./pokemon_go/pokemon-base.js"></script>
+    <script type="text/javascript" src="./pokemon_go/pokemon-names.js"></script>
+    <script type="text/javascript" src="./js/tom-select.base.min.js"></script>
 </head>
 
 <body>
     <h2>IV Appraisal Stats Chart</h2>
-    <div>Above this percentage:
-        <input id="ivValue" type="number" value="90" min="0" max="100" onchange="updateIVChart()" />
+    <div>
+        <div class="mb-3 row align-items-center">
+            <label for="staticEmail" class="col-sm-6 col-form-label">List all IV stats above this percentage:</label>
+            <div class="col-sm-5">
+                <input id="ivValue" type="number" class="form-control" value="90" min="0" max="100"
+                    onkeyup="updateIVChart()" />
+            </div>
+            <div class="col-sm-1">%</div>
+        </div>
     </div>
-    <div class="stat-div">
+    <input type="button" class="btn btn-outline-primary" value="Show" onclick="updateIVChart()" />
+    <input type="button" class="btn btn-outline-primary" value="Clear" onclick="clearIVValue()" />
+    <div class="stat-div"> </div>
 
+    <hr>
+
+    <h2>Find IV stats from CP</h2>
+    <div>
+        <div class="mb-3 row align-items-center">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Pokemon:</label>
+            <div class="col-sm-10">
+                <select id="pokemon-name" onchange="findIVFromCP()"></select>
+            </div>
+        </div>
+        <div class="mb-3 row align-items-center">
+            <label for="staticEmail" class="col-sm-2 col-form-label">CP:</label>
+            <div class="col-sm-10">
+                <input id="cpValue" type="number" class="form-control" value="" min="10" max="99999"
+                    onkeyup="findIVFromCP()" />
+            </div>
+        </div>
     </div>
+
+    <div id="CP-IV-div"></div>
 
     <script>
+        function clearIVValue() {
+            document.querySelector(".stat-div").innerHTML = "";
+        }
+
+        var pre_percentage = 0;
         function updateIVChart() {
             var percentage = document.querySelector("#ivValue").value;
             var percentage = parseInt(percentage);
+            if (percentage == pre_percentage) {
+                return;
+            }
+            pre_percentage = percentage;
             var filtered = {};
             for (var i = 1; i <= 15; i++) {
                 for (var j = 1; j <= 15; j++) {
                     for (var k = 1; k <= 15; k++) {
                         if (Math.round((i + j + k) / 45 * 100) >= percentage) {
-                            var newA = [i, j, k];
-                            newA.sort(function (a, b) {
-                                return a - b;
-                            });
+                            var newA = new Int32Array([i, j, k]);
+                            newA.sort();
                             var key = newA.join(",");
                             if (!(key in filtered)) {
                                 filtered[key] = newA;
@@ -127,7 +179,271 @@
             div.innerHTML = result;
         }
 
-        updateIVChart();
+
+        let data = {
+            target: location.pathname,
+            message: "",
+            options: processedPokemon,
+            selected: null,
+            cp: null,
+            hp: null,
+            att: 0,
+            def: 0,
+            sta: 0,
+            legacy: !1,
+            old: !0,
+            old_hash: ""
+        };
+
+        var processedPokemon = []
+        for (var h in pokemon_data) {
+            for (var v in pokemon_data[h]) {
+                var m = 0 == v ? pokemon_names[h] : pokemon_forms[v];
+                processedPokemon.push({
+                    code: h + "," + v,
+                    label: m[0],
+                    icon: m[2]
+                })
+            }
+        }
+
+        function calculateIV(selectedPokemon, cp, sta, att, def) {
+            if (null !== selectedPokemon) {
+                this.old = !1;
+                var e = selectedPokemon.code.split(",");
+                for (var t = e[0], n = e[1], r = pokemon_data[t][n][0], o = [+sta, +att, +def], i = 2; i <= 80; i++) {
+                    var s = getCPM(i);
+                    var c = getCp(s, r, o);
+                    var l = getHp(s, r, o);
+                    if (c === cp)
+                        break
+                }
+                if (81 == i) {
+                    console.log("A Pokemon with those stats couldn't be found.");
+                }
+            } else
+                console.log("You must select a Pokémon!");
+        }
+
+        function calculateIVFromCP(code, cp) {
+            console.log(code, cp)
+            if (null !== code) {
+                this.old = !1;
+                var e = code.split(",");
+                var t = e[0], n = e[1], r = pokemon_data[t][n][0];
+                var filtered = {};
+                for (var sta_i = 1; sta_i <= 15; sta_i++)
+                    for (var att_i = 1; att_i <= 15; att_i++)
+                        for (var def_i = 1; def_i <= 15; def_i++)
+                            for (var o = [+sta_i, +att_i, +def_i], i = 2; i <= 80; i++) {
+                                var s = getCPM(i);
+                                var c = getCp(s, r, o);
+                                var l = getHp(s, r, o);
+                                if (c === cp) {
+                                    var arr = new Int32Array([sta_i, att_i, def_i]);
+                                    arr.sort();
+                                    var key = arr.join(",");
+                                    if (!(key in filtered)) {
+                                        filtered[key] = arr;
+                                    }
+                                }
+                            }
+                console.log(filtered);
+                if (81 == i && filtered.length == 0) {
+                    return "A Pokemon with those stats couldn't be found.";
+                }
+                return filtered;
+            } else
+                return "You must select a Pokémon!";
+        }
+
+        function reset() {
+            b.setData(null, null),
+                this.cp = 0,
+                this.hp = 0,
+                this.att = 0,
+                this.def = 0,
+                this.sta = 0,
+                this.$refs.select.$refs.search.focus()
+        }
+
+        let data_result = {
+            active: !1,
+            data: null,
+            info: null,
+            pokemon: [],
+            perfection: 0,
+            cp: 0,
+            hp: 0,
+            stats: [],
+            ivs: [],
+            display_ivs: [],
+            level: 2,
+            target_level: 40,
+            evolutions: [],
+            copied: !1
+        };
+
+        function max40CP() {
+            return getCP(80, this.stats, [15, 15, 15])
+        }
+        function min40CP() {
+            return getCP(80, this.stats, [0, 0, 0])
+        }
+        function current40CP() {
+            return getCP(80, this.stats, this.ivs)
+        }
+        function candyCost() {
+            for (var e = 0, t = 2 * this.level; t < 2 * this.target_level; t++)
+                e += p.getCC(t);
+            return e
+        }
+
+        function stardustCost() {
+            for (var e = 0, t = 2 * this.level; t < 2 * this.target_level; t++)
+                e += p.getSC(t);
+            return e
+        }
+
+        function quickMoves() {
+            if (!this.data)
+                return [];
+            var e = {};
+            for (var t in this.data.moves)
+                0 == this.data.moves[t][1] && (e[t] = this.data.moves[t]);
+            return e
+        }
+
+        function mainMoves() {
+            if (!this.data)
+                return [];
+            var e = {};
+            for (var t in this.data.moves)
+                1 == this.data.moves[t][1] && (e[t] = this.data.moves[t]);
+            return e
+        }
+
+        function getCP(e, t, n) {
+            var r = getCPM(e);
+            return getCp(r, t, n)
+        }
+
+        function maxCP(e) {
+            return getCP(2 * this.target_level, e || this.stats, this.ivs)
+        }
+
+        function maxPerfectCP(e) {
+            return getCP(2 * this.target_level, e || this.stats, [15, 15, 15])
+        }
+
+        function setData_result(e, t) {
+            if (this.data = e,
+                this.info = t,
+                null !== e) {
+                this.pokemon = e.pokemon,
+                    this.cp = t[0],
+                    this.hp = t[1],
+                    this.ivs = t[2],
+                    this.level = t[3] / 2,
+                    this.stats = t[4],
+                    this.display_ivs = [this.ivs[1], this.ivs[2], this.ivs[0]],
+                    this.evolutions = e.evolution;
+                for (var n = 0; n < this.evolutions.length; n++)
+                    this.evolutions[n].cp = getCP(t[3], this.evolutions[n].stats, t[2]);
+                this.perfection = Math.round(this.ivs.reduce((function (e, t) {
+                    return e + t
+                }
+                ), 0) / 45 * 100),
+                    this.active = !0,
+                    document.title = this.perfection + "% " + this.pokemon[0] + " - " + Dict.title,
+                    Vue.nextTick().then((function () {
+                        $(document).width() < 800 ? $("html, body").animate({
+                            scrollTop: $("#result").offset().top - 5
+                        }) : $("html, body").animate({
+                            scrollTop: $("#result").offset().top - 100
+                        })
+                    }
+                    ))
+            } else
+                this.active = !1
+        }
+
+        function getCPM(e) {
+            var t = [.094, .16639787, .21573247, .25572005, .29024988, .3210876, .34921268, .37523559, .39956728, .4225, .44310755, .46279839, .48168495, .49985844, .51739395, .53435433, .55079269, .56675452, .58227891, .5974, .61215729, .62656713, .64065295, .65443563, .667934, .68116492, .69414365, .70688421, .71939909, .7317, .73776948, .74378943, .74976104, .75568551, .76156384, .76739717, .7731865, .77893275, .784637, .7903];
+            return e > 80 && (e = 80),
+                e < 2 && (e = 2),
+                e % 2 ? Math.pow((Math.pow(t[(e - 1) / 2 - 1], 2) + Math.pow(t[(e - 1) / 2], 2)) / 2, .5) : t[e / 2 - 1]
+        }
+
+        function getCp(e, t, n) {
+            return Math.max(10, Math.floor(.1 * Math.pow((t[0] + n[0]) * e, .5) * (t[1] + n[1]) * e * Math.pow((t[2] + n[2]) * e, .5)))
+        }
+
+        function getHp(e, t, n) {
+            return Math.max(10, Math.floor((t[0] + n[0]) * e))
+        }
+
+        function findIVFromCP() {
+            var pn = document.querySelector("#pokemon-name");
+            var d_code = pn.options[pn.selectedIndex].getAttribute("data-code");
+            var cp = document.querySelector("#cpValue").value;
+            cp = parseInt(cp);
+            var result = calculateIVFromCP(d_code, cp);
+            var r_div = document.querySelector("#CP-IV-div");
+            if (typeof result === 'string' || result instanceof String) {
+                console.log(result);
+                r_div.innerHTML = result;
+            }
+            else {
+                var str = ""
+                var grouped = {};
+                for (const [key, value] of Object.entries(result)) {
+                    var sum = value.reduce((x, a) => x + a, 0);
+                    var percen = Math.round(sum * 100 / 45);
+                    if (!(percen in grouped)) {
+                        grouped[percen] = [value]
+                    }
+                    else {
+                        grouped[percen].push(value);
+                    }
+                }
+
+                var str_a = [];
+                for (const [key, value] of Object.entries(grouped)) {
+                    str = "<div class='row  align-items-center'><div class='col-sm-1 col-form-label'>" + key + ":</div>";
+                    str += "<div class='col-sm-11'>" + value.map(x => "<div class='iv-group'>" + x.join(", ") + "</div>") + "</div>";
+                    str += "</div>";
+                    str_a.push(str)
+                }
+                str = "<div class='row  align-items-center'><div class='col-sm-1 col-form-label'><strong>CP %</strong></div>"
+                    + "<div class='col-sm-11'><strong>IVs</strong></div>"
+                    + "</div>"
+                    + "</div>";
+                str_a.push(str);
+                str_a.reverse();
+                r_div.innerHTML = str_a.join("");
+            }
+        }
+
+        function loadPokemonNames() {
+            var s = "";
+            for (const value of processedPokemon) {
+                var name = value.label;
+                s += "<option value='" + name + "' data-code='" + value.code + "'>" + name + "</option>";
+            }
+            document.querySelector("#pokemon-name").innerHTML = s;
+        }
+
+        window.addEventListener('load', function () {
+            loadPokemonNames();
+            new TomSelect("#pokemon-name", {
+                create: false,
+                sortField: {
+                    field: "text",
+                    direction: "asc"
+                }
+            });
+        })
     </script>
 </body>
 
