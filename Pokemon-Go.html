@@ -13,6 +13,10 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        img {
+            height: 20px;
+        }
+
         .stat-div {
             line-height: 1em;
             margin: 10 auto;
@@ -563,20 +567,362 @@
             for (const [key, value] of Object.entries(group)) {
                 str += pokemon_names[value[0][0]][0] + "<br>";
                 str += value.map(x => getMove(x[1]) + "(" + getType(x[3]) + "), " + getMove(x[2])
-                    + "(" + getType(x[4]) + ") ").join("<br>");
+                    + "(" + getType(x[4]) + ") ").join("<br>") + "<br>";
             }
             document.querySelector("#MoveList-div").innerHTML = str;
         }
 
         var allMoveSet = [];
+        var newAllMoves = {};
+        var moves_Pokemon_List = {};
+        var newPokemon = {};
+        var data_cp_multiplier = {};
+        var dps_table = {};
+
+        function toTitleCase(str) {
+            return str.replace(
+                /\w\S*/g,
+                function (txt) {
+                    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+                }
+            );
+        }
+
+        function findMove(str) {
+            for (var m1 of newAllMoves) {
+                if (m1["name"] == str || m1["name"] + "_" + m1["type_move"] == str) {
+                    return m1;
+                    break;
+                }
+            }
+        }
+
+        function calculateStatsBettle(base, iv, level, addition) {
+            let result = (base + iv) * data_cp_multiplier.find(item => item.level === level).multiplier
+            if (addition) return Math.floor(result * addition)
+            return Math.floor(result)
+        }
+
+        function calculateStatsByTag(baseStats, tag) {
+            let checkNerf = tag.toLowerCase().includes("mega") ? false : true;
+            const atk = calBaseATK(baseStats, checkNerf);
+            const def = calBaseDEF(baseStats, checkNerf);
+            const sta = tag !== "shedinja" ? calBaseSTA(baseStats, checkNerf) : 1;
+            return {
+                atk: atk,
+                def: def,
+                sta: sta,
+            };
+        }
+
+        function calBaseATK(stats, nerf) {
+            const atk = stats.atk !== undefined ? stats.atk : stats.find(item => item.stat.name === "attack").base_stat;
+            const spa = stats.spa !== undefined ? stats.spa : stats.find(item => item.stat.name === "special-attack").base_stat;
+
+            const lower = Math.min(atk, spa);
+            const higher = Math.max(atk, spa);
+
+            const speed = stats.spe !== undefined ? stats.spe : stats.find(item => item.stat.name === "speed").base_stat;
+
+            const scaleATK = Math.round(2 * ((7 / 8) * higher + (1 / 8) * lower));
+            const speedMod = 1 + (speed - 75) / 500;
+            const baseATK = Math.round(scaleATK * speedMod);
+            if (!nerf) return baseATK;
+            if (calculateCP(baseATK + 15, calBaseDEF(stats, false) + 15, calBaseSTA(stats, false) + 15, 40) >= 4000) return Math.round(scaleATK * speedMod * 0.91);
+            else return baseATK;
+        }
+
+        function calBaseDEF(stats, nerf) {
+            const def = stats.def !== undefined ? stats.def : stats.find(item => item.stat.name === "defense").base_stat;
+            const spd = stats.spd !== undefined ? stats.spd : stats.find(item => item.stat.name === "special-defense").base_stat;
+
+            const lower = Math.min(def, spd);
+            const higher = Math.max(def, spd);
+
+            const speed = stats.spe !== undefined ? stats.spe : stats.find(item => item.stat.name === "speed").base_stat;
+
+            const scaleDEF = Math.round(2 * ((5 / 8) * higher + (3 / 8) * lower));
+            const speedMod = 1 + (speed - 75) / 500;
+            const baseDEF = Math.round(scaleDEF * speedMod);
+            if (!nerf) return baseDEF;
+            if (calculateCP(calBaseATK(stats, false) + 15, baseDEF + 15, calBaseSTA(stats, false) + 15, 40) >= 4000) return Math.round(scaleDEF * speedMod * 0.91);
+            else return baseDEF;
+        }
+
+        function calBaseSTA(stats, nerf) {
+            const hp = stats.hp !== undefined ? stats.hp : stats.find(item => item.stat.name === "hp").base_stat;
+
+            const baseSTA = Math.floor(hp * 1.75 + 50);
+            if (!nerf) return baseSTA;
+            if (calculateCP(calBaseATK(stats, false) + 15, calBaseDEF(stats, false) + 15, baseSTA + 15, 40) >= 4000) return Math.round((hp * 1.75 + 50) * 0.91);
+            else return baseSTA;
+        }
+
+        Object.defineProperty(Array.prototype, "find", {
+            value: function find(cond) {
+                for (var i of this) {
+                    if (cond(i)) {
+                        return i;
+                    }
+                }
+            },
+            writable: true,
+            configurable: true,
+        });
+
+        Object.defineProperty(Array.prototype, "includes", {
+            value: function includes(text) {
+                for (var i of this) {
+                    if (i.toLowerCase() == text.toLowerCase()) {
+                        return true;
+                    }
+                }
+                return false;
+            },
+            writable: true,
+            configurable: true,
+        });
+
+        function calculateCP(atk, def, sta, level) {
+            return Math.floor(Math.max(10, (atk * (def ** 0.5) * (sta ** 0.5) * data_cp_multiplier.find(item => item.level === level).multiplier ** 2) / 10))
+        }
+
+        const options = {
+            delay: null,
+            specific: false,
+            ELITE_MOVE: true,
+            POKEMON_SHADOW: true,
+            WEATHER_BOOSTS: false,
+            POKEMON_FRIEND_LEVEL: 0,
+            POKEMON_DEF_OBJ: 160,
+            DAMAGE_MULTIPLY: 0.5,
+            DAMAGE_CONST: 1,
+            IV_ATK: 15,
+            IV_DEF: 15,
+            IV_HP: 15,
+            POKEMON_LEVEL: 40
+        };
+
+        function convertMoveToText(t) {
+            return toTitleCase(t.replace("_FAST", "").replace(/_/g, " "));
+        }
+
+        // generate dps_table.json
+        function convertToDpsTable() {
+            var processed = {};
+            allMoveSet = {};
+            for (var value of moves_Pokemon_List) {
+                var quickMoves = value["QUICK_MOVES"].concat(value["ELITE_QUICK_MOVES"]);
+                var chargeMoves = value["CINEMATIC_MOVES"].concat(value["SHADOW_MOVES"], value["PURIFIED_MOVES"], value["ELITE_CINEMATIC_MOVES"])
+                var allMoves = [];
+                var pokm = pokemon_names[value["ID"]][5];
+                var pokm_key = "";
+                var newName = value["NAME"].replace(/_/g, "").replace("FEMALE", "F").replace("MALE", "M");
+                for (const [key, vp] of Object.entries(newPokemon)) {
+                    if (key.toUpperCase() == newName) {
+                        pokm = vp;
+                        pokm_key = key;
+                    }
+                }
+                for (var v1 of quickMoves) {
+                    for (var v2 of chargeMoves) {
+                        var m1 = findMove(v1);
+                        var m2 = findMove(v2);
+
+                        var types = [];
+
+                        let stats = calculateStatsByTag(pokm.baseStats, pokm.slug);
+                        var dps = calculateAvgDPS(m1, m2,
+                            calculateStatsBettle(stats.atk, options.IV_ATK, options.POKEMON_LEVEL),
+                            calculateStatsBettle(stats.def, options.IV_DEF, options.POKEMON_LEVEL),
+                            calculateStatsBettle(stats.sta, options.IV_HP, options.POKEMON_LEVEL),
+                            getBarCharge(true, Math.abs(m2.pve_energy)), pokm.types, undefined, false);
+                        var tdo = calculateTDO(
+                            calculateStatsBettle(stats.def, options.IV_DEF, options.POKEMON_LEVEL),
+                            calculateStatsBettle(stats.sta, options.IV_HP, options.POKEMON_LEVEL),
+                            dps, false)
+                        allMoves.push([convertMoveToText(v1), m1.type.toLowerCase(), convertMoveToText(v2), m2.type.toLowerCase(), dps, tdo])
+                    }
+                }
+                var p = {
+                    "all_moves": allMoves,
+                    "id": value["ID"],
+                    "name": pokm.name
+                }
+                allMoveSet[pokm_key] = p;
+            }
+            console.log(JSON.stringify(allMoveSet), null, 4);
+        }
+
+        function numberWithCommas(x, round) {
+            var parts = (Math.round(x * 10 ** round) / 10 ** round).toString().split(".");
+            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            return parts.join(".");
+        }
 
         function showMoveList() {
+            var allMovesArray = [];
+            for (var [key, value] of Object.entries(dps_table)) {
+                for (var v2 of value.all_moves) {
+                    var pok = newPokemon[key];
+                    if (pok.pokemonClass == "LEGENDARY") {
+                        continue;
+                    }
+                    else if (!pok.releasedGO) {
+                        continue;
+                    }
+                    else if (pok.forme != null) {
+                        continue;
+                    }
+                    allMovesArray.push([value.id, key, v2[0], v2[1], v2[2], v2[3], v2[4], v2[5], v2[4] ** 3 * v2[5]])
+                }
+            }
+
+            allMovesArray = allMovesArray.sort(function (e, t) {
+                return t[6] - e[6]
+            });
+
+            var group = {};
+            var pre_value = -1;
+            var counter = 0;
+            for (var value of allMovesArray) {
+                if (pre_value != value[0]) {
+                    counter++;
+                    group[counter] = [value]
+                    pre_value = value[0];
+                }
+                else {
+                    group[counter].push(value);
+                }
+            }
+
+            var str = "<table class='table table-striped align-middle'><thead><tr><th>Pokemon</th><th>Fast Move</th><th>Charge Move</th><th>DPS</th><th>TDO</th><th>DPS^3*TDO</th></tr></thead><tbody>";
+            for (const [key, value] of Object.entries(group)) {
+                var vm = "<tr><td rowspan='" + value.length + "'>" + dps_table[value[0][1]].name + "</td>";
+                vm += value.map(x =>
+                    "<td><img src='./pokemon_go/type_" + x[3] + ".png' />" + x[2] + "</td><td><img src='./pokemon_go/type_" + x[5] + ".png' />"
+                    + x[4] + "</td><td>"
+                    + numberWithCommas(x[6], 2) + "</td><td>"
+                    + numberWithCommas(x[7], 2) + "</td><td>"
+                    + numberWithCommas(x[8], 2) + "</td>").join("</tr><tr>") + "</tr>";
+                str += vm;
+            }
+            str += "</tbody></table>";
+            document.querySelector("#MoveList-div").innerHTML = str;
+
+            return;
             setMovesets(allMoveSet);
             getAllMoveSets(movesets);
         }
 
         function clearMoveList() {
             document.querySelector("#MoveList-div").innerHTML = "";
+        }
+
+        const DEFAULT_POKEMON_DEF_OBJ = 160;
+        const DEFAULT_POKEMON_SHADOW = false;
+        const DEFAULT_WEATHER_BOOSTS = false;
+        const DEFAULT_POKEMON_FRIEND_LEVEL = 0;
+
+        const DEFAULT_ENERYGY_PER_HP_LOST = 0.5;
+        const DEFAULT_DAMAGE_MULTIPLY = 0.5;
+        const DEFAULT_DAMAGE_CONST = 1;
+
+        const MIN_LEVEL = 1;
+        const MAX_LEVEL = 51;
+
+        const MIN_IV = 0
+        const MAX_IV = 15
+
+        function getBarCharge(isRaid, energy) {
+            if (isRaid) {
+                const bar = Math.ceil(100 / Math.abs(energy))
+                return bar > 3 ? 3 : bar;
+            }
+            else return Math.abs(energy) > 50 ? 1 : 2;
+        }
+
+        function capitalize(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        function getMultiFriendshipMulti(level) {
+            let dmg = 1;
+            if (level === 1) dmg += 0.03;
+            else if (level === 2) dmg += 0.05;
+            else if (level === 3) dmg += 0.07;
+            else if (level === 4) dmg += 0.1;
+            return dmg;
+        }
+
+        function calculateAvgDPS(fmove, cmove, Atk, Def, HP, bar, typePoke, options, shadow) {
+            const FPow = fmove.pve_power;
+            const CPow = cmove.pve_power;
+            const FE = Math.abs(fmove.pve_energy);
+            const CE = Math.abs(cmove.pve_energy);
+            const FDur = fmove.durationMs / 1000;
+            const CDur = cmove.durationMs / 1000;
+            const CDWS = cmove.damageWindowStartMs / 1000;
+
+            const FMulti = (typePoke.includes(fmove.type) ? 1.2 : 1) * fmove.accuracyChance
+            const CMulti = (typePoke.includes(cmove.type) ? 1.2 : 1) * cmove.accuracyChance
+
+            let y, FDmg, CDmg, FDmgBase, CDmgBase
+            if (options === undefined) {
+                FDmgBase = DEFAULT_DAMAGE_MULTIPLY * FPow * FMulti * (DEFAULT_POKEMON_SHADOW ? 1.2 : 1) * (DEFAULT_WEATHER_BOOSTS ? 1.2 : 1) * getMultiFriendshipMulti(DEFAULT_POKEMON_FRIEND_LEVEL)
+                CDmgBase = DEFAULT_DAMAGE_MULTIPLY * CPow * CMulti * (DEFAULT_POKEMON_SHADOW ? 1.2 : 1) * (DEFAULT_WEATHER_BOOSTS ? 1.2 : 1) * getMultiFriendshipMulti(DEFAULT_POKEMON_FRIEND_LEVEL)
+
+                FDmg = Math.floor(FDmgBase * Atk / DEFAULT_POKEMON_DEF_OBJ) + DEFAULT_DAMAGE_CONST
+                CDmg = Math.floor(CDmgBase * Atk / DEFAULT_POKEMON_DEF_OBJ) + DEFAULT_DAMAGE_CONST
+
+                y = 900 / (Def * (DEFAULT_POKEMON_SHADOW ? 0.83333331 : 1));
+            } else {
+                FDmgBase = options.DAMAGE_MULTIPLY * FPow * FMulti * (shadow ? 1.2 : 1) * (typeof options.WEATHER_BOOSTS === "string" ? weatherMultiple(options.WEATHER_BOOSTS, fmove.type) : options.WEATHER_BOOSTS ? 1.2 : 1) * getMultiFriendshipMulti(options.POKEMON_FRIEND_LEVEL)
+                CDmgBase = options.DAMAGE_MULTIPLY * CPow * CMulti * (shadow ? 1.2 : 1) * (typeof options.WEATHER_BOOSTS === "string" ? weatherMultiple(options.WEATHER_BOOSTS, cmove.type) : options.WEATHER_BOOSTS ? 1.2 : 1) * getMultiFriendshipMulti(options.POKEMON_FRIEND_LEVEL)
+
+                FDmg = Math.floor(FDmgBase * Atk / options.POKEMON_DEF_OBJ) + options.DAMAGE_CONST
+                CDmg = Math.floor(CDmgBase * Atk / options.POKEMON_DEF_OBJ) + options.DAMAGE_CONST
+
+                y = 900 / (Def * (shadow ? 0.83333331 : 1));
+            }
+
+            const FDPS = FDmg / (FDur + (options && options.delay ? options.delay.ftime : 0));
+            const CDPS = CDmg / (CDur + (options && options.delay ? options.delay.ctime : 0));
+
+            const FEPS = FE / (FDur + (options && options.delay ? options.delay.ftime : 0));
+
+            let CEPSM;
+            let x = 0.5 * CE + 0.5 * FE;
+
+            if (bar === 1) CEPSM = 0.5 * FE + 0.5 * y * CDWS;
+            else CEPSM = 0;
+
+            const CEPS = (CE + CEPSM) / (CDur + (options && options.delay ? options.delay.ctime : 0));
+
+            if (options !== undefined && options.specific) {
+                let λ;
+                if (bar === 1) λ = 3;
+                else if (bar === 2) λ = 1.5;
+                else if (bar === 3) λ = 1;
+                x = 0.5 * CE + 0.5 * FE + 0.5 * λ * options.FDmgenemy + options.CDmgenemy * λ + 1
+            }
+
+            const DPS0 = (FDPS * CEPS + CDPS * FEPS) / (CEPS + FEPS);
+
+            let DPS;
+            if (FDPS > CDPS) DPS = DPS0;
+            else DPS = Math.max(0, DPS0 + ((CDPS - FDPS) / (CEPS + FEPS) * (DEFAULT_ENERYGY_PER_HP_LOST - (x / HP)) * y))
+            return Math.max(FDPS, DPS);
+        }
+
+        function calculateTDO(Def, HP, dps, shadow) {
+            let y;
+            if (!shadow) {
+                y = 900 / (Def * (DEFAULT_POKEMON_SHADOW ? 0.83333331 : 1));
+            } else {
+                y = 900 / (Def * (shadow ? 0.83333331 : 1));
+            }
+            return HP / y * dps
         }
 
         window.addEventListener('load', function () {
@@ -594,6 +940,35 @@
                 .then(response => response.json())
                 .then(parsed_data => {
                     allMoveSet = parsed_data;
+                });
+            fetch("/pokemon_go/moves_pokemon_list.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    moves_Pokemon_List = parsed_data;
+                });
+
+            fetch("/pokemon_go/moves.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    newAllMoves = parsed_data;
+                });
+
+            fetch("/pokemon_go/pokemon.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    newPokemon = parsed_data;
+                });
+
+            fetch("/pokemon_go/cp_multiplier.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    data_cp_multiplier = parsed_data;
+                });
+
+            fetch("/pokemon_go/dps_table.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    dps_table = parsed_data;
                 });
         })
     </script>
