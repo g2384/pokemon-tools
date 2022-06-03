@@ -15,6 +15,7 @@
 
         img {
             height: 20px;
+            padding-right: 2px;
         }
 
         .stat-div {
@@ -779,7 +780,7 @@
             }
 
             allMovesArray = allMovesArray.sort(function (e, t) {
-                return t[6] - e[6]
+                return t[8] - e[8]
             });
 
             var group = {};
@@ -798,7 +799,8 @@
 
             var str = "<table class='table table-striped align-middle'><thead><tr><th>Pokemon</th><th>Fast Move</th><th>Charge Move</th><th>DPS</th><th>TDO</th><th>DPS^3*TDO</th></tr></thead><tbody>";
             for (const [key, value] of Object.entries(group)) {
-                var vm = "<tr><td rowspan='" + value.length + "'>" + dps_table[value[0][1]].name + "</td>";
+                var id = dps_table[value[0][1]].id;
+                var vm = "<tr><td rowspan='" + value.length + "'><img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_" + String(id).padStart(3, '0') + "_00.png' />" + dps_table[value[0][1]].name + "</td>";
                 vm += value.map(x =>
                     "<td><img src='./pokemon_go/type_" + x[3] + ".png' />" + x[2] + "</td><td><img src='./pokemon_go/type_" + x[5] + ".png' />"
                     + x[4] + "</td><td>"
