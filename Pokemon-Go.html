@@ -87,15 +87,17 @@
         }
 
         .iv3 .iv-group {
-            background-color: #ffcf90;
+            background-color: #ffe2bb;
+            border-color: #965000;
         }
 
         .iv2 {
-            color: #7a9902;
+            color: #209902;
         }
 
         .iv2 .iv-group {
             background-color: #bdffb0;
+            border-color: #005e10;
         }
 
         .iv1 {
@@ -104,6 +106,7 @@
 
         .iv1 .iv-group {
             background-color: #b0e2ff;
+            border-color: #0a3669;
         }
     </style>
     <script type="text/javascript" src="./pokemon_go/pokemon-base.js"></script>
@@ -442,11 +445,11 @@
                         cls = "iv3";
                     }
                     str = "<div class='row " + cls + " align-items-center'><div class='col-sm-1 col-form-label'>" + key + ":</div>";
-                    str += "<div class='col-sm-11'>" + value.map(x => "<div class='iv-group'>" + x.join(", ") + "</div>") + "</div>";
+                    str += "<div class='col-sm-11'>" + value.map(x => "<div class='iv-group'>" + x.join(", ") + "</div>").join("") + "</div>";
                     str += "</div>";
                     str_a.push(str)
                 }
-                str = "<div class='row  align-items-center'><div class='col-sm-1 col-form-label'><strong>IV %</strong></div>"
+                str = "<div class='row align-items-center'><div class='col-sm-1 col-form-label'><strong>IV %</strong></div>"
                     + "<div class='col-sm-11'><strong>IV Stats</strong></div>"
                     + "</div>"
                     + "</div>";
