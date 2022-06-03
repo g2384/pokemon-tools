@@ -81,6 +81,30 @@
             width: 100px;
             text-align: center;
         }
+
+        .iv3 {
+            color: #d97b00;
+        }
+
+        .iv3 .iv-group {
+            background-color: #ffcf90;
+        }
+
+        .iv2 {
+            color: #7a9902;
+        }
+
+        .iv2 .iv-group {
+            background-color: #bdffb0;
+        }
+
+        .iv1 {
+            color: #0050b8;
+        }
+
+        .iv1 .iv-group {
+            background-color: #b0e2ff;
+        }
     </style>
     <script type="text/javascript" src="./pokemon_go/pokemon-base.js"></script>
     <script type="text/javascript" src="./pokemon_go/pokemon-names.js"></script>
@@ -410,7 +434,14 @@
 
                 var str_a = [];
                 for (const [key, value] of Object.entries(grouped)) {
-                    str = "<div class='row  align-items-center'><div class='col-sm-1 col-form-label'>" + key + ":</div>";
+                    var cls = "iv1";
+                    if (key >= 66) {
+                        cls = "iv2";
+                    }
+                    if (key >= 80) {
+                        cls = "iv3";
+                    }
+                    str = "<div class='row " + cls + " align-items-center'><div class='col-sm-1 col-form-label'>" + key + ":</div>";
                     str += "<div class='col-sm-11'>" + value.map(x => "<div class='iv-group'>" + x.join(", ") + "</div>") + "</div>";
                     str += "</div>";
                     str_a.push(str)
