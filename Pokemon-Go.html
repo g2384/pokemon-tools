@@ -5,6 +5,7 @@
     <title>Pokemon Go Tools</title>
     <link href="./css/tom-select.bootstrap5.min.css" rel="stylesheet" />
     <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./css/pokemon_types.css" rel="stylesheet" />
     <style>
         body {
             padding: 10px;
@@ -112,6 +113,16 @@
         .iv1 .iv-group {
             background-color: #b0e2ff;
             border-color: #0a3669;
+        }
+
+        .roundSpan {
+            text-align: center;
+            border-radius: 20px;
+            color: white;
+            padding: 2px 5px;
+            display: inline-block;
+            font-size: 14px;
+            margin: 2px;
         }
     </style>
     <script type="text/javascript" src="./pokemon_go/pokemon-base.js"></script>
@@ -797,10 +808,16 @@
                 }
             }
 
-            var str = "<table class='table table-striped align-middle'><thead><tr><th>Pokemon</th><th>Fast Move</th><th>Charge Move</th><th>DPS</th><th>TDO</th><th>DPS^3*TDO</th></tr></thead><tbody>";
+            var str = "<table class='table table-striped align-middle'><thead><tr><th></th><th>Pokemon</th><th>Fast Move</th><th>Charge Move</th><th>DPS</th><th>TDO</th><th>DPS^3*TDO</th></tr></thead><tbody>";
+            counter = 0;
             for (const [key, value] of Object.entries(group)) {
                 var id = dps_table[value[0][1]].id;
-                var vm = "<tr><td rowspan='" + value.length + "'><img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_" + String(id).padStart(3, '0') + "_00.png' />" + dps_table[value[0][1]].name + "</td>";
+                var pok = newPokemon[value[0][1]];
+                counter++;
+                var vm = "<tr><td rowspan='" + value.length + "'>" + counter
+                    + "</td><td rowspan='" + value.length + "'><img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_"
+                    + String(id).padStart(3, '0') + "_00.png' />"
+                    + dps_table[value[0][1]].name + pok.types.map(x => "<span class='roundSpan type-" + x + "'>" + x + "</span>").join("") + "</td>";
                 vm += value.map(x =>
                     "<td><img src='./pokemon_go/type_" + x[3] + ".png' />" + x[2] + "</td><td><img src='./pokemon_go/type_" + x[5] + ".png' />"
                     + x[4] + "</td><td>"
@@ -938,36 +955,36 @@
                 }
             });
 
-            fetch("/pokemon_go/movesets.js")
+            fetch("./pokemon_go/movesets.js")
                 .then(response => response.json())
                 .then(parsed_data => {
                     allMoveSet = parsed_data;
                 });
-            fetch("/pokemon_go/moves_pokemon_list.json")
+            fetch("./pokemon_go/moves_pokemon_list.json")
                 .then(response => response.json())
                 .then(parsed_data => {
                     moves_Pokemon_List = parsed_data;
                 });
 
-            fetch("/pokemon_go/moves.json")
+            fetch("./pokemon_go/moves.json")
                 .then(response => response.json())
                 .then(parsed_data => {
                     newAllMoves = parsed_data;
                 });
 
-            fetch("/pokemon_go/pokemon.json")
+            fetch("./pokemon_go/pokemon.json")
                 .then(response => response.json())
                 .then(parsed_data => {
                     newPokemon = parsed_data;
                 });
 
-            fetch("/pokemon_go/cp_multiplier.json")
+            fetch("./pokemon_go/cp_multiplier.json")
                 .then(response => response.json())
                 .then(parsed_data => {
                     data_cp_multiplier = parsed_data;
                 });
 
-            fetch("/pokemon_go/dps_table.json")
+            fetch("./pokemon_go/dps_table.json")
                 .then(response => response.json())
                 .then(parsed_data => {
                     dps_table = parsed_data;
