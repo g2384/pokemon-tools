@@ -185,12 +185,14 @@
     <hr>
 
     <h2>Move List</h2>
-    <form id="move-filters">
-    </form>
+    <h5>Pokemon Types</h5>
+    <form id="move-pokemon-filters"> </form>
+    <h5>Move Types</h5>
+    <form id="move-type-filters"> </form>
     <div>
         Exclude these pokemons:
         <textarea id="exclude-pokemons" class="form-control">
-Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Perrserker, Salazzle, Aegislash
+Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Perrserker, Salazzle, Aegislash, Keldeo
         </textarea>
     </div>
     <input type="button" class="btn btn-outline-primary" value="Show" onclick="showMoveList()" />
@@ -203,18 +205,35 @@ Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Per
         // https://pokemon.gameinfo.io/en/js/movesets.js?v=451d06
 
         const moveOptions = [
-            "legendary", "released-only", "bug", "dark", "dragon",
-            "electric", "fairy", "fighting",
-            "fire", "flying", "ghost", "grass", "ground", "ice", "normal",
-            "psychic", "poison", "rock", "steel", "water"
+            "Legendary", "Released-Only"
         ];
+
+        function convertToCheckBox(value, type, addImage, checked) {
+            value2 = type + "-" + value;
+            return "<div class='inline inline-input'><input type=\"checkbox\" id=\"move-"
+                + value2 + "\" name=\"move-"
+                + value2 + "\"" + (checked == true ? "checked" : "")
+                + "><label for=\"move-"
+                + value2 + "\">"
+                + (addImage ? "<img src='./pokemon_go/type_" + value.toLowerCase() + ".png' />" : "")
+                + value + "</label></div>";
+        }
 
         function generateMoveOptions() {
             var str = "";
             for (var value of moveOptions) {
-                str += "<div class='inline inline-input'><input type=\"checkbox\" id=\"move-" + value.toLowerCase() + "\" name=\"move-" + value.toLowerCase() + "\"><label for=\"move-" + value.toLowerCase() + "\">" + toTitleCase(value) + "</label></div>"
+                str += convertToCheckBox(value, "pokemon", false, true)
             }
-            document.querySelector("#move-filters").innerHTML = str;
+            for (var value of Dict.raw_types) {
+                str += convertToCheckBox(value, "pokemon", true)
+            }
+            document.querySelector("#move-pokemon-filters").innerHTML = str;
+
+            var str = "";
+            for (var value of Dict.raw_types) {
+                str += convertToCheckBox(value, "type", true)
+            }
+            document.querySelector("#move-type-filters").innerHTML = str;
         }
 
 
@@ -803,7 +822,7 @@ Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Per
                         var dps = calculateAvgDPS(m1, m2, atk_2, def_2, sta_2,
                             getBarCharge(true, Math.abs(m2.pve_energy)), pokm.types, undefined, false);
                         var tdo = calculateTDO(def_2, sta_2, dps, false)
-                        allMoves.push([convertMoveToText(v1), m1.type.toLowerCase(), convertMoveToText(v2), m2.type.toLowerCase(), dps, tdo])
+                        allMoves.push([convertMoveToText(v1), m1.type.toLowerCase(), convertMoveToText(v2), m2.type.toLowerCase(), dps, tdo, dps ** 3 * tdo])
                     }
                 }
                 var p = {
@@ -825,15 +844,22 @@ Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Per
         function showMoveList() {
             var enabledOptions = []
             for (var value of moveOptions) {
-                var id = "#move-" + value.toLowerCase();
+                var id = "#move-" + "pokemon-" + value;
+                var opt = document.querySelector(id).checked;
+                if (opt) {
+                    enabledOptions.push(value);
+                }
+            }
+            for (var value of Dict.types) {
+                var id = "#move-" + "pokemon-" + value;
                 var opt = document.querySelector(id).checked;
                 if (opt) {
                     enabledOptions.push(value);
                 }
             }
             var allMovesArray = [];
-            var includeLegendary = enabledOptions.includes("legendary");
-            var includeReleasedOnly = enabledOptions.includes("released-only");
+            var includeLegendary = enabledOptions.includes("Legendary");
+            var includeReleasedOnly = enabledOptions.includes("Released-Only");
             var capitalOptions = enabledOptions.map(x => toTitleCase(x));
             var excludepokemons = document.querySelector("#exclude-pokemons").innerHTML.toLowerCase();
             var len = capitalOptions.length;
@@ -844,8 +870,21 @@ Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Per
                 len -= 1;
             }
             var filterTypes = len > 0;
-            console.log(excludepokemons)
+
+            var enabledMoveTypes = []
+            for (var value of Dict.types) {
+                var id = "#move-" + "type-" + value;
+                var opt = document.querySelector(id).checked;
+                if (opt) {
+                    enabledMoveTypes.push(value.toLowerCase());
+                }
+            }
+            var filterMoveTypes = enabledMoveTypes.length > 0;
+            var maxMoves = {};
+            console.log(includeLegendary, includeReleasedOnly, filterTypes, filterMoveTypes, enabledOptions, enabledMoveTypes)
             for (var [key, value] of Object.entries(dps_table)) {
+                var maxNum = Math.max(...value.all_moves.map(e => e[6]));
+                maxMoves[key] = maxNum;
                 for (var v2 of value.all_moves) {
                     var pok = newPokemon[key];
                     if (includeLegendary && pok.pokemonClass == "LEGENDARY") {
@@ -863,12 +902,17 @@ Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Per
                     else if (excludepokemons.includes(dps_table[key].name.toLowerCase())) {
                         continue;
                     }
-                    allMovesArray.push([value.id, key, v2[0], v2[1], v2[2], v2[3], v2[4], v2[5], v2[4] ** 3 * v2[5]])
+                    else if (filterMoveTypes
+                        && !enabledMoveTypes.includes(v2[1])
+                        && !enabledMoveTypes.includes(v2[3])) {
+                        continue;
+                    }
+                    allMovesArray.push([value.id, key, v2[0], v2[1], v2[2], v2[3], v2[4], v2[5], v2[6]])
                 }
             }
 
             allMovesArray = allMovesArray.sort(function (e, t) {
-                return t[8] - e[8]
+                return t[8] - e[8] // DPS^3*TDO
             });
 
             var group = {};
@@ -887,20 +931,23 @@ Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Per
 
             var str = "<table class='table table-striped align-middle'><thead><tr><th></th><th>Pokemon</th><th>Fast Move</th><th>Charge Move</th><th>DPS</th><th>TDO</th><th>DPS^3*TDO</th></tr></thead><tbody>";
             counter = 0;
+            console.log(maxMoves)
             for (const [key, value] of Object.entries(group)) {
                 var id = dps_table[value[0][1]].id;
                 var pok = newPokemon[value[0][1]];
                 counter++;
+                var maxM = maxMoves[value[0][1]];
                 var vm = "<tr><td rowspan='" + value.length + "'>" + counter
                     + "</td><td rowspan='" + value.length + "'><img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_"
                     + String(id).padStart(3, '0') + "_00.png' /><span class='inline'>"
-                    + dps_table[value[0][1]].name + "</span>" + pok.types.map(x => "<span class='inline roundSpan type-" + x + "'>" + x + "</span>").join("") + "</td>";
+                    + dps_table[value[0][1]].name + "</span>"
+                    + pok.types.map(x => "<span class='inline roundSpan type-" + x + "'>" + x + "</span>").join("") + "</td>";
                 vm += value.map(x =>
                     "<td><img src='./pokemon_go/type_" + x[3] + ".png' />" + x[2] + "</td><td><img src='./pokemon_go/type_" + x[5] + ".png' />"
                     + x[4] + "</td><td>"
                     + numberWithCommas(x[6], 2) + "</td><td>"
                     + numberWithCommas(x[7], 2) + "</td><td>"
-                    + numberWithCommas(x[8], 2) + "</td>").join("</tr><tr>") + "</tr>";
+                    + numberWithCommas(x[8], 2) + "<span>" + (maxM <= x[8] ? "&#9733;" : "") + "</span>" + "</td>").join("</tr><tr>") + "</tr>";
                 str += vm;
             }
             str += "</tbody></table>";
