@@ -124,6 +124,19 @@
             font-size: 14px;
             margin: 2px;
         }
+
+        .inline {
+            display: inline-block;
+        }
+
+        .inline-input {
+            padding: 2px;
+            margin: 2px 5px;
+        }
+
+        .inline label {
+            padding-left: 3px;
+        }
     </style>
     <script type="text/javascript" src="./pokemon_go/pokemon-base.js"></script>
     <script type="text/javascript" src="./pokemon_go/pokemon-names.js"></script>
@@ -172,6 +185,14 @@
     <hr>
 
     <h2>Move List</h2>
+    <form id="move-filters">
+    </form>
+    <div>
+        Exclude these pokemons:
+        <textarea id="exclude-pokemons" class="form-control">
+Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Perrserker, Salazzle, Aegislash
+        </textarea>
+    </div>
     <input type="button" class="btn btn-outline-primary" value="Show" onclick="showMoveList()" />
     <input type="button" class="btn btn-outline-primary" value="Clear" onclick="clearMoveList()" />
     <div id="MoveList-div"></div>
@@ -180,6 +201,23 @@
         // https://pokemon.gameinfo.io/en/js/pokemon-base.js?v=451d06
         // https://pokemon.gameinfo.io/en/js/pokemon-names.js?v=451d06
         // https://pokemon.gameinfo.io/en/js/movesets.js?v=451d06
+
+        const moveOptions = [
+            "legendary", "released-only", "bug", "dark", "dragon",
+            "electric", "fairy", "fighting",
+            "fire", "flying", "ghost", "grass", "ground", "ice", "normal",
+            "psychic", "poison", "rock", "steel", "water"
+        ];
+
+        function generateMoveOptions() {
+            var str = "";
+            for (var value of moveOptions) {
+                str += "<div class='inline inline-input'><input type=\"checkbox\" id=\"move-" + value.toLowerCase() + "\" name=\"move-" + value.toLowerCase() + "\"><label for=\"move-" + value.toLowerCase() + "\">" + toTitleCase(value) + "</label></div>"
+            }
+            document.querySelector("#move-filters").innerHTML = str;
+        }
+
+
 
         function clearIVValue() {
             document.querySelector(".stat-div").innerHTML = "";
@@ -685,8 +723,23 @@
         Object.defineProperty(Array.prototype, "includes", {
             value: function includes(text) {
                 for (var i of this) {
-                    if (i.toLowerCase() == text.toLowerCase()) {
+                    if (i == text) {
                         return true;
+                    }
+                }
+                return false;
+            },
+            writable: true,
+            configurable: true,
+        });
+
+        Object.defineProperty(Array.prototype, "includesAny", {
+            value: function includesAny(arr) {
+                for (var i of this) {
+                    for (var j of arr) {
+                        if (i == j) {
+                            return true;
+                        }
                     }
                 }
                 return false;
@@ -744,15 +797,12 @@
                         var types = [];
 
                         let stats = calculateStatsByTag(pokm.baseStats, pokm.slug);
-                        var dps = calculateAvgDPS(m1, m2,
-                            calculateStatsBettle(stats.atk, options.IV_ATK, options.POKEMON_LEVEL),
-                            calculateStatsBettle(stats.def, options.IV_DEF, options.POKEMON_LEVEL),
-                            calculateStatsBettle(stats.sta, options.IV_HP, options.POKEMON_LEVEL),
+                        var atk_2 = calculateStatsBettle(stats.atk, options.IV_ATK, options.POKEMON_LEVEL);
+                        var def_2 = calculateStatsBettle(stats.def, options.IV_DEF, options.POKEMON_LEVEL);
+                        var sta_2 = calculateStatsBettle(stats.sta, options.IV_HP, options.POKEMON_LEVEL);
+                        var dps = calculateAvgDPS(m1, m2, atk_2, def_2, sta_2,
                             getBarCharge(true, Math.abs(m2.pve_energy)), pokm.types, undefined, false);
-                        var tdo = calculateTDO(
-                            calculateStatsBettle(stats.def, options.IV_DEF, options.POKEMON_LEVEL),
-                            calculateStatsBettle(stats.sta, options.IV_HP, options.POKEMON_LEVEL),
-                            dps, false)
+                        var tdo = calculateTDO(def_2, sta_2, dps, false)
                         allMoves.push([convertMoveToText(v1), m1.type.toLowerCase(), convertMoveToText(v2), m2.type.toLowerCase(), dps, tdo])
                     }
                 }
@@ -773,17 +823,44 @@
         }
 
         function showMoveList() {
+            var enabledOptions = []
+            for (var value of moveOptions) {
+                var id = "#move-" + value.toLowerCase();
+                var opt = document.querySelector(id).checked;
+                if (opt) {
+                    enabledOptions.push(value);
+                }
+            }
             var allMovesArray = [];
+            var includeLegendary = enabledOptions.includes("legendary");
+            var includeReleasedOnly = enabledOptions.includes("released-only");
+            var capitalOptions = enabledOptions.map(x => toTitleCase(x));
+            var excludepokemons = document.querySelector("#exclude-pokemons").innerHTML.toLowerCase();
+            var len = capitalOptions.length;
+            if (includeLegendary) {
+                len -= 1;
+            }
+            if (includeReleasedOnly) {
+                len -= 1;
+            }
+            var filterTypes = len > 0;
+            console.log(excludepokemons)
             for (var [key, value] of Object.entries(dps_table)) {
                 for (var v2 of value.all_moves) {
                     var pok = newPokemon[key];
-                    if (pok.pokemonClass == "LEGENDARY") {
+                    if (includeLegendary && pok.pokemonClass == "LEGENDARY") {
                         continue;
                     }
-                    else if (!pok.releasedGO) {
+                    else if (includeReleasedOnly && !pok.releasedGO) {
                         continue;
                     }
                     else if (pok.forme != null) {
+                        continue;
+                    }
+                    else if (filterTypes && !pok.types.includesAny(capitalOptions)) {
+                        continue;
+                    }
+                    else if (excludepokemons.includes(dps_table[key].name.toLowerCase())) {
                         continue;
                     }
                     allMovesArray.push([value.id, key, v2[0], v2[1], v2[2], v2[3], v2[4], v2[5], v2[4] ** 3 * v2[5]])
@@ -816,8 +893,8 @@
                 counter++;
                 var vm = "<tr><td rowspan='" + value.length + "'>" + counter
                     + "</td><td rowspan='" + value.length + "'><img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_"
-                    + String(id).padStart(3, '0') + "_00.png' />"
-                    + dps_table[value[0][1]].name + pok.types.map(x => "<span class='roundSpan type-" + x + "'>" + x + "</span>").join("") + "</td>";
+                    + String(id).padStart(3, '0') + "_00.png' /><span class='inline'>"
+                    + dps_table[value[0][1]].name + "</span>" + pok.types.map(x => "<span class='inline roundSpan type-" + x + "'>" + x + "</span>").join("") + "</td>";
                 vm += value.map(x =>
                     "<td><img src='./pokemon_go/type_" + x[3] + ".png' />" + x[2] + "</td><td><img src='./pokemon_go/type_" + x[5] + ".png' />"
                     + x[4] + "</td><td>"
@@ -946,6 +1023,7 @@
 
         window.addEventListener('load', function () {
             loadPokemonNames();
+            generateMoveOptions();
 
             new TomSelect("#pokemon-name", {
                 create: false,
