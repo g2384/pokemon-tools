@@ -673,7 +673,7 @@ Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Per
         }
 
         function calculateStatsByTag(baseStats, tag) {
-            let checkNerf = tag.toLowerCase().includes("mega") ? false : true;
+            let checkNerf = tag.toLowerCase().indexOf("mega") >= 0 ? false : true;
             const atk = calBaseATK(baseStats, checkNerf);
             const def = calBaseDEF(baseStats, checkNerf);
             const sta = tag !== "shedinja" ? calBaseSTA(baseStats, checkNerf) : 1;
@@ -1007,8 +1007,8 @@ Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Per
             const CDur = cmove.durationMs / 1000;
             const CDWS = cmove.damageWindowStartMs / 1000;
 
-            const FMulti = (typePoke.includes(fmove.type) ? 1.2 : 1) * fmove.accuracyChance
-            const CMulti = (typePoke.includes(cmove.type) ? 1.2 : 1) * cmove.accuracyChance
+            const FMulti = (typePoke.includes(toTitleCase(fmove.type)) ? 1.2 : 1) * fmove.accuracyChance
+            const CMulti = (typePoke.includes(toTitleCase(cmove.type)) ? 1.2 : 1) * cmove.accuracyChance
 
             let y, FDmg, CDmg, FDmgBase, CDmgBase
             if (options === undefined) {
