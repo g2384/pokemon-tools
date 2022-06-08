@@ -205,7 +205,7 @@ Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Per
         // https://pokemon.gameinfo.io/en/js/movesets.js?v=451d06
 
         const moveOptions = [
-            "Legendary", "Released-Only"
+            "Non-Legendary", "Released-Only"
         ];
 
         function convertToCheckBox(value, type, addImage, checked) {
@@ -850,26 +850,20 @@ Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Per
                     enabledOptions.push(value);
                 }
             }
+            var filterTypes = false;
             for (var value of Dict.types) {
                 var id = "#move-" + "pokemon-" + value;
                 var opt = document.querySelector(id).checked;
                 if (opt) {
+                    filterTypes = true;
                     enabledOptions.push(value);
                 }
             }
             var allMovesArray = [];
-            var includeLegendary = enabledOptions.includes("Legendary");
+            var includeLegendary = enabledOptions.includes("Non-Legendary");
             var includeReleasedOnly = enabledOptions.includes("Released-Only");
             var capitalOptions = enabledOptions.map(x => toTitleCase(x));
             var excludepokemons = document.querySelector("#exclude-pokemons").innerHTML.toLowerCase();
-            var len = capitalOptions.length;
-            if (includeLegendary) {
-                len -= 1;
-            }
-            if (includeReleasedOnly) {
-                len -= 1;
-            }
-            var filterTypes = len > 0;
 
             var enabledMoveTypes = []
             for (var value of Dict.types) {
