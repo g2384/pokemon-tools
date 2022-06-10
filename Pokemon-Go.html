@@ -192,7 +192,7 @@
     <div>
         Exclude these pokemons:
         <textarea id="exclude-pokemons" class="form-control">
-Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Perrserker, Salazzle, Aegislash, Keldeo, Shaymin
+Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Perrserker, Salazzle, Aegislash, Keldeo, Shaymin, Dartrix, Toucannon, Vivillon, Rowlet, Incineroar, Tyrantrum, Lurantis, Obstagoon, Florges, Avalugg, Lycanroc, Sawsbuck
         </textarea>
     </div>
     <input type="button" class="btn btn-outline-primary" value="Show" onclick="showMoveList()" />
@@ -235,8 +235,6 @@ Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Per
             }
             document.querySelector("#move-type-filters").innerHTML = str;
         }
-
-
 
         function clearIVValue() {
             document.querySelector(".stat-div").innerHTML = "";
@@ -321,24 +319,6 @@ Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Per
             }
         }
 
-        function calculateIV(selectedPokemon, cp, sta, att, def) {
-            if (null !== selectedPokemon) {
-                this.old = !1;
-                var e = selectedPokemon.code.split(",");
-                for (var t = e[0], n = e[1], r = pokemon_data[t][n][0], o = [+sta, +att, +def], i = 2; i <= 80; i++) {
-                    var s = getCPM(i);
-                    var c = getCp(s, r, o);
-                    var l = getHp(s, r, o);
-                    if (c === cp)
-                        break
-                }
-                if (81 == i) {
-                    console.log("A Pokemon with those stats couldn't be found.");
-                }
-            } else
-                console.log("You must select a Pokémon!");
-        }
-
         function calculateIVFromCP(code, cp) {
             console.log(code, cp)
             if (null !== code) {
@@ -370,33 +350,6 @@ Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Per
             } else
                 return "You must select a Pokémon!";
         }
-
-        function reset() {
-            b.setData(null, null),
-                this.cp = 0,
-                this.hp = 0,
-                this.att = 0,
-                this.def = 0,
-                this.sta = 0,
-                this.$refs.select.$refs.search.focus()
-        }
-
-        let data_result = {
-            active: !1,
-            data: null,
-            info: null,
-            pokemon: [],
-            perfection: 0,
-            cp: 0,
-            hp: 0,
-            stats: [],
-            ivs: [],
-            display_ivs: [],
-            level: 2,
-            target_level: 40,
-            evolutions: [],
-            copied: !1
-        };
 
         function max40CP() {
             return getCP(80, this.stats, [15, 15, 15])
@@ -448,38 +401,6 @@ Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Per
 
         function maxPerfectCP(e) {
             return getCP(2 * this.target_level, e || this.stats, [15, 15, 15])
-        }
-
-        function setData_result(e, t) {
-            if (this.data = e,
-                this.info = t,
-                null !== e) {
-                this.pokemon = e.pokemon,
-                    this.cp = t[0],
-                    this.hp = t[1],
-                    this.ivs = t[2],
-                    this.level = t[3] / 2,
-                    this.stats = t[4],
-                    this.display_ivs = [this.ivs[1], this.ivs[2], this.ivs[0]],
-                    this.evolutions = e.evolution;
-                for (var n = 0; n < this.evolutions.length; n++)
-                    this.evolutions[n].cp = getCP(t[3], this.evolutions[n].stats, t[2]);
-                this.perfection = Math.round(this.ivs.reduce((function (e, t) {
-                    return e + t
-                }
-                ), 0) / 45 * 100),
-                    this.active = !0,
-                    document.title = this.perfection + "% " + this.pokemon[0] + " - " + Dict.title,
-                    Vue.nextTick().then((function () {
-                        $(document).width() < 800 ? $("html, body").animate({
-                            scrollTop: $("#result").offset().top - 5
-                        }) : $("html, body").animate({
-                            scrollTop: $("#result").offset().top - 100
-                        })
-                    }
-                    ))
-            } else
-                this.active = !1
         }
 
         function getCPM(e) {
