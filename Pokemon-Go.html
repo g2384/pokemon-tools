@@ -189,10 +189,15 @@
     <form id="move-pokemon-filters"> </form>
     <h5>Move Types</h5>
     <form id="move-type-filters"> </form>
+    <form>
+        <div class="inline inline-input">
+            <input type="checkbox" id="show-top-100" name="show-top-100" checked>
+            <label for="show-top-100">Show Top 100</label>
+        </div>
+    </form>
     <div>
         Exclude these pokemons:
         <textarea id="exclude-pokemons" class="form-control">
-Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Perrserker, Salazzle, Aegislash, Keldeo, Shaymin, Dartrix, Toucannon, Vivillon, Rowlet, Incineroar, Tyrantrum, Lurantis, Obstagoon, Florges, Avalugg, Lycanroc, Sawsbuck
         </textarea>
     </div>
     <input type="button" class="btn btn-outline-primary" value="Show" onclick="showMoveList()" />
@@ -483,6 +488,32 @@ Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Per
 
         // Move sets:
 
+        var imagesConvert = {
+            201: 11,
+            386: 11,
+            412: 11,
+            413: 11,
+            421: 11,
+            422: 11,
+            423: 11,
+            479: 11,
+            487: 11,
+            492: 11,
+            550: 11,
+            555: 11,
+            585: 11,
+            586: 11,
+            641: 11,
+            642: 11,
+            645: 11,
+            646: 11,
+            647: 11,
+            648: 11,
+            649: 11,
+            865: 31,
+            866: 31,
+            867: 31
+        }
         var movesets = [];
         var maxes = []; // [7726.950000000001, 200063120.32]
         let pctid = 1;
@@ -785,6 +816,7 @@ Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Per
             var includeReleasedOnly = enabledOptions.includes("Released-Only");
             var capitalOptions = enabledOptions.map(x => toTitleCase(x));
             var excludepokemons = document.querySelector("#exclude-pokemons").innerHTML.toLowerCase();
+            var showTop100 = document.querySelector("#show-top-100").checked;
 
             var enabledMoveTypes = []
             for (var value of Dict.types) {
@@ -842,6 +874,9 @@ Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Per
                 else {
                     group[counter].push(value);
                 }
+                if (showTop100 && counter >= 100) {
+                    break;
+                }
             }
 
             var str = "<table class='table table-striped align-middle'><thead><tr><th></th><th>Pokemon</th><th>Fast Move</th><th>Charge Move</th><th>DPS</th><th>TDO</th><th>DPS^3*TDO</th></tr></thead><tbody>";
@@ -854,7 +889,8 @@ Nihilego, Genesect, Zarude, Hoopa, Meloetta, Darmanitan, Volcanion, Cursola, Per
                 var maxM = maxMoves[value[0][1]];
                 var vm = "<tr><td rowspan='" + value.length + "'>" + counter
                     + "</td><td rowspan='" + value.length + "'><img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_"
-                    + String(id).padStart(3, '0') + "_00.png' /><span class='inline'>"
+                    + String(id).padStart(3, '0') + "_" + ((id in imagesConvert) ? String(imagesConvert[id]) : "00")
+                    + ".png' /><span class='inline'>"
                     + dps_table[value[0][1]].name + "</span>"
                     + pok.types.map(x => "<span class='inline roundSpan type-" + x + "'>" + x + "</span>").join("") + "</td>";
                 vm += value.map(x =>
