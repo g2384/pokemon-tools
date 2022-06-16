@@ -316,9 +316,9 @@
                 var e = code.split(",");
                 var t = e[0], n = e[1], r = pokemon_data[t][n][0];
                 var filtered = {};
-                for (var sta_i = 1; sta_i <= 15; sta_i++)
-                    for (var att_i = 1; att_i <= 15; att_i++)
-                        for (var def_i = 1; def_i <= 15; def_i++)
+                for (var sta_i = 0; sta_i <= 15; sta_i++)
+                    for (var att_i = 0; att_i <= 15; att_i++)
+                        for (var def_i = 0; def_i <= 15; def_i++)
                             for (var o = [+sta_i, +att_i, +def_i], i = 2; i <= 80; i++) {
                                 var s = getCPM(i);
                                 var c = getCp(s, r, o);
