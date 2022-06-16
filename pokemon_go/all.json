@@ -1,0 +1,67 @@
+{
+  "WeatherBonusSettings": {
+    "Token": {
+      "cpBaseLevelBonus": 5,
+      "guaranteedIndividualValues": 4,
+      "stardustBonusMultiplier": 1.25,
+      "attackBonusMultiplier": 1.2,
+      "raidEncounterCpBaseLevelBonus": 5,
+      "raidEncounterGuaranteedIndividualValues": 10
+    }
+  },
+  "WeatherAffinity": [
+    {
+      "Name": "CLEAR",
+      "PokemonTypes": [
+        "GRASS",
+        "GROUND",
+        "FIRE"
+      ]
+    },
+    {
+      "Name": "FOG",
+      "PokemonTypes": [
+        "DARK",
+        "GHOST"
+      ]
+    },
+    {
+      "Name": "OVERCAST",
+      "PokemonTypes": [
+        "FAIRY",
+        "FIGHTING",
+        "POISON"
+      ]
+    },
+    {
+      "Name": "PARTLY_CLOUDY",
+      "PokemonTypes": [
+        "NORMAL",
+        "ROCK"
+      ]
+    },
+    {
+      "Name": "RAINY",
+      "PokemonTypes": [
+        "WATER",
+        "ELECTRIC",
+        "BUG"
+      ]
+    },
+    {
+      "Name": "SNOW",
+      "PokemonTypes": [
+        "ICE",
+        "STEEL"
+      ]
+    },
+    {
+      "Name": "WINDY",
+      "PokemonTypes": [
+        "DRAGON",
+        "FLYING",
+        "PSYCHIC"
+      ]
+    }
+  ]
+}
