@@ -19,6 +19,10 @@
             padding-right: 2px;
         }
 
+        .pokemon-name img {
+            height: 30px;
+        }
+
         .stat-div {
             line-height: 1em;
             margin: 10 auto;
@@ -140,7 +144,7 @@
     </style>
     <script type="text/javascript" src="./pokemon_go/pokemon-base.js"></script>
     <script type="text/javascript" src="./pokemon_go/pokemon-names.js"></script>
-    <script type="text/javascript" src="./pokemon_go/moves.js"></script>
+    <script type="text/javascript" src="./pokemon_go/imagesConvert.js"></script>
     <script type="text/javascript" src="./js/tom-select.base.min.js"></script>
 </head>
 
@@ -433,34 +437,6 @@
         }
 
         // Move sets:
-
-        var imagesConvert = {
-            201: 11,
-            386: 11,
-            412: 11,
-            413: 11,
-            421: 11,
-            422: 11,
-            423: 11,
-            479: 11,
-            487: 11,
-            492: 11,
-            550: 11,
-            555: 11,
-            585: 11,
-            586: 11,
-            641: 11,
-            642: 11,
-            645: 11,
-            646: 11,
-            647: 11,
-            648: 11,
-            649: 11,
-            865: 31,
-            866: 31,
-            867: 31
-        }
-        
         var allMoveSet = [];
         var newAllMoves = {};
         var moves_Pokemon_List = {};
@@ -756,8 +732,8 @@
                 counter++;
                 var maxM = maxMoves[value[0][1]];
                 var vm = "<tr><td rowspan='" + value.length + "'>" + counter
-                    + "</td><td rowspan='" + value.length + "'><img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_"
-                    + String(id).padStart(3, '0') + "_" + ((id in imagesConvert) ? String(imagesConvert[id]) : "00")
+                    + "</td><td class='pokemon-name' rowspan='" + value.length + "'><img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_"
+                    + String(id).padStart(3, '0') + "_" + ((id in pokemonGo_Assets_ImagesConvert) ? String(pokemonGo_Assets_ImagesConvert[id]) : "00")
                     + ".png' /><span class='inline'>"
                     + dps_table[value[0][1]].name + "</span>"
                     + pok.types.map(x => "<span class='inline roundSpan type-" + x + "'>" + x + "</span>").join("") + "</td>";
