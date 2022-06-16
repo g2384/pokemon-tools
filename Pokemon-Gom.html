@@ -1,0 +1,183 @@
+<html>
+
+<head>
+    <title>Pokemon Go Management</title>
+
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            padding: 10px;
+            margin: 0 auto;
+            max-width: 1000px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        img {
+            height: 20px;
+            padding-right: 2px;
+        }
+
+        .pokemon-name img {
+            height: 30px;
+        }
+
+        .shiny {
+            -webkit-animation: glow 1s ease-in-out infinite alternate;
+            -moz-animation: glow 1s ease-in-out infinite alternate;
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        @-webkit-keyframes glow {
+            from {
+                text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #cfedff, 0 0 4px #cfedff;
+            }
+
+            to {
+                text-shadow: 0 0 2px #fff, 0 0 3px #a3c3ff, 0 0 4px #a3c3ff, 0 0 5px #a3c3ff, 0 0 6px #a3c3ff;
+            }
+        }
+    </style>
+
+    <script type="text/javascript" src="./pokemon_go/imagesConvert.js"></script>
+</head>
+
+
+<body>
+    <h2>Pokemon Go Management</h2>
+    <div id="list"></div>
+    <script>
+        var pokemonData = {};
+        var dps_table = {}
+        const myData = [{
+            "name": "Gyarados",
+            "IV": 93,
+            "quickMove": "Waterfall",
+            "chargedMove": "Hydro Pump",
+            "shiny": false
+        },
+        {
+            "name": "Rhydon",
+            "IV": 98,
+            "quickMove": "Mud-Slap",
+            "chargedMove": "Stone Edge",
+            "shiny": false
+        },
+        {
+            "name": "Machamp",
+            "IV": 100,
+            "quickMove": "Counter",
+            "chargedMove": "Dynamic Punch",
+            "shiny": false
+        },
+        {
+            "name": "Mamoswine",
+            "IV": 91,
+            "quickMove": "Mud-Slap",
+            "chargedMove": "Stone Edge",
+            "shiny": false
+        },
+        {
+            "name": "Vaporeon",
+            "IV": 91,
+            "quickMove": "Water Gun",
+            "chargedMove": "Aqua Tail",
+            "shiny": false
+        }];
+
+        function numberWithCommas(x, round) {
+            var parts = (Math.round(x * 10 ** round) / 10 ** round).toString().split(".");
+            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            return parts.join(".");
+        }
+
+        Object.defineProperty(Array.prototype, "includes", {
+            value: function includes(text) {
+                for (var i of this) {
+                    if (i == text) {
+                        return true;
+                    }
+                }
+                return false;
+            },
+            writable: true,
+            configurable: true,
+        });
+
+        function updateTable() {
+            var allMovesArray = [];
+            var maxMoves = {};
+            var pokemonNames = [...myData.map(e => e.name.toLowerCase())];
+            for (var [key, value] of Object.entries(dps_table)) {
+                if (pokemonNames.includes(key)) {
+                    var maxNum = Math.max(...value.all_moves.map(e => e[6]));
+                    maxMoves[key] = maxNum;
+                    for (var v2 of value.all_moves) {
+                        allMovesArray.push([value.id, key, v2[0], v2[1], v2[2], v2[3], v2[4], v2[5], v2[6]])
+                    }
+                }
+            }
+
+            allMovesArray = allMovesArray.sort(function (e, t) {
+                return t[8] - e[8] // DPS^3*TDO
+            });
+
+            console.log(allMovesArray)
+
+            var html = "<table class='table table-striped align-middle'><thead><tr>{thead}</tr></thead><tbody>{tbody}</tbody></table>";
+            const columns = [
+                "Pokemon",
+                "IV",
+                "Quick Move",
+                "Charged Move",
+                "DPS",
+                "TDO",
+                "DPS^3*TDO"];
+            var thead = columns.map(e => "<td>" + e + "</td>").join("");
+            var body = ""
+            for (var m of myData) {
+                var p = dps_table[m.name.toLowerCase()];
+                var id = p.id;
+                var moveObj = [];
+                var formatted_quick_move = m.quickMove.replace("-", " ");
+                var formatted_charged_move = m.chargedMove.replace("-", " ");
+                for (var move of allMovesArray) {
+                    if (move[1] == m.name.toLowerCase()
+                        && move[2] == formatted_quick_move
+                        && move[4] == formatted_charged_move) {
+                        moveObj = move;
+                        break;
+                    }
+                }
+                console.log(moveObj, p)
+                var maxM = maxMoves[m.name.toLowerCase()];
+                body += "<tr>"
+                    + "<td class='pokemon-name " + (m.shiny ? "shiny" : "") + "'>"
+                    + "<img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_"
+                    + String(id).padStart(3, '0') + "_" + ((id in pokemonGo_Assets_ImagesConvert) ? String(pokemonGo_Assets_ImagesConvert[id]) : "00")
+                    + ".png' />" + m.name + "</td>"
+                    + "<td>" + m.IV + "</td>"
+                    + "<td><img src='./pokemon_go/type_" + moveObj[3] + ".png' />" + moveObj[2] + "</td><td><img src='./pokemon_go/type_" + moveObj[5] + ".png' />"
+                    + moveObj[4] + "</td><td>"
+                    + numberWithCommas(moveObj[6], 2) + "</td><td>"
+                    + numberWithCommas(moveObj[7], 2) + "</td><td>"
+                    + numberWithCommas(moveObj[8], 2) + "<span>" + (maxM <= moveObj[8] ? "&#9733;" : "") + "</span>" + "</td>"
+                    + "</tr>";
+            }
+            html = html.replace("{thead}", thead).replace("{tbody}", body);
+            document.querySelector("#list").innerHTML = html;
+        }
+
+
+        window.addEventListener('load', function () {
+            fetch("./pokemon_go/dps_table.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    dps_table = parsed_data;
+                    updateTable();
+                });
+        });
+    </script>
+</body>
+
+</html>
