@@ -517,36 +517,6 @@
         var movesets = [];
         var maxes = []; // [7726.950000000001, 200063120.32]
         let pctid = 1;
-        function setMovesets(e) {
-            var i = e.length;
-            // e:
-            // 0: pokemon index
-            // 1: quick move
-            // 2: charge move
-            // 3: quick move type (1-based)
-            // 4: charge move type (1-based)
-            // 6: attack?
-            // 7: defense?
-            var t = [0, 0];
-            for (var n = 0; n < i; n++) {
-                var en = e[n];
-                var a = pokemon_names[en[0]][5];
-                en[6] *= a[1] + 15;
-                en[7] *= (a[0] + 15) * (a[1] + 15) * (a[2] + 15);
-                if (t[0] < en[6]) {
-                    t[0] = en[6];
-                }
-                if (t[1] < en[7]) {
-                    t[1] = en[7]
-                }
-            }
-            e = e.sort((function (e, t) {
-                return t[6 + pctid] - e[6 + pctid]
-            }
-            ));
-            movesets = e;
-            maxes = t;
-        }
 
         function getType(e) {
             return Dict.raw_types[e - 1]
@@ -566,31 +536,6 @@
 
         function getPct(e) {
             return (e[[6, 7][pctid]] / maxes[pctid] * 100).toFixed(0)
-        }
-
-        function getAllMoveSets(orderedMoveSets) {
-            var group = {};
-            var pre_value = -1;
-            var counter = 0;
-            for (var value of orderedMoveSets) {
-                if (pre_value != value[0]) {
-                    counter++;
-                    group[counter] = [value]
-                    pre_value = value[0];
-                }
-                else {
-                    group[counter].push(value);
-                }
-            }
-            console.log(group);
-
-            var str = "";
-            for (const [key, value] of Object.entries(group)) {
-                str += pokemon_names[value[0][0]][0] + "<br>";
-                str += value.map(x => getMove(x[1]) + "(" + getType(x[3]) + "), " + getMove(x[2])
-                    + "(" + getType(x[4]) + ") ").join("<br>") + "<br>";
-            }
-            document.querySelector("#MoveList-div").innerHTML = str;
         }
 
         var allMoveSet = [];
@@ -905,8 +850,6 @@
             document.querySelector("#MoveList-div").innerHTML = str;
 
             return;
-            setMovesets(allMoveSet);
-            getAllMoveSets(movesets);
         }
 
         function clearMoveList() {
