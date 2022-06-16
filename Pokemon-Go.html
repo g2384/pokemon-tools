@@ -297,21 +297,6 @@
 
         // calculate IV
 
-        let data = {
-            target: location.pathname,
-            message: "",
-            options: processedPokemon,
-            selected: null,
-            cp: null,
-            hp: null,
-            att: 0,
-            def: 0,
-            sta: 0,
-            legacy: !1,
-            old: !0,
-            old_hash: ""
-        };
-
         var processedPokemon = []
         for (var h in pokemon_data) {
             for (var v in pokemon_data[h]) {
@@ -354,45 +339,6 @@
                 return filtered;
             } else
                 return "You must select a Pokémon!";
-        }
-
-        function max40CP() {
-            return getCP(80, this.stats, [15, 15, 15])
-        }
-        function min40CP() {
-            return getCP(80, this.stats, [0, 0, 0])
-        }
-        function current40CP() {
-            return getCP(80, this.stats, this.ivs)
-        }
-        function candyCost() {
-            for (var e = 0, t = 2 * this.level; t < 2 * this.target_level; t++)
-                e += p.getCC(t);
-            return e
-        }
-
-        function stardustCost() {
-            for (var e = 0, t = 2 * this.level; t < 2 * this.target_level; t++)
-                e += p.getSC(t);
-            return e
-        }
-
-        function quickMoves() {
-            if (!this.data)
-                return [];
-            var e = {};
-            for (var t in this.data.moves)
-                0 == this.data.moves[t][1] && (e[t] = this.data.moves[t]);
-            return e
-        }
-
-        function mainMoves() {
-            if (!this.data)
-                return [];
-            var e = {};
-            for (var t in this.data.moves)
-                1 == this.data.moves[t][1] && (e[t] = this.data.moves[t]);
-            return e
         }
 
         function getCP(e, t, n) {
@@ -514,30 +460,7 @@
             866: 31,
             867: 31
         }
-        var movesets = [];
-        var maxes = []; // [7726.950000000001, 200063120.32]
-        let pctid = 1;
-
-        function getType(e) {
-            return Dict.raw_types[e - 1]
-        }
-
-        function getMove(e) {
-            return pokemon_moves[e]
-        }
-
-        function hasStab(e, t) {
-            return -1 !== pokemon_names[e][4].indexOf(t)
-        }
-
-        function isUnobtainable(e) {
-            return -1 !== inactive.indexOf(e)
-        }
-
-        function getPct(e) {
-            return (e[[6, 7][pctid]] / maxes[pctid] * 100).toFixed(0)
-        }
-
+        
         var allMoveSet = [];
         var newAllMoves = {};
         var moves_Pokemon_List = {};
