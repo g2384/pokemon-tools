@@ -1,6 +1,6 @@
 ﻿namespace PokemonGoParser
 {
-    public enum PokemonTypes
+    public enum PokemonType
     {
         Normal,
         Fighting,
