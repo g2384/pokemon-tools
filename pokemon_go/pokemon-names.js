@@ -4653,8 +4653,6 @@ var pokemon_links = {
     "898": [571, 570, 572]
 };
 var Dict = {};
-Dict.types = ["Normal", "Fighting", "Flying", "Poison", "Ground", "Rock", "Bug", "Ghost", "Steel", "Fire", "Water", "Grass", "Electric", "Psychic", "Ice", "Dragon", "Dark", "Fairy"];
-Dict.raw_types = ["Normal", "Fighting", "Flying", "Poison", "Ground", "Rock", "Bug", "Ghost", "Steel", "Fire", "Water", "Grass", "Electric", "Psychic", "Ice", "Dragon", "Dark", "Fairy"];
 Dict.tooltip = {
     "move": "Move",
     "pokemon": "Pok\u00e9mon",
