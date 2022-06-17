@@ -10,7 +10,7 @@
         body {
             padding: 10px;
             margin: 0 auto;
-            max-width: 1000px;
+            max-width: 1200px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -27,6 +27,17 @@
             -webkit-animation: glow 1s ease-in-out infinite alternate;
             -moz-animation: glow 1s ease-in-out infinite alternate;
             animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        .rank {
+            width: 62px;
+            border: 1px solid #333;
+            border-radius: 2px;
+            display: inline-block;
+            text-align: center;
+            height: 27px;
+            margin-right: 5px;
+            overflow: hidden;
         }
 
         @-webkit-keyframes glow {
@@ -51,6 +62,8 @@
     </style>
 
     <script type="text/javascript" src="./pokemon_go/imagesConvert.js"></script>
+    <script type="text/javascript" src="./pokemon_go/pokemon-types.js"></script>
+    <script type="text/javascript" src="./pokemon_go/pokemon-dps-calcuator.js"></script>
 </head>
 
 
@@ -192,6 +205,41 @@
             "quickMove": "Steel Wing",
             "chargedMove": "Hurricane",
             "shiny": false
+        },
+        {
+            "name": "Jolteon",
+            "IV": 91,
+            "quickMove": "Thunder Shock",
+            "chargedMove": "Thunder",
+            "shiny": false
+        },
+        {
+            "name": "Alakazam",
+            "IV": 82,
+            "quickMove": "Confusion",
+            "chargedMove": "Shadow Ball",
+            "shiny": false
+        },
+        {
+            "name": "Cloyster",
+            "IV": 87,
+            "quickMove": "Frost Breath",
+            "chargedMove": "Blizzard",
+            "shiny": false
+        },
+        {
+            "name": "Kabutops",
+            "IV": 93,
+            "quickMove": "Mud Shot",
+            "chargedMove": "Stone Edge",
+            "shiny": false
+        },
+        {
+            "name": "Aerodactyl",
+            "IV": 91,
+            "quickMove": "Bite",
+            "chargedMove": "Hyper Beam",
+            "shiny": false
         }];
 
         function numberWithCommas(x, round) {
@@ -213,26 +261,22 @@
             configurable: true,
         });
 
+        function toTitleCase(str) {
+            return str.replace(
+                /\w\S*/g,
+                function (txt) {
+                    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+                }
+            );
+        }
+
         function updateTable() {
             if (pokemonData == null || dps_table == null) {
                 return;
             }
-            var allMovesArray = [];
             var rankedMoves = {};
             const rankChars = ["&#9733;"];
-            var pokemonNames = [...myData.map(e => e.name.toLowerCase())];
-            for (var [key, value] of Object.entries(dps_table)) {
-                if (pokemonNames.includes(key)) {
-                    var ms = value.all_moves.sort(function (e, t) {
-                        return t[6] - e[6] // DPS^3*TDO
-                    });
-                    var count = 0;
-                    for (var v2 of ms) {
-                        allMovesArray.push([value.id, key, v2[0], v2[1], v2[2], v2[3], v2[4], v2[5], v2[6], count])
-                        count++;
-                    }
-                }
-            }
+            var allMovesArray = SortDps(dps_table, pokemonData, true, true, false, [], false, [], []);
 
             allMovesArray = allMovesArray.sort(function (e, t) {
                 return t[8] - e[8] // DPS^3*TDO
@@ -248,9 +292,11 @@
                 "Charged Move",
                 "DPS",
                 "TDO",
-                "DPS^3*TDO"];
+                "DPS^3*TDO",
+                "Rank"];
             var thead = columns.map(e => "<td>" + e + "</td>").join("");
             var body = ""
+            var bodys = []
             for (var m of myData) {
                 var p = dps_table[m.name.toLowerCase()];
                 var id = p.id;
@@ -259,16 +305,39 @@
                 var formatted_charged_move = m.chargedMove.replace("-", " ");
                 for (var move of allMovesArray) {
                     if (move[1] == m.name.toLowerCase()
-                    && move[2] == formatted_quick_move
-                    && move[4] == formatted_charged_move) {
+                        && move[2] == formatted_quick_move
+                        && move[4] == formatted_charged_move) {
                         moveObj = move;
                         break;
                     }
                 }
                 var pok = pokemonData[move[1]];
                 var rank = move[9] < rankChars.length ? rankChars[move[9]] : move[9] + 1;
-                console.log(moveObj, p)
-                body += "<tr>"
+                var types = pok.types.concat(moveObj[3]);
+                if (moveObj[4] != "Return") {
+                    types = types.concat(moveObj[5]);
+                }
+                types = types.map(e => e.toLowerCase());
+                types = new Set(types);
+                var typesRank = {};
+                for (var type of types) {
+                    count = 0;
+                    for (var v of allMovesArray) {
+                        if (v[3] == type || v[5] == type) {
+                            count++;
+                        }
+                        if (moveObj[2] == v[2] && moveObj[4] == v[4] && v[1] == moveObj[1]) {
+                            break;
+                        }
+                    }
+                    typesRank[type] = count;
+                }
+                var rankText = [];
+                for (const [key, vp] of Object.entries(typesRank)) {
+                    rankText.push("<span class='rank'><img src='./pokemon_go/type_" + key + ".png' />" + vp + "</span>");
+                }
+                rt = rankText.join(" ");
+                var bd = "<tr>"
                     + "<td class='pokemon-name " + (m.shiny ? "shiny" : "") + "'>"
                     + "<img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_"
                     + String(id).padStart(3, '0') + "_" + ((id in pokemonGo_Assets_ImagesConvert) ? String(pokemonGo_Assets_ImagesConvert[id]) : "00")
@@ -279,13 +348,17 @@
                     + moveObj[4] + "</td><td>"
                     + numberWithCommas(moveObj[6], 2) + "</td><td>"
                     + numberWithCommas(moveObj[7], 2) + "</td><td>"
-                    + numberWithCommas(moveObj[8], 2) + "<span> (self: " + rank + ")</span>" + "</td>"
+                    + numberWithCommas(moveObj[8], 2) + "<span></td><td><span class='rank'>(self: " + rank + ")</span>" + rt + "</td>"
                     + "</tr>";
+                bodys.push([bd, moveObj[8]]);
             }
+            bodys = bodys.sort(function (e, t) {
+                return t[1] - e[1]
+            });
+            body = bodys.map(e => e[0]).join("");
             html = html.replace("{thead}", thead).replace("{tbody}", body);
             document.querySelector("#list").innerHTML = html;
         }
-
 
         window.addEventListener('load', function () {
             fetch("./pokemon_go/dps_table.json")
