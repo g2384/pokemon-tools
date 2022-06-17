@@ -680,24 +680,28 @@
             for (var [key, value] of Object.entries(dps_table)) {
                 var maxNum = Math.max(...value.all_moves.map(e => e[6]));
                 maxMoves[key] = maxNum;
-                for (var v2 of value.all_moves) {
-                    var pok = newPokemon[key];
-                    if (includeLegendary && pok.pokemonClass == "LEGENDARY") {
-                        continue;
-                    }
-                    else if (includeReleasedOnly && !pok.releasedGO) {
-                        continue;
-                    }
-                    else if (pok.forme != null) {
-                        continue;
-                    }
-                    else if (filterTypes && !pok.types.includesAny(capitalOptions)) {
-                        continue;
-                    }
-                    else if (excludepokemons.includes(dps_table[key].name.toLowerCase())) {
-                        continue;
-                    }
-                    else if (filterMoveTypes
+                var pok = newPokemon[key];
+                if (includeLegendary && pok.pokemonClass == "LEGENDARY") {
+                    continue;
+                }
+                else if (includeReleasedOnly && !pok.releasedGO) {
+                    continue;
+                }
+                else if (pok.forme != null) {
+                    continue;
+                }
+                else if (filterTypes && !pok.types.includesAny(capitalOptions)) {
+                    continue;
+                }
+                else if (excludepokemons.includes(dps_table[key].name.toLowerCase())) {
+                    continue;
+                }
+                var ms = value.all_moves.sort(function (e, t) {
+                    return t[6] - e[6] // DPS^3*TDO
+                });
+
+                for (var v2 of ms) {
+                    if (filterMoveTypes
                         && !enabledMoveTypes.includes(v2[1])
                         && !enabledMoveTypes.includes(v2[3])) {
                         continue;
@@ -730,11 +734,18 @@
             var str = "<table class='table table-striped align-middle'><thead><tr><th></th><th>Pokemon</th><th>Fast Move</th><th>Charge Move</th><th>DPS</th><th>TDO</th><th>DPS^3*TDO</th></tr></thead><tbody>";
             counter = 0;
             console.log(maxMoves)
+            var rankedMoves = {};
+            const rankChars = ["&#9733;", "&#10103;", "&#10104;"];
             for (const [key, value] of Object.entries(group)) {
                 var id = dps_table[value[0][1]].id;
                 var pok = newPokemon[value[0][1]];
                 counter++;
                 var maxM = maxMoves[value[0][1]];
+                if (!(id in rankedMoves)) {
+                    rankedMoves[id] = 0;
+                }
+                var rank = rankedMoves[id] < 3 ? rankChars[rankedMoves[id]] : "";
+                rankedMoves[id]++;
                 var vm = "<tr><td rowspan='" + value.length + "'>" + counter
                     + "</td><td class='pokemon-name' rowspan='" + value.length + "'><img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_"
                     + String(id).padStart(3, '0') + "_" + ((id in pokemonGo_Assets_ImagesConvert) ? String(pokemonGo_Assets_ImagesConvert[id]) : "00")
@@ -746,7 +757,7 @@
                     + x[4] + "</td><td>"
                     + numberWithCommas(x[6], 2) + "</td><td>"
                     + numberWithCommas(x[7], 2) + "</td><td>"
-                    + numberWithCommas(x[8], 2) + "<span>" + (maxM <= x[8] ? "&#9733;" : "") + "</span>" + "</td>").join("</tr><tr>") + "</tr>";
+                    + numberWithCommas(x[8], 2) + "<span>" + rank + "</span>" + "</td>").join("</tr><tr>") + "</tr>";
                 str += vm;
             }
             str += "</tbody></table>";
