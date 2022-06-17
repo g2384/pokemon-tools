@@ -675,11 +675,8 @@
                 }
             }
             var filterMoveTypes = enabledMoveTypes.length > 0;
-            var maxMoves = {};
             console.log(includeLegendary, includeReleasedOnly, filterTypes, filterMoveTypes, enabledOptions, enabledMoveTypes)
             for (var [key, value] of Object.entries(dps_table)) {
-                var maxNum = Math.max(...value.all_moves.map(e => e[6]));
-                maxMoves[key] = maxNum;
                 var pok = newPokemon[key];
                 if (includeLegendary && pok.pokemonClass == "LEGENDARY") {
                     continue;
@@ -733,14 +730,12 @@
 
             var str = "<table class='table table-striped align-middle'><thead><tr><th></th><th>Pokemon</th><th>Fast Move</th><th>Charge Move</th><th>DPS</th><th>TDO</th><th>DPS^3*TDO</th></tr></thead><tbody>";
             counter = 0;
-            console.log(maxMoves)
             var rankedMoves = {};
             const rankChars = ["&#9733;", "&#10103;", "&#10104;"];
             for (const [key, value] of Object.entries(group)) {
                 var id = dps_table[value[0][1]].id;
                 var pok = newPokemon[value[0][1]];
                 counter++;
-                var maxM = maxMoves[value[0][1]];
                 if (!(id in rankedMoves)) {
                     rankedMoves[id] = 0;
                 }
