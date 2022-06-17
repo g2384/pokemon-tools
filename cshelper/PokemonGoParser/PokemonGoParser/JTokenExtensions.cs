@@ -21,5 +21,14 @@ namespace PokemonGoParser
         {
             return JsonConvert.DeserializeObject<T[]>(JsonConvert.SerializeObject(token));
         }
+
+        public static T ToValue<T>(this JToken token, string key, T defaultValue)
+        {
+            if (token[key] == null)
+            {
+                return defaultValue;
+            }
+            return JsonConvert.DeserializeObject<T>(JsonConvert.SerializeObject(token[key]));
+        }
     }
 }

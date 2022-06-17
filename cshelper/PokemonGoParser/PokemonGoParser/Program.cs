@@ -15,25 +15,8 @@ namespace PokemonGoParser
         public IList<WeatherAffinity> WeatherAffinity { get; set; } = new List<WeatherAffinity>();
         public IList<Move> Moves { get; set; } = new List<Move>();
         public IList<TypeEffective> TypeChart { get; set; } = new List<TypeEffective>();
-    }
-
-    public class TypeEffective
-    {
-        public TypeEffective(JToken token)
-        {
-            Name = token["data"]["templateId"].ToString().Replace("POKEMON_TYPE_", "");
-            var s = token["data"]["typeEffective"]["attackScalar"].ToArray<double>();
-            for(var i = 0; i < s.Length; i++)
-            {
-                var type = (PokemonType)i;
-                var value = s[i];
-                Effective.Add(type, value);
-            }
-        }
-
-
-        public string Name { get; set; }
-        public IDictionary<PokemonType, double> Effective { get; set; } = new Dictionary<PokemonType, double>();
+        public IList<PokemonBasicData> Pokemon { get; set; } = new List<PokemonBasicData>();
+        public IList<PokemonCombatData> Combat { get; set; } = new List<PokemonCombatData>();
     }
 
     public static class Program
@@ -73,7 +56,10 @@ namespace PokemonGoParser
                 "hometransport.",
                 "adventure_sync",
                 "QUEST_",
-                "RECOMMENDED_"
+                "RECOMMENDED_",
+                "STICKER_",
+                "TRAINER_",
+                "TEMPORARY_EVOLUTION_"
             };
             var newIgnoredStartIDs = new string[]
             {
@@ -92,11 +78,22 @@ namespace PokemonGoParser
             };
             var ignoreMidIDs = new string[]
             {
-                "_SETTINGS_"
+                "_SETTINGS_",
+                "_REWARDS_"
+            };
+            var ignoredPokemon = new string[]
+            {
+                "V0351_POKEMON_CASTFORM_HOME_FORM_REVERSION",
+                "V0487_POKEMON_GIRATINA_HOME_REVERSION",
+                "V0555_POKEMON_DARMANITAN_HOME_FORM_REVERSION",
+                "V0647_POKEMON_KELDEO_HOME_FORM_REVERSION",
+                "V0648_POKEMON_MELOETTA_HOME_FORM_REVERSION",
+                "V0649_POKEMON_GENESECT_HOME_FORM_REVERSION"
             };
             var ignored = new List<dynamic>();
             var accepted = new List<dynamic>();
             var all = new All();
+            var spawnsData = new List<JToken>();
             foreach (JToken r in rawData)
             {
                 var id = r["templateId"].ToString();
@@ -137,6 +134,22 @@ namespace PokemonGoParser
                     var type = new TypeEffective(r);
                     all.TypeChart.Add(type);
                 }
+                else if (id.StartsWith("VS_SEEKER_"))
+                {
+                    continue;
+                }
+                else if (id.StartsWith("SPAWN_V"))
+                {
+                    spawnsData.Add(r);
+                }
+                else if (ignoredPokemon.All(e => e != id) && id.StartsWith("V") && id.Contains("_POKEMON_"))
+                {
+                    var sd = spawnsData.FirstOrDefault(e => e["templateId"].ToString().Replace("SPAWN_", "") == id);
+                    var p = PokemonBasicData.Convert(r, sd);
+                    var combat = PokemonCombatData.Convert(r);
+                    AddToAll(all, p);
+                    AddToAll(all, combat);
+                }
                 else if (ignoredStartIDs.Any(e => id.StartsWith(e)) ||
                     ignoredEndIDs.Any(e => id.EndsWith(e)) ||
                     ignoreMidIDs.Any(e => id.Contains(e)))
@@ -165,6 +178,50 @@ namespace PokemonGoParser
                     NullValueHandling = NullValueHandling.Ignore,
                     Converters = new List<JsonConverter>() { new StringEnumConverter() }
                 }));
+        }
+
+        private static void AddToAll(All all, PokemonBasicData p)
+        {
+            var matched = all.Pokemon.Where(e => e.Name == p.Name).ToArray();
+            foreach (var m in matched)
+            {
+                if (m.IsEqual(p))
+                {
+                    if (string.IsNullOrEmpty(p.Form))
+                    {
+                        throw new Exception();
+                    }
+                    if (m.Forms == null)
+                    {
+                        m.Forms = new List<string>();
+                    }
+                    m.Forms.Add(p.Form);
+                }
+            }
+
+            all.Pokemon.Add(p);
+        }
+
+        private static void AddToAll(All all, PokemonCombatData p)
+        {
+            var matched = all.Combat.Where(e => e.Name == p.Name).ToArray();
+            foreach (var m in matched)
+            {
+                if (m.IsEqual(p))
+                {
+                    if (string.IsNullOrEmpty(p.Form))
+                    {
+                        throw new Exception();
+                    }
+                    if (m.Forms == null)
+                    {
+                        m.Forms = new List<string>();
+                    }
+                    m.Forms.Add(p.Form);
+                    return;
+                }
+            }
+            all.Combat.Add(p);
         }
     }
 }
