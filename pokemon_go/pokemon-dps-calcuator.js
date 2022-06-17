@@ -40,6 +40,18 @@ function SortDps(dps_table, newPokemon, excludeLegendary, includeReleasedOnly, f
     return allMovesArray;
 }
 
+function getImageId(id, name) {
+    if (id in pokemonGo_Assets_ImagesConvert) {
+        return String(pokemonGo_Assets_ImagesConvert[id])
+    }
+    else if (name.toLowerCase().indexOf("alola") >= 0) {
+        return "61"
+    }
+    else {
+        return "00"
+    }
+}
+
 function GenerateDpsAttackTable(allMovesArray, showTop, dps_table, newPokemon, pokemonGo_Assets_ImagesConvert, highlightMatched) {
     var group = {};
     var pre_value = -1;
@@ -84,7 +96,7 @@ function GenerateDpsAttackTable(allMovesArray, showTop, dps_table, newPokemon, p
         var highlight2 = highlight ? "highlight" : "";
         var vm = "<tr><td class='" + highlight2 + "' rowspan='" + value.length + "'>" + counter
             + "</td><td class='pokemon-name' rowspan='" + value.length + "'><img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_"
-            + String(id).padStart(3, '0') + "_" + ((id in pokemonGo_Assets_ImagesConvert) ? String(pokemonGo_Assets_ImagesConvert[id]) : "00")
+            + String(id).padStart(3, '0') + "_" + getImageId(id, dps_table[value[0][1]].name)
             + ".png' /><span class='inline'>"
             + dps_table[value[0][1]].name + "</span>"
             + pok.types.map(x => "<span class='inline roundSpan type-" + x + "'>" + x + "</span>").join("") + "</td>";

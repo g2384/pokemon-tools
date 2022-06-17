@@ -79,188 +79,7 @@
     <script>
         var pokemonData = null;
         var dps_table = null;
-        const myData = [{
-            "name": "Gyarados",
-            "IV": 93,
-            "quickMove": "Waterfall",
-            "chargedMove": "Hydro Pump",
-            "shiny": false
-        },
-        {
-            "name": "Rhydon",
-            "IV": 98,
-            "quickMove": "Mud-Slap",
-            "chargedMove": "Stone Edge",
-            "shiny": false
-        },
-        {
-            "name": "Machamp",
-            "IV": 100,
-            "quickMove": "Counter",
-            "chargedMove": "Dynamic Punch",
-            "shiny": false
-        },
-        {
-            "name": "Mamoswine",
-            "IV": 91,
-            "quickMove": "Mud-Slap",
-            "chargedMove": "Stone Edge",
-            "shiny": false
-        },
-        {
-            "name": "Vaporeon",
-            "IV": 91,
-            "quickMove": "Water Gun",
-            "chargedMove": "Aqua Tail",
-            "shiny": false
-        },
-        {
-            "name": "Vaporeon",
-            "IV": 73,
-            "quickMove": "Water Gun",
-            "chargedMove": "Hydro Pump",
-            "shiny": false
-        },
-        {
-            "name": "Exeggutor",
-            "IV": 93,
-            "quickMove": "Confusion",
-            "chargedMove": "Psychic",
-            "shiny": false
-        },
-        {
-            "name": "ExeggutorAlola",
-            "IV": 93,
-            "quickMove": "Dragon Tail",
-            "chargedMove": "Dragon Pulse",
-            "shiny": false
-        },
-        {
-            "name": "Venusaur",
-            "IV": 93,
-            "quickMove": "Razor Leaf",
-            "chargedMove": "Petal Blizzard",
-            "shiny": false
-        },
-        {
-            "name": "Honchkrow",
-            "IV": 89,
-            "quickMove": "Snarl",
-            "chargedMove": "Sky Attack",
-            "shiny": false
-        },
-        {
-            "name": "Aggron",
-            "IV": 87,
-            "quickMove": "Iron Tail",
-            "chargedMove": "Heavy Slam",
-            "shiny": false
-        },
-        {
-            "name": "Rampardos",
-            "IV": 98,
-            "quickMove": "Smack Down",
-            "chargedMove": "Rock Slide",
-            "shiny": false
-        },
-        {
-            "name": "Gengar",
-            "IV": 71,
-            "quickMove": "Shadow Claw",
-            "chargedMove": "Shadow Ball",
-            "shiny": false
-        },
-        {
-            "name": "Meganium",
-            "IV": 91,
-            "quickMove": "Vine Whip",
-            "chargedMove": "Solar Beam",
-            "shiny": false
-        },
-        {
-            "name": "Beartic",
-            "IV": 98,
-            "quickMove": "Charm",
-            "chargedMove": "Surf",
-            "shiny": false
-        },
-        {
-            "name": "Drifloon",
-            "IV": 100,
-            "quickMove": "Astonish",
-            "chargedMove": "Shadow Ball",
-            "shiny": false
-        },
-        {
-            "name": "Probopass",
-            "IV": 89,
-            "quickMove": "Rock Throw",
-            "chargedMove": "Magnet Bomb",
-            "shiny": false
-        },
-        {
-            "name": "Snorlax",
-            "IV": 89,
-            "quickMove": "Zen Headbutt",
-            "chargedMove": "Return",
-            "shiny": false
-        },
-        {
-            "name": "Dragonite",
-            "IV": 82,
-            "quickMove": "Steel Wing",
-            "chargedMove": "Hurricane",
-            "shiny": false
-        },
-        {
-            "name": "Jolteon",
-            "IV": 91,
-            "quickMove": "Thunder Shock",
-            "chargedMove": "Thunder",
-            "shiny": false
-        },
-        {
-            "name": "Alakazam",
-            "IV": 82,
-            "quickMove": "Confusion",
-            "chargedMove": "Shadow Ball",
-            "shiny": false
-        },
-        {
-            "name": "Cloyster",
-            "IV": 87,
-            "quickMove": "Frost Breath",
-            "chargedMove": "Blizzard",
-            "shiny": false
-        },
-        {
-            "name": "Kabutops",
-            "IV": 93,
-            "quickMove": "Mud Shot",
-            "chargedMove": "Stone Edge",
-            "shiny": false
-        },
-        {
-            "name": "Aerodactyl",
-            "IV": 91,
-            "quickMove": "Bite",
-            "chargedMove": "Hyper Beam",
-            "shiny": false
-        },
-        {
-            "name": "Cradily",
-            "IV": 89,
-            "quickMove": "Acid",
-            "chargedMove": "Stone Edge",
-            "shiny": false
-        },
-        {
-            "name": "Snorlax",
-            "IV": 82,
-            "quickMove": "Lick",
-            "chargedMove": "Hyper Beam",
-            "shiny": false
-        }];
+        var myData = null;
 
         function numberWithCommas(x, round) {
             var parts = (Math.round(x * 10 ** round) / 10 ** round).toString().split(".");
@@ -290,8 +109,22 @@
             );
         }
 
+        function getImageId(id, name) {
+            if (id in pokemonGo_Assets_ImagesConvert) {
+                return String(pokemonGo_Assets_ImagesConvert[id])
+            }
+            else if (name.toLowerCase().indexOf("alola") >= 0) {
+                return "61"
+            }
+            else {
+                return "00"
+            }
+        }
+
         function updateTable() {
-            if (pokemonData == null || dps_table == null) {
+            if (pokemonData == null
+                || dps_table == null
+                || myData == null) {
                 return;
             }
             var rankedMoves = {};
@@ -339,6 +172,7 @@
                 if (moveObj[4] != "Return") {
                     types = types.concat(moveObj[5]);
                 }
+                console.log(types)
                 types = types.map(e => e.toLowerCase());
                 types = new Set(types);
                 var typesRank = {};
@@ -355,6 +189,7 @@
                     typesRank[type] = count;
                     if (type in ownedByTypesRank) {
                         if (ownedByTypesRank[type] > count) {
+                            ownedByTypesRank[type] = count;
                             ownedByTypes[type] = moveObj;
                         }
                     }
@@ -371,7 +206,7 @@
                 var bd = "<tr>"
                     + "<td class='pokemon-name " + (m.shiny ? "shiny" : "") + "'>"
                     + "<img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_"
-                    + String(id).padStart(3, '0') + "_" + ((id in pokemonGo_Assets_ImagesConvert) ? String(pokemonGo_Assets_ImagesConvert[id]) : "00")
+                    + String(id).padStart(3, '0') + "_" + getImageId(id, m.name)
                     + ".png' /><span>" + m.name + "</span>"
                     + pok.types.map(x => "<span class='inline roundSpan type-" + x + "'>" + x + "</span>").join("") + "</td>"
                     + "<td>" + m.IV + "</td>"
@@ -396,11 +231,15 @@
                 var lower = type.toLowerCase();
                 var selectedArray = []
                 var upto = ownedByTypesRank[lower];
+                const maxUpto = 50;
+                if (upto == undefined) {
+                    upto = maxUpto;
+                }
                 if (upto < 10) {
                     upto = 10;
                 }
-                if (upto > 100) {
-                    upto = 100;
+                if (upto > maxUpto) {
+                    upto = maxUpto;
                 }
                 var count = 0;
                 for (var v of allMovesArray) {
@@ -433,6 +272,13 @@
                 .then(response => response.json())
                 .then(parsed_data => {
                     pokemonData = parsed_data;
+                    updateTable();
+                });
+
+            fetch("./pokemon_go/mydata.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    myData = parsed_data;
                     updateTable();
                 });
         });
