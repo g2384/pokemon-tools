@@ -213,6 +213,10 @@
         // https://pokemon.gameinfo.io/en/js/pokemon-names.js?v=451d06
         // https://pokemon.gameinfo.io/en/js/movesets.js?v=451d06
 
+        // move.json: https://github.com/WHIZENx/PokeGoBreeze/tree/master/src/data/combat.json
+        // move_pokemon_list.json: https://github.com/WHIZENx/PokeGoBreeze/tree/master/src/data/combat_pokemon_go_list.json
+        // pokemon.json: https://github.com/WHIZENx/PokeGoBreeze/tree/master/src/data
+
         const moveOptions = [
             "Non-Legendary", "Released-Only"
         ];
@@ -873,11 +877,6 @@
                 }
             });
 
-            fetch("./pokemon_go/movesets.js")
-                .then(response => response.json())
-                .then(parsed_data => {
-                    allMoveSet = parsed_data;
-                });
             fetch("./pokemon_go/moves_pokemon_list.json")
                 .then(response => response.json())
                 .then(parsed_data => {
