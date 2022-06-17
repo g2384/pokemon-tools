@@ -23,7 +23,7 @@
     "name": "Mamoswine",
     "IV": 91,
     "quickMove": "Mud-Slap",
-    "chargedMove": "Stone Edge",
+    "chargedMove": "Avalanche",
     "shiny": false
 },
 {
@@ -199,5 +199,12 @@
     "IV": 93,
     "quickMove": "Water Gun",
     "chargedMove": "Water Pulse",
+    "shiny": false
+},
+{
+    "name": "Decidueye",
+    "IV": 93,
+    "quickMove": "Astonish",
+    "chargedMove": "Shadow Sneak",
     "shiny": false
 }]
