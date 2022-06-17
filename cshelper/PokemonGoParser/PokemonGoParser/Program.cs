@@ -15,8 +15,85 @@ namespace PokemonGoParser
         public IList<WeatherAffinity> WeatherAffinity { get; set; } = new List<WeatherAffinity>();
         public IList<Move> Moves { get; set; } = new List<Move>();
         public IList<TypeEffective> TypeChart { get; set; } = new List<TypeEffective>();
-        public IList<PokemonBasicData> Pokemon { get; set; } = new List<PokemonBasicData>();
-        public IList<PokemonCombatData> Combat { get; set; } = new List<PokemonCombatData>();
+        public Dictionary<string, PokemonBasicData> Pokemon { get; set; } = new Dictionary<string, PokemonBasicData>();
+        public Dictionary<string, PokemonCombatData> Combat { get; set; } = new Dictionary<string, PokemonCombatData>();
+        public IList<double> CPMultiplier { get; set; }
+    }
+
+    public class MoveSum
+    {
+        public static MoveSum[] Calculate(IList<Move> moves, PokemonCombatData pokemon, IList<double> cpMultiplier, IList<string> pokemonTypes)
+        {
+            var quickMove = pokemon.QuickMoves ?? new List<string>();
+            var quickMoveElite = pokemon.QuickMovesElite ?? new List<string>();
+            var chargeMove = pokemon.ChargeMoves ?? new List<string>();
+            var chargeMoveElite = pokemon.ChargeMovesElite ?? new List<string>();
+            var shadowMove = pokemon.Shadow?.ShadowChargeMove ?? "";
+            var purifiedMove = pokemon.Shadow?.PurifiedChargeMove ?? "";
+            var results = new List<MoveSum>();
+            var allQuick = quickMove.ToList().Concat(quickMoveElite).ToArray();
+            var allCharge = chargeMove.ToList().Concat(chargeMoveElite).Concat(new List<string>() { shadowMove }).Concat(new List<string>() { purifiedMove }).ToArray();
+            foreach (var q in allQuick)
+            {
+                if (string.IsNullOrEmpty(q))
+                {
+                    continue;
+                }
+                var qm = moves.First(e => e.Name == q);
+                foreach (var c in allCharge)
+                {
+                    if (string.IsNullOrEmpty(c))
+                    {
+                        continue;
+                    }
+                    var cm = moves.First(e => e.Name == c);
+                    var atk = CalculateStat(pokemon.BaseStats.Attack, 15, 40, 1, cpMultiplier);
+                    var def = CalculateStat(pokemon.BaseStats.Defense, 15, 40, 1, cpMultiplier);
+                    var sta = CalculateStat(pokemon.BaseStats.Stamina, 15, 40, 1, cpMultiplier);
+                    var bar = CalculateBar(cm.Combat.Energy, true);
+                    var dps = CalculateAveDps(qm, cm, atk, def, sta, bar, pokemonTypes, c == shadowMove);
+                }
+            }
+            //QuickMove = quickMove;
+            //ChargeMove = chargeMove;
+            return results.ToArray();
+        }
+
+        private static object CalculateAveDps(Move qm, Move cm, int atk, int def, int sta, int bar, IList<string> pokemonTypes, bool isShadow)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static int CalculateBar(double energy, bool isRaid)
+        {
+            if (isRaid)
+            {
+                var bar = Math.Ceiling((double)100 / Math.Abs(energy));
+                return bar > 3 ? 3 : (int)bar;
+            }
+            else
+            {
+                return Math.Abs(energy) > 50 ? 1 : 2;
+            }
+        }
+
+        private static int CalculateStat(int b, int iv, int level, double addition, IList<double> cpMultiplier)
+        {
+            var result = (b + iv) * cpMultiplier[level];
+            if (addition > 0)
+            {
+                result *= addition;
+            }
+            return (int)Math.Floor(result);
+        }
+
+        public string QuickMove { get; set; }
+        public string QuickMoveType { get; set; }
+        public string ChargeMove { get; set; }
+        public string ChargeMoveType { get; set; }
+        public double DPS { get; set; }
+        public double TDO { get; set; }
+        public double WeightedValue { get; set; }
     }
 
     public static class Program
@@ -142,6 +219,11 @@ namespace PokemonGoParser
                 {
                     spawnsData.Add(r);
                 }
+                else if (id == "PLAYER_LEVEL_SETTINGS")
+                {
+                    var d = r["data"]["playerLevel"]["cpMultiplier"].ToArray<double>();
+                    all.CPMultiplier = d.ToList();
+                }
                 else if (ignoredPokemon.All(e => e != id) && id.StartsWith("V") && id.Contains("_POKEMON_"))
                 {
                     var sd = spawnsData.FirstOrDefault(e => e["templateId"].ToString().Replace("SPAWN_", "") == id);
@@ -170,6 +252,13 @@ namespace PokemonGoParser
                 }
             }
 
+            //var dpsTable = new Dictionary<string, MoveSum[]>();
+            //foreach (var p in all.Combat)
+            //{
+            //    var poke = p.Value;
+            //    var sum = MoveSum.Calculate(all.Moves, poke, all.CPMultiplier, all.Pokemon[poke.UniqueName].Types);
+            //}
+
             //File.WriteAllText("new.json", JsonConvert.SerializeObject(ignored, Formatting.Indented));
             File.WriteAllText("accepted.json", JsonConvert.SerializeObject(accepted, Formatting.Indented));
             File.WriteAllText(@"C:\Users\g2386\Documents\GitHub\pokemon-tools\pokemon_go\all.json",
@@ -182,46 +271,47 @@ namespace PokemonGoParser
 
         private static void AddToAll(All all, PokemonBasicData p)
         {
-            var matched = all.Pokemon.Where(e => e.Name == p.Name).ToArray();
+            var matched = all.Pokemon.Where(e => e.Value.Name == p.Name).ToArray();
             foreach (var m in matched)
             {
-                if (m.IsEqual(p))
+                if (m.Value.IsEqual(p))
                 {
                     if (string.IsNullOrEmpty(p.Form))
                     {
                         throw new Exception();
                     }
-                    if (m.Forms == null)
+                    if (m.Value.Forms == null)
                     {
-                        m.Forms = new List<string>();
+                        m.Value.Forms = new List<string>();
                     }
-                    m.Forms.Add(p.Form);
+                    m.Value.Forms.Add(p.Form);
+                    return;
                 }
             }
 
-            all.Pokemon.Add(p);
+            all.Pokemon.Add(p.UniqueName, p);
         }
 
         private static void AddToAll(All all, PokemonCombatData p)
         {
-            var matched = all.Combat.Where(e => e.Name == p.Name).ToArray();
+            var matched = all.Combat.Where(e => e.Value.Name == p.Name).ToArray();
             foreach (var m in matched)
             {
-                if (m.IsEqual(p))
+                if (m.Value.IsEqual(p))
                 {
                     if (string.IsNullOrEmpty(p.Form))
                     {
                         throw new Exception();
                     }
-                    if (m.Forms == null)
+                    if (m.Value.Forms == null)
                     {
-                        m.Forms = new List<string>();
+                        m.Value.Forms = new List<string>();
                     }
-                    m.Forms.Add(p.Form);
+                    m.Value.Forms.Add(p.Form);
                     return;
                 }
             }
-            all.Combat.Add(p);
+            all.Combat.Add(p.UniqueName, p);
         }
     }
 }

@@ -17,6 +17,10 @@ namespace PokemonGoParser
             p.ID = int.Parse(data["templateId"].ToString().Split("_")[0].Replace("V", ""));
             p.Name = settings["pokemonId"].ToString();
             p.UniqueName = nameRegex.Replace(data["templateId"].ToString(), "");
+            if (p.Name.Contains(p.UniqueName))
+            {
+                p.UniqueName = p.Name;
+            }
             p.Form = settings["form"]?.ToString();
             p.Shadow = settings["shadow"] == null ? null : ShadowInfo.Convert(settings["shadow"]);
             p.ThirdMove = settings["thirdMove"] == null ? null : Cost.Convert(settings["thirdMove"], "stardustToUnlock", "candyToUnlock");

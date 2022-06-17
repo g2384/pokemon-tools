@@ -20,6 +20,10 @@ namespace PokemonGoParser
             p.ID = int.Parse(data["templateId"].ToString().Split("_")[0].Replace("V", ""));
             p.Name = settings["pokemonId"].ToString();
             p.UniqueName = nameRegex.Replace(data["templateId"].ToString(), "");
+            if (p.Name.Contains(p.UniqueName))
+            {
+                p.UniqueName = p.Name;
+            }
             p.Form = settings["form"]?.ToString();
             p.Types = new List<string>();
             if (settings["type"] != null)
