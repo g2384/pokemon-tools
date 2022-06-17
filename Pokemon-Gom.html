@@ -23,6 +23,11 @@
             height: 30px;
         }
 
+        .highlight {
+            font-weight: bold;
+            background-color: rgb(233, 216, 139);
+        }
+
         .shiny {
             -webkit-animation: glow 1s ease-in-out infinite alternate;
             -moz-animation: glow 1s ease-in-out infinite alternate;
@@ -70,6 +75,7 @@
 <body>
     <h2>Pokemon Go Management</h2>
     <div id="list"></div>
+    <div id="alllist"></div>
     <script>
         var pokemonData = null;
         var dps_table = null;
@@ -240,6 +246,20 @@
             "quickMove": "Bite",
             "chargedMove": "Hyper Beam",
             "shiny": false
+        },
+        {
+            "name": "Cradily",
+            "IV": 89,
+            "quickMove": "Acid",
+            "chargedMove": "Stone Edge",
+            "shiny": false
+        },
+        {
+            "name": "Snorlax",
+            "IV": 82,
+            "quickMove": "Lick",
+            "chargedMove": "Hyper Beam",
+            "shiny": false
         }];
 
         function numberWithCommas(x, round) {
@@ -296,7 +316,9 @@
                 "Rank"];
             var thead = columns.map(e => "<td>" + e + "</td>").join("");
             var body = ""
-            var bodys = []
+            var bodys = [];
+            var ownedByTypes = {};
+            var ownedByTypesRank = {};
             for (var m of myData) {
                 var p = dps_table[m.name.toLowerCase()];
                 var id = p.id;
@@ -313,7 +335,7 @@
                 }
                 var pok = pokemonData[move[1]];
                 var rank = move[9] < rankChars.length ? rankChars[move[9]] : move[9] + 1;
-                var types = pok.types.concat(moveObj[3]);
+                var types = [moveObj[3]];
                 if (moveObj[4] != "Return") {
                     types = types.concat(moveObj[5]);
                 }
@@ -331,6 +353,15 @@
                         }
                     }
                     typesRank[type] = count;
+                    if (type in ownedByTypesRank) {
+                        if (ownedByTypesRank[type] > count) {
+                            ownedByTypes[type] = moveObj;
+                        }
+                    }
+                    else {
+                        ownedByTypesRank[type] = count;
+                        ownedByTypes[type] = moveObj;
+                    }
                 }
                 var rankText = [];
                 for (const [key, vp] of Object.entries(typesRank)) {
@@ -358,6 +389,36 @@
             body = bodys.map(e => e[0]).join("");
             html = html.replace("{thead}", thead).replace("{tbody}", body);
             document.querySelector("#list").innerHTML = html;
+
+            var tables = "";
+            for (var type of pokemon_types) {
+                var matched = [];
+                var lower = type.toLowerCase();
+                var selectedArray = []
+                var upto = ownedByTypesRank[lower];
+                if (upto < 10) {
+                    upto = 10;
+                }
+                if (upto > 100) {
+                    upto = 100;
+                }
+                var count = 0;
+                for (var v of allMovesArray) {
+                    if (v[3] == lower || v[5] == lower) {
+                        selectedArray.push(v);
+                        count++;
+                        if (count == ownedByTypesRank[lower]) {
+                            matched.push(v);
+                        }
+                        if (count >= upto) {
+                            break;
+                        }
+                    }
+                }
+                var str = GenerateDpsAttackTable(selectedArray, -1, dps_table, pokemonData, pokemonGo_Assets_ImagesConvert, matched);
+                tables += "<h3>" + type + " ( < " + upto + ")</h3>" + str;
+            }
+            document.querySelector("#alllist").innerHTML = tables;
         }
 
         window.addEventListener('load', function () {

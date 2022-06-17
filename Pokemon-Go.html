@@ -661,7 +661,7 @@
                     enabledOptions.push(value);
                 }
             }
-            var includeLegendary = enabledOptions.includes("Non-Legendary");
+            var excludeLegendary = enabledOptions.includes("Non-Legendary");
             var includeReleasedOnly = enabledOptions.includes("Released-Only");
             var capitalOptions = enabledOptions.map(x => toTitleCase(x));
             var excludepokemons = document.querySelector("#exclude-pokemons").innerHTML.toLowerCase();
@@ -676,59 +676,16 @@
                 }
             }
             var filterMoveTypes = enabledMoveTypes.length > 0;
-            console.log(includeLegendary, includeReleasedOnly, filterTypes, filterMoveTypes, enabledOptions, enabledMoveTypes)
+            console.log(excludeLegendary, includeReleasedOnly, filterTypes, filterMoveTypes, enabledOptions, enabledMoveTypes)
             
-            var allMovesArray = SortDps(dps_table, newPokemon, includeLegendary, includeReleasedOnly, filterTypes, capitalOptions, filterMoveTypes, enabledMoveTypes, excludepokemons);
+            var allMovesArray = SortDps(dps_table, newPokemon, excludeLegendary, includeReleasedOnly, filterTypes, capitalOptions, filterMoveTypes, enabledMoveTypes, excludepokemons);
 
             allMovesArray = allMovesArray.sort(function (e, t) {
                 return t[8] - e[8] // DPS^3*TDO
             });
 
-            var group = {};
-            var pre_value = -1;
-            var counter = 0;
-            for (var value of allMovesArray) {
-                if (pre_value != value[0]) {
-                    counter++;
-                    group[counter] = [value]
-                    pre_value = value[0];
-                }
-                else {
-                    group[counter].push(value);
-                }
-                if (showTop100 && counter >= 100) {
-                    break;
-                }
-            }
-
-            var str = "<table class='table table-striped align-middle'><thead><tr><th></th><th>Pokemon</th><th>Fast Move</th><th>Charge Move</th><th>DPS</th><th>TDO</th><th>DPS^3*TDO</th></tr></thead><tbody>";
-            counter = 0;
-            var rankedMoves = {};
-            const rankChars = ["&#9733;", "&#10103;", "&#10104;"];
-            for (const [key, value] of Object.entries(group)) {
-                var id = dps_table[value[0][1]].id;
-                var pok = newPokemon[value[0][1]];
-                counter++;
-                if (!(id in rankedMoves)) {
-                    rankedMoves[id] = 0;
-                }
-                var rank = rankedMoves[id] < 3 ? rankChars[rankedMoves[id]] : " (" + (rankedMoves[id] + 1) + ")";
-                rankedMoves[id]++;
-                var vm = "<tr><td rowspan='" + value.length + "'>" + counter
-                    + "</td><td class='pokemon-name' rowspan='" + value.length + "'><img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_"
-                    + String(id).padStart(3, '0') + "_" + ((id in pokemonGo_Assets_ImagesConvert) ? String(pokemonGo_Assets_ImagesConvert[id]) : "00")
-                    + ".png' /><span class='inline'>"
-                    + dps_table[value[0][1]].name + "</span>"
-                    + pok.types.map(x => "<span class='inline roundSpan type-" + x + "'>" + x + "</span>").join("") + "</td>";
-                vm += value.map(x =>
-                    "<td><img src='./pokemon_go/type_" + x[3] + ".png' />" + x[2] + "</td><td><img src='./pokemon_go/type_" + x[5] + ".png' />"
-                    + x[4] + "</td><td>"
-                    + numberWithCommas(x[6], 2) + "</td><td>"
-                    + numberWithCommas(x[7], 2) + "</td><td>"
-                    + numberWithCommas(x[8], 2) + "<span>" + rank + "</span>" + "</td>").join("</tr><tr>") + "</tr>";
-                str += vm;
-            }
-            str += "</tbody></table>";
+            var showTop = showTop100 ? 100 : -1;
+            var str = GenerateDpsAttackTable(allMovesArray, showTop, dps_table, newPokemon, pokemonGo_Assets_ImagesConvert);
             document.querySelector("#MoveList-div").innerHTML = str;
 
             return;
