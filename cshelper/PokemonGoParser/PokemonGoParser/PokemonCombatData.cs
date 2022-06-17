@@ -28,7 +28,7 @@ namespace PokemonGoParser
 
             p.QuickMoves = settings["quickMoves"]?.ToArray<string>().Select(e => fastRegex.Replace(e, "")).ToList();
             p.ChargeMoves = settings["cinematicMoves"]?.ToArray<string>().ToList();
-            p.QuickMovesElite = settings["eliteQuickMove"]?.ToArray<string>().ToList();
+            p.QuickMovesElite = settings["eliteQuickMove"]?.ToArray<string>().Select(e => fastRegex.Replace(e, "")).ToList();
             p.ChargeMovesElite = settings["eliteCinematicMove"]?.ToArray<string>().ToList();
             return p;
         }

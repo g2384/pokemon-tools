@@ -28699,7 +28699,7 @@
         "FLAMETHROWER"
       ],
       "QuickMovesElite": [
-        "SCRATCH_FAST"
+        "SCRATCH"
       ],
       "ThirdMove": {
         "Stardust": 10000,
@@ -28740,9 +28740,9 @@
         "FLAMETHROWER"
       ],
       "QuickMovesElite": [
-        "EMBER_FAST",
-        "WING_ATTACK_FAST",
-        "DRAGON_BREATH_FAST"
+        "EMBER",
+        "WING_ATTACK",
+        "DRAGON_BREATH"
       ],
       "ThirdMove": {
         "Stardust": 10000,
@@ -28930,7 +28930,7 @@
         "SIGNAL_BEAM"
       ],
       "QuickMovesElite": [
-        "BUG_BITE_FAST"
+        "BUG_BITE"
       ],
       "ThirdMove": {
         "Stardust": 10000,
@@ -29024,7 +29024,7 @@
         "DRILL_RUN"
       ],
       "QuickMovesElite": [
-        "BUG_BITE_FAST"
+        "BUG_BITE"
       ],
       "ThirdMove": {
         "Stardust": 10000,
@@ -29111,8 +29111,8 @@
         "AIR_CUTTER"
       ],
       "QuickMovesElite": [
-        "WING_ATTACK_FAST",
-        "GUST_FAST"
+        "WING_ATTACK",
+        "GUST"
       ],
       "ThirdMove": {
         "Stardust": 10000,
@@ -29399,7 +29399,7 @@
         "THUNDER"
       ],
       "QuickMovesElite": [
-        "PRESENT_FAST"
+        "PRESENT"
       ],
       "ThirdMove": {
         "Stardust": 10000,
@@ -29461,7 +29461,7 @@
         "FLY"
       ],
       "QuickMovesElite": [
-        "PRESENT_FAST"
+        "PRESENT"
       ],
       "ThirdMove": {
         "Stardust": 10000,
@@ -29749,7 +29749,7 @@
         "ICE_PUNCH"
       ],
       "QuickMovesElite": [
-        "SHADOW_CLAW_FAST"
+        "SHADOW_CLAW"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -29958,7 +29958,7 @@
         "SAND_TOMB"
       ],
       "QuickMovesElite": [
-        "FURY_CUTTER_FAST"
+        "FURY_CUTTER"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -30020,7 +30020,7 @@
         "METEOR_MASH"
       ],
       "QuickMovesElite": [
-        "POUND_FAST"
+        "POUND"
       ],
       "ThirdMove": {
         "Stardust": 10000,
@@ -30120,7 +30120,7 @@
         "FLAMETHROWER"
       ],
       "QuickMovesElite": [
-        "EMBER_FAST"
+        "EMBER"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -30444,7 +30444,7 @@
         "SOLAR_BEAM"
       ],
       "QuickMovesElite": [
-        "BUG_BITE_FAST"
+        "BUG_BITE"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -30505,7 +30505,7 @@
         "POISON_FANG"
       ],
       "QuickMovesElite": [
-        "BUG_BITE_FAST"
+        "BUG_BITE"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -30973,7 +30973,7 @@
         "CROSS_CHOP"
       ],
       "QuickMovesElite": [
-        "KARATE_CHOP_FAST"
+        "KARATE_CHOP"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -31038,7 +31038,7 @@
         "BULLDOZE"
       ],
       "QuickMovesElite": [
-        "BITE_FAST"
+        "BITE"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -31259,7 +31259,7 @@
         "PSYCHIC"
       ],
       "QuickMovesElite": [
-        "COUNTER_FAST"
+        "COUNTER"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -31296,7 +31296,7 @@
         "CROSS_CHOP"
       ],
       "QuickMovesElite": [
-        "LOW_KICK_FAST"
+        "LOW_KICK"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -31377,7 +31377,7 @@
         "PAYBACK"
       ],
       "QuickMovesElite": [
-        "KARATE_CHOP_FAST"
+        "KARATE_CHOP"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -31448,7 +31448,7 @@
         "SEED_BOMB"
       ],
       "QuickMovesElite": [
-        "RAZOR_LEAF_FAST"
+        "RAZOR_LEAF"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -31738,7 +31738,7 @@
         "WILD_CHARGE"
       ],
       "QuickMovesElite": [
-        "ROLLOUT_FAST"
+        "ROLLOUT"
       ],
       "ThirdMove": {
         "Stardust": 10000,
@@ -31844,7 +31844,7 @@
         "FLAME_CHARGE"
       ],
       "QuickMovesElite": [
-        "EMBER_FAST"
+        "EMBER"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -32118,7 +32118,7 @@
         "LEAF_BLADE"
       ],
       "QuickMovesElite": [
-        "CUT_FAST"
+        "CUT"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -32242,7 +32242,7 @@
         "AQUA_JET"
       ],
       "QuickMovesElite": [
-        "WATER_GUN_FAST"
+        "WATER_GUN"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -32272,7 +32272,7 @@
         "ICY_WIND"
       ],
       "QuickMovesElite": [
-        "ICE_SHARD_FAST"
+        "ICE_SHARD"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -32366,7 +32366,7 @@
         "ACID_SPRAY"
       ],
       "QuickMovesElite": [
-        "LICK_FAST"
+        "LICK"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -32512,7 +32512,7 @@
         "OMINOUS_WIND"
       ],
       "QuickMovesElite": [
-        "SUCKER_PUNCH_FAST"
+        "SUCKER_PUNCH"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -32539,7 +32539,7 @@
         "SHADOW_BALL"
       ],
       "QuickMovesElite": [
-        "LICK_FAST"
+        "LICK"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -32572,7 +32572,7 @@
         "SHADOW_PUNCH"
       ],
       "QuickMovesElite": [
-        "LICK_FAST"
+        "LICK"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -32750,7 +32750,7 @@
         "CRABHAMMER"
       ],
       "QuickMovesElite": [
-        "MUD_SHOT_FAST"
+        "MUD_SHOT"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -32857,7 +32857,7 @@
         "FOUL_PLAY"
       ],
       "QuickMovesElite": [
-        "TACKLE_FAST"
+        "TACKLE"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -32961,7 +32961,7 @@
         "SOLAR_BEAM"
       ],
       "QuickMovesElite": [
-        "ZEN_HEADBUTT_FAST"
+        "ZEN_HEADBUTT"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -33181,7 +33181,7 @@
         "BRICK_BREAK"
       ],
       "QuickMovesElite": [
-        "ROCK_SMASH_FAST"
+        "ROCK_SMASH"
       ],
       "ThirdMove": {
         "Stardust": 75000,
@@ -33614,7 +33614,7 @@
         "DRILL_RUN"
       ],
       "QuickMovesElite": [
-        "POISON_JAB_FAST"
+        "POISON_JAB"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -33665,7 +33665,7 @@
         "ICE_BEAM"
       ],
       "QuickMovesElite": [
-        "TACKLE_FAST"
+        "TACKLE"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -33760,7 +33760,7 @@
         "BUG_BUZZ"
       ],
       "QuickMovesElite": [
-        "STEEL_WING_FAST"
+        "STEEL_WING"
       ],
       "ThirdMove": {
         "Stardust": 75000,
@@ -33801,7 +33801,7 @@
         "ICE_PUNCH"
       ],
       "QuickMovesElite": [
-        "POUND_FAST"
+        "POUND"
       ],
       "ThirdMove": {
         "Stardust": 75000,
@@ -33994,7 +33994,7 @@
         "AQUA_TAIL"
       ],
       "QuickMovesElite": [
-        "DRAGON_TAIL_FAST"
+        "DRAGON_TAIL"
       ],
       "ThirdMove": {
         "Stardust": 10000,
@@ -34036,7 +34036,7 @@
         "ICE_BEAM"
       ],
       "QuickMovesElite": [
-        "ICE_SHARD_FAST"
+        "ICE_SHARD"
       ],
       "ThirdMove": {
         "Stardust": 75000,
@@ -34206,8 +34206,8 @@
         "DISCHARGE"
       ],
       "QuickMovesElite": [
-        "TACKLE_FAST",
-        "ZEN_HEADBUTT_FAST"
+        "TACKLE",
+        "ZEN_HEADBUTT"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -34285,7 +34285,7 @@
         "ROCK_SLIDE"
       ],
       "QuickMovesElite": [
-        "ROCK_THROW_FAST"
+        "ROCK_THROW"
       ],
       "ThirdMove": {
         "Stardust": 75000,
@@ -34357,7 +34357,7 @@
         "STONE_EDGE"
       ],
       "QuickMovesElite": [
-        "FURY_CUTTER_FAST"
+        "FURY_CUTTER"
       ],
       "ThirdMove": {
         "Stardust": 75000,
@@ -34435,7 +34435,7 @@
         "SUPER_POWER"
       ],
       "QuickMovesElite": [
-        "YAWN_FAST"
+        "YAWN"
       ],
       "ThirdMove": {
         "Stardust": 75000,
@@ -34511,7 +34511,7 @@
         "DRILL_PECK"
       ],
       "QuickMovesElite": [
-        "THUNDER_SHOCK_FAST"
+        "THUNDER_SHOCK"
       ],
       "ThirdMove": {
         "Stardust": 100000,
@@ -35111,7 +35111,7 @@
         "HYDRO_CANNON"
       ],
       "QuickMovesElite": [
-        "WATER_GUN_FAST"
+        "WATER_GUN"
       ],
       "ThirdMove": {
         "Stardust": 10000,
@@ -35492,7 +35492,7 @@
         "DAZZLING_GLEAM"
       ],
       "QuickMovesElite": [
-        "ZEN_HEADBUTT_FAST"
+        "ZEN_HEADBUTT"
       ],
       "ThirdMove": {
         "Stardust": 10000,
@@ -35518,8 +35518,8 @@
         "AERIAL_ACE"
       ],
       "QuickMovesElite": [
-        "STEEL_WING_FAST",
-        "ZEN_HEADBUTT_FAST"
+        "STEEL_WING",
+        "ZEN_HEADBUTT"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -37203,7 +37203,7 @@
         "OCTAZOOKA"
       ],
       "QuickMovesElite": [
-        "WATER_GUN_FAST"
+        "WATER_GUN"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -37419,7 +37419,7 @@
         "PSYSHOCK"
       ],
       "QuickMovesElite": [
-        "FROST_BREATH_FAST"
+        "FROST_BREATH"
       ],
       "ThirdMove": {
         "Stardust": 10000,
@@ -37620,7 +37620,7 @@
         "ICE_BEAM"
       ],
       "QuickMovesElite": [
-        "HIDDEN_POWER_FAST"
+        "HIDDEN_POWER"
       ],
       "ThirdMove": {
         "Stardust": 100000,
@@ -37726,7 +37726,7 @@
         "STONE_EDGE"
       ],
       "QuickMovesElite": [
-        "SMACK_DOWN_FAST"
+        "SMACK_DOWN"
       ],
       "ThirdMove": {
         "Stardust": 75000,
@@ -37915,7 +37915,7 @@
         "LEAF_STORM"
       ],
       "QuickMovesElite": [
-        "MAGICAL_LEAF_FAST"
+        "MAGICAL_LEAF"
       ],
       "ThirdMove": {
         "Stardust": 100000,
@@ -38679,7 +38679,7 @@
         "LEAF_TORNADO"
       ],
       "QuickMovesElite": [
-        "BULLET_SEED_FAST"
+        "BULLET_SEED"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -39126,7 +39126,7 @@
         "DIG"
       ],
       "QuickMovesElite": [
-        "STRUGGLE_BUG_FAST"
+        "STRUGGLE_BUG"
       ],
       "ThirdMove": {
         "Stardust": 75000,
@@ -41296,7 +41296,7 @@
         "ICICLE_SPEAR"
       ],
       "QuickMovesElite": [
-        "POWDER_SNOW_FAST"
+        "POWDER_SNOW"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -42649,7 +42649,7 @@
         "WEATHER_BALL_FIRE"
       ],
       "QuickMovesElite": [
-        "BULLET_SEED_FAST"
+        "BULLET_SEED"
       ],
       "ThirdMove": {
         "Stardust": 50000,
@@ -44473,7 +44473,7 @@
         "LAST_RESORT"
       ],
       "QuickMovesElite": [
-        "BULLET_SEED_FAST"
+        "BULLET_SEED"
       ],
       "ThirdMove": {
         "Stardust": 75000,
@@ -49807,7 +49807,7 @@
         "HURRICANE"
       ],
       "QuickMovesElite": [
-        "INCINERATE_FAST"
+        "INCINERATE"
       ],
       "ThirdMove": {
         "Stardust": 10000,
