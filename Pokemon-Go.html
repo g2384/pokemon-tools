@@ -462,6 +462,7 @@
         var newPokemon = {};
         var data_cp_multiplier = {};
         var dps_table = {};
+        var pokemon_go_options = {};
 
         function toTitleCase(str) {
             return str.replace(
@@ -488,7 +489,7 @@
         }
 
         function calculateStatsByTag(baseStats, tag) {
-            let checkNerf = tag.toLowerCase().indexOf("mega") >= 0 ? false : true;
+            let checkNerf = tag && tag.toLowerCase().includes("mega") ? false : true;
             const atk = calBaseATK(baseStats, checkNerf);
             const def = calBaseDEF(baseStats, checkNerf);
             const sta = tag !== "shedinja" ? calBaseSTA(baseStats, checkNerf) : 1;
@@ -710,6 +711,7 @@
 
         const DEFAULT_POKEMON_DEF_OBJ = 160;
         const DEFAULT_POKEMON_SHADOW = false;
+        const DEFAULT_TRAINER_FRIEND = false;
         const DEFAULT_WEATHER_BOOSTS = false;
         const DEFAULT_POKEMON_FRIEND_LEVEL = 0;
 
@@ -720,15 +722,15 @@
         const MIN_LEVEL = 1;
         const MAX_LEVEL = 51;
 
-        const MIN_IV = 0
-        const MAX_IV = 15
+        const MIN_IV = 0;
+        const MAX_IV = 15;
 
         function getBarCharge(isRaid, energy) {
+            energy = Math.abs(energy);
             if (isRaid) {
-                const bar = Math.ceil(100 / Math.abs(energy))
+                const bar = Math.ceil(100 / energy)
                 return bar > 3 ? 3 : bar;
-            }
-            else return Math.abs(energy) > 50 ? 1 : 2;
+            } else return energy > 50 ? 1 : 2;
         }
 
         function capitalize(string) {
@@ -736,12 +738,7 @@
         }
 
         function getMultiFriendshipMulti(level) {
-            let dmg = 1;
-            if (level === 1) dmg += 0.03;
-            else if (level === 2) dmg += 0.05;
-            else if (level === 3) dmg += 0.07;
-            else if (level === 4) dmg += 0.1;
-            return dmg;
+            return pokemon_go_options["data"]["trainer_friendship"][level.toString()]["atk_bonus"];
         }
 
         function calculateAvgDPS(fmove, cmove, Atk, Def, HP, bar, typePoke, options, shadow) {
@@ -751,67 +748,66 @@
             const CE = Math.abs(cmove.pve_energy);
             const FDur = fmove.durationMs / 1000;
             const CDur = cmove.durationMs / 1000;
+            const FTYPE = capitalize(fmove.type.toLowerCase());
+            const CTYPE = capitalize(cmove.type.toLowerCase());
             const CDWS = cmove.damageWindowStartMs / 1000;
+            var STAB_MULTIPLY = pokemon_go_options["data"]["battle_options"]["stab"];
+            var SHADOW_DEF_BONUS = pokemon_go_options["data"]["combat_options"]["shadow_bonus"]["def"];
+            var SHADOW_ATK_BONUS = pokemon_go_options["data"]["combat_options"]["shadow_bonus"]["atk"];
 
-            const FMulti = (typePoke.includes(toTitleCase(fmove.type)) ? 1.2 : 1) * fmove.accuracyChance
-            const CMulti = (typePoke.includes(toTitleCase(cmove.type)) ? 1.2 : 1) * cmove.accuracyChance
+            const FMulti = (typePoke.includes(FTYPE) ? STAB_MULTIPLY : 1) * fmove.accuracyChance;
+            const CMulti = (typePoke.includes(CTYPE) ? STAB_MULTIPLY : 1) * cmove.accuracyChance;
 
-            let y, FDmg, CDmg, FDmgBase, CDmgBase
-            if (options === undefined) {
-                FDmgBase = DEFAULT_DAMAGE_MULTIPLY * FPow * FMulti * (DEFAULT_POKEMON_SHADOW ? 1.2 : 1) * (DEFAULT_WEATHER_BOOSTS ? 1.2 : 1) * getMultiFriendshipMulti(DEFAULT_POKEMON_FRIEND_LEVEL)
-                CDmgBase = DEFAULT_DAMAGE_MULTIPLY * CPow * CMulti * (DEFAULT_POKEMON_SHADOW ? 1.2 : 1) * (DEFAULT_WEATHER_BOOSTS ? 1.2 : 1) * getMultiFriendshipMulti(DEFAULT_POKEMON_FRIEND_LEVEL)
+            let y, FDmg, CDmg, FDmgBase, CDmgBase;
+            if (options) {
+                FDmgBase = DEFAULT_DAMAGE_MULTIPLY * FPow * FMulti * (shadow ? SHADOW_ATK_BONUS : 1) * (typeof options.WEATHER_BOOSTS === "string" ? weatherMultiple(options.WEATHER_BOOSTS, FTYPE) : options.WEATHER_BOOSTS ? STAB_MULTIPLY : 1) * (options.TRAINER_FRIEND ? getMultiFriendshipMulti(options.TRAINER_FRIEND_LEVEL) : 1);
+                CDmgBase = DEFAULT_DAMAGE_MULTIPLY * CPow * CMulti * (shadow ? SHADOW_ATK_BONUS : 1) * (typeof options.WEATHER_BOOSTS === "string" ? weatherMultiple(options.WEATHER_BOOSTS, CTYPE) : options.WEATHER_BOOSTS ? STAB_MULTIPLY : 1) * (options.TRAINER_FRIEND ? getMultiFriendshipMulti(options.TRAINER_FRIEND_LEVEL) : 1);
 
-                FDmg = Math.floor(FDmgBase * Atk / DEFAULT_POKEMON_DEF_OBJ) + DEFAULT_DAMAGE_CONST
-                CDmg = Math.floor(CDmgBase * Atk / DEFAULT_POKEMON_DEF_OBJ) + DEFAULT_DAMAGE_CONST
+                FDmg = Math.floor(FDmgBase * Atk * (options.objTypes ? getTypeEffective(FTYPE, options.objTypes) : 1) / options.POKEMON_DEF_OBJ) + DEFAULT_DAMAGE_CONST;
+                CDmg = Math.floor(CDmgBase * Atk * (options.objTypes ? getTypeEffective(CTYPE, options.objTypes) : 1) / options.POKEMON_DEF_OBJ) + DEFAULT_DAMAGE_CONST;
 
-                y = 900 / (Def * (DEFAULT_POKEMON_SHADOW ? 0.83333331 : 1));
+                y = 900 / ((Def / (options.objTypes ? getTypeEffective(FTYPE, options.objTypes) * getTypeEffective(CTYPE, options.objTypes) : 1)) * (shadow ? SHADOW_DEF_BONUS : 1));
             } else {
-                FDmgBase = options.DAMAGE_MULTIPLY * FPow * FMulti * (shadow ? 1.2 : 1) * (typeof options.WEATHER_BOOSTS === "string" ? weatherMultiple(options.WEATHER_BOOSTS, fmove.type) : options.WEATHER_BOOSTS ? 1.2 : 1) * getMultiFriendshipMulti(options.POKEMON_FRIEND_LEVEL)
-                CDmgBase = options.DAMAGE_MULTIPLY * CPow * CMulti * (shadow ? 1.2 : 1) * (typeof options.WEATHER_BOOSTS === "string" ? weatherMultiple(options.WEATHER_BOOSTS, cmove.type) : options.WEATHER_BOOSTS ? 1.2 : 1) * getMultiFriendshipMulti(options.POKEMON_FRIEND_LEVEL)
+                FDmgBase = DEFAULT_DAMAGE_MULTIPLY * FPow * FMulti * (DEFAULT_POKEMON_SHADOW ? SHADOW_ATK_BONUS : 1) * (DEFAULT_WEATHER_BOOSTS ? STAB_MULTIPLY : 1) * (DEFAULT_TRAINER_FRIEND ? getMultiFriendshipMulti(DEFAULT_POKEMON_FRIEND_LEVEL) : 1);
+                CDmgBase = DEFAULT_DAMAGE_MULTIPLY * CPow * CMulti * (DEFAULT_POKEMON_SHADOW ? SHADOW_ATK_BONUS : 1) * (DEFAULT_WEATHER_BOOSTS ? STAB_MULTIPLY : 1) * (DEFAULT_TRAINER_FRIEND ? getMultiFriendshipMulti(DEFAULT_POKEMON_FRIEND_LEVEL) : 1);
 
-                FDmg = Math.floor(FDmgBase * Atk / options.POKEMON_DEF_OBJ) + options.DAMAGE_CONST
-                CDmg = Math.floor(CDmgBase * Atk / options.POKEMON_DEF_OBJ) + options.DAMAGE_CONST
+                FDmg = Math.floor(FDmgBase * Atk / DEFAULT_POKEMON_DEF_OBJ) + DEFAULT_DAMAGE_CONST;
+                CDmg = Math.floor(CDmgBase * Atk / DEFAULT_POKEMON_DEF_OBJ) + DEFAULT_DAMAGE_CONST;
 
-                y = 900 / (Def * (shadow ? 0.83333331 : 1));
+                y = 900 / (Def * (DEFAULT_POKEMON_SHADOW ? SHADOW_DEF_BONUS : 1));
             }
 
             const FDPS = FDmg / (FDur + (options && options.delay ? options.delay.ftime : 0));
             const CDPS = CDmg / (CDur + (options && options.delay ? options.delay.ctime : 0));
 
+            const CEPSM = CE === 100 ? 0.5 * FE + 0.5 * y * CDWS : 0;
             const FEPS = FE / (FDur + (options && options.delay ? options.delay.ftime : 0));
-
-            let CEPSM;
-            let x = 0.5 * CE + 0.5 * FE;
-
-            if (bar === 1) CEPSM = 0.5 * FE + 0.5 * y * CDWS;
-            else CEPSM = 0;
-
             const CEPS = (CE + CEPSM) / (CDur + (options && options.delay ? options.delay.ctime : 0));
 
-            if (options !== undefined && options.specific) {
+            let x = 0.5 * CE + 0.5 * FE;
+            if (options && options.specific) {
+                const bar = getBarCharge(true, CE);
                 let λ;
                 if (bar === 1) λ = 3;
                 else if (bar === 2) λ = 1.5;
                 else if (bar === 3) λ = 1;
-                x = 0.5 * CE + 0.5 * FE + 0.5 * λ * options.FDmgenemy + options.CDmgenemy * λ + 1
+                x += 0.5 * λ * options.specific.FDmgenemy + options.specific.CDmgenemy * λ + 1;
             }
 
             const DPS0 = (FDPS * CEPS + CDPS * FEPS) / (CEPS + FEPS);
 
             let DPS;
             if (FDPS > CDPS) DPS = DPS0;
-            else DPS = Math.max(0, DPS0 + ((CDPS - FDPS) / (CEPS + FEPS) * (DEFAULT_ENERYGY_PER_HP_LOST - (x / HP)) * y))
+            else DPS = Math.max(0, DPS0 + ((CDPS - FDPS) / (CEPS + FEPS) * (DEFAULT_ENERYGY_PER_HP_LOST - (x / HP)) * y));
             return Math.max(FDPS, DPS);
         }
 
         function calculateTDO(Def, HP, dps, shadow) {
             let y;
-            if (!shadow) {
-                y = 900 / (Def * (DEFAULT_POKEMON_SHADOW ? 0.83333331 : 1));
-            } else {
-                y = 900 / (Def * (shadow ? 0.83333331 : 1));
-            }
-            return HP / y * dps
+            var SHADOW_DEF_BONUS = pokemon_go_options["data"]["combat_options"]["shadow_bonus"]["def"];
+            if (shadow) y = 900 / (Def * (shadow ? SHADOW_DEF_BONUS : 1));
+            else y = 900 / (Def * (DEFAULT_POKEMON_SHADOW ? SHADOW_DEF_BONUS : 1));
+            return HP / y * dps;
         }
 
         window.addEventListener('load', function () {
@@ -854,6 +850,12 @@
                 .then(response => response.json())
                 .then(parsed_data => {
                     dps_table = parsed_data;
+                });
+
+            fetch("./pokemon_go/pokemon_go_options.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    pokemon_go_options = parsed_data;
                 });
         })
     </script>
