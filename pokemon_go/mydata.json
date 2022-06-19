@@ -207,4 +207,11 @@
     "quickMove": "Astonish",
     "chargedMove": "Shadow Sneak",
     "shiny": false
+},
+{
+    "name": "Unfezant",
+    "IV": 91,
+    "quickMove": "Steel Wing",
+    "chargedMove": "Hyper Beam",
+    "shiny": false
 }]

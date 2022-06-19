@@ -171,15 +171,20 @@
     <h2>Find IV stats from CP</h2>
     <div>
         <div class="mb-3 row align-items-center">
-            <label for="staticEmail" class="col-sm-2 col-form-label">Pokemon:</label>
+            <label for="pokemon-name" class="col-sm-2 col-form-label">Pokemon:</label>
             <div class="col-sm-10">
                 <select id="pokemon-name" onchange="findIVFromCP()"></select>
             </div>
         </div>
         <div class="mb-3 row align-items-center">
-            <label for="staticEmail" class="col-sm-2 col-form-label">CP:</label>
+            <label for="cpValue" class="col-sm-2 col-form-label">CP:</label>
             <div class="col-sm-10">
                 <input id="cpValue" type="number" class="form-control" value="" min="10" max="99999"
+                    onkeyup="findIVFromCP()" />
+            </div>
+            <label for="hpValue" class="col-sm-2 col-form-label mt-3">HP:</label>
+            <div class="col-sm-10 mt-3">
+                <input id="hpValue" type="number" class="form-control" value="" min="0" max="99999"
                     onkeyup="findIVFromCP()" />
             </div>
         </div>
@@ -319,13 +324,15 @@
             }
         }
 
-        function calculateIVFromCP(code, cp) {
-            console.log(code, cp)
+        function calculateIVFromCP(code, cp, hp) {
+            console.log(code, cp, hp)
             if (null !== code) {
                 this.old = !1;
                 var e = code.split(",");
                 var t = e[0], n = e[1], r = pokemon_data[t][n][0];
                 var filtered = {};
+                var sta_init = 0;
+                var sta_end = 15;
                 for (var sta_i = 0; sta_i <= 15; sta_i++)
                     for (var att_i = 0; att_i <= 15; att_i++)
                         for (var def_i = 0; def_i <= 15; def_i++)
@@ -333,7 +340,11 @@
                                 var s = getCPM(i);
                                 var c = getCp(s, r, o);
                                 var l = getHp(s, r, o);
-                                if (c === cp) {
+                                var hp_match = true;
+                                if (hp != null && hp != undefined && hp > 0) {
+                                    hp_match = hp == l;
+                                }
+                                if (c === cp && hp_match) {
                                     var arr = new Int32Array([sta_i, att_i, def_i]);
                                     arr.sort();
                                     var key = arr.join(",");
@@ -383,8 +394,10 @@
             var pn = document.querySelector("#pokemon-name");
             var d_code = pn.options[pn.selectedIndex].getAttribute("data-code");
             var cp = document.querySelector("#cpValue").value;
+            var hp = document.querySelector("#hpValue").value;
             cp = parseInt(cp);
-            var result = calculateIVFromCP(d_code, cp);
+            hp = parseInt(hp);
+            var result = calculateIVFromCP(d_code, cp, hp);
             var r_div = document.querySelector("#CP-IV-div");
             if (typeof result === 'string' || result instanceof String) {
                 console.log(result);
@@ -677,7 +690,7 @@
             }
             var filterMoveTypes = enabledMoveTypes.length > 0;
             console.log(excludeLegendary, includeReleasedOnly, filterTypes, filterMoveTypes, enabledOptions, enabledMoveTypes)
-            
+
             var allMovesArray = SortDps(dps_table, newPokemon, excludeLegendary, includeReleasedOnly, filterTypes, capitalOptions, filterMoveTypes, enabledMoveTypes, excludepokemons);
 
             allMovesArray = allMovesArray.sort(function (e, t) {
