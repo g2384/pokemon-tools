@@ -1,217 +1,302 @@
-[{
+[
+  {
     "name": "Gyarados",
     "IV": 93,
     "quickMove": "Waterfall",
     "chargedMove": "Hydro Pump",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Rhydon",
     "IV": 98,
     "quickMove": "Mud-Slap",
     "chargedMove": "Stone Edge",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Machamp",
     "IV": 100,
     "quickMove": "Counter",
     "chargedMove": "Dynamic Punch",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Mamoswine",
     "IV": 91,
     "quickMove": "Mud-Slap",
     "chargedMove": "Avalanche",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Vaporeon",
     "IV": 91,
     "quickMove": "Water Gun",
     "chargedMove": "Aqua Tail",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Vaporeon",
     "IV": 73,
     "quickMove": "Water Gun",
     "chargedMove": "Hydro Pump",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Exeggutor",
     "IV": 93,
     "quickMove": "Confusion",
     "chargedMove": "Psychic",
     "shiny": false
-},
-{
+  },
+  {
     "name": "ExeggutorAlola",
     "IV": 93,
     "quickMove": "Dragon Tail",
     "chargedMove": "Dragon Pulse",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Venusaur",
     "IV": 93,
     "quickMove": "Razor Leaf",
     "chargedMove": "Petal Blizzard",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Honchkrow",
     "IV": 89,
     "quickMove": "Snarl",
     "chargedMove": "Sky Attack",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Aggron",
     "IV": 87,
     "quickMove": "Iron Tail",
     "chargedMove": "Heavy Slam",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Rampardos",
     "IV": 98,
     "quickMove": "Smack Down",
     "chargedMove": "Rock Slide",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Gengar",
     "IV": 71,
     "quickMove": "Shadow Claw",
     "chargedMove": "Shadow Ball",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Meganium",
     "IV": 91,
     "quickMove": "Vine Whip",
     "chargedMove": "Solar Beam",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Beartic",
     "IV": 98,
     "quickMove": "Charm",
     "chargedMove": "Surf",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Drifloon",
     "IV": 100,
     "quickMove": "Astonish",
     "chargedMove": "Shadow Ball",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Probopass",
     "IV": 89,
     "quickMove": "Rock Throw",
     "chargedMove": "Magnet Bomb",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Snorlax",
     "IV": 89,
     "quickMove": "Zen Headbutt",
     "chargedMove": "Return",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Dragonite",
     "IV": 82,
     "quickMove": "Steel Wing",
     "chargedMove": "Hurricane",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Jolteon",
     "IV": 91,
     "quickMove": "Thunder Shock",
     "chargedMove": "Thunder",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Alakazam",
     "IV": 82,
     "quickMove": "Confusion",
     "chargedMove": "Shadow Ball",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Cloyster",
     "IV": 87,
     "quickMove": "Frost Breath",
     "chargedMove": "Blizzard",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Kabutops",
     "IV": 93,
     "quickMove": "Mud Shot",
     "chargedMove": "Stone Edge",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Aerodactyl",
     "IV": 91,
     "quickMove": "Bite",
     "chargedMove": "Hyper Beam",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Cradily",
     "IV": 89,
     "quickMove": "Acid",
     "chargedMove": "Stone Edge",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Snorlax",
     "IV": 82,
     "quickMove": "Lick",
     "chargedMove": "Hyper Beam",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Hariyama",
     "IV": 89,
     "quickMove": "Bullet Punch",
     "chargedMove": "Superpower",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Golem",
     "IV": 91,
     "quickMove": "Rock Throw",
     "chargedMove": "Earthquake",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Slowbro",
     "IV": 93,
     "quickMove": "Water Gun",
     "chargedMove": "Water Pulse",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Decidueye",
     "IV": 93,
     "quickMove": "Astonish",
     "chargedMove": "Shadow Sneak",
     "shiny": false
-},
-{
+  },
+  {
     "name": "Unfezant",
     "IV": 91,
     "quickMove": "Steel Wing",
     "chargedMove": "Hyper Beam",
     "shiny": false
-}]
+  },
+  {
+    "name": "Sawk",
+    "IV": 96,
+    "quickMove": "Poison Jab",
+    "chargedMove": "Focus Blast",
+    "shiny": false
+  },
+  {
+    "lowest": {
+      "10": [
+        "Skitty",
+        "Hoppip",
+        "Lotad",
+        "Seedot",
+        "Diglett",
+        "Makuhita",
+        "Poochyena",
+        "Pidove",
+        "Wimpod",
+        "Shroomish",
+        "Lillipup",
+        "Ledyba",
+        "Starly"
+      ],
+      "11": [
+        "Shieldon",
+        "Pikachu",
+        "Pikipek",
+        "Glameow"
+      ],
+      "12": [
+        "Eevee",
+        "Finneon",
+        "Trubbish",
+        "Rowlet",
+        "Snorunt"
+      ],
+      "13": [
+        "Larvitar",
+        "Slakoth",
+        "Clauncher",
+        "Cubchoo"
+      ],
+      "14": [
+        "Trapinch",
+        "Chinchou",
+        "Onix",
+        "Bergmite",
+        "Mudkip",
+        "Bulbasaur",
+        "Snubbull",
+        "Magikarp"
+      ],
+      "17": [
+        "Wartortle",
+        "Magnemite",
+        "Aron"
+      ],
+      "18": [
+        "Caterpie",
+        "Zigzagoon"
+      ],
+      "20": [
+        "Anorith",
+        "Castform"
+      ],
+      "21": [
+        "Charmeleon"
+      ],
+      "23": [
+        "Smeargle"
+      ],
+      "26": [
+        "Stantler"
+      ],
+      "30": [
+        "Electabuzz"
+      ],
+      "59": [
+        "Slaking"
+      ]
+    }
+  }
+]

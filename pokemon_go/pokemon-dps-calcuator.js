@@ -1,3 +1,62 @@
+function calculateCP(atk, def, sta, level) {
+    return Math.floor(Math.max(10, (atk * (def ** 0.5) * (sta ** 0.5) * data_cp_multiplier.find(item => item.level === level).multiplier ** 2) / 10))
+}
+
+function calculateStatsByTag(baseStats, tag) {
+    let checkNerf = tag && tag.toLowerCase().includes("mega") ? false : true;
+    const atk = calBaseATK(baseStats, checkNerf);
+    const def = calBaseDEF(baseStats, checkNerf);
+    const sta = tag !== "shedinja" ? calBaseSTA(baseStats, checkNerf) : 1;
+    return {
+        atk: atk,
+        def: def,
+        sta: sta,
+    };
+}
+
+function calBaseATK(stats, nerf) {
+    const atk = stats.atk !== undefined ? stats.atk : stats.find(item => item.stat.name === "attack").base_stat;
+    const spa = stats.spa !== undefined ? stats.spa : stats.find(item => item.stat.name === "special-attack").base_stat;
+
+    const lower = Math.min(atk, spa);
+    const higher = Math.max(atk, spa);
+
+    const speed = stats.spe !== undefined ? stats.spe : stats.find(item => item.stat.name === "speed").base_stat;
+
+    const scaleATK = Math.round(2 * ((7 / 8) * higher + (1 / 8) * lower));
+    const speedMod = 1 + (speed - 75) / 500;
+    const baseATK = Math.round(scaleATK * speedMod);
+    if (!nerf) return baseATK;
+    if (calculateCP(baseATK + 15, calBaseDEF(stats, false) + 15, calBaseSTA(stats, false) + 15, 40) >= 4000) return Math.round(scaleATK * speedMod * 0.91);
+    else return baseATK;
+}
+
+function calBaseDEF(stats, nerf) {
+    const def = stats.def !== undefined ? stats.def : stats.find(item => item.stat.name === "defense").base_stat;
+    const spd = stats.spd !== undefined ? stats.spd : stats.find(item => item.stat.name === "special-defense").base_stat;
+
+    const lower = Math.min(def, spd);
+    const higher = Math.max(def, spd);
+
+    const speed = stats.spe !== undefined ? stats.spe : stats.find(item => item.stat.name === "speed").base_stat;
+
+    const scaleDEF = Math.round(2 * ((5 / 8) * higher + (3 / 8) * lower));
+    const speedMod = 1 + (speed - 75) / 500;
+    const baseDEF = Math.round(scaleDEF * speedMod);
+    if (!nerf) return baseDEF;
+    if (calculateCP(calBaseATK(stats, false) + 15, baseDEF + 15, calBaseSTA(stats, false) + 15, 40) >= 4000) return Math.round(scaleDEF * speedMod * 0.91);
+    else return baseDEF;
+}
+
+function calBaseSTA(stats, nerf) {
+    const hp = stats.hp !== undefined ? stats.hp : stats.find(item => item.stat.name === "hp").base_stat;
+
+    const baseSTA = Math.floor(hp * 1.75 + 50);
+    if (!nerf) return baseSTA;
+    if (calculateCP(calBaseATK(stats, false) + 15, calBaseDEF(stats, false) + 15, baseSTA + 15, 40) >= 4000) return Math.round((hp * 1.75 + 50) * 0.91);
+    else return baseSTA;
+}
+
 function SortDps(dps_table, newPokemon, excludeLegendary, includeReleasedOnly, filterTypes, enabledFilterTypes, filterMoveTypes, enabledMoveTypes, excludepokemons) {
     var allMovesArray = [];
     var pokeCount = {};

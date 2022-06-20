@@ -74,12 +74,14 @@
 
 <body>
     <h2>Pokemon Go Management</h2>
+    <div id="lowest-cp"></div>
     <div id="list"></div>
     <div id="alllist"></div>
     <script>
         var pokemonData = null;
         var dps_table = null;
         var myData = null;
+        var data_cp_multiplier = null;
 
         function numberWithCommas(x, round) {
             var parts = (Math.round(x * 10 ** round) / 10 ** round).toString().split(".");
@@ -121,10 +123,33 @@
             }
         }
 
+        function displayLowest(list) {
+            var str = [];
+            for (const [key, value] of Object.entries(list)) {
+                str.push("<h5>" + key + "</h5>");
+                var str2 = [];
+                for (var m of value) {
+                    console.log(m)
+                    var p = pokemonData[m.toLowerCase()];
+                    let stats = calculateStatsByTag(p.baseStats, p.forme);
+                    var cp = calculateCP(stats.atk, stats.def, stats.sta, 1)
+                    var name = cp == parseInt(key) ? "<strong>" + p.name + "</strong>" : p.name;
+                    str.push("<img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_"
+                        + String(p.num).padStart(3, '0') + "_" + getImageId(p.num, m.toLowerCase())
+                        + ".png' />" + name + ": " + cp);
+                }
+                str2.sort();
+                str = str.concat(str2);
+            }
+
+            document.querySelector("#lowest-cp").innerHTML = str.join("<br>");
+        }
+
         function updateTable() {
             if (pokemonData == null
                 || dps_table == null
-                || myData == null) {
+                || myData == null
+                || data_cp_multiplier == null) {
                 return;
             }
             var rankedMoves = {};
@@ -153,6 +178,10 @@
             var ownedByTypes = {};
             var ownedByTypesRank = {};
             for (var m of myData) {
+                if (m.name == null || m.name == undefined) {
+                    displayLowest(m.lowest);
+                    continue;
+                }
                 var p = dps_table[m.name.toLowerCase()];
                 var id = p.id;
                 var moveObj = [];
@@ -280,6 +309,12 @@
                 .then(parsed_data => {
                     myData = parsed_data;
                     updateTable();
+                });
+
+            fetch("./pokemon_go/cp_multiplier.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    data_cp_multiplier = parsed_data;
                 });
         });
     </script>
