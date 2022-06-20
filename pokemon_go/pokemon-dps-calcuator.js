@@ -143,7 +143,8 @@ function GenerateDpsAttackTable(allMovesArray, showTop, dps_table, newPokemon, p
         if (!(id in rankedMoves)) {
             rankedMoves[id] = 0;
         }
-        var rank = rankedMoves[id] < 3 ? rankChars[rankedMoves[id]] : " (" + (rankedMoves[id] + 1) + ")";
+        var rk_move = value[0][9];
+        var rank = rk_move < rankChars.length ? rankChars[rk_move] : " (" + (rk_move + 1) + ")";
         rankedMoves[id]++;
         var highlight = false;
         for (var h of highlightMatched) {

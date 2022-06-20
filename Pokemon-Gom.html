@@ -34,6 +34,19 @@
             animation: glow 1s ease-in-out infinite alternate;
         }
 
+        .check {
+            font-weight: bold;
+            color: #ffffff;
+            margin-left: 4px;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+            background: #52bd43;
+        }
+
         .rank {
             width: 62px;
             border: 1px solid #333;
@@ -126,23 +139,23 @@
         function displayLowest(list) {
             var str = [];
             for (const [key, value] of Object.entries(list)) {
-                str.push("<h5>" + key + "</h5>");
                 var str2 = [];
                 for (var m of value) {
                     console.log(m)
                     var p = pokemonData[m.toLowerCase()];
                     let stats = calculateStatsByTag(p.baseStats, p.forme);
                     var cp = calculateCP(stats.atk, stats.def, stats.sta, 1)
-                    var name = cp == parseInt(key) ? "<strong>" + p.name + "</strong>" : p.name;
-                    str.push("<img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_"
+                    var name = cp == parseInt(key) ? p.name + "<span class='check'>&#10003;</span>" : p.name;
+                    str2.push("<td><img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_"
                         + String(p.num).padStart(3, '0') + "_" + getImageId(p.num, m.toLowerCase())
-                        + ".png' />" + name + ": " + cp);
+                        + ".png' />" + name + "</td><td>" + cp + "</td>");
                 }
                 str2.sort();
-                str = str.concat(str2);
+                var s = "<tr><td rowspan='" + str2.length + "'>" + key + "</td>" + str2.join("</tr><tr>") + "</tr>";
+                str.push(s);
             }
 
-            document.querySelector("#lowest-cp").innerHTML = str.join("<br>");
+            document.querySelector("#lowest-cp").innerHTML = "<table class='table table-striped align-middle'><thead><tr><td>CP</td><td>Name<td>Lowest CP</td></tr></thead><tbody>" + str.join("") + "</tbody></table>";
         }
 
         function updateTable() {
