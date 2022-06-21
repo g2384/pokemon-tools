@@ -91,7 +91,6 @@ function SortDps(dps_table, newPokemon, excludeLegendary, includeReleasedOnly, f
                 continue;
             }
 
-
             allMovesArray.push([value.id, key, v2[0], v2[1], v2[2], v2[3], v2[4], v2[5], v2[6], pokeCount[key]])
             pokeCount[key]++;
         }
@@ -143,9 +142,6 @@ function GenerateDpsAttackTable(allMovesArray, showTop, dps_table, newPokemon, p
         if (!(id in rankedMoves)) {
             rankedMoves[id] = 0;
         }
-        var rk_move = value[0][9];
-        var rank = rk_move < rankChars.length ? rankChars[rk_move] : " (" + (rk_move + 1) + ")";
-        rankedMoves[id]++;
         var highlight = false;
         for (var h of highlightMatched) {
             highlight = value.includes(h)
@@ -160,12 +156,16 @@ function GenerateDpsAttackTable(allMovesArray, showTop, dps_table, newPokemon, p
             + ".png' /><span class='inline'>"
             + dps_table[value[0][1]].name + "</span>"
             + pok.types.map(x => "<span class='inline roundSpan type-" + x + "'>" + x + "</span>").join("") + "</td>";
-        vm += value.map(x =>
-            "<td><img src='./pokemon_go/type_" + x[3] + ".png' />" + x[2] + "</td><td><img src='./pokemon_go/type_" + x[5] + ".png' />"
-            + x[4] + "</td><td>"
-            + numberWithCommas(x[6], 2) + "</td><td>"
-            + numberWithCommas(x[7], 2) + "</td><td>"
-            + numberWithCommas(x[8], 2) + "<span>" + rank + "</span>" + "</td>").join("</tr><tr>") + "</tr>";
+        vm += value.map(x => {
+            var rk_move = x[9];
+            var rank = rk_move < rankChars.length ? rankChars[rk_move] : " (" + (rk_move + 1) + ")";
+            rankedMoves[id]++;
+            return "<td><img src='./pokemon_go/type_" + x[3] + ".png' />" + x[2] + "</td><td><img src='./pokemon_go/type_" + x[5] + ".png' />"
+                + x[4] + "</td><td>"
+                + numberWithCommas(x[6], 2) + "</td><td>"
+                + numberWithCommas(x[7], 2) + "</td><td>"
+                + numberWithCommas(x[8], 2) + "<span>" + rank + "</span>" + "</td>";
+        }).join("</tr><tr>") + "</tr>";
         str += vm;
     }
     str += "</tbody></table>";
