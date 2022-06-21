@@ -484,8 +484,8 @@
 
         function calculateStatsBettle(base, iv, level, addition) {
             let result = (base + iv) * data_cp_multiplier.find(item => item.level === level).multiplier
-            if (addition) return Math.floor(result * addition)
-            return Math.floor(result)
+            if (addition) return result * addition
+            return result
         }
 
         Object.defineProperty(Array.prototype, "find", {
@@ -528,16 +528,42 @@
             configurable: true,
         });
 
+        const DEFAULT_POKEMON_DEF_OBJ = 160;
+        const DEFAULT_POKEMON_SHADOW = false;
+        const DEFAULT_TRAINER_FRIEND = false;
+        const DEFAULT_WEATHER_BOOSTS = false;
+        const DEFAULT_POKEMON_FRIEND_LEVEL = 0;
+
+        const DEFAULT_ENERYGY_PER_HP_LOST = 0.5;
+        const DEFAULT_DAMAGE_MULTIPLY = 0.5;
+        const DEFAULT_DAMAGE_CONST = 1;
+
+        const MIN_LEVEL = 1;
+        const MAX_LEVEL = 51;
+
+        const MIN_IV = 0;
+        const MAX_IV = 15;
+
         const options = {
             delay: null,
-            specific: false,
-            ELITE_MOVE: true,
-            POKEMON_SHADOW: true,
+            specific: null,
             WEATHER_BOOSTS: false,
-            POKEMON_FRIEND_LEVEL: 0,
-            POKEMON_DEF_OBJ: 160,
-            DAMAGE_MULTIPLY: 0.5,
-            DAMAGE_CONST: 1,
+            TRAINER_FRIEND: false,
+            TRAINER_FRIEND_LEVEL: 0,
+            POKEMON_DEF_OBJ: DEFAULT_POKEMON_DEF_OBJ,
+        };
+
+        const filters = {
+            showEliteMove: true,
+            showShadow: true,
+            showMega: true,
+            enableShadow: false,
+            enableElite: false,
+            enableMega: false,
+            enableBest: false,
+            enableDelay: false,
+            releasedGO: true,
+            bestOf: 3,
             IV_ATK: 15,
             IV_DEF: 15,
             IV_HP: 15,
@@ -572,14 +598,13 @@
 
                         var types = [];
 
-                        let stats = calculateStatsByTag(pokm.baseStats, pokm.slug);
-                        var atk_2 = calculateStatsBettle(stats.atk, options.IV_ATK, options.POKEMON_LEVEL);
-                        var def_2 = calculateStatsBettle(stats.def, options.IV_DEF, options.POKEMON_LEVEL);
-                        var sta_2 = calculateStatsBettle(stats.sta, options.IV_HP, options.POKEMON_LEVEL);
-                        var dps = calculateAvgDPS(m1, m2, atk_2, def_2, sta_2,
-                            getBarCharge(true, Math.abs(m2.pve_energy)), pokm.types, undefined, false);
+                        let stats = calculateStatsByTag(pokm.baseStats, pokm.forme);
+                        var atk_2 = calculateStatsBettle(stats.atk, filters.IV_ATK, filters.POKEMON_LEVEL);
+                        var def_2 = calculateStatsBettle(stats.def, filters.IV_DEF, filters.POKEMON_LEVEL);
+                        var sta_2 = calculateStatsBettle(stats.sta, filters.IV_HP, filters.POKEMON_LEVEL);
+                        var dps = calculateAvgDPS(m1, m2, atk_2, def_2, sta_2, pokm.types, options, false);
                         var tdo = calculateTDO(def_2, sta_2, dps, false)
-                        allMoves.push([convertMoveToText(v1), m1.type.toLowerCase(), convertMoveToText(v2), m2.type.toLowerCase(), dps, tdo, dps ** 3 * tdo])
+                        allMoves.push([convertMoveToText(v1), m1.type.toLowerCase(), convertMoveToText(v2).replace("Super Power", "Superpower"), m2.type.toLowerCase(), dps, tdo, dps ** 3 * tdo])
                     }
                 }
                 var p = {
@@ -650,22 +675,6 @@
             document.querySelector("#MoveList-div").innerHTML = "";
         }
 
-        const DEFAULT_POKEMON_DEF_OBJ = 160;
-        const DEFAULT_POKEMON_SHADOW = false;
-        const DEFAULT_TRAINER_FRIEND = false;
-        const DEFAULT_WEATHER_BOOSTS = false;
-        const DEFAULT_POKEMON_FRIEND_LEVEL = 0;
-
-        const DEFAULT_ENERYGY_PER_HP_LOST = 0.5;
-        const DEFAULT_DAMAGE_MULTIPLY = 0.5;
-        const DEFAULT_DAMAGE_CONST = 1;
-
-        const MIN_LEVEL = 1;
-        const MAX_LEVEL = 51;
-
-        const MIN_IV = 0;
-        const MAX_IV = 15;
-
         function getBarCharge(isRaid, energy) {
             energy = Math.abs(energy);
             if (isRaid) {
@@ -682,7 +691,7 @@
             return pokemon_go_options["data"]["trainer_friendship"][level.toString()]["atk_bonus"];
         }
 
-        function calculateAvgDPS(fmove, cmove, Atk, Def, HP, bar, typePoke, options, shadow) {
+        function calculateAvgDPS(fmove, cmove, Atk, Def, HP, typePoke, options, shadow) {
             const FPow = fmove.pve_power;
             const CPow = cmove.pve_power;
             const FE = Math.abs(fmove.pve_energy);
