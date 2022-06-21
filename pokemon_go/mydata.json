@@ -238,7 +238,8 @@
         "Shroomish",
         "Lillipup",
         "Ledyba",
-        "Starly"
+        "Starly",
+        "Zigzagoon"
       ],
       "11": [
         "Shieldon",
@@ -275,8 +276,7 @@
         "Aron"
       ],
       "18": [
-        "Caterpie",
-        "Zigzagoon"
+        "Caterpie"
       ],
       "20": [
         "Anorith",
@@ -293,6 +293,9 @@
       ],
       "30": [
         "Electabuzz"
+      ],
+      "35", [
+        "Sawk"
       ],
       "59": [
         "Slaking"
