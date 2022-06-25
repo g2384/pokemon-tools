@@ -224,6 +224,13 @@
     "shiny": false
   },
   {
+    "name": "Granbull",
+    "IV": 98,
+    "quickMove": "Snarl",
+    "chargedMove": "Return",
+    "shiny": false
+  },
+  {
     "lowest": {
       "10": [
         "Skitty",
@@ -240,27 +247,34 @@
         "Ledyba",
         "Starly",
         "Zigzagoon",
-        "Rattataalola"
+        "Rattataalola",
+        "Bronzor",
+        "Bidoof",
+        "NidoranF"
       ],
       "11": [
         "Shieldon",
         "Pikachu",
         "Pikipek",
-        "Glameow"
+        "Glameow",
+        "Squirtle",
+        "Pikachu"
       ],
       "12": [
         "Eevee",
         "Finneon",
         "Trubbish",
         "Rowlet",
-        "Snorunt"
+        "Snorunt",
+        "Charmander"
       ],
       "13": [
         "Larvitar",
         "Slakoth",
         "Clauncher",
         "Cubchoo",
-        "Joltik"
+        "Joltik",
+        "Bulbasaur"
       ],
       "14": [
         "Trapinch",
@@ -268,9 +282,15 @@
         "Onix",
         "Bergmite",
         "Mudkip",
-        "Bulbasaur",
         "Snubbull",
+        "Magikarp",
+        "Torchic"
+      ],
+      "15": [
         "Magikarp"
+      ],
+      "16": [
+        "Wimpod"
       ],
       "17": [
         "Wartortle",
