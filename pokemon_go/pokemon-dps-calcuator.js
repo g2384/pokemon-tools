@@ -161,8 +161,8 @@ function GenerateDpsAttackTable(allMovesArray, showTop, dps_table, newPokemon, p
             var rk_move = x[9];
             var rank = rk_move < rankChars.length ? rankChars[rk_move] : " (" + (rk_move + 1) + ")";
             rankedMoves[id]++;
-            var quickMoveTag = x[10] != "Normal" ? "<span class='move-tag'>" + x[10] + "</span>" : "";
-            var chargeMoveTag = x[11] != "Normal" ? "<span class='move-tag'>" + x[11] + "</span>" : "";
+            var quickMoveTag = x[10] != "Normal" ? "<span class='move-tag " + x[10].toLowerCase() + "-move'>" + x[10] + "</span>" : "";
+            var chargeMoveTag = x[11] != "Normal" ? "<span class='move-tag " + x[11].toLowerCase() + "-move'>" + x[11] + "</span>" : "";
             return "<td><img src='./pokemon_go/type_" + x[3] + ".png' />" + x[2] + quickMoveTag + "</td><td><img src='./pokemon_go/type_" + x[5] + ".png' />"
                 + x[4] + chargeMoveTag + "</td><td>"
                 + numberWithCommas(x[6], 2) + "</td><td>"
