@@ -91,7 +91,7 @@ function SortDps(dps_table, newPokemon, excludeLegendary, includeReleasedOnly, f
                 continue;
             }
 
-            allMovesArray.push([value.id, key, v2[0], v2[1], v2[2], v2[3], v2[4], v2[5], v2[6], pokeCount[key]])
+            allMovesArray.push([value.id, key, v2[0], v2[1], v2[2], v2[3], v2[4], v2[5], v2[6], pokeCount[key], v2[7], v2[8]])
             pokeCount[key]++;
         }
     }
@@ -161,8 +161,10 @@ function GenerateDpsAttackTable(allMovesArray, showTop, dps_table, newPokemon, p
             var rk_move = x[9];
             var rank = rk_move < rankChars.length ? rankChars[rk_move] : " (" + (rk_move + 1) + ")";
             rankedMoves[id]++;
-            return "<td><img src='./pokemon_go/type_" + x[3] + ".png' />" + x[2] + "</td><td><img src='./pokemon_go/type_" + x[5] + ".png' />"
-                + x[4] + "</td><td>"
+            var quickMoveTag = x[10] != "Normal" ? "<span class='move-tag'>" + x[10] + "</span>" : "";
+            var chargeMoveTag = x[11] != "Normal" ? "<span class='move-tag'>" + x[11] + "</span>" : "";
+            return "<td><img src='./pokemon_go/type_" + x[3] + ".png' />" + x[2] + quickMoveTag + "</td><td><img src='./pokemon_go/type_" + x[5] + ".png' />"
+                + x[4] + chargeMoveTag + "</td><td>"
                 + numberWithCommas(x[6], 2) + "</td><td>"
                 + numberWithCommas(x[7], 2) + "</td><td>"
                 + numberWithCommas(x[8], 2) + "<span>" + rank + "</span>" + "</td>";
