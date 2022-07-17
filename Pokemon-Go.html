@@ -141,6 +141,11 @@
         .inline label {
             padding-left: 3px;
         }
+
+        .not-released {
+            color: #a0c9ff;
+            background-color: #235597;
+        }
     </style>
     <script type="text/javascript" src="./pokemon_go/pokemon-base.js"></script>
     <script type="text/javascript" src="./pokemon_go/pokemon-names.js"></script>
@@ -482,9 +487,10 @@
             }
         }
 
-        function calculateStatsBettle(base, iv, level, addition) {
-            let result = (base + iv) * data_cp_multiplier.find(item => item.level === level).multiplier
-            if (addition) return result * addition
+        function calculateStatsBattle(base, iv, level, floor, addition) {
+            let result = (base + iv) * data_cp_multiplier.find(item => item.level === level).multiplier;
+            if (addition) result *= addition;
+            if (floor) return Math.floor(result);
             return result
         }
 
@@ -599,9 +605,9 @@
                         var types = [];
 
                         let stats = calculateStatsByTag(pokm.baseStats, pokm.forme);
-                        var atk_2 = calculateStatsBettle(stats.atk, filters.IV_ATK, filters.POKEMON_LEVEL);
-                        var def_2 = calculateStatsBettle(stats.def, filters.IV_DEF, filters.POKEMON_LEVEL);
-                        var sta_2 = calculateStatsBettle(stats.sta, filters.IV_HP, filters.POKEMON_LEVEL);
+                        var atk_2 = calculateStatsBattle(stats.atk, filters.IV_ATK, filters.POKEMON_LEVEL);
+                        var def_2 = calculateStatsBattle(stats.def, filters.IV_DEF, filters.POKEMON_LEVEL);
+                        var sta_2 = calculateStatsBattle(stats.sta, filters.IV_HP, filters.POKEMON_LEVEL);
                         var dps = calculateAvgDPS(m1, m2, atk_2, def_2, sta_2, pokm.types, options, false);
                         var tdo = calculateTDO(def_2, sta_2, dps, false)
                         allMoves.push([convertMoveToText(v1), m1.type.toLowerCase(), convertMoveToText(v2).replace("Super Power", "Superpower"), m2.type.toLowerCase(), dps, tdo, dps ** 3 * tdo])

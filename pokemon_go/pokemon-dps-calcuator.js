@@ -149,13 +149,14 @@ function GenerateDpsAttackTable(allMovesArray, showTop, dps_table, newPokemon, p
                 break;
             }
         }
+        var releasedTag = pok.releasedGO ? "" : "<span class='not-released roundSpan'>N/A</span>"
         var highlight2 = highlight ? "highlight" : "";
         var vm = "<tr><td class='" + highlight2 + "' rowspan='" + value.length + "'>" + counter
             + "</td><td class='pokemon-name' rowspan='" + value.length + "'><img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_"
             + String(id).padStart(3, '0') + "_" + getImageId(id, dps_table[value[0][1]].name)
             + ".png' /><span class='inline'>"
             + dps_table[value[0][1]].name + "</span>"
-            + pok.types.map(x => "<span class='inline roundSpan type-" + x + "'>" + x + "</span>").join("") + "</td>";
+            + pok.types.map(x => "<span class='inline roundSpan type-" + x + "'>" + x + "</span>").join("") + releasedTag + "</td>";
         vm += value.map(x => {
             var rk_move = x[9];
             var rank = rk_move < rankChars.length ? rankChars[rk_move] : " (" + (rk_move + 1) + ")";
