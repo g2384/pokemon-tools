@@ -57,13 +57,13 @@ function calBaseSTA(stats, nerf) {
     else return baseSTA;
 }
 
-function SortDps(dps_table, newPokemon, excludeLegendary, includeReleasedOnly, filterTypes, enabledFilterTypes, filterMoveTypes, enabledMoveTypes, excludepokemons) {
+function SortDps(dps_table, newPokemon, excludeLegendary, includeReleasedOnly, filterTypes, enabledFilterTypes, filterMoveTypes, enabledMoveTypes, excludePokemons) {
     var allMovesArray = [];
     var pokeCount = {};
     for (var [key, value] of Object.entries(dps_table)) {
         var pok = newPokemon[key];
         if (!(key in pokeCount)) {
-            pokeCount[key] = 0;
+            pokeCount[key] = -1;
         }
         if (excludeLegendary && pok.pokemonClass == "LEGENDARY") {
             continue;
@@ -77,7 +77,7 @@ function SortDps(dps_table, newPokemon, excludeLegendary, includeReleasedOnly, f
         else if (filterTypes && !pok.types.includesAny(enabledFilterTypes)) {
             continue;
         }
-        else if (excludepokemons.includes(dps_table[key].name.toLowerCase())) {
+        else if (excludePokemons.includes(dps_table[key].name.toLowerCase())) {
             continue;
         }
         var ms = value.all_moves.sort(function (e, t) {
@@ -85,6 +85,7 @@ function SortDps(dps_table, newPokemon, excludeLegendary, includeReleasedOnly, f
         });
 
         for (var v2 of ms) {
+            pokeCount[key]++;
             if (filterMoveTypes
                 && !enabledMoveTypes.includes(v2[1])
                 && !enabledMoveTypes.includes(v2[3])) {
@@ -92,7 +93,6 @@ function SortDps(dps_table, newPokemon, excludeLegendary, includeReleasedOnly, f
             }
 
             allMovesArray.push([value.id, key, v2[0], v2[1], v2[2], v2[3], v2[4], v2[5], v2[6], pokeCount[key], v2[7], v2[8]])
-            pokeCount[key]++;
         }
     }
     return allMovesArray;
