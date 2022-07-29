@@ -235,6 +235,22 @@
 
     <hr>
 
+    <h2>Find Pokemon by 100% CP</h2>
+    <div>
+        <div class="mb-3 row align-items-center">
+            <label for="staticEmail" class="col-sm-2 col-form-label">CP:</label>
+            <div class="col-sm-10">
+                <input id="pok_cpValue" type="number" class="form-control" value="99" min="0" max="100"
+                    onkeyup="findPokemonFromCP()" />
+            </div>
+        </div>
+    </div>
+    <input type="button" class="btn btn-outline-primary" value="Show" onclick="findPokemonFromCP()" />
+    <input type="button" class="btn btn-outline-primary" value="Clear" onclick="clearIVPokeValue()" />
+    <div id="cp-pokemon-div"> </div>
+
+    <hr>
+
     <h2>Move List</h2>
     <h5>Pokemon Types</h5>
     <form id="move-pokemon-filters" class="flex-container"> </form>
@@ -257,7 +273,7 @@
 
     <script>
         // https://pokemon.gameinfo.io/en/js/pokemon-base.js?v=451d06
-        // https://pokemon.gameinfo.io/en/js/pokemon-names.js?v=451d06
+        // https://pokemon.gameinfo.io/en/js/pokemon-names.js?v=451d06 from: https://pokemon.gameinfo.io/en/tools/iv-calculator
         // https://pokemon.gameinfo.io/en/js/movesets.js?v=451d06
 
         // move.json: https://github.com/WHIZENx/PokeGoBreeze/tree/master/src/data/combat.json
@@ -364,10 +380,38 @@
             }
         }
 
+        function findPokemonFromCP() {
+            var cp = parseInt(document.querySelector("#pok_cpValue").value);
+            console.log(cp)
+            var dict = []
+            for (var p of processedPokemon) {
+                code = p.code;
+                var e = code.split(",");
+                var t = e[0], n = e[1], r = pokemon_data[t][n][0];
+                var filtered = {};
+                var sta_i = 15;
+                var att_i = 15;
+                var def_i = 15;
+                for (var o = [sta_i, att_i, def_i], i = 2; i <= 80; i++) {
+                    var s = getCPM(i);
+                    var c = getCp(s, r, o);
+                    var l = getHp(s, r, o);
+                    if (c === cp) {
+                        var arr = new Int32Array([sta_i, att_i, def_i]);
+                        arr.sort();
+                        filtered[code] = arr;
+                    }
+                }
+                if (Object.keys(filtered).length > 0) {
+                    dict.push([t, n, p.label]);
+                }
+            }
+            document.querySelector("#cp-pokemon-div").innerHTML = dict.join("<br>");
+        }
+
         function calculateIVFromCP(code, cp, hp) {
             console.log(code, cp, hp)
             if (null !== code) {
-                this.old = !1;
                 var e = code.split(",");
                 var t = e[0], n = e[1], r = pokemon_data[t][n][0];
                 var filtered = {};
@@ -376,7 +420,7 @@
                 for (var sta_i = 0; sta_i <= 15; sta_i++)
                     for (var att_i = 0; att_i <= 15; att_i++)
                         for (var def_i = 0; def_i <= 15; def_i++)
-                            for (var o = [+sta_i, +att_i, +def_i], i = 2; i <= 80; i++) {
+                            for (var o = [sta_i, att_i, def_i], i = 2; i <= 80; i++) {
                                 var s = getCPM(i);
                                 var c = getCp(s, r, o);
                                 var l = getHp(s, r, o);
@@ -394,7 +438,7 @@
                                 }
                             }
                 console.log(filtered);
-                if (81 == i && filtered.length == 0) {
+                if (81 == i && Object.keys(filtered).length == 0) {
                     return "A Pokemon with those stats couldn't be found.";
                 }
                 return filtered;
@@ -483,6 +527,11 @@
 
         function clearIVFromCP() {
             var pn = document.querySelector("#CP-IV-div");
+            pn.innerHTML = "";
+        }
+
+        function clearIVPokeValue() {
+            var pn = document.querySelector("#cp-pokemon-div");
             pn.innerHTML = "";
         }
 

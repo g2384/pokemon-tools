@@ -4316,13 +4316,25 @@ var pokemon_forms = {
         [277, 165, 174], 131, 0, 0
     ],
     "668": ["Mega Kangaskhan", "\/en\/pokemon\/115-kangaskhan\/mega-evolution", "<span class=\"_p28 _f\" style=\"background-position: -224px -1848px;\"><\/span>", "", [1, null],
-        [233, 246, 210], 115, 0, 1
+        [233, 246, 210], 115, 51, 1
     ],
     "669": ["Mega Latias", "\/en\/pokemon\/380-latias\/mega-evolution", "<span class=\"_p28 _f\" style=\"background-position: -252px -1848px;\"><\/span>", " p-legendary", [16, 14],
-        [190, 289, 297], 380, 0, 1
+        [190, 289, 297], 380, 51, 1
     ],
     "670": ["Mega Latios", "\/en\/pokemon\/381-latios\/mega-evolution", "<span class=\"_p28 _f\" style=\"background-position: 0px -1876px;\"><\/span>", " p-legendary", [16, 14],
-        [190, 335, 241], 381, 0, 1
+        [190, 335, 241], 381, 51, 1
+    ],
+    "671": ["Qwilfish", "\/en\/pokemon\/211-qwilfish", "<span class=\"_p28 _f\" style=\"background-position: -28px -1876px;\"><\/span>", "", [11, 4],
+        [163, 184, 138], 211, 0, 0
+    ],
+    "672": ["Articuno (Galarian)", "\/en\/pokemon\/144-articuno\/galarian", "<span class=\"_p28 _f\" style=\"background-position: -56px -1876px;\"><\/span>", " p-legendary", [14, 3],
+        [207, 250, 197], 144, 31, 0
+    ],
+    "673": ["Zapdos (Galarian)", "\/en\/pokemon\/145-zapdos\/galarian", "<span class=\"_p28 _f\" style=\"background-position: -84px -1876px;\"><\/span>", " p-legendary", [2, 3],
+        [207, 252, 189], 145, 31, 0
+    ],
+    "674": ["Moltres (Galarian)", "\/en\/pokemon\/146-moltres\/galarian", "<span class=\"_p28 _f\" style=\"background-position: -112px -1876px;\"><\/span>", " p-legendary", [17, 3],
+        [207, 202, 231], 146, 31, 0
     ]
 };
 var pokemon_links = {
@@ -4433,9 +4445,9 @@ var pokemon_links = {
     "141": [450],
     "142": [451, 585],
     "143": [157],
-    "144": [331],
-    "145": [332],
-    "146": [333],
+    "144": [331, 672],
+    "145": [332, 673],
+    "146": [333, 674],
     "147": [160],
     "148": [163],
     "149": [166],
@@ -4471,6 +4483,7 @@ var pokemon_links = {
     "208": [339, 584],
     "209": [508],
     "210": [509],
+    "211": [671],
     "212": [175],
     "213": [432],
     "215": [340],
