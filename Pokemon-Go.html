@@ -247,7 +247,7 @@
     </div>
     <input type="button" class="btn btn-outline-primary" value="Show" onclick="findPokemonFromCP()" />
     <input type="button" class="btn btn-outline-primary" value="Clear" onclick="clearIVPokeValue()" />
-    <div id="cp-pokemon-div"> </div>
+    <div id="cp-pokemon-div" class="flex-container"> </div>
 
     <hr>
 
@@ -380,30 +380,35 @@
             }
         }
 
+        // print stats_table.json
+        function printPokemonBaseStat() {
+            var dict = {};
+            for (const [key, vp] of Object.entries(newPokemon)) {
+                let stats = calculateStatsByTag(vp.baseStats, vp.forme)
+                dict[key] = stats;
+            }
+            console.log(JSON.stringify(dict));
+        }
+
         function findPokemonFromCP() {
             var cp = parseInt(document.querySelector("#pok_cpValue").value);
             console.log(cp)
             var dict = []
-            for (var p of processedPokemon) {
-                code = p.code;
-                var e = code.split(",");
-                var t = e[0], n = e[1], r = pokemon_data[t][n][0];
+            for (const [key, stats] of Object.entries(stats_table)) {
+                var p = newPokemon[key];
                 var filtered = {};
-                var sta_i = 15;
-                var att_i = 15;
-                var def_i = 15;
-                for (var o = [sta_i, att_i, def_i], i = 2; i <= 80; i++) {
-                    var s = getCPM(i);
-                    var c = getCp(s, r, o);
-                    var l = getHp(s, r, o);
-                    if (c === cp) {
-                        var arr = new Int32Array([sta_i, att_i, def_i]);
-                        arr.sort();
-                        filtered[code] = arr;
+                for (var i = 1; i <= 40; i += 0.5) {
+                    var c = calculateCP(stats.atk + 15, stats.def + 15, stats.sta + 15, i);
+                    if (cp == c) {
+                        filtered[key] = 1;
+                        break;
+                    }
+                    if (c > cp) {
+                        break;
                     }
                 }
                 if (Object.keys(filtered).length > 0) {
-                    dict.push([t, n, p.label]);
+                    dict.push("<div>" + getImageElement(p.num, key) + p.name + "</div>");
                 }
             }
             document.querySelector("#cp-pokemon-div").innerHTML = dict.join("<br>");
@@ -552,6 +557,7 @@
         var data_cp_multiplier = {};
         var dps_table = {};
         var pokemon_go_options = {};
+        var stats_table = {};
 
         function toTitleCase(str) {
             return str.replace(
@@ -922,6 +928,12 @@
                 .then(response => response.json())
                 .then(parsed_data => {
                     pokemon_go_options = parsed_data;
+                });
+
+            fetch("./pokemon_go/stats_table.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    stats_table = parsed_data;
                 });
         })
     </script>

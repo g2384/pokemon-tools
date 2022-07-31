@@ -110,6 +110,12 @@ function getImageId(id, name) {
     }
 }
 
+function getImageElement(id, name){
+    return "<img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_"
+    + String(id).padStart(3, '0') + "_" + getImageId(id, name)
+    + ".png' />";
+}
+
 function GenerateDpsAttackTable(allMovesArray, showTop, dps_table, newPokemon, pokemonGo_Assets_ImagesConvert, highlightMatched) {
     var group = {};
     var pre_value = -1;
@@ -152,9 +158,9 @@ function GenerateDpsAttackTable(allMovesArray, showTop, dps_table, newPokemon, p
         var releasedTag = pok.releasedGO ? "" : "<span class='not-released roundSpan'>N/A</span>"
         var highlight2 = highlight ? "highlight" : "";
         var vm = "<tr><td class='" + highlight2 + "' rowspan='" + value.length + "'>" + counter
-            + "</td><td class='pokemon-name' rowspan='" + value.length + "'><img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_"
-            + String(id).padStart(3, '0') + "_" + getImageId(id, dps_table[value[0][1]].name)
-            + ".png' /><span class='inline'>"
+            + "</td><td class='pokemon-name' rowspan='" + value.length + "'>"
+            + getImageElement(id, dps_table[value[0][1]].name)
+            + "<span class='inline'>"
             + dps_table[value[0][1]].name + "</span>"
             + pok.types.map(x => "<span class='inline roundSpan type-" + x + "'>" + x + "</span>").join("") + releasedTag + "</td>";
         vm += value.map(x => {
