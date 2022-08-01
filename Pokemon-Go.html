@@ -999,13 +999,21 @@
                 let counters = counterPokemon(def, types);
                 for (var c of counters) {
                     //fmove: { type: capitalize(mf.type), name: capitalize(mf.name), tag: ftag },
-                    var item = [c.pokemon_id, c.pokemon_key,
-                    c.fmove.name, c.fmove.type, c.fmove.tag,
+                    var item = [c.pokemon_id, c.pokemon_key];
+                    var moveItem = [c.fmove.name, c.fmove.type, c.fmove.tag,
                     c.cmove.name, c.cmove.type, c.cmove.tag];
                     if (dict.hasOwnProperty(item)) {
-                        dict[item]++;
+                        var moveValue = dict[item];
+                        if (moveValue.hasOwnProperty(moveItem)) {
+                            moveValue[moveItem]++;
+                        }
+                        else {
+                            moveValue[moveItem] = 1;
+                        }
                     } else {
-                        dict[item] = 1;
+                        vv = {};
+                        vv[moveItem] = 1;
+                        dict[item] = vv;
                     }
                 }
             }
