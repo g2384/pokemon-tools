@@ -277,7 +277,7 @@
         // https://pokemon.gameinfo.io/en/js/movesets.js?v=451d06
 
         // move.json: https://github.com/WHIZENx/PokeGoBreeze/tree/master/src/data/combat.json
-        // move_pokemon_list.json: https://github.com/WHIZENx/PokeGoBreeze/tree/master/src/data/combat_pokemon_go_list.json
+        // moves_pokemon_list.json: https://github.com/WHIZENx/PokeGoBreeze/tree/master/src/data/combat_pokemon_go_list.json
         // pokemon.json: https://github.com/WHIZENx/PokeGoBreeze/tree/master/src/data
 
         const moveOptions = [
@@ -558,6 +558,7 @@
         var dps_table = {};
         var pokemon_go_options = {};
         var stats_table = {};
+        var type_effectiveness = {};
 
         function toTitleCase(str) {
             return str.replace(
@@ -813,6 +814,15 @@
             return pokemon_go_options["data"]["trainer_friendship"][level.toString()]["atk_bonus"];
         }
 
+        function getTypeEffective(typeMove, typesObj) {
+            let value_effective = 1;
+            typesObj.forEach(type => {
+                try { value_effective *= type_effectiveness[capitalize(typeMove.toLowerCase())][capitalize(type.type.name.toLowerCase())]; }
+                catch { value_effective *= type_effectiveness[capitalize(typeMove.toLowerCase())][capitalize(type.toLowerCase())]; }
+            });
+            return value_effective;
+        }
+
         function calculateAvgDPS(fmove, cmove, Atk, Def, HP, typePoke, options, shadow) {
             const FPow = fmove.pve_power;
             const CPow = cmove.pve_power;
@@ -882,6 +892,126 @@
             return HP / y * dps;
         }
 
+        function convertName(text) {
+            return text.toUpperCase()
+                .replace(/\-/g, "_")
+                .replace("NIDORAN_F", "NIDORAN_FEMALE")
+                .replace("NIDORAN_M", "NIDORAN_MALE")
+                .replace(/\u2019/g, "")
+                .replace(/\u0301/g, "")
+                .replace(/\./g, "")
+                .replace(/\:/g, "")
+                .replace(/ /g, "_")
+                .replace("É", "E")
+                .replace("PUMPKABOO_AVERAGE", "PUMPKABOO")
+                .replace("GOURGEIST_AVERAGE", "GOURGEIST")
+        };
+
+        const queryMoveCounter = (dataList, pokemon, stats, def, types, vf, cmove, felite, celite, shadow, purified) => {
+            cmove.forEach(vc => {
+                let mf = newAllMoves.find(item => item.name === vf.replace("_FAST", ""));
+                let mc = newAllMoves.find(item => item.name === vc);
+
+                let def_max = calculateStatsBattle(def, 15, 40, true);
+                let options = {
+                    objTypes: types,
+                    POKEMON_DEF_OBJ: def_max,
+                    IV_ATK: 15,
+                    IV_DEF: 15,
+                    IV_HP: 15,
+                    POKEMON_LEVEL: 40
+                }
+
+                let atk2 = calculateStatsBattle(stats.atk, options.IV_ATK, options.POKEMON_LEVEL, true);
+                let def2 = calculateStatsBattle(stats.def, options.IV_DEF, options.POKEMON_LEVEL, true);
+                let sta2 = calculateStatsBattle(stats.sta, options.IV_HP, options.POKEMON_LEVEL, true);
+                let dpsOff = calculateAvgDPS(mf, mc, atk2, def2, sta2, pokemon.types, options);
+
+                var ctag = "normal";
+                if (celite) {
+                    ctag = "elite";
+                }
+                else if (shadow) {
+                    ctag = "shadow";
+                }
+                else if (purified) {
+                    ctag = "purified";
+                }
+                var ftag = "normal";
+                if (felite) {
+                    ftag = "elite";
+                }
+                dataList.push({
+                    pokemon_id: pokemon.num,
+                    pokemon_key: pokemon.alias,
+                    pokemon_name: pokemon.name,
+                    pokemon_forme: pokemon.forme,
+                    releasedGO: pokemon.releasedGO,
+                    dps: dpsOff,
+                    fmove: { type: capitalize(mf.type), name: capitalize(mf.name), tag: ftag },
+                    cmove: { type: capitalize(mc.type), name: capitalize(mc.name), tag: ctag }
+                })
+            });
+        }
+
+        // counterPokemon(stats_table['bulbasaur'].def, newPokemon['bulbasaur'].types)
+        function counterPokemon(def, types) {
+            let dataList = [];
+            moves_Pokemon_List.forEach(value => {
+                if (value.QUICK_MOVES[0] !== "STRUGGLE" && value.CINEMATIC_MOVES[0] !== "STRUGGLE") {
+                    let pokemon = Object.values(newPokemon).find(item => item.num === value.ID && convertName(item.name).includes(value.NAME));
+                    if (pokemon === undefined) {
+                        console.log(value.ID, value.NAME);
+                        return;
+                    }
+                    let stats = calculateStatsByTag(pokemon.baseStats, pokemon.forme);
+                    value.QUICK_MOVES.forEach(vf => {
+                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.CINEMATIC_MOVES, false, false, false, false);
+                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.ELITE_CINEMATIC_MOVES, false, true, false, false);
+                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.SHADOW_MOVES, false, false, true, false);
+                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.PURIFIED_MOVES, false, false, false, true);
+                    });
+                    value.ELITE_QUICK_MOVES.forEach(vf => {
+                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.CINEMATIC_MOVES, true, false, false, false);
+                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.ELITE_CINEMATIC_MOVES, true, true, false, false);
+                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.SHADOW_MOVES, true, false, true, false);
+                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.PURIFIED_MOVES, true, false, false, true);
+                    });
+                }
+                return;
+            });
+            return sortCounterDPS(dataList).slice(0, 100);
+        }
+
+        function sortCounterDPS(data) {
+            data = data.sort((a, b) => b.dps - a.dps);
+            return data.map((item, index) => ({ ...item, ratio: item.dps * 100 / data[0].dps }));
+        }
+
+        function bestAttackPokemon() {
+            var dict = {};
+            var count = 0;
+            for (const [key, vp] of Object.entries(stats_table)) {
+                count++;
+                console.log(count);
+                let def = vp.def;
+                let types = newPokemon[key].types;
+                let counters = counterPokemon(def, types);
+                for (var c of counters) {
+                    //fmove: { type: capitalize(mf.type), name: capitalize(mf.name), tag: ftag },
+                    var item = [c.pokemon_id, c.pokemon_key,
+                    c.fmove.name, c.fmove.type, c.fmove.tag,
+                    c.cmove.name, c.cmove.type, c.cmove.tag];
+                    if (dict.hasOwnProperty(item)) {
+                        dict[item]++;
+                    } else {
+                        dict[item] = 1;
+                    }
+                }
+            }
+            console.log(JSON.stringify(dict));
+        }
+
         window.addEventListener('load', function () {
             loadPokemonNames();
             generateMoveOptions();
@@ -934,6 +1064,12 @@
                 .then(response => response.json())
                 .then(parsed_data => {
                     stats_table = parsed_data;
+                });
+
+            fetch("./pokemon_go/type_effectiveness.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    type_effectiveness = parsed_data;
                 });
         })
     </script>
