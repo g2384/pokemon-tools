@@ -272,6 +272,11 @@
     <input type="button" class="btn btn-outline-primary" value="Clear" onclick="clearMoveList()" />
     <div id="MoveList-div"></div>
 
+    <h2>Counters</h2>
+    <input type="button" class="btn btn-outline-primary" value="Show" onclick="showCounterList()" />
+    <input type="button" class="btn btn-outline-primary" value="Clear" onclick="clearCounterList()" />
+    <div id="Counters-div"></div>
+
     <script>
         // https://pokemon.gameinfo.io/en/js/pokemon-base.js?v=451d06
         // https://pokemon.gameinfo.io/en/js/pokemon-names.js?v=451d06 from: https://pokemon.gameinfo.io/en/tools/iv-calculator
@@ -541,6 +546,11 @@
             pn.innerHTML = "";
         }
 
+        function clearCounterList() {
+            var pn = document.querySelector("#Counters-div");
+            pn.innerHTML = "";
+        }
+
         function loadPokemonNames() {
             var s = "";
             for (const value of processedPokemon) {
@@ -548,6 +558,15 @@
                 s += "<option value='" + name + "' data-code='" + value.code + "'>" + name + "</option>";
             }
             document.querySelector("#pokemon-name").innerHTML = s;
+        }
+
+        function showCounterList() {
+            var html = "";
+            for (const [key, value] of Object.entries(top_counters_grouped)) {
+                html += "<div><div>" + value.def.join("</div><div>") + "</div></div>";
+                html += "<div>" + value.atk.join("<div></div>") + "</div>";
+            }
+            document.querySelector("#Counters-div").innerHTML = html;
         }
 
         // Move sets:

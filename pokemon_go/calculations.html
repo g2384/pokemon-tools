@@ -7,6 +7,8 @@
 <body>
     <script>
         var top_counters = {};
+        var pokemon_list = {};
+        var stats_table = {};
 
         function getCounterSetKey(pokemons) {
             var setKey = [];
@@ -24,12 +26,25 @@
             return [setKey, ratios];
         }
 
+        function convertCounterKey(key) {
+            var results = [];
+            for (const [pk, pv] of Object.entries(pokemon_list)) {
+                var def = stats_table[pk];
+                var types = pv.types.join(",");
+                if (key == types + ":" + def.def) {
+                    results.push(pk);
+                }
+            }
+            console.log(results)
+            return results;
+        }
+
         // print top_counters_grouped.json
         function printGroupedTopCounters() {
-            var dict = {}
+            var dict = {};
             for (const [key, vp] of Object.entries(top_counters)) {
                 var [setKey, ratios] = getCounterSetKey(vp);
-                console.log(setKey);
+                //console.log(setKey);
                 var setKeyJson = JSON.stringify(setKey);
                 var md5Key = md5(setKeyJson);
                 if (dict.hasOwnProperty(md5Key)) {
@@ -48,7 +63,31 @@
             console.log(JSON.stringify(dict));
         }
 
+        // print top_counters_pokemon_lookup.json
+        function printNameTypeDictCounters() {
+            var dict = {};
+            var nameTypeDict = {};
+            for (const [key, vp] of Object.entries(top_counters)) {
+                var pk_names = convertCounterKey(key);
+                nameTypeDict[key] = pk_names;
+            }
+
+            console.log(JSON.stringify(nameTypeDict));
+        }
+
         window.addEventListener('load', function () {
+            fetch("./pokemon.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    pokemon_list = parsed_data;
+                });
+
+            fetch("./stats_table.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    stats_table = parsed_data;
+                });
+
             fetch("./top_counters.json")
                 .then(response => response.json())
                 .then(parsed_data => {
