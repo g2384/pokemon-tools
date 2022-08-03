@@ -124,7 +124,7 @@
                 if (e2[0] == secondE) {
                     var r = getOrderedLongList(orderedList, e2);
                     for (const e3 of r) {
-                        result.push(new Set([firstE, secondE].concat(e3)));
+                        result.push([...new Set([firstE, secondE].concat(e3))]);
                     }
                 }
             }

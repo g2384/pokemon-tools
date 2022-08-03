@@ -6,22 +6,17 @@
     [
         "murkrow,PECK,DRILL_PECK",
         "hawlucha,WING_ATTACK,SKY_ATTACK",
-        "hawlucha,WING_ATTACK,SKY_ATTACK",
         "swellow,WING_ATTACK,SKY_ATTACK"
     ],
     [
         "aerodactyl,ROCK_THROW,ROCK_SLIDE",
         "stonjourner,ROCK_THROW,ROCK_SLIDE",
-        "stonjourner,ROCK_THROW,ROCK_SLIDE",
-        "gigalith,SMACK_DOWN,ROCK_SLIDE",
         "gigalith,SMACK_DOWN,ROCK_SLIDE",
         "minior,ROLLOUT,POWER_GEM"
     ],
     [
         "aerodactyl,ROCK_THROW,ROCK_SLIDE",
         "stonjourner,ROCK_THROW,ROCK_SLIDE",
-        "stonjourner,ROCK_THROW,ROCK_SLIDE",
-        "landorus,ROCK_THROW,ROCK_SLIDE",
         "landorus,ROCK_THROW,ROCK_SLIDE",
         "minior,ROLLOUT,POWER_GEM"
     ],
@@ -39,7 +34,6 @@
     ],
     [
         "gardevoir,CHARM,DAZZLING_GLEAM",
-        "hatterene,CHARM,DAZZLING_GLEAM",
         "hatterene,CHARM,DAZZLING_GLEAM",
         "togekiss,CHARM,DAZZLING_GLEAM"
     ],
@@ -62,16 +56,12 @@
     [
         "accelgor,INFESTATION,BUG_BUZZ",
         "yanmega,BUG_BITE,BUG_BUZZ",
-        "yanmega,BUG_BITE,BUG_BUZZ",
-        "frosmoth,BUG_BITE,BUG_BUZZ",
         "frosmoth,BUG_BITE,BUG_BUZZ",
         "genesect,FURY_CUTTER,X_SCISSOR"
     ],
     [
         "accelgor,INFESTATION,BUG_BUZZ",
         "yanmega,BUG_BITE,BUG_BUZZ",
-        "yanmega,BUG_BITE,BUG_BUZZ",
-        "centiskorch,BUG_BITE,BUG_BUZZ",
         "centiskorch,BUG_BITE,BUG_BUZZ",
         "genesect,FURY_CUTTER,X_SCISSOR"
     ],
@@ -90,30 +80,25 @@
     [
         "beartic,POWDER_SNOW,ICE_PUNCH",
         "frosmoth,POWDER_SNOW,ICE_BEAM",
-        "frosmoth,POWDER_SNOW,ICE_BEAM",
         "jynx,FROST_BREATH,ICE_PUNCH"
     ],
     [
         "beartic,POWDER_SNOW,ICE_PUNCH",
         "piloswine,ICE_SHARD,AVALANCHE",
-        "piloswine,ICE_SHARD,AVALANCHE",
         "jynx,FROST_BREATH,ICE_PUNCH"
     ],
     [
         "aurorus,FROST_BREATH,WEATHER_BALL_ICE",
         "frosmoth,POWDER_SNOW,ICE_BEAM",
-        "frosmoth,POWDER_SNOW,ICE_BEAM",
         "jynx,FROST_BREATH,ICE_PUNCH"
     ],
     [
         "aurorus,FROST_BREATH,WEATHER_BALL_ICE",
-        "piloswine,ICE_SHARD,AVALANCHE",
         "piloswine,ICE_SHARD,AVALANCHE",
         "jynx,FROST_BREATH,ICE_PUNCH"
     ],
     [
         "landorustherian,MUD_SHOT,BULLDOZE",
-        "seismitoad,MUD_SHOT,EARTH_POWER",
         "seismitoad,MUD_SHOT,EARTH_POWER",
         "sandaconda,MUD_SHOT,EARTH_POWER"
     ],
@@ -136,24 +121,18 @@
     [
         "victreebel,ACID,SLUDGE_BOMB",
         "skuntank,POISON_JAB,SLUDGE_BOMB",
-        "skuntank,POISON_JAB,SLUDGE_BOMB",
-        "weepinbell,ACID,SLUDGE_BOMB",
         "weepinbell,ACID,SLUDGE_BOMB",
         "vileplume,ACID,SLUDGE_BOMB",
-        "vileplume,ACID,SLUDGE_BOMB",
-        "scolipede,POISON_JAB,SLUDGE_BOMB",
         "scolipede,POISON_JAB,SLUDGE_BOMB",
         "slowbrogalar,POISON_JAB,SLUDGE_BOMB"
     ],
     [
         "genesectdouse,METAL_CLAW,MAGNET_BOMB",
         "genesectshock,METAL_CLAW,MAGNET_BOMB",
-        "genesectshock,METAL_CLAW,MAGNET_BOMB",
         "hariyama,BULLET_PUNCH,HEAVY_SLAM"
     ],
     [
         "darkrai,SNARL,DARK_PULSE",
-        "honchkrow,SNARL,DARK_PULSE",
         "honchkrow,SNARL,DARK_PULSE",
         "weavile,SNARL,FOUL_PLAY"
     ],
