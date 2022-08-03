@@ -560,35 +560,7 @@
         var pokemon_go_options = {};
         var stats_table = {};
         var type_effectiveness = {};
-        var popular_counters = {};
-
-        function printPopularCounters() {
-            var dict = {}
-            for (const [key, vp] of Object.entries(popular_counters)) {
-                var setKey = [];
-                var ratios = [];
-                for (const moves of vp) {
-                    setKey.push(moves.slice(0, 8));
-                    ratios.push(moves[8]);
-                }
-                console.log(setKey);
-                var setKeyJson = JSON.stringify(setKey);
-                var md5Key = md5(setKeyJson);
-                if (dict.hasOwnProperty(md5Key)) {
-                    dict[md5Key].def.push(key);
-                    dict[md5Key].ratios.push(ratios);
-                }
-                else {
-                    dict[md5Key] = {
-                        def: [key],
-                        atk: setKey,
-                        ratios: [ratios]
-                    }
-                }
-            }
-
-            console.log(JSON.stringify(dict));
-        }
+        var top_counters_grouped = {};
 
         function toTitleCase(str) {
             return str.replace(
@@ -1118,10 +1090,11 @@
                     type_effectiveness = parsed_data;
                 });
 
-            fetch("./pokemon_go/popular_counters.json")
+            //from calculations.html > printGroupedTopCounters
+            fetch("./pokemon_go/top_counters_grouped.json")
                 .then(response => response.json())
                 .then(parsed_data => {
-                    popular_counters = parsed_data;
+                    top_counters_grouped = parsed_data;
                 });
         })
     </script>

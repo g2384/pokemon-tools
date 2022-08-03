@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="./md5.js"></script>
+</head>
+
+<body>
+    <script>
+        var top_counters = {};
+
+        function getCounterSetKey(pokemons) {
+            var setKey = [];
+            var setKeyCopy = new Set();
+            var ratios = [];
+            for (const moves of pokemons) {
+                var k = [moves[0], moves[1], moves[4], moves[7]];
+                var ks = k.join(",");
+                if (!setKeyCopy.has(ks)) {
+                    setKeyCopy.add(ks);
+                    setKey.push(moves.slice(0, 8));
+                    ratios.push(moves[8]);
+                }
+            }
+            return [setKey, ratios];
+        }
+
+        // print top_counters_grouped.json
+        function printGroupedTopCounters() {
+            var dict = {}
+            for (const [key, vp] of Object.entries(top_counters)) {
+                var [setKey, ratios] = getCounterSetKey(vp);
+                console.log(setKey);
+                var setKeyJson = JSON.stringify(setKey);
+                var md5Key = md5(setKeyJson);
+                if (dict.hasOwnProperty(md5Key)) {
+                    dict[md5Key].def.push(key);
+                    dict[md5Key].ratios.push(ratios);
+                }
+                else {
+                    dict[md5Key] = {
+                        def: [key],
+                        atk: setKey,
+                        ratios: [ratios]
+                    }
+                }
+            }
+
+            console.log(JSON.stringify(dict));
+        }
+
+        window.addEventListener('load', function () {
+            fetch("./top_counters.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    top_counters = parsed_data;
+                });
+        })
+    </script>
+</body>
+
+</html>
