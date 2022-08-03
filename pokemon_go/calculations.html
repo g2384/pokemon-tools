@@ -9,6 +9,130 @@
         var top_counters = {};
         var pokemon_list = {};
         var stats_table = {};
+        var top_counters_grouped = {};
+
+        function alwaysBetterThan() {
+            var uniqueNames = new Set();
+            var namesList = [];
+            for (const [gk, gv] of Object.entries(top_counters_grouped)) {
+                var nList = [];
+                for (const gv_atk of gv.atk) {
+                    var pk_name = [gv_atk[1], gv_atk[2], gv_atk[5]].join(",");
+                    uniqueNames.add(pk_name);
+                    nList.push(pk_name);
+                }
+                namesList.push(nList);
+            }
+
+            var orderedList = [];
+            for (const name1 of uniqueNames) {
+                for (const name2 of uniqueNames) {
+                    var is1AlwaysAbove2 = true;
+                    var comparable = false;
+                    var alwaysAppearTogether = true;
+                    if (name1 != name2) {
+                        for (const nList of namesList) {
+                            var i1 = nList.indexOf(name1);
+                            var i2 = nList.indexOf(name2);
+                            if ((i1 < 0 && i2 >= 0) || (i2 < 0 && i1 >= 0)) {
+                                alwaysAppearTogether = false;
+                            }
+                            if (i1 >= 0 && i2 >= 0) {
+                                comparable = true;
+                                if (i1 > i2) {
+                                    is1AlwaysAbove2 = false;
+                                    break;
+                                }
+                            }
+                        }
+                        if (is1AlwaysAbove2 & comparable & alwaysAppearTogether) {
+                            //console.log(name1 + " > " + name2);
+                            orderedList.push([name1, name2]);
+                        }
+                    }
+                }
+            }
+            console.log(orderedList);
+            var orderedLongList = [];
+            for (const ol of orderedList) {
+                var r = getOrderedLongList(orderedList, ol);
+                for (const e3 of r) {
+                    orderedLongList.push(e3);
+                }
+            }
+            console.log(orderedLongList);
+            // verify
+            for (const ol of orderedList) {
+                var included = false;
+                for (const o2 of orderedLongList) {
+                    var i1 = o2.indexOf(ol[0]);
+                    var i2 = o2.indexOf(ol[1]);
+                    if (i1 >= 0 && i2 >= 0) {
+                        included = true;
+                        if (i1 > i2) {
+                            console.log("invalid: " + ol[0] + ", " + ol[1]);
+                        }
+                    }
+                }
+                if (!included) {
+                    console.log("not included: " + ol[0] + ", " + ol[1]);
+                }
+            }
+
+            var uniqueLongList = [];
+            for (const o of orderedLongList) {
+                var isAdded = false;
+                for (var i = 0; i < uniqueLongList.length; i++) {
+                    var allFound = true;
+                    for (const o2 of o) {
+                        if (uniqueLongList[i].indexOf(o2) < 0) {
+                            allFound = false;
+                        }
+                    }
+                    if (allFound) {
+                        isAdded = true;
+                        //console.log("included:\n" + uniqueLongList[i].join(",") + "\n" + o.join(","));
+                        break;
+                    }
+
+                    // swap
+                    allFound = true;
+                    for (const o2 of uniqueLongList[i]) {
+                        if (o.indexOf(o2) < 0) {
+                            allFound = false;
+                        }
+                    }
+                    if (allFound) {
+                        //console.log("replace:\n" + uniqueLongList[i].join(",") + "\n" + o.join(","));
+                        uniqueLongList[i] = o;
+                        isAdded = true;
+                        break;
+                    }
+                }
+                if (!isAdded) {
+                    uniqueLongList.push(o);
+                }
+            }
+            console.log(JSON.stringify(uniqueLongList));
+        }
+
+        function getOrderedLongList(orderedList, element) {
+            var firstE = element[0];
+            var secondE = element[1];
+            var result = []
+            for (const e2 of orderedList) {
+                if (e2[0] == secondE) {
+                    var r = getOrderedLongList(orderedList, e2);
+                    for (const e3 of r) {
+                        result.push(new Set([firstE, secondE].concat(e3)));
+                    }
+                }
+            }
+            if (result.length == 0) {
+                result.push([firstE, secondE]);
+            }
+            return result;
+        }
 
         function getCounterSetKey(pokemons) {
             var setKey = [];
@@ -92,6 +216,12 @@
                 .then(response => response.json())
                 .then(parsed_data => {
                     top_counters = parsed_data;
+                });
+
+            fetch("./top_counters_grouped.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    top_counters_grouped = parsed_data;
                 });
         })
     </script>

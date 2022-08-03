@@ -110,10 +110,10 @@ function getImageId(id, name) {
     }
 }
 
-function getImageElement(id, name){
+function getImageElement(id, name) {
     return "<img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_"
-    + String(id).padStart(3, '0') + "_" + getImageId(id, name)
-    + ".png' />";
+        + String(id).padStart(3, '0') + "_" + getImageId(id, name)
+        + ".png' />";
 }
 
 function GenerateDpsAttackTable(allMovesArray, showTop, dps_table, newPokemon, pokemonGo_Assets_ImagesConvert, highlightMatched) {
@@ -167,8 +167,8 @@ function GenerateDpsAttackTable(allMovesArray, showTop, dps_table, newPokemon, p
             var rk_move = x[9];
             var rank = rk_move < rankChars.length ? rankChars[rk_move] : " (" + (rk_move + 1) + ")";
             rankedMoves[id]++;
-            var quickMoveTag = x[10] != "Normal" ? "<span class='move-tag " + x[10].toLowerCase() + "-move'>" + x[10] + "</span>" : "";
-            var chargeMoveTag = x[11] != "Normal" ? "<span class='move-tag " + x[11].toLowerCase() + "-move'>" + x[11] + "</span>" : "";
+            var quickMoveTag = convertMoveTagToHtml(x[10]);
+            var chargeMoveTag = convertMoveTagToHtml(x[11]);
             return "<td><img src='./pokemon_go/type_" + x[3] + ".png' />" + x[2] + quickMoveTag + "</td><td><img src='./pokemon_go/type_" + x[5] + ".png' />"
                 + x[4] + chargeMoveTag + "</td><td>"
                 + numberWithCommas(x[6], 2) + "</td><td>"
@@ -179,4 +179,9 @@ function GenerateDpsAttackTable(allMovesArray, showTop, dps_table, newPokemon, p
     }
     str += "</tbody></table>";
     return str;
+}
+
+function convertMoveTagToHtml(tag) {
+    var lower = tag.toLowerCase();
+    return lower != "normal" ? "<span class='move-tag " + tag.toLowerCase() + "-move'>" + tag + "</span>" : "";
 }

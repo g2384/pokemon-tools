@@ -560,11 +560,35 @@
             document.querySelector("#pokemon-name").innerHTML = s;
         }
 
+        function convertToCounterTable(line) {
+            var s = "<table>{trs}</table>";
+            var trs = [];
+            for (const l of line) {
+                var tr = "<tr>";
+                var quickMoveTag = convertMoveTagToHtml(l[4]);
+                var chargeMoveTag = convertMoveTagToHtml(l[7]);
+                var p = newPokemon[l[1]];
+                var releasedTag = p.releasedGO ? "" : "<span class='not-released roundSpan'>N/A</span>"
+                tr += "<td>" + l[0] + "</td>" + "<td>" + p.name + releasedTag + "</td>"
+                    + "<td><img src='./pokemon_go/type_" + l[3] + ".png' />" + l[2] + quickMoveTag + "</td>"
+                    + "<td><img src='./pokemon_go/type_" + l[6] + ".png' />" + l[5] + chargeMoveTag + "</td>";
+                tr += "</tr>";
+                trs.push(tr);
+            }
+            s = s.replace("{trs}", trs.join(""))
+            return s;
+        }
+
         function showCounterList() {
             var html = "";
             for (const [key, value] of Object.entries(top_counters_grouped)) {
-                html += "<div><div>" + value.def.join("</div><div>") + "</div></div>";
-                html += "<div>" + value.atk.join("<div></div>") + "</div>";
+                var p_names = [];
+                for (const def of value.def) {
+                    var p_name = top_counters_pokemon_lookup[def];
+                    p_names = p_names.concat(p_name);
+                }
+                html += "<div><div class='inline m-2'>" + p_names.join("</div><div class='inline m-2'>") + "</div></div>";
+                html += "<div>" + convertToCounterTable(value.atk) + "</div>";
             }
             document.querySelector("#Counters-div").innerHTML = html;
         }
@@ -580,6 +604,7 @@
         var stats_table = {};
         var type_effectiveness = {};
         var top_counters_grouped = {};
+        var top_counters_pokemon_lookup = {};
 
         function toTitleCase(str) {
             return str.replace(
@@ -1114,6 +1139,12 @@
                 .then(response => response.json())
                 .then(parsed_data => {
                     top_counters_grouped = parsed_data;
+                });
+
+            fetch("./pokemon_go/top_counters_pokemon_lookup.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    top_counters_pokemon_lookup = parsed_data;
                 });
         })
     </script>
