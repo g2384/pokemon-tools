@@ -187,6 +187,7 @@
     <script type="text/javascript" src="./pokemon_go/imagesConvert.js"></script>
     <script type="text/javascript" src="./pokemon_go/pokemon-types.js"></script>
     <script type="text/javascript" src="./pokemon_go/pokemon-dps-calcuator.js"></script>
+    <script type="text/javascript" src="./pokemon_go/md5.js"></script>
     <script type="text/javascript" src="./js/tom-select.base.min.js"></script>
 </head>
 
@@ -559,6 +560,35 @@
         var pokemon_go_options = {};
         var stats_table = {};
         var type_effectiveness = {};
+        var popular_counters = {};
+
+        function printPopularCounters() {
+            var dict = {}
+            for (const [key, vp] of Object.entries(popular_counters)) {
+                var setKey = [];
+                var ratios = [];
+                for (const moves of vp) {
+                    setKey.push(moves.slice(0, 8));
+                    ratios.push(moves[8]);
+                }
+                console.log(setKey);
+                var setKeyJson = JSON.stringify(setKey);
+                var md5Key = md5(setKeyJson);
+                if (dict.hasOwnProperty(md5Key)) {
+                    dict[md5Key].def.push(key);
+                    dict[md5Key].ratios.push(ratios);
+                }
+                else {
+                    dict[md5Key] = {
+                        def: [key],
+                        atk: setKey,
+                        ratios: [ratios]
+                    }
+                }
+            }
+
+            console.log(JSON.stringify(dict));
+        }
 
         function toTitleCase(str) {
             return str.replace(
@@ -907,7 +937,7 @@
                 .replace("GOURGEIST_AVERAGE", "GOURGEIST")
         };
 
-        const queryMoveCounter = (dataList, pokemon, stats, def, types, vf, cmove, felite, celite, shadow, purified) => {
+        const queryMoveCounter = (dataList, pokemon, stats, def, types, vf, cmove, ftag, ctag) => {
             cmove.forEach(vc => {
                 let mf = newAllMoves.find(item => item.name === vf.replace("_FAST", ""));
                 let mc = newAllMoves.find(item => item.name === vc);
@@ -927,20 +957,6 @@
                 let sta2 = calculateStatsBattle(stats.sta, options.IV_HP, options.POKEMON_LEVEL, true);
                 let dpsOff = calculateAvgDPS(mf, mc, atk2, def2, sta2, pokemon.types, options);
 
-                var ctag = "normal";
-                if (celite) {
-                    ctag = "elite";
-                }
-                else if (shadow) {
-                    ctag = "shadow";
-                }
-                else if (purified) {
-                    ctag = "purified";
-                }
-                var ftag = "normal";
-                if (felite) {
-                    ftag = "elite";
-                }
                 dataList.push({
                     pokemon_id: pokemon.num,
                     pokemon_key: pokemon.alias,
@@ -964,18 +980,19 @@
                         console.log(value.ID, value.NAME);
                         return;
                     }
+
                     let stats = calculateStatsByTag(pokemon.baseStats, pokemon.forme);
                     value.QUICK_MOVES.forEach(vf => {
-                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.CINEMATIC_MOVES, false, false, false, false);
-                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.ELITE_CINEMATIC_MOVES, false, true, false, false);
-                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.SHADOW_MOVES, false, false, true, false);
-                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.PURIFIED_MOVES, false, false, false, true);
+                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.CINEMATIC_MOVES, "normal", "normal");
+                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.ELITE_CINEMATIC_MOVES, "normal", "elite");
+                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.SHADOW_MOVES, "normal", "shadow");
+                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.PURIFIED_MOVES, "normal", "purified");
                     });
                     value.ELITE_QUICK_MOVES.forEach(vf => {
-                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.CINEMATIC_MOVES, true, false, false, false);
-                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.ELITE_CINEMATIC_MOVES, true, true, false, false);
-                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.SHADOW_MOVES, true, false, true, false);
-                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.PURIFIED_MOVES, true, false, false, true);
+                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.CINEMATIC_MOVES, "elite", "normal");
+                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.ELITE_CINEMATIC_MOVES, "elite", "elite");
+                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.SHADOW_MOVES, "elite", "shadow");
+                        queryMoveCounter(dataList, pokemon, stats, def, types, vf, value.PURIFIED_MOVES, "elite", "purified");
                     });
                 }
                 return;
@@ -988,35 +1005,56 @@
             return data.map((item, index) => ({ ...item, ratio: item.dps * 100 / data[0].dps }));
         }
 
+        function sortOnKeys(dict) {
+            var sorted = [];
+            for (var key in dict) {
+                sorted[sorted.length] = key;
+            }
+            sorted.sort();
+
+            var tempDict = {};
+            for (var i = 0; i < sorted.length; i++) {
+                tempDict[sorted[i]] = dict[sorted[i]];
+            }
+
+            return tempDict;
+        }
+
+        // generate top_counters.json
         function bestAttackPokemon() {
             var dict = {};
             var count = 0;
             for (const [key, vp] of Object.entries(stats_table)) {
-                count++;
-                console.log(count);
+                if (key == "missingno") {
+                    continue;
+                }
                 let def = vp.def;
                 let types = newPokemon[key].types;
+                var dictKey = types.join(",") + ":" + def;
+                if (dict.hasOwnProperty(dictKey)) {
+                    console.log("skipped " + newPokemon[key].name + ", " + dictKey);
+                    continue;
+                }
+                count++;
+                console.log(count + ": " + newPokemon[key].name + ", " + dictKey);
                 let counters = counterPokemon(def, types);
+                let uniqueCounters = new Set();
+                var dictValue = [];
                 for (var c of counters) {
                     //fmove: { type: capitalize(mf.type), name: capitalize(mf.name), tag: ftag },
                     var item = [c.pokemon_id, c.pokemon_key];
-                    var moveItem = [c.fmove.name, c.fmove.type, c.fmove.tag,
-                    c.cmove.name, c.cmove.type, c.cmove.tag];
-                    if (dict.hasOwnProperty(item)) {
-                        var moveValue = dict[item];
-                        if (moveValue.hasOwnProperty(moveItem)) {
-                            moveValue[moveItem]++;
-                        }
-                        else {
-                            moveValue[moveItem] = 1;
-                        }
-                    } else {
-                        vv = {};
-                        vv[moveItem] = 1;
-                        dict[item] = vv;
+                    var moveItem = [c.fmove.name, c.fmove.type, c.fmove.tag, c.cmove.name, c.cmove.type, c.cmove.tag, c.ratio];
+                    uniqueCounters.add(item.join(","));
+                    // only take the top 10 pokemons
+                    if (uniqueCounters.size > 10) {
+                        console.log(dictValue.length);
+                        break;
                     }
+                    dictValue.push(item.concat(moveItem));
                 }
+                dict[dictKey] = dictValue;
             }
+            dict = sortOnKeys(dict);
             console.log(JSON.stringify(dict));
         }
 
@@ -1078,6 +1116,12 @@
                 .then(response => response.json())
                 .then(parsed_data => {
                     type_effectiveness = parsed_data;
+                });
+
+            fetch("./pokemon_go/popular_counters.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    popular_counters = parsed_data;
                 });
         })
     </script>
