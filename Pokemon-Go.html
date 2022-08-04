@@ -375,16 +375,6 @@
         // calculate IV
 
         var processedPokemon = []
-        for (var h in pokemon_data) {
-            for (var v in pokemon_data[h]) {
-                var m = 0 == v ? pokemon_names[h] : pokemon_forms[v];
-                processedPokemon.push({
-                    code: h + "," + v,
-                    label: m[0],
-                    icon: m[2]
-                })
-            }
-        }
 
         // print stats_table.json
         function printPokemonBaseStat() {
@@ -424,23 +414,24 @@
             console.log(code, cp, hp)
             if (null !== code) {
                 var e = code.split(",");
-                var t = e[0], n = e[1], r = pokemon_data[t][n][0];
+                var t = e[0], n = e[1], st = stats_table[code];
+                var r = [st.sta, st.atk, st.def];
                 var filtered = {};
                 var sta_init = 0;
                 var sta_end = 15;
                 for (var sta_i = 0; sta_i <= 15; sta_i++)
-                    for (var att_i = 0; att_i <= 15; att_i++)
+                    for (var atk_i = 0; atk_i <= 15; atk_i++)
                         for (var def_i = 0; def_i <= 15; def_i++)
-                            for (var o = [sta_i, att_i, def_i], i = 2; i <= 80; i++) {
-                                var s = getCPM(i);
-                                var c = getCp(s, r, o);
-                                var l = getHp(s, r, o);
+                            for (var o = [sta_i, atk_i, def_i], i = 1; i <= 40; i += 0.5) {
+                                var c = calculateCP(st.atk + atk_i, st.def + def_i, st.sta + sta_i, i);
+                                var multiplier = data_cp_multiplier.find(item => item.level === i).multiplier;
+                                var l = getHp(multiplier, r, o);
                                 var hp_match = true;
                                 if (hp != null && hp != undefined && hp > 0) {
                                     hp_match = hp == l;
                                 }
                                 if (c === cp && hp_match) {
-                                    var arr = new Int32Array([sta_i, att_i, def_i]);
+                                    var arr = new Int32Array([sta_i, atk_i, def_i]);
                                     arr.sort();
                                     var key = arr.join(",");
                                     if (!(key in filtered)) {
@@ -449,7 +440,7 @@
                                 }
                             }
                 console.log(filtered);
-                if (81 == i && Object.keys(filtered).length == 0) {
+                if (i > 40 && Object.keys(filtered).length == 0) {
                     return "A Pokemon with those stats couldn't be found.";
                 }
                 return filtered;
@@ -558,6 +549,14 @@
                 s += "<option value='" + name + "' data-code='" + value.code + "'>" + name + "</option>";
             }
             document.querySelector("#pokemon-name").innerHTML = s;
+
+            new TomSelect("#pokemon-name", {
+                create: false,
+                sortField: {
+                    field: "text",
+                    direction: "asc"
+                }
+            });
         }
 
         function convertToCounterTable(line) {
@@ -1078,16 +1077,7 @@
         }
 
         window.addEventListener('load', function () {
-            loadPokemonNames();
             generateMoveOptions();
-
-            new TomSelect("#pokemon-name", {
-                create: false,
-                sortField: {
-                    field: "text",
-                    direction: "asc"
-                }
-            });
 
             fetch("./pokemon_go/moves_pokemon_list.json")
                 .then(response => response.json())
@@ -1105,6 +1095,18 @@
                 .then(response => response.json())
                 .then(parsed_data => {
                     newPokemon = parsed_data;
+
+                    for (const [key, vp] of Object.entries(newPokemon)) {
+                        if (key == "missingno") {
+                            continue;
+                        }
+                        processedPokemon.push({
+                            code: key,
+                            label: vp.name
+                        })
+                    }
+
+                    loadPokemonNames();
                 });
 
             fetch("./pokemon_go/cp_multiplier.json")
