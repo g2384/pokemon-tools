@@ -725,7 +725,7 @@
                 var quickMoves = value["QUICK_MOVES"].concat(value["ELITE_QUICK_MOVES"]);
                 var chargeMoves = value["CINEMATIC_MOVES"].concat(value["SHADOW_MOVES"], value["PURIFIED_MOVES"], value["ELITE_CINEMATIC_MOVES"])
                 var allMoves = [];
-                var pokm = pokemon_names[value["ID"]][5];
+                var pokm = "";
                 var pokm_key = "";
                 var newName = value["NAME"].replace(/_/g, "").replace("FEMALE", "F").replace("MALE", "M");
                 for (const [key, vp] of Object.entries(newPokemon)) {
@@ -733,6 +733,9 @@
                         pokm = vp;
                         pokm_key = key;
                     }
+                }
+                if (pokm == "") {
+                    console.log("can't find: " + value["NAME"] + ", " + newName);
                 }
                 for (var v1 of quickMoves) {
                     if (value["ELITE_QUICK_MOVES"].indexOf(v1) >= 0) {
