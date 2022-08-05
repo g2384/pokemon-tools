@@ -137,7 +137,7 @@ function GenerateDpsAttackTable(allMovesArray, showTop, dps_table, newPokemon, p
     var str = "<table class='table table-striped align-middle'><thead><tr><th></th><th>Pokemon</th><th>Fast Move</th><th>Charge Move</th><th>DPS</th><th>TDO</th><th>DPS^3*TDO</th></tr></thead><tbody>";
     counter = 0;
     var rankedMoves = {};
-    const rankChars = ["&#9733;", "&#10103;", "&#10104;"];
+
     if (highlightMatched == undefined || highlightMatched == null) {
         highlightMatched = [];
     }
@@ -165,7 +165,7 @@ function GenerateDpsAttackTable(allMovesArray, showTop, dps_table, newPokemon, p
             + pok.types.map(x => "<span class='inline roundSpan type-" + x + "'>" + x + "</span>").join("") + releasedTag + "</td>";
         vm += value.map(x => {
             var rk_move = x[9];
-            var rank = rk_move < rankChars.length ? rankChars[rk_move] : " (" + (rk_move + 1) + ")";
+            var rank = getRankChar(rk_move);
             rankedMoves[id]++;
             var quickMoveTag = convertMoveTagToHtml(x[10]);
             var chargeMoveTag = convertMoveTagToHtml(x[11]);
@@ -179,6 +179,11 @@ function GenerateDpsAttackTable(allMovesArray, showTop, dps_table, newPokemon, p
     }
     str += "</tbody></table>";
     return str;
+}
+
+function getRankChar(order) {
+    const rankChars = ["&#9733;", "&#10103;", "&#10104;"];
+    return order < rankChars.length ? rankChars[order] : " (" + (order + 1) + ")";
 }
 
 function convertMoveTagToHtml(tag) {

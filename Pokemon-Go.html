@@ -275,6 +275,11 @@
     <input type="button" class="btn btn-outline-primary" value="Clear" onclick="clearCounterList()" />
     <div id="Counters-div"></div>
 
+    <h2>Counters (Unique Ordered By DPS)</h2>
+    <input type="button" class="btn btn-outline-primary" value="Show" onclick="showCounterUniqueList()" />
+    <input type="button" class="btn btn-outline-primary" value="Clear" onclick="clearCounterUniqueList()" />
+    <div id="Counters-Unique-div"></div>
+
     <script>
         // (deprecated) https://pokemon.gameinfo.io/en/js/pokemon-base.js?v=451d06
         // (deprecated) https://pokemon.gameinfo.io/en/js/pokemon-names.js?v=451d06 from: https://pokemon.gameinfo.io/en/tools/iv-calculator
@@ -516,6 +521,11 @@
             pn.innerHTML = "";
         }
 
+        function clearCounterUniqueList() {
+            var pn = document.querySelector("#Counters-Unique-div");
+            pn.innerHTML = "";
+        }
+
         function loadPokemonNames() {
             var s = "";
             for (const value of processedPokemon) {
@@ -542,9 +552,9 @@
                 var chargeMoveTag = convertMoveTagToHtml(l[7]);
                 var p = newPokemon[l[1]];
                 var releasedTag = p.releasedGO ? "" : "<span class='not-released roundSpan'>N/A</span>"
-                tr += "<td>" + l[0] + "</td>" + "<td>" + getImageElement(p.num, p.name) + p.name + releasedTag + "</td>"
-                    + "<td><img src='./pokemon_go/type_" + l[3].toLowerCase() + ".png' />" + l[2] + quickMoveTag + "</td>"
-                    + "<td><img src='./pokemon_go/type_" + l[6].toLowerCase() + ".png' />" + l[5] + chargeMoveTag + "</td>";
+                tr += "<td>" + l[0] + "</td>" + "<td class='pokemon-name'>" + getImageElement(p.num, p.name) + p.name + releasedTag + "</td>"
+                    + "<td><img src='./pokemon_go/type_" + l[3].toLowerCase() + ".png' />" + convertMoveToText(l[2]) + quickMoveTag + "</td>"
+                    + "<td><img src='./pokemon_go/type_" + l[6].toLowerCase() + ".png' />" + convertMoveToText(l[5]) + chargeMoveTag + "</td>";
                 tr += "</tr>";
                 trs.push(tr);
             }
@@ -564,6 +574,78 @@
                 html += "<div>" + convertToCounterTable(value.atk) + "</div>";
             }
             document.querySelector("#Counters-div").innerHTML = html;
+        }
+
+        function convertToCounterUniqueTable(all) {
+            var s = "<table class='table table-striped align-middle'><thead><tr><th>#</th><th>Pokemon</th><th>Fast Move</th><th>Charge Move</th><th>DPS^3*TDO</th><th>mean</th></tr></thead><tbody>{trs}</table>";
+            var trs = [];
+            var i = 0;
+            for (const l of all) {
+                i++;
+                var tr = "<tr>";
+                var quickMoveTag = convertMoveTagToHtml(l[4]);
+                var chargeMoveTag = convertMoveTagToHtml(l[7]);
+                var p = newPokemon[l[1]];
+                var releasedTag = p.releasedGO ? "" : "<span class='not-released roundSpan'>N/A</span>"
+                tr += "<td>" + i + "</td>" + "<td class='pokemon-name'>" + getImageElement(p.num, p.name) + p.name + releasedTag + "</td>"
+                    + "<td><img src='./pokemon_go/type_" + l[3].toLowerCase() + ".png' />" + convertMoveToText(l[2]) + quickMoveTag + "</td>"
+                    + "<td><img src='./pokemon_go/type_" + l[6].toLowerCase() + ".png' />" + convertMoveToText(l[5]) + chargeMoveTag + "</td>"
+                    + "<td>" + numberWithCommas(l[8], 2) + "</td>"
+                    + "<td>" + numberWithCommas(l[9], 2) + "(" + getRankChar(l[10]) + ")" + "</td>";
+                tr += "</tr>";
+                trs.push(tr);
+            }
+            s = s.replace("{trs}", trs.join(""))
+            return s;
+        }
+
+        function showCounterUniqueList() {
+            var all = {};
+            for (const [key, value] of Object.entries(top_counters_grouped)) {
+                var i = 0;
+                for (const atk of value.atk) {
+                    i++;
+                    var s = atk.join("$$");
+                    if (!all.hasOwnProperty(s)) {
+                        all[s] = [i];
+                    }
+                    else {
+                        all[s].push(i);
+                    }
+                }
+            }
+            console.log(all);
+            var allArray = [];
+            for (const [key, value] of Object.entries(all)) {
+                var ar = key.split("$$");
+                var name = ar[1];
+                var dpstable = dps_table[name];
+                var pName = dpstable.name;
+                var allMoves = dpstable.all_moves;
+                var fm = convertMoveToText(ar[2]);
+                var cm = convertMoveToText(ar[5]);
+                var dps = 0;
+                var moveOrder = 0;
+                var allMoves2 = allMoves.sort(function (e, t) {
+                    return t[6] - e[6] // DPS^3*TDO
+                });
+                var i = 0;
+                for (const m of allMoves2) {
+                    if (m[0] == fm && m[2] == cm) {
+                        dps = m[6]; // DPS^3*TDO
+                        moveOrder = i;
+                        break;
+                    }
+                    i++;
+                }
+                var mean = value.reduce((a, b) => a + b, 0) / value.length;
+                allArray.push(ar.concat([dps, mean, moveOrder]));
+            }
+            allArray = allArray.sort(function (e, t) {
+                return e[9] - t[9] // mean
+            });
+            var html = "<div>" + convertToCounterUniqueTable(allArray) + "</div>";
+            document.querySelector("#Counters-Unique-div").innerHTML = html;
         }
 
         // Move sets:
@@ -687,7 +769,7 @@
         };
 
         function convertMoveToText(t) {
-            return toTitleCase(t.replace("_FAST", "").replace(/_/g, " "));
+            return toTitleCase(t.replace("_FAST", "").replace(/_/g, " ")).replace("Super Power", "Superpower");
         }
 
         // generate dps_table.json
@@ -743,7 +825,7 @@
                         var tdo = calculateTDO(def_2, sta_2, dps, false)
                         allMoves.push([convertMoveToText(v1),
                         m1.type.toLowerCase(),
-                        convertMoveToText(v2).replace("Super Power", "Superpower"),
+                        convertMoveToText(v2),
                         m2.type.toLowerCase(),
                             dps,
                             tdo,
