@@ -1,6 +1,11 @@
 <html>
 
 <head>
+    <style>
+        body {
+            background-color: rgb(58, 58, 58);
+        }
+    </style>
     <script type="text/javascript" src="./md5.js"></script>
 </head>
 
@@ -10,6 +15,22 @@
         var pokemon_list = {};
         var stats_table = {};
         var top_counters_grouped = {};
+
+        // print evos.json
+        function printEvoList() {
+            var result = {};
+            for (const [pk, pv] of Object.entries(pokemon_list)) {
+                if (result.hasOwnProperty(pv.name)) {
+                    console.log("duplicate " + pk + ", " + pv.name);
+                }
+                result[pv.name] = {
+                    evos: pv.evos,
+                    prevo: pv.prevo,
+                    num: pv.num
+                }
+            }
+            console.log(JSON.stringify(result));
+        }
 
         function alwaysBetterThan() {
             var uniqueNames = new Set();

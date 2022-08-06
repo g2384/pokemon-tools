@@ -12,6 +12,12 @@
             margin: 0 auto;
             max-width: 1000px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(224, 224, 224);
+        }
+
+        .form-control,
+        .full .ts-control {
+            background-color: #ededed;
         }
 
         img {
@@ -180,6 +186,14 @@
 
         .flex-container>div {
             width: 150px;
+        }
+
+        .zoom_0_8 {
+            zoom: 0.8;
+            -moz-transform: scale(0.8);
+            width: fit-content;
+            padding: 3px 7px;
+            border: 1px solid #adadad;
         }
     </style>
     <script type="text/javascript" src="./pokemon_go/imagesConvert.js"></script>
@@ -609,6 +623,30 @@
             document.querySelector("#Counters-div").innerHTML = html;
         }
 
+        function getEvoList(name) {
+            var prevo = [];
+            var prev = evo_list[name].prevo;
+            while (prev != null) {
+                prevo.push(prev);
+                prev = evo_list[prev].prevo;
+            }
+            prevo = prevo.reverse();
+
+            var evos = evo_list[name].evos;
+            if (evos.length == 0 && prevo.length == 0) {
+                return "";
+            }
+            var result = prevo.concat([name]).concat(evos).map(x => {
+                num = evo_list[x].num;
+                var xdiv = x;
+                if (x == name) {
+                    xdiv = "<strong>" + x + "</strong>";
+                }
+                return getImageElement(num, x) + xdiv;
+            }).join(" > ");
+            return "<div class='zoom_0_8'>" + result + "</div>";
+        }
+
         function convertToCounterUniqueTable(all, byID = false) {
             var s = "<table class='table table-striped align-middle'><thead><tr><th>#</th><th>Pokemon</th><th>Fast Move</th><th>Charge Move</th><th>DPS^3*TDO</th><th>mean</th></tr></thead><tbody>{trs}</table>";
             var trs = [];
@@ -637,7 +675,10 @@
                     i = l[0];
                 }
                 var releasedTag = p.releasedGO ? "" : "<span class='not-released roundSpan'>N/A</span>"
-                tr += "<td rowspan='" + v.length + "'>" + i + "</td>" + "<td rowspan='" + v.length + "' class='pokemon-name'>" + getImageElement(p.num, p.name) + p.name + releasedTag + "</td>";
+                tr += "<td rowspan='" + v.length + "'>" + i + "</td>" + "<td rowspan='" + v.length + "' class='pokemon-name'>" + getImageElement(p.num, p.name)
+                    + p.name + releasedTag
+                    + getEvoList(p.name)
+                    + "</td>";
                 tr += v2.map(x => {
                     return "<td><img src='./pokemon_go/type_" + x[3].toLowerCase() + ".png' />" + convertMoveToText(x[2]) + quickMoveTag + "</td>"
                         + "<td><img src='./pokemon_go/type_" + x[6].toLowerCase() + ".png' />" + convertMoveToText(x[5]) + chargeMoveTag + "</td>"
@@ -743,6 +784,7 @@
         var type_effectiveness = {};
         var top_counters_grouped = {};
         var top_counters_pokemon_lookup = {};
+        var evo_list = {};
 
         function toTitleCase(str) {
             return str.replace(
@@ -1306,6 +1348,12 @@
                 .then(response => response.json())
                 .then(parsed_data => {
                     top_counters_pokemon_lookup = parsed_data;
+                });
+
+            fetch("./pokemon_go/evos.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    evo_list = parsed_data;
                 });
         })
     </script>

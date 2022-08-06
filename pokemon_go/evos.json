@@ -1,0 +1,6846 @@
+{
+    "MissingNo.": {
+        "evos": [],
+        "prevo": null,
+        "num": 0
+    },
+    "Bulbasaur": {
+        "evos": [
+            "Ivysaur"
+        ],
+        "prevo": null,
+        "num": 1
+    },
+    "Ivysaur": {
+        "evos": [
+            "Venusaur"
+        ],
+        "prevo": "Bulbasaur",
+        "num": 2
+    },
+    "Venusaur": {
+        "evos": [],
+        "prevo": "Ivysaur",
+        "num": 3
+    },
+    "Venusaur-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 3
+    },
+    "Venusaur-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 3
+    },
+    "Charmander": {
+        "evos": [
+            "Charmeleon"
+        ],
+        "prevo": null,
+        "num": 4
+    },
+    "Charmeleon": {
+        "evos": [
+            "Charizard"
+        ],
+        "prevo": "Charmander",
+        "num": 5
+    },
+    "Charizard": {
+        "evos": [],
+        "prevo": "Charmeleon",
+        "num": 6
+    },
+    "Charizard-Mega-X": {
+        "evos": [],
+        "prevo": null,
+        "num": 6
+    },
+    "Charizard-Mega-Y": {
+        "evos": [],
+        "prevo": null,
+        "num": 6
+    },
+    "Charizard-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 6
+    },
+    "Squirtle": {
+        "evos": [
+            "Wartortle"
+        ],
+        "prevo": null,
+        "num": 7
+    },
+    "Wartortle": {
+        "evos": [
+            "Blastoise"
+        ],
+        "prevo": "Squirtle",
+        "num": 8
+    },
+    "Blastoise": {
+        "evos": [],
+        "prevo": "Wartortle",
+        "num": 9
+    },
+    "Blastoise-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 9
+    },
+    "Blastoise-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 9
+    },
+    "Caterpie": {
+        "evos": [
+            "Metapod"
+        ],
+        "prevo": null,
+        "num": 10
+    },
+    "Metapod": {
+        "evos": [
+            "Butterfree"
+        ],
+        "prevo": "Caterpie",
+        "num": 11
+    },
+    "Butterfree": {
+        "evos": [],
+        "prevo": "Metapod",
+        "num": 12
+    },
+    "Butterfree-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 12
+    },
+    "Weedle": {
+        "evos": [
+            "Kakuna"
+        ],
+        "prevo": null,
+        "num": 13
+    },
+    "Kakuna": {
+        "evos": [
+            "Beedrill"
+        ],
+        "prevo": "Weedle",
+        "num": 14
+    },
+    "Beedrill": {
+        "evos": [],
+        "prevo": "Kakuna",
+        "num": 15
+    },
+    "Beedrill-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 15
+    },
+    "Pidgey": {
+        "evos": [
+            "Pidgeotto"
+        ],
+        "prevo": null,
+        "num": 16
+    },
+    "Pidgeotto": {
+        "evos": [
+            "Pidgeot"
+        ],
+        "prevo": "Pidgey",
+        "num": 17
+    },
+    "Pidgeot": {
+        "evos": [],
+        "prevo": "Pidgeotto",
+        "num": 18
+    },
+    "Pidgeot-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 18
+    },
+    "Rattata": {
+        "evos": [
+            "Raticate"
+        ],
+        "prevo": null,
+        "num": 19
+    },
+    "Rattata-Alola": {
+        "evos": [
+            "Raticate-Alola"
+        ],
+        "prevo": null,
+        "num": 19
+    },
+    "Raticate": {
+        "evos": [],
+        "prevo": "Rattata",
+        "num": 20
+    },
+    "Raticate-Alola": {
+        "evos": [],
+        "prevo": "Rattata-Alola",
+        "num": 20
+    },
+    "Raticate-Alola-Totem": {
+        "evos": [],
+        "prevo": null,
+        "num": 20
+    },
+    "Spearow": {
+        "evos": [
+            "Fearow"
+        ],
+        "prevo": null,
+        "num": 21
+    },
+    "Fearow": {
+        "evos": [],
+        "prevo": "Spearow",
+        "num": 22
+    },
+    "Ekans": {
+        "evos": [
+            "Arbok"
+        ],
+        "prevo": null,
+        "num": 23
+    },
+    "Arbok": {
+        "evos": [],
+        "prevo": "Ekans",
+        "num": 24
+    },
+    "Pikachu": {
+        "evos": [
+            "Raichu"
+        ],
+        "prevo": "Pichu",
+        "num": 25
+    },
+    "Pikachu-Cosplay": {
+        "evos": [],
+        "prevo": null,
+        "num": 25
+    },
+    "Pikachu-Rock-Star": {
+        "evos": [],
+        "prevo": null,
+        "num": 25
+    },
+    "Pikachu-Belle": {
+        "evos": [],
+        "prevo": null,
+        "num": 25
+    },
+    "Pikachu-Pop-Star": {
+        "evos": [],
+        "prevo": null,
+        "num": 25
+    },
+    "Pikachu-PhD": {
+        "evos": [],
+        "prevo": null,
+        "num": 25
+    },
+    "Pikachu-Libre": {
+        "evos": [],
+        "prevo": null,
+        "num": 25
+    },
+    "Pikachu-Original": {
+        "evos": [],
+        "prevo": null,
+        "num": 25
+    },
+    "Pikachu-Hoenn": {
+        "evos": [],
+        "prevo": null,
+        "num": 25
+    },
+    "Pikachu-Sinnoh": {
+        "evos": [],
+        "prevo": null,
+        "num": 25
+    },
+    "Pikachu-Unova": {
+        "evos": [],
+        "prevo": null,
+        "num": 25
+    },
+    "Pikachu-Kalos": {
+        "evos": [],
+        "prevo": null,
+        "num": 25
+    },
+    "Pikachu-Alola": {
+        "evos": [],
+        "prevo": null,
+        "num": 25
+    },
+    "Pikachu-Partner": {
+        "evos": [],
+        "prevo": null,
+        "num": 25
+    },
+    "Pikachu-Starter": {
+        "evos": [],
+        "prevo": null,
+        "num": 25
+    },
+    "Pikachu-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 25
+    },
+    "Pikachu-World": {
+        "evos": [],
+        "prevo": null,
+        "num": 25
+    },
+    "Raichu": {
+        "evos": [],
+        "prevo": "Pikachu",
+        "num": 26
+    },
+    "Raichu-Alola": {
+        "evos": [],
+        "prevo": null,
+        "num": 26
+    },
+    "Sandshrew": {
+        "evos": [
+            "Sandslash"
+        ],
+        "prevo": null,
+        "num": 27
+    },
+    "Sandshrew-Alola": {
+        "evos": [
+            "Sandslash-Alola"
+        ],
+        "prevo": null,
+        "num": 27
+    },
+    "Sandslash": {
+        "evos": [],
+        "prevo": "Sandshrew",
+        "num": 28
+    },
+    "Sandslash-Alola": {
+        "evos": [],
+        "prevo": "Sandshrew-Alola",
+        "num": 28
+    },
+    "Nidoran-F": {
+        "evos": [
+            "Nidorina"
+        ],
+        "prevo": null,
+        "num": 29
+    },
+    "Nidorina": {
+        "evos": [
+            "Nidoqueen"
+        ],
+        "prevo": "Nidoran-F",
+        "num": 30
+    },
+    "Nidoqueen": {
+        "evos": [],
+        "prevo": "Nidorina",
+        "num": 31
+    },
+    "Nidoran-M": {
+        "evos": [
+            "Nidorino"
+        ],
+        "prevo": null,
+        "num": 32
+    },
+    "Nidorino": {
+        "evos": [
+            "Nidoking"
+        ],
+        "prevo": "Nidoran-M",
+        "num": 33
+    },
+    "Nidoking": {
+        "evos": [],
+        "prevo": "Nidorino",
+        "num": 34
+    },
+    "Clefairy": {
+        "evos": [
+            "Clefable"
+        ],
+        "prevo": "Cleffa",
+        "num": 35
+    },
+    "Clefable": {
+        "evos": [],
+        "prevo": "Clefairy",
+        "num": 36
+    },
+    "Vulpix": {
+        "evos": [
+            "Ninetales"
+        ],
+        "prevo": null,
+        "num": 37
+    },
+    "Vulpix-Alola": {
+        "evos": [
+            "Ninetales-Alola"
+        ],
+        "prevo": null,
+        "num": 37
+    },
+    "Ninetales": {
+        "evos": [],
+        "prevo": "Vulpix",
+        "num": 38
+    },
+    "Ninetales-Alola": {
+        "evos": [],
+        "prevo": "Vulpix-Alola",
+        "num": 38
+    },
+    "Jigglypuff": {
+        "evos": [
+            "Wigglytuff"
+        ],
+        "prevo": "Igglybuff",
+        "num": 39
+    },
+    "Wigglytuff": {
+        "evos": [],
+        "prevo": "Jigglypuff",
+        "num": 40
+    },
+    "Zubat": {
+        "evos": [
+            "Golbat"
+        ],
+        "prevo": null,
+        "num": 41
+    },
+    "Golbat": {
+        "evos": [
+            "Crobat"
+        ],
+        "prevo": "Zubat",
+        "num": 42
+    },
+    "Oddish": {
+        "evos": [
+            "Gloom"
+        ],
+        "prevo": null,
+        "num": 43
+    },
+    "Gloom": {
+        "evos": [
+            "Vileplume",
+            "Bellossom"
+        ],
+        "prevo": "Oddish",
+        "num": 44
+    },
+    "Vileplume": {
+        "evos": [],
+        "prevo": "Gloom",
+        "num": 45
+    },
+    "Paras": {
+        "evos": [
+            "Parasect"
+        ],
+        "prevo": null,
+        "num": 46
+    },
+    "Parasect": {
+        "evos": [],
+        "prevo": "Paras",
+        "num": 47
+    },
+    "Venonat": {
+        "evos": [
+            "Venomoth"
+        ],
+        "prevo": null,
+        "num": 48
+    },
+    "Venomoth": {
+        "evos": [],
+        "prevo": "Venonat",
+        "num": 49
+    },
+    "Diglett": {
+        "evos": [
+            "Dugtrio"
+        ],
+        "prevo": null,
+        "num": 50
+    },
+    "Diglett-Alola": {
+        "evos": [
+            "Dugtrio-Alola"
+        ],
+        "prevo": null,
+        "num": 50
+    },
+    "Dugtrio": {
+        "evos": [],
+        "prevo": "Diglett",
+        "num": 51
+    },
+    "Dugtrio-Alola": {
+        "evos": [],
+        "prevo": "Diglett-Alola",
+        "num": 51
+    },
+    "Meowth": {
+        "evos": [
+            "Persian"
+        ],
+        "prevo": null,
+        "num": 52
+    },
+    "Meowth-Alola": {
+        "evos": [
+            "Persian-Alola"
+        ],
+        "prevo": null,
+        "num": 52
+    },
+    "Meowth-Galar": {
+        "evos": [
+            "Perrserker"
+        ],
+        "prevo": null,
+        "num": 52
+    },
+    "Meowth-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 52
+    },
+    "Persian": {
+        "evos": [],
+        "prevo": "Meowth",
+        "num": 53
+    },
+    "Persian-Alola": {
+        "evos": [],
+        "prevo": "Meowth-Alola",
+        "num": 53
+    },
+    "Psyduck": {
+        "evos": [
+            "Golduck"
+        ],
+        "prevo": null,
+        "num": 54
+    },
+    "Golduck": {
+        "evos": [],
+        "prevo": "Psyduck",
+        "num": 55
+    },
+    "Mankey": {
+        "evos": [
+            "Primeape"
+        ],
+        "prevo": null,
+        "num": 56
+    },
+    "Primeape": {
+        "evos": [],
+        "prevo": "Mankey",
+        "num": 57
+    },
+    "Growlithe": {
+        "evos": [
+            "Arcanine"
+        ],
+        "prevo": null,
+        "num": 58
+    },
+    "Growlithe-Hisui": {
+        "evos": [
+            "Arcanine-Hisui"
+        ],
+        "prevo": null,
+        "num": 58
+    },
+    "Arcanine": {
+        "evos": [],
+        "prevo": "Growlithe",
+        "num": 59
+    },
+    "Arcanine-Hisui": {
+        "evos": [],
+        "prevo": "Growlithe-Hisui",
+        "num": 59
+    },
+    "Poliwag": {
+        "evos": [
+            "Poliwhirl"
+        ],
+        "prevo": null,
+        "num": 60
+    },
+    "Poliwhirl": {
+        "evos": [
+            "Poliwrath",
+            "Politoed"
+        ],
+        "prevo": "Poliwag",
+        "num": 61
+    },
+    "Poliwrath": {
+        "evos": [],
+        "prevo": "Poliwhirl",
+        "num": 62
+    },
+    "Abra": {
+        "evos": [
+            "Kadabra"
+        ],
+        "prevo": null,
+        "num": 63
+    },
+    "Kadabra": {
+        "evos": [
+            "Alakazam"
+        ],
+        "prevo": "Abra",
+        "num": 64
+    },
+    "Alakazam": {
+        "evos": [],
+        "prevo": "Kadabra",
+        "num": 65
+    },
+    "Alakazam-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 65
+    },
+    "Machop": {
+        "evos": [
+            "Machoke"
+        ],
+        "prevo": null,
+        "num": 66
+    },
+    "Machoke": {
+        "evos": [
+            "Machamp"
+        ],
+        "prevo": "Machop",
+        "num": 67
+    },
+    "Machamp": {
+        "evos": [],
+        "prevo": "Machoke",
+        "num": 68
+    },
+    "Machamp-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 68
+    },
+    "Bellsprout": {
+        "evos": [
+            "Weepinbell"
+        ],
+        "prevo": null,
+        "num": 69
+    },
+    "Weepinbell": {
+        "evos": [
+            "Victreebel"
+        ],
+        "prevo": "Bellsprout",
+        "num": 70
+    },
+    "Victreebel": {
+        "evos": [],
+        "prevo": "Weepinbell",
+        "num": 71
+    },
+    "Tentacool": {
+        "evos": [
+            "Tentacruel"
+        ],
+        "prevo": null,
+        "num": 72
+    },
+    "Tentacruel": {
+        "evos": [],
+        "prevo": "Tentacool",
+        "num": 73
+    },
+    "Geodude": {
+        "evos": [
+            "Graveler"
+        ],
+        "prevo": null,
+        "num": 74
+    },
+    "Geodude-Alola": {
+        "evos": [
+            "Graveler-Alola"
+        ],
+        "prevo": null,
+        "num": 74
+    },
+    "Graveler": {
+        "evos": [
+            "Golem"
+        ],
+        "prevo": "Geodude",
+        "num": 75
+    },
+    "Graveler-Alola": {
+        "evos": [
+            "Golem-Alola"
+        ],
+        "prevo": "Geodude-Alola",
+        "num": 75
+    },
+    "Golem": {
+        "evos": [],
+        "prevo": "Graveler",
+        "num": 76
+    },
+    "Golem-Alola": {
+        "evos": [],
+        "prevo": "Graveler-Alola",
+        "num": 76
+    },
+    "Ponyta": {
+        "evos": [
+            "Rapidash"
+        ],
+        "prevo": null,
+        "num": 77
+    },
+    "Ponyta-Galar": {
+        "evos": [
+            "Rapidash-Galar"
+        ],
+        "prevo": null,
+        "num": 77
+    },
+    "Rapidash": {
+        "evos": [],
+        "prevo": "Ponyta",
+        "num": 78
+    },
+    "Rapidash-Galar": {
+        "evos": [],
+        "prevo": "Ponyta-Galar",
+        "num": 78
+    },
+    "Slowpoke": {
+        "evos": [
+            "Slowbro",
+            "Slowking"
+        ],
+        "prevo": null,
+        "num": 79
+    },
+    "Slowpoke-Galar": {
+        "evos": [
+            "Slowbro-Galar",
+            "Slowking-Galar"
+        ],
+        "prevo": null,
+        "num": 79
+    },
+    "Slowbro": {
+        "evos": [],
+        "prevo": "Slowpoke",
+        "num": 80
+    },
+    "Slowbro-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 80
+    },
+    "Slowbro-Galar": {
+        "evos": [],
+        "prevo": "Slowpoke-Galar",
+        "num": 80
+    },
+    "Magnemite": {
+        "evos": [
+            "Magneton"
+        ],
+        "prevo": null,
+        "num": 81
+    },
+    "Magneton": {
+        "evos": [
+            "Magnezone"
+        ],
+        "prevo": "Magnemite",
+        "num": 82
+    },
+    "Farfetch’d": {
+        "evos": [],
+        "prevo": null,
+        "num": 83
+    },
+    "Farfetch’d-Galar": {
+        "evos": [
+            "Sirfetch’d"
+        ],
+        "prevo": null,
+        "num": 83
+    },
+    "Doduo": {
+        "evos": [
+            "Dodrio"
+        ],
+        "prevo": null,
+        "num": 84
+    },
+    "Dodrio": {
+        "evos": [],
+        "prevo": "Doduo",
+        "num": 85
+    },
+    "Seel": {
+        "evos": [
+            "Dewgong"
+        ],
+        "prevo": null,
+        "num": 86
+    },
+    "Dewgong": {
+        "evos": [],
+        "prevo": "Seel",
+        "num": 87
+    },
+    "Grimer": {
+        "evos": [
+            "Muk"
+        ],
+        "prevo": null,
+        "num": 88
+    },
+    "Grimer-Alola": {
+        "evos": [
+            "Muk-Alola"
+        ],
+        "prevo": null,
+        "num": 88
+    },
+    "Muk": {
+        "evos": [],
+        "prevo": "Grimer",
+        "num": 89
+    },
+    "Muk-Alola": {
+        "evos": [],
+        "prevo": "Grimer-Alola",
+        "num": 89
+    },
+    "Shellder": {
+        "evos": [
+            "Cloyster"
+        ],
+        "prevo": null,
+        "num": 90
+    },
+    "Cloyster": {
+        "evos": [],
+        "prevo": "Shellder",
+        "num": 91
+    },
+    "Gastly": {
+        "evos": [
+            "Haunter"
+        ],
+        "prevo": null,
+        "num": 92
+    },
+    "Haunter": {
+        "evos": [
+            "Gengar"
+        ],
+        "prevo": "Gastly",
+        "num": 93
+    },
+    "Gengar": {
+        "evos": [],
+        "prevo": "Haunter",
+        "num": 94
+    },
+    "Gengar-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 94
+    },
+    "Gengar-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 94
+    },
+    "Onix": {
+        "evos": [
+            "Steelix"
+        ],
+        "prevo": null,
+        "num": 95
+    },
+    "Drowzee": {
+        "evos": [
+            "Hypno"
+        ],
+        "prevo": null,
+        "num": 96
+    },
+    "Hypno": {
+        "evos": [],
+        "prevo": "Drowzee",
+        "num": 97
+    },
+    "Krabby": {
+        "evos": [
+            "Kingler"
+        ],
+        "prevo": null,
+        "num": 98
+    },
+    "Kingler": {
+        "evos": [],
+        "prevo": "Krabby",
+        "num": 99
+    },
+    "Kingler-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 99
+    },
+    "Voltorb": {
+        "evos": [
+            "Electrode"
+        ],
+        "prevo": null,
+        "num": 100
+    },
+    "Voltorb-Hisui": {
+        "evos": [
+            "Electrode-Hisui"
+        ],
+        "prevo": null,
+        "num": 100
+    },
+    "Electrode": {
+        "evos": [],
+        "prevo": "Voltorb",
+        "num": 101
+    },
+    "Electrode-Hisui": {
+        "evos": [],
+        "prevo": "Voltorb-Hisui",
+        "num": 101
+    },
+    "Exeggcute": {
+        "evos": [
+            "Exeggutor"
+        ],
+        "prevo": null,
+        "num": 102
+    },
+    "Exeggutor": {
+        "evos": [],
+        "prevo": "Exeggcute",
+        "num": 103
+    },
+    "Exeggutor-Alola": {
+        "evos": [],
+        "prevo": null,
+        "num": 103
+    },
+    "Cubone": {
+        "evos": [
+            "Marowak"
+        ],
+        "prevo": null,
+        "num": 104
+    },
+    "Marowak": {
+        "evos": [],
+        "prevo": "Cubone",
+        "num": 105
+    },
+    "Marowak-Alola": {
+        "evos": [],
+        "prevo": null,
+        "num": 105
+    },
+    "Marowak-Alola-Totem": {
+        "evos": [],
+        "prevo": null,
+        "num": 105
+    },
+    "Hitmonlee": {
+        "evos": [],
+        "prevo": "Tyrogue",
+        "num": 106
+    },
+    "Hitmonchan": {
+        "evos": [],
+        "prevo": "Tyrogue",
+        "num": 107
+    },
+    "Lickitung": {
+        "evos": [
+            "Lickilicky"
+        ],
+        "prevo": null,
+        "num": 108
+    },
+    "Koffing": {
+        "evos": [
+            "Weezing",
+            "Weezing-Galar"
+        ],
+        "prevo": null,
+        "num": 109
+    },
+    "Weezing": {
+        "evos": [],
+        "prevo": "Koffing",
+        "num": 110
+    },
+    "Weezing-Galar": {
+        "evos": [],
+        "prevo": "Koffing",
+        "num": 110
+    },
+    "Rhyhorn": {
+        "evos": [
+            "Rhydon"
+        ],
+        "prevo": null,
+        "num": 111
+    },
+    "Rhydon": {
+        "evos": [
+            "Rhyperior"
+        ],
+        "prevo": "Rhyhorn",
+        "num": 112
+    },
+    "Chansey": {
+        "evos": [
+            "Blissey"
+        ],
+        "prevo": "Happiny",
+        "num": 113
+    },
+    "Tangela": {
+        "evos": [
+            "Tangrowth"
+        ],
+        "prevo": null,
+        "num": 114
+    },
+    "Kangaskhan": {
+        "evos": [],
+        "prevo": null,
+        "num": 115
+    },
+    "Kangaskhan-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 115
+    },
+    "Horsea": {
+        "evos": [
+            "Seadra"
+        ],
+        "prevo": null,
+        "num": 116
+    },
+    "Seadra": {
+        "evos": [
+            "Kingdra"
+        ],
+        "prevo": "Horsea",
+        "num": 117
+    },
+    "Goldeen": {
+        "evos": [
+            "Seaking"
+        ],
+        "prevo": null,
+        "num": 118
+    },
+    "Seaking": {
+        "evos": [],
+        "prevo": "Goldeen",
+        "num": 119
+    },
+    "Staryu": {
+        "evos": [
+            "Starmie"
+        ],
+        "prevo": null,
+        "num": 120
+    },
+    "Starmie": {
+        "evos": [],
+        "prevo": "Staryu",
+        "num": 121
+    },
+    "Mr. Mime": {
+        "evos": [],
+        "prevo": "Mime Jr.",
+        "num": 122
+    },
+    "Mr. Mime-Galar": {
+        "evos": [
+            "Mr. Rime"
+        ],
+        "prevo": "Mime Jr.",
+        "num": 122
+    },
+    "Scyther": {
+        "evos": [
+            "Scizor",
+            "Kleavor"
+        ],
+        "prevo": null,
+        "num": 123
+    },
+    "Jynx": {
+        "evos": [],
+        "prevo": "Smoochum",
+        "num": 124
+    },
+    "Electabuzz": {
+        "evos": [
+            "Electivire"
+        ],
+        "prevo": "Elekid",
+        "num": 125
+    },
+    "Magmar": {
+        "evos": [
+            "Magmortar"
+        ],
+        "prevo": "Magby",
+        "num": 126
+    },
+    "Pinsir": {
+        "evos": [],
+        "prevo": null,
+        "num": 127
+    },
+    "Pinsir-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 127
+    },
+    "Tauros": {
+        "evos": [],
+        "prevo": null,
+        "num": 128
+    },
+    "Magikarp": {
+        "evos": [
+            "Gyarados"
+        ],
+        "prevo": null,
+        "num": 129
+    },
+    "Gyarados": {
+        "evos": [],
+        "prevo": "Magikarp",
+        "num": 130
+    },
+    "Gyarados-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 130
+    },
+    "Lapras": {
+        "evos": [],
+        "prevo": null,
+        "num": 131
+    },
+    "Lapras-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 131
+    },
+    "Ditto": {
+        "evos": [],
+        "prevo": null,
+        "num": 132
+    },
+    "Eevee": {
+        "evos": [
+            "Vaporeon",
+            "Jolteon",
+            "Flareon",
+            "Espeon",
+            "Umbreon",
+            "Leafeon",
+            "Glaceon",
+            "Sylveon"
+        ],
+        "prevo": null,
+        "num": 133
+    },
+    "Eevee-Starter": {
+        "evos": [],
+        "prevo": null,
+        "num": 133
+    },
+    "Eevee-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 133
+    },
+    "Vaporeon": {
+        "evos": [],
+        "prevo": "Eevee",
+        "num": 134
+    },
+    "Jolteon": {
+        "evos": [],
+        "prevo": "Eevee",
+        "num": 135
+    },
+    "Flareon": {
+        "evos": [],
+        "prevo": "Eevee",
+        "num": 136
+    },
+    "Porygon": {
+        "evos": [
+            "Porygon2"
+        ],
+        "prevo": null,
+        "num": 137
+    },
+    "Omanyte": {
+        "evos": [
+            "Omastar"
+        ],
+        "prevo": null,
+        "num": 138
+    },
+    "Omastar": {
+        "evos": [],
+        "prevo": "Omanyte",
+        "num": 139
+    },
+    "Kabuto": {
+        "evos": [
+            "Kabutops"
+        ],
+        "prevo": null,
+        "num": 140
+    },
+    "Kabutops": {
+        "evos": [],
+        "prevo": "Kabuto",
+        "num": 141
+    },
+    "Aerodactyl": {
+        "evos": [],
+        "prevo": null,
+        "num": 142
+    },
+    "Aerodactyl-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 142
+    },
+    "Snorlax": {
+        "evos": [],
+        "prevo": "Munchlax",
+        "num": 143
+    },
+    "Snorlax-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 143
+    },
+    "Articuno": {
+        "evos": [],
+        "prevo": null,
+        "num": 144
+    },
+    "Articuno-Galar": {
+        "evos": [],
+        "prevo": null,
+        "num": 144
+    },
+    "Zapdos": {
+        "evos": [],
+        "prevo": null,
+        "num": 145
+    },
+    "Zapdos-Galar": {
+        "evos": [],
+        "prevo": null,
+        "num": 145
+    },
+    "Moltres": {
+        "evos": [],
+        "prevo": null,
+        "num": 146
+    },
+    "Moltres-Galar": {
+        "evos": [],
+        "prevo": null,
+        "num": 146
+    },
+    "Dratini": {
+        "evos": [
+            "Dragonair"
+        ],
+        "prevo": null,
+        "num": 147
+    },
+    "Dragonair": {
+        "evos": [
+            "Dragonite"
+        ],
+        "prevo": "Dratini",
+        "num": 148
+    },
+    "Dragonite": {
+        "evos": [],
+        "prevo": "Dragonair",
+        "num": 149
+    },
+    "Mewtwo": {
+        "evos": [],
+        "prevo": null,
+        "num": 150
+    },
+    "Mewtwo-A": {
+        "evos": [],
+        "prevo": null,
+        "num": 150
+    },
+    "Mewtwo-Mega-X": {
+        "evos": [],
+        "prevo": null,
+        "num": 150
+    },
+    "Mewtwo-Mega-Y": {
+        "evos": [],
+        "prevo": null,
+        "num": 150
+    },
+    "Mew": {
+        "evos": [],
+        "prevo": null,
+        "num": 151
+    },
+    "Chikorita": {
+        "evos": [
+            "Bayleef"
+        ],
+        "prevo": null,
+        "num": 152
+    },
+    "Bayleef": {
+        "evos": [
+            "Meganium"
+        ],
+        "prevo": "Chikorita",
+        "num": 153
+    },
+    "Meganium": {
+        "evos": [],
+        "prevo": "Bayleef",
+        "num": 154
+    },
+    "Cyndaquil": {
+        "evos": [
+            "Quilava"
+        ],
+        "prevo": null,
+        "num": 155
+    },
+    "Quilava": {
+        "evos": [
+            "Typhlosion",
+            "Typhlosion-Hisui"
+        ],
+        "prevo": "Cyndaquil",
+        "num": 156
+    },
+    "Typhlosion": {
+        "evos": [],
+        "prevo": "Quilava",
+        "num": 157
+    },
+    "Typhlosion-Hisui": {
+        "evos": [],
+        "prevo": "Quilava",
+        "num": 157
+    },
+    "Totodile": {
+        "evos": [
+            "Croconaw"
+        ],
+        "prevo": null,
+        "num": 158
+    },
+    "Croconaw": {
+        "evos": [
+            "Feraligatr"
+        ],
+        "prevo": "Totodile",
+        "num": 159
+    },
+    "Feraligatr": {
+        "evos": [],
+        "prevo": "Croconaw",
+        "num": 160
+    },
+    "Sentret": {
+        "evos": [
+            "Furret"
+        ],
+        "prevo": null,
+        "num": 161
+    },
+    "Furret": {
+        "evos": [],
+        "prevo": "Sentret",
+        "num": 162
+    },
+    "Hoothoot": {
+        "evos": [
+            "Noctowl"
+        ],
+        "prevo": null,
+        "num": 163
+    },
+    "Noctowl": {
+        "evos": [],
+        "prevo": "Hoothoot",
+        "num": 164
+    },
+    "Ledyba": {
+        "evos": [
+            "Ledian"
+        ],
+        "prevo": null,
+        "num": 165
+    },
+    "Ledian": {
+        "evos": [],
+        "prevo": "Ledyba",
+        "num": 166
+    },
+    "Spinarak": {
+        "evos": [
+            "Ariados"
+        ],
+        "prevo": null,
+        "num": 167
+    },
+    "Ariados": {
+        "evos": [],
+        "prevo": "Spinarak",
+        "num": 168
+    },
+    "Crobat": {
+        "evos": [],
+        "prevo": "Golbat",
+        "num": 169
+    },
+    "Chinchou": {
+        "evos": [
+            "Lanturn"
+        ],
+        "prevo": null,
+        "num": 170
+    },
+    "Lanturn": {
+        "evos": [],
+        "prevo": "Chinchou",
+        "num": 171
+    },
+    "Pichu": {
+        "evos": [
+            "Pikachu"
+        ],
+        "prevo": null,
+        "num": 172
+    },
+    "Pichu-Spiky-eared": {
+        "evos": [],
+        "prevo": null,
+        "num": 172
+    },
+    "Cleffa": {
+        "evos": [
+            "Clefairy"
+        ],
+        "prevo": null,
+        "num": 173
+    },
+    "Igglybuff": {
+        "evos": [
+            "Jigglypuff"
+        ],
+        "prevo": null,
+        "num": 174
+    },
+    "Togepi": {
+        "evos": [
+            "Togetic"
+        ],
+        "prevo": null,
+        "num": 175
+    },
+    "Togetic": {
+        "evos": [
+            "Togekiss"
+        ],
+        "prevo": "Togepi",
+        "num": 176
+    },
+    "Natu": {
+        "evos": [
+            "Xatu"
+        ],
+        "prevo": null,
+        "num": 177
+    },
+    "Xatu": {
+        "evos": [],
+        "prevo": "Natu",
+        "num": 178
+    },
+    "Mareep": {
+        "evos": [
+            "Flaaffy"
+        ],
+        "prevo": null,
+        "num": 179
+    },
+    "Flaaffy": {
+        "evos": [
+            "Ampharos"
+        ],
+        "prevo": "Mareep",
+        "num": 180
+    },
+    "Ampharos": {
+        "evos": [],
+        "prevo": "Flaaffy",
+        "num": 181
+    },
+    "Ampharos-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 181
+    },
+    "Bellossom": {
+        "evos": [],
+        "prevo": "Gloom",
+        "num": 182
+    },
+    "Marill": {
+        "evos": [
+            "Azumarill"
+        ],
+        "prevo": "Azurill",
+        "num": 183
+    },
+    "Azumarill": {
+        "evos": [],
+        "prevo": "Marill",
+        "num": 184
+    },
+    "Sudowoodo": {
+        "evos": [],
+        "prevo": "Bonsly",
+        "num": 185
+    },
+    "Politoed": {
+        "evos": [],
+        "prevo": "Poliwhirl",
+        "num": 186
+    },
+    "Hoppip": {
+        "evos": [
+            "Skiploom"
+        ],
+        "prevo": null,
+        "num": 187
+    },
+    "Skiploom": {
+        "evos": [
+            "Jumpluff"
+        ],
+        "prevo": "Hoppip",
+        "num": 188
+    },
+    "Jumpluff": {
+        "evos": [],
+        "prevo": "Skiploom",
+        "num": 189
+    },
+    "Aipom": {
+        "evos": [
+            "Ambipom"
+        ],
+        "prevo": null,
+        "num": 190
+    },
+    "Sunkern": {
+        "evos": [
+            "Sunflora"
+        ],
+        "prevo": null,
+        "num": 191
+    },
+    "Sunflora": {
+        "evos": [],
+        "prevo": "Sunkern",
+        "num": 192
+    },
+    "Yanma": {
+        "evos": [
+            "Yanmega"
+        ],
+        "prevo": null,
+        "num": 193
+    },
+    "Wooper": {
+        "evos": [
+            "Quagsire"
+        ],
+        "prevo": null,
+        "num": 194
+    },
+    "Quagsire": {
+        "evos": [],
+        "prevo": "Wooper",
+        "num": 195
+    },
+    "Espeon": {
+        "evos": [],
+        "prevo": "Eevee",
+        "num": 196
+    },
+    "Umbreon": {
+        "evos": [],
+        "prevo": "Eevee",
+        "num": 197
+    },
+    "Murkrow": {
+        "evos": [
+            "Honchkrow"
+        ],
+        "prevo": null,
+        "num": 198
+    },
+    "Slowking": {
+        "evos": [],
+        "prevo": "Slowpoke",
+        "num": 199
+    },
+    "Slowking-Galar": {
+        "evos": [],
+        "prevo": "Slowpoke-Galar",
+        "num": 199
+    },
+    "Misdreavus": {
+        "evos": [
+            "Mismagius"
+        ],
+        "prevo": null,
+        "num": 200
+    },
+    "Unown": {
+        "evos": [],
+        "prevo": null,
+        "num": 201
+    },
+    "Wobbuffet": {
+        "evos": [],
+        "prevo": "Wynaut",
+        "num": 202
+    },
+    "Girafarig": {
+        "evos": [],
+        "prevo": null,
+        "num": 203
+    },
+    "Pineco": {
+        "evos": [
+            "Forretress"
+        ],
+        "prevo": null,
+        "num": 204
+    },
+    "Forretress": {
+        "evos": [],
+        "prevo": "Pineco",
+        "num": 205
+    },
+    "Dunsparce": {
+        "evos": [],
+        "prevo": null,
+        "num": 206
+    },
+    "Gligar": {
+        "evos": [
+            "Gliscor"
+        ],
+        "prevo": null,
+        "num": 207
+    },
+    "Steelix": {
+        "evos": [],
+        "prevo": "Onix",
+        "num": 208
+    },
+    "Steelix-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 208
+    },
+    "Snubbull": {
+        "evos": [
+            "Granbull"
+        ],
+        "prevo": null,
+        "num": 209
+    },
+    "Granbull": {
+        "evos": [],
+        "prevo": "Snubbull",
+        "num": 210
+    },
+    "Qwilfish": {
+        "evos": [],
+        "prevo": null,
+        "num": 211
+    },
+    "Qwilfish-Hisui": {
+        "evos": [
+            "Overqwil"
+        ],
+        "prevo": null,
+        "num": 211
+    },
+    "Scizor": {
+        "evos": [],
+        "prevo": "Scyther",
+        "num": 212
+    },
+    "Scizor-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 212
+    },
+    "Shuckle": {
+        "evos": [],
+        "prevo": null,
+        "num": 213
+    },
+    "Heracross": {
+        "evos": [],
+        "prevo": null,
+        "num": 214
+    },
+    "Heracross-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 214
+    },
+    "Sneasel": {
+        "evos": [
+            "Weavile"
+        ],
+        "prevo": null,
+        "num": 215
+    },
+    "Sneasel-Hisui": {
+        "evos": [
+            "Sneasler"
+        ],
+        "prevo": null,
+        "num": 215
+    },
+    "Teddiursa": {
+        "evos": [
+            "Ursaring"
+        ],
+        "prevo": null,
+        "num": 216
+    },
+    "Ursaring": {
+        "evos": [
+            "Ursaluna"
+        ],
+        "prevo": "Teddiursa",
+        "num": 217
+    },
+    "Slugma": {
+        "evos": [
+            "Magcargo"
+        ],
+        "prevo": null,
+        "num": 218
+    },
+    "Magcargo": {
+        "evos": [],
+        "prevo": "Slugma",
+        "num": 219
+    },
+    "Swinub": {
+        "evos": [
+            "Piloswine"
+        ],
+        "prevo": null,
+        "num": 220
+    },
+    "Piloswine": {
+        "evos": [
+            "Mamoswine"
+        ],
+        "prevo": "Swinub",
+        "num": 221
+    },
+    "Corsola": {
+        "evos": [],
+        "prevo": null,
+        "num": 222
+    },
+    "Corsola-Galar": {
+        "evos": [
+            "Cursola"
+        ],
+        "prevo": null,
+        "num": 222
+    },
+    "Remoraid": {
+        "evos": [
+            "Octillery"
+        ],
+        "prevo": null,
+        "num": 223
+    },
+    "Octillery": {
+        "evos": [],
+        "prevo": "Remoraid",
+        "num": 224
+    },
+    "Delibird": {
+        "evos": [],
+        "prevo": null,
+        "num": 225
+    },
+    "Mantine": {
+        "evos": [],
+        "prevo": "Mantyke",
+        "num": 226
+    },
+    "Skarmory": {
+        "evos": [],
+        "prevo": null,
+        "num": 227
+    },
+    "Houndour": {
+        "evos": [
+            "Houndoom"
+        ],
+        "prevo": null,
+        "num": 228
+    },
+    "Houndoom": {
+        "evos": [],
+        "prevo": "Houndour",
+        "num": 229
+    },
+    "Houndoom-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 229
+    },
+    "Kingdra": {
+        "evos": [],
+        "prevo": "Seadra",
+        "num": 230
+    },
+    "Phanpy": {
+        "evos": [
+            "Donphan"
+        ],
+        "prevo": null,
+        "num": 231
+    },
+    "Donphan": {
+        "evos": [],
+        "prevo": "Phanpy",
+        "num": 232
+    },
+    "Porygon2": {
+        "evos": [
+            "Porygon-Z"
+        ],
+        "prevo": "Porygon",
+        "num": 233
+    },
+    "Stantler": {
+        "evos": [
+            "Wyrdeer"
+        ],
+        "prevo": null,
+        "num": 234
+    },
+    "Smeargle": {
+        "evos": [],
+        "prevo": null,
+        "num": 235
+    },
+    "Tyrogue": {
+        "evos": [
+            "Hitmonlee",
+            "Hitmonchan",
+            "Hitmontop"
+        ],
+        "prevo": null,
+        "num": 236
+    },
+    "Hitmontop": {
+        "evos": [],
+        "prevo": "Tyrogue",
+        "num": 237
+    },
+    "Smoochum": {
+        "evos": [
+            "Jynx"
+        ],
+        "prevo": null,
+        "num": 238
+    },
+    "Elekid": {
+        "evos": [
+            "Electabuzz"
+        ],
+        "prevo": null,
+        "num": 239
+    },
+    "Magby": {
+        "evos": [
+            "Magmar"
+        ],
+        "prevo": null,
+        "num": 240
+    },
+    "Miltank": {
+        "evos": [],
+        "prevo": null,
+        "num": 241
+    },
+    "Blissey": {
+        "evos": [],
+        "prevo": "Chansey",
+        "num": 242
+    },
+    "Raikou": {
+        "evos": [],
+        "prevo": null,
+        "num": 243
+    },
+    "Entei": {
+        "evos": [],
+        "prevo": null,
+        "num": 244
+    },
+    "Suicune": {
+        "evos": [],
+        "prevo": null,
+        "num": 245
+    },
+    "Larvitar": {
+        "evos": [
+            "Pupitar"
+        ],
+        "prevo": null,
+        "num": 246
+    },
+    "Pupitar": {
+        "evos": [
+            "Tyranitar"
+        ],
+        "prevo": "Larvitar",
+        "num": 247
+    },
+    "Tyranitar": {
+        "evos": [],
+        "prevo": "Pupitar",
+        "num": 248
+    },
+    "Tyranitar-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 248
+    },
+    "Lugia": {
+        "evos": [],
+        "prevo": null,
+        "num": 249
+    },
+    "Ho-Oh": {
+        "evos": [],
+        "prevo": null,
+        "num": 250
+    },
+    "Celebi": {
+        "evos": [],
+        "prevo": null,
+        "num": 251
+    },
+    "Treecko": {
+        "evos": [
+            "Grovyle"
+        ],
+        "prevo": null,
+        "num": 252
+    },
+    "Grovyle": {
+        "evos": [
+            "Sceptile"
+        ],
+        "prevo": "Treecko",
+        "num": 253
+    },
+    "Sceptile": {
+        "evos": [],
+        "prevo": "Grovyle",
+        "num": 254
+    },
+    "Sceptile-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 254
+    },
+    "Torchic": {
+        "evos": [
+            "Combusken"
+        ],
+        "prevo": null,
+        "num": 255
+    },
+    "Combusken": {
+        "evos": [
+            "Blaziken"
+        ],
+        "prevo": "Torchic",
+        "num": 256
+    },
+    "Blaziken": {
+        "evos": [],
+        "prevo": "Combusken",
+        "num": 257
+    },
+    "Blaziken-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 257
+    },
+    "Mudkip": {
+        "evos": [
+            "Marshtomp"
+        ],
+        "prevo": null,
+        "num": 258
+    },
+    "Marshtomp": {
+        "evos": [
+            "Swampert"
+        ],
+        "prevo": "Mudkip",
+        "num": 259
+    },
+    "Swampert": {
+        "evos": [],
+        "prevo": "Marshtomp",
+        "num": 260
+    },
+    "Swampert-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 260
+    },
+    "Poochyena": {
+        "evos": [
+            "Mightyena"
+        ],
+        "prevo": null,
+        "num": 261
+    },
+    "Mightyena": {
+        "evos": [],
+        "prevo": "Poochyena",
+        "num": 262
+    },
+    "Zigzagoon": {
+        "evos": [
+            "Linoone"
+        ],
+        "prevo": null,
+        "num": 263
+    },
+    "Zigzagoon-Galar": {
+        "evos": [
+            "Linoone-Galar"
+        ],
+        "prevo": null,
+        "num": 263
+    },
+    "Linoone": {
+        "evos": [],
+        "prevo": "Zigzagoon",
+        "num": 264
+    },
+    "Linoone-Galar": {
+        "evos": [
+            "Obstagoon"
+        ],
+        "prevo": "Zigzagoon-Galar",
+        "num": 264
+    },
+    "Wurmple": {
+        "evos": [
+            "Silcoon",
+            "Cascoon"
+        ],
+        "prevo": null,
+        "num": 265
+    },
+    "Silcoon": {
+        "evos": [
+            "Beautifly"
+        ],
+        "prevo": "Wurmple",
+        "num": 266
+    },
+    "Beautifly": {
+        "evos": [],
+        "prevo": "Silcoon",
+        "num": 267
+    },
+    "Cascoon": {
+        "evos": [
+            "Dustox"
+        ],
+        "prevo": "Wurmple",
+        "num": 268
+    },
+    "Dustox": {
+        "evos": [],
+        "prevo": "Cascoon",
+        "num": 269
+    },
+    "Lotad": {
+        "evos": [
+            "Lombre"
+        ],
+        "prevo": null,
+        "num": 270
+    },
+    "Lombre": {
+        "evos": [
+            "Ludicolo"
+        ],
+        "prevo": "Lotad",
+        "num": 271
+    },
+    "Ludicolo": {
+        "evos": [],
+        "prevo": "Lombre",
+        "num": 272
+    },
+    "Seedot": {
+        "evos": [
+            "Nuzleaf"
+        ],
+        "prevo": null,
+        "num": 273
+    },
+    "Nuzleaf": {
+        "evos": [
+            "Shiftry"
+        ],
+        "prevo": "Seedot",
+        "num": 274
+    },
+    "Shiftry": {
+        "evos": [],
+        "prevo": "Nuzleaf",
+        "num": 275
+    },
+    "Taillow": {
+        "evos": [
+            "Swellow"
+        ],
+        "prevo": null,
+        "num": 276
+    },
+    "Swellow": {
+        "evos": [],
+        "prevo": "Taillow",
+        "num": 277
+    },
+    "Wingull": {
+        "evos": [
+            "Pelipper"
+        ],
+        "prevo": null,
+        "num": 278
+    },
+    "Pelipper": {
+        "evos": [],
+        "prevo": "Wingull",
+        "num": 279
+    },
+    "Ralts": {
+        "evos": [
+            "Kirlia"
+        ],
+        "prevo": null,
+        "num": 280
+    },
+    "Kirlia": {
+        "evos": [
+            "Gardevoir",
+            "Gallade"
+        ],
+        "prevo": "Ralts",
+        "num": 281
+    },
+    "Gardevoir": {
+        "evos": [],
+        "prevo": "Kirlia",
+        "num": 282
+    },
+    "Gardevoir-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 282
+    },
+    "Surskit": {
+        "evos": [
+            "Masquerain"
+        ],
+        "prevo": null,
+        "num": 283
+    },
+    "Masquerain": {
+        "evos": [],
+        "prevo": "Surskit",
+        "num": 284
+    },
+    "Shroomish": {
+        "evos": [
+            "Breloom"
+        ],
+        "prevo": null,
+        "num": 285
+    },
+    "Breloom": {
+        "evos": [],
+        "prevo": "Shroomish",
+        "num": 286
+    },
+    "Slakoth": {
+        "evos": [
+            "Vigoroth"
+        ],
+        "prevo": null,
+        "num": 287
+    },
+    "Vigoroth": {
+        "evos": [
+            "Slaking"
+        ],
+        "prevo": "Slakoth",
+        "num": 288
+    },
+    "Slaking": {
+        "evos": [],
+        "prevo": "Vigoroth",
+        "num": 289
+    },
+    "Nincada": {
+        "evos": [
+            "Ninjask",
+            "Shedinja"
+        ],
+        "prevo": null,
+        "num": 290
+    },
+    "Ninjask": {
+        "evos": [],
+        "prevo": "Nincada",
+        "num": 291
+    },
+    "Shedinja": {
+        "evos": [],
+        "prevo": "Nincada",
+        "num": 292
+    },
+    "Whismur": {
+        "evos": [
+            "Loudred"
+        ],
+        "prevo": null,
+        "num": 293
+    },
+    "Loudred": {
+        "evos": [
+            "Exploud"
+        ],
+        "prevo": "Whismur",
+        "num": 294
+    },
+    "Exploud": {
+        "evos": [],
+        "prevo": "Loudred",
+        "num": 295
+    },
+    "Makuhita": {
+        "evos": [
+            "Hariyama"
+        ],
+        "prevo": null,
+        "num": 296
+    },
+    "Hariyama": {
+        "evos": [],
+        "prevo": "Makuhita",
+        "num": 297
+    },
+    "Azurill": {
+        "evos": [
+            "Marill"
+        ],
+        "prevo": null,
+        "num": 298
+    },
+    "Nosepass": {
+        "evos": [
+            "Probopass"
+        ],
+        "prevo": null,
+        "num": 299
+    },
+    "Skitty": {
+        "evos": [
+            "Delcatty"
+        ],
+        "prevo": null,
+        "num": 300
+    },
+    "Delcatty": {
+        "evos": [],
+        "prevo": "Skitty",
+        "num": 301
+    },
+    "Sableye": {
+        "evos": [],
+        "prevo": null,
+        "num": 302
+    },
+    "Sableye-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 302
+    },
+    "Mawile": {
+        "evos": [],
+        "prevo": null,
+        "num": 303
+    },
+    "Mawile-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 303
+    },
+    "Aron": {
+        "evos": [
+            "Lairon"
+        ],
+        "prevo": null,
+        "num": 304
+    },
+    "Lairon": {
+        "evos": [
+            "Aggron"
+        ],
+        "prevo": "Aron",
+        "num": 305
+    },
+    "Aggron": {
+        "evos": [],
+        "prevo": "Lairon",
+        "num": 306
+    },
+    "Aggron-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 306
+    },
+    "Meditite": {
+        "evos": [
+            "Medicham"
+        ],
+        "prevo": null,
+        "num": 307
+    },
+    "Medicham": {
+        "evos": [],
+        "prevo": "Meditite",
+        "num": 308
+    },
+    "Medicham-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 308
+    },
+    "Electrike": {
+        "evos": [
+            "Manectric"
+        ],
+        "prevo": null,
+        "num": 309
+    },
+    "Manectric": {
+        "evos": [],
+        "prevo": "Electrike",
+        "num": 310
+    },
+    "Manectric-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 310
+    },
+    "Plusle": {
+        "evos": [],
+        "prevo": null,
+        "num": 311
+    },
+    "Minun": {
+        "evos": [],
+        "prevo": null,
+        "num": 312
+    },
+    "Volbeat": {
+        "evos": [],
+        "prevo": null,
+        "num": 313
+    },
+    "Illumise": {
+        "evos": [],
+        "prevo": null,
+        "num": 314
+    },
+    "Roselia": {
+        "evos": [
+            "Roserade"
+        ],
+        "prevo": "Budew",
+        "num": 315
+    },
+    "Gulpin": {
+        "evos": [
+            "Swalot"
+        ],
+        "prevo": null,
+        "num": 316
+    },
+    "Swalot": {
+        "evos": [],
+        "prevo": "Gulpin",
+        "num": 317
+    },
+    "Carvanha": {
+        "evos": [
+            "Sharpedo"
+        ],
+        "prevo": null,
+        "num": 318
+    },
+    "Sharpedo": {
+        "evos": [],
+        "prevo": "Carvanha",
+        "num": 319
+    },
+    "Sharpedo-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 319
+    },
+    "Wailmer": {
+        "evos": [
+            "Wailord"
+        ],
+        "prevo": null,
+        "num": 320
+    },
+    "Wailord": {
+        "evos": [],
+        "prevo": "Wailmer",
+        "num": 321
+    },
+    "Numel": {
+        "evos": [
+            "Camerupt"
+        ],
+        "prevo": null,
+        "num": 322
+    },
+    "Camerupt": {
+        "evos": [],
+        "prevo": "Numel",
+        "num": 323
+    },
+    "Camerupt-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 323
+    },
+    "Torkoal": {
+        "evos": [],
+        "prevo": null,
+        "num": 324
+    },
+    "Spoink": {
+        "evos": [
+            "Grumpig"
+        ],
+        "prevo": null,
+        "num": 325
+    },
+    "Grumpig": {
+        "evos": [],
+        "prevo": "Spoink",
+        "num": 326
+    },
+    "Spinda": {
+        "evos": [],
+        "prevo": null,
+        "num": 327
+    },
+    "Trapinch": {
+        "evos": [
+            "Vibrava"
+        ],
+        "prevo": null,
+        "num": 328
+    },
+    "Vibrava": {
+        "evos": [
+            "Flygon"
+        ],
+        "prevo": "Trapinch",
+        "num": 329
+    },
+    "Flygon": {
+        "evos": [],
+        "prevo": "Vibrava",
+        "num": 330
+    },
+    "Cacnea": {
+        "evos": [
+            "Cacturne"
+        ],
+        "prevo": null,
+        "num": 331
+    },
+    "Cacturne": {
+        "evos": [],
+        "prevo": "Cacnea",
+        "num": 332
+    },
+    "Swablu": {
+        "evos": [
+            "Altaria"
+        ],
+        "prevo": null,
+        "num": 333
+    },
+    "Altaria": {
+        "evos": [],
+        "prevo": "Swablu",
+        "num": 334
+    },
+    "Altaria-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 334
+    },
+    "Zangoose": {
+        "evos": [],
+        "prevo": null,
+        "num": 335
+    },
+    "Seviper": {
+        "evos": [],
+        "prevo": null,
+        "num": 336
+    },
+    "Lunatone": {
+        "evos": [],
+        "prevo": null,
+        "num": 337
+    },
+    "Solrock": {
+        "evos": [],
+        "prevo": null,
+        "num": 338
+    },
+    "Barboach": {
+        "evos": [
+            "Whiscash"
+        ],
+        "prevo": null,
+        "num": 339
+    },
+    "Whiscash": {
+        "evos": [],
+        "prevo": "Barboach",
+        "num": 340
+    },
+    "Corphish": {
+        "evos": [
+            "Crawdaunt"
+        ],
+        "prevo": null,
+        "num": 341
+    },
+    "Crawdaunt": {
+        "evos": [],
+        "prevo": "Corphish",
+        "num": 342
+    },
+    "Baltoy": {
+        "evos": [
+            "Claydol"
+        ],
+        "prevo": null,
+        "num": 343
+    },
+    "Claydol": {
+        "evos": [],
+        "prevo": "Baltoy",
+        "num": 344
+    },
+    "Lileep": {
+        "evos": [
+            "Cradily"
+        ],
+        "prevo": null,
+        "num": 345
+    },
+    "Cradily": {
+        "evos": [],
+        "prevo": "Lileep",
+        "num": 346
+    },
+    "Anorith": {
+        "evos": [
+            "Armaldo"
+        ],
+        "prevo": null,
+        "num": 347
+    },
+    "Armaldo": {
+        "evos": [],
+        "prevo": "Anorith",
+        "num": 348
+    },
+    "Feebas": {
+        "evos": [
+            "Milotic"
+        ],
+        "prevo": null,
+        "num": 349
+    },
+    "Milotic": {
+        "evos": [],
+        "prevo": "Feebas",
+        "num": 350
+    },
+    "Castform": {
+        "evos": [],
+        "prevo": null,
+        "num": 351
+    },
+    "Castform-Sunny": {
+        "evos": [],
+        "prevo": null,
+        "num": 351
+    },
+    "Castform-Rainy": {
+        "evos": [],
+        "prevo": null,
+        "num": 351
+    },
+    "Castform-Snowy": {
+        "evos": [],
+        "prevo": null,
+        "num": 351
+    },
+    "Kecleon": {
+        "evos": [],
+        "prevo": null,
+        "num": 352
+    },
+    "Shuppet": {
+        "evos": [
+            "Banette"
+        ],
+        "prevo": null,
+        "num": 353
+    },
+    "Banette": {
+        "evos": [],
+        "prevo": "Shuppet",
+        "num": 354
+    },
+    "Banette-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 354
+    },
+    "Duskull": {
+        "evos": [
+            "Dusclops"
+        ],
+        "prevo": null,
+        "num": 355
+    },
+    "Dusclops": {
+        "evos": [
+            "Dusknoir"
+        ],
+        "prevo": "Duskull",
+        "num": 356
+    },
+    "Tropius": {
+        "evos": [],
+        "prevo": null,
+        "num": 357
+    },
+    "Chimecho": {
+        "evos": [],
+        "prevo": "Chingling",
+        "num": 358
+    },
+    "Absol": {
+        "evos": [],
+        "prevo": null,
+        "num": 359
+    },
+    "Absol-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 359
+    },
+    "Wynaut": {
+        "evos": [
+            "Wobbuffet"
+        ],
+        "prevo": null,
+        "num": 360
+    },
+    "Snorunt": {
+        "evos": [
+            "Glalie",
+            "Froslass"
+        ],
+        "prevo": null,
+        "num": 361
+    },
+    "Glalie": {
+        "evos": [],
+        "prevo": "Snorunt",
+        "num": 362
+    },
+    "Glalie-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 362
+    },
+    "Spheal": {
+        "evos": [
+            "Sealeo"
+        ],
+        "prevo": null,
+        "num": 363
+    },
+    "Sealeo": {
+        "evos": [
+            "Walrein"
+        ],
+        "prevo": "Spheal",
+        "num": 364
+    },
+    "Walrein": {
+        "evos": [],
+        "prevo": "Sealeo",
+        "num": 365
+    },
+    "Clamperl": {
+        "evos": [
+            "Huntail",
+            "Gorebyss"
+        ],
+        "prevo": null,
+        "num": 366
+    },
+    "Huntail": {
+        "evos": [],
+        "prevo": "Clamperl",
+        "num": 367
+    },
+    "Gorebyss": {
+        "evos": [],
+        "prevo": "Clamperl",
+        "num": 368
+    },
+    "Relicanth": {
+        "evos": [],
+        "prevo": null,
+        "num": 369
+    },
+    "Luvdisc": {
+        "evos": [],
+        "prevo": null,
+        "num": 370
+    },
+    "Bagon": {
+        "evos": [
+            "Shelgon"
+        ],
+        "prevo": null,
+        "num": 371
+    },
+    "Shelgon": {
+        "evos": [
+            "Salamence"
+        ],
+        "prevo": "Bagon",
+        "num": 372
+    },
+    "Salamence": {
+        "evos": [],
+        "prevo": "Shelgon",
+        "num": 373
+    },
+    "Salamence-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 373
+    },
+    "Beldum": {
+        "evos": [
+            "Metang"
+        ],
+        "prevo": null,
+        "num": 374
+    },
+    "Metang": {
+        "evos": [
+            "Metagross"
+        ],
+        "prevo": "Beldum",
+        "num": 375
+    },
+    "Metagross": {
+        "evos": [],
+        "prevo": "Metang",
+        "num": 376
+    },
+    "Metagross-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 376
+    },
+    "Regirock": {
+        "evos": [],
+        "prevo": null,
+        "num": 377
+    },
+    "Regice": {
+        "evos": [],
+        "prevo": null,
+        "num": 378
+    },
+    "Registeel": {
+        "evos": [],
+        "prevo": null,
+        "num": 379
+    },
+    "Latias": {
+        "evos": [],
+        "prevo": null,
+        "num": 380
+    },
+    "Latias-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 380
+    },
+    "Latios": {
+        "evos": [],
+        "prevo": null,
+        "num": 381
+    },
+    "Latios-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 381
+    },
+    "Kyogre": {
+        "evos": [],
+        "prevo": null,
+        "num": 382
+    },
+    "Kyogre-Primal": {
+        "evos": [],
+        "prevo": null,
+        "num": 382
+    },
+    "Groudon": {
+        "evos": [],
+        "prevo": null,
+        "num": 383
+    },
+    "Groudon-Primal": {
+        "evos": [],
+        "prevo": null,
+        "num": 383
+    },
+    "Rayquaza": {
+        "evos": [],
+        "prevo": null,
+        "num": 384
+    },
+    "Rayquaza-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 384
+    },
+    "Jirachi": {
+        "evos": [],
+        "prevo": null,
+        "num": 385
+    },
+    "Deoxys": {
+        "evos": [],
+        "prevo": null,
+        "num": 386
+    },
+    "Deoxys-Attack": {
+        "evos": [],
+        "prevo": null,
+        "num": 386
+    },
+    "Deoxys-Defense": {
+        "evos": [],
+        "prevo": null,
+        "num": 386
+    },
+    "Deoxys-Speed": {
+        "evos": [],
+        "prevo": null,
+        "num": 386
+    },
+    "Turtwig": {
+        "evos": [
+            "Grotle"
+        ],
+        "prevo": null,
+        "num": 387
+    },
+    "Grotle": {
+        "evos": [
+            "Torterra"
+        ],
+        "prevo": "Turtwig",
+        "num": 388
+    },
+    "Torterra": {
+        "evos": [],
+        "prevo": "Grotle",
+        "num": 389
+    },
+    "Chimchar": {
+        "evos": [
+            "Monferno"
+        ],
+        "prevo": null,
+        "num": 390
+    },
+    "Monferno": {
+        "evos": [
+            "Infernape"
+        ],
+        "prevo": "Chimchar",
+        "num": 391
+    },
+    "Infernape": {
+        "evos": [],
+        "prevo": "Monferno",
+        "num": 392
+    },
+    "Piplup": {
+        "evos": [
+            "Prinplup"
+        ],
+        "prevo": null,
+        "num": 393
+    },
+    "Prinplup": {
+        "evos": [
+            "Empoleon"
+        ],
+        "prevo": "Piplup",
+        "num": 394
+    },
+    "Empoleon": {
+        "evos": [],
+        "prevo": "Prinplup",
+        "num": 395
+    },
+    "Starly": {
+        "evos": [
+            "Staravia"
+        ],
+        "prevo": null,
+        "num": 396
+    },
+    "Staravia": {
+        "evos": [
+            "Staraptor"
+        ],
+        "prevo": "Starly",
+        "num": 397
+    },
+    "Staraptor": {
+        "evos": [],
+        "prevo": "Staravia",
+        "num": 398
+    },
+    "Bidoof": {
+        "evos": [
+            "Bibarel"
+        ],
+        "prevo": null,
+        "num": 399
+    },
+    "Bibarel": {
+        "evos": [],
+        "prevo": "Bidoof",
+        "num": 400
+    },
+    "Kricketot": {
+        "evos": [
+            "Kricketune"
+        ],
+        "prevo": null,
+        "num": 401
+    },
+    "Kricketune": {
+        "evos": [],
+        "prevo": "Kricketot",
+        "num": 402
+    },
+    "Shinx": {
+        "evos": [
+            "Luxio"
+        ],
+        "prevo": null,
+        "num": 403
+    },
+    "Luxio": {
+        "evos": [
+            "Luxray"
+        ],
+        "prevo": "Shinx",
+        "num": 404
+    },
+    "Luxray": {
+        "evos": [],
+        "prevo": "Luxio",
+        "num": 405
+    },
+    "Budew": {
+        "evos": [
+            "Roselia"
+        ],
+        "prevo": null,
+        "num": 406
+    },
+    "Roserade": {
+        "evos": [],
+        "prevo": "Roselia",
+        "num": 407
+    },
+    "Cranidos": {
+        "evos": [
+            "Rampardos"
+        ],
+        "prevo": null,
+        "num": 408
+    },
+    "Rampardos": {
+        "evos": [],
+        "prevo": "Cranidos",
+        "num": 409
+    },
+    "Shieldon": {
+        "evos": [
+            "Bastiodon"
+        ],
+        "prevo": null,
+        "num": 410
+    },
+    "Bastiodon": {
+        "evos": [],
+        "prevo": "Shieldon",
+        "num": 411
+    },
+    "Burmy": {
+        "evos": [
+            "Wormadam",
+            "Wormadam-Sandy",
+            "Wormadam-Trash",
+            "Mothim"
+        ],
+        "prevo": null,
+        "num": 412
+    },
+    "Wormadam": {
+        "evos": [],
+        "prevo": "Burmy",
+        "num": 413
+    },
+    "Wormadam-Sandy": {
+        "evos": [],
+        "prevo": "Burmy",
+        "num": 413
+    },
+    "Wormadam-Trash": {
+        "evos": [],
+        "prevo": "Burmy",
+        "num": 413
+    },
+    "Mothim": {
+        "evos": [],
+        "prevo": "Burmy",
+        "num": 414
+    },
+    "Combee": {
+        "evos": [
+            "Vespiquen"
+        ],
+        "prevo": null,
+        "num": 415
+    },
+    "Vespiquen": {
+        "evos": [],
+        "prevo": "Combee",
+        "num": 416
+    },
+    "Pachirisu": {
+        "evos": [],
+        "prevo": null,
+        "num": 417
+    },
+    "Buizel": {
+        "evos": [
+            "Floatzel"
+        ],
+        "prevo": null,
+        "num": 418
+    },
+    "Floatzel": {
+        "evos": [],
+        "prevo": "Buizel",
+        "num": 419
+    },
+    "Cherubi": {
+        "evos": [
+            "Cherrim"
+        ],
+        "prevo": null,
+        "num": 420
+    },
+    "Cherrim": {
+        "evos": [],
+        "prevo": "Cherubi",
+        "num": 421
+    },
+    "Cherrim-Sunshine": {
+        "evos": [],
+        "prevo": null,
+        "num": 421
+    },
+    "Shellos": {
+        "evos": [
+            "Gastrodon"
+        ],
+        "prevo": null,
+        "num": 422
+    },
+    "Gastrodon": {
+        "evos": [],
+        "prevo": "Shellos",
+        "num": 423
+    },
+    "Gastrodon East": {
+        "evos": [],
+        "prevo": "Shellos",
+        "num": 423
+    },
+    "Ambipom": {
+        "evos": [],
+        "prevo": "Aipom",
+        "num": 424
+    },
+    "Drifloon": {
+        "evos": [
+            "Drifblim"
+        ],
+        "prevo": null,
+        "num": 425
+    },
+    "Drifblim": {
+        "evos": [],
+        "prevo": "Drifloon",
+        "num": 426
+    },
+    "Buneary": {
+        "evos": [
+            "Lopunny"
+        ],
+        "prevo": null,
+        "num": 427
+    },
+    "Lopunny": {
+        "evos": [],
+        "prevo": "Buneary",
+        "num": 428
+    },
+    "Lopunny-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 428
+    },
+    "Mismagius": {
+        "evos": [],
+        "prevo": "Misdreavus",
+        "num": 429
+    },
+    "Honchkrow": {
+        "evos": [],
+        "prevo": "Murkrow",
+        "num": 430
+    },
+    "Glameow": {
+        "evos": [
+            "Purugly"
+        ],
+        "prevo": null,
+        "num": 431
+    },
+    "Purugly": {
+        "evos": [],
+        "prevo": "Glameow",
+        "num": 432
+    },
+    "Chingling": {
+        "evos": [
+            "Chimecho"
+        ],
+        "prevo": null,
+        "num": 433
+    },
+    "Stunky": {
+        "evos": [
+            "Skuntank"
+        ],
+        "prevo": null,
+        "num": 434
+    },
+    "Skuntank": {
+        "evos": [],
+        "prevo": "Stunky",
+        "num": 435
+    },
+    "Bronzor": {
+        "evos": [
+            "Bronzong"
+        ],
+        "prevo": null,
+        "num": 436
+    },
+    "Bronzong": {
+        "evos": [],
+        "prevo": "Bronzor",
+        "num": 437
+    },
+    "Bonsly": {
+        "evos": [
+            "Sudowoodo"
+        ],
+        "prevo": null,
+        "num": 438
+    },
+    "Mime Jr.": {
+        "evos": [
+            "Mr. Mime",
+            "Mr. Mime-Galar"
+        ],
+        "prevo": null,
+        "num": 439
+    },
+    "Happiny": {
+        "evos": [
+            "Chansey"
+        ],
+        "prevo": null,
+        "num": 440
+    },
+    "Chatot": {
+        "evos": [],
+        "prevo": null,
+        "num": 441
+    },
+    "Spiritomb": {
+        "evos": [],
+        "prevo": null,
+        "num": 442
+    },
+    "Gible": {
+        "evos": [
+            "Gabite"
+        ],
+        "prevo": null,
+        "num": 443
+    },
+    "Gabite": {
+        "evos": [
+            "Garchomp"
+        ],
+        "prevo": "Gible",
+        "num": 444
+    },
+    "Garchomp": {
+        "evos": [],
+        "prevo": "Gabite",
+        "num": 445
+    },
+    "Garchomp-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 445
+    },
+    "Munchlax": {
+        "evos": [
+            "Snorlax"
+        ],
+        "prevo": null,
+        "num": 446
+    },
+    "Riolu": {
+        "evos": [
+            "Lucario"
+        ],
+        "prevo": null,
+        "num": 447
+    },
+    "Lucario": {
+        "evos": [],
+        "prevo": "Riolu",
+        "num": 448
+    },
+    "Lucario-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 448
+    },
+    "Hippopotas": {
+        "evos": [
+            "Hippowdon"
+        ],
+        "prevo": null,
+        "num": 449
+    },
+    "Hippowdon": {
+        "evos": [],
+        "prevo": "Hippopotas",
+        "num": 450
+    },
+    "Skorupi": {
+        "evos": [
+            "Drapion"
+        ],
+        "prevo": null,
+        "num": 451
+    },
+    "Drapion": {
+        "evos": [],
+        "prevo": "Skorupi",
+        "num": 452
+    },
+    "Croagunk": {
+        "evos": [
+            "Toxicroak"
+        ],
+        "prevo": null,
+        "num": 453
+    },
+    "Toxicroak": {
+        "evos": [],
+        "prevo": "Croagunk",
+        "num": 454
+    },
+    "Carnivine": {
+        "evos": [],
+        "prevo": null,
+        "num": 455
+    },
+    "Finneon": {
+        "evos": [
+            "Lumineon"
+        ],
+        "prevo": null,
+        "num": 456
+    },
+    "Lumineon": {
+        "evos": [],
+        "prevo": "Finneon",
+        "num": 457
+    },
+    "Mantyke": {
+        "evos": [
+            "Mantine"
+        ],
+        "prevo": null,
+        "num": 458
+    },
+    "Snover": {
+        "evos": [
+            "Abomasnow"
+        ],
+        "prevo": null,
+        "num": 459
+    },
+    "Abomasnow": {
+        "evos": [],
+        "prevo": "Snover",
+        "num": 460
+    },
+    "Abomasnow-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 460
+    },
+    "Weavile": {
+        "evos": [],
+        "prevo": "Sneasel",
+        "num": 461
+    },
+    "Magnezone": {
+        "evos": [],
+        "prevo": "Magneton",
+        "num": 462
+    },
+    "Lickilicky": {
+        "evos": [],
+        "prevo": "Lickitung",
+        "num": 463
+    },
+    "Rhyperior": {
+        "evos": [],
+        "prevo": "Rhydon",
+        "num": 464
+    },
+    "Tangrowth": {
+        "evos": [],
+        "prevo": "Tangela",
+        "num": 465
+    },
+    "Electivire": {
+        "evos": [],
+        "prevo": "Electabuzz",
+        "num": 466
+    },
+    "Magmortar": {
+        "evos": [],
+        "prevo": "Magmar",
+        "num": 467
+    },
+    "Togekiss": {
+        "evos": [],
+        "prevo": "Togetic",
+        "num": 468
+    },
+    "Yanmega": {
+        "evos": [],
+        "prevo": "Yanma",
+        "num": 469
+    },
+    "Leafeon": {
+        "evos": [],
+        "prevo": "Eevee",
+        "num": 470
+    },
+    "Glaceon": {
+        "evos": [],
+        "prevo": "Eevee",
+        "num": 471
+    },
+    "Gliscor": {
+        "evos": [],
+        "prevo": "Gligar",
+        "num": 472
+    },
+    "Mamoswine": {
+        "evos": [],
+        "prevo": "Piloswine",
+        "num": 473
+    },
+    "Porygon-Z": {
+        "evos": [],
+        "prevo": "Porygon2",
+        "num": 474
+    },
+    "Gallade": {
+        "evos": [],
+        "prevo": "Kirlia",
+        "num": 475
+    },
+    "Gallade-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 475
+    },
+    "Probopass": {
+        "evos": [],
+        "prevo": "Nosepass",
+        "num": 476
+    },
+    "Dusknoir": {
+        "evos": [],
+        "prevo": "Dusclops",
+        "num": 477
+    },
+    "Froslass": {
+        "evos": [],
+        "prevo": "Snorunt",
+        "num": 478
+    },
+    "Rotom": {
+        "evos": [],
+        "prevo": null,
+        "num": 479
+    },
+    "Rotom-Heat": {
+        "evos": [],
+        "prevo": null,
+        "num": 479
+    },
+    "Rotom-Wash": {
+        "evos": [],
+        "prevo": null,
+        "num": 479
+    },
+    "Rotom-Frost": {
+        "evos": [],
+        "prevo": null,
+        "num": 479
+    },
+    "Rotom-Fan": {
+        "evos": [],
+        "prevo": null,
+        "num": 479
+    },
+    "Rotom-Mow": {
+        "evos": [],
+        "prevo": null,
+        "num": 479
+    },
+    "Uxie": {
+        "evos": [],
+        "prevo": null,
+        "num": 480
+    },
+    "Mesprit": {
+        "evos": [],
+        "prevo": null,
+        "num": 481
+    },
+    "Azelf": {
+        "evos": [],
+        "prevo": null,
+        "num": 482
+    },
+    "Dialga": {
+        "evos": [],
+        "prevo": null,
+        "num": 483
+    },
+    "Dialga-Origin": {
+        "evos": [],
+        "prevo": null,
+        "num": 483
+    },
+    "Palkia": {
+        "evos": [],
+        "prevo": null,
+        "num": 484
+    },
+    "Palkia-Origin": {
+        "evos": [],
+        "prevo": null,
+        "num": 484
+    },
+    "Heatran": {
+        "evos": [],
+        "prevo": null,
+        "num": 485
+    },
+    "Regigigas": {
+        "evos": [],
+        "prevo": null,
+        "num": 486
+    },
+    "Giratina": {
+        "evos": [],
+        "prevo": null,
+        "num": 487
+    },
+    "Giratina-Origin": {
+        "evos": [],
+        "prevo": null,
+        "num": 487
+    },
+    "Cresselia": {
+        "evos": [],
+        "prevo": null,
+        "num": 488
+    },
+    "Phione": {
+        "evos": [],
+        "prevo": null,
+        "num": 489
+    },
+    "Manaphy": {
+        "evos": [],
+        "prevo": null,
+        "num": 490
+    },
+    "Darkrai": {
+        "evos": [],
+        "prevo": null,
+        "num": 491
+    },
+    "Shaymin": {
+        "evos": [],
+        "prevo": null,
+        "num": 492
+    },
+    "Shaymin-Sky": {
+        "evos": [],
+        "prevo": null,
+        "num": 492
+    },
+    "Arceus": {
+        "evos": [],
+        "prevo": null,
+        "num": 493
+    },
+    "Arceus-Bug": {
+        "evos": [],
+        "prevo": null,
+        "num": 493
+    },
+    "Arceus-Dark": {
+        "evos": [],
+        "prevo": null,
+        "num": 493
+    },
+    "Arceus-Dragon": {
+        "evos": [],
+        "prevo": null,
+        "num": 493
+    },
+    "Arceus-Electric": {
+        "evos": [],
+        "prevo": null,
+        "num": 493
+    },
+    "Arceus-Fairy": {
+        "evos": [],
+        "prevo": null,
+        "num": 493
+    },
+    "Arceus-Fighting": {
+        "evos": [],
+        "prevo": null,
+        "num": 493
+    },
+    "Arceus-Fire": {
+        "evos": [],
+        "prevo": null,
+        "num": 493
+    },
+    "Arceus-Flying": {
+        "evos": [],
+        "prevo": null,
+        "num": 493
+    },
+    "Arceus-Ghost": {
+        "evos": [],
+        "prevo": null,
+        "num": 493
+    },
+    "Arceus-Grass": {
+        "evos": [],
+        "prevo": null,
+        "num": 493
+    },
+    "Arceus-Ground": {
+        "evos": [],
+        "prevo": null,
+        "num": 493
+    },
+    "Arceus-Ice": {
+        "evos": [],
+        "prevo": null,
+        "num": 493
+    },
+    "Arceus-Poison": {
+        "evos": [],
+        "prevo": null,
+        "num": 493
+    },
+    "Arceus-Psychic": {
+        "evos": [],
+        "prevo": null,
+        "num": 493
+    },
+    "Arceus-Rock": {
+        "evos": [],
+        "prevo": null,
+        "num": 493
+    },
+    "Arceus-Steel": {
+        "evos": [],
+        "prevo": null,
+        "num": 493
+    },
+    "Arceus-Water": {
+        "evos": [],
+        "prevo": null,
+        "num": 493
+    },
+    "Victini": {
+        "evos": [],
+        "prevo": null,
+        "num": 494
+    },
+    "Snivy": {
+        "evos": [
+            "Servine"
+        ],
+        "prevo": null,
+        "num": 495
+    },
+    "Servine": {
+        "evos": [
+            "Serperior"
+        ],
+        "prevo": "Snivy",
+        "num": 496
+    },
+    "Serperior": {
+        "evos": [],
+        "prevo": "Servine",
+        "num": 497
+    },
+    "Tepig": {
+        "evos": [
+            "Pignite"
+        ],
+        "prevo": null,
+        "num": 498
+    },
+    "Pignite": {
+        "evos": [
+            "Emboar"
+        ],
+        "prevo": "Tepig",
+        "num": 499
+    },
+    "Emboar": {
+        "evos": [],
+        "prevo": "Pignite",
+        "num": 500
+    },
+    "Oshawott": {
+        "evos": [
+            "Dewott"
+        ],
+        "prevo": null,
+        "num": 501
+    },
+    "Dewott": {
+        "evos": [
+            "Samurott",
+            "Samurott-Hisui"
+        ],
+        "prevo": "Oshawott",
+        "num": 502
+    },
+    "Samurott": {
+        "evos": [],
+        "prevo": "Dewott",
+        "num": 503
+    },
+    "Samurott-Hisui": {
+        "evos": [],
+        "prevo": "Dewott",
+        "num": 503
+    },
+    "Patrat": {
+        "evos": [
+            "Watchog"
+        ],
+        "prevo": null,
+        "num": 504
+    },
+    "Watchog": {
+        "evos": [],
+        "prevo": "Patrat",
+        "num": 505
+    },
+    "Lillipup": {
+        "evos": [
+            "Herdier"
+        ],
+        "prevo": null,
+        "num": 506
+    },
+    "Herdier": {
+        "evos": [
+            "Stoutland"
+        ],
+        "prevo": "Lillipup",
+        "num": 507
+    },
+    "Stoutland": {
+        "evos": [],
+        "prevo": "Herdier",
+        "num": 508
+    },
+    "Purrloin": {
+        "evos": [
+            "Liepard"
+        ],
+        "prevo": null,
+        "num": 509
+    },
+    "Liepard": {
+        "evos": [],
+        "prevo": "Purrloin",
+        "num": 510
+    },
+    "Pansage": {
+        "evos": [
+            "Simisage"
+        ],
+        "prevo": null,
+        "num": 511
+    },
+    "Simisage": {
+        "evos": [],
+        "prevo": "Pansage",
+        "num": 512
+    },
+    "Pansear": {
+        "evos": [
+            "Simisear"
+        ],
+        "prevo": null,
+        "num": 513
+    },
+    "Simisear": {
+        "evos": [],
+        "prevo": "Pansear",
+        "num": 514
+    },
+    "Panpour": {
+        "evos": [
+            "Simipour"
+        ],
+        "prevo": null,
+        "num": 515
+    },
+    "Simipour": {
+        "evos": [],
+        "prevo": "Panpour",
+        "num": 516
+    },
+    "Munna": {
+        "evos": [
+            "Musharna"
+        ],
+        "prevo": null,
+        "num": 517
+    },
+    "Musharna": {
+        "evos": [],
+        "prevo": "Munna",
+        "num": 518
+    },
+    "Pidove": {
+        "evos": [
+            "Tranquill"
+        ],
+        "prevo": null,
+        "num": 519
+    },
+    "Tranquill": {
+        "evos": [
+            "Unfezant"
+        ],
+        "prevo": "Pidove",
+        "num": 520
+    },
+    "Unfezant": {
+        "evos": [],
+        "prevo": "Tranquill",
+        "num": 521
+    },
+    "Blitzle": {
+        "evos": [
+            "Zebstrika"
+        ],
+        "prevo": null,
+        "num": 522
+    },
+    "Zebstrika": {
+        "evos": [],
+        "prevo": "Blitzle",
+        "num": 523
+    },
+    "Roggenrola": {
+        "evos": [
+            "Boldore"
+        ],
+        "prevo": null,
+        "num": 524
+    },
+    "Boldore": {
+        "evos": [
+            "Gigalith"
+        ],
+        "prevo": "Roggenrola",
+        "num": 525
+    },
+    "Gigalith": {
+        "evos": [],
+        "prevo": "Boldore",
+        "num": 526
+    },
+    "Woobat": {
+        "evos": [
+            "Swoobat"
+        ],
+        "prevo": null,
+        "num": 527
+    },
+    "Swoobat": {
+        "evos": [],
+        "prevo": "Woobat",
+        "num": 528
+    },
+    "Drilbur": {
+        "evos": [
+            "Excadrill"
+        ],
+        "prevo": null,
+        "num": 529
+    },
+    "Excadrill": {
+        "evos": [],
+        "prevo": "Drilbur",
+        "num": 530
+    },
+    "Audino": {
+        "evos": [],
+        "prevo": null,
+        "num": 531
+    },
+    "Audino-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 531
+    },
+    "Timburr": {
+        "evos": [
+            "Gurdurr"
+        ],
+        "prevo": null,
+        "num": 532
+    },
+    "Gurdurr": {
+        "evos": [
+            "Conkeldurr"
+        ],
+        "prevo": "Timburr",
+        "num": 533
+    },
+    "Conkeldurr": {
+        "evos": [],
+        "prevo": "Gurdurr",
+        "num": 534
+    },
+    "Tympole": {
+        "evos": [
+            "Palpitoad"
+        ],
+        "prevo": null,
+        "num": 535
+    },
+    "Palpitoad": {
+        "evos": [
+            "Seismitoad"
+        ],
+        "prevo": "Tympole",
+        "num": 536
+    },
+    "Seismitoad": {
+        "evos": [],
+        "prevo": "Palpitoad",
+        "num": 537
+    },
+    "Throh": {
+        "evos": [],
+        "prevo": null,
+        "num": 538
+    },
+    "Sawk": {
+        "evos": [],
+        "prevo": null,
+        "num": 539
+    },
+    "Sewaddle": {
+        "evos": [
+            "Swadloon"
+        ],
+        "prevo": null,
+        "num": 540
+    },
+    "Swadloon": {
+        "evos": [
+            "Leavanny"
+        ],
+        "prevo": "Sewaddle",
+        "num": 541
+    },
+    "Leavanny": {
+        "evos": [],
+        "prevo": "Swadloon",
+        "num": 542
+    },
+    "Venipede": {
+        "evos": [
+            "Whirlipede"
+        ],
+        "prevo": null,
+        "num": 543
+    },
+    "Whirlipede": {
+        "evos": [
+            "Scolipede"
+        ],
+        "prevo": "Venipede",
+        "num": 544
+    },
+    "Scolipede": {
+        "evos": [],
+        "prevo": "Whirlipede",
+        "num": 545
+    },
+    "Cottonee": {
+        "evos": [
+            "Whimsicott"
+        ],
+        "prevo": null,
+        "num": 546
+    },
+    "Whimsicott": {
+        "evos": [],
+        "prevo": "Cottonee",
+        "num": 547
+    },
+    "Petilil": {
+        "evos": [
+            "Lilligant",
+            "Lilligant-Hisui"
+        ],
+        "prevo": null,
+        "num": 548
+    },
+    "Lilligant": {
+        "evos": [],
+        "prevo": "Petilil",
+        "num": 549
+    },
+    "Lilligant-Hisui": {
+        "evos": [],
+        "prevo": "Petilil",
+        "num": 549
+    },
+    "Basculin": {
+        "evos": [],
+        "prevo": null,
+        "num": 550
+    },
+    "Basculin-Blue-Striped": {
+        "evos": [],
+        "prevo": null,
+        "num": 550
+    },
+    "Basculin-White-Striped": {
+        "evos": [
+            "Basculegion",
+            "Basculegion-F"
+        ],
+        "prevo": null,
+        "num": 550
+    },
+    "Sandile": {
+        "evos": [
+            "Krokorok"
+        ],
+        "prevo": null,
+        "num": 551
+    },
+    "Krokorok": {
+        "evos": [
+            "Krookodile"
+        ],
+        "prevo": "Sandile",
+        "num": 552
+    },
+    "Krookodile": {
+        "evos": [],
+        "prevo": "Krokorok",
+        "num": 553
+    },
+    "Darumaka": {
+        "evos": [
+            "Darmanitan"
+        ],
+        "prevo": null,
+        "num": 554
+    },
+    "Darumaka-Galar": {
+        "evos": [
+            "Darmanitan-Galar"
+        ],
+        "prevo": null,
+        "num": 554
+    },
+    "Darmanitan": {
+        "evos": [],
+        "prevo": "Darumaka",
+        "num": 555
+    },
+    "Darmanitan-Zen": {
+        "evos": [],
+        "prevo": null,
+        "num": 555
+    },
+    "Darmanitan-Galar": {
+        "evos": [],
+        "prevo": "Darumaka-Galar",
+        "num": 555
+    },
+    "Darmanitan-Galar-Zen": {
+        "evos": [],
+        "prevo": null,
+        "num": 555
+    },
+    "Maractus": {
+        "evos": [],
+        "prevo": null,
+        "num": 556
+    },
+    "Dwebble": {
+        "evos": [
+            "Crustle"
+        ],
+        "prevo": null,
+        "num": 557
+    },
+    "Crustle": {
+        "evos": [],
+        "prevo": "Dwebble",
+        "num": 558
+    },
+    "Scraggy": {
+        "evos": [
+            "Scrafty"
+        ],
+        "prevo": null,
+        "num": 559
+    },
+    "Scrafty": {
+        "evos": [],
+        "prevo": "Scraggy",
+        "num": 560
+    },
+    "Sigilyph": {
+        "evos": [],
+        "prevo": null,
+        "num": 561
+    },
+    "Yamask": {
+        "evos": [
+            "Cofagrigus"
+        ],
+        "prevo": null,
+        "num": 562
+    },
+    "Yamask-Galar": {
+        "evos": [
+            "Runerigus"
+        ],
+        "prevo": null,
+        "num": 562
+    },
+    "Cofagrigus": {
+        "evos": [],
+        "prevo": "Yamask",
+        "num": 563
+    },
+    "Tirtouga": {
+        "evos": [
+            "Carracosta"
+        ],
+        "prevo": null,
+        "num": 564
+    },
+    "Carracosta": {
+        "evos": [],
+        "prevo": "Tirtouga",
+        "num": 565
+    },
+    "Archen": {
+        "evos": [
+            "Archeops"
+        ],
+        "prevo": null,
+        "num": 566
+    },
+    "Archeops": {
+        "evos": [],
+        "prevo": "Archen",
+        "num": 567
+    },
+    "Trubbish": {
+        "evos": [
+            "Garbodor"
+        ],
+        "prevo": null,
+        "num": 568
+    },
+    "Garbodor": {
+        "evos": [],
+        "prevo": "Trubbish",
+        "num": 569
+    },
+    "Garbodor-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 569
+    },
+    "Zorua": {
+        "evos": [
+            "Zoroark"
+        ],
+        "prevo": null,
+        "num": 570
+    },
+    "Zorua-Hisui": {
+        "evos": [
+            "Zoroark-Hisui"
+        ],
+        "prevo": null,
+        "num": 570
+    },
+    "Zoroark": {
+        "evos": [],
+        "prevo": "Zorua",
+        "num": 571
+    },
+    "Zoroark-Hisui": {
+        "evos": [],
+        "prevo": "Zorua-Hisui",
+        "num": 571
+    },
+    "Minccino": {
+        "evos": [
+            "Cinccino"
+        ],
+        "prevo": null,
+        "num": 572
+    },
+    "Cinccino": {
+        "evos": [],
+        "prevo": "Minccino",
+        "num": 573
+    },
+    "Gothita": {
+        "evos": [
+            "Gothorita"
+        ],
+        "prevo": null,
+        "num": 574
+    },
+    "Gothorita": {
+        "evos": [
+            "Gothitelle"
+        ],
+        "prevo": "Gothita",
+        "num": 575
+    },
+    "Gothitelle": {
+        "evos": [],
+        "prevo": "Gothorita",
+        "num": 576
+    },
+    "Solosis": {
+        "evos": [
+            "Duosion"
+        ],
+        "prevo": null,
+        "num": 577
+    },
+    "Duosion": {
+        "evos": [
+            "Reuniclus"
+        ],
+        "prevo": "Solosis",
+        "num": 578
+    },
+    "Reuniclus": {
+        "evos": [],
+        "prevo": "Duosion",
+        "num": 579
+    },
+    "Ducklett": {
+        "evos": [
+            "Swanna"
+        ],
+        "prevo": null,
+        "num": 580
+    },
+    "Swanna": {
+        "evos": [],
+        "prevo": "Ducklett",
+        "num": 581
+    },
+    "Vanillite": {
+        "evos": [
+            "Vanillish"
+        ],
+        "prevo": null,
+        "num": 582
+    },
+    "Vanillish": {
+        "evos": [
+            "Vanilluxe"
+        ],
+        "prevo": "Vanillite",
+        "num": 583
+    },
+    "Vanilluxe": {
+        "evos": [],
+        "prevo": "Vanillish",
+        "num": 584
+    },
+    "Deerling": {
+        "evos": [
+            "Sawsbuck"
+        ],
+        "prevo": null,
+        "num": 585
+    },
+    "Sawsbuck": {
+        "evos": [],
+        "prevo": "Deerling",
+        "num": 586
+    },
+    "Emolga": {
+        "evos": [],
+        "prevo": null,
+        "num": 587
+    },
+    "Karrablast": {
+        "evos": [
+            "Escavalier"
+        ],
+        "prevo": null,
+        "num": 588
+    },
+    "Escavalier": {
+        "evos": [],
+        "prevo": "Karrablast",
+        "num": 589
+    },
+    "Foongus": {
+        "evos": [
+            "Amoonguss"
+        ],
+        "prevo": null,
+        "num": 590
+    },
+    "Amoonguss": {
+        "evos": [],
+        "prevo": "Foongus",
+        "num": 591
+    },
+    "Frillish": {
+        "evos": [
+            "Jellicent"
+        ],
+        "prevo": null,
+        "num": 592
+    },
+    "Jellicent": {
+        "evos": [],
+        "prevo": "Frillish",
+        "num": 593
+    },
+    "Alomomola": {
+        "evos": [],
+        "prevo": null,
+        "num": 594
+    },
+    "Joltik": {
+        "evos": [
+            "Galvantula"
+        ],
+        "prevo": null,
+        "num": 595
+    },
+    "Galvantula": {
+        "evos": [],
+        "prevo": "Joltik",
+        "num": 596
+    },
+    "Ferroseed": {
+        "evos": [
+            "Ferrothorn"
+        ],
+        "prevo": null,
+        "num": 597
+    },
+    "Ferrothorn": {
+        "evos": [],
+        "prevo": "Ferroseed",
+        "num": 598
+    },
+    "Klink": {
+        "evos": [
+            "Klang"
+        ],
+        "prevo": null,
+        "num": 599
+    },
+    "Klang": {
+        "evos": [
+            "Klinklang"
+        ],
+        "prevo": "Klink",
+        "num": 600
+    },
+    "Klinklang": {
+        "evos": [],
+        "prevo": "Klang",
+        "num": 601
+    },
+    "Tynamo": {
+        "evos": [
+            "Eelektrik"
+        ],
+        "prevo": null,
+        "num": 602
+    },
+    "Eelektrik": {
+        "evos": [
+            "Eelektross"
+        ],
+        "prevo": "Tynamo",
+        "num": 603
+    },
+    "Eelektross": {
+        "evos": [],
+        "prevo": "Eelektrik",
+        "num": 604
+    },
+    "Elgyem": {
+        "evos": [
+            "Beheeyem"
+        ],
+        "prevo": null,
+        "num": 605
+    },
+    "Beheeyem": {
+        "evos": [],
+        "prevo": "Elgyem",
+        "num": 606
+    },
+    "Litwick": {
+        "evos": [
+            "Lampent"
+        ],
+        "prevo": null,
+        "num": 607
+    },
+    "Lampent": {
+        "evos": [
+            "Chandelure"
+        ],
+        "prevo": "Litwick",
+        "num": 608
+    },
+    "Chandelure": {
+        "evos": [],
+        "prevo": "Lampent",
+        "num": 609
+    },
+    "Axew": {
+        "evos": [
+            "Fraxure"
+        ],
+        "prevo": null,
+        "num": 610
+    },
+    "Fraxure": {
+        "evos": [
+            "Haxorus"
+        ],
+        "prevo": "Axew",
+        "num": 611
+    },
+    "Haxorus": {
+        "evos": [],
+        "prevo": "Fraxure",
+        "num": 612
+    },
+    "Cubchoo": {
+        "evos": [
+            "Beartic"
+        ],
+        "prevo": null,
+        "num": 613
+    },
+    "Beartic": {
+        "evos": [],
+        "prevo": "Cubchoo",
+        "num": 614
+    },
+    "Cryogonal": {
+        "evos": [],
+        "prevo": null,
+        "num": 615
+    },
+    "Shelmet": {
+        "evos": [
+            "Accelgor"
+        ],
+        "prevo": null,
+        "num": 616
+    },
+    "Accelgor": {
+        "evos": [],
+        "prevo": "Shelmet",
+        "num": 617
+    },
+    "Stunfisk": {
+        "evos": [],
+        "prevo": null,
+        "num": 618
+    },
+    "Stunfisk-Galar": {
+        "evos": [],
+        "prevo": null,
+        "num": 618
+    },
+    "Mienfoo": {
+        "evos": [
+            "Mienshao"
+        ],
+        "prevo": null,
+        "num": 619
+    },
+    "Mienshao": {
+        "evos": [],
+        "prevo": "Mienfoo",
+        "num": 620
+    },
+    "Druddigon": {
+        "evos": [],
+        "prevo": null,
+        "num": 621
+    },
+    "Golett": {
+        "evos": [
+            "Golurk"
+        ],
+        "prevo": null,
+        "num": 622
+    },
+    "Golurk": {
+        "evos": [],
+        "prevo": "Golett",
+        "num": 623
+    },
+    "Pawniard": {
+        "evos": [
+            "Bisharp"
+        ],
+        "prevo": null,
+        "num": 624
+    },
+    "Bisharp": {
+        "evos": [],
+        "prevo": "Pawniard",
+        "num": 625
+    },
+    "Bouffalant": {
+        "evos": [],
+        "prevo": null,
+        "num": 626
+    },
+    "Rufflet": {
+        "evos": [
+            "Braviary",
+            "Braviary-Hisui"
+        ],
+        "prevo": null,
+        "num": 627
+    },
+    "Braviary": {
+        "evos": [],
+        "prevo": "Rufflet",
+        "num": 628
+    },
+    "Braviary-Hisui": {
+        "evos": [],
+        "prevo": "Rufflet",
+        "num": 628
+    },
+    "Vullaby": {
+        "evos": [
+            "Mandibuzz"
+        ],
+        "prevo": null,
+        "num": 629
+    },
+    "Mandibuzz": {
+        "evos": [],
+        "prevo": "Vullaby",
+        "num": 630
+    },
+    "Heatmor": {
+        "evos": [],
+        "prevo": null,
+        "num": 631
+    },
+    "Durant": {
+        "evos": [],
+        "prevo": null,
+        "num": 632
+    },
+    "Deino": {
+        "evos": [
+            "Zweilous"
+        ],
+        "prevo": null,
+        "num": 633
+    },
+    "Zweilous": {
+        "evos": [
+            "Hydreigon"
+        ],
+        "prevo": "Deino",
+        "num": 634
+    },
+    "Hydreigon": {
+        "evos": [],
+        "prevo": "Zweilous",
+        "num": 635
+    },
+    "Larvesta": {
+        "evos": [
+            "Volcarona"
+        ],
+        "prevo": null,
+        "num": 636
+    },
+    "Volcarona": {
+        "evos": [],
+        "prevo": "Larvesta",
+        "num": 637
+    },
+    "Cobalion": {
+        "evos": [],
+        "prevo": null,
+        "num": 638
+    },
+    "Terrakion": {
+        "evos": [],
+        "prevo": null,
+        "num": 639
+    },
+    "Virizion": {
+        "evos": [],
+        "prevo": null,
+        "num": 640
+    },
+    "Tornadus": {
+        "evos": [],
+        "prevo": null,
+        "num": 641
+    },
+    "Tornadus-Therian": {
+        "evos": [],
+        "prevo": null,
+        "num": 641
+    },
+    "Thundurus": {
+        "evos": [],
+        "prevo": null,
+        "num": 642
+    },
+    "Thundurus-Therian": {
+        "evos": [],
+        "prevo": null,
+        "num": 642
+    },
+    "Reshiram": {
+        "evos": [],
+        "prevo": null,
+        "num": 643
+    },
+    "Zekrom": {
+        "evos": [],
+        "prevo": null,
+        "num": 644
+    },
+    "Landorus": {
+        "evos": [],
+        "prevo": null,
+        "num": 645
+    },
+    "Landorus-Therian": {
+        "evos": [],
+        "prevo": null,
+        "num": 645
+    },
+    "Kyurem": {
+        "evos": [],
+        "prevo": null,
+        "num": 646
+    },
+    "Kyurem-Black": {
+        "evos": [],
+        "prevo": null,
+        "num": 646
+    },
+    "Kyurem-White": {
+        "evos": [],
+        "prevo": null,
+        "num": 646
+    },
+    "Keldeo": {
+        "evos": [],
+        "prevo": null,
+        "num": 647
+    },
+    "Keldeo-Resolute": {
+        "evos": [],
+        "prevo": null,
+        "num": 647
+    },
+    "Meloetta": {
+        "evos": [],
+        "prevo": null,
+        "num": 648
+    },
+    "Meloetta-Pirouette": {
+        "evos": [],
+        "prevo": null,
+        "num": 648
+    },
+    "Genesect": {
+        "evos": [],
+        "prevo": null,
+        "num": 649
+    },
+    "Genesect-Douse": {
+        "evos": [],
+        "prevo": null,
+        "num": 649
+    },
+    "Genesect-Shock": {
+        "evos": [],
+        "prevo": null,
+        "num": 649
+    },
+    "Genesect-Burn": {
+        "evos": [],
+        "prevo": null,
+        "num": 649
+    },
+    "Genesect-Chill": {
+        "evos": [],
+        "prevo": null,
+        "num": 649
+    },
+    "Chespin": {
+        "evos": [
+            "Quilladin"
+        ],
+        "prevo": null,
+        "num": 650
+    },
+    "Quilladin": {
+        "evos": [
+            "Chesnaught"
+        ],
+        "prevo": "Chespin",
+        "num": 651
+    },
+    "Chesnaught": {
+        "evos": [],
+        "prevo": "Quilladin",
+        "num": 652
+    },
+    "Fennekin": {
+        "evos": [
+            "Braixen"
+        ],
+        "prevo": null,
+        "num": 653
+    },
+    "Braixen": {
+        "evos": [
+            "Delphox"
+        ],
+        "prevo": "Fennekin",
+        "num": 654
+    },
+    "Delphox": {
+        "evos": [],
+        "prevo": "Braixen",
+        "num": 655
+    },
+    "Froakie": {
+        "evos": [
+            "Frogadier"
+        ],
+        "prevo": null,
+        "num": 656
+    },
+    "Frogadier": {
+        "evos": [
+            "Greninja"
+        ],
+        "prevo": "Froakie",
+        "num": 657
+    },
+    "Greninja": {
+        "evos": [],
+        "prevo": "Frogadier",
+        "num": 658
+    },
+    "Greninja-Ash": {
+        "evos": [],
+        "prevo": null,
+        "num": 658
+    },
+    "Bunnelby": {
+        "evos": [
+            "Diggersby"
+        ],
+        "prevo": null,
+        "num": 659
+    },
+    "Diggersby": {
+        "evos": [],
+        "prevo": "Bunnelby",
+        "num": 660
+    },
+    "Fletchling": {
+        "evos": [
+            "Fletchinder"
+        ],
+        "prevo": null,
+        "num": 661
+    },
+    "Fletchinder": {
+        "evos": [
+            "Talonflame"
+        ],
+        "prevo": "Fletchling",
+        "num": 662
+    },
+    "Talonflame": {
+        "evos": [],
+        "prevo": "Fletchinder",
+        "num": 663
+    },
+    "Scatterbug": {
+        "evos": [
+            "Spewpa"
+        ],
+        "prevo": null,
+        "num": 664
+    },
+    "Spewpa": {
+        "evos": [
+            "Vivillon"
+        ],
+        "prevo": "Scatterbug",
+        "num": 665
+    },
+    "Vivillon": {
+        "evos": [],
+        "prevo": "Spewpa",
+        "num": 666
+    },
+    "Vivillon-Fancy": {
+        "evos": [],
+        "prevo": null,
+        "num": 666
+    },
+    "Vivillon-Pokeball": {
+        "evos": [],
+        "prevo": null,
+        "num": 666
+    },
+    "Litleo": {
+        "evos": [
+            "Pyroar"
+        ],
+        "prevo": null,
+        "num": 667
+    },
+    "Pyroar": {
+        "evos": [],
+        "prevo": "Litleo",
+        "num": 668
+    },
+    "Flabébé": {
+        "evos": [
+            "Floette"
+        ],
+        "prevo": null,
+        "num": 669
+    },
+    "Floette": {
+        "evos": [
+            "Florges"
+        ],
+        "prevo": "Flabébé",
+        "num": 670
+    },
+    "Floette-Eternal": {
+        "evos": [],
+        "prevo": null,
+        "num": 670
+    },
+    "Florges": {
+        "evos": [],
+        "prevo": "Floette",
+        "num": 671
+    },
+    "Skiddo": {
+        "evos": [
+            "Gogoat"
+        ],
+        "prevo": null,
+        "num": 672
+    },
+    "Gogoat": {
+        "evos": [],
+        "prevo": "Skiddo",
+        "num": 673
+    },
+    "Pancham": {
+        "evos": [
+            "Pangoro"
+        ],
+        "prevo": null,
+        "num": 674
+    },
+    "Pangoro": {
+        "evos": [],
+        "prevo": "Pancham",
+        "num": 675
+    },
+    "Furfrou": {
+        "evos": [],
+        "prevo": null,
+        "num": 676
+    },
+    "Espurr": {
+        "evos": [
+            "Meowstic",
+            "Meowstic-F"
+        ],
+        "prevo": null,
+        "num": 677
+    },
+    "Meowstic": {
+        "evos": [],
+        "prevo": "Espurr",
+        "num": 678
+    },
+    "Meowstic-F": {
+        "evos": [],
+        "prevo": "Espurr",
+        "num": 678
+    },
+    "Honedge": {
+        "evos": [
+            "Doublade"
+        ],
+        "prevo": null,
+        "num": 679
+    },
+    "Doublade": {
+        "evos": [
+            "Aegislash"
+        ],
+        "prevo": "Honedge",
+        "num": 680
+    },
+    "Aegislash": {
+        "evos": [],
+        "prevo": "Doublade",
+        "num": 681
+    },
+    "Aegislash-Blade": {
+        "evos": [],
+        "prevo": null,
+        "num": 681
+    },
+    "Spritzee": {
+        "evos": [
+            "Aromatisse"
+        ],
+        "prevo": null,
+        "num": 682
+    },
+    "Aromatisse": {
+        "evos": [],
+        "prevo": "Spritzee",
+        "num": 683
+    },
+    "Swirlix": {
+        "evos": [
+            "Slurpuff"
+        ],
+        "prevo": null,
+        "num": 684
+    },
+    "Slurpuff": {
+        "evos": [],
+        "prevo": "Swirlix",
+        "num": 685
+    },
+    "Inkay": {
+        "evos": [
+            "Malamar"
+        ],
+        "prevo": null,
+        "num": 686
+    },
+    "Malamar": {
+        "evos": [],
+        "prevo": "Inkay",
+        "num": 687
+    },
+    "Binacle": {
+        "evos": [
+            "Barbaracle"
+        ],
+        "prevo": null,
+        "num": 688
+    },
+    "Barbaracle": {
+        "evos": [],
+        "prevo": "Binacle",
+        "num": 689
+    },
+    "Skrelp": {
+        "evos": [
+            "Dragalge"
+        ],
+        "prevo": null,
+        "num": 690
+    },
+    "Dragalge": {
+        "evos": [],
+        "prevo": "Skrelp",
+        "num": 691
+    },
+    "Clauncher": {
+        "evos": [
+            "Clawitzer"
+        ],
+        "prevo": null,
+        "num": 692
+    },
+    "Clawitzer": {
+        "evos": [],
+        "prevo": "Clauncher",
+        "num": 693
+    },
+    "Helioptile": {
+        "evos": [
+            "Heliolisk"
+        ],
+        "prevo": null,
+        "num": 694
+    },
+    "Heliolisk": {
+        "evos": [],
+        "prevo": "Helioptile",
+        "num": 695
+    },
+    "Tyrunt": {
+        "evos": [
+            "Tyrantrum"
+        ],
+        "prevo": null,
+        "num": 696
+    },
+    "Tyrantrum": {
+        "evos": [],
+        "prevo": "Tyrunt",
+        "num": 697
+    },
+    "Amaura": {
+        "evos": [
+            "Aurorus"
+        ],
+        "prevo": null,
+        "num": 698
+    },
+    "Aurorus": {
+        "evos": [],
+        "prevo": "Amaura",
+        "num": 699
+    },
+    "Sylveon": {
+        "evos": [],
+        "prevo": "Eevee",
+        "num": 700
+    },
+    "Hawlucha": {
+        "evos": [],
+        "prevo": null,
+        "num": 701
+    },
+    "Dedenne": {
+        "evos": [],
+        "prevo": null,
+        "num": 702
+    },
+    "Carbink": {
+        "evos": [],
+        "prevo": null,
+        "num": 703
+    },
+    "Goomy": {
+        "evos": [
+            "Sliggoo",
+            "Sliggoo-Hisui"
+        ],
+        "prevo": null,
+        "num": 704
+    },
+    "Sliggoo": {
+        "evos": [
+            "Goodra"
+        ],
+        "prevo": "Goomy",
+        "num": 705
+    },
+    "Sliggoo-Hisui": {
+        "evos": [
+            "Goodra-Hisui"
+        ],
+        "prevo": "Goomy",
+        "num": 705
+    },
+    "Goodra": {
+        "evos": [],
+        "prevo": "Sliggoo",
+        "num": 706
+    },
+    "Goodra-Hisui": {
+        "evos": [],
+        "prevo": "Sliggoo-Hisui",
+        "num": 706
+    },
+    "Klefki": {
+        "evos": [],
+        "prevo": null,
+        "num": 707
+    },
+    "Phantump": {
+        "evos": [
+            "Trevenant"
+        ],
+        "prevo": null,
+        "num": 708
+    },
+    "Trevenant": {
+        "evos": [],
+        "prevo": "Phantump",
+        "num": 709
+    },
+    "Pumpkaboo-Average": {
+        "evos": [
+            "Gourgeist-Average"
+        ],
+        "prevo": null,
+        "num": 710
+    },
+    "Pumpkaboo-Small": {
+        "evos": [
+            "Gourgeist-Small"
+        ],
+        "prevo": null,
+        "num": 710
+    },
+    "Pumpkaboo-Large": {
+        "evos": [
+            "Gourgeist-Large"
+        ],
+        "prevo": null,
+        "num": 710
+    },
+    "Pumpkaboo-Super": {
+        "evos": [
+            "Gourgeist-Super"
+        ],
+        "prevo": null,
+        "num": 710
+    },
+    "Gourgeist-Average": {
+        "evos": [],
+        "prevo": "Pumpkaboo-Average",
+        "num": 711
+    },
+    "Gourgeist-Small": {
+        "evos": [],
+        "prevo": "Pumpkaboo-Small",
+        "num": 711
+    },
+    "Gourgeist-Large": {
+        "evos": [],
+        "prevo": "Pumpkaboo-Large",
+        "num": 711
+    },
+    "Gourgeist-Super": {
+        "evos": [],
+        "prevo": "Pumpkaboo-Super",
+        "num": 711
+    },
+    "Bergmite": {
+        "evos": [
+            "Avalugg",
+            "Avalugg-Hisui"
+        ],
+        "prevo": null,
+        "num": 712
+    },
+    "Avalugg": {
+        "evos": [],
+        "prevo": "Bergmite",
+        "num": 713
+    },
+    "Avalugg-Hisui": {
+        "evos": [],
+        "prevo": "Bergmite",
+        "num": 713
+    },
+    "Noibat": {
+        "evos": [
+            "Noivern"
+        ],
+        "prevo": null,
+        "num": 714
+    },
+    "Noivern": {
+        "evos": [],
+        "prevo": "Noibat",
+        "num": 715
+    },
+    "Xerneas": {
+        "evos": [],
+        "prevo": null,
+        "num": 716
+    },
+    "Xerneas-Neutral": {
+        "evos": [],
+        "prevo": null,
+        "num": 716
+    },
+    "Yveltal": {
+        "evos": [],
+        "prevo": null,
+        "num": 717
+    },
+    "Zygarde": {
+        "evos": [],
+        "prevo": null,
+        "num": 718
+    },
+    "Zygarde-10%": {
+        "evos": [],
+        "prevo": null,
+        "num": 718
+    },
+    "Zygarde-Complete": {
+        "evos": [],
+        "prevo": null,
+        "num": 718
+    },
+    "Diancie": {
+        "evos": [],
+        "prevo": null,
+        "num": 719
+    },
+    "Diancie-Mega": {
+        "evos": [],
+        "prevo": null,
+        "num": 719
+    },
+    "Hoopa": {
+        "evos": [],
+        "prevo": null,
+        "num": 720
+    },
+    "Hoopa-Unbound": {
+        "evos": [],
+        "prevo": null,
+        "num": 720
+    },
+    "Volcanion": {
+        "evos": [],
+        "prevo": null,
+        "num": 721
+    },
+    "Rowlet": {
+        "evos": [
+            "Dartrix"
+        ],
+        "prevo": null,
+        "num": 722
+    },
+    "Dartrix": {
+        "evos": [
+            "Decidueye",
+            "Decidueye-Hisui"
+        ],
+        "prevo": "Rowlet",
+        "num": 723
+    },
+    "Decidueye": {
+        "evos": [],
+        "prevo": "Dartrix",
+        "num": 724
+    },
+    "Decidueye-Hisui": {
+        "evos": [],
+        "prevo": "Dartrix",
+        "num": 724
+    },
+    "Litten": {
+        "evos": [
+            "Torracat"
+        ],
+        "prevo": null,
+        "num": 725
+    },
+    "Torracat": {
+        "evos": [
+            "Incineroar"
+        ],
+        "prevo": "Litten",
+        "num": 726
+    },
+    "Incineroar": {
+        "evos": [],
+        "prevo": "Torracat",
+        "num": 727
+    },
+    "Popplio": {
+        "evos": [
+            "Brionne"
+        ],
+        "prevo": null,
+        "num": 728
+    },
+    "Brionne": {
+        "evos": [
+            "Primarina"
+        ],
+        "prevo": "Popplio",
+        "num": 729
+    },
+    "Primarina": {
+        "evos": [],
+        "prevo": "Brionne",
+        "num": 730
+    },
+    "Pikipek": {
+        "evos": [
+            "Trumbeak"
+        ],
+        "prevo": null,
+        "num": 731
+    },
+    "Trumbeak": {
+        "evos": [
+            "Toucannon"
+        ],
+        "prevo": "Pikipek",
+        "num": 732
+    },
+    "Toucannon": {
+        "evos": [],
+        "prevo": "Trumbeak",
+        "num": 733
+    },
+    "Yungoos": {
+        "evos": [
+            "Gumshoos"
+        ],
+        "prevo": null,
+        "num": 734
+    },
+    "Gumshoos": {
+        "evos": [],
+        "prevo": "Yungoos",
+        "num": 735
+    },
+    "Gumshoos-Totem": {
+        "evos": [],
+        "prevo": null,
+        "num": 735
+    },
+    "Grubbin": {
+        "evos": [
+            "Charjabug"
+        ],
+        "prevo": null,
+        "num": 736
+    },
+    "Charjabug": {
+        "evos": [
+            "Vikavolt"
+        ],
+        "prevo": "Grubbin",
+        "num": 737
+    },
+    "Vikavolt": {
+        "evos": [],
+        "prevo": "Charjabug",
+        "num": 738
+    },
+    "Vikavolt-Totem": {
+        "evos": [],
+        "prevo": null,
+        "num": 738
+    },
+    "Crabrawler": {
+        "evos": [
+            "Crabominable"
+        ],
+        "prevo": null,
+        "num": 739
+    },
+    "Crabominable": {
+        "evos": [],
+        "prevo": "Crabrawler",
+        "num": 740
+    },
+    "Oricorio": {
+        "evos": [],
+        "prevo": null,
+        "num": 741
+    },
+    "Oricorio-Pom-Pom": {
+        "evos": [],
+        "prevo": null,
+        "num": 741
+    },
+    "Oricorio-Pa'u": {
+        "evos": [],
+        "prevo": null,
+        "num": 741
+    },
+    "Oricorio-Sensu": {
+        "evos": [],
+        "prevo": null,
+        "num": 741
+    },
+    "Cutiefly": {
+        "evos": [
+            "Ribombee"
+        ],
+        "prevo": null,
+        "num": 742
+    },
+    "Ribombee": {
+        "evos": [],
+        "prevo": "Cutiefly",
+        "num": 743
+    },
+    "Ribombee-Totem": {
+        "evos": [],
+        "prevo": null,
+        "num": 743
+    },
+    "Rockruff": {
+        "evos": [
+            "Lycanroc",
+            "Lycanroc-Midnight",
+            "Lycanroc-Dusk"
+        ],
+        "prevo": null,
+        "num": 744
+    },
+    "Rockruff Dusk": {
+        "evos": [
+            "Lycanroc-Dusk"
+        ],
+        "prevo": null,
+        "num": 744
+    },
+    "Lycanroc": {
+        "evos": [],
+        "prevo": "Rockruff",
+        "num": 745
+    },
+    "Lycanroc-Midnight": {
+        "evos": [],
+        "prevo": "Rockruff",
+        "num": 745
+    },
+    "Lycanroc-Dusk": {
+        "evos": [],
+        "prevo": "Rockruff",
+        "num": 745
+    },
+    "Wishiwashi": {
+        "evos": [],
+        "prevo": null,
+        "num": 746
+    },
+    "Wishiwashi-School": {
+        "evos": [],
+        "prevo": null,
+        "num": 746
+    },
+    "Mareanie": {
+        "evos": [
+            "Toxapex"
+        ],
+        "prevo": null,
+        "num": 747
+    },
+    "Toxapex": {
+        "evos": [],
+        "prevo": "Mareanie",
+        "num": 748
+    },
+    "Mudbray": {
+        "evos": [
+            "Mudsdale"
+        ],
+        "prevo": null,
+        "num": 749
+    },
+    "Mudsdale": {
+        "evos": [],
+        "prevo": "Mudbray",
+        "num": 750
+    },
+    "Dewpider": {
+        "evos": [
+            "Araquanid"
+        ],
+        "prevo": null,
+        "num": 751
+    },
+    "Araquanid": {
+        "evos": [],
+        "prevo": "Dewpider",
+        "num": 752
+    },
+    "Araquanid-Totem": {
+        "evos": [],
+        "prevo": null,
+        "num": 752
+    },
+    "Fomantis": {
+        "evos": [
+            "Lurantis"
+        ],
+        "prevo": null,
+        "num": 753
+    },
+    "Lurantis": {
+        "evos": [],
+        "prevo": "Fomantis",
+        "num": 754
+    },
+    "Lurantis-Totem": {
+        "evos": [],
+        "prevo": null,
+        "num": 754
+    },
+    "Morelull": {
+        "evos": [
+            "Shiinotic"
+        ],
+        "prevo": null,
+        "num": 755
+    },
+    "Shiinotic": {
+        "evos": [],
+        "prevo": "Morelull",
+        "num": 756
+    },
+    "Salandit": {
+        "evos": [
+            "Salazzle"
+        ],
+        "prevo": null,
+        "num": 757
+    },
+    "Salazzle": {
+        "evos": [],
+        "prevo": "Salandit",
+        "num": 758
+    },
+    "Salazzle-Totem": {
+        "evos": [],
+        "prevo": null,
+        "num": 758
+    },
+    "Stufful": {
+        "evos": [
+            "Bewear"
+        ],
+        "prevo": null,
+        "num": 759
+    },
+    "Bewear": {
+        "evos": [],
+        "prevo": "Stufful",
+        "num": 760
+    },
+    "Bounsweet": {
+        "evos": [
+            "Steenee"
+        ],
+        "prevo": null,
+        "num": 761
+    },
+    "Steenee": {
+        "evos": [
+            "Tsareena"
+        ],
+        "prevo": "Bounsweet",
+        "num": 762
+    },
+    "Tsareena": {
+        "evos": [],
+        "prevo": "Steenee",
+        "num": 763
+    },
+    "Comfey": {
+        "evos": [],
+        "prevo": null,
+        "num": 764
+    },
+    "Oranguru": {
+        "evos": [],
+        "prevo": null,
+        "num": 765
+    },
+    "Passimian": {
+        "evos": [],
+        "prevo": null,
+        "num": 766
+    },
+    "Wimpod": {
+        "evos": [
+            "Golisopod"
+        ],
+        "prevo": null,
+        "num": 767
+    },
+    "Golisopod": {
+        "evos": [],
+        "prevo": "Wimpod",
+        "num": 768
+    },
+    "Sandygast": {
+        "evos": [
+            "Palossand"
+        ],
+        "prevo": null,
+        "num": 769
+    },
+    "Palossand": {
+        "evos": [],
+        "prevo": "Sandygast",
+        "num": 770
+    },
+    "Pyukumuku": {
+        "evos": [],
+        "prevo": null,
+        "num": 771
+    },
+    "Type: Null": {
+        "evos": [
+            "Silvally"
+        ],
+        "prevo": null,
+        "num": 772
+    },
+    "Silvally": {
+        "evos": [],
+        "prevo": "Type: Null",
+        "num": 773
+    },
+    "Silvally-Bug": {
+        "evos": [],
+        "prevo": null,
+        "num": 773
+    },
+    "Silvally-Dark": {
+        "evos": [],
+        "prevo": null,
+        "num": 773
+    },
+    "Silvally-Dragon": {
+        "evos": [],
+        "prevo": null,
+        "num": 773
+    },
+    "Silvally-Electric": {
+        "evos": [],
+        "prevo": null,
+        "num": 773
+    },
+    "Silvally-Fairy": {
+        "evos": [],
+        "prevo": null,
+        "num": 773
+    },
+    "Silvally-Fighting": {
+        "evos": [],
+        "prevo": null,
+        "num": 773
+    },
+    "Silvally-Fire": {
+        "evos": [],
+        "prevo": null,
+        "num": 773
+    },
+    "Silvally-Flying": {
+        "evos": [],
+        "prevo": null,
+        "num": 773
+    },
+    "Silvally-Ghost": {
+        "evos": [],
+        "prevo": null,
+        "num": 773
+    },
+    "Silvally-Grass": {
+        "evos": [],
+        "prevo": null,
+        "num": 773
+    },
+    "Silvally-Ground": {
+        "evos": [],
+        "prevo": null,
+        "num": 773
+    },
+    "Silvally-Ice": {
+        "evos": [],
+        "prevo": null,
+        "num": 773
+    },
+    "Silvally-Poison": {
+        "evos": [],
+        "prevo": null,
+        "num": 773
+    },
+    "Silvally-Psychic": {
+        "evos": [],
+        "prevo": null,
+        "num": 773
+    },
+    "Silvally-Rock": {
+        "evos": [],
+        "prevo": null,
+        "num": 773
+    },
+    "Silvally-Steel": {
+        "evos": [],
+        "prevo": null,
+        "num": 773
+    },
+    "Silvally-Water": {
+        "evos": [],
+        "prevo": null,
+        "num": 773
+    },
+    "Minior": {
+        "evos": [],
+        "prevo": null,
+        "num": 774
+    },
+    "Minior-Meteor": {
+        "evos": [],
+        "prevo": null,
+        "num": 774
+    },
+    "Komala": {
+        "evos": [],
+        "prevo": null,
+        "num": 775
+    },
+    "Turtonator": {
+        "evos": [],
+        "prevo": null,
+        "num": 776
+    },
+    "Togedemaru": {
+        "evos": [],
+        "prevo": null,
+        "num": 777
+    },
+    "Togedemaru-Totem": {
+        "evos": [],
+        "prevo": null,
+        "num": 777
+    },
+    "Mimikyu": {
+        "evos": [],
+        "prevo": null,
+        "num": 778
+    },
+    "Mimikyu-Busted": {
+        "evos": [],
+        "prevo": null,
+        "num": 778
+    },
+    "Mimikyu-Totem": {
+        "evos": [],
+        "prevo": null,
+        "num": 778
+    },
+    "Mimikyu-Busted-Totem": {
+        "evos": [],
+        "prevo": null,
+        "num": 778
+    },
+    "Bruxish": {
+        "evos": [],
+        "prevo": null,
+        "num": 779
+    },
+    "Drampa": {
+        "evos": [],
+        "prevo": null,
+        "num": 780
+    },
+    "Dhelmise": {
+        "evos": [],
+        "prevo": null,
+        "num": 781
+    },
+    "Jangmo-o": {
+        "evos": [
+            "Hakamo-o"
+        ],
+        "prevo": null,
+        "num": 782
+    },
+    "Hakamo-o": {
+        "evos": [
+            "Kommo-o"
+        ],
+        "prevo": "Jangmo-o",
+        "num": 783
+    },
+    "Kommo-o": {
+        "evos": [],
+        "prevo": "Hakamo-o",
+        "num": 784
+    },
+    "Kommo-o-Totem": {
+        "evos": [],
+        "prevo": null,
+        "num": 784
+    },
+    "Tapu Koko": {
+        "evos": [],
+        "prevo": null,
+        "num": 785
+    },
+    "Tapu Lele": {
+        "evos": [],
+        "prevo": null,
+        "num": 786
+    },
+    "Tapu Bulu": {
+        "evos": [],
+        "prevo": null,
+        "num": 787
+    },
+    "Tapu Fini": {
+        "evos": [],
+        "prevo": null,
+        "num": 788
+    },
+    "Cosmog": {
+        "evos": [
+            "Cosmoem"
+        ],
+        "prevo": null,
+        "num": 789
+    },
+    "Cosmoem": {
+        "evos": [
+            "Solgaleo",
+            "Lunala"
+        ],
+        "prevo": "Cosmog",
+        "num": 790
+    },
+    "Solgaleo": {
+        "evos": [],
+        "prevo": "Cosmoem",
+        "num": 791
+    },
+    "Lunala": {
+        "evos": [],
+        "prevo": "Cosmoem",
+        "num": 792
+    },
+    "Nihilego": {
+        "evos": [],
+        "prevo": null,
+        "num": 793
+    },
+    "Buzzwole": {
+        "evos": [],
+        "prevo": null,
+        "num": 794
+    },
+    "Pheromosa": {
+        "evos": [],
+        "prevo": null,
+        "num": 795
+    },
+    "Xurkitree": {
+        "evos": [],
+        "prevo": null,
+        "num": 796
+    },
+    "Celesteela": {
+        "evos": [],
+        "prevo": null,
+        "num": 797
+    },
+    "Kartana": {
+        "evos": [],
+        "prevo": null,
+        "num": 798
+    },
+    "Guzzlord": {
+        "evos": [],
+        "prevo": null,
+        "num": 799
+    },
+    "Necrozma": {
+        "evos": [],
+        "prevo": null,
+        "num": 800
+    },
+    "Necrozma-Dusk-Mane": {
+        "evos": [],
+        "prevo": null,
+        "num": 800
+    },
+    "Necrozma-Dawn-Wings": {
+        "evos": [],
+        "prevo": null,
+        "num": 800
+    },
+    "Necrozma-Ultra": {
+        "evos": [],
+        "prevo": null,
+        "num": 800
+    },
+    "Magearna": {
+        "evos": [],
+        "prevo": null,
+        "num": 801
+    },
+    "Magearna-Original": {
+        "evos": [],
+        "prevo": null,
+        "num": 801
+    },
+    "Marshadow": {
+        "evos": [],
+        "prevo": null,
+        "num": 802
+    },
+    "Poipole": {
+        "evos": [
+            "Naganadel"
+        ],
+        "prevo": null,
+        "num": 803
+    },
+    "Naganadel": {
+        "evos": [],
+        "prevo": "Poipole",
+        "num": 804
+    },
+    "Stakataka": {
+        "evos": [],
+        "prevo": null,
+        "num": 805
+    },
+    "Blacephalon": {
+        "evos": [],
+        "prevo": null,
+        "num": 806
+    },
+    "Zeraora": {
+        "evos": [],
+        "prevo": null,
+        "num": 807
+    },
+    "Meltan": {
+        "evos": [],
+        "prevo": null,
+        "num": 808
+    },
+    "Melmetal": {
+        "evos": [],
+        "prevo": null,
+        "num": 809
+    },
+    "Melmetal-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 809
+    },
+    "Grookey": {
+        "evos": [
+            "Thwackey"
+        ],
+        "prevo": null,
+        "num": 810
+    },
+    "Thwackey": {
+        "evos": [
+            "Rillaboom"
+        ],
+        "prevo": "Grookey",
+        "num": 811
+    },
+    "Rillaboom": {
+        "evos": [],
+        "prevo": "Thwackey",
+        "num": 812
+    },
+    "Rillaboom-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 812
+    },
+    "Scorbunny": {
+        "evos": [
+            "Raboot"
+        ],
+        "prevo": null,
+        "num": 813
+    },
+    "Raboot": {
+        "evos": [
+            "Cinderace"
+        ],
+        "prevo": "Scorbunny",
+        "num": 814
+    },
+    "Cinderace": {
+        "evos": [],
+        "prevo": "Raboot",
+        "num": 815
+    },
+    "Cinderace-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 815
+    },
+    "Sobble": {
+        "evos": [
+            "Drizzile"
+        ],
+        "prevo": null,
+        "num": 816
+    },
+    "Drizzile": {
+        "evos": [
+            "Inteleon"
+        ],
+        "prevo": "Sobble",
+        "num": 817
+    },
+    "Inteleon": {
+        "evos": [],
+        "prevo": "Drizzile",
+        "num": 818
+    },
+    "Inteleon-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 818
+    },
+    "Skwovet": {
+        "evos": [
+            "Greedent"
+        ],
+        "prevo": null,
+        "num": 819
+    },
+    "Greedent": {
+        "evos": [],
+        "prevo": "Skwovet",
+        "num": 820
+    },
+    "Rookidee": {
+        "evos": [
+            "Corvisquire"
+        ],
+        "prevo": null,
+        "num": 821
+    },
+    "Corvisquire": {
+        "evos": [
+            "Corviknight"
+        ],
+        "prevo": "Rookidee",
+        "num": 822
+    },
+    "Corviknight": {
+        "evos": [],
+        "prevo": "Corvisquire",
+        "num": 823
+    },
+    "Corviknight-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 823
+    },
+    "Blipbug": {
+        "evos": [
+            "Dottler"
+        ],
+        "prevo": null,
+        "num": 824
+    },
+    "Dottler": {
+        "evos": [
+            "Orbeetle"
+        ],
+        "prevo": "Blipbug",
+        "num": 825
+    },
+    "Orbeetle": {
+        "evos": [],
+        "prevo": "Dottler",
+        "num": 826
+    },
+    "Orbeetle-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 826
+    },
+    "Nickit": {
+        "evos": [
+            "Thievul"
+        ],
+        "prevo": null,
+        "num": 827
+    },
+    "Thievul": {
+        "evos": [],
+        "prevo": "Nickit",
+        "num": 828
+    },
+    "Gossifleur": {
+        "evos": [
+            "Eldegoss"
+        ],
+        "prevo": null,
+        "num": 829
+    },
+    "Eldegoss": {
+        "evos": [],
+        "prevo": "Gossifleur",
+        "num": 830
+    },
+    "Wooloo": {
+        "evos": [
+            "Dubwool"
+        ],
+        "prevo": null,
+        "num": 831
+    },
+    "Dubwool": {
+        "evos": [],
+        "prevo": "Wooloo",
+        "num": 832
+    },
+    "Chewtle": {
+        "evos": [
+            "Drednaw"
+        ],
+        "prevo": null,
+        "num": 833
+    },
+    "Drednaw": {
+        "evos": [],
+        "prevo": "Chewtle",
+        "num": 834
+    },
+    "Drednaw-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 834
+    },
+    "Yamper": {
+        "evos": [
+            "Boltund"
+        ],
+        "prevo": null,
+        "num": 835
+    },
+    "Boltund": {
+        "evos": [],
+        "prevo": "Yamper",
+        "num": 836
+    },
+    "Rolycoly": {
+        "evos": [
+            "Carkol"
+        ],
+        "prevo": null,
+        "num": 837
+    },
+    "Carkol": {
+        "evos": [
+            "Coalossal"
+        ],
+        "prevo": "Rolycoly",
+        "num": 838
+    },
+    "Coalossal": {
+        "evos": [],
+        "prevo": "Carkol",
+        "num": 839
+    },
+    "Coalossal-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 839
+    },
+    "Applin": {
+        "evos": [
+            "Flapple",
+            "Appletun"
+        ],
+        "prevo": null,
+        "num": 840
+    },
+    "Flapple": {
+        "evos": [],
+        "prevo": "Applin",
+        "num": 841
+    },
+    "Flapple-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 841
+    },
+    "Appletun": {
+        "evos": [],
+        "prevo": "Applin",
+        "num": 842
+    },
+    "Appletun-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 842
+    },
+    "Silicobra": {
+        "evos": [
+            "Sandaconda"
+        ],
+        "prevo": null,
+        "num": 843
+    },
+    "Sandaconda": {
+        "evos": [],
+        "prevo": "Silicobra",
+        "num": 844
+    },
+    "Sandaconda-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 844
+    },
+    "Cramorant": {
+        "evos": [],
+        "prevo": null,
+        "num": 845
+    },
+    "Cramorant-Gulping": {
+        "evos": [],
+        "prevo": null,
+        "num": 845
+    },
+    "Cramorant-Gorging": {
+        "evos": [],
+        "prevo": null,
+        "num": 845
+    },
+    "Arrokuda": {
+        "evos": [
+            "Barraskewda"
+        ],
+        "prevo": null,
+        "num": 846
+    },
+    "Barraskewda": {
+        "evos": [],
+        "prevo": "Arrokuda",
+        "num": 847
+    },
+    "Toxel": {
+        "evos": [
+            "Toxtricity",
+            "Toxtricity-Low-Key"
+        ],
+        "prevo": null,
+        "num": 848
+    },
+    "Toxtricity": {
+        "evos": [],
+        "prevo": "Toxel",
+        "num": 849
+    },
+    "Toxtricity-Low-Key": {
+        "evos": [],
+        "prevo": "Toxel",
+        "num": 849
+    },
+    "Toxtricity-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 849
+    },
+    "Toxtricity-Low-Key-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 849
+    },
+    "Sizzlipede": {
+        "evos": [
+            "Centiskorch"
+        ],
+        "prevo": null,
+        "num": 850
+    },
+    "Centiskorch": {
+        "evos": [],
+        "prevo": "Sizzlipede",
+        "num": 851
+    },
+    "Centiskorch-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 851
+    },
+    "Clobbopus": {
+        "evos": [
+            "Grapploct"
+        ],
+        "prevo": null,
+        "num": 852
+    },
+    "Grapploct": {
+        "evos": [],
+        "prevo": "Clobbopus",
+        "num": 853
+    },
+    "Sinistea": {
+        "evos": [
+            "Polteageist"
+        ],
+        "prevo": null,
+        "num": 854
+    },
+    "Sinistea-Antique": {
+        "evos": [
+            "Polteageist-Antique"
+        ],
+        "prevo": null,
+        "num": 854
+    },
+    "Polteageist": {
+        "evos": [],
+        "prevo": "Sinistea",
+        "num": 855
+    },
+    "Polteageist-Antique": {
+        "evos": [],
+        "prevo": "Sinistea-Antique",
+        "num": 855
+    },
+    "Hatenna": {
+        "evos": [
+            "Hattrem"
+        ],
+        "prevo": null,
+        "num": 856
+    },
+    "Hattrem": {
+        "evos": [
+            "Hatterene"
+        ],
+        "prevo": "Hatenna",
+        "num": 857
+    },
+    "Hatterene": {
+        "evos": [],
+        "prevo": "Hattrem",
+        "num": 858
+    },
+    "Hatterene-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 858
+    },
+    "Impidimp": {
+        "evos": [
+            "Morgrem"
+        ],
+        "prevo": null,
+        "num": 859
+    },
+    "Morgrem": {
+        "evos": [
+            "Grimmsnarl"
+        ],
+        "prevo": "Impidimp",
+        "num": 860
+    },
+    "Grimmsnarl": {
+        "evos": [],
+        "prevo": "Morgrem",
+        "num": 861
+    },
+    "Grimmsnarl-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 861
+    },
+    "Obstagoon": {
+        "evos": [],
+        "prevo": "Linoone-Galar",
+        "num": 862
+    },
+    "Perrserker": {
+        "evos": [],
+        "prevo": "Meowth-Galar",
+        "num": 863
+    },
+    "Cursola": {
+        "evos": [],
+        "prevo": "Corsola-Galar",
+        "num": 864
+    },
+    "Sirfetch’d": {
+        "evos": [],
+        "prevo": "Farfetch’d-Galar",
+        "num": 865
+    },
+    "Mr. Rime": {
+        "evos": [],
+        "prevo": "Mr. Mime-Galar",
+        "num": 866
+    },
+    "Runerigus": {
+        "evos": [],
+        "prevo": "Yamask-Galar",
+        "num": 867
+    },
+    "Milcery": {
+        "evos": [
+            "Alcremie"
+        ],
+        "prevo": null,
+        "num": 868
+    },
+    "Alcremie": {
+        "evos": [],
+        "prevo": "Milcery",
+        "num": 869
+    },
+    "Alcremie-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 869
+    },
+    "Falinks": {
+        "evos": [],
+        "prevo": null,
+        "num": 870
+    },
+    "Pincurchin": {
+        "evos": [],
+        "prevo": null,
+        "num": 871
+    },
+    "Snom": {
+        "evos": [
+            "Frosmoth"
+        ],
+        "prevo": null,
+        "num": 872
+    },
+    "Frosmoth": {
+        "evos": [],
+        "prevo": "Snom",
+        "num": 873
+    },
+    "Stonjourner": {
+        "evos": [],
+        "prevo": null,
+        "num": 874
+    },
+    "Eiscue": {
+        "evos": [],
+        "prevo": null,
+        "num": 875
+    },
+    "Eiscue-Noice": {
+        "evos": [],
+        "prevo": null,
+        "num": 875
+    },
+    "Indeedee": {
+        "evos": [],
+        "prevo": null,
+        "num": 876
+    },
+    "Indeedee-F": {
+        "evos": [],
+        "prevo": null,
+        "num": 876
+    },
+    "Morpeko": {
+        "evos": [],
+        "prevo": null,
+        "num": 877
+    },
+    "Morpeko-Hangry": {
+        "evos": [],
+        "prevo": null,
+        "num": 877
+    },
+    "Cufant": {
+        "evos": [
+            "Copperajah"
+        ],
+        "prevo": null,
+        "num": 878
+    },
+    "Copperajah": {
+        "evos": [],
+        "prevo": "Cufant",
+        "num": 879
+    },
+    "Copperajah-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 879
+    },
+    "Dracozolt": {
+        "evos": [],
+        "prevo": null,
+        "num": 880
+    },
+    "Arctozolt": {
+        "evos": [],
+        "prevo": null,
+        "num": 881
+    },
+    "Dracovish": {
+        "evos": [],
+        "prevo": null,
+        "num": 882
+    },
+    "Arctovish": {
+        "evos": [],
+        "prevo": null,
+        "num": 883
+    },
+    "Duraludon": {
+        "evos": [],
+        "prevo": null,
+        "num": 884
+    },
+    "Duraludon-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 884
+    },
+    "Dreepy": {
+        "evos": [
+            "Drakloak"
+        ],
+        "prevo": null,
+        "num": 885
+    },
+    "Drakloak": {
+        "evos": [
+            "Dragapult"
+        ],
+        "prevo": "Dreepy",
+        "num": 886
+    },
+    "Dragapult": {
+        "evos": [],
+        "prevo": "Drakloak",
+        "num": 887
+    },
+    "Zacian": {
+        "evos": [],
+        "prevo": null,
+        "num": 888
+    },
+    "Zacian-Crowned": {
+        "evos": [],
+        "prevo": null,
+        "num": 888
+    },
+    "Zamazenta": {
+        "evos": [],
+        "prevo": null,
+        "num": 889
+    },
+    "Zamazenta-Crowned": {
+        "evos": [],
+        "prevo": null,
+        "num": 889
+    },
+    "Eternatus": {
+        "evos": [],
+        "prevo": null,
+        "num": 890
+    },
+    "Eternatus-Eternamax": {
+        "evos": [],
+        "prevo": null,
+        "num": 890
+    },
+    "Kubfu": {
+        "evos": [
+            "Urshifu",
+            "Urshifu-Rapid-Strike"
+        ],
+        "prevo": null,
+        "num": 891
+    },
+    "Urshifu": {
+        "evos": [],
+        "prevo": "Kubfu",
+        "num": 892
+    },
+    "Urshifu-Rapid-Strike": {
+        "evos": [],
+        "prevo": "Kubfu",
+        "num": 892
+    },
+    "Urshifu-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 892
+    },
+    "Urshifu-Rapid-Strike-Gmax": {
+        "evos": [],
+        "prevo": null,
+        "num": 892
+    },
+    "Zarude": {
+        "evos": [],
+        "prevo": null,
+        "num": 893
+    },
+    "Zarude-Dada": {
+        "evos": [],
+        "prevo": null,
+        "num": 893
+    },
+    "Regieleki": {
+        "evos": [],
+        "prevo": null,
+        "num": 894
+    },
+    "Regidrago": {
+        "evos": [],
+        "prevo": null,
+        "num": 895
+    },
+    "Glastrier": {
+        "evos": [],
+        "prevo": null,
+        "num": 896
+    },
+    "Spectrier": {
+        "evos": [],
+        "prevo": null,
+        "num": 897
+    },
+    "Calyrex": {
+        "evos": [],
+        "prevo": null,
+        "num": 898
+    },
+    "Calyrex-Ice": {
+        "evos": [],
+        "prevo": null,
+        "num": 898
+    },
+    "Calyrex-Shadow": {
+        "evos": [],
+        "prevo": null,
+        "num": 898
+    },
+    "Wyrdeer": {
+        "evos": [],
+        "prevo": "Stantler",
+        "num": 899
+    },
+    "Kleavor": {
+        "evos": [],
+        "prevo": "Scyther",
+        "num": 900
+    },
+    "Ursaluna": {
+        "evos": [],
+        "prevo": "Ursaring",
+        "num": 901
+    },
+    "Basculegion": {
+        "evos": [],
+        "prevo": "Basculin-White-Striped",
+        "num": 902
+    },
+    "Basculegion-F": {
+        "evos": [],
+        "prevo": "Basculin-White-Striped",
+        "num": 902
+    },
+    "Sneasler": {
+        "evos": [],
+        "prevo": "Sneasel-Hisui",
+        "num": 903
+    },
+    "Overqwil": {
+        "evos": [],
+        "prevo": "Qwilfish-Hisui",
+        "num": 904
+    },
+    "Enamorus": {
+        "evos": [],
+        "prevo": null,
+        "num": 905
+    },
+    "Enamorus-Therian": {
+        "evos": [],
+        "prevo": null,
+        "num": 905
+    }
+}
