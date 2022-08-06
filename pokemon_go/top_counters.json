@@ -13248,6 +13248,50 @@
             "STEEL",
             "normal",
             75.42202819033645
+        ],
+        [
+            649,
+            "genesectchill",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            75.42202819033645
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            75.42202819033645
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            75.42202819033645
+        ],
+        [
+            888,
+            "zacian",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "PLAY_ROUGH",
+            "FAIRY",
+            "normal",
+            74.40031407264824
         ]
     ],
     "Dark,Fairy:139": [
@@ -13404,6 +13448,61 @@
             "STEEL",
             "normal",
             75.26041066661077
+        ],
+        [
+            649,
+            "genesectchill",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            75.26041066661077
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            75.26041066661077
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            75.26041066661077
+        ],
+        [
+            888,
+            "zacian",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "PLAY_ROUGH",
+            "FAIRY",
+            "normal",
+            74.74124569730621
+        ],
+        [
+            888,
+            "zaciancrowned",
+            "QUICK_ATTACK",
+            "NORMAL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            72.5632928941692
         ]
     ],
     "Dark,Fairy:69": [
@@ -13560,6 +13659,50 @@
             "STEEL",
             "normal",
             75.20416705664115
+        ],
+        [
+            649,
+            "genesectchill",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            75.20416705664115
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            75.20416705664115
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            75.20416705664115
+        ],
+        [
+            888,
+            "zacian",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "PLAY_ROUGH",
+            "FAIRY",
+            "normal",
+            74.44841852139217
         ]
     ],
     "Dark,Fighting:132": [
@@ -14006,6 +14149,17 @@
             "FIGHTING",
             "normal",
             85.55153024725273
+        ],
+        [
+            464,
+            "rhyperior",
+            "MUD_SLAP",
+            "GROUND",
+            "normal",
+            "ROCK_WRECKER",
+            "ROCK",
+            "elite",
+            85.27712151623415
         ]
     ],
     "Dark,Fire:194": [
@@ -14140,6 +14294,17 @@
             "ROCK",
             "elite",
             85.73983777435839
+        ],
+        [
+            818,
+            "inteleon",
+            "WATER_GUN",
+            "WATER",
+            "normal",
+            "SURF",
+            "WATER",
+            "normal",
+            85.50702955010318
         ]
     ],
     "Dark,Fire:83": [
@@ -14263,6 +14428,17 @@
             "ROCK",
             "elite",
             85.3378772265611
+        ],
+        [
+            701,
+            "hawlucha",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FLYING_PRESS",
+            "FIGHTING",
+            "normal",
+            85.22679139343957
         ]
     ],
     "Dark,Flying:103": [
@@ -15997,6 +16173,50 @@
             "BUG",
             "normal",
             58.09948160178814
+        ],
+        [
+            649,
+            "genesectdouse",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            58.09948160178814
+        ],
+        [
+            649,
+            "genesectshock",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            58.09948160178814
+        ],
+        [
+            414,
+            "mothim",
+            "BUG_BITE",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            57.791333074479034
+        ],
+        [
+            291,
+            "ninjask",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            57.42925146269683
         ]
     ],
     "Dark,Ice:146": [
@@ -16164,6 +16384,17 @@
             "FIGHTING",
             "normal",
             76.514630458634
+        ],
+        [
+            639,
+            "terrakion",
+            "SMACK_DOWN",
+            "ROCK",
+            "normal",
+            "SACRED_SWORD",
+            "FIGHTING",
+            "elite",
+            76.04952179025295
         ]
     ],
     "Dark,Ice:171": [
@@ -16331,6 +16562,17 @@
             "FIGHTING",
             "normal",
             76.36044747850549
+        ],
+        [
+            639,
+            "terrakion",
+            "SMACK_DOWN",
+            "ROCK",
+            "normal",
+            "SACRED_SWORD",
+            "FIGHTING",
+            "elite",
+            75.74670840875632
         ]
     ],
     "Dark,Normal:128": [
@@ -16487,6 +16729,17 @@
             "FIGHTING",
             "normal",
             76.20237855719817
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            71.94579200827822
         ]
     ],
     "Dark,Normal:154": [
@@ -16643,6 +16896,17 @@
             "FIGHTING",
             "normal",
             76.36312962742932
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            72.58937559246877
         ]
     ],
     "Dark,Normal:194": [
@@ -16799,6 +17063,17 @@
             "FIGHTING",
             "normal",
             76.35020498920571
+        ],
+        [
+            620,
+            "mienshao",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "BRICK_BREAK",
+            "FIGHTING",
+            "normal",
+            72.51595239377636
         ]
     ],
     "Dark,Normal:70": [
@@ -16955,6 +17230,17 @@
             "FIGHTING",
             "normal",
             76.45022337097322
+        ],
+        [
+            620,
+            "mienshao",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "BRICK_BREAK",
+            "FIGHTING",
+            "normal",
+            72.14532719627263
         ]
     ],
     "Dark,Normal:80": [
@@ -17111,6 +17397,17 @@
             "FIGHTING",
             "normal",
             76.45164111255696
+        ],
+        [
+            620,
+            "mienshao",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "BRICK_BREAK",
+            "FIGHTING",
+            "normal",
+            72.29556712449701
         ]
     ],
     "Dark,Poison:151": [
@@ -17656,6 +17953,50 @@
             "BUG",
             "normal",
             57.452174730413155
+        ],
+        [
+            649,
+            "genesectdouse",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.452174730413155
+        ],
+        [
+            649,
+            "genesectshock",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.452174730413155
+        ],
+        [
+            291,
+            "ninjask",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            57.236514311618734
+        ],
+        [
+            414,
+            "mothim",
+            "BUG_BITE",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            57.2073284380848
         ]
     ],
     "Dark,Psychic:95": [
@@ -17790,6 +18131,50 @@
             "BUG",
             "normal",
             57.40584973644133
+        ],
+        [
+            649,
+            "genesectdouse",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.40584973644133
+        ],
+        [
+            649,
+            "genesectshock",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.40584973644133
+        ],
+        [
+            414,
+            "mothim",
+            "BUG_BITE",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            57.12449008330958
+        ],
+        [
+            291,
+            "ninjask",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            57.007620938765825
         ]
     ],
     "Dark,Steel:114": [
@@ -17946,6 +18331,17 @@
             "FIGHTING",
             "normal",
             76.09914035217882
+        ],
+        [
+            620,
+            "mienshao",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "BRICK_BREAK",
+            "FIGHTING",
+            "normal",
+            71.67418866376308
         ]
     ],
     "Dark,Steel:176": [
@@ -18102,6 +18498,17 @@
             "FIGHTING",
             "normal",
             76.29476155867498
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            72.68313286710169
         ]
     ],
     "Dark:106": [
@@ -18335,6 +18742,28 @@
             "FIGHTING",
             "normal",
             73.83869647547075
+        ],
+        [
+            297,
+            "hariyama",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            73.7632185700475
+        ],
+        [
+            68,
+            "machamp",
+            "KARATE_CHOP",
+            "FIGHTING",
+            "elite",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            73.4541067623786
         ]
     ],
     "Dark:120": [
@@ -18568,6 +18997,28 @@
             "FIGHTING",
             "normal",
             74.38457736373493
+        ],
+        [
+            637,
+            "volcarona",
+            "BUG_BITE",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            74.19135030113587
+        ],
+        [
+            68,
+            "machamp",
+            "KARATE_CHOP",
+            "FIGHTING",
+            "elite",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            74.02884483864283
         ]
     ],
     "Dark:127": [
@@ -18801,6 +19252,28 @@
             "BUG",
             "normal",
             74.56354819112457
+        ],
+        [
+            297,
+            "hariyama",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            74.12267849558287
+        ],
+        [
+            68,
+            "machamp",
+            "KARATE_CHOP",
+            "FIGHTING",
+            "elite",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            73.8550983947717
         ]
     ],
     "Dark:130": [
@@ -19045,6 +19518,17 @@
             "FIGHTING",
             "normal",
             74.36487751234252
+        ],
+        [
+            297,
+            "hariyama",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            74.21042853222659
         ]
     ],
     "Dark:132": [
@@ -19267,6 +19751,28 @@
             "FIGHTING",
             "normal",
             74.71816033942198
+        ],
+        [
+            297,
+            "hariyama",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            73.79402285582219
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            73.71595598747642
         ]
     ],
     "Dark:136": [
@@ -19500,6 +20006,28 @@
             "FIGHTING",
             "normal",
             74.33207600551724
+        ],
+        [
+            637,
+            "volcarona",
+            "BUG_BITE",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            74.14195387307372
+        ],
+        [
+            68,
+            "machamp",
+            "KARATE_CHOP",
+            "FIGHTING",
+            "elite",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            73.73920979402692
         ]
     ],
     "Dark:164": [
@@ -19733,6 +20261,28 @@
             "FIGHTING",
             "normal",
             74.7327388015631
+        ],
+        [
+            297,
+            "hariyama",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            74.42666176129617
+        ],
+        [
+            68,
+            "machamp",
+            "KARATE_CHOP",
+            "FIGHTING",
+            "elite",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            74.12899360067148
         ]
     ],
     "Dark:198": [
@@ -19955,6 +20505,50 @@
             "FIGHTING",
             "normal",
             74.73058212249579
+        ],
+        [
+            297,
+            "hariyama",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            74.61972260005663
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            73.48631949846322
+        ],
+        [
+            68,
+            "machamp",
+            "KARATE_CHOP",
+            "FIGHTING",
+            "elite",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            72.87337662602184
+        ],
+        [
+            888,
+            "zaciancrowned",
+            "SNARL",
+            "DARK",
+            "normal",
+            "PLAY_ROUGH",
+            "FAIRY",
+            "normal",
+            72.25659150462162
         ]
     ],
     "Dark:238": [
@@ -20188,6 +20782,28 @@
             "FIGHTING",
             "normal",
             75.0939190175404
+        ],
+        [
+            297,
+            "hariyama",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            74.26862654017128
+        ],
+        [
+            68,
+            "machamp",
+            "KARATE_CHOP",
+            "FIGHTING",
+            "elite",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            74.21215244348164
         ]
     ],
     "Dark:240": [
@@ -20421,6 +21037,28 @@
             "FIGHTING",
             "normal",
             75.29250112336771
+        ],
+        [
+            297,
+            "hariyama",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            74.81540263949458
+        ],
+        [
+            68,
+            "machamp",
+            "KARATE_CHOP",
+            "FIGHTING",
+            "elite",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            74.04964122424983
         ]
     ],
     "Dark:61": [
@@ -20665,6 +21303,17 @@
             "FIGHTING",
             "normal",
             74.0059954423835
+        ],
+        [
+            297,
+            "hariyama",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            73.75111184672089
         ]
     ],
     "Dark:73": [
@@ -20898,6 +21547,28 @@
             "FIGHTING",
             "normal",
             73.83853005663676
+        ],
+        [
+            297,
+            "hariyama",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            73.70527162129262
+        ],
+        [
+            68,
+            "machamp",
+            "KARATE_CHOP",
+            "FIGHTING",
+            "elite",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            73.30901442105842
         ]
     ],
     "Dark:78": [
@@ -21131,6 +21802,28 @@
             "FIGHTING",
             "normal",
             74.1463571975455
+        ],
+        [
+            297,
+            "hariyama",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            73.58117487729727
+        ],
+        [
+            68,
+            "machamp",
+            "KARATE_CHOP",
+            "FIGHTING",
+            "elite",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            73.3019257117165
         ]
     ],
     "Dark:82": [
@@ -21364,6 +22057,28 @@
             "FIGHTING",
             "normal",
             73.99900951421799
+        ],
+        [
+            297,
+            "hariyama",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            73.89958599981406
+        ],
+        [
+            68,
+            "machamp",
+            "KARATE_CHOP",
+            "FIGHTING",
+            "elite",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            73.41090664613972
         ]
     ],
     "Dragon,Electric:211": [
@@ -29082,6 +29797,17 @@
             "FIGHTING",
             "normal",
             74.23301917395081
+        ],
+        [
+            637,
+            "volcarona",
+            "BUG_BITE",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            74.14968980864676
         ]
     ],
     "Electric,Dragon:165": [
@@ -31941,6 +32667,17 @@
             "FIRE",
             "normal",
             86.31675318290624
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            85.83561199707822
         ]
     ],
     "Electric,Ice:219": [
@@ -32097,6 +32834,17 @@
             "FIRE",
             "normal",
             87.02810871451547
+        ],
+        [
+            555,
+            "darmanitan",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "OVERHEAT",
+            "FIRE",
+            "normal",
+            86.79876014765408
         ]
     ],
     "Electric,Normal:168": [
@@ -32253,6 +33001,17 @@
             "FIGHTING",
             "normal",
             84.55059081334288
+        ],
+        [
+            445,
+            "garchomp",
+            "MUD_SHOT",
+            "GROUND",
+            "normal",
+            "EARTH_POWER",
+            "GROUND",
+            "elite",
+            84.42548274104927
         ]
     ],
     "Electric,Normal:78": [
@@ -32409,6 +33168,17 @@
             "FIGHTING",
             "normal",
             83.4163738539007
+        ],
+        [
+            445,
+            "garchomp",
+            "MUD_SHOT",
+            "GROUND",
+            "normal",
+            "EARTH_POWER",
+            "GROUND",
+            "elite",
+            83.1522158120045
         ]
     ],
     "Electric,Poison:140": [
@@ -41261,6 +42031,61 @@
             "STEEL",
             "normal",
             84.06586834484473
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            84.06586834484473
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            84.06586834484473
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            81.84825976338873
+        ],
+        [
+            888,
+            "zaciancrowned",
+            "QUICK_ATTACK",
+            "NORMAL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            80.66061077090592
+        ],
+        [
+            454,
+            "toxicroak",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            80.63139897534461
         ]
     ],
     "Fairy:113": [
@@ -41373,6 +42198,61 @@
             "STEEL",
             "normal",
             84.61976489825767
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            84.61976489825767
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            84.61976489825767
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            81.51160869150571
+        ],
+        [
+            376,
+            "metagross",
+            "ZEN_HEADBUTT",
+            "PSYCHIC",
+            "normal",
+            "METEOR_MASH",
+            "STEEL",
+            "elite",
+            80.95150206176693
+        ],
+        [
+            94,
+            "gengar",
+            "LICK",
+            "GHOST",
+            "elite",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            80.7555944080359
         ]
     ],
     "Fairy:116": [
@@ -41485,6 +42365,50 @@
             "STEEL",
             "normal",
             83.24474449621695
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.24474449621695
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.24474449621695
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            81.28670194176595
+        ],
+        [
+            386,
+            "deoxysattack",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "ZAP_CANNON",
+            "ELECTRIC",
+            "normal",
+            80.80995253778829
         ]
     ],
     "Fairy:119": [
@@ -41597,6 +42521,50 @@
             "STEEL",
             "normal",
             83.25596940399595
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.25596940399595
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.25596940399595
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            81.05628268739227
+        ],
+        [
+            94,
+            "gengar",
+            "LICK",
+            "GHOST",
+            "elite",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            80.3139452408023
         ]
     ],
     "Fairy:120": [
@@ -41709,6 +42677,50 @@
             "STEEL",
             "normal",
             84.47859192857402
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            84.47859192857402
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            84.47859192857402
+        ],
+        [
+            94,
+            "gengar",
+            "LICK",
+            "GHOST",
+            "elite",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            81.66417517012755
+        ],
+        [
+            454,
+            "toxicroak",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            81.56838372627506
         ]
     ],
     "Fairy:131": [
@@ -41821,6 +42833,72 @@
             "STEEL",
             "normal",
             83.79454247969771
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.79454247969771
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.79454247969771
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            80.58790668404319
+        ],
+        [
+            386,
+            "deoxysattack",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "ZAP_CANNON",
+            "ELECTRIC",
+            "normal",
+            80.0828372932792
+        ],
+        [
+            376,
+            "metagross",
+            "ZEN_HEADBUTT",
+            "PSYCHIC",
+            "normal",
+            "METEOR_MASH",
+            "STEEL",
+            "elite",
+            79.88587755377621
+        ],
+        [
+            888,
+            "zaciancrowned",
+            "QUICK_ATTACK",
+            "NORMAL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            79.77698451914415
         ]
     ],
     "Fairy:150": [
@@ -41933,6 +43011,50 @@
             "STEEL",
             "normal",
             83.35061503454395
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.35061503454395
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.35061503454395
+        ],
+        [
+            94,
+            "gengar",
+            "LICK",
+            "GHOST",
+            "elite",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            81.07700013979604
+        ],
+        [
+            454,
+            "toxicroak",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            80.75486118558801
         ]
     ],
     "Fairy:151": [
@@ -42045,6 +43167,61 @@
             "STEEL",
             "normal",
             83.14677340419496
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.14677340419496
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.14677340419496
+        ],
+        [
+            454,
+            "toxicroak",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            80.60984037649025
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            80.11783711683158
+        ],
+        [
+            888,
+            "zaciancrowned",
+            "QUICK_ATTACK",
+            "NORMAL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            79.61918706403473
         ]
     ],
     "Fairy:162": [
@@ -42157,6 +43334,61 @@
             "STEEL",
             "normal",
             83.08389150507567
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.08389150507567
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.08389150507567
+        ],
+        [
+            454,
+            "toxicroak",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            80.36390708575354
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            79.99692706171561
+        ],
+        [
+            376,
+            "metagross",
+            "ZEN_HEADBUTT",
+            "PSYCHIC",
+            "normal",
+            "METEOR_MASH",
+            "STEEL",
+            "elite",
+            79.99341127323522
         ]
     ],
     "Fairy:163": [
@@ -42269,6 +43501,61 @@
             "STEEL",
             "normal",
             82.86482784942834
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            82.86482784942834
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            82.86482784942834
+        ],
+        [
+            386,
+            "deoxysattack",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "ZAP_CANNON",
+            "ELECTRIC",
+            "normal",
+            80.23717732212506
+        ],
+        [
+            454,
+            "toxicroak",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            80.20696602909337
+        ],
+        [
+            376,
+            "metagross",
+            "ZEN_HEADBUTT",
+            "PSYCHIC",
+            "normal",
+            "METEOR_MASH",
+            "STEEL",
+            "elite",
+            80.00327769363375
         ]
     ],
     "Fairy:185": [
@@ -42381,6 +43668,50 @@
             "STEEL",
             "normal",
             83.55053934244812
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.55053934244812
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.55053934244812
+        ],
+        [
+            386,
+            "deoxysattack",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "ZAP_CANNON",
+            "ELECTRIC",
+            "normal",
+            81.60362586463515
+        ],
+        [
+            94,
+            "gengar",
+            "LICK",
+            "GHOST",
+            "elite",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            81.36815313228128
         ]
     ],
     "Fairy:198": [
@@ -42493,6 +43824,50 @@
             "STEEL",
             "normal",
             83.76696173489785
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.76696173489785
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.76696173489785
+        ],
+        [
+            386,
+            "deoxysattack",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "ZAP_CANNON",
+            "ELECTRIC",
+            "normal",
+            82.25890423060675
+        ],
+        [
+            454,
+            "toxicroak",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            81.6639830245432
         ]
     ],
     "Fairy:203": [
@@ -42605,6 +43980,72 @@
             "STEEL",
             "normal",
             83.23750557159937
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.23750557159937
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.23750557159937
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            80.98950159571636
+        ],
+        [
+            888,
+            "zaciancrowned",
+            "QUICK_ATTACK",
+            "NORMAL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            79.85031977804005
+        ],
+        [
+            888,
+            "zaciancrowned",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "PLAY_ROUGH",
+            "FAIRY",
+            "normal",
+            79.53270013045146
+        ],
+        [
+            386,
+            "deoxysattack",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "ZAP_CANNON",
+            "ELECTRIC",
+            "normal",
+            79.28831355285746
         ]
     ],
     "Fairy:205": [
@@ -42717,6 +44158,61 @@
             "STEEL",
             "normal",
             82.41457054646317
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            82.41457054646317
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            82.41457054646317
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            80.98950159571636
+        ],
+        [
+            888,
+            "zaciancrowned",
+            "QUICK_ATTACK",
+            "NORMAL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            79.85031977804005
+        ],
+        [
+            386,
+            "deoxysattack",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "ZAP_CANNON",
+            "ELECTRIC",
+            "normal",
+            79.28831355285746
         ]
     ],
     "Fairy:215": [
@@ -42829,6 +44325,61 @@
             "STEEL",
             "normal",
             83.143238355443
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.143238355443
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.143238355443
+        ],
+        [
+            888,
+            "zaciancrowned",
+            "QUICK_ATTACK",
+            "NORMAL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            81.7822671888343
+        ],
+        [
+            454,
+            "toxicroak",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            80.85049337098187
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            80.59951856427138
         ]
     ],
     "Fairy:217": [
@@ -42941,6 +44492,50 @@
             "STEEL",
             "normal",
             82.85624984482479
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            82.85624984482479
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            82.85624984482479
+        ],
+        [
+            454,
+            "toxicroak",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            80.64804818795571
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            80.46090260745171
         ]
     ],
     "Fairy:236": [
@@ -43053,6 +44648,50 @@
             "STEEL",
             "normal",
             84.4756159984241
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            84.4756159984241
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            84.4756159984241
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            82.95504672802863
+        ],
+        [
+            94,
+            "gengar",
+            "LICK",
+            "GHOST",
+            "elite",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            82.08402025058962
         ]
     ],
     "Fairy:238": [
@@ -43165,6 +44804,61 @@
             "STEEL",
             "normal",
             84.4756159984241
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            84.4756159984241
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            84.4756159984241
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            82.95504672802863
+        ],
+        [
+            94,
+            "gengar",
+            "LICK",
+            "GHOST",
+            "elite",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            82.08402025058962
+        ],
+        [
+            793,
+            "nihilego",
+            "ACID",
+            "POISON",
+            "normal",
+            "GUNK_SHOT",
+            "POISON",
+            "normal",
+            80.6449480783142
         ]
     ],
     "Fairy:244": [
@@ -43277,6 +44971,50 @@
             "STEEL",
             "normal",
             82.09902117319105
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            82.09902117319105
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            82.09902117319105
+        ],
+        [
+            94,
+            "gengar",
+            "LICK",
+            "GHOST",
+            "elite",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            81.82144801045035
+        ],
+        [
+            386,
+            "deoxysattack",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "ZAP_CANNON",
+            "ELECTRIC",
+            "normal",
+            81.04163678356895
         ]
     ],
     "Fairy:79": [
@@ -43389,6 +45127,50 @@
             "STEEL",
             "normal",
             83.373067554155
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.373067554155
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.373067554155
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            81.59842006603328
+        ],
+        [
+            454,
+            "toxicroak",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            80.80860765889066
         ]
     ],
     "Fairy:85": [
@@ -43501,6 +45283,50 @@
             "STEEL",
             "normal",
             84.01552741930928
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            84.01552741930928
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            84.01552741930928
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            81.25224103492394
+        ],
+        [
+            386,
+            "deoxysattack",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "ZAP_CANNON",
+            "ELECTRIC",
+            "normal",
+            81.10667797813936
         ]
     ],
     "Fairy:97": [
@@ -43613,6 +45439,50 @@
             "STEEL",
             "normal",
             84.48554407033234
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            84.48554407033234
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            84.48554407033234
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            82.05678040119842
+        ],
+        [
+            454,
+            "toxicroak",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            81.2469248986447
         ]
     ],
     "Fighting,Dark:146": [
@@ -45881,6 +47751,28 @@
             "FIGHTING",
             "normal",
             86.28886352621718
+        ],
+        [
+            701,
+            "hawlucha",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FLYING_PRESS",
+            "FIGHTING",
+            "normal",
+            85.83329322836484
+        ],
+        [
+            257,
+            "blaziken",
+            "FIRE_SPIN",
+            "FIRE",
+            "normal",
+            "BLAZE_KICK",
+            "FIRE",
+            "normal",
+            85.79252349732731
         ]
     ],
     "Fighting,Steel:175": [
@@ -46037,6 +47929,50 @@
             "FIGHTING",
             "normal",
             86.11198732541617
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            86.00814463835034
+        ],
+        [
+            257,
+            "blaziken",
+            "FIRE_SPIN",
+            "FIRE",
+            "normal",
+            "BLAZE_KICK",
+            "FIRE",
+            "normal",
+            85.7018457320838
+        ],
+        [
+            892,
+            "urshifu",
+            "ROCK_SMASH",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            85.12927128225819
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "ROCK_SMASH",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            85.12927128225819
         ]
     ],
     "Fighting,Steel:292": [
@@ -46204,6 +48140,17 @@
             "FIRE",
             "normal",
             86.31867214274082
+        ],
+        [
+            530,
+            "excadrill",
+            "MUD_SLAP",
+            "GROUND",
+            "normal",
+            "DRILL_RUN",
+            "GROUND",
+            "normal",
+            85.4287454644749
         ]
     ],
     "Fighting,Water:177": [
@@ -52142,6 +54089,39 @@
             "FIGHTING",
             "normal",
             86.00814463835034
+        ],
+        [
+            464,
+            "rhyperior",
+            "MUD_SLAP",
+            "GROUND",
+            "normal",
+            "ROCK_WRECKER",
+            "ROCK",
+            "elite",
+            85.61353001363182
+        ],
+        [
+            892,
+            "urshifu",
+            "ROCK_SMASH",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            85.12927128225819
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "ROCK_SMASH",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            85.12927128225819
         ]
     ],
     "Fire,Dragon:213": [
@@ -55587,6 +57567,39 @@
             "FIGHTING",
             "normal",
             84.9212414029864
+        ],
+        [
+            464,
+            "rhyperior",
+            "MUD_SLAP",
+            "GROUND",
+            "normal",
+            "ROCK_WRECKER",
+            "ROCK",
+            "elite",
+            84.91152774971582
+        ],
+        [
+            892,
+            "urshifu",
+            "ROCK_SMASH",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            84.57532739483881
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "ROCK_SMASH",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            84.57532739483881
         ]
     ],
     "Fire,Normal:149": [
@@ -55710,6 +57723,17 @@
             "WATER",
             "normal",
             85.05985914949845
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            85.04698304487884
         ]
     ],
     "Fire,Psychic:189": [
@@ -61679,6 +63703,17 @@
             "ELECTRIC",
             "normal",
             71.35225423643053
+        ],
+        [
+            310,
+            "manectric",
+            "THUNDER_FANG",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            71.336149779472
         ]
     ],
     "Flying:110": [
@@ -70381,6 +72416,50 @@
             "BUG",
             "normal",
             57.11391842537454
+        ],
+        [
+            649,
+            "genesectchill",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.11391842537454
+        ],
+        [
+            649,
+            "genesectdouse",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.11391842537454
+        ],
+        [
+            649,
+            "genesectshock",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.11391842537454
+        ],
+        [
+            291,
+            "ninjask",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            57.08208165772921
         ]
     ],
     "Grass,Dark:121": [
@@ -70526,6 +72605,50 @@
             "BUG",
             "normal",
             57.65883481170786
+        ],
+        [
+            649,
+            "genesectdouse",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.65883481170786
+        ],
+        [
+            649,
+            "genesectshock",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.65883481170786
+        ],
+        [
+            291,
+            "ninjask",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            57.0411638098845
+        ],
+        [
+            414,
+            "mothim",
+            "BUG_BITE",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            56.981190239994305
         ]
     ],
     "Grass,Dark:78": [
@@ -70671,6 +72794,50 @@
             "BUG",
             "normal",
             57.24632878677489
+        ],
+        [
+            649,
+            "genesectdouse",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.24632878677489
+        ],
+        [
+            649,
+            "genesectshock",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.24632878677489
+        ],
+        [
+            414,
+            "mothim",
+            "BUG_BITE",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            57.20403595586938
+        ],
+        [
+            291,
+            "ninjask",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            57.13714779315998
         ]
     ],
     "Grass,Dragon:116": [
@@ -78743,6 +80910,61 @@
             "BUG",
             "normal",
             57.37676366116701
+        ],
+        [
+            649,
+            "genesectdouse",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.37676366116701
+        ],
+        [
+            649,
+            "genesectshock",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.37676366116701
+        ],
+        [
+            291,
+            "ninjask",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            57.03516946869622
+        ],
+        [
+            414,
+            "mothim",
+            "BUG_BITE",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            57.03391806368133
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            56.71882684958606
         ]
     ],
     "Grass,Psychic:149": [
@@ -78866,6 +81088,61 @@
             "BUG",
             "normal",
             57.788145703926425
+        ],
+        [
+            649,
+            "genesectdouse",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.788145703926425
+        ],
+        [
+            649,
+            "genesectshock",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.788145703926425
+        ],
+        [
+            414,
+            "mothim",
+            "BUG_BITE",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            57.303308548399784
+        ],
+        [
+            291,
+            "ninjask",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            57.1666928025718
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            56.579854305687434
         ]
     ],
     "Grass,Steel:155": [
@@ -86771,6 +89048,50 @@
             "BUG",
             "normal",
             76.50912127261513
+        ],
+        [
+            99,
+            "kingler",
+            "BUBBLE",
+            "WATER",
+            "normal",
+            "CRABHAMMER",
+            "WATER",
+            "normal",
+            76.45052261186274
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            76.42188761085717
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            75.56173118001293
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "WATERFALL",
+            "WATER",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            75.41503202098
         ]
     ],
     "Ground,Dark:69": [
@@ -86971,6 +89292,39 @@
             "GRASS",
             "elite",
             76.11770367155563
+        ],
+        [
+            99,
+            "kingler",
+            "BUBBLE",
+            "WATER",
+            "normal",
+            "CRABHAMMER",
+            "WATER",
+            "normal",
+            75.93239277955135
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "WATERFALL",
+            "WATER",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            75.7719092993974
+        ],
+        [
+            795,
+            "pheromosa",
+            "BUG_BITE",
+            "BUG",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            75.66928293214299
         ]
     ],
     "Ground,Dark:90": [
@@ -87182,6 +89536,28 @@
             "WATER",
             "normal",
             76.00279834978014
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "GRASS_KNOT",
+            "GRASS",
+            "elite",
+            75.94893000674529
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "WATERFALL",
+            "WATER",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            75.5759013720196
         ]
     ],
     "Ground,Dragon:168": [
@@ -89584,6 +91960,17 @@
             "ICE",
             "normal",
             75.80304819524655
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            74.84818046760454
         ]
     ],
     "Ground,Psychic:124": [
@@ -90454,6 +92841,17 @@
             "FIRE",
             "normal",
             86.74339708191009
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            86.16384736970201
         ]
     ],
     "Ground,Steel:142": [
@@ -90621,6 +93019,28 @@
             "FIGHTING",
             "normal",
             86.32117354497952
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            86.29256063034488
+        ],
+        [
+            257,
+            "blaziken",
+            "FIRE_SPIN",
+            "FIRE",
+            "normal",
+            "BLAZE_KICK",
+            "FIRE",
+            "normal",
+            86.2006898215895
         ]
     ],
     "Ground,Steel:171": [
@@ -90777,6 +93197,17 @@
             "FIRE",
             "normal",
             86.93033492916472
+        ],
+        [
+            818,
+            "inteleon",
+            "WATER_GUN",
+            "WATER",
+            "normal",
+            "SURF",
+            "WATER",
+            "normal",
+            86.72235677351263
         ]
     ],
     "Ground,Steel:81": [
@@ -90922,6 +93353,39 @@
             "FIGHTING",
             "normal",
             87.27095223629705
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            86.81927179043454
+        ],
+        [
+            257,
+            "blaziken",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "BLAZE_KICK",
+            "FIRE",
+            "normal",
+            86.70177103278913
+        ],
+        [
+            257,
+            "blaziken",
+            "FIRE_SPIN",
+            "FIRE",
+            "normal",
+            "BLAZE_KICK",
+            "FIRE",
+            "normal",
+            86.05659288109202
         ]
     ],
     "Ground:118": [
@@ -93945,6 +96409,50 @@
             "STEEL",
             "normal",
             75.0299595025291
+        ],
+        [
+            625,
+            "bisharp",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            72.4374974903694
+        ],
+        [
+            212,
+            "scizor",
+            "BULLET_PUNCH",
+            "STEEL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            71.99726898528469
+        ],
+        [
+            889,
+            "zamazentacrowned",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            70.85221074379254
+        ],
+        [
+            68,
+            "machamp",
+            "BULLET_PUNCH",
+            "STEEL",
+            "normal",
+            "HEAVY_SLAM",
+            "STEEL",
+            "normal",
+            69.63078621817776
         ]
     ],
     "Ice,Fire:123": [
@@ -94659,6 +97167,28 @@
             "FIGHTING",
             "normal",
             87.39680501592072
+        ],
+        [
+            99,
+            "kingler",
+            "BUBBLE",
+            "WATER",
+            "normal",
+            "CRABHAMMER",
+            "WATER",
+            "normal",
+            87.29816162260876
+        ],
+        [
+            257,
+            "blaziken",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "BLAZE_KICK",
+            "FIRE",
+            "normal",
+            87.22058468056939
         ]
     ],
     "Ice,Ground:146": [
@@ -94837,6 +97367,17 @@
             "FIGHTING",
             "normal",
             88.41962561663061
+        ],
+        [
+            555,
+            "darmanitan",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "OVERHEAT",
+            "FIRE",
+            "normal",
+            88.17094622539344
         ]
     ],
     "Ice,Ground:69": [
@@ -94993,6 +97534,39 @@
             "GRASS",
             "elite",
             88.25929159398059
+        ],
+        [
+            99,
+            "kingler",
+            "BUBBLE",
+            "WATER",
+            "normal",
+            "CRABHAMMER",
+            "WATER",
+            "normal",
+            88.04442163253877
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "WATERFALL",
+            "WATER",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            87.8583393207018
+        ],
+        [
+            257,
+            "blaziken",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "BLAZE_KICK",
+            "FIRE",
+            "normal",
+            87.60278207267834
         ]
     ],
     "Ice,Psychic:151": [
@@ -95762,6 +98336,39 @@
             "FIGHTING",
             "normal",
             81.60300862123806
+        ],
+        [
+            530,
+            "excadrill",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            80.81311702826596
+        ],
+        [
+            68,
+            "machamp",
+            "BULLET_PUNCH",
+            "STEEL",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            80.43204880229963
+        ],
+        [
+            297,
+            "hariyama",
+            "BULLET_PUNCH",
+            "STEEL",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            78.84100531093516
         ]
     ],
     "Ice,Steel:129": [
@@ -95951,6 +98558,28 @@
             "FIGHTING",
             "normal",
             82.41325250947763
+        ],
+        [
+            68,
+            "machamp",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            81.75730298347162
+        ],
+        [
+            68,
+            "machamp",
+            "KARATE_CHOP",
+            "FIGHTING",
+            "elite",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            81.1266494804968
         ]
     ],
     "Ice,Steel:195": [
@@ -96140,6 +98769,28 @@
             "FIGHTING",
             "normal",
             82.65974646602528
+        ],
+        [
+            68,
+            "machamp",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            82.12697817275811
+        ],
+        [
+            68,
+            "machamp",
+            "KARATE_CHOP",
+            "FIGHTING",
+            "elite",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            81.46093270034493
         ]
     ],
     "Ice,Water:132": [
@@ -96285,6 +98936,39 @@
             "GRASS",
             "elite",
             82.16431867075005
+        ],
+        [
+            466,
+            "electivire",
+            "THUNDER_SHOCK",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            81.19940760908621
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            80.84524199861046
+        ],
+        [
+            796,
+            "xurkitree",
+            "THUNDER_SHOCK",
+            "ELECTRIC",
+            "normal",
+            "THUNDER",
+            "ELECTRIC",
+            "normal",
+            80.58811345999581
         ]
     ],
     "Ice,Water:176": [
@@ -96430,6 +99114,17 @@
             "FIGHTING",
             "normal",
             82.39491885882896
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "GRASS_KNOT",
+            "GRASS",
+            "elite",
+            81.95924797644277
         ]
     ],
     "Ice,Water:90": [
@@ -96575,6 +99270,17 @@
             "ELECTRIC",
             "normal",
             82.37745775587682
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "GRASS_KNOT",
+            "GRASS",
+            "elite",
+            82.11186614090171
         ]
     ],
     "Ice:106": [
@@ -96742,6 +99448,28 @@
             "FIRE",
             "normal",
             87.09958367445172
+        ],
+        [
+            555,
+            "darmanitan",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "OVERHEAT",
+            "FIRE",
+            "normal",
+            86.93488758640116
+        ],
+        [
+            257,
+            "blaziken",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "BLAZE_KICK",
+            "FIRE",
+            "normal",
+            86.41835639412224
         ]
     ],
     "Ice:109": [
@@ -96898,6 +99626,28 @@
             "FIGHTING",
             "normal",
             88.15462364031254
+        ],
+        [
+            555,
+            "darmanitan",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "OVERHEAT",
+            "FIRE",
+            "normal",
+            87.64451231050282
+        ],
+        [
+            409,
+            "rampardos",
+            "SMACK_DOWN",
+            "ROCK",
+            "normal",
+            "FLAMETHROWER",
+            "FIRE",
+            "normal",
+            87.02269288736186
         ]
     ],
     "Ice:114": [
@@ -97065,6 +99815,17 @@
             "FIRE",
             "normal",
             87.50114720244758
+        ],
+        [
+            643,
+            "reshiram",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "OVERHEAT",
+            "FIRE",
+            "normal",
+            86.99661121967661
         ]
     ],
     "Ice:120": [
@@ -97232,6 +99993,17 @@
             "FIRE",
             "normal",
             87.2767390594858
+        ],
+        [
+            555,
+            "darmanitan",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "OVERHEAT",
+            "FIRE",
+            "normal",
+            86.69898673809172
         ]
     ],
     "Ice:138": [
@@ -97388,6 +100160,39 @@
             "FIGHTING",
             "normal",
             87.83024643858674
+        ],
+        [
+            555,
+            "darmanitan",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "OVERHEAT",
+            "FIRE",
+            "normal",
+            87.63156345244587
+        ],
+        [
+            409,
+            "rampardos",
+            "SMACK_DOWN",
+            "ROCK",
+            "normal",
+            "FLAMETHROWER",
+            "FIRE",
+            "normal",
+            87.07912305911324
+        ],
+        [
+            257,
+            "blaziken",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "BLAZE_KICK",
+            "FIRE",
+            "normal",
+            86.51810338197728
         ]
     ],
     "Ice:139": [
@@ -97566,6 +100371,17 @@
             "FIRE",
             "normal",
             87.15946208608345
+        ],
+        [
+            555,
+            "darmanitan",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "OVERHEAT",
+            "FIRE",
+            "normal",
+            87.12104314494267
         ]
     ],
     "Ice:152": [
@@ -97722,6 +100538,17 @@
             "FIRE",
             "normal",
             87.41925801157369
+        ],
+        [
+            643,
+            "reshiram",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "OVERHEAT",
+            "FIRE",
+            "normal",
+            87.27590032389242
         ]
     ],
     "Ice:162": [
@@ -97878,6 +100705,39 @@
             "FIRE",
             "normal",
             88.48676914846396
+        ],
+        [
+            534,
+            "conkeldurr",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            88.28340581630243
+        ],
+        [
+            409,
+            "rampardos",
+            "SMACK_DOWN",
+            "ROCK",
+            "normal",
+            "FLAMETHROWER",
+            "FIRE",
+            "normal",
+            87.50319068686932
+        ],
+        [
+            257,
+            "blaziken",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "BLAZE_KICK",
+            "FIRE",
+            "normal",
+            86.8108675548727
         ]
     ],
     "Ice:168": [
@@ -98056,6 +100916,17 @@
             "FIRE",
             "normal",
             86.88550068314804
+        ],
+        [
+            643,
+            "reshiram",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "OVERHEAT",
+            "FIRE",
+            "normal",
+            86.6223115301692
         ]
     ],
     "Ice:184": [
@@ -98212,6 +101083,39 @@
             "FIRE",
             "normal",
             88.48694094134171
+        ],
+        [
+            534,
+            "conkeldurr",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            87.5999350648671
+        ],
+        [
+            409,
+            "rampardos",
+            "SMACK_DOWN",
+            "ROCK",
+            "normal",
+            "FLAMETHROWER",
+            "FIRE",
+            "normal",
+            87.50319068686933
+        ],
+        [
+            257,
+            "blaziken",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "BLAZE_KICK",
+            "FIRE",
+            "normal",
+            86.60842996585824
         ]
     ],
     "Ice:195": [
@@ -98368,6 +101272,17 @@
             "FIGHTING",
             "normal",
             88.95172837664566
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            87.90555551683512
         ]
     ],
     "Ice:198": [
@@ -98535,6 +101450,17 @@
             "FIRE",
             "normal",
             87.61881297034245
+        ],
+        [
+            534,
+            "conkeldurr",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            87.33030058573638
         ]
     ],
     "Ice:205": [
@@ -98691,6 +101617,28 @@
             "FIGHTING",
             "normal",
             88.18916861761923
+        ],
+        [
+            643,
+            "reshiram",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "OVERHEAT",
+            "FIRE",
+            "normal",
+            87.58052890666903
+        ],
+        [
+            257,
+            "blaziken",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "BLAZE_KICK",
+            "FIRE",
+            "normal",
+            87.32371410292838
         ]
     ],
     "Ice:218": [
@@ -98858,6 +101806,17 @@
             "FIRE",
             "normal",
             87.88940472036512
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            87.80166431473333
         ]
     ],
     "Ice:223": [
@@ -99014,6 +101973,28 @@
             "FIGHTING",
             "normal",
             88.7792137420347
+        ],
+        [
+            643,
+            "reshiram",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "OVERHEAT",
+            "FIRE",
+            "normal",
+            88.694868391162
+        ],
+        [
+            257,
+            "blaziken",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "BLAZE_KICK",
+            "FIRE",
+            "normal",
+            87.9495173471942
         ]
     ],
     "Ice:238": [
@@ -99170,6 +102151,17 @@
             "FIGHTING",
             "normal",
             88.07974967175917
+        ],
+        [
+            643,
+            "reshiram",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "OVERHEAT",
+            "FIRE",
+            "normal",
+            87.72070751847939
         ]
     ],
     "Ice:240": [
@@ -99326,6 +102318,17 @@
             "FIGHTING",
             "normal",
             88.04696995863893
+        ],
+        [
+            643,
+            "reshiram",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "OVERHEAT",
+            "FIRE",
+            "normal",
+            87.89165139573772
         ]
     ],
     "Ice:309": [
@@ -99482,6 +102485,39 @@
             "FIGHTING",
             "normal",
             89.05121070544148
+        ],
+        [
+            643,
+            "reshiram",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "OVERHEAT",
+            "FIRE",
+            "normal",
+            87.83188795017122
+        ],
+        [
+            257,
+            "blaziken",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "BLAZE_KICK",
+            "FIRE",
+            "normal",
+            87.6245946667542
+        ],
+        [
+            409,
+            "rampardos",
+            "SMACK_DOWN",
+            "ROCK",
+            "normal",
+            "FLAMETHROWER",
+            "FIRE",
+            "normal",
+            87.32249302147844
         ]
     ],
     "Ice:74": [
@@ -99638,6 +102674,39 @@
             "FIGHTING",
             "normal",
             88.00071061322629
+        ],
+        [
+            555,
+            "darmanitan",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "OVERHEAT",
+            "FIRE",
+            "normal",
+            87.48286264873923
+        ],
+        [
+            409,
+            "rampardos",
+            "SMACK_DOWN",
+            "ROCK",
+            "normal",
+            "FLAMETHROWER",
+            "FIRE",
+            "normal",
+            87.40325776702804
+        ],
+        [
+            257,
+            "blaziken",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "BLAZE_KICK",
+            "FIRE",
+            "normal",
+            86.82920893774636
         ]
     ],
     "Ice:86": [
@@ -99805,6 +102874,17 @@
             "FIRE",
             "normal",
             87.0555771097915
+        ],
+        [
+            643,
+            "reshiram",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "OVERHEAT",
+            "FIRE",
+            "normal",
+            86.57535349396954
         ]
     ],
     "Ice:95": [
@@ -99961,6 +103041,28 @@
             "FIGHTING",
             "normal",
             88.18916861761923
+        ],
+        [
+            555,
+            "darmanitan",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "OVERHEAT",
+            "FIRE",
+            "normal",
+            87.42918589308668
+        ],
+        [
+            409,
+            "rampardos",
+            "SMACK_DOWN",
+            "ROCK",
+            "normal",
+            "FLAMETHROWER",
+            "FIRE",
+            "normal",
+            87.25845910889593
         ]
     ],
     "Normal,Dragon:164": [
@@ -100117,6 +103219,17 @@
             "FIGHTING",
             "normal",
             78.98802649288086
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            78.98802649288086
         ]
     ],
     "Normal,Fairy:239": [
@@ -100229,6 +103342,61 @@
             "STEEL",
             "normal",
             84.17110358827951
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            84.17110358827951
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            84.17110358827951
+        ],
+        [
+            454,
+            "toxicroak",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            80.92490802893512
+        ],
+        [
+            386,
+            "deoxysattack",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "ZAP_CANNON",
+            "ELECTRIC",
+            "normal",
+            80.85919050003585
+        ],
+        [
+            888,
+            "zaciancrowned",
+            "QUICK_ATTACK",
+            "NORMAL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            80.2711192021315
         ]
     ],
     "Normal,Fairy:32": [
@@ -100341,6 +103509,50 @@
             "STEEL",
             "normal",
             84.04173642357229
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            84.04173642357229
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            84.04173642357229
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            81.60635042878089
+        ],
+        [
+            454,
+            "toxicroak",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            80.99596213739156
         ]
     ],
     "Normal,Fairy:41": [
@@ -100453,6 +103665,61 @@
             "STEEL",
             "normal",
             84.02667387999594
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            84.02667387999594
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            84.02667387999594
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            81.43138777243293
+        ],
+        [
+            376,
+            "metagross",
+            "ZEN_HEADBUTT",
+            "PSYCHIC",
+            "normal",
+            "METEOR_MASH",
+            "STEEL",
+            "elite",
+            80.75746265411395
+        ],
+        [
+            386,
+            "deoxysattack",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "ZAP_CANNON",
+            "ELECTRIC",
+            "normal",
+            80.67346142118517
         ]
     ],
     "Normal,Fairy:71": [
@@ -100565,6 +103832,50 @@
             "STEEL",
             "normal",
             83.87663575244488
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.87663575244488
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.87663575244488
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            81.0557252828503
+        ],
+        [
+            454,
+            "toxicroak",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            80.68662230970163
         ]
     ],
     "Normal,Fairy:90": [
@@ -100677,6 +103988,61 @@
             "STEEL",
             "normal",
             83.61053762489257
+        ],
+        [
+            649,
+            "genesectdouse",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.61053762489257
+        ],
+        [
+            649,
+            "genesectshock",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "MAGNET_BOMB",
+            "STEEL",
+            "normal",
+            83.61053762489257
+        ],
+        [
+            386,
+            "deoxysattack",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "ZAP_CANNON",
+            "ELECTRIC",
+            "normal",
+            81.48802501411707
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            81.22177860713194
+        ],
+        [
+            888,
+            "zaciancrowned",
+            "QUICK_ATTACK",
+            "NORMAL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            80.45509876227798
         ]
     ],
     "Normal,Fighting:141": [
@@ -100844,6 +104210,17 @@
             "PSYCHIC",
             "elite",
             82.0402301614819
+        ],
+        [
+            146,
+            "moltres",
+            "WING_ATTACK",
+            "FLYING",
+            "normal",
+            "SKY_ATTACK",
+            "FLYING",
+            "elite",
+            81.89625157752926
         ]
     ],
     "Normal,Fighting:188": [
@@ -101011,6 +104388,17 @@
             "PSYCHIC",
             "elite",
             82.50159432699645
+        ],
+        [
+            146,
+            "moltres",
+            "WING_ATTACK",
+            "FLYING",
+            "normal",
+            "SKY_ATTACK",
+            "FLYING",
+            "elite",
+            81.86943736704102
         ]
     ],
     "Normal,Fighting:214": [
@@ -101189,6 +104577,39 @@
             "PSYCHIC",
             "elite",
             82.11151297918146
+        ],
+        [
+            888,
+            "zaciancrowned",
+            "QUICK_ATTACK",
+            "NORMAL",
+            "normal",
+            "PLAY_ROUGH",
+            "FAIRY",
+            "normal",
+            82.0754598694908
+        ],
+        [
+            888,
+            "zaciancrowned",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "PLAY_ROUGH",
+            "FAIRY",
+            "normal",
+            81.63764881352125
+        ],
+        [
+            65,
+            "alakazam",
+            "COUNTER",
+            "FIGHTING",
+            "elite",
+            "PSYCHIC",
+            "PSYCHIC",
+            "elite",
+            80.82054727569117
         ]
     ],
     "Normal,Fighting:95": [
@@ -101367,6 +104788,28 @@
             "PSYCHIC",
             "elite",
             81.22459635490905
+        ],
+        [
+            888,
+            "zaciancrowned",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "PLAY_ROUGH",
+            "FAIRY",
+            "normal",
+            81.20580379134678
+        ],
+        [
+            888,
+            "zaciancrowned",
+            "QUICK_ATTACK",
+            "NORMAL",
+            "normal",
+            "PLAY_ROUGH",
+            "FAIRY",
+            "normal",
+            80.97174978960639
         ]
     ],
     "Normal,Flying:100": [
@@ -106195,6 +109638,39 @@
             "FLYING",
             "elite",
             76.69024047451009
+        ],
+        [
+            555,
+            "darmanitan",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "OVERHEAT",
+            "FIRE",
+            "normal",
+            76.38202890689215
+        ],
+        [
+            795,
+            "pheromosa",
+            "BUG_BITE",
+            "BUG",
+            "normal",
+            "LUNGE",
+            "BUG",
+            "normal",
+            76.34513406282137
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "LUNGE",
+            "BUG",
+            "normal",
+            76.26930406594187
         ]
     ],
     "Normal,Grass:146": [
@@ -106384,6 +109860,72 @@
             "FIGHTING",
             "normal",
             77.56908755807281
+        ],
+        [
+            534,
+            "conkeldurr",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            77.11670146857892
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.8901949727007
+        ],
+        [
+            146,
+            "moltres",
+            "WING_ATTACK",
+            "FLYING",
+            "normal",
+            "SKY_ATTACK",
+            "FLYING",
+            "elite",
+            76.75017667982635
+        ],
+        [
+            795,
+            "pheromosa",
+            "BUG_BITE",
+            "BUG",
+            "normal",
+            "LUNGE",
+            "BUG",
+            "normal",
+            76.23165906940257
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "LUNGE",
+            "BUG",
+            "normal",
+            76.14295807685988
+        ],
+        [
+            257,
+            "blaziken",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "BLAZE_KICK",
+            "FIRE",
+            "normal",
+            75.96684513014334
         ]
     ],
     "Normal,Ground:155": [
@@ -106551,6 +110093,17 @@
             "FIGHTING",
             "normal",
             75.23959336177636
+        ],
+        [
+            473,
+            "mamoswine",
+            "POWDER_SNOW",
+            "ICE",
+            "normal",
+            "AVALANCHE",
+            "ICE",
+            "normal",
+            75.17194999364217
         ]
     ],
     "Normal,Psychic:133": [
@@ -107364,6 +110917,61 @@
             "FIGHTING",
             "normal",
             81.04202022878708
+        ],
+        [
+            701,
+            "hawlucha",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FLYING_PRESS",
+            "FIGHTING",
+            "normal",
+            80.60041000294383
+        ],
+        [
+            796,
+            "xurkitree",
+            "THUNDER_SHOCK",
+            "ELECTRIC",
+            "normal",
+            "THUNDER",
+            "ELECTRIC",
+            "normal",
+            80.20556514358935
+        ],
+        [
+            892,
+            "urshifu",
+            "ROCK_SMASH",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            79.88529707642842
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "ROCK_SMASH",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            79.88529707642842
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            79.38309104677064
         ]
     ],
     "Normal:105": [
@@ -107542,6 +111150,17 @@
             "FIGHTING",
             "normal",
             78.28778740840829
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.99854784793817
         ]
     ],
     "Normal:112": [
@@ -107709,6 +111328,28 @@
             "FIGHTING",
             "normal",
             79.32653507969172
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.19644942793097
+        ],
+        [
+            795,
+            "pheromosa",
+            "BUG_BITE",
+            "BUG",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            77.18059588682453
         ]
     ],
     "Normal:113": [
@@ -107898,6 +111539,50 @@
             "FIGHTING",
             "normal",
             77.14904424237592
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.09798581958522
+        ],
+        [
+            892,
+            "urshifu",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            76.77819436569112
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            76.77819436569112
+        ],
+        [
+            297,
+            "hariyama",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.54310098634694
         ]
     ],
     "Normal:114": [
@@ -108087,6 +111772,50 @@
             "FIGHTING",
             "normal",
             77.14904424237592
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.09798581958522
+        ],
+        [
+            892,
+            "urshifu",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            76.77819436569112
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            76.77819436569112
+        ],
+        [
+            297,
+            "hariyama",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.54310098634694
         ]
     ],
     "Normal:116": [
@@ -108265,6 +111994,17 @@
             "FIGHTING",
             "normal",
             77.1749853811778
+        ],
+        [
+            639,
+            "terrakion",
+            "SMACK_DOWN",
+            "ROCK",
+            "normal",
+            "SACRED_SWORD",
+            "FIGHTING",
+            "elite",
+            76.47595407125534
         ]
     ],
     "Normal:117": [
@@ -108443,6 +112183,17 @@
             "FIGHTING",
             "normal",
             78.3576902065568
+        ],
+        [
+            639,
+            "terrakion",
+            "SMACK_DOWN",
+            "ROCK",
+            "normal",
+            "SACRED_SWORD",
+            "FIGHTING",
+            "elite",
+            77.66164663226414
         ]
     ],
     "Normal:124": [
@@ -108621,6 +112372,17 @@
             "FIGHTING",
             "normal",
             79.47637969316972
+        ],
+        [
+            639,
+            "terrakion",
+            "SMACK_DOWN",
+            "ROCK",
+            "normal",
+            "SACRED_SWORD",
+            "FIGHTING",
+            "elite",
+            77.8049280483019
         ]
     ],
     "Normal:125": [
@@ -108799,6 +112561,50 @@
             "FIGHTING",
             "normal",
             79.26489442043278
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.3424838313098
+        ],
+        [
+            534,
+            "conkeldurr",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            77.27546774106132
+        ],
+        [
+            892,
+            "urshifu",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            77.11899187056946
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            77.11899187056946
         ]
     ],
     "Normal:126": [
@@ -109010,6 +112816,17 @@
             "FIGHTING",
             "normal",
             77.0876946401792
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.88340827766707
         ]
     ],
     "Normal:127": [
@@ -109177,6 +112994,17 @@
             "FIGHTING",
             "normal",
             79.48936916044127
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.18108741816256
         ]
     ],
     "Normal:128": [
@@ -109344,6 +113172,17 @@
             "FIGHTING",
             "normal",
             79.42004920286024
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.71490299398268
         ]
     ],
     "Normal:130": [
@@ -109511,6 +113350,28 @@
             "FIGHTING",
             "normal",
             77.87467751884886
+        ],
+        [
+            794,
+            "buzzwole",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.48248479517369
+        ],
+        [
+            795,
+            "pheromosa",
+            "BUG_BITE",
+            "BUG",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            76.19688577686992
         ]
     ],
     "Normal:131": [
@@ -109689,6 +113550,50 @@
             "FIGHTING",
             "normal",
             77.66455481991159
+        ],
+        [
+            639,
+            "terrakion",
+            "SMACK_DOWN",
+            "ROCK",
+            "normal",
+            "SACRED_SWORD",
+            "FIGHTING",
+            "elite",
+            77.43120601856634
+        ],
+        [
+            534,
+            "conkeldurr",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            77.34775560363478
+        ],
+        [
+            892,
+            "urshifu",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            77.11423885742774
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            77.11423885742774
         ]
     ],
     "Normal:133": [
@@ -109900,6 +113805,17 @@
             "FIGHTING",
             "normal",
             77.28198536359949
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.0018011445395
         ]
     ],
     "Normal:136": [
@@ -110078,6 +113994,17 @@
             "FIGHTING",
             "normal",
             77.48129068881771
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.76732450383885
         ]
     ],
     "Normal:137": [
@@ -110256,6 +114183,17 @@
             "FIGHTING",
             "normal",
             77.48145760694126
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.70727119109249
         ]
     ],
     "Normal:139": [
@@ -110467,6 +114405,17 @@
             "FIGHTING",
             "normal",
             77.24758585324335
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.19160784328086
         ]
     ],
     "Normal:143": [
@@ -110645,6 +114594,17 @@
             "FIGHTING",
             "normal",
             78.6934683672435
+        ],
+        [
+            794,
+            "buzzwole",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.98610589383453
         ]
     ],
     "Normal:144": [
@@ -110823,6 +114783,17 @@
             "FIGHTING",
             "normal",
             78.6998497764635
+        ],
+        [
+            794,
+            "buzzwole",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.96544994959721
         ]
     ],
     "Normal:145": [
@@ -111001,6 +114972,17 @@
             "FIGHTING",
             "normal",
             78.7062968717627
+        ],
+        [
+            794,
+            "buzzwole",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.94458138649418
         ]
     ],
     "Normal:150": [
@@ -111179,6 +115161,28 @@
             "FIGHTING",
             "normal",
             79.1451037177527
+        ],
+        [
+            639,
+            "terrakion",
+            "SMACK_DOWN",
+            "ROCK",
+            "normal",
+            "SACRED_SWORD",
+            "FIGHTING",
+            "elite",
+            77.55860158130119
+        ],
+        [
+            639,
+            "terrakion",
+            "ZEN_HEADBUTT",
+            "PSYCHIC",
+            "normal",
+            "SACRED_SWORD",
+            "FIGHTING",
+            "elite",
+            77.4906792746084
         ]
     ],
     "Normal:156": [
@@ -111390,6 +115394,17 @@
             "FIGHTING",
             "normal",
             77.64443816142045
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.6432506548433
         ]
     ],
     "Normal:159": [
@@ -111579,6 +115594,17 @@
             "FIGHTING",
             "normal",
             77.8912722604752
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.51458873856879
         ]
     ],
     "Normal:163": [
@@ -111757,6 +115783,17 @@
             "FIGHTING",
             "normal",
             77.45420026921147
+        ],
+        [
+            794,
+            "buzzwole",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.6343770369141
         ]
     ],
     "Normal:165": [
@@ -111935,6 +115972,39 @@
             "FIGHTING",
             "normal",
             77.6779060150858
+        ],
+        [
+            794,
+            "buzzwole",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.58372152317301
+        ],
+        [
+            892,
+            "urshifu",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            76.45110433911613
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            76.45110433911613
         ]
     ],
     "Normal:166": [
@@ -112113,6 +116183,61 @@
             "FIGHTING",
             "normal",
             79.08883008907198
+        ],
+        [
+            639,
+            "terrakion",
+            "ZEN_HEADBUTT",
+            "PSYCHIC",
+            "normal",
+            "SACRED_SWORD",
+            "FIGHTING",
+            "elite",
+            78.071462803916
+        ],
+        [
+            892,
+            "urshifu",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            78.04217953392424
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            78.04217953392424
+        ],
+        [
+            534,
+            "conkeldurr",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            77.54344817017109
+        ],
+        [
+            639,
+            "terrakion",
+            "SMACK_DOWN",
+            "ROCK",
+            "normal",
+            "SACRED_SWORD",
+            "FIGHTING",
+            "elite",
+            77.40961040370212
         ]
     ],
     "Normal:167": [
@@ -112291,6 +116416,61 @@
             "FIGHTING",
             "normal",
             79.08883008907198
+        ],
+        [
+            639,
+            "terrakion",
+            "ZEN_HEADBUTT",
+            "PSYCHIC",
+            "normal",
+            "SACRED_SWORD",
+            "FIGHTING",
+            "elite",
+            78.071462803916
+        ],
+        [
+            892,
+            "urshifu",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            78.04217953392424
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            78.04217953392424
+        ],
+        [
+            534,
+            "conkeldurr",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            77.54344817017109
+        ],
+        [
+            639,
+            "terrakion",
+            "SMACK_DOWN",
+            "ROCK",
+            "normal",
+            "SACRED_SWORD",
+            "FIGHTING",
+            "elite",
+            77.40961040370212
         ]
     ],
     "Normal:169": [
@@ -112480,6 +116660,17 @@
             "FIGHTING",
             "normal",
             78.04070453251418
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.70096635291158
         ]
     ],
     "Normal:180": [
@@ -112669,6 +116860,28 @@
             "FIGHTING",
             "normal",
             77.69184608107159
+        ],
+        [
+            639,
+            "terrakion",
+            "ZEN_HEADBUTT",
+            "PSYCHIC",
+            "normal",
+            "SACRED_SWORD",
+            "FIGHTING",
+            "elite",
+            76.90245174667018
+        ],
+        [
+            639,
+            "terrakion",
+            "SMACK_DOWN",
+            "ROCK",
+            "normal",
+            "SACRED_SWORD",
+            "FIGHTING",
+            "elite",
+            76.88441398343183
         ]
     ],
     "Normal:181": [
@@ -112858,6 +117071,28 @@
             "FIGHTING",
             "normal",
             77.69184608107159
+        ],
+        [
+            639,
+            "terrakion",
+            "ZEN_HEADBUTT",
+            "PSYCHIC",
+            "normal",
+            "SACRED_SWORD",
+            "FIGHTING",
+            "elite",
+            76.90245174667018
+        ],
+        [
+            639,
+            "terrakion",
+            "SMACK_DOWN",
+            "ROCK",
+            "normal",
+            "SACRED_SWORD",
+            "FIGHTING",
+            "elite",
+            76.88441398343183
         ]
     ],
     "Normal:182": [
@@ -113047,6 +117282,28 @@
             "FIGHTING",
             "normal",
             77.95736118378584
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.34420449073743
+        ],
+        [
+            297,
+            "hariyama",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.84161312838661
         ]
     ],
     "Normal:183": [
@@ -113225,6 +117482,17 @@
             "FIGHTING",
             "normal",
             79.99855562980078
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.26924199821188
         ]
     ],
     "Normal:184": [
@@ -113392,6 +117660,17 @@
             "FIGHTING",
             "normal",
             79.9050604916623
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.19331241290362
         ]
     ],
     "Normal:189": [
@@ -113559,6 +117838,17 @@
             "FIGHTING",
             "normal",
             78.25475607124338
+        ],
+        [
+            639,
+            "terrakion",
+            "ZEN_HEADBUTT",
+            "PSYCHIC",
+            "normal",
+            "SACRED_SWORD",
+            "FIGHTING",
+            "elite",
+            76.8825976412238
         ]
     ],
     "Normal:193": [
@@ -113748,6 +118038,39 @@
             "FIGHTING",
             "normal",
             77.6781759214716
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.02034946051016
+        ],
+        [
+            297,
+            "hariyama",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.94283749082263
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "TACKLE",
+            "NORMAL",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.84970469668562
         ]
     ],
     "Normal:194": [
@@ -113937,6 +118260,28 @@
             "FIGHTING",
             "normal",
             77.94324876892634
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.54444700383505
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "TACKLE",
+            "NORMAL",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.37264105985321
         ]
     ],
     "Normal:198": [
@@ -114115,6 +118460,17 @@
             "FIGHTING",
             "normal",
             77.95009310674482
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.3858370959129
         ]
     ],
     "Normal:210": [
@@ -114304,6 +118660,17 @@
             "FIGHTING",
             "normal",
             78.2798501750153
+        ],
+        [
+            639,
+            "terrakion",
+            "ZEN_HEADBUTT",
+            "PSYCHIC",
+            "normal",
+            "SACRED_SWORD",
+            "FIGHTING",
+            "elite",
+            77.3398794952052
         ]
     ],
     "Normal:238": [
@@ -114493,6 +118860,17 @@
             "FIGHTING",
             "normal",
             77.50427126272528
+        ],
+        [
+            794,
+            "buzzwole",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.22582595132464
         ]
     ],
     "Normal:42": [
@@ -114671,6 +119049,17 @@
             "FIGHTING",
             "normal",
             77.67017916123501
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.00865135745264
         ]
     ],
     "Normal:56": [
@@ -114838,6 +119227,28 @@
             "FIGHTING",
             "normal",
             79.31811177598746
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.23147890371486
+        ],
+        [
+            795,
+            "pheromosa",
+            "BUG_BITE",
+            "BUG",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            77.0189612464218
         ]
     ],
     "Normal:70": [
@@ -115016,6 +119427,17 @@
             "FIGHTING",
             "normal",
             77.01312122552103
+        ],
+        [
+            794,
+            "buzzwole",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.7595488376897
         ]
     ],
     "Normal:72": [
@@ -115194,6 +119616,17 @@
             "FIGHTING",
             "normal",
             77.67143082896503
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.22560188393696
         ]
     ],
     "Normal:73": [
@@ -115372,6 +119805,17 @@
             "FIGHTING",
             "normal",
             77.7838849899506
+        ],
+        [
+            794,
+            "buzzwole",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.88923112490276
         ]
     ],
     "Normal:77": [
@@ -115550,6 +119994,17 @@
             "FIGHTING",
             "normal",
             77.19118403506627
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.12870981482202
         ]
     ],
     "Normal:78": [
@@ -115728,6 +120183,28 @@
             "FIGHTING",
             "normal",
             77.0726582913727
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.75422290852416
+        ],
+        [
+            534,
+            "conkeldurr",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            76.74173821522261
         ]
     ],
     "Normal:79": [
@@ -115906,6 +120383,39 @@
             "FIGHTING",
             "normal",
             77.79217294145039
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.97625522721606
+        ],
+        [
+            892,
+            "urshifu",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            76.95639669931087
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            76.95639669931087
         ]
     ],
     "Normal:80": [
@@ -116084,6 +120594,28 @@
             "FIGHTING",
             "normal",
             77.67589365279953
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.8645925902044
+        ],
+        [
+            534,
+            "conkeldurr",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            76.64637420987201
         ]
     ],
     "Normal:81": [
@@ -116262,6 +120794,28 @@
             "FIGHTING",
             "normal",
             77.67589365279953
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.8645925902044
+        ],
+        [
+            534,
+            "conkeldurr",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            76.64637420987201
         ]
     ],
     "Normal:82": [
@@ -116440,6 +120994,17 @@
             "FIGHTING",
             "normal",
             77.67803037560181
+        ],
+        [
+            794,
+            "buzzwole",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.59831012995214
         ]
     ],
     "Normal:83": [
@@ -116618,6 +121183,17 @@
             "FIGHTING",
             "normal",
             78.43676723424227
+        ],
+        [
+            639,
+            "terrakion",
+            "SMACK_DOWN",
+            "ROCK",
+            "normal",
+            "SACRED_SWORD",
+            "FIGHTING",
+            "elite",
+            76.77316698372786
         ]
     ],
     "Normal:86": [
@@ -116796,6 +121372,17 @@
             "FIGHTING",
             "normal",
             77.27359207219699
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.2258297986861
         ]
     ],
     "Normal:91": [
@@ -116974,6 +121561,17 @@
             "FIGHTING",
             "normal",
             77.8127420478129
+        ],
+        [
+            639,
+            "terrakion",
+            "SMACK_DOWN",
+            "ROCK",
+            "normal",
+            "SACRED_SWORD",
+            "FIGHTING",
+            "elite",
+            76.92265512013212
         ]
     ],
     "Normal:92": [
@@ -117152,6 +121750,17 @@
             "FIGHTING",
             "normal",
             77.95009310674482
+        ],
+        [
+            794,
+            "buzzwole",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            76.80368405502222
         ]
     ],
     "Normal:93": [
@@ -117330,6 +121939,17 @@
             "FIGHTING",
             "normal",
             78.65737214505286
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.07001301550403
         ]
     ],
     "Normal:97": [
@@ -117508,6 +122128,28 @@
             "FIGHTING",
             "normal",
             77.2328596180719
+        ],
+        [
+            555,
+            "darmanitangalarzen",
+            "ICE_FANG",
+            "ICE",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            77.16706027206692
+        ],
+        [
+            534,
+            "conkeldurr",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            76.7909160145397
         ]
     ],
     "Poison,Bug:151": [
@@ -125635,6 +130277,50 @@
             "BUG",
             "normal",
             58.37981727432134
+        ],
+        [
+            649,
+            "genesectdouse",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            58.37981727432134
+        ],
+        [
+            649,
+            "genesectshock",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            58.37981727432134
+        ],
+        [
+            291,
+            "ninjask",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            57.49563792264005
+        ],
+        [
+            414,
+            "mothim",
+            "BUG_BITE",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            57.11730096024826
         ]
     ],
     "Psychic,Dragon:196": [
@@ -125980,6 +130666,28 @@
             "GHOST",
             "normal",
             88.76912331998635
+        ],
+        [
+            855,
+            "polteageistantique",
+            "HEX",
+            "GHOST",
+            "normal",
+            "SHADOW_BALL",
+            "GHOST",
+            "normal",
+            88.76912331998635
+        ],
+        [
+            864,
+            "cursola",
+            "ASTONISH",
+            "GHOST",
+            "normal",
+            "SHADOW_BALL",
+            "GHOST",
+            "normal",
+            88.58213907621001
         ]
     ],
     "Psychic,Fairy:162": [
@@ -126325,6 +131033,28 @@
             "GHOST",
             "normal",
             87.49106509166242
+        ],
+        [
+            855,
+            "polteageistantique",
+            "HEX",
+            "GHOST",
+            "normal",
+            "SHADOW_BALL",
+            "GHOST",
+            "normal",
+            87.49106509166242
+        ],
+        [
+            93,
+            "haunter",
+            "LICK",
+            "GHOST",
+            "elite",
+            "SHADOW_BALL",
+            "GHOST",
+            "normal",
+            87.43255289722852
         ]
     ],
     "Psychic,Fairy:195": [
@@ -126485,6 +131215,17 @@
         [
             855,
             "polteageist",
+            "HEX",
+            "GHOST",
+            "normal",
+            "SHADOW_BALL",
+            "GHOST",
+            "normal",
+            88.76305805080919
+        ],
+        [
+            855,
+            "polteageistantique",
             "HEX",
             "GHOST",
             "normal",
@@ -127048,6 +131789,17 @@
             "GHOST",
             "normal",
             88.01398761927871
+        ],
+        [
+            855,
+            "polteageistantique",
+            "HEX",
+            "GHOST",
+            "normal",
+            "SHADOW_BALL",
+            "GHOST",
+            "normal",
+            88.01398761927871
         ]
     ],
     "Psychic,Fairy:59": [
@@ -127226,6 +131978,28 @@
             "GHOST",
             "normal",
             88.47965314865074
+        ],
+        [
+            855,
+            "polteageistantique",
+            "HEX",
+            "GHOST",
+            "normal",
+            "SHADOW_BALL",
+            "GHOST",
+            "normal",
+            88.47965314865074
+        ],
+        [
+            864,
+            "cursola",
+            "ASTONISH",
+            "GHOST",
+            "normal",
+            "SHADOW_BALL",
+            "GHOST",
+            "normal",
+            88.10165838566121
         ]
     ],
     "Psychic,Fairy:90": [
@@ -127393,6 +132167,39 @@
             "GHOST",
             "normal",
             89.05787050676675
+        ],
+        [
+            855,
+            "polteageistantique",
+            "HEX",
+            "GHOST",
+            "normal",
+            "SHADOW_BALL",
+            "GHOST",
+            "normal",
+            89.05787050676675
+        ],
+        [
+            93,
+            "haunter",
+            "SHADOW_CLAW",
+            "GHOST",
+            "normal",
+            "SHADOW_BALL",
+            "GHOST",
+            "normal",
+            88.80801750022987
+        ],
+        [
+            864,
+            "cursola",
+            "ASTONISH",
+            "GHOST",
+            "normal",
+            "SHADOW_BALL",
+            "GHOST",
+            "normal",
+            88.67522760571032
         ]
     ],
     "Psychic,Fighting:195": [
@@ -130300,6 +135107,61 @@
             "BUG",
             "normal",
             57.13042469828294
+        ],
+        [
+            649,
+            "genesectburn",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.13042469828294
+        ],
+        [
+            649,
+            "genesectchill",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.13042469828294
+        ],
+        [
+            649,
+            "genesectdouse",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.13042469828294
+        ],
+        [
+            649,
+            "genesectshock",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.13042469828294
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            56.84227714030583
         ]
     ],
     "Psychic,Grass:210": [
@@ -130423,6 +135285,61 @@
             "BUG",
             "normal",
             57.956836848630296
+        ],
+        [
+            649,
+            "genesectdouse",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.956836848630296
+        ],
+        [
+            649,
+            "genesectshock",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "X_SCISSOR",
+            "BUG",
+            "normal",
+            57.956836848630296
+        ],
+        [
+            414,
+            "mothim",
+            "BUG_BITE",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            57.72884756153896
+        ],
+        [
+            291,
+            "ninjask",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            57.22247986737301
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "BUG_BUZZ",
+            "BUG",
+            "normal",
+            57.02114633352239
         ]
     ],
     "Psychic,Ice:246": [
@@ -139463,6 +144380,17 @@
             "FIGHTING",
             "normal",
             76.21012532274263
+        ],
+        [
+            620,
+            "mienshao",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "BRICK_BREAK",
+            "FIGHTING",
+            "normal",
+            72.26021535071
         ]
     ],
     "Rock,Dark:276": [
@@ -139630,6 +144558,17 @@
             "FIGHTING",
             "normal",
             76.63331468828854
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            72.63448802118035
         ]
     ],
     "Rock,Dragon:123": [
@@ -139957,6 +144896,17 @@
         [
             892,
             "urshifu",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            79.83532220675491
+        ],
+        [
+            892,
+            "urshifurapidstrike",
             "COUNTER",
             "FIGHTING",
             "normal",
@@ -140610,6 +145560,72 @@
             "STEEL",
             "normal",
             75.31087495358737
+        ],
+        [
+            625,
+            "bisharp",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            73.3369957622635
+        ],
+        [
+            530,
+            "excadrill",
+            "MUD_SHOT",
+            "GROUND",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            73.11627011978892
+        ],
+        [
+            530,
+            "excadrill",
+            "MUD_SLAP",
+            "GROUND",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            72.29133014165947
+        ],
+        [
+            889,
+            "zamazentacrowned",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            71.75490644254991
+        ],
+        [
+            212,
+            "scizor",
+            "BULLET_PUNCH",
+            "STEEL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            71.7421758171195
+        ],
+        [
+            68,
+            "machamp",
+            "BULLET_PUNCH",
+            "STEEL",
+            "normal",
+            "HEAVY_SLAM",
+            "STEEL",
+            "normal",
+            69.94045973037245
         ]
     ],
     "Rock,Fairy:285": [
@@ -140722,6 +145738,72 @@
             "STEEL",
             "normal",
             75.03227274092595
+        ],
+        [
+            625,
+            "bisharp",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            73.34829701008123
+        ],
+        [
+            530,
+            "excadrill",
+            "MUD_SHOT",
+            "GROUND",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            73.13897680480044
+        ],
+        [
+            530,
+            "excadrill",
+            "MUD_SLAP",
+            "GROUND",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            72.4544596836763
+        ],
+        [
+            212,
+            "scizor",
+            "BULLET_PUNCH",
+            "STEEL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            71.99882743441701
+        ],
+        [
+            889,
+            "zamazentacrowned",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            71.07363497401653
+        ],
+        [
+            68,
+            "machamp",
+            "BULLET_PUNCH",
+            "STEEL",
+            "normal",
+            "HEAVY_SLAM",
+            "STEEL",
+            "normal",
+            70.2132939910017
         ]
     ],
     "Rock,Fighting:192": [
@@ -140911,6 +145993,28 @@
             "FIGHTING",
             "normal",
             81.55309595090857
+        ],
+        [
+            65,
+            "alakazam",
+            "CONFUSION",
+            "PSYCHIC",
+            "normal",
+            "PSYCHIC",
+            "PSYCHIC",
+            "elite",
+            81.21793563689963
+        ],
+        [
+            65,
+            "alakazam",
+            "PSYCHO_CUT",
+            "PSYCHIC",
+            "normal",
+            "PSYCHIC",
+            "PSYCHIC",
+            "elite",
+            80.68204646134959
         ]
     ],
     "Rock,Fire:157": [
@@ -142271,6 +147375,17 @@
             "FIGHTING",
             "normal",
             76.27312322997325
+        ],
+        [
+            473,
+            "mamoswine",
+            "POWDER_SNOW",
+            "ICE",
+            "normal",
+            "AVALANCHE",
+            "ICE",
+            "normal",
+            75.67797561126365
         ]
     ],
     "Rock,Grass:194": [
@@ -142482,6 +147597,17 @@
             "BUG",
             "normal",
             76.49459856260724
+        ],
+        [
+            473,
+            "mamoswine",
+            "POWDER_SNOW",
+            "ICE",
+            "normal",
+            "AVALANCHE",
+            "ICE",
+            "normal",
+            76.03740043726879
         ]
     ],
     "Rock,Ground:132": [
@@ -143376,6 +148502,39 @@
             "FIGHTING",
             "normal",
             81.36555003871953
+        ],
+        [
+            530,
+            "excadrill",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            80.64061984422706
+        ],
+        [
+            68,
+            "machamp",
+            "BULLET_PUNCH",
+            "STEEL",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            80.36021381411432
+        ],
+        [
+            297,
+            "hariyama",
+            "BULLET_PUNCH",
+            "STEEL",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            78.89360392820687
         ]
     ],
     "Rock,Ice:163": [
@@ -143543,6 +148702,39 @@
             "FIGHTING",
             "normal",
             81.26365713473005
+        ],
+        [
+            530,
+            "excadrill",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "IRON_HEAD",
+            "STEEL",
+            "normal",
+            80.68283742228665
+        ],
+        [
+            68,
+            "machamp",
+            "BULLET_PUNCH",
+            "STEEL",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            80.18796593702085
+        ],
+        [
+            297,
+            "hariyama",
+            "BULLET_PUNCH",
+            "STEEL",
+            "normal",
+            "SUPER_POWER",
+            "FIGHTING",
+            "normal",
+            78.9205784786335
         ]
     ],
     "Rock,Poison:210": [
@@ -144077,6 +149269,17 @@
             "GROUND",
             "elite",
             81.03742508750264
+        ],
+        [
+            645,
+            "landorus",
+            "MUD_SHOT",
+            "GROUND",
+            "normal",
+            "EARTH_POWER",
+            "GROUND",
+            "normal",
+            80.81800656159007
         ]
     ],
     "Rock,Steel:275": [
@@ -144233,6 +149436,17 @@
             "GROUND",
             "elite",
             81.60914381292712
+        ],
+        [
+            645,
+            "landorus",
+            "MUD_SHOT",
+            "GROUND",
+            "normal",
+            "EARTH_POWER",
+            "GROUND",
+            "normal",
+            81.38865099321374
         ]
     ],
     "Rock,Steel:286": [
@@ -144389,6 +149603,17 @@
             "GROUND",
             "elite",
             81.21420535672816
+        ],
+        [
+            645,
+            "landorus",
+            "MUD_SHOT",
+            "GROUND",
+            "normal",
+            "EARTH_POWER",
+            "GROUND",
+            "normal",
+            80.99862848692551
         ]
     ],
     "Rock,Steel:298": [
@@ -144545,6 +149770,17 @@
             "GROUND",
             "elite",
             81.41630484859529
+        ],
+        [
+            645,
+            "landorus",
+            "MUD_SHOT",
+            "GROUND",
+            "normal",
+            "EARTH_POWER",
+            "GROUND",
+            "normal",
+            81.19038350027647
         ]
     ],
     "Rock,Water:120": [
@@ -145571,6 +150807,28 @@
             "FIGHTING",
             "normal",
             86.02621451002753
+        ],
+        [
+            893,
+            "zarude",
+            "VINE_WHIP",
+            "GRASS",
+            "normal",
+            "POWER_WHIP",
+            "GRASS",
+            "normal",
+            85.87990073657934
+        ],
+        [
+            99,
+            "kingler",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "CRABHAMMER",
+            "WATER",
+            "normal",
+            85.57110100795201
         ]
     ],
     "Rock:110": [
@@ -145760,6 +151018,17 @@
             "FIGHTING",
             "normal",
             85.46768694946992
+        ],
+        [
+            701,
+            "hawlucha",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FLYING_PRESS",
+            "FIGHTING",
+            "normal",
+            85.45267366360135
         ]
     ],
     "Rock:133": [
@@ -145905,6 +151174,28 @@
             "FIGHTING",
             "normal",
             87.04102297903206
+        ],
+        [
+            818,
+            "inteleon",
+            "WATER_GUN",
+            "WATER",
+            "normal",
+            "SURF",
+            "WATER",
+            "normal",
+            86.77238132009555
+        ],
+        [
+            796,
+            "xurkitree",
+            "SPARK",
+            "ELECTRIC",
+            "normal",
+            "POWER_WHIP",
+            "GRASS",
+            "normal",
+            86.63325316281774
         ]
     ],
     "Rock:139": [
@@ -146083,6 +151374,17 @@
             "FIGHTING",
             "normal",
             86.22828394478532
+        ],
+        [
+            701,
+            "hawlucha",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FLYING_PRESS",
+            "FIGHTING",
+            "normal",
+            86.12935069196254
         ]
     ],
     "Rock:140": [
@@ -146261,6 +151563,17 @@
             "FIGHTING",
             "normal",
             86.24374652591526
+        ],
+        [
+            893,
+            "zarude",
+            "VINE_WHIP",
+            "GRASS",
+            "normal",
+            "POWER_WHIP",
+            "GRASS",
+            "normal",
+            86.05265566019523
         ]
     ],
     "Rock:143": [
@@ -146395,6 +151708,39 @@
             "GRASS",
             "normal",
             86.9186772113816
+        ],
+        [
+            893,
+            "zarude",
+            "VINE_WHIP",
+            "GRASS",
+            "normal",
+            "POWER_WHIP",
+            "GRASS",
+            "normal",
+            86.47881436818174
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            86.32117354497952
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            86.29256063034488
         ]
     ],
     "Rock:152": [
@@ -146529,6 +151875,39 @@
             "FIGHTING",
             "normal",
             86.90259596742922
+        ],
+        [
+            701,
+            "hawlucha",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FLYING_PRESS",
+            "FIGHTING",
+            "normal",
+            86.86541117051763
+        ],
+        [
+            796,
+            "xurkitree",
+            "SPARK",
+            "ELECTRIC",
+            "normal",
+            "POWER_WHIP",
+            "GRASS",
+            "normal",
+            86.46646474771873
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            86.3673553884039
         ]
     ],
     "Rock:176": [
@@ -146674,6 +152053,39 @@
             "FIGHTING",
             "normal",
             86.3170564482894
+        ],
+        [
+            701,
+            "hawlucha",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FLYING_PRESS",
+            "FIGHTING",
+            "normal",
+            86.11198732541617
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            86.00814463835034
+        ],
+        [
+            796,
+            "xurkitree",
+            "SPARK",
+            "ELECTRIC",
+            "normal",
+            "POWER_WHIP",
+            "GRASS",
+            "normal",
+            85.72672986036312
         ]
     ],
     "Rock:182": [
@@ -146830,6 +152242,28 @@
             "WATER",
             "normal",
             87.2251205186512
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            86.72068399934098
+        ],
+        [
+            99,
+            "kingler",
+            "METAL_CLAW",
+            "STEEL",
+            "normal",
+            "CRABHAMMER",
+            "WATER",
+            "normal",
+            85.85211048310681
         ]
     ],
     "Rock:198": [
@@ -146964,6 +152398,61 @@
             "GRASS",
             "normal",
             86.7025520931353
+        ],
+        [
+            818,
+            "inteleon",
+            "WATER_GUN",
+            "WATER",
+            "normal",
+            "SURF",
+            "WATER",
+            "normal",
+            86.54172569726492
+        ],
+        [
+            892,
+            "urshifu",
+            "ROCK_SMASH",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            86.45239117783964
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "ROCK_SMASH",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            86.45239117783964
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            86.16776003492491
+        ],
+        [
+            796,
+            "xurkitree",
+            "SPARK",
+            "ELECTRIC",
+            "normal",
+            "POWER_WHIP",
+            "GRASS",
+            "normal",
+            86.12485569059923
         ]
     ],
     "Rock:201": [
@@ -147098,6 +152587,39 @@
             "GRASS",
             "normal",
             86.9262152855001
+        ],
+        [
+            796,
+            "xurkitree",
+            "THUNDER_SHOCK",
+            "ELECTRIC",
+            "normal",
+            "POWER_WHIP",
+            "GRASS",
+            "normal",
+            86.66602737382388
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            86.16187744748787
+        ],
+        [
+            796,
+            "xurkitree",
+            "SPARK",
+            "ELECTRIC",
+            "normal",
+            "POWER_WHIP",
+            "GRASS",
+            "normal",
+            86.09425012064078
         ]
     ],
     "Rock:215": [
@@ -147221,6 +152743,39 @@
             "FIGHTING",
             "normal",
             87.41145833766862
+        ],
+        [
+            99,
+            "kingler",
+            "BUBBLE",
+            "WATER",
+            "normal",
+            "CRABHAMMER",
+            "WATER",
+            "normal",
+            87.37658130184266
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "WATERFALL",
+            "WATER",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            87.28850938762905
+        ],
+        [
+            796,
+            "xurkitree",
+            "SPARK",
+            "ELECTRIC",
+            "normal",
+            "POWER_WHIP",
+            "GRASS",
+            "normal",
+            87.18421106342338
         ]
     ],
     "Rock:238": [
@@ -147355,6 +152910,17 @@
             "FIGHTING",
             "normal",
             87.36208826902347
+        ],
+        [
+            818,
+            "inteleon",
+            "WATER_GUN",
+            "WATER",
+            "normal",
+            "SURF",
+            "WATER",
+            "normal",
+            87.17261823448796
         ]
     ],
     "Rock:309": [
@@ -147511,6 +153077,17 @@
             "FIGHTING",
             "normal",
             88.46309419286597
+        ],
+        [
+            893,
+            "zarude",
+            "VINE_WHIP",
+            "GRASS",
+            "normal",
+            "POWER_WHIP",
+            "GRASS",
+            "normal",
+            87.8647536130438
         ]
     ],
     "Rock:71": [
@@ -147656,6 +153233,28 @@
             "FIGHTING",
             "normal",
             86.1700904069023
+        ],
+        [
+            701,
+            "hawlucha",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FLYING_PRESS",
+            "FIGHTING",
+            "normal",
+            86.0896879222901
+        ],
+        [
+            796,
+            "xurkitree",
+            "SPARK",
+            "ELECTRIC",
+            "normal",
+            "POWER_WHIP",
+            "GRASS",
+            "normal",
+            86.01241755387761
         ]
     ],
     "Rock:78": [
@@ -147801,6 +153400,28 @@
             "FIGHTING",
             "normal",
             86.28706956196329
+        ],
+        [
+            701,
+            "hawlucha",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FLYING_PRESS",
+            "FIGHTING",
+            "normal",
+            86.28578285235248
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            86.28440431983756
         ]
     ],
     "Rock:91": [
@@ -147957,6 +153578,17 @@
             "GRASS",
             "normal",
             85.86091313741666
+        ],
+        [
+            701,
+            "hawlucha",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FLYING_PRESS",
+            "FIGHTING",
+            "normal",
+            85.84331950435143
         ]
     ],
     "Steel,Dragon:185": [
@@ -148113,6 +153745,17 @@
             "FIGHTING",
             "normal",
             83.20438074608315
+        ],
+        [
+            445,
+            "garchomp",
+            "MUD_SHOT",
+            "GROUND",
+            "normal",
+            "EARTH_POWER",
+            "GROUND",
+            "elite",
+            82.90188998071042
         ]
     ],
     "Steel,Dragon:190": [
@@ -148269,6 +153912,17 @@
             "FIGHTING",
             "normal",
             83.41506556494356
+        ],
+        [
+            445,
+            "garchomp",
+            "MUD_SHOT",
+            "GROUND",
+            "normal",
+            "EARTH_POWER",
+            "GROUND",
+            "elite",
+            82.90491232826358
         ]
     ],
     "Steel,Dragon:211": [
@@ -148425,6 +154079,17 @@
             "FIGHTING",
             "normal",
             84.16785362242449
+        ],
+        [
+            445,
+            "garchomp",
+            "MUD_SHOT",
+            "GROUND",
+            "normal",
+            "EARTH_POWER",
+            "GROUND",
+            "elite",
+            82.89149415396658
         ]
     ],
     "Steel,Dragon:225": [
@@ -148570,6 +154235,17 @@
             "FIGHTING",
             "normal",
             82.4914828715244
+        ],
+        [
+            445,
+            "garchomp",
+            "MUD_SHOT",
+            "GROUND",
+            "normal",
+            "EARTH_POWER",
+            "GROUND",
+            "elite",
+            82.26583600366907
         ]
     ],
     "Steel,Dragon:255": [
@@ -148726,6 +154402,17 @@
             "FIGHTING",
             "normal",
             83.98652508391315
+        ],
+        [
+            445,
+            "garchomp",
+            "MUD_SHOT",
+            "GROUND",
+            "normal",
+            "EARTH_POWER",
+            "GROUND",
+            "elite",
+            82.88242617168356
         ]
     ],
     "Steel,Fairy:141": [
@@ -149462,6 +155149,17 @@
             "GROUND",
             "normal",
             86.38100641750648
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            86.2937865510546
         ]
     ],
     "Steel,Flying:199": [
@@ -150620,6 +156318,17 @@
             "FIGHTING",
             "normal",
             86.47557567842232
+        ],
+        [
+            643,
+            "reshiram",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "OVERHEAT",
+            "FIRE",
+            "normal",
+            86.30589354965049
         ]
     ],
     "Steel,Ground:327": [
@@ -150787,6 +156496,17 @@
             "FIRE",
             "normal",
             86.52006348445421
+        ],
+        [
+            260,
+            "swampert",
+            "WATER_GUN",
+            "WATER",
+            "normal",
+            "HYDRO_CANNON",
+            "WATER",
+            "elite",
+            86.41906954079195
         ]
     ],
     "Steel,Psychic:132": [
@@ -152156,6 +157876,17 @@
             "GROUND",
             "elite",
             81.39500281498613
+        ],
+        [
+            645,
+            "landorus",
+            "MUD_SHOT",
+            "GROUND",
+            "normal",
+            "EARTH_POWER",
+            "GROUND",
+            "normal",
+            81.16876029150973
         ]
     ],
     "Steel,Rock:198": [
@@ -152312,6 +158043,17 @@
             "GROUND",
             "elite",
             81.51756226213456
+        ],
+        [
+            645,
+            "landorus",
+            "MUD_SHOT",
+            "GROUND",
+            "normal",
+            "EARTH_POWER",
+            "GROUND",
+            "normal",
+            81.28838828948592
         ]
     ],
     "Steel,Rock:257": [
@@ -152468,6 +158210,17 @@
             "GROUND",
             "elite",
             81.04699537113491
+        ],
+        [
+            645,
+            "landorus",
+            "MUD_SHOT",
+            "GROUND",
+            "normal",
+            "EARTH_POWER",
+            "GROUND",
+            "normal",
+            80.82106404950763
         ]
     ],
     "Steel:121": [
@@ -152635,6 +158388,39 @@
             "FIGHTING",
             "normal",
             86.09563251374912
+        ],
+        [
+            68,
+            "machamp",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            85.57718488515812
+        ],
+        [
+            892,
+            "urshifu",
+            "ROCK_SMASH",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            85.57631257958339
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "ROCK_SMASH",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            85.57631257958339
         ]
     ],
     "Steel:126": [
@@ -152791,6 +158577,17 @@
             "FIGHTING",
             "normal",
             86.17547838257207
+        ],
+        [
+            701,
+            "hawlucha",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FLYING_PRESS",
+            "FIGHTING",
+            "normal",
+            85.71851901218885
         ]
     ],
     "Steel:162": [
@@ -152947,6 +158744,17 @@
             "FIGHTING",
             "normal",
             85.69812868256614
+        ],
+        [
+            701,
+            "hawlucha",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FLYING_PRESS",
+            "FIGHTING",
+            "normal",
+            85.20376015625884
         ]
     ],
     "Steel:174": [
@@ -153114,6 +158922,17 @@
             "FIGHTING",
             "normal",
             86.5384146363974
+        ],
+        [
+            701,
+            "hawlucha",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FLYING_PRESS",
+            "FIGHTING",
+            "normal",
+            86.11198732541617
         ]
     ],
     "Steel:190": [
@@ -153281,6 +159100,39 @@
             "FIRE",
             "normal",
             85.0653928652474
+        ],
+        [
+            701,
+            "hawlucha",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FLYING_PRESS",
+            "FIGHTING",
+            "normal",
+            84.62686982332579
+        ],
+        [
+            892,
+            "urshifu",
+            "ROCK_SMASH",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            84.6204966630961
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "ROCK_SMASH",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            84.6204966630961
         ]
     ],
     "Steel:198": [
@@ -153459,6 +159311,17 @@
             "FIGHTING",
             "normal",
             86.05766850764586
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            85.70276385536896
         ]
     ],
     "Steel:214": [
@@ -153626,6 +159489,17 @@
             "FIGHTING",
             "normal",
             86.14517897096921
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            85.62691555648745
         ]
     ],
     "Steel:238": [
@@ -153804,6 +159678,17 @@
             "FIRE",
             "normal",
             86.07605274895292
+        ],
+        [
+            68,
+            "machamp",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            85.93431227860343
         ]
     ],
     "Steel:285": [
@@ -153971,6 +159856,17 @@
             "FIRE",
             "normal",
             86.25384373605782
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            85.80925841040593
         ]
     ],
     "Steel:331": [
@@ -154138,6 +160034,17 @@
             "FIGHTING",
             "normal",
             85.99371147474326
+        ],
+        [
+            68,
+            "machamp",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            85.87613704039335
         ]
     ],
     "Steel:91": [
@@ -154283,6 +160190,28 @@
             "FIRE",
             "normal",
             86.78194715035796
+        ],
+        [
+            701,
+            "hawlucha",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FLYING_PRESS",
+            "FIGHTING",
+            "normal",
+            85.84331950435143
+        ],
+        [
+            257,
+            "blaziken",
+            "FIRE_SPIN",
+            "FIRE",
+            "normal",
+            "BLAZE_KICK",
+            "FIRE",
+            "normal",
+            85.80254501095932
         ]
     ],
     "Steel:92": [
@@ -154439,6 +160368,39 @@
             "FIGHTING",
             "normal",
             86.05766850764586
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            85.70276385536896
+        ],
+        [
+            892,
+            "urshifu",
+            "ROCK_SMASH",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            85.55092708137036
+        ],
+        [
+            892,
+            "urshifurapidstrike",
+            "ROCK_SMASH",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            85.55092708137036
         ]
     ],
     "Steel:99": [
@@ -154595,6 +160557,17 @@
             "FIGHTING",
             "normal",
             85.94313965421333
+        ],
+        [
+            701,
+            "hawlucha",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FLYING_PRESS",
+            "FIGHTING",
+            "normal",
+            85.6639647101164
         ]
     ],
     "Water,Bug:117": [
@@ -155129,6 +161102,17 @@
             "FIGHTING",
             "normal",
             76.9841193943219
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "GRASS_KNOT",
+            "GRASS",
+            "elite",
+            76.72944216364711
         ]
     ],
     "Water,Dark:144": [
@@ -155362,6 +161346,50 @@
             "GRASS",
             "elite",
             77.03714821881101
+        ],
+        [
+            466,
+            "electivire",
+            "THUNDER_SHOCK",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            76.28045010568765
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "CLOSE_COMBAT",
+            "FIGHTING",
+            "normal",
+            75.80771245365483
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            75.80579799941684
+        ],
+        [
+            796,
+            "xurkitree",
+            "THUNDER_SHOCK",
+            "ELECTRIC",
+            "normal",
+            "THUNDER",
+            "ELECTRIC",
+            "normal",
+            75.64498249329453
         ]
     ],
     "Water,Dark:152": [
@@ -155584,6 +161612,28 @@
             "ELECTRIC",
             "normal",
             77.33709357294114
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "GRASS_KNOT",
+            "GRASS",
+            "elite",
+            77.2624407520368
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            76.50092802609015
         ]
     ],
     "Water,Dark:155": [
@@ -155784,6 +161834,50 @@
             "GRASS",
             "elite",
             77.8906404179585
+        ],
+        [
+            466,
+            "electivire",
+            "THUNDER_SHOCK",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            77.80148722727449
+        ],
+        [
+            795,
+            "pheromosa",
+            "BUG_BITE",
+            "BUG",
+            "normal",
+            "LUNGE",
+            "BUG",
+            "normal",
+            77.57454896843304
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "LUNGE",
+            "BUG",
+            "normal",
+            77.49033458652379
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            77.35372905488616
         ]
     ],
     "Water,Dark:247": [
@@ -156006,6 +162100,50 @@
             "BUG",
             "normal",
             77.0049376390993
+        ],
+        [
+            254,
+            "sceptile",
+            "FURY_CUTTER",
+            "BUG",
+            "normal",
+            "FRENZY_PLANT",
+            "GRASS",
+            "elite",
+            76.89009639250823
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "LUNGE",
+            "BUG",
+            "normal",
+            76.86516009831065
+        ],
+        [
+            796,
+            "xurkitree",
+            "THUNDER_SHOCK",
+            "ELECTRIC",
+            "normal",
+            "THUNDER",
+            "ELECTRIC",
+            "normal",
+            76.74053054149853
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            76.38494762099087
         ]
     ],
     "Water,Dark:39": [
@@ -156228,6 +162366,50 @@
             "FIGHTING",
             "normal",
             77.34595544052502
+        ],
+        [
+            466,
+            "electivire",
+            "THUNDER_SHOCK",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            76.93558408760556
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            76.1543821252729
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            75.74342219396746
+        ],
+        [
+            796,
+            "xurkitree",
+            "THUNDER_SHOCK",
+            "ELECTRIC",
+            "normal",
+            "THUNDER",
+            "ELECTRIC",
+            "normal",
+            75.65917442984257
         ]
     ],
     "Water,Dark:83": [
@@ -156450,6 +162632,39 @@
             "BUG",
             "normal",
             77.34304369147884
+        ],
+        [
+            466,
+            "electivire",
+            "THUNDER_SHOCK",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            76.7088911464013
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            76.19599062454242
+        ],
+        [
+            795,
+            "pheromosa",
+            "LOW_KICK",
+            "FIGHTING",
+            "normal",
+            "FOCUS_BLAST",
+            "FIGHTING",
+            "normal",
+            76.01258023622394
         ]
     ],
     "Water,Dragon:185": [
@@ -158577,6 +164792,17 @@
             "ELECTRIC",
             "normal",
             71.33617667068029
+        ],
+        [
+            310,
+            "manectric",
+            "THUNDER_FANG",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            71.22801521349596
         ]
     ],
     "Water,Flying:174": [
@@ -158700,6 +164926,28 @@
             "ELECTRIC",
             "normal",
             71.64214438159523
+        ],
+        [
+            523,
+            "zebstrika",
+            "SPARK",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            71.35334789265184
+        ],
+        [
+            243,
+            "raikou",
+            "VOLT_SWITCH",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            71.29231264262575
         ]
     ],
     "Water,Flying:179": [
@@ -158823,6 +165071,28 @@
             "ELECTRIC",
             "normal",
             71.55306813588241
+        ],
+        [
+            310,
+            "manectric",
+            "THUNDER_FANG",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            71.29541790953674
+        ],
+        [
+            243,
+            "raikou",
+            "VOLT_SWITCH",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            71.15766441052264
         ]
     ],
     "Water,Flying:186": [
@@ -158946,6 +165216,39 @@
             "ELECTRIC",
             "normal",
             72.15615870485532
+        ],
+        [
+            310,
+            "manectric",
+            "THUNDER_FANG",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            71.76432531944643
+        ],
+        [
+            243,
+            "raikou",
+            "VOLT_SWITCH",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            71.33973564968002
+        ],
+        [
+            310,
+            "manectric",
+            "CHARGE_BEAM",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            71.29602976240295
         ]
     ],
     "Water,Flying:226": [
@@ -159069,6 +165372,17 @@
             "ELECTRIC",
             "normal",
             71.77736719670953
+        ],
+        [
+            310,
+            "manectric",
+            "THUNDER_FANG",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            71.40586724584757
         ]
     ],
     "Water,Flying:61": [
@@ -159192,6 +165506,28 @@
             "ELECTRIC",
             "normal",
             71.54582721220392
+        ],
+        [
+            310,
+            "manectric",
+            "THUNDER_FANG",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            71.3352895130195
+        ],
+        [
+            243,
+            "raikou",
+            "VOLT_SWITCH",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            71.067000968136
         ]
     ],
     "Water,Flying:96": [
@@ -159315,6 +165651,28 @@
             "ELECTRIC",
             "normal",
             71.53141462649623
+        ],
+        [
+            310,
+            "manectric",
+            "THUNDER_FANG",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            71.28817211188712
+        ],
+        [
+            243,
+            "raikou",
+            "VOLT_SWITCH",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            70.93423287208435
         ]
     ],
     "Water,Ghost:134": [
@@ -161734,6 +168092,17 @@
             "FIGHTING",
             "normal",
             82.80246567294601
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "GRASS_KNOT",
+            "GRASS",
+            "elite",
+            82.46251256441226
         ]
     ],
     "Water,Ice:177": [
@@ -161879,6 +168248,17 @@
             "GRASS",
             "elite",
             82.10965369004339
+        ],
+        [
+            466,
+            "electivire",
+            "THUNDER_SHOCK",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            82.03017950087656
         ]
     ],
     "Water,Ice:185": [
@@ -162024,6 +168404,17 @@
             "ELECTRIC",
             "normal",
             81.8776523081795
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "GRASS_KNOT",
+            "GRASS",
+            "elite",
+            81.38472485469721
         ]
     ],
     "Water,Ice:256": [
@@ -162191,6 +168582,17 @@
             "FIGHTING",
             "normal",
             81.08530486336346
+        ],
+        [
+            466,
+            "electivire",
+            "THUNDER_SHOCK",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            80.63416679860318
         ]
     ],
     "Water,Poison:138": [
@@ -164595,6 +170997,17 @@
             "FIGHTING",
             "normal",
             80.86011720014805
+        ],
+        [
+            286,
+            "breloom",
+            "COUNTER",
+            "FIGHTING",
+            "normal",
+            "DYNAMIC_PUNCH",
+            "FIGHTING",
+            "normal",
+            80.0848779581572
         ]
     ],
     "Water:102": [
@@ -170447,6 +176860,17 @@
             "ELECTRIC",
             "normal",
             76.73320871817874
+        ],
+        [
+            849,
+            "toxtricitylowkey",
+            "SPARK",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            76.73320871817874
         ]
     ],
     "Water:181": [
@@ -172695,6 +179119,28 @@
             "ELECTRIC",
             "normal",
             76.54358345108209
+        ],
+        [
+            849,
+            "toxtricitylowkey",
+            "SPARK",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            76.54358345108209
+        ],
+        [
+            243,
+            "raikou",
+            "VOLT_SWITCH",
+            "ELECTRIC",
+            "normal",
+            "WILD_CHARGE",
+            "ELECTRIC",
+            "normal",
+            76.50072305441014
         ]
     ],
     "Water:43": [

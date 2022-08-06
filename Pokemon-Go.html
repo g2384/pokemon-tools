@@ -270,6 +270,8 @@
     <input type="button" class="btn btn-outline-primary" value="Clear" onclick="clearMoveList()" />
     <div id="MoveList-div"></div>
 
+    <hr>
+
     <h2>Counters</h2>
     <div class="mb-3 row align-items-center">
         <label for="pokemon-name" class="col-sm-2 col-form-label">Defence Pokemon:</label>
@@ -280,6 +282,8 @@
     <input type="button" class="btn btn-outline-primary" value="Show" onclick="showCounterList()" />
     <input type="button" class="btn btn-outline-primary" value="Clear" onclick="clearCounterList()" />
     <div id="Counters-div"></div>
+
+    <hr>
 
     <h2>Counters (Unique Ordered By DPS)</h2>
     <form id="counter-unique-pokemon-filters" class="flex-container"> </form>
@@ -619,7 +623,7 @@
                     + "<td><img src='./pokemon_go/type_" + l[3].toLowerCase() + ".png' />" + convertMoveToText(l[2]) + quickMoveTag + "</td>"
                     + "<td><img src='./pokemon_go/type_" + l[6].toLowerCase() + ".png' />" + convertMoveToText(l[5]) + chargeMoveTag + "</td>"
                     + "<td>" + numberWithCommas(l[8], 2) + "</td>"
-                    + "<td>" + numberWithCommas(l[9], 2) + "(" + getRankChar(l[10]) + ")" + "</td>";
+                    + "<td>" + numberWithCommas(l[9], 2) + getRankChar(l[10]) + "</td>";
                 tr += "</tr>";
                 trs.push(tr);
             }
@@ -1100,9 +1104,15 @@
         // counterPokemon(stats_table['bulbasaur'].def, newPokemon['bulbasaur'].types)
         function counterPokemon(def, types) {
             let dataList = [];
+            for (const [key, vp] of Object.entries(newPokemon)) {
+                if (vp.name2 != undefined) {
+                    break;
+                }
+                vp.name2 = convertName(item.name);
+            }
             moves_Pokemon_List.forEach(value => {
                 if (value.QUICK_MOVES[0] !== "STRUGGLE" && value.CINEMATIC_MOVES[0] !== "STRUGGLE") {
-                    let pokemon = Object.values(newPokemon).find(item => item.num === value.ID && convertName(item.name).includes(value.NAME));
+                    let pokemon = Object.values(newPokemon).find(item => item.num === value.ID && item.name2.includes(value.NAME));
                     if (pokemon === undefined) {
                         console.log(value.ID, value.NAME);
                         return;
@@ -1165,16 +1175,27 @@
                 count++;
                 console.log(count + ": " + newPokemon[key].name + ", " + dictKey);
                 let counters = counterPokemon(def, types);
-                let uniqueCounters = new Set();
+                let uniqueCounters = {};
                 var dictValue = [];
+                var counterLength = 10;
                 for (var c of counters) {
                     //fmove: { type: capitalize(mf.type), name: capitalize(mf.name), tag: ftag },
                     var item = [c.pokemon_id, c.pokemon_key];
                     var moveItem = [c.fmove.name, c.fmove.type, c.fmove.tag, c.cmove.name, c.cmove.type, c.cmove.tag, c.ratio];
-                    uniqueCounters.add(item.join(","));
+                    var itemKey = item.join(",");
+                    if (!uniqueCounters.hasOwnProperty(itemKey)) {
+                        // pokemon with different id+key are the same pokemon in different forms
+                        for (const [key2, vp2] of Object.entries(uniqueCounters)) {
+                            if (vp2 == c.ratio) {
+                                counterLength++;
+                                break;
+                            }
+                        }
+                        uniqueCounters[itemKey] = c.ratio;
+                    }
                     // only take the top 10 pokemons
-                    if (uniqueCounters.size > 10) {
-                        console.log(dictValue.length);
+                    if (Object.keys(uniqueCounters).length > counterLength) {
+                        console.log(dictValue.length + ", max length = " + counterLength);
                         break;
                     }
                     dictValue.push(item.concat(moveItem));
