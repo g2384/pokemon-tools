@@ -8278,6 +8278,17 @@
             73.8670888588002
         ],
         [
+            59,
+            "arcaninehisui",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "FLAMETHROWER",
+            "FIRE",
+            "normal",
+            72.91157201447326
+        ],
+        [
             485,
             "heatran",
             "FIRE_SPIN",
@@ -8298,17 +8309,6 @@
             "FIRE",
             "normal",
             71.64047230613858
-        ],
-        [
-            467,
-            "magmortar",
-            "FIRE_SPIN",
-            "FIRE",
-            "normal",
-            "FIRE_PUNCH",
-            "FIRE",
-            "normal",
-            71.5443186091878
         ]
     ],
     "Bug,Steel:181": [
@@ -8434,6 +8434,17 @@
             73.68209714680869
         ],
         [
+            59,
+            "arcaninehisui",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "FLAMETHROWER",
+            "FIRE",
+            "normal",
+            73.1364413910104
+        ],
+        [
             485,
             "heatran",
             "FIRE_SPIN",
@@ -8454,17 +8465,6 @@
             "FIRE",
             "normal",
             71.25932836583345
-        ],
-        [
-            467,
-            "magmortar",
-            "FIRE_SPIN",
-            "FIRE",
-            "normal",
-            "FIRE_PUNCH",
-            "FIRE",
-            "normal",
-            71.23896319597338
         ]
     ],
     "Bug,Steel:187": [
@@ -8590,6 +8590,17 @@
             73.9596701327404
         ],
         [
+            59,
+            "arcaninehisui",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "FLAMETHROWER",
+            "FIRE",
+            "normal",
+            72.85359946401995
+        ],
+        [
             485,
             "heatran",
             "FIRE_SPIN",
@@ -8610,17 +8621,6 @@
             "FIRE",
             "normal",
             71.36993809560639
-        ],
-        [
-            59,
-            "arcanine",
-            "FIRE_FANG",
-            "FIRE",
-            "normal",
-            "FLAMETHROWER",
-            "FIRE",
-            "normal",
-            71.34884233886987
         ]
     ],
     "Bug,Steel:188": [
@@ -8746,6 +8746,17 @@
             73.69785740604715
         ],
         [
+            59,
+            "arcaninehisui",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "FLAMETHROWER",
+            "FIRE",
+            "normal",
+            73.07313340863779
+        ],
+        [
             485,
             "heatran",
             "FIRE_SPIN",
@@ -8766,17 +8777,6 @@
             "FIRE",
             "normal",
             71.33450913093723
-        ],
-        [
-            136,
-            "flareon",
-            "FIRE_SPIN",
-            "FIRE",
-            "normal",
-            "FLAMETHROWER",
-            "FIRE",
-            "normal",
-            71.10895451997634
         ]
     ],
     "Bug,Steel:199": [
@@ -8902,6 +8902,17 @@
             73.87761233931573
         ],
         [
+            59,
+            "arcaninehisui",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "FLAMETHROWER",
+            "FIRE",
+            "normal",
+            73.5283230648135
+        ],
+        [
             485,
             "heatran",
             "FIRE_SPIN",
@@ -8922,17 +8933,6 @@
             "FIRE",
             "normal",
             71.86483191938308
-        ],
-        [
-            467,
-            "magmortar",
-            "FIRE_SPIN",
-            "FIRE",
-            "normal",
-            "FIRE_PUNCH",
-            "FIRE",
-            "normal",
-            71.58165778325994
         ]
     ],
     "Bug,Steel:205": [
@@ -9058,6 +9058,17 @@
             73.88896485933594
         ],
         [
+            59,
+            "arcaninehisui",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "FLAMETHROWER",
+            "FIRE",
+            "normal",
+            73.08504070488712
+        ],
+        [
             485,
             "heatran",
             "FIRE_SPIN",
@@ -9078,17 +9089,6 @@
             "FIRE",
             "normal",
             71.700119889788
-        ],
-        [
-            136,
-            "flareon",
-            "FIRE_SPIN",
-            "FIRE",
-            "normal",
-            "FLAMETHROWER",
-            "FIRE",
-            "normal",
-            71.54027687255987
         ]
     ],
     "Bug,Steel:250": [
@@ -9214,6 +9214,17 @@
             74.04614373720868
         ],
         [
+            59,
+            "arcaninehisui",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "FLAMETHROWER",
+            "FIRE",
+            "normal",
+            73.34799735316403
+        ],
+        [
             485,
             "heatran",
             "FIRE_SPIN",
@@ -9234,17 +9245,6 @@
             "FIRE",
             "normal",
             71.60005285008384
-        ],
-        [
-            136,
-            "flareon",
-            "FIRE_SPIN",
-            "FIRE",
-            "normal",
-            "FLAMETHROWER",
-            "FIRE",
-            "normal",
-            71.32479889532544
         ]
     ],
     "Bug,Water:226": [
@@ -29508,6 +29508,17 @@
             91.45164737253994
         ],
         [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            90.75225283256623
+        ],
+        [
             645,
             "landorustherian",
             "MUD_SHOT",
@@ -29539,50 +29550,6 @@
             "POISON",
             "normal",
             89.42580668115707
-        ],
-        [
-            623,
-            "golurk",
-            "MUD_SLAP",
-            "GROUND",
-            "normal",
-            "EARTH_POWER",
-            "GROUND",
-            "normal",
-            88.174337016157
-        ],
-        [
-            793,
-            "nihilego",
-            "ACID",
-            "POISON",
-            "normal",
-            "GUNK_SHOT",
-            "POISON",
-            "normal",
-            87.97952692523813
-        ],
-        [
-            94,
-            "gengar",
-            "HEX",
-            "GHOST",
-            "normal",
-            "SLUDGE_BOMB",
-            "POISON",
-            "normal",
-            87.96864048453098
-        ],
-        [
-            94,
-            "gengar",
-            "SHADOW_CLAW",
-            "GHOST",
-            "normal",
-            "SLUDGE_BOMB",
-            "POISON",
-            "normal",
-            87.33502313001003
         ]
     ],
     "Electric,Fairy:181": [
@@ -29708,6 +29675,17 @@
             90.6482146816642
         ],
         [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            90.63255459523516
+        ],
+        [
             645,
             "landorustherian",
             "MUD_SHOT",
@@ -29717,17 +29695,6 @@
             "GROUND",
             "normal",
             90.56703485672473
-        ],
-        [
-            383,
-            "groudon",
-            "MUD_SHOT",
-            "GROUND",
-            "normal",
-            "EARTHQUAKE",
-            "GROUND",
-            "normal",
-            88.42233213277106
         ]
     ],
     "Electric,Fire:219": [
@@ -71862,6 +71829,17 @@
             94.30752782930692
         ],
         [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            93.8626118827147
+        ],
+        [
             71,
             "victreebel",
             "ACID",
@@ -71871,6 +71849,17 @@
             "POISON",
             "normal",
             93.46305673763061
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_STING",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            92.06130804874766
         ],
         [
             435,
@@ -71915,17 +71904,6 @@
             "POISON",
             "normal",
             81.52980755762489
-        ],
-        [
-            80,
-            "slowbrogalar",
-            "POISON_JAB",
-            "POISON",
-            "normal",
-            "SLUDGE_BOMB",
-            "POISON",
-            "normal",
-            81.01600544456761
         ]
     ],
     "Grass,Fairy:119": [
@@ -71974,6 +71952,17 @@
             94.65884402549669
         ],
         [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            93.67943094007634
+        ],
+        [
             71,
             "victreebel",
             "ACID",
@@ -71983,6 +71972,17 @@
             "POISON",
             "normal",
             93.53734227862074
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_STING",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            91.9117749736502
         ],
         [
             435,
@@ -72027,17 +72027,6 @@
             "POISON",
             "normal",
             82.05065797318338
-        ],
-        [
-            80,
-            "slowbrogalar",
-            "POISON_JAB",
-            "POISON",
-            "normal",
-            "SLUDGE_BOMB",
-            "POISON",
-            "normal",
-            81.00469682731834
         ]
     ],
     "Grass,Fairy:168": [
@@ -72097,6 +72086,28 @@
             93.86822418339246
         ],
         [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            93.81645261461559
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_STING",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            92.14208759907343
+        ],
+        [
             435,
             "skuntank",
             "POISON_JAB",
@@ -72139,17 +72150,6 @@
             "POISON",
             "normal",
             82.12775092670455
-        ],
-        [
-            80,
-            "slowbrogalar",
-            "POISON_JAB",
-            "POISON",
-            "normal",
-            "SLUDGE_BOMB",
-            "POISON",
-            "normal",
-            81.4521450119577
         ]
     ],
     "Grass,Fairy:176": [
@@ -72198,6 +72198,17 @@
             94.23792006843145
         ],
         [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            93.94433132592282
+        ],
+        [
             71,
             "victreebel",
             "ACID",
@@ -72207,6 +72218,17 @@
             "POISON",
             "normal",
             93.57392307904951
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_STING",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            92.10416442300638
         ],
         [
             435,
@@ -72251,17 +72273,6 @@
             "POISON",
             "normal",
             81.41165605142074
-        ],
-        [
-            80,
-            "slowbrogalar",
-            "POISON_JAB",
-            "POISON",
-            "normal",
-            "SLUDGE_BOMB",
-            "POISON",
-            "normal",
-            80.43202089476117
         ]
     ],
     "Grass,Fairy:215": [
@@ -72321,6 +72332,28 @@
             93.55089836626334
         ],
         [
+            904,
+            "overqwil",
+            "POISON_JAB",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            93.40045780572392
+        ],
+        [
+            904,
+            "overqwil",
+            "POISON_STING",
+            "POISON",
+            "normal",
+            "SLUDGE_BOMB",
+            "POISON",
+            "normal",
+            91.70053863811992
+        ],
+        [
             435,
             "skuntank",
             "POISON_JAB",
@@ -72363,17 +72396,6 @@
             "POISON",
             "normal",
             81.80193271194138
-        ],
-        [
-            80,
-            "slowbrogalar",
-            "POISON_JAB",
-            "POISON",
-            "normal",
-            "SLUDGE_BOMB",
-            "POISON",
-            "normal",
-            81.60089595075642
         ]
     ],
     "Grass,Fighting:144": [
@@ -75167,6 +75189,17 @@
             73.62632374221513
         ],
         [
+            59,
+            "arcaninehisui",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "FLAMETHROWER",
+            "FIRE",
+            "normal",
+            73.05771237669916
+        ],
+        [
             485,
             "heatran",
             "FIRE_SPIN",
@@ -75187,17 +75220,6 @@
             "FIRE",
             "normal",
             71.46132856139077
-        ],
-        [
-            136,
-            "flareon",
-            "FIRE_SPIN",
-            "FIRE",
-            "normal",
-            "FLAMETHROWER",
-            "FIRE",
-            "normal",
-            71.26901065151625
         ]
     ],
     "Grass,Ice:158": [
@@ -75345,6 +75367,17 @@
             73.92672882623786
         ],
         [
+            59,
+            "arcaninehisui",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "FLAMETHROWER",
+            "FIRE",
+            "normal",
+            73.28318511972127
+        ],
+        [
             485,
             "heatran",
             "FIRE_SPIN",
@@ -75365,17 +75398,6 @@
             "FIRE",
             "normal",
             71.51803403896315
-        ],
-        [
-            467,
-            "magmortar",
-            "FIRE_SPIN",
-            "FIRE",
-            "normal",
-            "FIRE_PUNCH",
-            "FIRE",
-            "normal",
-            71.45410314311205
         ]
     ],
     "Grass,Ice:191": [
@@ -75523,6 +75545,17 @@
             73.72505941501178
         ],
         [
+            59,
+            "arcaninehisui",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "FLAMETHROWER",
+            "FIRE",
+            "normal",
+            73.20722487996368
+        ],
+        [
             485,
             "heatran",
             "FIRE_SPIN",
@@ -75543,17 +75576,6 @@
             "FIRE",
             "normal",
             71.56042356580608
-        ],
-        [
-            136,
-            "flareon",
-            "FIRE_SPIN",
-            "FIRE",
-            "normal",
-            "FLAMETHROWER",
-            "FIRE",
-            "normal",
-            71.34225762338795
         ]
     ],
     "Grass,Poison:109": [
@@ -78991,6 +79013,17 @@
             73.91563755351595
         ],
         [
+            59,
+            "arcaninehisui",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "FLAMETHROWER",
+            "FIRE",
+            "normal",
+            72.86423064597285
+        ],
+        [
             485,
             "heatran",
             "FIRE_SPIN",
@@ -79011,17 +79044,6 @@
             "FIRE",
             "normal",
             71.54941099437883
-        ],
-        [
-            467,
-            "magmortar",
-            "FIRE_SPIN",
-            "FIRE",
-            "normal",
-            "FIRE_PUNCH",
-            "FIRE",
-            "normal",
-            71.36444278703732
         ]
     ],
     "Grass,Steel:182": [
@@ -79169,6 +79191,17 @@
             73.9219394071374
         ],
         [
+            59,
+            "arcaninehisui",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "FLAMETHROWER",
+            "FIRE",
+            "normal",
+            73.37769309324919
+        ],
+        [
             485,
             "heatran",
             "FIRE_SPIN",
@@ -79189,17 +79222,6 @@
             "FIRE",
             "normal",
             71.4885623139034
-        ],
-        [
-            229,
-            "houndoom",
-            "FIRE_FANG",
-            "FIRE",
-            "normal",
-            "FLAMETHROWER",
-            "FIRE",
-            "normal",
-            71.47120986024856
         ]
     ],
     "Grass,Steel:223": [
@@ -79347,6 +79369,17 @@
             73.68249446015912
         ],
         [
+            59,
+            "arcaninehisui",
+            "FIRE_FANG",
+            "FIRE",
+            "normal",
+            "FLAMETHROWER",
+            "FIRE",
+            "normal",
+            73.1839914724111
+        ],
+        [
             485,
             "heatran",
             "FIRE_SPIN",
@@ -79367,17 +79400,6 @@
             "FIRE",
             "normal",
             71.71170410714579
-        ],
-        [
-            229,
-            "houndoom",
-            "FIRE_FANG",
-            "FIRE",
-            "normal",
-            "FLAMETHROWER",
-            "FIRE",
-            "normal",
-            71.2611696419929
         ]
     ],
     "Grass:102": [
