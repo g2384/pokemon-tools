@@ -4059,10 +4059,12 @@
             ]
         ]
     },
-    "9b5e138313b32f4f70e7e4325c94e971": {
+    "16345ce6fc2d5e1dc2de19000ab8836c": {
         "def": [
             "Bug,Steel:175",
-            "Grass,Ice:158"
+            "Bug,Steel:250",
+            "Grass,Ice:158",
+            "Grass,Ice:191"
         ],
         "atk": [
             [
@@ -4152,6 +4154,16 @@
                 "FIRE",
                 "normal",
                 "OVERHEAT",
+                "FIRE",
+                "normal"
+            ],
+            [
+                59,
+                "arcaninehisui",
+                "FIRE_FANG",
+                "FIRE",
+                "normal",
+                "FLAMETHROWER",
                 "FIRE",
                 "normal"
             ],
@@ -4174,16 +4186,6 @@
                 "OVERHEAT",
                 "FIRE",
                 "normal"
-            ],
-            [
-                467,
-                "magmortar",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "FIRE_PUNCH",
-                "FIRE",
-                "normal"
             ]
         ],
         "ratios": [
@@ -4197,9 +4199,23 @@
                 80.69756183466082,
                 74.96699335963251,
                 73.8670888588002,
+                72.91157201447326,
                 72.78008766940872,
-                71.64047230613858,
-                71.5443186091878
+                71.64047230613858
+            ],
+            [
+                100,
+                93.05260007748777,
+                86.60035311224337,
+                84.07877637530623,
+                80.83690099200847,
+                80.18008058980108,
+                80.18008058980108,
+                74.71320558965773,
+                74.37197108268458,
+                73.34799735316403,
+                72.62739237778031,
+                71.60005285008384
             ],
             [
                 100,
@@ -4211,157 +4227,29 @@
                 80.67607285977051,
                 74.44156085171704,
                 73.98581705771757,
+                73.28318511972127,
                 72.79491817284504,
-                71.51803403896315,
-                71.45410314311205
-            ]
-        ]
-    },
-    "72f744985a3dedd7e547bafe463c8f70": {
-        "def": [
-            "Bug,Steel:181"
-        ],
-        "atk": [
-            [
-                500,
-                "emboar",
-                "EMBER",
-                "FIRE",
-                "normal",
-                "BLAST_BURN",
-                "FIRE",
-                "elite"
+                71.51803403896315
             ],
-            [
-                257,
-                "blaziken",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "BLAST_BURN",
-                "FIRE",
-                "elite"
-            ],
-            [
-                257,
-                "blaziken",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "BLAZE_KICK",
-                "FIRE",
-                "normal"
-            ],
-            [
-                392,
-                "infernape",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "BLAST_BURN",
-                "FIRE",
-                "elite"
-            ],
-            [
-                6,
-                "charizard",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "BLAST_BURN",
-                "FIRE",
-                "elite"
-            ],
-            [
-                6,
-                "charizard",
-                "EMBER",
-                "FIRE",
-                "elite",
-                "BLAST_BURN",
-                "FIRE",
-                "elite"
-            ],
-            [
-                157,
-                "typhlosion",
-                "EMBER",
-                "FIRE",
-                "normal",
-                "BLAST_BURN",
-                "FIRE",
-                "elite"
-            ],
-            [
-                244,
-                "entei",
-                "FIRE_FANG",
-                "FIRE",
-                "normal",
-                "FLAMETHROWER",
-                "FIRE",
-                "normal"
-            ],
-            [
-                555,
-                "darmanitan",
-                "FIRE_FANG",
-                "FIRE",
-                "normal",
-                "OVERHEAT",
-                "FIRE",
-                "normal"
-            ],
-            [
-                485,
-                "heatran",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "FLAMETHROWER",
-                "FIRE",
-                "normal"
-            ],
-            [
-                229,
-                "houndoom",
-                "FIRE_FANG",
-                "FIRE",
-                "normal",
-                "FLAMETHROWER",
-                "FIRE",
-                "normal"
-            ],
-            [
-                467,
-                "magmortar",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "FIRE_PUNCH",
-                "FIRE",
-                "normal"
-            ]
-        ],
-        "ratios": [
             [
                 100,
-                92.96513886406409,
-                86.83255811646353,
-                83.95625067396522,
-                81.08334849016227,
-                80.44856448122918,
-                80.44856448122918,
-                74.34304753909464,
-                74.22182290641183,
-                72.32845974997569,
-                71.25932836583345,
-                71.23896319597338
+                93.05584698143186,
+                86.29956762183805,
+                84.09935644352626,
+                81.1823730274635,
+                80.63928637843587,
+                80.63928637843587,
+                74.43315973213745,
+                73.72505941501178,
+                73.20722487996368,
+                72.28008148835735,
+                71.56042356580608
             ]
         ]
     },
-    "2d49b09195f0edb5511ce8dadead83ce": {
+    "8a040a28dcac60eacc8128086ba11e21": {
         "def": [
+            "Bug,Steel:181",
             "Bug,Steel:187"
         ],
         "atk": [
@@ -4456,6 +4344,16 @@
                 "normal"
             ],
             [
+                59,
+                "arcaninehisui",
+                "FIRE_FANG",
+                "FIRE",
+                "normal",
+                "FLAMETHROWER",
+                "FIRE",
+                "normal"
+            ],
+            [
                 485,
                 "heatran",
                 "FIRE_SPIN",
@@ -4474,19 +4372,23 @@
                 "FLAMETHROWER",
                 "FIRE",
                 "normal"
-            ],
-            [
-                59,
-                "arcanine",
-                "FIRE_FANG",
-                "FIRE",
-                "normal",
-                "FLAMETHROWER",
-                "FIRE",
-                "normal"
             ]
         ],
         "ratios": [
+            [
+                100,
+                92.96513886406409,
+                86.83255811646353,
+                83.95625067396522,
+                81.08334849016227,
+                80.44856448122918,
+                80.44856448122918,
+                74.34304753909464,
+                74.22182290641183,
+                73.1364413910104,
+                72.32845974997569,
+                71.25932836583345
+            ],
             [
                 100,
                 93.13756743444965,
@@ -4497,17 +4399,18 @@
                 80.52226201286135,
                 74.56323164458502,
                 74.23500858969359,
+                72.85359946401995,
                 72.70701076435503,
-                71.36993809560639,
-                71.34884233886987
+                71.36993809560639
             ]
         ]
     },
-    "8581e92fbf5377c641c8c381d407cfd2": {
+    "ecaa7e301c56ed9e4d00e7f2d17e90ff": {
         "def": [
             "Bug,Steel:188",
             "Bug,Steel:205",
-            "Grass,Ice:105"
+            "Grass,Ice:105",
+            "Grass,Steel:223"
         ],
         "atk": [
             [
@@ -4601,6 +4504,16 @@
                 "normal"
             ],
             [
+                59,
+                "arcaninehisui",
+                "FIRE_FANG",
+                "FIRE",
+                "normal",
+                "FLAMETHROWER",
+                "FIRE",
+                "normal"
+            ],
+            [
                 485,
                 "heatran",
                 "FIRE_SPIN",
@@ -4619,16 +4532,6 @@
                 "FIRE_PUNCH",
                 "FIRE",
                 "normal"
-            ],
-            [
-                136,
-                "flareon",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "FLAMETHROWER",
-                "FIRE",
-                "normal"
             ]
         ],
         "ratios": [
@@ -4642,9 +4545,9 @@
                 80.37629285554394,
                 74.3003406923916,
                 74.16525510305512,
+                73.07313340863779,
                 72.51557226077476,
-                71.33450913093723,
-                71.10895451997634
+                71.33450913093723
             ],
             [
                 100,
@@ -4656,9 +4559,9 @@
                 80.45753321583757,
                 74.36118648649979,
                 74.35367376632105,
+                73.08504070488712,
                 72.64468467671658,
-                71.700119889788,
-                71.54027687255987
+                71.700119889788
             ],
             [
                 100,
@@ -4670,13 +4573,27 @@
                 80.32002773631706,
                 74.3722752128334,
                 73.62632374221513,
+                73.05771237669916,
                 72.45401645937393,
-                71.46132856139077,
-                71.26901065151625
+                71.46132856139077
+            ],
+            [
+                100,
+                92.94482140867089,
+                85.95656463643049,
+                84.0696840011095,
+                80.8048834185109,
+                80.27185809225321,
+                80.27185809225321,
+                74.48219097408467,
+                74.14132793146318,
+                73.1839914724111,
+                72.85548018057662,
+                71.71170410714579
             ]
         ]
     },
-    "0a78e83785ea4a55e47e9c669afb53da": {
+    "6674ba5b65adbab821a6e889feaa35b1": {
         "def": [
             "Bug,Steel:199",
             "Grass,Steel:155"
@@ -4773,6 +4690,16 @@
                 "normal"
             ],
             [
+                59,
+                "arcaninehisui",
+                "FIRE_FANG",
+                "FIRE",
+                "normal",
+                "FLAMETHROWER",
+                "FIRE",
+                "normal"
+            ],
+            [
                 485,
                 "heatran",
                 "FIRE_SPIN",
@@ -4791,16 +4718,6 @@
                 "FLAMETHROWER",
                 "FIRE",
                 "normal"
-            ],
-            [
-                467,
-                "magmortar",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "FIRE_PUNCH",
-                "FIRE",
-                "normal"
             ]
         ],
         "ratios": [
@@ -4814,9 +4731,9 @@
                 80.58244642917332,
                 74.78334683660134,
                 73.87761233931573,
+                73.5283230648135,
                 72.4216303740956,
-                71.86483191938308,
-                71.58165778325994
+                71.86483191938308
             ],
             [
                 100,
@@ -4828,167 +4745,9 @@
                 80.63680518163265,
                 74.77435539789882,
                 74.29039942329379,
+                72.86423064597285,
                 72.27108237493452,
-                71.54941099437883,
-                71.36444278703732
-            ]
-        ]
-    },
-    "7d2f82097c2e02fa7b701a17c4252a45": {
-        "def": [
-            "Bug,Steel:250",
-            "Grass,Ice:191"
-        ],
-        "atk": [
-            [
-                500,
-                "emboar",
-                "EMBER",
-                "FIRE",
-                "normal",
-                "BLAST_BURN",
-                "FIRE",
-                "elite"
-            ],
-            [
-                257,
-                "blaziken",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "BLAST_BURN",
-                "FIRE",
-                "elite"
-            ],
-            [
-                257,
-                "blaziken",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "BLAZE_KICK",
-                "FIRE",
-                "normal"
-            ],
-            [
-                392,
-                "infernape",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "BLAST_BURN",
-                "FIRE",
-                "elite"
-            ],
-            [
-                6,
-                "charizard",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "BLAST_BURN",
-                "FIRE",
-                "elite"
-            ],
-            [
-                6,
-                "charizard",
-                "EMBER",
-                "FIRE",
-                "elite",
-                "BLAST_BURN",
-                "FIRE",
-                "elite"
-            ],
-            [
-                157,
-                "typhlosion",
-                "EMBER",
-                "FIRE",
-                "normal",
-                "BLAST_BURN",
-                "FIRE",
-                "elite"
-            ],
-            [
-                244,
-                "entei",
-                "FIRE_FANG",
-                "FIRE",
-                "normal",
-                "FLAMETHROWER",
-                "FIRE",
-                "normal"
-            ],
-            [
-                555,
-                "darmanitan",
-                "FIRE_FANG",
-                "FIRE",
-                "normal",
-                "OVERHEAT",
-                "FIRE",
-                "normal"
-            ],
-            [
-                485,
-                "heatran",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "FLAMETHROWER",
-                "FIRE",
-                "normal"
-            ],
-            [
-                643,
-                "reshiram",
-                "FIRE_FANG",
-                "FIRE",
-                "normal",
-                "OVERHEAT",
-                "FIRE",
-                "normal"
-            ],
-            [
-                136,
-                "flareon",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "FLAMETHROWER",
-                "FIRE",
-                "normal"
-            ]
-        ],
-        "ratios": [
-            [
-                100,
-                93.05260007748777,
-                86.60035311224337,
-                84.07877637530623,
-                80.83690099200847,
-                80.18008058980108,
-                80.18008058980108,
-                74.71320558965773,
-                74.37197108268458,
-                72.62739237778031,
-                71.60005285008384,
-                71.32479889532544
-            ],
-            [
-                100,
-                93.05584698143186,
-                86.29956762183805,
-                84.09935644352626,
-                81.1823730274635,
-                80.63928637843587,
-                80.63928637843587,
-                74.43315973213745,
-                73.72505941501178,
-                72.28008148835735,
-                71.56042356580608,
-                71.34225762338795
+                71.54941099437883
             ]
         ]
     },
@@ -14857,7 +14616,7 @@
             ]
         ]
     },
-    "ceae949e7382802c81b1eee92ba6f78c": {
+    "1d27a83a12648ad5b42594e3c5c8eaf4": {
         "def": [
             "Electric,Fairy:134"
         ],
@@ -14933,6 +14692,16 @@
                 "normal"
             ],
             [
+                904,
+                "overqwil",
+                "POISON_JAB",
+                "POISON",
+                "normal",
+                "SLUDGE_BOMB",
+                "POISON",
+                "normal"
+            ],
+            [
                 94,
                 "gengar",
                 "LICK",
@@ -14951,26 +14720,6 @@
                 "SLUDGE_BOMB",
                 "POISON",
                 "normal"
-            ],
-            [
-                623,
-                "golurk",
-                "MUD_SLAP",
-                "GROUND",
-                "normal",
-                "EARTH_POWER",
-                "GROUND",
-                "normal"
-            ],
-            [
-                94,
-                "gengar",
-                "HEX",
-                "GHOST",
-                "normal",
-                "SLUDGE_BOMB",
-                "POISON",
-                "normal"
             ]
         ],
         "ratios": [
@@ -14982,14 +14731,13 @@
                 94.92682717295355,
                 93.7156329214349,
                 91.45164737253994,
+                90.75225283256623,
                 89.57341957515789,
-                89.42580668115707,
-                88.174337016157,
-                87.96864048453098
+                89.42580668115707
             ]
         ]
     },
-    "4fc4c7524da65f7139f3beb930b3b96b": {
+    "eb40df8ae39cde3d48193667472d3ec1": {
         "def": [
             "Electric,Fairy:181"
         ],
@@ -15085,13 +14833,13 @@
                 "normal"
             ],
             [
-                383,
-                "groudon",
-                "MUD_SHOT",
-                "GROUND",
+                904,
+                "overqwil",
+                "POISON_JAB",
+                "POISON",
                 "normal",
-                "EARTHQUAKE",
-                "GROUND",
+                "SLUDGE_BOMB",
+                "POISON",
                 "normal"
             ]
         ],
@@ -15106,7 +14854,7 @@
                 92.95879939131336,
                 90.80765232349738,
                 90.6482146816642,
-                88.42233213277106
+                90.63255459523516
             ]
         ]
     },
@@ -39150,12 +38898,156 @@
             ]
         ]
     },
-    "b576855f0b666219acb48310f20fb36a": {
+    "9382fb061394c39da228e3f257acf60d": {
         "def": [
             "Grass,Fairy:111",
             "Grass,Fairy:119",
+            "Grass,Fairy:176"
+        ],
+        "atk": [
+            [
+                793,
+                "nihilego",
+                "ACID",
+                "POISON",
+                "normal",
+                "SLUDGE_BOMB",
+                "POISON",
+                "normal"
+            ],
+            [
+                454,
+                "toxicroak",
+                "POISON_JAB",
+                "POISON",
+                "normal",
+                "SLUDGE_BOMB",
+                "POISON",
+                "normal"
+            ],
+            [
+                407,
+                "roserade",
+                "POISON_JAB",
+                "POISON",
+                "normal",
+                "SLUDGE_BOMB",
+                "POISON",
+                "normal"
+            ],
+            [
+                890,
+                "eternatus",
+                "POISON_JAB",
+                "POISON",
+                "normal",
+                "CROSS_POISON",
+                "POISON",
+                "normal"
+            ],
+            [
+                904,
+                "overqwil",
+                "POISON_JAB",
+                "POISON",
+                "normal",
+                "SLUDGE_BOMB",
+                "POISON",
+                "normal"
+            ],
+            [
+                71,
+                "victreebel",
+                "ACID",
+                "POISON",
+                "normal",
+                "SLUDGE_BOMB",
+                "POISON",
+                "normal"
+            ],
+            [
+                435,
+                "skuntank",
+                "POISON_JAB",
+                "POISON",
+                "normal",
+                "SLUDGE_BOMB",
+                "POISON",
+                "normal"
+            ],
+            [
+                70,
+                "weepinbell",
+                "ACID",
+                "POISON",
+                "normal",
+                "SLUDGE_BOMB",
+                "POISON",
+                "normal"
+            ],
+            [
+                45,
+                "vileplume",
+                "ACID",
+                "POISON",
+                "normal",
+                "SLUDGE_BOMB",
+                "POISON",
+                "normal"
+            ],
+            [
+                545,
+                "scolipede",
+                "POISON_JAB",
+                "POISON",
+                "normal",
+                "SLUDGE_BOMB",
+                "POISON",
+                "normal"
+            ]
+        ],
+        "ratios": [
+            [
+                100,
+                96.25217984094753,
+                94.64278300551193,
+                94.30752782930692,
+                93.8626118827147,
+                93.46305673763061,
+                87.50489985019962,
+                86.96954900361317,
+                84.16210340530387,
+                81.52980755762489
+            ],
+            [
+                100,
+                96.86888181229104,
+                94.87581832463509,
+                94.65884402549669,
+                93.67943094007634,
+                93.53734227862074,
+                87.64124571338043,
+                87.38584547574891,
+                84.55238076898766,
+                82.05065797318338
+            ],
+            [
+                100,
+                96.36603277806907,
+                94.71734938234019,
+                94.23792006843145,
+                93.94433132592282,
+                93.57392307904951,
+                87.68906018891485,
+                86.99540922422709,
+                84.34323341248434,
+                81.41165605142074
+            ]
+        ]
+    },
+    "224054648f271991e637b1a7919743ed": {
+        "def": [
             "Grass,Fairy:168",
-            "Grass,Fairy:176",
             "Grass,Fairy:215"
         ],
         "atk": [
@@ -39210,6 +39102,16 @@
                 "normal"
             ],
             [
+                904,
+                "overqwil",
+                "POISON_JAB",
+                "POISON",
+                "normal",
+                "SLUDGE_BOMB",
+                "POISON",
+                "normal"
+            ],
+            [
                 435,
                 "skuntank",
                 "POISON_JAB",
@@ -39248,66 +39150,20 @@
                 "SLUDGE_BOMB",
                 "POISON",
                 "normal"
-            ],
-            [
-                80,
-                "slowbrogalar",
-                "POISON_JAB",
-                "POISON",
-                "normal",
-                "SLUDGE_BOMB",
-                "POISON",
-                "normal"
             ]
         ],
         "ratios": [
-            [
-                100,
-                96.25217984094753,
-                94.64278300551193,
-                94.30752782930692,
-                93.46305673763061,
-                87.50489985019962,
-                86.96954900361317,
-                84.16210340530387,
-                81.52980755762489,
-                81.01600544456761
-            ],
-            [
-                100,
-                96.86888181229104,
-                94.87581832463509,
-                94.65884402549669,
-                93.53734227862074,
-                87.64124571338043,
-                87.38584547574891,
-                84.55238076898766,
-                82.05065797318338,
-                81.00469682731834
-            ],
             [
                 100,
                 96.61663709062185,
                 95.38989786398469,
                 94.83116752775742,
                 93.86822418339246,
+                93.81645261461559,
                 87.7932888901412,
                 87.51386462849754,
                 84.5853254797207,
-                82.12775092670455,
-                81.4521450119577
-            ],
-            [
-                100,
-                96.36603277806907,
-                94.71734938234019,
-                94.23792006843145,
-                93.57392307904951,
-                87.68906018891485,
-                86.99540922422709,
-                84.34323341248434,
-                81.41165605142074,
-                80.43202089476117
+                82.12775092670455
             ],
             [
                 100,
@@ -39315,11 +39171,11 @@
                 95.31104696814978,
                 94.85422512157834,
                 93.55089836626334,
+                93.40045780572392,
                 87.98162480429244,
                 87.04166217091655,
                 85.20873812195407,
-                81.80193271194138,
-                81.60089595075642
+                81.80193271194138
             ]
         ]
     },
@@ -40390,7 +40246,7 @@
             ]
         ]
     },
-    "735ff7f176da5219c2f31dd3bde5e1ab": {
+    "b9f7bbac5c7b2a738860259a05c71057": {
         "def": [
             "Grass,Steel:182"
         ],
@@ -40486,6 +40342,16 @@
                 "normal"
             ],
             [
+                59,
+                "arcaninehisui",
+                "FIRE_FANG",
+                "FIRE",
+                "normal",
+                "FLAMETHROWER",
+                "FIRE",
+                "normal"
+            ],
+            [
                 485,
                 "heatran",
                 "FIRE_SPIN",
@@ -40504,16 +40370,6 @@
                 "OVERHEAT",
                 "FIRE",
                 "normal"
-            ],
-            [
-                229,
-                "houndoom",
-                "FIRE_FANG",
-                "FIRE",
-                "normal",
-                "FLAMETHROWER",
-                "FIRE",
-                "normal"
             ]
         ],
         "ratios": [
@@ -40527,152 +40383,9 @@
                 80.46911266813595,
                 74.65292931921068,
                 74.58645273421746,
+                73.37769309324919,
                 72.62737438861609,
-                71.4885623139034,
-                71.47120986024856
-            ]
-        ]
-    },
-    "96488ffa282a732e1c50ae00cfaa38fc": {
-        "def": [
-            "Grass,Steel:223"
-        ],
-        "atk": [
-            [
-                500,
-                "emboar",
-                "EMBER",
-                "FIRE",
-                "normal",
-                "BLAST_BURN",
-                "FIRE",
-                "elite"
-            ],
-            [
-                257,
-                "blaziken",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "BLAST_BURN",
-                "FIRE",
-                "elite"
-            ],
-            [
-                257,
-                "blaziken",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "BLAZE_KICK",
-                "FIRE",
-                "normal"
-            ],
-            [
-                392,
-                "infernape",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "BLAST_BURN",
-                "FIRE",
-                "elite"
-            ],
-            [
-                6,
-                "charizard",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "BLAST_BURN",
-                "FIRE",
-                "elite"
-            ],
-            [
-                6,
-                "charizard",
-                "EMBER",
-                "FIRE",
-                "elite",
-                "BLAST_BURN",
-                "FIRE",
-                "elite"
-            ],
-            [
-                157,
-                "typhlosion",
-                "EMBER",
-                "FIRE",
-                "normal",
-                "BLAST_BURN",
-                "FIRE",
-                "elite"
-            ],
-            [
-                244,
-                "entei",
-                "FIRE_FANG",
-                "FIRE",
-                "normal",
-                "FLAMETHROWER",
-                "FIRE",
-                "normal"
-            ],
-            [
-                555,
-                "darmanitan",
-                "FIRE_FANG",
-                "FIRE",
-                "normal",
-                "OVERHEAT",
-                "FIRE",
-                "normal"
-            ],
-            [
-                485,
-                "heatran",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "FLAMETHROWER",
-                "FIRE",
-                "normal"
-            ],
-            [
-                467,
-                "magmortar",
-                "FIRE_SPIN",
-                "FIRE",
-                "normal",
-                "FIRE_PUNCH",
-                "FIRE",
-                "normal"
-            ],
-            [
-                229,
-                "houndoom",
-                "FIRE_FANG",
-                "FIRE",
-                "normal",
-                "FLAMETHROWER",
-                "FIRE",
-                "normal"
-            ]
-        ],
-        "ratios": [
-            [
-                100,
-                92.94482140867089,
-                85.95656463643049,
-                84.0696840011095,
-                80.8048834185109,
-                80.27185809225321,
-                80.27185809225321,
-                74.48219097408467,
-                74.14132793146318,
-                72.85548018057662,
-                71.71170410714579,
-                71.2611696419929
+                71.4885623139034
             ]
         ]
     },
