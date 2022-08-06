@@ -99,21 +99,51 @@ function SortDps(dps_table, newPokemon, excludeLegendary, includeReleasedOnly, f
 }
 
 function getImageId(id, name) {
-    if (id in pokemonGo_Assets_ImagesConvert) {
-        return String(pokemonGo_Assets_ImagesConvert[id])
+    var n = name.toLowerCase();
+    var na = n.split("-");
+    for (var i = 0; i < na.length; i++) {
+        if (na[i] == "galar") {
+            na[i] = "GALARIAN";
+        }
     }
-    else if (name.toLowerCase().indexOf("alola") >= 0) {
-        return "61"
+    var tag = na.slice(1).join("_").toUpperCase();
+    if (n.indexOf("-hisui") >= 0) {
+        return ".fHISUIAN";
+    }
+    else if (na.length == 1) {
+        if (id == 555) {
+            return ".fSTANDARD";
+        }
+        else if (id == 648) {
+            return ".fARIA";
+        }
+        else if (id == 649) {
+            return ".fNORMAL";
+        }
+        else if (id == 671) {
+            return ".fRED";
+        } else {
+            return "";
+        }
+    }
+    else if (na.length > 1) {
+        if (id == 474 || id == 784) {
+            return "";
+        }
+        else if (id == 555 && tag == "GALARIAN") {
+            return ".f" + tag + "_STANDARD";
+        }
+        return ".f" + tag;
     }
     else {
-        return "00"
+        return "";
     }
 }
 
 function getImageElement(id, name) {
-    return "<img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/pokemon_icon_"
-        + String(id).padStart(3, '0') + "_" + getImageId(id, name)
-        + ".png' />";
+    return "<img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable Assets/pm"
+        + String(id) + getImageId(id, name)
+        + ".icon.png' />";
 }
 
 function GenerateDpsAttackTable(allMovesArray, showTop, dps_table, newPokemon, pokemonGo_Assets_ImagesConvert, highlightMatched) {
