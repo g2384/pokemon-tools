@@ -287,7 +287,8 @@
 
     <h2>Counters (Unique Ordered By DPS)</h2>
     <form id="counter-unique-pokemon-filters" class="flex-container"> </form>
-    <input type="button" class="btn btn-outline-primary" value="Show" onclick="showCounterUniqueList()" />
+    <input type="button" class="btn btn-outline-primary" value="Show (by Rank)" onclick="showCounterUniqueList()" />
+    <input type="button" class="btn btn-outline-primary" value="Show (by ID)" onclick="showCounterUniqueList(true)" />
     <input type="button" class="btn btn-outline-primary" value="Clear" onclick="clearCounterUniqueList()" />
     <div id="Counters-Unique-div"></div>
 
@@ -608,30 +609,48 @@
             document.querySelector("#Counters-div").innerHTML = html;
         }
 
-        function convertToCounterUniqueTable(all) {
+        function convertToCounterUniqueTable(all, byID = false) {
             var s = "<table class='table table-striped align-middle'><thead><tr><th>#</th><th>Pokemon</th><th>Fast Move</th><th>Charge Move</th><th>DPS^3*TDO</th><th>mean</th></tr></thead><tbody>{trs}</table>";
             var trs = [];
             var i = 0;
-            for (const l of all) {
+            var grouped = {};
+            for (const a of all) {
+                aKey = a[0] + "," + a[1];
+                if (grouped.hasOwnProperty(aKey)) {
+                    grouped[aKey].push(a);
+                }
+                else {
+                    grouped[aKey] = [a];
+                }
+            }
+            for (const [k, v] of Object.entries(grouped)) {
                 i++;
                 var tr = "<tr>";
+                var v2 = v.sort(function (e, t) {
+                    return e[9] - t[9] // mean
+                });
+                var l = v2[0];
                 var quickMoveTag = convertMoveTagToHtml(l[4]);
                 var chargeMoveTag = convertMoveTagToHtml(l[7]);
                 var p = newPokemon[l[1]];
+                if (byID) {
+                    i = l[0];
+                }
                 var releasedTag = p.releasedGO ? "" : "<span class='not-released roundSpan'>N/A</span>"
-                tr += "<td>" + i + "</td>" + "<td class='pokemon-name'>" + getImageElement(p.num, p.name) + p.name + releasedTag + "</td>"
-                    + "<td><img src='./pokemon_go/type_" + l[3].toLowerCase() + ".png' />" + convertMoveToText(l[2]) + quickMoveTag + "</td>"
-                    + "<td><img src='./pokemon_go/type_" + l[6].toLowerCase() + ".png' />" + convertMoveToText(l[5]) + chargeMoveTag + "</td>"
-                    + "<td>" + numberWithCommas(l[8], 2) + "</td>"
-                    + "<td>" + numberWithCommas(l[9], 2) + getRankChar(l[10]) + "</td>";
-                tr += "</tr>";
+                tr += "<td rowspan='" + v.length + "'>" + i + "</td>" + "<td rowspan='" + v.length + "' class='pokemon-name'>" + getImageElement(p.num, p.name) + p.name + releasedTag + "</td>";
+                tr += v2.map(x => {
+                    return "<td><img src='./pokemon_go/type_" + x[3].toLowerCase() + ".png' />" + convertMoveToText(x[2]) + quickMoveTag + "</td>"
+                        + "<td><img src='./pokemon_go/type_" + x[6].toLowerCase() + ".png' />" + convertMoveToText(x[5]) + chargeMoveTag + "</td>"
+                        + "<td>" + numberWithCommas(x[8], 2) + "</td>"
+                        + "<td>" + numberWithCommas(x[9], 2) + getRankChar(x[10]) + "</td>";
+                }).join("</tr><tr>") + "</tr>";
                 trs.push(tr);
             }
             s = s.replace("{trs}", trs.join(""))
             return s;
         }
 
-        function showCounterUniqueList() {
+        function showCounterUniqueList(byID = false) {
             var all = {};
             var filterTypes = false;
             var enabledOptions = [];
@@ -698,10 +717,17 @@
                 var mean = value.reduce((a, b) => a + b, 0) / value.length;
                 allArray.push(ar.concat([dps, mean, moveOrder]));
             }
-            allArray = allArray.sort(function (e, t) {
-                return e[9] - t[9] // mean
-            });
-            var html = "<div>" + convertToCounterUniqueTable(allArray) + "</div>";
+            if (byID) {
+                allArray = allArray.sort(function (e, t) {
+                    return e[0] - t[0] // id
+                });
+            }
+            else {
+                allArray = allArray.sort(function (e, t) {
+                    return e[9] - t[9] // mean
+                });
+            }
+            var html = "<div>" + convertToCounterUniqueTable(allArray, byID) + "</div>";
             document.querySelector("#Counters-Unique-div").innerHTML = html;
         }
 

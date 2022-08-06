@@ -164,7 +164,9 @@ function GenerateDpsAttackTable(allMovesArray, showTop, dps_table, newPokemon, p
         }
     }
 
-    var str = "<table class='table table-striped align-middle'><thead><tr><th></th><th>Pokemon</th><th>Fast Move</th><th>Charge Move</th><th>DPS</th><th>TDO</th><th>DPS^3*TDO</th></tr></thead><tbody>";
+    var str = "<table class='table table-striped align-middle'><thead><tr>"
+        + "<th></th><th>Pokemon</th><th>Fast Move</th><th>Charge Move</th><th>DPS</th><th>TDO</th><th>DPS^3*TDO</th>"
+        + "</tr></thead><tbody>";
     counter = 0;
     var rankedMoves = {};
 
