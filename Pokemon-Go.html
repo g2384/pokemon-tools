@@ -600,7 +600,7 @@
             if (inp == null || inp == undefined) {
                 inp = "";
             }
-            inp = inp.trim();
+            inp = inp.toLowerCase().trim();
             for (const [key, value] of Object.entries(top_counters_grouped)) {
                 var p_names = [];
                 for (const def of value.def) {
@@ -619,6 +619,9 @@
                 }
                 html += "<div><div class='inline m-2'>" + p_names.join("</div><div class='inline m-2'>") + "</div></div>";
                 html += "<div>" + convertToCounterTable(value.atk) + "</div>";
+            }
+            if (html == "") {
+                html = "Failed to find any.";
             }
             document.querySelector("#Counters-div").innerHTML = html;
         }
