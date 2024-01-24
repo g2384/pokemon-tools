@@ -77,6 +77,14 @@
             border-right: 1px solid rgba(255, 255, 255, .3);
         }
 
+        .cp100 {
+            display: inline-block;
+            padding: 10px;
+            width: 4em;
+            text-align: right;
+            font-family: monospace;
+        }
+
         div {
             margin: 0;
             padding: 0;
@@ -248,6 +256,21 @@
 
     <hr>
 
+    <h2>Find 100% CP from Pokemon</h2>
+    <div>
+        <div class="mb-3 row align-items-center">
+            <label for="pokemon-name2" class="col-sm-2 col-form-label">Pokemon:</label>
+            <div class="col-sm-10">
+                <select id="pokemon-name2" onchange="find100CPFromPokemon()"></select>
+            </div>
+        </div>
+    </div>
+    <input type="button" class="btn btn-outline-primary" value="Show" onclick="find100CPFromPokemon()" />
+    <input type="button" class="btn btn-outline-primary" value="Clear" onclick="clear100IV()" />
+    <div id="CP100_div"></div>
+
+    <hr>
+
     <h2>Find Pokemon by 100% CP</h2>
     <div>
         <div class="mb-3 row align-items-center">
@@ -288,7 +311,7 @@
 
     <h2>Counters</h2>
     <div class="mb-3 row align-items-center">
-        <label for="pokemon-name" class="col-sm-2 col-form-label">Defence Pokemon:</label>
+        <label for="counterInput" class="col-sm-2 col-form-label">Defence Pokemon:</label>
         <div class="col-sm-10">
             <input id="counterInput" type="text" class="form-control" />
         </div>
@@ -487,6 +510,27 @@
             return Math.max(10, Math.floor((t[0] + n[0]) * e))
         }
 
+        function find100CPFromPokemon() {
+            var pn = document.querySelector("#pokemon-name2");
+            var d_code = pn.options[pn.selectedIndex].getAttribute("data-code");
+            var r_div = document.querySelector("#CP100_div");
+            var dict = []
+            for (const [key, stats] of Object.entries(stats_table)) {
+                var p = newPokemon[key];
+                if (p == undefined) {
+                    continue;
+                }
+                if (p.name.toLowerCase() != d_code) {
+                    continue;
+                }
+                for (var i = 1; i <= 40; i += 0.5) {
+                    var c = calculateCP(stats.atk + 15, stats.def + 15, stats.sta + 15, i);
+                    dict.push("<div class='cp100'>" + c + "</div>");
+                }
+            }
+            r_div.innerHTML = dict.join("");
+        }
+
         function findIVFromCP() {
             var pn = document.querySelector("#pokemon-name");
             var d_code = pn.options[pn.selectedIndex].getAttribute("data-code");
@@ -538,6 +582,11 @@
             }
         }
 
+        function clear100IV() {
+            var pn = document.querySelector("#CP100_div");
+            pn.innerHTML = "";
+        }
+
         function clearIVFromCP() {
             var pn = document.querySelector("#CP-IV-div");
             pn.innerHTML = "";
@@ -567,6 +616,16 @@
             document.querySelector("#pokemon-name").innerHTML = s;
 
             new TomSelect("#pokemon-name", {
+                create: false,
+                sortField: {
+                    field: "text",
+                    direction: "asc"
+                }
+            });
+
+            document.querySelector("#pokemon-name2").innerHTML = s;
+
+            new TomSelect("#pokemon-name2", {
                 create: false,
                 sortField: {
                     field: "text",
@@ -1101,11 +1160,11 @@
             let x = 0.5 * CE + 0.5 * FE;
             if (options && options.specific) {
                 const bar = getBarCharge(true, CE);
-                let λ;
-                if (bar === 1) λ = 3;
-                else if (bar === 2) λ = 1.5;
-                else if (bar === 3) λ = 1;
-                x += 0.5 * λ * options.specific.FDmgenemy + options.specific.CDmgenemy * λ + 1;
+                let lambda;
+                if (bar === 1) lambda = 3;
+                else if (bar === 2) lambda = 1.5;
+                else if (bar === 3) lambda = 1;
+                x += 0.5 * lambda * options.specific.FDmgenemy + options.specific.CDmgenemy * lambda + 1;
             }
 
             const DPS0 = (FDPS * CEPS + CDPS * FEPS) / (CEPS + FEPS);
