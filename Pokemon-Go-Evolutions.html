@@ -1,0 +1,395 @@
+<html>
+
+<head>
+    <title>Lure Module Evolution Effects</title>
+    <link href="./css/tom-select.bootstrap5.min.css" rel="stylesheet" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./css/pokemon_types.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        h2 {
+            border: 1px solid #888;
+            padding: 10px;
+        }
+
+        p {
+            margin-left: 20px;
+        }
+
+        img {
+            height: 30px;
+        }
+
+        .img-td {
+            text-align: center;
+        }
+
+        .candy {
+            text-align: center;
+        }
+
+        .candy-12 {
+            background-color: #3288bd;
+        }
+
+        .candy-25 {
+            background-color: #99d594;
+        }
+
+        .candy-50 {
+            background-color: #e6f598;
+        }
+
+        .candy-100 {
+            background-color: #fee08b;
+        }
+
+        .candy-200 {
+            background-color: #fc8d59;
+        }
+
+        .candy-400 {
+            background-color: #d53e4f;
+        }
+
+        .inline {
+            display: inline-block;
+        }
+
+        .inline-input {
+            padding: 2px;
+            margin: 2px 5px;
+        }
+
+        .inline label {
+            padding-left: 3px;
+        }
+
+        #evolutions {
+            padding: 10px;
+        }
+
+        th {
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript" src="./pokemon_go/pokemon-types.js"></script>
+</head>
+
+<body>
+    <div style="border: 1px solid #888; padding: 10px;">
+        <form id="types-filters" class="flex-container"> </form>
+        <form id="lures-filters" class="flex-container"> </form>
+        <form id="items-filters" class="flex-container"> </form>
+        <form id="quest-filters" class="flex-container"> </form>
+        <input type="button" class="btn btn-outline-primary" value="Filter" onclick="show()" />
+    </div>
+    <div id="evolutions"></div>
+    <script>
+        var pokemon_evolutions = [];
+        var pokemon_quests = [];
+        var trs = [];
+        var lures = new Set();
+        var items = new Set();
+        var quests = new Set();
+
+        function generateMoveOptions() {
+            var str = "";
+            for (var value of pokemon_types) {
+                str += convertToCheckBox(value, "type", true)
+            }
+            document.querySelector("#types-filters").innerHTML = str;
+        }
+
+        function getIdName(type) {
+            return type.replace(/\s+/g, "_").replace("'", "_");
+        }
+
+        function convertToCheckBox(value, type, addImage, checked) {
+            value1 = getIdName(value);
+            value2 = type + "-" + value1;
+            return "<div class='inline inline-input'><input type=\"checkbox\" id=\"pokemon-"
+                + value2 + "\" name=\"pokemon-"
+                + value2 + "\"" + (checked == true ? "checked" : "")
+                + "><label for=\"pokemon-"
+                + value2 + "\">"
+                + (addImage ? getImg(value, type) : "")
+                + value + "</label></div>";
+        }
+
+        function getImg(value, type) {
+            if (type == "item") {
+                value1 = value.replace(/\s+/g, "_").replace("Upgrade", "Up-Grade");
+                return "<img src=\"https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Items/Bag_" + value1 + "_Sprite.png\" />";
+            }
+            else {
+                return "<img src='./pokemon_go/" + type + "_" + value.toLowerCase() + ".png' />";
+            }
+        }
+
+        function LoadEvolutions() {
+            for (var i = 0; i < pokemon_quests.length; i++) {
+                quests.add(pokemon_quests[i].data.evolutionQuestTemplate.questType);
+            }
+
+            trs = [];
+            // Iterate through the JSON data and create rows for each Pokemon
+            for (var i = 0; i < pokemon_evolutions.length; i++) {
+                var pokemon = pokemon_evolutions[i];
+                if (pokemon.evolutions == undefined) {
+                    continue;
+                }
+
+                for (var j = 0; j < pokemon.evolutions.length; j++) {
+                    var evolution = pokemon.evolutions[j];
+                    var tr = "<tr>";
+
+                    tr += "<td>" + pokemon.pokemon_id + "</td>";
+
+                    tr += getPokemonCell(pokemon.pokemon_id, pokemon.pokemon_name, pokemon.form);
+
+                    tr += getPokemonCell(evolution.pokemon_id, evolution.pokemon_name, evolution.form);
+
+                    tr += "<td class='candy candy-" + evolution.candy_required + "'>" + evolution.candy_required + "</td>";
+
+                    if (evolution.lure_required == undefined) {
+                        tr += "<td></td>";
+                    }
+                    else {
+                        var lure = evolution.lure_required;
+                        lure = lure.replace(" Lure Module", "");
+                        lures.add(lure);
+                        tr += "<td><img src=\"./pokemon_go/img/lure_" + lure.toLowerCase() + ".png\" />" + lure + "</td>";
+                    }
+
+                    if (evolution.item_required == undefined) {
+                        tr += "<td></td>";
+                    }
+                    else {
+                        var item = evolution.item_required;
+                        var img = getImg(item, "item");
+                        items.add(item);
+                        tr += "<td>" + img + item + "</td>";
+                    }
+
+                    var quest = getQuest(pokemon.pokemon_name);
+                    if (quest == "") {
+                        tr += "<td></td>";
+                    }
+                    else {
+                        tr += "<td>" + quest + "</td>";
+                    }
+
+                    // Close the row
+                    tr += "</tr>";
+                    trs.push(tr);
+                }
+            }
+
+            var str = "";
+            for (var value of lures) {
+                str += convertToCheckBox(value, "lure", true, true)
+            }
+            document.querySelector("#lures-filters").innerHTML = str;
+
+            var str = "";
+            for (var value of items) {
+                str += convertToCheckBox(value, "item", true, true)
+            }
+            document.querySelector("#items-filters").innerHTML = str;
+
+            var str = "";
+            for (var value of quests) {
+                str += convertToCheckBox(value, "quest", true, true)
+            }
+            document.querySelector("#quest-filters").innerHTML = str;
+
+            show();
+        }
+
+        function getQuest(name) {
+            var n = name.toUpperCase();
+            for (var i = 0; i < pokemon_quests.length; i++) {
+                var q = pokemon_quests[i];
+                if (q.templateId.includes(n)) {
+                    var t = q.data.evolutionQuestTemplate;
+                    console.log(q)
+                    var img = getImg(t.questType, "quest");
+                    switch (t.questType) {
+                        case "QUEST_BUDDY_EVOLUTION_WALK":
+                            if (t.goals.length > 1) {
+                                console.log("ERROR1", t);
+                            }
+                            return img + "walk " + t.goals[0].target + " km";
+                        case "QUEST_CATCH_POKEMON":
+                            if (t.goals.length > 1) {
+                                console.log("ERROR4", t);
+                            }
+                            g = t.goals[0];
+                            if (g.condition.length > 1) {
+                                console.log("ERROR3", t);
+                            }
+                            return img + "catch " + g.target + " " + g.condition[0].withPokemonType.pokemonType.join(", ").replace(/POKEMON_TYPE_/g, "").toLowerCase() + " pokemons";
+                        case "QUEST_USE_INCENSE":
+                            if (t.goals.length > 1) {
+                                console.log("ERROR5", t);
+                            }
+                            return img + "use " + t.goals[0].target + " incense";
+                        case "QUEST_BUDDY_FEED":
+                            if (t.goals.length > 1) {
+                                console.log("ERROR6", t);
+                            }
+                            return img + "feed " + t.goals[0].target + " times";
+                        default:
+                            console.log("ERROR2", t.questType);
+                            break;
+                    }
+                }
+            }
+            return "";
+        }
+
+        function getPokemonCell(id, name, form) {
+            var iconName = getSpriteName(id, form);
+            var form = form == "Normal" ? "" : " (" + form + ")";
+            return "<td class='img-td'>" + "<img src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable Assets/" + iconName + "' />" + name + form + "</td>";
+        }
+
+        function show() {
+            // Start building the HTML text
+            var tableHtml = "<table class='table table-striped align-middle'>";
+
+            // Create the header row
+            tableHtml += "<thead><tr>";
+            var headers = ["ID", "From", "To", "Candy Cost", "Lure", "Item", "Quest"];
+            for (var i = 0; i < headers.length; i++) {
+                tableHtml += "<th>" + headers[i] + "</th>";
+            }
+            tableHtml += "</tr></thead>";
+
+            var l = Array.from(lures);
+            var trsFiltered = [];
+            var dict = {}
+            for (var i = 0; i < l.length; i++) {
+                var b = document.querySelector("#pokemon-lure-" + l[i]).checked;
+                if (b) {
+                    dict[l[i]] = b;
+                }
+            }
+
+            var checkLures = Object.keys(dict).length > 0;
+            console.log(dict, checkLures)
+
+            var dict2 = {}
+            var dictIdName = {};
+            var l2 = Array.from(items);
+            for (var i = 0; i < l2.length; i++) {
+                dictIdName[l2[i]] = getIdName(l2[i]);
+                var id = "#pokemon-item-" + dictIdName[l2[i]];
+                //console.log(id)
+                var b = document.querySelector("#pokemon-item-" + dictIdName[l2[i]]).checked;
+                if (b) {
+                    dict2[l2[i]] = b;
+                }
+            }
+
+            var checkItems = Object.keys(dict2).length > 0;
+            console.log(dict2, checkItems)
+
+            var l3 = Array.from(quests);
+            var trsFiltered = [];
+            var dict3 = {}
+            for (var i = 0; i < l3.length; i++) {
+                var b = document.querySelector("#pokemon-quest-" + l3[i]).checked;
+                if (b) {
+                    dict3[l3[i]] = b;
+                }
+            }
+
+            var checkQuests = Object.keys(dict3).length > 0;
+            console.log(dict3, checkQuests)
+
+            for (var i = 0; i < trs.length; i++) {
+                var toAdd = false;
+                if (checkLures) {
+                    for (var j = 0; j < l.length; j++) {
+                        if (dict[l[j]]) {
+                            if (trs[i].includes("lure_" + l[j].toLowerCase())) {
+                                toAdd = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                if (!toAdd && checkItems) {
+                    for (var j = 0; j < l2.length; j++) {
+                        if (dict2[l2[j]]) {
+                            if (trs[i].includes("_" + l2[j].replace(/\s+/g, "_") + "_")) {
+                                toAdd = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                if (!toAdd && checkQuests) {
+                    for (var j = 0; j < l3.length; j++) {
+                        if (dict3[l3[j]]) {
+                            if (trs[i].includes("quest_" + l3[j].toLowerCase())) {
+                                toAdd = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                if (!checkLures && !checkItems && !checkQuests) {
+                    toAdd = true;
+                }
+
+                if (toAdd) {
+                    trsFiltered.push(trs[i]);
+                }
+            }
+
+            tableHtml += trsFiltered.join("");
+            tableHtml += "</table>";
+
+            document.querySelector("#evolutions").innerHTML = tableHtml;
+        }
+
+        function getSpriteName(id, form) {
+            form = form.toLowerCase();
+            if (form == "normal") {
+                return "pm" + id + ".icon.png";
+            }
+
+            return "pm" + id + ".f" + form.toUpperCase() + ".icon.png";
+        }
+
+        window.addEventListener('load',
+            function () {
+                generateMoveOptions();
+
+                fetch("./pokemon_go/latest_evolution_quest.json")
+                    .then(response => response.json())
+                    .then(parsed_data => {
+                        pokemon_quests = parsed_data;
+                    });
+
+                fetch("./pokemon_go/pokemon_evolutions.json")
+                    .then(response => response.json())
+                    .then(parsed_data => {
+                        pokemon_evolutions = parsed_data;
+                        LoadEvolutions();
+                    });
+            });
+    </script>
+</body>
+
+</html>

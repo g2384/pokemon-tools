@@ -1,0 +1,37 @@
+<html>
+
+<body>
+    <script>
+        var latest = [];
+
+        function Calc() {
+            var results = [];
+            latest.forEach(e => {
+                if (e.templateId == undefined) {
+                    return;
+                }
+
+                if (e.templateId == null) {
+                    return;
+                }
+
+                if (e.templateId.includes("_EVOLUTION_QUEST")) {
+                    results.push(e)
+                }
+            });
+
+            console.log(JSON.stringify(results))
+        }
+
+        window.addEventListener('load', function () {
+            fetch("./latest.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    latest = parsed_data;
+                    Calc();
+                });
+        });
+    </script>
+</body>
+
+</html>
