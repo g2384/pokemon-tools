@@ -1,86 +1,109 @@
 ﻿using System.Text.Json;
+using System.Text.Json.Nodes;
 using System.Text.RegularExpressions;
 
 namespace ConsoleApp1
 {
-    public class Template
-    {
-        public string TemplateId { get; set; }
-        public IDictionary<string, dynamic> Data { get; set; }
-    }
-
     internal class Program
     {
         static void Main(string[] args)
         {
             var latestJson = @"..\..\..\..\..\..\pokemon_go\latest.json";
             var allLines = File.ReadAllText(latestJson);
-            var objects = JsonSerializer.Deserialize<Template[]>(allLines, new JsonSerializerOptions()
-            {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-            });
-            var objectSettings = new List<Template>();
-            var others = new List<Template>();
-            var avatars = new List<Template>();
-            var badges = new List<Template>();
-            var characters = new List<Template>();
-            var combatLeague = new List<Template>();
-            var combatV = new List<Template>();
-            var stickers = new List<Template>();
-            var animation = new List<Template>();
+            var allNodes = JsonNode.Parse(allLines)!;
+            var objectSettings = new JsonArray();
+            var others = new JsonArray();
+            var avatars = new JsonArray();
+            var badges = new JsonArray();
+            var characters = new JsonArray();
+            var combatLeague = new JsonArray();
+            var combatV = new JsonArray();
+            var stickers = new JsonArray();
+            var animation = new JsonArray();
+            var pokemons = new JsonArray();
+            var moves = new JsonArray();
+            var pokemonFamilies = new JsonArray();
             var ignoredSettingsRegex = new List<Regex>()
             {
-                new Regex(@"COMBAT_RANKING_SETTINGS(_S\d+)?"),
-                new Regex(@"^INVASION_"),
-                new Regex(@"^PARTY_")
+                new Regex(@"COMBAT_RANKING_SETTINGS(_S\d+)?", RegexOptions.Compiled),
+                new Regex(@"^INVASION_", RegexOptions.Compiled),
+                new Regex(@"^PARTY_", RegexOptions.Compiled)
             };
-            foreach (var o in objects!)
+            var familyRegex = new Regex(@"^V\d+_FAMILY_", RegexOptions.Compiled);
+            var pokemonRegex = new Regex(@"^V\d+_POKEMON_", RegexOptions.Compiled);
+            var moveRegex = new Regex(@"^V\d+_MOVE_", RegexOptions.Compiled);
+            foreach (var o in allNodes.AsArray())
             {
-                if (o.TemplateId.Contains("SETTINGS"))
+                var oCopy = o.DeepClone();
+                var obj = oCopy!.AsObject();
+                var templateId = obj["templateId"]!.GetValue<string>();
+                if (templateId.Contains("SETTINGS"))
                 {
-                    if (ignoredSettingsRegex.Any(e => e.IsMatch(o.TemplateId)))
+                    if (ignoredSettingsRegex.Any(e => e.IsMatch(templateId)))
                     {
                         continue;
                     }
-                    objectSettings.Add(o);
+                    objectSettings.Add(oCopy);
                 }
-                else if (o.TemplateId.StartsWith("pgorelease")
-                    || o.TemplateId.StartsWith("general1.ticket")
-                    || o.TemplateId.StartsWith("bundle"))
+                else if (templateId.StartsWith("pgorelease")
+                    || templateId.StartsWith("general1.ticket")
+                    || templateId.StartsWith("bundle"))
                 {
                     continue;
                 }
-                else if (o.TemplateId.StartsWith("AVATAR_"))
+                else if (templateId.StartsWith("AVATAR_"))
                 {
-                    avatars.Add(o);
+                    avatars.Add(oCopy);
                 }
-                else if (o.TemplateId.StartsWith("BADGE"))
+                else if (templateId.StartsWith("BADGE"))
                 {
-                    badges.Add(o);
+                    badges.Add(oCopy);
                 }
-                else if (o.TemplateId.StartsWith("CHARACTER_"))
+                else if (templateId.StartsWith("CHARACTER_"))
                 {
-                    characters.Add(o);
+                    characters.Add(oCopy);
                 }
-                else if (o.TemplateId.StartsWith("COMBAT_LEAGUE_"))
+                else if (templateId.StartsWith("COMBAT_LEAGUE_"))
                 {
-                    combatLeague.Add(o);
+                    combatLeague.Add(oCopy);
                 }
-                else if (o.TemplateId.StartsWith("COMBAT_V"))
+                else if (templateId.StartsWith("COMBAT_V"))
                 {
-                    combatV.Add(o);
+                    combatV.Add(oCopy);
                 }
-                else if (o.TemplateId.StartsWith("STICKER_"))
+                else if (templateId.StartsWith("STICKER_"))
                 {
-                    stickers.Add(o);
+                    stickers.Add(oCopy);
                 }
-                else if (o.TemplateId.StartsWith("camera_") || o.TemplateId.StartsWith("sequence_"))
+                else if (templateId.StartsWith("camera_") || templateId.StartsWith("sequence_"))
                 {
-                    animation.Add(o);
+                    animation.Add(oCopy);
+                }
+                else if (familyRegex.IsMatch(templateId))
+                {
+                    pokemonFamilies.Add(oCopy);
+                }
+                else if (pokemonRegex.IsMatch(templateId))
+                {
+                    if (obj["data"]!.AsObject().TryGetPropertyValue("pokemonSettings", out var pokemonSettings))
+                    {
+                        var pokemonSettingsObj = pokemonSettings!.AsObject();
+                        pokemonSettingsObj.Remove("camera");
+                        pokemonSettingsObj.Remove("animationTime");
+                        pokemonSettingsObj.Remove("buddyOffsetMale");
+                        pokemonSettingsObj.Remove("buddyOffsetFemale");
+                        pokemonSettingsObj.Remove("buddyScale");
+                        pokemonSettingsObj.Remove("buddyPortraitOffset");
+                    }
+                    pokemons.Add(oCopy);
+                }
+                else if (moveRegex.IsMatch(templateId))
+                {
+                    moves.Add(oCopy);
                 }
                 else
                 {
-                    others.Add(o);
+                    others.Add(oCopy);
                 }
             }
 
@@ -93,15 +116,15 @@ namespace ConsoleApp1
             Save(combatV, "CombatMoves.json");
             Save(stickers, "Stickers.json");
             Save(animation, "Animation.json");
+            Save(pokemons, "Pokemons.json");
+            Save(moves, "Moves.json");
+            Save(pokemonFamilies, "PokemonFamilies.json");
         }
 
-        private static void Save(List<Template> objectSettings, string fileName)
+        private static void Save(JsonArray objectSettings, string fileName)
         {
-            var str = JsonSerializer.Serialize(objectSettings, new JsonSerializerOptions()
-            {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-                WriteIndented = true
-            });
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            var str = objectSettings.ToJsonString(options);
             File.WriteAllText(fileName, str);
         }
     }
