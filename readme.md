@@ -19,6 +19,7 @@
 ### Evolution:
 
 1. get latest.json from https://raw.githubusercontent.com/PokeMiners/game_masters/master/latest/latest.json
+   1. or https://github.com/PokeMiners/game_masters/blob/master/latest/latest.json
 2. run `pokemon_go/calculator_evolution.html`
 3. copy console to `latest_evolution_quest.json`
 4. `pokemon_evolutions.json` is from https://pogoapi.net/api/v1/pokemon_evolutions.json
