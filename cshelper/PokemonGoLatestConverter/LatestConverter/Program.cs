@@ -1,10 +1,34 @@
 ﻿using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
 namespace ConsoleApp1
 {
+    public class PokemonForm
+    {
+        public string PokemonId { get; set; }
+
+        public string Form { get; set; }
+
+        public bool DisableTransferToPokemonHome { get; set; }
+
+        public bool CanEvolve { get; set; }
+
+        public bool OriginalFormCanTempEvolveButThisCannot { get; set; }
+
+        public static PokemonForm None = new PokemonForm()
+        {
+            PokemonId = "<none>"
+        };
+
+        public bool IsNone()
+        {
+            return PokemonId == "<none>";
+        }
+    }
+
     internal class Program
     {
         private static string _outputFolder = @"..\..\..\..\..\..\pokemon_go\latest";
@@ -27,6 +51,7 @@ namespace ConsoleApp1
             var pokemons = new JsonArray();
             var moves = new JsonArray();
             var pokemonFamilies = new JsonArray();
+            var pokemonForms = new List<PokemonForm>();
             var ignoredSettingsRegex = new List<Regex>()
             {
                 new Regex(@"COMBAT_RANKING_SETTINGS(_S\d+)?", RegexOptions.Compiled),
@@ -89,6 +114,7 @@ namespace ConsoleApp1
                 }
                 else if (pokemonRegex.IsMatch(templateId))
                 {
+                    var hasForm = false;
                     if (obj["data"]!.AsObject().TryGetPropertyValue("pokemonSettings", out var pokemonSettings))
                     {
                         var pokemonSettingsObj = pokemonSettings!.AsObject();
@@ -133,8 +159,29 @@ namespace ConsoleApp1
                             encounterObj.Remove("minPokemonActionFrequencyS");
                             encounterObj.Remove("maxPokemonActionFrequencyS");
                         }
+
+                        hasForm = pokemonSettingsObj.ContainsKey("form");
                     }
-                    pokemons.Add(oCopy);
+
+                    var added = false;
+                    if (hasForm)
+                    {
+                        var form = PokemonAdded(pokemons, oCopy);
+                        if (form.IsNone())
+                        {
+
+                        }
+                        else
+                        {
+                            pokemonForms.Add(form);
+                            added = true;
+                        }
+                    }
+
+                    if (!added)
+                    {
+                        pokemons.Add(oCopy);
+                    }
                 }
                 else if (moveRegex.IsMatch(templateId))
                 {
@@ -163,6 +210,90 @@ namespace ConsoleApp1
             Save(pokemons, "pokemons.json");
             Save(moves, "moves.json");
             Save(pokemonFamilies, "pokemonFamilies.json");
+
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault
+            };
+            var str = JsonSerializer.Serialize(pokemonForms, options);
+            WriteToFile("pokemonForms.json", str);
+        }
+
+        private static PokemonForm PokemonAdded(JsonArray pokemons, JsonNode o)
+        {
+            var oCopy = o.DeepClone();
+            var settingsObj = oCopy["data"]!["pokemonSettings"]!.AsObject();
+            var name = settingsObj["pokemonId"]!.GetValue<string>();
+            var form = settingsObj["form"]!.GetValue<string>().Replace(name.ToUpper(), "");
+
+            if (form.Contains("COPY_2019"))
+            {
+
+            }
+
+            oCopy["templateId"] = oCopy["templateId"]!.GetValue<string>().Replace(form, "");
+            oCopy["data"]!["templateId"] = oCopy["data"]!["templateId"]!.GetValue<string>().Replace(form, "");
+            settingsObj.Remove("form");
+            var canTemplEvolveO = settingsObj.ContainsKey("tempEvoOverrides");
+            var templateId = oCopy["templateId"]!.GetValue<string>();
+            var toHome = settingsObj["disableTransferToPokemonHome"]?.GetValue<bool>();
+            if (toHome == true)
+            {
+                settingsObj.Remove("disableTransferToPokemonHome");
+            }
+            var canEvolve = settingsObj["evolutionIds"] != null;
+
+            var pokemonForm = new PokemonForm()
+            {
+                PokemonId = name,
+                Form = form.Replace("_", " ").Trim(),
+                DisableTransferToPokemonHome = toHome == true,
+                CanEvolve = canEvolve
+            };
+
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            var oString = oCopy.ToJsonString(options);
+            foreach (var p in pokemons)
+            {
+                if (p["templateId"]!.GetValue<string>() != templateId)
+                {
+                    continue;
+                }
+
+                // here's the original form
+
+                var pCopy = p.DeepClone();
+                var settingsObj2 = pCopy["data"]!["pokemonSettings"]!.AsObject();
+                if (!canEvolve)
+                {
+                    settingsObj2.Remove("evolutionIds");
+                    settingsObj2.Remove("evolutionBranch");
+                }
+
+                if (!canTemplEvolveO)
+                {
+                    var canTempEvolve = settingsObj2.ContainsKey("tempEvoOverrides");
+                    if (canTempEvolve)
+                    {
+                        pokemonForm.OriginalFormCanTempEvolveButThisCannot = true;
+                        settingsObj2.Remove("tempEvoOverrides");
+                    }
+                }
+
+                var original = pCopy.ToJsonString(options);
+                if (original == oString)
+                {
+                    return pokemonForm;
+                }
+                else
+                {
+
+                }
+            }
+
+            return PokemonForm.None;
         }
 
         private static JsonNode? ConvertToTitleCase(JsonNode? jsonNode)
@@ -183,12 +314,17 @@ namespace ConsoleApp1
         {
             var options = new JsonSerializerOptions { WriteIndented = true };
             var str = objectSettings.ToJsonString(options);
+            WriteToFile(fileName, str);
+        }
+
+        private static void WriteToFile(string fileName, string str)
+        {
             var outputFolder = Path.Combine(_outputFolder, fileName);
             if (!Directory.Exists(_outputFolder))
             {
                 Directory.CreateDirectory(_outputFolder);
             }
-            File.WriteAllText(Path.Combine(_outputFolder, fileName), str);
+            File.WriteAllText(outputFolder, str);
         }
     }
 }
