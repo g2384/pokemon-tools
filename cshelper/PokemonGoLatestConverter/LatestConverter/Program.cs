@@ -105,7 +105,7 @@ namespace ConsoleApp1
                         pokemonSettingsObj.Remove("candyToEvolve"); // reason: already in evolutionBranch
                         pokemonSettingsObj.Remove("raidBossDistanceOffset");
 
-                         var type1 = ConvertPokemonType(pokemonSettingsObj["type"]);
+                        var type1 = ConvertPokemonType(pokemonSettingsObj["type"]);
                         if (pokemonSettingsObj.ContainsKey("type2"))
                         {
                             var type2 = ConvertPokemonType(pokemonSettingsObj["type2"]);
@@ -138,6 +138,11 @@ namespace ConsoleApp1
                 }
                 else if (moveRegex.IsMatch(templateId))
                 {
+                    if (obj["data"]!.AsObject().TryGetPropertyValue("moveSettings", out var moveSettings))
+                    {
+                        var moveSettingsObj = moveSettings!.AsObject();
+                        moveSettingsObj["pokemonType"] = ConvertPokemonType(moveSettingsObj["pokemonType"]);
+                    }
                     moves.Add(oCopy);
                 }
                 else

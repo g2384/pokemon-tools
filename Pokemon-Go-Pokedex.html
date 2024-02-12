@@ -10,6 +10,40 @@
             height: 20px;
             padding-right: 2px;
         }
+
+        .move_name {
+            display: inline-block;
+        }
+
+        .move {
+            padding: 2px;
+        }
+
+        .move-tag {
+            color: #000;
+            font-size: 10px;
+            font-weight: 700;
+            text-align: center;
+            display: inline-block;
+            padding: 2px 5px;
+            border-radius: 5px;
+            margin-left: 3px;
+        }
+
+        .elite-move {
+            background-color: #f7f70d;
+            border: 1px solid #dfc300;
+        }
+
+        .shadow-move {
+            background-color: #e1caff;
+            border: 1px solid #826eed;
+        }
+
+        .purified-move {
+            background-color: #d3d3d3;
+            border: 1px solid #707070;
+        }
     </style>
 </head>
 
@@ -44,11 +78,13 @@
             TableAdd("No.");
             TableAdd("Name");
             TableAdd("Types");
+            TableAdd("Quick Moves");
+            TableAdd("Charged Moves");
 
             for (var i = 0; i < dataMoves.length; i++) {
                 var move = dataMoves[i];
                 var settings = move["data"]["moveSettings"];
-                var type = settings["pokmeonType"];
+                var type = settings["pokemonType"];
                 var id = settings["movementId"];
                 movesDict[id] = type;
             }
@@ -72,13 +108,48 @@
                 var types = settings["types"].map(element => {
                     return getImage(element, "type");
                 });
-                console.log(types)
                 rowsRaw["Types"].push(types.join(""));
 
-                var quickMoves = settings["quickMoves"]
+                quickMoves = [];
+                if (settings["quickMoves"] != undefined) {
+                    quickMoves = settings["quickMoves"].map(e => {
+                        var e2 = e.replace(/_/g, " ").replace("FAST", "").toTitleCase();
+                        return convertMoveToDiv(e, e2);
+                    });
+                }
+                if (settings["eliteQuickMove"] != undefined) {
+                    var eliteMoves = settings["eliteQuickMove"].map(e => {
+                        var e2 = e.replace(/_/g, " ").replace("FAST", "").toTitleCase();
+                        return convertMoveToDiv(e, e2, "elite");
+                    });
+                    quickMoves = quickMoves.concat(eliteMoves);
+                }
+                rowsRaw["Quick Moves"].push(quickMoves.join(""));
+
+                cinematicMoves = [];
+                if (settings["cinematicMoves"] != undefined) {
+                    cinematicMoves = settings["cinematicMoves"].map(e => {
+                        var e2 = e.replace(/_/g, " ").toTitleCase();
+                        return convertMoveToDiv(e, e2);
+                    });
+                }
+                if (settings["eliteCinematicMove"] != undefined) {
+                    var eliteMoves = settings["eliteCinematicMove"].map(e => {
+                        var e2 = e.replace(/_/g, " ").toTitleCase();
+                        return convertMoveToDiv(e, e2, "elite");
+                    });
+                    cinematicMoves = cinematicMoves.concat(eliteMoves);
+                }
+                rowsRaw["Charged Moves"].push(cinematicMoves.join(""));
             }
 
             PrintTable();
+        }
+
+        function convertMoveToDiv(key, moveName, tag) {
+            var tagHtml = tag?.length > 0 ? "<span class='move-tag elite-move'>" + tag + "</span>" : "";
+            return "<div class='move'>" + getImage(movesDict[key], "type")
+                + "<div class='move_name'>" + moveName + "</div>" + tagHtml + "</div>";
         }
 
         function PrintTable() {
