@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Globalization;
+using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.RegularExpressions;
 
@@ -6,6 +7,9 @@ namespace ConsoleApp1
 {
     internal class Program
     {
+        private static string _outputFolder = @"..\..\..\..\..\..\pokemon_go\latest";
+        private static TextInfo _textInfo = new CultureInfo("en-US", false).TextInfo;
+
         static void Main(string[] args)
         {
             var latestJson = @"..\..\..\..\..\..\pokemon_go\latest.json";
@@ -92,8 +96,43 @@ namespace ConsoleApp1
                         pokemonSettingsObj.Remove("animationTime");
                         pokemonSettingsObj.Remove("buddyOffsetMale");
                         pokemonSettingsObj.Remove("buddyOffsetFemale");
+                        pokemonSettingsObj.Remove("buddyGroupNumber");
                         pokemonSettingsObj.Remove("buddyScale");
                         pokemonSettingsObj.Remove("buddyPortraitOffset");
+                        pokemonSettingsObj.Remove("modelHeight");
+                        pokemonSettingsObj.Remove("modelScale");
+                        pokemonSettingsObj.Remove("modelScaleV2");
+                        pokemonSettingsObj.Remove("candyToEvolve"); // reason: already in evolutionBranch
+                        pokemonSettingsObj.Remove("raidBossDistanceOffset");
+
+                         var type1 = ConvertPokemonType(pokemonSettingsObj["type"]);
+                        if (pokemonSettingsObj.ContainsKey("type2"))
+                        {
+                            var type2 = ConvertPokemonType(pokemonSettingsObj["type2"]);
+                            pokemonSettingsObj["types"] = new JsonArray(type1, type2);
+                        }
+                        else
+                        {
+                            pokemonSettingsObj["types"] = new JsonArray(type1);
+                        }
+                        pokemonSettingsObj.Remove("type");
+                        pokemonSettingsObj.Remove("type2");
+
+                        pokemonSettingsObj["pokemonId"] = ConvertToTitleCase(pokemonSettingsObj["pokemonId"]);
+                        if (pokemonSettingsObj.TryGetPropertyValue("encounter", out var encounter))
+                        {
+                            var encounterObj = encounter!.AsObject();
+                            encounterObj.Remove("collisionRadiusM");
+                            encounterObj.Remove("collisionHeightM");
+                            encounterObj.Remove("collisionHeadRadiusM");
+                            encounterObj.Remove("movementTimerS");
+                            encounterObj.Remove("jumpTimeS");
+                            encounterObj.Remove("attackTimerS");
+                            encounterObj.Remove("dodgeDurationS");
+                            encounterObj.Remove("dodgeDistance");
+                            encounterObj.Remove("minPokemonActionFrequencyS");
+                            encounterObj.Remove("maxPokemonActionFrequencyS");
+                        }
                     }
                     pokemons.Add(oCopy);
                 }
@@ -107,25 +146,44 @@ namespace ConsoleApp1
                 }
             }
 
-            Save(objectSettings, "Settings.json");
-            Save(others, "Others.json");
-            Save(avatars, "Avatars.json");
-            Save(badges, "Badges.json");
-            Save(characters, "Characters.json");
-            Save(combatLeague, "CombatLeague.json");
-            Save(combatV, "CombatMoves.json");
-            Save(stickers, "Stickers.json");
-            Save(animation, "Animation.json");
-            Save(pokemons, "Pokemons.json");
-            Save(moves, "Moves.json");
-            Save(pokemonFamilies, "PokemonFamilies.json");
+            Save(objectSettings, "settings.json");
+            Save(others, "others.json");
+            Save(avatars, "avatars.json");
+            Save(badges, "badges.json");
+            Save(characters, "characters.json");
+            Save(combatLeague, "combatLeague.json");
+            Save(combatV, "combatMoves.json");
+            Save(stickers, "stickers.json");
+            Save(animation, "animation.json");
+            Save(pokemons, "pokemons.json");
+            Save(moves, "moves.json");
+            Save(pokemonFamilies, "pokemonFamilies.json");
+        }
+
+        private static JsonNode? ConvertToTitleCase(JsonNode? jsonNode)
+        {
+            var str = jsonNode!.GetValue<string>().ToLowerInvariant();
+            str = _textInfo.ToTitleCase(str);
+            return str;
+        }
+
+        private static string ConvertPokemonType(JsonNode? jsonNode)
+        {
+            var str = jsonNode!.GetValue<string>();
+            str = str.Replace("POKEMON_TYPE_", "").ToLowerInvariant();
+            return str;
         }
 
         private static void Save(JsonArray objectSettings, string fileName)
         {
             var options = new JsonSerializerOptions { WriteIndented = true };
             var str = objectSettings.ToJsonString(options);
-            File.WriteAllText(fileName, str);
+            var outputFolder = Path.Combine(_outputFolder, fileName);
+            if (!Directory.Exists(_outputFolder))
+            {
+                Directory.CreateDirectory(_outputFolder);
+            }
+            File.WriteAllText(Path.Combine(_outputFolder, fileName), str);
         }
     }
 }

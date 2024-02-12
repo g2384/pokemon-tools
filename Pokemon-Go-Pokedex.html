@@ -1,0 +1,135 @@
+<html>
+
+<head>
+    <title>Pokedex for Pokemon Go</title>
+    <link href="./css/tom-select.bootstrap5.min.css" rel="stylesheet" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./css/pokemon_types.css" rel="stylesheet" />
+    <style>
+        .img_type {
+            height: 20px;
+            padding-right: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="border: 1px solid #888; padding: 10px;">
+        <form id="types-filters" class="flex-container"> </form>
+        <form id="lures-filters" class="flex-container"> </form>
+        <form id="items-filters" class="flex-container"> </form>
+        <form id="quest-filters" class="flex-container"> </form>
+        <input type="button" class="btn btn-outline-primary" value="Filter" onclick="show()" />
+    </div>
+
+    <div id="dex"></div>
+    <script>
+        let dataPokemons = [];
+        let dataMoves = [];
+        let rowsRaw = {};
+        let columnHeaders = [];
+        let trs = [];
+        let pokemonCount = 0;
+        let movesDict = {};
+
+        String.prototype.toTitleCase = function () {
+            return this.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+        };
+
+        function getImage(value, type) {
+            return "<img class='img_" + type + "' src='./pokemon_go/img/" + type + "_" + value + ".png' />";
+        }
+
+        function LoadDex() {
+            TableAdd("No.");
+            TableAdd("Name");
+            TableAdd("Types");
+
+            for (var i = 0; i < dataMoves.length; i++) {
+                var move = dataMoves[i];
+                var settings = move["data"]["moveSettings"];
+                var type = settings["pokmeonType"];
+                var id = settings["movementId"];
+                movesDict[id] = type;
+            }
+
+            for (var i = 0; i < dataPokemons.length; i++) {
+                var pokemon = dataPokemons[i];
+                var data = pokemon["data"];
+                if (data["pokemonSettings"] == undefined) {
+                    console.log(pokemon);
+                    continue;
+                }
+                pokemonCount++;
+                var index = data["templateId"].split("_")[0].replace("V", "");
+                index = parseInt(index, 10);
+                rowsRaw["No."].push(index);
+
+                var settings = data["pokemonSettings"];
+                var name = settings["pokemonId"];
+                rowsRaw["Name"].push(name);
+
+                var types = settings["types"].map(element => {
+                    return getImage(element, "type");
+                });
+                console.log(types)
+                rowsRaw["Types"].push(types.join(""));
+
+                var quickMoves = settings["quickMoves"]
+            }
+
+            PrintTable();
+        }
+
+        function PrintTable() {
+            // Start building the HTML text
+            var tableHtml = "<table class='table table-striped align-middle'>";
+
+            tableHtml += "<thead><tr>";
+            for (var i = 0; i < columnHeaders.length; i++) {
+                tableHtml += "<th>" + columnHeaders[i] + "</th>";
+            }
+            tableHtml += "</tr></thead>";
+
+
+            if (trs.length == 0) {
+                for (var i = 0; i < pokemonCount; i++) {
+                    var tr = "<tr>";
+                    for (var j = 0; j < columnHeaders.length; j++) {
+                        tr += "<td>" + rowsRaw[columnHeaders[j]][i] + "</td>";
+                    }
+                    tr += "</tr>";
+                    trs.push(tr);
+                }
+            }
+
+
+            tableHtml += trs.join("");
+            tableHtml += "</table>";
+
+            document.querySelector("#dex").innerHTML = tableHtml;
+        }
+
+        function TableAdd(str) {
+            columnHeaders.push(str);
+            rowsRaw[str] = [];
+        }
+
+        window.addEventListener('load',
+            function () {
+                fetch("./pokemon_go/latest/moves.json")
+                    .then(response => response.json())
+                    .then(parsed_data => {
+                        dataMoves = parsed_data;
+                    });
+                fetch("./pokemon_go/latest/pokemons.json")
+                    .then(response => response.json())
+                    .then(parsed_data => {
+                        dataPokemons = parsed_data;
+                        LoadDex();
+                    });
+            });
+    </script>
+</body>
+
+</html>
