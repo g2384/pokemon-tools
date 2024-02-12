@@ -80,6 +80,7 @@
             TableAdd("Types");
             TableAdd("Quick Moves");
             TableAdd("Charged Moves");
+            TableAdd("Form");
 
             for (var i = 0; i < dataMoves.length; i++) {
                 var move = dataMoves[i];
@@ -96,6 +97,11 @@
                     console.log(pokemon);
                     continue;
                 }
+
+                if (data["templateId"] == "V0009_POKEMON_BLASTOISE_COPY_2019") {
+                    continue;
+                }
+
                 pokemonCount++;
                 var index = data["templateId"].split("_")[0].replace("V", "");
                 index = parseInt(index, 10);
@@ -141,6 +147,14 @@
                     cinematicMoves = cinematicMoves.concat(eliteMoves);
                 }
                 rowsRaw["Charged Moves"].push(cinematicMoves.join(""));
+
+                var form = settings["form"];
+                if (form == undefined) {
+                    form = "";
+                } else {
+                    form = form.replace(name.toUpperCase(), "").replace(/_/g, " ").toTitleCase();
+                }
+                rowsRaw["Form"].push(form);
             }
 
             PrintTable();

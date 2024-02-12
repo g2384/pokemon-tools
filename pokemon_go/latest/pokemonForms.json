@@ -148,6 +148,11 @@
     "form": "NORMAL"
   },
   {
+    "pokemonId": "Nidoran",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Nidorina",
     "form": "NORMAL",
     "canEvolve": true
@@ -155,6 +160,11 @@
   {
     "pokemonId": "Nidoqueen",
     "form": "NORMAL"
+  },
+  {
+    "pokemonId": "Nidoran",
+    "form": "NORMAL",
+    "canEvolve": true
   },
   {
     "pokemonId": "Nidorino",

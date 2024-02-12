@@ -225,7 +225,8 @@ namespace ConsoleApp1
         {
             var oCopy = o.DeepClone();
             var settingsObj = oCopy["data"]!["pokemonSettings"]!.AsObject();
-            var name = settingsObj["pokemonId"]!.GetValue<string>();
+            var nameO = settingsObj["pokemonId"]!.GetValue<string>();
+            var name = nameO.Replace("_Female", "").Replace("_Male", "");
             var formO = settingsObj["form"]!.GetValue<string>();
             var form = formO.Replace(name.ToUpper(), "");
 
