@@ -11,6 +11,11 @@
             padding-right: 2px;
         }
 
+        .img_icon {
+            height: 20px;
+            margin-left: 2px;
+        }
+
         .move_name {
             display: inline-block;
         }
@@ -109,7 +114,14 @@
 
                 var settings = data["pokemonSettings"];
                 var name = settings["pokemonId"];
-                rowsRaw["Name"].push(name);
+                var tradable = settings["isTradable"] == true;
+                var mythic = settings["pokemonClass"] != undefined;
+                var mythicIcon = "";
+                if (mythic) {
+                    mythicIcon = "(" + settings["pokemonClass"] + ")"; //getImage(settings["pokemonClass"], "icon");
+                }
+                var nameHtml = "<div>" + name + getImage("trade", "icon") + mythicIcon + "</div>";
+                rowsRaw["Name"].push(nameHtml);
 
                 var types = settings["types"].map(element => {
                     return getImage(element, "type");

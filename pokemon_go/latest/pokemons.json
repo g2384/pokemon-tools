@@ -110,7 +110,6 @@
         "weightStdDev": 1.625,
         "familyId": "FAMILY_BULBASAUR",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "VENUSAUR",
@@ -180,7 +179,6 @@
         "weightStdDev": 12.5,
         "familyId": "FAMILY_BULBASAUR",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -434,7 +432,6 @@
         "weightStdDev": 11.3125,
         "familyId": "FAMILY_CHARMANDER",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA_X",
@@ -712,7 +709,6 @@
         "weightStdDev": 10.6875,
         "familyId": "FAMILY_SQUIRTLE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -813,7 +809,6 @@
         "weightStdDev": 10.6875,
         "familyId": "FAMILY_SQUIRTLE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "form": "BLASTOISE_COPY_2019",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -883,7 +878,6 @@
         "weightStdDev": 0.3625,
         "familyId": "FAMILY_CATERPIE",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "evolutionBranch": [
           {
             "evolution": "METAPOD",
@@ -995,7 +989,6 @@
         "weightStdDev": 4.0,
         "familyId": "FAMILY_CATERPIE",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -1050,7 +1043,6 @@
         "weightStdDev": 0.4,
         "familyId": "FAMILY_WEEDLE",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "evolutionBranch": [
           {
             "evolution": "KAKUNA",
@@ -1188,7 +1180,6 @@
         "weightStdDev": 3.6875,
         "familyId": "FAMILY_WEEDLE",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -1280,7 +1271,6 @@
         "weightStdDev": 0.225,
         "familyId": "FAMILY_PIDGEY",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "evolutionBranch": [
           {
             "evolution": "PIDGEOTTO",
@@ -1342,7 +1332,6 @@
         "weightStdDev": 3.75,
         "familyId": "FAMILY_PIDGEY",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "PIDGEOT",
@@ -1402,7 +1391,6 @@
         "weightStdDev": 4.9375,
         "familyId": "FAMILY_PIDGEY",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -1753,7 +1741,6 @@
         "weightStdDev": 0.25,
         "familyId": "FAMILY_SPEAROW",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "evolutionBranch": [
           {
             "evolution": "FEAROW",
@@ -1814,7 +1801,6 @@
         "weightStdDev": 4.75,
         "familyId": "FAMILY_SPEAROW",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -1943,7 +1929,6 @@
         "weightStdDev": 8.125,
         "familyId": "FAMILY_EKANS",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -2000,7 +1985,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "evolutionBranch": [
           {
             "evolution": "RAICHU",
@@ -2373,7 +2357,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "form": "PIKACHU_GOTOUR_2024_A",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -2423,7 +2406,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "form": "PIKACHU_GOTOUR_2024_A_02",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -2473,7 +2455,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "form": "PIKACHU_GOTOUR_2024_B",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -2523,7 +2504,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "form": "PIKACHU_GOTOUR_2024_B_02",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -2573,7 +2553,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "form": "PIKACHU_JEJU",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -2623,7 +2602,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "form": "PIKACHU_KARIYUSHI",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -2673,7 +2651,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "form": "PIKACHU_POP_STAR",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -2723,7 +2700,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "form": "PIKACHU_ROCK_STAR",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -2772,7 +2748,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "form": "PIKACHU_SUMMER_2023_A",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -2827,7 +2802,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "form": "PIKACHU_SUMMER_2023_B",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -2882,7 +2856,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "form": "PIKACHU_SUMMER_2023_C",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -2937,7 +2910,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "form": "PIKACHU_SUMMER_2023_D",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -2992,7 +2964,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "form": "PIKACHU_SUMMER_2023_E",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -3048,7 +3019,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "form": "PIKACHU_TSHIRT_01",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -3098,7 +3068,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "form": "PIKACHU_TSHIRT_02",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -3148,7 +3117,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "form": "PIKACHU_VS_2019",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -3201,7 +3169,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "form": "PIKACHU_WCS_2022",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -3261,7 +3228,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "form": "PIKACHU_WCS_2023",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -3842,7 +3808,6 @@
         "weightStdDev": 7.5,
         "familyId": "FAMILY_NIDORAN_FEMALE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -4043,7 +4008,6 @@
         "weightStdDev": 7.75,
         "familyId": "FAMILY_NIDORAN_MALE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -4163,7 +4127,6 @@
         "weightStdDev": 5.0,
         "familyId": "FAMILY_CLEFAIRY",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -4358,7 +4321,6 @@
         "weightStdDev": 2.4875,
         "familyId": "FAMILY_VULPIX",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -4428,7 +4390,6 @@
         "weightStdDev": 2.4875,
         "familyId": "FAMILY_VULPIX",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "form": "NINETALES_ALOLA",
         "thirdMove": {
           "stardustToUnlock": 50000,
@@ -4552,7 +4513,6 @@
         "weightStdDev": 1.5,
         "familyId": "FAMILY_JIGGLYPUFF",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -4606,7 +4566,6 @@
         "weightStdDev": 0.9375,
         "familyId": "FAMILY_ZUBAT",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "GOLBAT",
@@ -4678,7 +4637,6 @@
         "weightStdDev": 6.875,
         "familyId": "FAMILY_ZUBAT",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "CROBAT",
@@ -4896,7 +4854,6 @@
         "weightStdDev": 2.325,
         "familyId": "FAMILY_ODDISH",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -5136,7 +5093,6 @@
         "weightStdDev": 1.5625,
         "familyId": "FAMILY_VENONAT",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -5328,7 +5284,6 @@
         "weightStdDev": 4.1625,
         "familyId": "FAMILY_DIGLETT",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -5385,7 +5340,6 @@
         "weightStdDev": 8.325,
         "familyId": "FAMILY_DIGLETT",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "form": "DUGTRIO_ALOLA",
         "thirdMove": {
           "stardustToUnlock": 50000,
@@ -5444,7 +5398,6 @@
         "weightStdDev": 4.1625,
         "familyId": "FAMILY_DIGLETT",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "form": "DUGTRIO_NORMAL",
         "thirdMove": {
           "stardustToUnlock": 50000,
@@ -5904,7 +5857,6 @@
         "weightStdDev": 9.575,
         "familyId": "FAMILY_PSYDUCK",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -6017,7 +5969,6 @@
         "weightStdDev": 4.0,
         "familyId": "FAMILY_MANKEY",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "ANNIHILAPE",
@@ -6227,7 +6178,6 @@
         "weightStdDev": 19.375,
         "familyId": "FAMILY_GROWLITHE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -6295,7 +6245,6 @@
         "weightStdDev": 21.0,
         "familyId": "FAMILY_GROWLITHE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ARCANINE_HISUIAN",
         "thirdMove": {
           "stardustToUnlock": 50000,
@@ -6426,7 +6375,6 @@
         "weightStdDev": 2.5,
         "familyId": "FAMILY_POLIWAG",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "POLIWRATH",
@@ -6508,7 +6456,6 @@
         "weightStdDev": 6.75,
         "familyId": "FAMILY_POLIWAG",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -6645,7 +6592,6 @@
         "weightStdDev": 7.0625,
         "familyId": "FAMILY_ABRA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "ALAKAZAM",
@@ -6716,7 +6662,6 @@
         "weightStdDev": 6.0,
         "familyId": "FAMILY_ABRA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -6876,7 +6821,6 @@
         "weightStdDev": 8.8125,
         "familyId": "FAMILY_MACHOP",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "MACHAMP",
@@ -6950,7 +6894,6 @@
         "weightStdDev": 16.25,
         "familyId": "FAMILY_MACHOP",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -7088,7 +7031,6 @@
         "weightStdDev": 0.8,
         "familyId": "FAMILY_BELLSPROUT",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "VICTREEBEL",
@@ -7162,7 +7104,6 @@
         "weightStdDev": 1.9375,
         "familyId": "FAMILY_BELLSPROUT",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -7291,7 +7232,6 @@
         "weightStdDev": 6.875,
         "familyId": "FAMILY_TENTACOOL",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -7490,7 +7430,6 @@
         "weightStdDev": 13.125,
         "familyId": "FAMILY_GEODUDE",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "GOLEM",
@@ -7566,7 +7505,6 @@
         "weightStdDev": 13.75,
         "familyId": "FAMILY_GEODUDE",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "GOLEM",
@@ -7638,7 +7576,6 @@
         "weightStdDev": 37.5,
         "familyId": "FAMILY_GEODUDE",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -7699,7 +7636,6 @@
         "weightStdDev": 39.5,
         "familyId": "FAMILY_GEODUDE",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "form": "GOLEM_ALOLA",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -7903,7 +7839,6 @@
         "weightStdDev": 11.875,
         "familyId": "FAMILY_PONYTA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -7969,7 +7904,6 @@
         "weightStdDev": 10.0,
         "familyId": "FAMILY_PONYTA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "form": "RAPIDASH_GALARIAN",
         "thirdMove": {
           "stardustToUnlock": 50000,
@@ -8266,7 +8200,6 @@
         "weightStdDev": 9.8125,
         "familyId": "FAMILY_SLOWPOKE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -8355,7 +8288,6 @@
         "weightStdDev": 8.8125,
         "familyId": "FAMILY_SLOWPOKE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "form": "SLOWBRO_GALARIAN",
         "thirdMove": {
           "stardustToUnlock": 50000,
@@ -8421,7 +8353,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_MAGNEMITE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "MAGNETON",
@@ -8493,7 +8424,6 @@
         "weightStdDev": 7.5,
         "familyId": "FAMILY_MAGNEMITE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "MAGNEZONE",
@@ -8565,7 +8495,6 @@
         "weightStdDev": 7.5,
         "familyId": "FAMILY_MAGNEMITE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "MAGNEZONE",
@@ -8823,7 +8752,6 @@
         "weightStdDev": 10.65,
         "familyId": "FAMILY_DODUO",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -9001,7 +8929,6 @@
         "weightStdDev": 3.75,
         "familyId": "FAMILY_GRIMER",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "MUK",
@@ -9068,7 +8995,6 @@
         "weightStdDev": 5.25,
         "familyId": "FAMILY_GRIMER",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "MUK",
@@ -9140,7 +9066,6 @@
         "weightStdDev": 3.75,
         "familyId": "FAMILY_GRIMER",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -9205,7 +9130,6 @@
         "weightStdDev": 6.5,
         "familyId": "FAMILY_GRIMER",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "form": "MUK_ALOLA",
         "thirdMove": {
           "stardustToUnlock": 50000,
@@ -9338,7 +9262,6 @@
         "weightStdDev": 16.5625,
         "familyId": "FAMILY_SHELLDER",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -9401,7 +9324,6 @@
         "weightStdDev": 0.0125,
         "familyId": "FAMILY_GASTLY",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "HAUNTER",
@@ -9481,7 +9403,6 @@
         "weightStdDev": 0.0125,
         "familyId": "FAMILY_GASTLY",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "GENGAR",
@@ -9555,7 +9476,6 @@
         "weightStdDev": 5.0625,
         "familyId": "FAMILY_GASTLY",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -9655,7 +9575,6 @@
         "weightStdDev": 26.25,
         "familyId": "FAMILY_ONIX",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "STEELIX",
@@ -9729,7 +9648,6 @@
         "weightStdDev": 4.05,
         "familyId": "FAMILY_DROWZEE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "HYPNO",
@@ -9801,7 +9719,6 @@
         "weightStdDev": 9.45,
         "familyId": "FAMILY_DROWZEE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -9933,7 +9850,6 @@
         "weightStdDev": 7.5,
         "familyId": "FAMILY_KRABBY",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -10203,7 +10119,6 @@
         "weightStdDev": 8.325,
         "familyId": "FAMILY_VOLTORB",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -10266,7 +10181,6 @@
         "weightStdDev": 8.875,
         "familyId": "FAMILY_VOLTORB",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ELECTRODE_HISUIAN",
         "thirdMove": {
           "stardustToUnlock": 50000,
@@ -10396,7 +10310,6 @@
         "weightStdDev": 15.0,
         "familyId": "FAMILY_EXEGGCUTE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -10460,7 +10373,6 @@
         "weightStdDev": 51.95,
         "familyId": "FAMILY_EXEGGCUTE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "form": "EXEGGUTOR_ALOLA",
         "thirdMove": {
           "stardustToUnlock": 50000,
@@ -10721,7 +10633,6 @@
         "weightStdDev": 6.225,
         "familyId": "FAMILY_TYROGUE",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -10784,7 +10695,6 @@
         "weightStdDev": 6.275,
         "familyId": "FAMILY_TYROGUE",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -10905,7 +10815,6 @@
         "weightStdDev": 0.125,
         "familyId": "FAMILY_KOFFING",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "WEEZING",
@@ -10974,7 +10883,6 @@
         "weightStdDev": 1.1875,
         "familyId": "FAMILY_KOFFING",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -11037,7 +10945,6 @@
         "weightStdDev": 2.0,
         "familyId": "FAMILY_KOFFING",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "form": "WEEZING_GALARIAN",
         "thirdMove": {
           "stardustToUnlock": 50000,
@@ -11098,7 +11005,6 @@
         "weightStdDev": 14.375,
         "familyId": "FAMILY_RHYHORN",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "RHYDON",
@@ -11168,7 +11074,6 @@
         "weightStdDev": 15.0,
         "familyId": "FAMILY_RHYHORN",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "RHYPERIOR",
@@ -11235,7 +11140,6 @@
         "weightStdDev": 4.325,
         "familyId": "FAMILY_CHANSEY",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "BLISSEY",
@@ -11359,7 +11263,6 @@
         "weightStdDev": 10.0,
         "familyId": "FAMILY_KANGASKHAN",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -11532,7 +11435,6 @@
         "weightStdDev": 3.125,
         "familyId": "FAMILY_HORSEA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "KINGDRA",
@@ -11656,7 +11558,6 @@
         "weightStdDev": 4.875,
         "familyId": "FAMILY_GOLDEEN",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -11714,7 +11615,6 @@
         "weightStdDev": 4.3125,
         "familyId": "FAMILY_STARYU",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "STARMIE",
@@ -11773,7 +11673,6 @@
         "weightStdDev": 10.0,
         "familyId": "FAMILY_STARYU",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -11956,7 +11855,6 @@
         "weightStdDev": 7.0,
         "familyId": "FAMILY_SCYTHER",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "SCIZOR",
@@ -12028,7 +11926,6 @@
         "weightStdDev": 5.075,
         "familyId": "FAMILY_JYNX",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -12086,7 +11983,6 @@
         "weightStdDev": 3.75,
         "familyId": "FAMILY_ELECTABUZZ",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "ELECTIVIRE",
@@ -12153,7 +12049,6 @@
         "weightStdDev": 5.5625,
         "familyId": "FAMILY_MAGMAR",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "MAGMORTAR",
@@ -12220,7 +12115,6 @@
         "weightStdDev": 6.875,
         "familyId": "FAMILY_PINSIR",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -12304,7 +12198,6 @@
         "weightStdDev": 11.05,
         "familyId": "FAMILY_TAUROS",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -12423,7 +12316,6 @@
         "weightStdDev": 29.375,
         "familyId": "FAMILY_MAGIKARP",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -12510,7 +12402,6 @@
         "weightStdDev": 27.5,
         "familyId": "FAMILY_LAPRAS",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -12618,7 +12509,6 @@
         "weightStdDev": 0.8125,
         "familyId": "FAMILY_EEVEE",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_SHOULDER",
         "evolutionBranch": [
           {
             "evolution": "VAPOREON",
@@ -12912,7 +12802,6 @@
         "weightStdDev": 4.5625,
         "familyId": "FAMILY_PORYGON",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "PORYGON2",
@@ -13061,7 +12950,6 @@
         "weightStdDev": 4.375,
         "familyId": "FAMILY_OMANYTE",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -13196,7 +13084,6 @@
         "weightStdDev": 5.0625,
         "familyId": "FAMILY_KABUTO",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -13259,7 +13146,6 @@
         "weightStdDev": 7.375,
         "familyId": "FAMILY_AERODACTYL",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -13354,7 +13240,6 @@
         "weightStdDev": 57.5,
         "familyId": "FAMILY_SNORLAX",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -13420,14 +13305,13 @@
           "TRIPLE_AXEL"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.7,
         "pokedexWeightKg": 55.4,
         "heightStdDev": 0.2125,
         "weightStdDev": 6.925,
         "familyId": "FAMILY_ARTICUNO",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -13481,14 +13365,13 @@
           "BRAVE_BIRD"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.7,
         "pokedexWeightKg": 50.9,
         "heightStdDev": 0.2125,
         "weightStdDev": 6.3625,
         "familyId": "FAMILY_ARTICUNO",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_FLYING",
         "form": "ARTICUNO_GALARIAN",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -13541,14 +13424,13 @@
           "DRILL_PECK"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.6,
         "pokedexWeightKg": 52.6,
         "heightStdDev": 0.2,
         "weightStdDev": 6.575,
         "familyId": "FAMILY_ZAPDOS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -13601,14 +13483,13 @@
           "BRAVE_BIRD"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.6,
         "pokedexWeightKg": 58.2,
         "heightStdDev": 0.2,
         "weightStdDev": 7.275,
         "familyId": "FAMILY_ZAPDOS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ZAPDOS_GALARIAN",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -13661,14 +13542,13 @@
           "ANCIENT_POWER"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.0,
         "pokedexWeightKg": 60.0,
         "heightStdDev": 0.25,
         "weightStdDev": 7.5,
         "familyId": "FAMILY_MOLTRES",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -13722,14 +13602,13 @@
           "BRAVE_BIRD"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.0,
         "pokedexWeightKg": 66.0,
         "heightStdDev": 0.25,
         "weightStdDev": 8.25,
         "familyId": "FAMILY_MOLTRES",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_FLYING",
         "form": "MOLTRES_GALARIAN",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -13860,7 +13739,6 @@
         "weightStdDev": 2.0625,
         "familyId": "FAMILY_DRATINI",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "DRAGONITE",
@@ -13931,7 +13809,6 @@
         "weightStdDev": 26.25,
         "familyId": "FAMILY_DRATINI",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -13994,14 +13871,13 @@
           "FLAMETHROWER"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.0,
         "pokedexWeightKg": 122.0,
         "heightStdDev": 0.25,
         "weightStdDev": 15.25,
         "familyId": "FAMILY_MEWTWO",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -14057,14 +13933,13 @@
           "FUTURESIGHT"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.0,
         "pokedexWeightKg": 122.0,
         "heightStdDev": 0.25,
         "weightStdDev": 15.25,
         "familyId": "FAMILY_MEWTWO",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "MEWTWO_A",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -14149,7 +14024,7 @@
           "SURF"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 0.4,
         "pokedexWeightKg": 4.0,
         "heightStdDev": 0.05,
@@ -14343,7 +14218,6 @@
         "weightStdDev": 12.5625,
         "familyId": "FAMILY_CHIKORITA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -14541,7 +14415,6 @@
         "weightStdDev": 9.9375,
         "familyId": "FAMILY_CYNDAQUIL",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -14605,7 +14478,6 @@
         "weightStdDev": 8.725,
         "familyId": "FAMILY_CYNDAQUIL",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "form": "TYPHLOSION_HISUIAN",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -14802,7 +14674,6 @@
         "weightStdDev": 11.1,
         "familyId": "FAMILY_TOTODILE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -15030,7 +14901,6 @@
         "weightStdDev": 5.1,
         "familyId": "FAMILY_HOOTHOOT",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -15084,7 +14954,6 @@
         "weightStdDev": 1.35,
         "familyId": "FAMILY_LEDYBA",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "LEDIAN",
@@ -15153,7 +15022,6 @@
         "weightStdDev": 4.45,
         "familyId": "FAMILY_LEDYBA",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -15325,7 +15193,6 @@
         "weightStdDev": 9.375,
         "familyId": "FAMILY_ZUBAT",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -15441,7 +15308,6 @@
         "weightStdDev": 2.8125,
         "familyId": "FAMILY_CHINCHOU",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -15491,7 +15357,6 @@
         "weightStdDev": 0.25,
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BABY",
         "evolutionBranch": [
           {
             "evolution": "PIKACHU",
@@ -15547,7 +15412,6 @@
         "weightStdDev": 0.375,
         "familyId": "FAMILY_CLEFAIRY",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BABY",
         "evolutionBranch": [
           {
             "evolution": "CLEFAIRY",
@@ -15666,7 +15530,6 @@
         "weightStdDev": 0.1875,
         "familyId": "FAMILY_TOGEPI",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BABY",
         "evolutionBranch": [
           {
             "evolution": "TOGETIC",
@@ -15797,7 +15660,6 @@
         "weightStdDev": 0.25,
         "familyId": "FAMILY_NATU",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_SHOULDER",
         "evolutionBranch": [
           {
             "evolution": "XATU",
@@ -15865,7 +15727,6 @@
         "weightStdDev": 1.875,
         "familyId": "FAMILY_NATU",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -16070,7 +15931,6 @@
         "weightStdDev": 7.6875,
         "familyId": "FAMILY_MAREEP",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -16444,7 +16304,6 @@
         "weightStdDev": 0.0625,
         "familyId": "FAMILY_HOPPIP",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "SKIPLOOM",
@@ -16516,7 +16375,6 @@
         "weightStdDev": 0.125,
         "familyId": "FAMILY_HOPPIP",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "JUMPLUFF",
@@ -16587,7 +16445,6 @@
         "weightStdDev": 0.375,
         "familyId": "FAMILY_HOPPIP",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -16711,7 +16568,6 @@
         "weightStdDev": 0.225,
         "familyId": "FAMILY_SUNKERN",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_SHOULDER",
         "evolutionBranch": [
           {
             "evolution": "SUNFLORA",
@@ -17013,7 +16869,6 @@
         "weightStdDev": 9.375,
         "familyId": "FAMILY_WOOPER",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -17181,7 +17036,6 @@
         "weightStdDev": 0.2625,
         "familyId": "FAMILY_MURKROW",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_SHOULDER",
         "evolutionBranch": [
           {
             "evolution": "HONCHKROW",
@@ -17251,7 +17105,6 @@
         "weightStdDev": 9.9375,
         "familyId": "FAMILY_SLOWPOKE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -17316,7 +17169,6 @@
         "weightStdDev": 9.9375,
         "familyId": "FAMILY_SLOWPOKE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "form": "SLOWKING_GALARIAN",
         "thirdMove": {
           "stardustToUnlock": 50000,
@@ -17378,7 +17230,6 @@
         "weightStdDev": 0.125,
         "familyId": "FAMILY_MISDREAVUS",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "MISMAGIUS",
@@ -17442,7 +17293,6 @@
         "weightStdDev": 0.125,
         "familyId": "FAMILY_MISDREAVUS",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "MISMAGIUS",
@@ -17551,7 +17401,6 @@
         "weightStdDev": 3.5625,
         "familyId": "FAMILY_WOBBUFFET",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -17610,7 +17459,6 @@
         "weightStdDev": 5.1875,
         "familyId": "FAMILY_GIRAFARIG",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -17739,7 +17587,6 @@
         "weightStdDev": 15.725,
         "familyId": "FAMILY_PINECO",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -17913,7 +17760,6 @@
         "weightStdDev": 50.0,
         "familyId": "FAMILY_ONIX",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -18079,7 +17925,6 @@
         "weightStdDev": 6.0875,
         "familyId": "FAMILY_SNUBBULL",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -18251,7 +18096,6 @@
         "weightStdDev": 15.625,
         "familyId": "FAMILY_SCYTHER",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -18400,7 +18244,6 @@
         "weightStdDev": 6.75,
         "familyId": "FAMILY_HERACROSS",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -18660,7 +18503,6 @@
         "weightStdDev": 15.725,
         "familyId": "FAMILY_TEDDIURSA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "URSALUNA",
@@ -18904,7 +18746,6 @@
         "weightStdDev": 6.975,
         "familyId": "FAMILY_SWINUB",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "MAMOSWINE",
@@ -19182,7 +19023,6 @@
         "weightStdDev": 27.5,
         "familyId": "FAMILY_MANTINE",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -19233,7 +19073,6 @@
         "weightStdDev": 6.3125,
         "familyId": "FAMILY_SKARMORY",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -19462,7 +19301,6 @@
         "weightStdDev": 19.0,
         "familyId": "FAMILY_HORSEA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -19596,7 +19434,6 @@
         "weightStdDev": 15.0,
         "familyId": "FAMILY_PHANPY",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -19722,7 +19559,6 @@
         "weightStdDev": 8.9,
         "familyId": "FAMILY_STANTLER",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -19766,7 +19602,6 @@
         "weightStdDev": 7.25,
         "familyId": "FAMILY_SMEARGLE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "candyToUnlock": 9999999
         },
@@ -19937,7 +19772,6 @@
         "weightStdDev": 0.75,
         "familyId": "FAMILY_JYNX",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BABY",
         "evolutionBranch": [
           {
             "evolution": "JYNX",
@@ -19997,7 +19831,6 @@
         "weightStdDev": 2.9375,
         "familyId": "FAMILY_ELECTABUZZ",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BABY",
         "evolutionBranch": [
           {
             "evolution": "ELECTABUZZ",
@@ -20056,7 +19889,6 @@
         "weightStdDev": 2.675,
         "familyId": "FAMILY_MAGMAR",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BABY",
         "evolutionBranch": [
           {
             "evolution": "MAGMAR",
@@ -20115,7 +19947,6 @@
         "weightStdDev": 9.4375,
         "familyId": "FAMILY_MILTANK",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -20166,7 +19997,6 @@
         "weightStdDev": 5.85,
         "familyId": "FAMILY_CHANSEY",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -20215,14 +20045,13 @@
           "SHADOW_BALL"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.91,
         "pokedexWeightKg": 178.0,
         "heightStdDev": 0.23875,
         "weightStdDev": 22.25,
         "familyId": "FAMILY_RAIKOU",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -20275,14 +20104,13 @@
           "SCORCHING_SANDS"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.11,
         "pokedexWeightKg": 198.0,
         "heightStdDev": 0.26375,
         "weightStdDev": 24.75,
         "familyId": "FAMILY_ENTEI",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -20335,14 +20163,13 @@
           "SCALD"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.01,
         "pokedexWeightKg": 187.0,
         "heightStdDev": 0.25125,
         "weightStdDev": 23.375,
         "familyId": "FAMILY_SUICUNE",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -20398,14 +20225,13 @@
           "SCALD"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.01,
         "pokedexWeightKg": 187.0,
         "heightStdDev": 0.25125,
         "weightStdDev": 23.375,
         "familyId": "FAMILY_SUICUNE",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "SUICUNE_S",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -20609,7 +20435,6 @@
         "weightStdDev": 25.25,
         "familyId": "FAMILY_LARVITAR",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -20693,14 +20518,13 @@
           "FUTURESIGHT"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 5.21,
         "pokedexWeightKg": 216.0,
         "heightStdDev": 0.65125,
         "weightStdDev": 27.0,
         "familyId": "FAMILY_LUGIA",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -20754,14 +20578,13 @@
           "FUTURESIGHT"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 5.21,
         "pokedexWeightKg": 216.0,
         "heightStdDev": 0.65125,
         "weightStdDev": 27.0,
         "familyId": "FAMILY_LUGIA",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "LUGIA_S",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -20819,14 +20642,13 @@
           "SOLAR_BEAM"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 3.81,
         "pokedexWeightKg": 199.0,
         "heightStdDev": 0.47625,
         "weightStdDev": 24.875,
         "familyId": "FAMILY_HO_OH",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -20883,14 +20705,13 @@
           "SOLAR_BEAM"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 3.81,
         "pokedexWeightKg": 199.0,
         "heightStdDev": 0.47625,
         "weightStdDev": 24.875,
         "familyId": "FAMILY_HO_OH",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "HO_OH_S",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -20946,7 +20767,7 @@
           "LEAF_STORM"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 0.61,
         "pokedexWeightKg": 5.0,
         "heightStdDev": 0.07625,
@@ -21139,7 +20960,6 @@
         "weightStdDev": 6.525,
         "familyId": "FAMILY_TREECKO",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -21293,7 +21113,6 @@
         "weightStdDev": 2.4375,
         "familyId": "FAMILY_TORCHIC",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "BLAZIKEN",
@@ -21364,7 +21183,6 @@
         "weightStdDev": 6.5,
         "familyId": "FAMILY_TORCHIC",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -21585,7 +21403,6 @@
         "weightStdDev": 10.2375,
         "familyId": "FAMILY_MUDKIP",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -22047,7 +21864,6 @@
         "weightStdDev": 0.45,
         "familyId": "FAMILY_WURMPLE",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "evolutionBranch": [
           {
             "evolution": "SILCOON",
@@ -22162,7 +21978,6 @@
         "weightStdDev": 3.55,
         "familyId": "FAMILY_WURMPLE",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -22268,7 +22083,6 @@
         "weightStdDev": 3.95,
         "familyId": "FAMILY_WURMPLE",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -22316,7 +22130,6 @@
         "weightStdDev": 0.325,
         "familyId": "FAMILY_LOTAD",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "LOMBRE",
@@ -22375,7 +22188,6 @@
         "weightStdDev": 4.0625,
         "familyId": "FAMILY_LOTAD",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "LUDICOLO",
@@ -22437,7 +22249,6 @@
         "weightStdDev": 6.875,
         "familyId": "FAMILY_LOTAD",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -22555,7 +22366,6 @@
         "weightStdDev": 3.5,
         "familyId": "FAMILY_SEEDOT",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "SHIFTRY",
@@ -22626,7 +22436,6 @@
         "weightStdDev": 7.45,
         "familyId": "FAMILY_SEEDOT",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -22738,7 +22547,6 @@
         "weightStdDev": 2.475,
         "familyId": "FAMILY_TAILLOW",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -22786,7 +22594,6 @@
         "weightStdDev": 1.1875,
         "familyId": "FAMILY_WINGULL",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "PELIPPER",
@@ -22845,7 +22652,6 @@
         "weightStdDev": 3.5,
         "familyId": "FAMILY_WINGULL",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -23047,7 +22853,6 @@
         "weightStdDev": 6.05,
         "familyId": "FAMILY_RALTS",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -23185,7 +22990,6 @@
         "weightStdDev": 0.45,
         "familyId": "FAMILY_SURSKIT",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -23290,7 +23094,6 @@
         "weightStdDev": 4.9,
         "familyId": "FAMILY_SHROOMISH",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -23339,7 +23142,6 @@
         "weightStdDev": 3.0,
         "familyId": "FAMILY_SLAKOTH",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "VIGOROTH",
@@ -23397,7 +23199,6 @@
         "weightStdDev": 5.8125,
         "familyId": "FAMILY_SLAKOTH",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "SLAKING",
@@ -23452,7 +23253,6 @@
         "weightStdDev": 16.3125,
         "familyId": "FAMILY_SLAKOTH",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -23559,7 +23359,6 @@
         "weightStdDev": 1.5,
         "familyId": "FAMILY_NINCADA",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -23611,7 +23410,6 @@
         "weightStdDev": 0.15,
         "familyId": "FAMILY_NINCADA",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -23731,7 +23529,6 @@
         "weightStdDev": 5.0625,
         "familyId": "FAMILY_WHISMUR",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "EXPLOUD",
@@ -23799,7 +23596,6 @@
         "weightStdDev": 10.5,
         "familyId": "FAMILY_WHISMUR",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -23855,7 +23651,6 @@
         "weightStdDev": 10.8,
         "familyId": "FAMILY_MAKUHITA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "HARIYAMA",
@@ -23924,7 +23719,6 @@
         "weightStdDev": 31.725,
         "familyId": "FAMILY_MAKUHITA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -24033,7 +23827,6 @@
         "weightStdDev": 12.125,
         "familyId": "FAMILY_NOSEPASS",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "PROBOPASS",
@@ -24097,7 +23890,6 @@
         "weightStdDev": 12.125,
         "familyId": "FAMILY_NOSEPASS",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "PROBOPASS",
@@ -24217,7 +24009,6 @@
         "weightStdDev": 4.075,
         "familyId": "FAMILY_SKITTY",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -24578,7 +24369,6 @@
         "weightStdDev": 15.0,
         "familyId": "FAMILY_ARON",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "AGGRON",
@@ -24651,7 +24441,6 @@
         "weightStdDev": 45.0,
         "familyId": "FAMILY_ARON",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -24796,7 +24585,6 @@
         "weightStdDev": 3.9375,
         "familyId": "FAMILY_MEDITITE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -24869,7 +24657,6 @@
         "weightStdDev": 1.9,
         "familyId": "FAMILY_ELECTRIKE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "MANECTRIC",
@@ -24941,7 +24728,6 @@
         "weightStdDev": 5.025,
         "familyId": "FAMILY_ELECTRIKE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -25017,7 +24803,6 @@
         "weightStdDev": 0.525,
         "familyId": "FAMILY_PLUSLE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_SHOULDER",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -25065,7 +24850,6 @@
         "weightStdDev": 0.525,
         "familyId": "FAMILY_MINUN",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_SHOULDER",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -25112,7 +24896,6 @@
         "weightStdDev": 2.2125,
         "familyId": "FAMILY_VOLBEAT",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -25159,7 +24942,6 @@
         "weightStdDev": 2.2125,
         "familyId": "FAMILY_ILLUMISE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -25320,7 +25102,6 @@
         "weightStdDev": 10.0,
         "familyId": "FAMILY_GULPIN",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -25370,7 +25151,6 @@
         "weightStdDev": 2.6,
         "familyId": "FAMILY_CARVANHA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "SHARPEDO",
@@ -25439,7 +25219,6 @@
         "weightStdDev": 11.1,
         "familyId": "FAMILY_CARVANHA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -25497,7 +25276,6 @@
         "weightStdDev": 16.25,
         "familyId": "FAMILY_WAILMER",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "WAILORD",
@@ -25563,7 +25341,6 @@
         "weightStdDev": 49.75,
         "familyId": "FAMILY_WAILMER",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -25707,7 +25484,6 @@
         "weightStdDev": 27.5,
         "familyId": "FAMILY_NUMEL",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -25875,7 +25651,6 @@
         "weightStdDev": 8.9375,
         "familyId": "FAMILY_SPOINK",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -25928,7 +25703,6 @@
         "weightStdDev": 0.625,
         "familyId": "FAMILY_SPINDA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -26048,7 +25822,6 @@
         "weightStdDev": 1.9125,
         "familyId": "FAMILY_TRAPINCH",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "FLYGON",
@@ -26119,7 +25892,6 @@
         "weightStdDev": 10.25,
         "familyId": "FAMILY_TRAPINCH",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -26181,7 +25953,6 @@
         "weightStdDev": 6.4125,
         "familyId": "FAMILY_CACNEA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "CACTURNE",
@@ -26251,7 +26022,6 @@
         "weightStdDev": 9.675,
         "familyId": "FAMILY_CACNEA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -26305,7 +26075,6 @@
         "weightStdDev": 0.15,
         "familyId": "FAMILY_SWABLU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "ALTARIA",
@@ -26364,7 +26133,6 @@
         "weightStdDev": 2.575,
         "familyId": "FAMILY_SWABLU",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -26454,7 +26222,6 @@
         "weightStdDev": 5.0375,
         "familyId": "FAMILY_ZANGOOSE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -26547,7 +26314,6 @@
         "weightStdDev": 21.0,
         "familyId": "FAMILY_LUNATONE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -26595,7 +26361,6 @@
         "weightStdDev": 19.25,
         "familyId": "FAMILY_SOLROCK",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -26715,7 +26480,6 @@
         "weightStdDev": 2.95,
         "familyId": "FAMILY_BARBOACH",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -26843,7 +26607,6 @@
         "weightStdDev": 4.1,
         "familyId": "FAMILY_CORPHISH",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -26960,7 +26723,6 @@
         "weightStdDev": 13.5,
         "familyId": "FAMILY_BALTOY",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -27010,7 +26772,6 @@
         "weightStdDev": 2.975,
         "familyId": "FAMILY_LILEEP",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "CRADILY",
@@ -27080,7 +26841,6 @@
         "weightStdDev": 7.55,
         "familyId": "FAMILY_LILEEP",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -27137,7 +26897,6 @@
         "weightStdDev": 1.5625,
         "familyId": "FAMILY_ANORITH",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "ARMALDO",
@@ -27207,7 +26966,6 @@
         "weightStdDev": 8.525,
         "familyId": "FAMILY_ANORITH",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -27334,7 +27092,6 @@
         "weightStdDev": 20.25,
         "familyId": "FAMILY_FEEBAS",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -27761,7 +27518,6 @@
         "weightStdDev": 1.5625,
         "familyId": "FAMILY_SHUPPET",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -27840,7 +27596,6 @@
         "weightStdDev": 1.875,
         "familyId": "FAMILY_DUSKULL",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "DUSCLOPS",
@@ -27912,7 +27667,6 @@
         "weightStdDev": 3.825,
         "familyId": "FAMILY_DUSKULL",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "DUSKNOIR",
@@ -27977,7 +27731,6 @@
         "weightStdDev": 12.5,
         "familyId": "FAMILY_TROPIUS",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -28160,7 +27913,6 @@
         "weightStdDev": 1.75,
         "familyId": "FAMILY_WOBBUFFET",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "WOBBUFFET",
@@ -28290,7 +28042,6 @@
         "weightStdDev": 32.0625,
         "familyId": "FAMILY_SNORUNT",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -28379,7 +28130,6 @@
         "weightStdDev": 4.9375,
         "familyId": "FAMILY_SPHEAL",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "SEALEO",
@@ -28448,7 +28198,6 @@
         "weightStdDev": 10.95,
         "familyId": "FAMILY_SPHEAL",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "WALREIN",
@@ -28517,7 +28266,6 @@
         "weightStdDev": 18.825,
         "familyId": "FAMILY_SPHEAL",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -28634,7 +28382,6 @@
         "weightStdDev": 3.375,
         "familyId": "FAMILY_CLAMPERL",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -28685,7 +28432,6 @@
         "weightStdDev": 2.825,
         "familyId": "FAMILY_CLAMPERL",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -28732,7 +28478,6 @@
         "weightStdDev": 2.925,
         "familyId": "FAMILY_RELICANTH",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -28897,7 +28642,6 @@
         "weightStdDev": 13.8125,
         "familyId": "FAMILY_BAGON",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "SALAMENCE",
@@ -28967,7 +28711,6 @@
         "weightStdDev": 12.825,
         "familyId": "FAMILY_BAGON",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -29122,7 +28865,6 @@
         "weightStdDev": 25.3125,
         "familyId": "FAMILY_BELDUM",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "METAGROSS",
@@ -29191,7 +28933,6 @@
         "weightStdDev": 68.75,
         "familyId": "FAMILY_BELDUM",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -29247,14 +28988,13 @@
           "FOCUS_BLAST"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.7,
         "pokedexWeightKg": 230.0,
         "heightStdDev": 0.2125,
         "weightStdDev": 28.75,
         "familyId": "FAMILY_REGIROCK",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -29308,14 +29048,13 @@
           "FOCUS_BLAST"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.8,
         "pokedexWeightKg": 175.0,
         "heightStdDev": 0.225,
         "weightStdDev": 21.875,
         "familyId": "FAMILY_REGICE",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -29369,14 +29108,13 @@
           "FOCUS_BLAST"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.91,
         "pokedexWeightKg": 205.0,
         "heightStdDev": 0.23875,
         "weightStdDev": 25.625,
         "familyId": "FAMILY_REGISTEEL",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -29430,14 +29168,13 @@
           "THUNDER"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.4,
         "pokedexWeightKg": 40.0,
         "heightStdDev": 0.175,
         "weightStdDev": 5.0,
         "familyId": "FAMILY_LATIAS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -29531,14 +29268,13 @@
           "SOLAR_BEAM"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.01,
         "pokedexWeightKg": 60.0,
         "heightStdDev": 0.25125,
         "weightStdDev": 7.5,
         "familyId": "FAMILY_LATIOS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -29631,14 +29367,13 @@
           "SURF"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 4.5,
         "pokedexWeightKg": 352.0,
         "heightStdDev": 0.5625,
         "weightStdDev": 44.0,
         "familyId": "FAMILY_KYOGRE",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_PRIMAL",
@@ -29726,14 +29461,13 @@
           "SOLAR_BEAM"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 3.51,
         "pokedexWeightKg": 950.0,
         "heightStdDev": 0.43875,
         "weightStdDev": 118.75,
         "familyId": "FAMILY_GROUDON",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_PRIMAL",
@@ -29817,14 +29551,13 @@
           "ANCIENT_POWER"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 7.01,
         "pokedexWeightKg": 206.5,
         "heightStdDev": 0.87625,
         "weightStdDev": 25.8125,
         "familyId": "FAMILY_RAYQUAZA",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -29907,7 +29640,7 @@
           "DOOM_DESIRE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 0.3,
         "pokedexWeightKg": 1.1,
         "heightStdDev": 0.0375,
@@ -29953,14 +29686,13 @@
           "HYPER_BEAM"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 1.7,
         "pokedexWeightKg": 60.8,
         "heightStdDev": 0.2125,
         "weightStdDev": 7.6,
         "familyId": "FAMILY_DEOXYS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -30000,14 +29732,13 @@
           "DARK_PULSE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 1.7,
         "pokedexWeightKg": 60.8,
         "heightStdDev": 0.2125,
         "weightStdDev": 7.6,
         "familyId": "FAMILY_DEOXYS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "DEOXYS_ATTACK",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -30048,14 +29779,13 @@
           "ROCK_SLIDE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 1.7,
         "pokedexWeightKg": 60.8,
         "heightStdDev": 0.2125,
         "weightStdDev": 7.6,
         "familyId": "FAMILY_DEOXYS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "DEOXYS_DEFENSE",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -30096,14 +29826,13 @@
           "HYPER_BEAM"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 1.7,
         "pokedexWeightKg": 60.8,
         "heightStdDev": 0.2125,
         "weightStdDev": 7.6,
         "familyId": "FAMILY_DEOXYS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "DEOXYS_NORMAL",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -30144,14 +29873,13 @@
           "SWIFT"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 1.7,
         "pokedexWeightKg": 60.8,
         "heightStdDev": 0.2125,
         "weightStdDev": 7.6,
         "familyId": "FAMILY_DEOXYS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "DEOXYS_SPEED",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -30267,7 +29995,6 @@
         "weightStdDev": 12.125,
         "familyId": "FAMILY_TURTWIG",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "TORTERRA",
@@ -30335,7 +30062,6 @@
         "weightStdDev": 38.75,
         "familyId": "FAMILY_TURTWIG",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -30462,7 +30188,6 @@
         "weightStdDev": 2.75,
         "familyId": "FAMILY_CHIMCHAR",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "INFERNAPE",
@@ -30531,7 +30256,6 @@
         "weightStdDev": 6.875,
         "familyId": "FAMILY_CHIMCHAR",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -30657,7 +30381,6 @@
         "weightStdDev": 2.875,
         "familyId": "FAMILY_PIPLUP",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "EMPOLEON",
@@ -30725,7 +30448,6 @@
         "weightStdDev": 10.5625,
         "familyId": "FAMILY_PIPLUP",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -30854,7 +30576,6 @@
         "weightStdDev": 1.9375,
         "familyId": "FAMILY_STARLY",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "STARAPTOR",
@@ -30924,7 +30645,6 @@
         "weightStdDev": 3.1125,
         "familyId": "FAMILY_STARLY",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -31164,7 +30884,6 @@
         "weightStdDev": 3.1875,
         "familyId": "FAMILY_KRICKETOT",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -31347,7 +31066,6 @@
         "weightStdDev": 5.25,
         "familyId": "FAMILY_SHINX",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -32993,7 +32711,6 @@
         "weightStdDev": 1.875,
         "familyId": "FAMILY_DRIFLOON",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -33108,7 +32825,6 @@
         "weightStdDev": 4.1625,
         "familyId": "FAMILY_BUNEARY",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
@@ -33554,7 +33270,6 @@
         "weightStdDev": 4.75,
         "familyId": "FAMILY_STUNKY",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -33935,7 +33650,6 @@
         "weightStdDev": 13.5,
         "familyId": "FAMILY_SPIRITOMB",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -34436,7 +34150,6 @@
         "weightStdDev": 37.5,
         "familyId": "FAMILY_HIPPOPOTAS",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -34745,7 +34458,6 @@
         "weightStdDev": 3.375,
         "familyId": "FAMILY_CARNIVINE",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -35302,7 +35014,6 @@
         "weightStdDev": 35.35,
         "familyId": "FAMILY_RHYHORN",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -35378,7 +35089,6 @@
         "weightStdDev": 16.075,
         "familyId": "FAMILY_TANGELA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -35844,7 +35554,6 @@
         "weightStdDev": 36.375,
         "familyId": "FAMILY_SWINUB",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -36098,7 +35807,6 @@
         "weightStdDev": 13.325,
         "familyId": "FAMILY_DUSKULL",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -36498,7 +36206,7 @@
           "THUNDER"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 0.3,
         "pokedexWeightKg": 0.3,
         "heightStdDev": 0.0375,
@@ -36545,7 +36253,7 @@
           "BLIZZARD"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 0.3,
         "pokedexWeightKg": 0.3,
         "heightStdDev": 0.0375,
@@ -36592,7 +36300,7 @@
           "FIRE_BLAST"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 0.3,
         "pokedexWeightKg": 0.3,
         "heightStdDev": 0.0375,
@@ -36639,14 +36347,13 @@
           "THUNDER"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 5.4,
         "pokedexWeightKg": 683.0,
         "heightStdDev": 0.675,
         "weightStdDev": 85.375,
         "familyId": "FAMILY_DIALGA",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -36688,14 +36395,13 @@
           "THUNDER"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 5.4,
         "pokedexWeightKg": 683.0,
         "heightStdDev": 0.675,
         "weightStdDev": 85.375,
         "familyId": "FAMILY_DIALGA",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "DIALGA_ORIGIN",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -36740,14 +36446,13 @@
           "AQUA_TAIL"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 4.2,
         "pokedexWeightKg": 336.0,
         "heightStdDev": 0.525,
         "weightStdDev": 42.0,
         "familyId": "FAMILY_PALKIA",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -36790,14 +36495,13 @@
           "AQUA_TAIL"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 4.2,
         "pokedexWeightKg": 336.0,
         "heightStdDev": 0.525,
         "weightStdDev": 42.0,
         "familyId": "FAMILY_PALKIA",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "PALKIA_ORIGIN",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -36843,14 +36547,13 @@
           "EARTH_POWER"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.7,
         "pokedexWeightKg": 430.0,
         "heightStdDev": 0.2125,
         "weightStdDev": 53.75,
         "familyId": "FAMILY_HEATRAN",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -36897,14 +36600,13 @@
           "THUNDER"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 3.7,
         "pokedexWeightKg": 420.0,
         "heightStdDev": 0.4625,
         "weightStdDev": 52.5,
         "familyId": "FAMILY_REGIGIGAS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -36951,14 +36653,13 @@
           "SHADOW_SNEAK"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 4.5,
         "pokedexWeightKg": 750.0,
         "heightStdDev": 0.5625,
         "weightStdDev": 93.75,
         "familyId": "FAMILY_GIRATINA",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -37026,14 +36727,13 @@
           "SHADOW_BALL"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 6.9,
         "pokedexWeightKg": 650.0,
         "heightStdDev": 0.8625,
         "weightStdDev": 81.25,
         "familyId": "FAMILY_GIRATINA",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "GIRATINA_ORIGIN",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -37079,14 +36779,13 @@
           "FUTURESIGHT"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.5,
         "pokedexWeightKg": 85.6,
         "heightStdDev": 0.1875,
         "weightStdDev": 10.7,
         "familyId": "FAMILY_CRESSELIA",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -37130,7 +36829,7 @@
           "SURF"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 0.4,
         "pokedexWeightKg": 3.1,
         "heightStdDev": 0.05,
@@ -37175,7 +36874,7 @@
           "SURF"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 0.3,
         "pokedexWeightKg": 1.4,
         "parentPokemonId": "PHIONE",
@@ -37221,7 +36920,7 @@
           "DARK_PULSE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 1.5,
         "pokedexWeightKg": 50.5,
         "heightStdDev": 0.1875,
@@ -37271,7 +36970,7 @@
           "SEED_FLARE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 0.2,
         "pokedexWeightKg": 2.1,
         "heightStdDev": 0.025,
@@ -37317,7 +37016,7 @@
           "SEED_FLARE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 0.2,
         "pokedexWeightKg": 2.1,
         "heightStdDev": 0.025,
@@ -37373,7 +37072,7 @@
           "SEED_FLARE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 0.4,
         "pokedexWeightKg": 5.2,
         "heightStdDev": 0.05,
@@ -37429,14 +37128,13 @@
           "OUTRAGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 3.2,
         "pokedexWeightKg": 320.0,
         "heightStdDev": 0.4,
         "weightStdDev": 40.0,
         "familyId": "FAMILY_ARCEUS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -37475,14 +37173,13 @@
           "OUTRAGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 3.2,
         "pokedexWeightKg": 320.0,
         "heightStdDev": 0.4,
         "weightStdDev": 40.0,
         "familyId": "FAMILY_ARCEUS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ARCEUS_BUG",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -37522,14 +37219,13 @@
           "OUTRAGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 3.2,
         "pokedexWeightKg": 320.0,
         "heightStdDev": 0.4,
         "weightStdDev": 40.0,
         "familyId": "FAMILY_ARCEUS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ARCEUS_DARK",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -37569,14 +37265,13 @@
           "OUTRAGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 3.2,
         "pokedexWeightKg": 320.0,
         "heightStdDev": 0.4,
         "weightStdDev": 40.0,
         "familyId": "FAMILY_ARCEUS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ARCEUS_DRAGON",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -37616,14 +37311,13 @@
           "OUTRAGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 3.2,
         "pokedexWeightKg": 320.0,
         "heightStdDev": 0.4,
         "weightStdDev": 40.0,
         "familyId": "FAMILY_ARCEUS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ARCEUS_ELECTRIC",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -37663,14 +37357,13 @@
           "OUTRAGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 3.2,
         "pokedexWeightKg": 320.0,
         "heightStdDev": 0.4,
         "weightStdDev": 40.0,
         "familyId": "FAMILY_ARCEUS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ARCEUS_FAIRY",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -37710,14 +37403,13 @@
           "OUTRAGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 3.2,
         "pokedexWeightKg": 320.0,
         "heightStdDev": 0.4,
         "weightStdDev": 40.0,
         "familyId": "FAMILY_ARCEUS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ARCEUS_FIGHTING",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -37757,14 +37449,13 @@
           "OUTRAGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 3.2,
         "pokedexWeightKg": 320.0,
         "heightStdDev": 0.4,
         "weightStdDev": 40.0,
         "familyId": "FAMILY_ARCEUS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ARCEUS_FIRE",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -37804,14 +37495,13 @@
           "OUTRAGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 3.2,
         "pokedexWeightKg": 320.0,
         "heightStdDev": 0.4,
         "weightStdDev": 40.0,
         "familyId": "FAMILY_ARCEUS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ARCEUS_FLYING",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -37851,14 +37541,13 @@
           "OUTRAGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 3.2,
         "pokedexWeightKg": 320.0,
         "heightStdDev": 0.4,
         "weightStdDev": 40.0,
         "familyId": "FAMILY_ARCEUS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ARCEUS_GHOST",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -37898,14 +37587,13 @@
           "OUTRAGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 3.2,
         "pokedexWeightKg": 320.0,
         "heightStdDev": 0.4,
         "weightStdDev": 40.0,
         "familyId": "FAMILY_ARCEUS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ARCEUS_GRASS",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -37945,14 +37633,13 @@
           "OUTRAGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 3.2,
         "pokedexWeightKg": 320.0,
         "heightStdDev": 0.4,
         "weightStdDev": 40.0,
         "familyId": "FAMILY_ARCEUS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ARCEUS_GROUND",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -37992,14 +37679,13 @@
           "OUTRAGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 3.2,
         "pokedexWeightKg": 320.0,
         "heightStdDev": 0.4,
         "weightStdDev": 40.0,
         "familyId": "FAMILY_ARCEUS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ARCEUS_ICE",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -38039,14 +37725,13 @@
           "OUTRAGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 3.2,
         "pokedexWeightKg": 320.0,
         "heightStdDev": 0.4,
         "weightStdDev": 40.0,
         "familyId": "FAMILY_ARCEUS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ARCEUS_NORMAL",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -38086,14 +37771,13 @@
           "OUTRAGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 3.2,
         "pokedexWeightKg": 320.0,
         "heightStdDev": 0.4,
         "weightStdDev": 40.0,
         "familyId": "FAMILY_ARCEUS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ARCEUS_POISON",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -38133,14 +37817,13 @@
           "OUTRAGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 3.2,
         "pokedexWeightKg": 320.0,
         "heightStdDev": 0.4,
         "weightStdDev": 40.0,
         "familyId": "FAMILY_ARCEUS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ARCEUS_PSYCHIC",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -38180,14 +37863,13 @@
           "OUTRAGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 3.2,
         "pokedexWeightKg": 320.0,
         "heightStdDev": 0.4,
         "weightStdDev": 40.0,
         "familyId": "FAMILY_ARCEUS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ARCEUS_ROCK",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -38227,14 +37909,13 @@
           "OUTRAGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 3.2,
         "pokedexWeightKg": 320.0,
         "heightStdDev": 0.4,
         "weightStdDev": 40.0,
         "familyId": "FAMILY_ARCEUS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ARCEUS_STEEL",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -38274,14 +37955,13 @@
           "OUTRAGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 3.2,
         "pokedexWeightKg": 320.0,
         "heightStdDev": 0.4,
         "weightStdDev": 40.0,
         "familyId": "FAMILY_ARCEUS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ARCEUS_WATER",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -38321,7 +38001,7 @@
           "PSYCHIC",
           "V_CREATE"
         ],
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 0.4,
         "pokedexWeightKg": 4.0,
         "heightStdDev": 0.05,
@@ -38484,7 +38164,6 @@
         "weightStdDev": 7.875,
         "familyId": "FAMILY_SNIVY",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -38648,7 +38327,6 @@
         "weightStdDev": 18.75,
         "familyId": "FAMILY_TEPIG",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -39627,7 +39305,6 @@
         "weightStdDev": 2.9125,
         "familyId": "FAMILY_MUNNA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "MUSHARNA",
@@ -39685,7 +39362,6 @@
         "weightStdDev": 7.5625,
         "familyId": "FAMILY_MUNNA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -39802,7 +39478,6 @@
         "weightStdDev": 1.875,
         "familyId": "FAMILY_PIDOVE",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "UNFEZANT",
@@ -39870,7 +39545,6 @@
         "weightStdDev": 3.625,
         "familyId": "FAMILY_PIDOVE",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -39993,7 +39667,6 @@
         "weightStdDev": 9.9375,
         "familyId": "FAMILY_BLITZLE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -40160,7 +39833,6 @@
         "weightStdDev": 32.5,
         "familyId": "FAMILY_ROGGENROLA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -41797,7 +41469,6 @@
         "weightStdDev": 11.6125,
         "familyId": "FAMILY_DARUMAKA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -42300,7 +41971,6 @@
         "weightStdDev": 1.75,
         "familyId": "FAMILY_SIGILYPH",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -42490,7 +42160,6 @@
         "weightStdDev": 9.5625,
         "familyId": "FAMILY_YAMASK",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -42705,7 +42374,6 @@
         "weightStdDev": 4.0,
         "familyId": "FAMILY_ARCHEN",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -43332,7 +43000,6 @@
         "weightStdDev": 2.5125,
         "familyId": "FAMILY_SOLOSIS",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -43449,7 +43116,6 @@
         "weightStdDev": 3.025,
         "familyId": "FAMILY_DUCKLETT",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -43939,7 +43605,6 @@
         "weightStdDev": 11.5625,
         "familyId": "FAMILY_DEERLING",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -44433,7 +44098,6 @@
         "weightStdDev": 16.875,
         "familyId": "FAMILY_FRILLISH",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -44724,7 +44388,6 @@
         "weightStdDev": 13.75,
         "familyId": "FAMILY_FERROSEED",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -45339,7 +45002,6 @@
         "weightStdDev": 4.2875,
         "familyId": "FAMILY_LITWICK",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -45724,7 +45386,6 @@
         "weightStdDev": 32.5,
         "familyId": "FAMILY_CUBCHOO",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -46141,7 +45802,6 @@
         "weightStdDev": 17.375,
         "familyId": "FAMILY_DRUDDIGON",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -46259,7 +45919,6 @@
         "weightStdDev": 41.25,
         "familyId": "FAMILY_GOLETT",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -46419,7 +46078,6 @@
         "weightStdDev": 11.825,
         "familyId": "FAMILY_BOUFFALANT",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -46527,7 +46185,6 @@
         "weightStdDev": 5.125,
         "familyId": "FAMILY_RUFFLET",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -46581,7 +46238,6 @@
         "weightStdDev": 5.425,
         "familyId": "FAMILY_RUFFLET",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "form": "BRAVIARY_HISUIAN",
         "thirdMove": {
           "stardustToUnlock": 75000,
@@ -46688,7 +46344,6 @@
         "weightStdDev": 4.9375,
         "familyId": "FAMILY_VULLABY",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -46886,7 +46541,6 @@
         "weightStdDev": 6.25,
         "familyId": "FAMILY_DEINO",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "HYDREIGON",
@@ -46944,7 +46598,6 @@
         "weightStdDev": 20.0,
         "familyId": "FAMILY_DEINO",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -47053,7 +46706,6 @@
         "weightStdDev": 5.75,
         "familyId": "FAMILY_LARVESTA",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -47097,14 +46749,13 @@
           "STONE_EDGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.1,
         "pokedexWeightKg": 250.0,
         "heightStdDev": 0.2625,
         "weightStdDev": 31.25,
         "familyId": "FAMILY_COBALION",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -47150,14 +46801,13 @@
           "ROCK_SLIDE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.9,
         "pokedexWeightKg": 260.0,
         "heightStdDev": 0.2375,
         "weightStdDev": 32.5,
         "familyId": "FAMILY_TERRAKION",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -47203,14 +46853,13 @@
           "STONE_EDGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.0,
         "pokedexWeightKg": 200.0,
         "heightStdDev": 0.25,
         "weightStdDev": 25.0,
         "familyId": "FAMILY_VIRIZION",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -47256,7 +46905,7 @@
           "HURRICANE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.5,
         "pokedexWeightKg": 63.0,
         "heightStdDev": 0.1875,
@@ -47304,14 +46953,13 @@
           "HURRICANE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.4,
         "pokedexWeightKg": 63.0,
         "heightStdDev": 0.175,
         "weightStdDev": 7.875,
         "familyId": "FAMILY_TORNADUS",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_FLYING",
         "form": "TORNADUS_THERIAN",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -47357,7 +47005,7 @@
           "THUNDER_PUNCH"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.5,
         "pokedexWeightKg": 61.0,
         "heightStdDev": 0.1875,
@@ -47406,7 +47054,7 @@
           "THUNDERBOLT"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 3.0,
         "pokedexWeightKg": 61.0,
         "heightStdDev": 0.375,
@@ -47459,14 +47107,13 @@
           "STONE_EDGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 3.2,
         "pokedexWeightKg": 330.0,
         "heightStdDev": 0.4,
         "weightStdDev": 41.25,
         "familyId": "FAMILY_RESHIRAM",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -47512,14 +47159,13 @@
           "CRUNCH"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.9,
         "pokedexWeightKg": 345.0,
         "heightStdDev": 0.3625,
         "weightStdDev": 43.125,
         "familyId": "FAMILY_ZEKROM",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -47565,7 +47211,7 @@
           "FOCUS_BLAST"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.5,
         "pokedexWeightKg": 68.0,
         "heightStdDev": 0.1875,
@@ -47614,7 +47260,7 @@
           "SUPER_POWER"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.3,
         "pokedexWeightKg": 68.0,
         "heightStdDev": 0.1625,
@@ -47666,14 +47312,13 @@
           "DRACO_METEOR"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 3.0,
         "pokedexWeightKg": 325.0,
         "heightStdDev": 0.375,
         "weightStdDev": 40.625,
         "familyId": "FAMILY_KYUREM",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -47719,14 +47364,13 @@
           "OUTRAGE"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 3.0,
         "pokedexWeightKg": 325.0,
         "heightStdDev": 0.375,
         "weightStdDev": 40.625,
         "familyId": "FAMILY_KYUREM",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "KYUREM_BLACK",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -47769,14 +47413,13 @@
           "FOCUS_BLAST"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 3.0,
         "pokedexWeightKg": 325.0,
         "heightStdDev": 0.375,
         "weightStdDev": 40.625,
         "familyId": "FAMILY_KYUREM",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "KYUREM_WHITE",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -47820,7 +47463,7 @@
           "SACRED_SWORD"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 1.4,
         "pokedexWeightKg": 48.5,
         "heightStdDev": 0.175,
@@ -47885,7 +47528,7 @@
           "HYPER_BEAM"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 0.6,
         "pokedexWeightKg": 6.5,
         "heightStdDev": 0.075,
@@ -47932,7 +47575,7 @@
           "HYPER_BEAM"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 0.6,
         "pokedexWeightKg": 6.5,
         "heightStdDev": 0.075,
@@ -47998,7 +47641,7 @@
           "HYPER_BEAM"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 0.6,
         "pokedexWeightKg": 6.5,
         "heightStdDev": 0.075,
@@ -48045,7 +47688,7 @@
           "HYPER_BEAM"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 1.5,
         "pokedexWeightKg": 82.5,
         "heightStdDev": 0.1875,
@@ -48092,7 +47735,7 @@
           "FLAMETHROWER"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 1.5,
         "pokedexWeightKg": 82.5,
         "heightStdDev": 0.1875,
@@ -48143,7 +47786,7 @@
           "ICE_BEAM"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 1.5,
         "pokedexWeightKg": 82.5,
         "heightStdDev": 0.1875,
@@ -48194,7 +47837,7 @@
           "GUNK_SHOT"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 1.5,
         "pokedexWeightKg": 82.5,
         "heightStdDev": 0.1875,
@@ -48266,7 +47909,7 @@
           "HYPER_BEAM"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 1.5,
         "pokedexWeightKg": 82.5,
         "heightStdDev": 0.1875,
@@ -48317,7 +47960,7 @@
           "ZAP_CANNON"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 1.5,
         "pokedexWeightKg": 82.5,
         "heightStdDev": 0.1875,
@@ -48484,7 +48127,6 @@
         "weightStdDev": 11.25,
         "familyId": "FAMILY_CHESPIN",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -48647,7 +48289,6 @@
         "weightStdDev": 4.875,
         "familyId": "FAMILY_FENNEKIN",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -48809,7 +48450,6 @@
         "weightStdDev": 5.0,
         "familyId": "FAMILY_FROAKIE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -48916,7 +48556,6 @@
         "weightStdDev": 5.3,
         "familyId": "FAMILY_BUNNELBY",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -49022,7 +48661,6 @@
         "weightStdDev": 2.0,
         "familyId": "FAMILY_FLETCHLING",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "TALONFLAME",
@@ -49082,7 +48720,6 @@
         "weightStdDev": 3.0625,
         "familyId": "FAMILY_FLETCHLING",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -51296,7 +50933,6 @@
         "weightStdDev": 2.125,
         "familyId": "FAMILY_SCATTERBUG",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -51465,7 +51101,6 @@
         "weightStdDev": 10.1875,
         "familyId": "FAMILY_LITLEO",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "form": "PYROAR_FEMALE",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -51520,7 +51155,6 @@
         "weightStdDev": 10.1875,
         "familyId": "FAMILY_LITLEO",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "form": "PYROAR_NORMAL",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -52355,7 +51989,6 @@
         "weightStdDev": 17.0,
         "familyId": "FAMILY_PANCHAM",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -53756,7 +53389,6 @@
         "weightStdDev": 10.1875,
         "familyId": "FAMILY_SKRELP",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -54070,7 +53702,6 @@
         "weightStdDev": 33.75,
         "familyId": "FAMILY_TYRUNT",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -54178,7 +53809,6 @@
         "weightStdDev": 28.125,
         "familyId": "FAMILY_AMAURA",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -54530,7 +54160,6 @@
         "weightStdDev": 18.8125,
         "familyId": "FAMILY_GOOMY",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -54577,7 +54206,6 @@
         "weightStdDev": 0.375,
         "familyId": "FAMILY_KLEFKI",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -54680,7 +54308,6 @@
         "weightStdDev": 8.875,
         "familyId": "FAMILY_PHANTUMP",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -55194,7 +54821,6 @@
         "weightStdDev": 4.875,
         "familyId": "FAMILY_PUMPKABOO",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "form": "GOURGEIST_SUPER",
         "thirdMove": {
           "stardustToUnlock": 75000,
@@ -55310,7 +54936,6 @@
         "weightStdDev": 63.125,
         "familyId": "FAMILY_BERGMITE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -55360,7 +54985,6 @@
         "weightStdDev": 32.8,
         "familyId": "FAMILY_BERGMITE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "form": "AVALUGG_HISUIAN",
         "thirdMove": {
           "stardustToUnlock": 50000,
@@ -55433,7 +55057,6 @@
         "weightStdDev": 1.0,
         "familyId": "FAMILY_NOIBAT",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "NOIVERN",
@@ -55516,7 +55139,6 @@
         "weightStdDev": 10.625,
         "familyId": "FAMILY_NOIBAT",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -55563,7 +55185,7 @@
           "GIGA_IMPACT",
           "THUNDER"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 3.0,
         "pokedexWeightKg": 215.0,
         "heightStdDev": 0.375,
@@ -55615,7 +55237,7 @@
           "HYPER_BEAM",
           "PSYCHIC"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 5.8,
         "pokedexWeightKg": 203.0,
         "heightStdDev": 0.725,
@@ -55673,7 +55295,7 @@
         "evolutionIds": [
           "ZYGARDE"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 5.0,
         "pokedexWeightKg": 305.0,
         "heightStdDev": 0.625,
@@ -55738,14 +55360,13 @@
           "HYPER_BEAM",
           "BULLDOZE"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 4.5,
         "pokedexWeightKg": 610.0,
         "heightStdDev": 0.562,
         "weightStdDev": 76.25,
         "familyId": "FAMILY_ZYGARDE",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ZYGARDE_COMPLETE",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -55810,7 +55431,7 @@
           "HYPER_BEAM",
           "BULLDOZE"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 5.0,
         "pokedexWeightKg": 305.0,
         "heightStdDev": 0.625,
@@ -55884,7 +55505,7 @@
           "HYPER_BEAM",
           "BULLDOZE"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.2,
         "pokedexWeightKg": 33.5,
         "heightStdDev": 0.15,
@@ -55954,7 +55575,7 @@
         "evolutionIds": [
           "ZYGARDE"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 5.0,
         "pokedexWeightKg": 305.0,
         "heightStdDev": 0.625,
@@ -56023,7 +55644,7 @@
         "evolutionIds": [
           "ZYGARDE"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.2,
         "pokedexWeightKg": 33.5,
         "heightStdDev": 0.15,
@@ -56082,7 +55703,7 @@
           "MOONBLAST",
           "POWER_GEM"
         ],
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 0.7,
         "pokedexWeightKg": 8.8,
         "heightStdDev": 0.0875,
@@ -56155,7 +55776,7 @@
           "PSYBEAM",
           "PSYCHIC"
         ],
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 0.5,
         "pokedexWeightKg": 9.0,
         "heightStdDev": 0.0625,
@@ -56201,7 +55822,7 @@
           "PSYBEAM",
           "PSYCHIC"
         ],
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 0.5,
         "pokedexWeightKg": 9.0,
         "heightStdDev": 0.0625,
@@ -56247,14 +55868,13 @@
           "DARK_PULSE",
           "PSYCHIC"
         ],
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 6.5,
         "pokedexWeightKg": 490.0,
         "heightStdDev": 0.8125,
         "weightStdDev": 61.25,
         "familyId": "FAMILY_HOOPA",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_FLYING",
         "form": "HOOPA_UNBOUND",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -56298,14 +55918,13 @@
           "EARTH_POWER",
           "SLUDGE_BOMB"
         ],
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 1.7,
         "pokedexWeightKg": 195.0,
         "heightStdDev": 0.2125,
         "weightStdDev": 24.375,
         "familyId": "FAMILY_VOLCANION",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -56517,7 +56136,6 @@
         "weightStdDev": 4.575,
         "familyId": "FAMILY_ROWLET",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -56597,7 +56215,6 @@
         "weightStdDev": 4.575,
         "familyId": "FAMILY_ROWLET",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "form": "DECIDUEYE_HISUIAN",
         "thirdMove": {
           "stardustToUnlock": 10000,
@@ -56832,7 +56449,6 @@
         "weightStdDev": 10.375,
         "familyId": "FAMILY_LITTEN",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -57015,7 +56631,6 @@
         "weightStdDev": 5.5,
         "familyId": "FAMILY_POPPLIO",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -57062,7 +56677,6 @@
         "weightStdDev": 0.15,
         "familyId": "FAMILY_PIKIPEK",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_SHOULDER",
         "evolutionBranch": [
           {
             "evolution": "TRUMBEAK",
@@ -57119,7 +56733,6 @@
         "weightStdDev": 1.85,
         "familyId": "FAMILY_PIKIPEK",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "TOUCANNON",
@@ -57177,7 +56790,6 @@
         "weightStdDev": 3.25,
         "familyId": "FAMILY_PIKIPEK",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -57442,7 +57054,6 @@
         "weightStdDev": 5.625,
         "familyId": "FAMILY_GRUBBIN",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -57781,7 +57392,6 @@
         "weightStdDev": 0.025,
         "familyId": "FAMILY_CUTIEFLY",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "evolutionBranch": [
           {
             "evolution": "RIBOMBEE",
@@ -57837,7 +57447,6 @@
         "weightStdDev": 0.0625,
         "familyId": "FAMILY_CUTIEFLY",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -58202,7 +57811,6 @@
         "weightStdDev": 9.825,
         "familyId": "FAMILY_WISHIWASHI",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "form": "WISHIWASHI_SCHOOL",
         "thirdMove": {
           "stardustToUnlock": 75000,
@@ -58508,7 +58116,6 @@
         "weightStdDev": 10.25,
         "familyId": "FAMILY_DEWPIDER",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -58972,7 +58579,6 @@
         "weightStdDev": 16.875,
         "familyId": "FAMILY_STUFFUL",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -59401,7 +59007,6 @@
         "weightStdDev": 13.5,
         "familyId": "FAMILY_WIMPOD",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -59506,7 +59111,6 @@
         "weightStdDev": 31.25,
         "familyId": "FAMILY_SANDYGAST",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -61019,7 +60623,6 @@
         "weightStdDev": 26.5,
         "familyId": "FAMILY_TURTONATOR",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -61409,7 +61012,6 @@
         "weightStdDev": 9.775,
         "familyId": "FAMILY_JANGMO_O",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -61452,7 +61054,7 @@
           "BRAVE_BIRD",
           "THUNDER"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.8,
         "pokedexWeightKg": 20.5,
         "heightStdDev": 0.225,
@@ -61500,7 +61102,7 @@
           "FOCUS_BLAST",
           "FUTURESIGHT"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.2,
         "pokedexWeightKg": 18.6,
         "heightStdDev": 0.15,
@@ -61548,7 +61150,7 @@
           "MEGAHORN",
           "SOLAR_BEAM"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.9,
         "pokedexWeightKg": 45.5,
         "heightStdDev": 0.2375,
@@ -61596,7 +61198,7 @@
           "ICE_BEAM",
           "HYDRO_PUMP"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.3,
         "pokedexWeightKg": 21.2,
         "heightStdDev": 0.1625,
@@ -61640,7 +61242,7 @@
         "cinematicMoves": [
           "STRUGGLE"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 0.2,
         "pokedexWeightKg": 0.1,
         "heightStdDev": 0.025,
@@ -61689,7 +61291,7 @@
         "cinematicMoves": [
           "STRUGGLE"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 0.1,
         "pokedexWeightKg": 999.9,
         "parentPokemonId": "COSMOG",
@@ -61751,7 +61353,7 @@
           "SOLAR_BEAM",
           "FLAMETHROWER"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 3.4,
         "pokedexWeightKg": 230.0,
         "parentPokemonId": "COSMOEM",
@@ -61800,7 +61402,7 @@
           "MOONBLAST",
           "FUTURESIGHT"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 4.0,
         "pokedexWeightKg": 120.0,
         "parentPokemonId": "COSMOEM",
@@ -61808,7 +61410,6 @@
         "weightStdDev": 15.0,
         "familyId": "FAMILY_COSMOG",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -61851,14 +61452,13 @@
           "SLUDGE_BOMB",
           "ROCK_SLIDE"
         ],
-        "pokemonClass": "POKEMON_CLASS_ULTRA_BEAST",
+        "pokemonClass": "ultra_beast",
         "pokedexHeightM": 1.2,
         "pokedexWeightKg": 55.5,
         "heightStdDev": 0.15,
         "weightStdDev": 6.9375,
         "familyId": "FAMILY_NIHILEGO",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -61900,14 +61500,13 @@
           "LUNGE",
           "SUPER_POWER"
         ],
-        "pokemonClass": "POKEMON_CLASS_ULTRA_BEAST",
+        "pokemonClass": "ultra_beast",
         "pokedexHeightM": 2.4,
         "pokedexWeightKg": 333.6,
         "heightStdDev": 0.3,
         "weightStdDev": 41.7,
         "familyId": "FAMILY_BUZZWOLE",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -61949,14 +61548,13 @@
           "LUNGE",
           "CLOSE_COMBAT"
         ],
-        "pokemonClass": "POKEMON_CLASS_ULTRA_BEAST",
+        "pokemonClass": "ultra_beast",
         "pokedexHeightM": 1.8,
         "pokedexWeightKg": 25.0,
         "heightStdDev": 0.225,
         "weightStdDev": 3.125,
         "familyId": "FAMILY_PHEROMOSA",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -61998,14 +61596,13 @@
           "POWER_WHIP",
           "DAZZLING_GLEAM"
         ],
-        "pokemonClass": "POKEMON_CLASS_ULTRA_BEAST",
+        "pokemonClass": "ultra_beast",
         "pokedexHeightM": 3.8,
         "pokedexWeightKg": 100.0,
         "heightStdDev": 0.475,
         "weightStdDev": 12.5,
         "familyId": "FAMILY_XURKITREE",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -62046,14 +61643,13 @@
           "HEAVY_SLAM",
           "BULLDOZE"
         ],
-        "pokemonClass": "POKEMON_CLASS_ULTRA_BEAST",
+        "pokemonClass": "ultra_beast",
         "pokedexHeightM": 9.2,
         "pokedexWeightKg": 999.9,
         "heightStdDev": 1.15,
         "weightStdDev": 124.9875,
         "familyId": "FAMILY_CELESTEELA",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -62095,7 +61691,7 @@
           "NIGHT_SLASH",
           "AERIAL_ACE"
         ],
-        "pokemonClass": "POKEMON_CLASS_ULTRA_BEAST",
+        "pokemonClass": "ultra_beast",
         "pokedexHeightM": 0.3,
         "pokedexWeightKg": 0.1,
         "heightStdDev": 0.0375,
@@ -62143,14 +61739,13 @@
           "CRUNCH",
           "SLUDGE_BOMB"
         ],
-        "pokemonClass": "POKEMON_CLASS_ULTRA_BEAST",
+        "pokemonClass": "ultra_beast",
         "pokedexHeightM": 5.5,
         "pokedexWeightKg": 888.0,
         "heightStdDev": 0.6875,
         "weightStdDev": 111.0,
         "familyId": "FAMILY_GUZZLORD",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -62198,7 +61793,7 @@
         "cinematicMoves": [
           "STRUGGLE"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.4,
         "pokedexWeightKg": 230.0,
         "heightStdDev": 0.3,
@@ -62241,7 +61836,7 @@
         "cinematicMoves": [
           "STRUGGLE"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 4.2,
         "pokedexWeightKg": 350.0,
         "heightStdDev": 0.525,
@@ -62286,7 +61881,7 @@
         "cinematicMoves": [
           "STRUGGLE"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 3.8,
         "pokedexWeightKg": 460.0,
         "heightStdDev": 0.475,
@@ -62331,7 +61926,7 @@
         "cinematicMoves": [
           "STRUGGLE"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 7.5,
         "pokedexWeightKg": 230.0,
         "heightStdDev": 0.9375,
@@ -62376,7 +61971,7 @@
         "cinematicMoves": [
           "STRUGGLE"
         ],
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 1.0,
         "pokedexWeightKg": 80.5,
         "heightStdDev": 0.125,
@@ -62418,7 +62013,7 @@
         "cinematicMoves": [
           "STRUGGLE"
         ],
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 0.7,
         "pokedexWeightKg": 22.2,
         "heightStdDev": 0.0875,
@@ -62463,7 +62058,7 @@
           "SLUDGE_WAVE",
           "FELL_STINGER"
         ],
-        "pokemonClass": "POKEMON_CLASS_ULTRA_BEAST",
+        "pokemonClass": "ultra_beast",
         "pokedexHeightM": 0.6,
         "pokedexWeightKg": 1.8,
         "heightStdDev": 0.075,
@@ -62518,7 +62113,7 @@
           "FELL_STINGER",
           "DRAGON_PULSE"
         ],
-        "pokemonClass": "POKEMON_CLASS_ULTRA_BEAST",
+        "pokemonClass": "ultra_beast",
         "pokedexHeightM": 3.6,
         "pokedexWeightKg": 150.0,
         "parentPokemonId": "POIPOLE",
@@ -62566,7 +62161,7 @@
           "STONE_EDGE",
           "BULLDOZE"
         ],
-        "pokemonClass": "POKEMON_CLASS_ULTRA_BEAST",
+        "pokemonClass": "ultra_beast",
         "pokedexHeightM": 5.5,
         "pokedexWeightKg": 820.0,
         "heightStdDev": 0.6875,
@@ -62613,7 +62208,7 @@
           "SHADOW_BALL",
           "OVERHEAT"
         ],
-        "pokemonClass": "POKEMON_CLASS_ULTRA_BEAST",
+        "pokemonClass": "ultra_beast",
         "pokedexHeightM": 1.8,
         "pokedexWeightKg": 13.0,
         "heightStdDev": 0.225,
@@ -62660,7 +62255,7 @@
           "DISCHARGE",
           "WILD_CHARGE"
         ],
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 1.5,
         "pokedexWeightKg": 44.5,
         "heightStdDev": 0.1875,
@@ -62703,7 +62298,7 @@
           "THUNDERBOLT"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 0.2,
         "pokedexWeightKg": 8.0,
         "heightStdDev": 0.025,
@@ -62760,7 +62355,7 @@
           "SUPER_POWER"
         ],
         "evolutionPips": 1,
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 2.5,
         "pokedexWeightKg": 800.0,
         "parentPokemonId": "MELTAN",
@@ -62768,7 +62363,6 @@
         "weightStdDev": 100.0,
         "familyId": "FAMILY_MELTAN",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -65870,7 +65464,6 @@
         "weightStdDev": 8.325,
         "familyId": "FAMILY_YAMASK",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -67004,14 +66597,13 @@
           "WILD_CHARGE",
           "CLOSE_COMBAT"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.8,
         "pokedexWeightKg": 110.0,
         "heightStdDev": 0.35,
         "weightStdDev": 13.75,
         "familyId": "FAMILY_ZACIAN",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -67055,14 +66647,13 @@
           "WILD_CHARGE",
           "CLOSE_COMBAT"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.8,
         "pokedexWeightKg": 110.0,
         "heightStdDev": 0.35,
         "weightStdDev": 13.75,
         "familyId": "FAMILY_ZACIAN",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ZACIAN_CROWNED_SWORD",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -67107,14 +66698,13 @@
           "WILD_CHARGE",
           "CLOSE_COMBAT"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.8,
         "pokedexWeightKg": 110.0,
         "heightStdDev": 0.35,
         "weightStdDev": 13.75,
         "familyId": "FAMILY_ZACIAN",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ZACIAN_HERO",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -67158,14 +66748,13 @@
           "CRUNCH",
           "CLOSE_COMBAT"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.9,
         "pokedexWeightKg": 210.0,
         "heightStdDev": 0.3625,
         "weightStdDev": 26.25,
         "familyId": "FAMILY_ZAMAZENTA",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -67209,14 +66798,13 @@
           "CRUNCH",
           "CLOSE_COMBAT"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.9,
         "pokedexWeightKg": 210.0,
         "heightStdDev": 0.3625,
         "weightStdDev": 26.25,
         "familyId": "FAMILY_ZAMAZENTA",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ZAMAZENTA_CROWNED_SHIELD",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -67261,14 +66849,13 @@
           "CRUNCH",
           "CLOSE_COMBAT"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.9,
         "pokedexWeightKg": 210.0,
         "heightStdDev": 0.3625,
         "weightStdDev": 26.25,
         "familyId": "FAMILY_ZAMAZENTA",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "form": "ZAMAZENTA_HERO",
         "thirdMove": {
           "stardustToUnlock": 100000,
@@ -67309,7 +66896,7 @@
           "DRAGON_PULSE",
           "FLAMETHROWER"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 20.0,
         "pokedexWeightKg": 950.0,
         "heightStdDev": 2.5,
@@ -67357,7 +66944,7 @@
           "FLAMETHROWER",
           "HYPER_BEAM"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 20.0,
         "pokedexWeightKg": 950.0,
         "heightStdDev": 2.5,
@@ -67405,7 +66992,7 @@
           "DYNAMIC_PUNCH",
           "CLOSE_COMBAT"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 0.6,
         "pokedexWeightKg": 12.0,
         "heightStdDev": 0.075,
@@ -67465,7 +67052,7 @@
           "DYNAMIC_PUNCH",
           "CLOSE_COMBAT"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.9,
         "pokedexWeightKg": 105.0,
         "parentPokemonId": "KUBFU",
@@ -67516,7 +67103,7 @@
           "CLOSE_COMBAT",
           "AQUA_JET"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.9,
         "pokedexWeightKg": 105.0,
         "parentPokemonId": "KUBFU",
@@ -67569,7 +67156,7 @@
           "CLOSE_COMBAT",
           "PAYBACK"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.9,
         "pokedexWeightKg": 105.0,
         "parentPokemonId": "KUBFU",
@@ -67618,14 +67205,13 @@
           "ENERGY_BALL",
           "DARK_PULSE"
         ],
-        "pokemonClass": "POKEMON_CLASS_MYTHIC",
+        "pokemonClass": "mythic",
         "pokedexHeightM": 1.8,
         "pokedexWeightKg": 70.0,
         "heightStdDev": 0.225,
         "weightStdDev": 8.75,
         "familyId": "FAMILY_ZARUDE",
         "kmBuddyDistance": 20.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -67665,7 +67251,7 @@
           "THUNDER",
           "ZAP_CANNON"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.2,
         "pokedexWeightKg": 145.0,
         "heightStdDev": 0.15,
@@ -67711,7 +67297,7 @@
           "DRAGON_PULSE",
           "BREAKING_SWIPE"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.1,
         "pokedexWeightKg": 200.0,
         "heightStdDev": 0.2625,
@@ -67767,7 +67353,7 @@
           "ICY_WIND",
           "BULLDOZE"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.2,
         "pokedexWeightKg": 800.0,
         "heightStdDev": 0.275,
@@ -67813,7 +67399,7 @@
           "FOUL_PLAY",
           "BULLDOZE"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.0,
         "pokedexWeightKg": 44.5,
         "heightStdDev": 0.25,
@@ -67859,7 +67445,7 @@
           "PSYCHIC",
           "ENERGY_BALL"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.1,
         "pokedexWeightKg": 7.7,
         "heightStdDev": 0.1375,
@@ -67907,7 +67493,7 @@
           "ENERGY_BALL",
           "AVALANCHE"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.4,
         "pokedexWeightKg": 809.1,
         "heightStdDev": 0.3,
@@ -67956,7 +67542,7 @@
           "ENERGY_BALL",
           "SHADOW_BALL"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.4,
         "pokedexWeightKg": 53.6,
         "heightStdDev": 0.3,
@@ -68135,7 +67721,6 @@
         "weightStdDev": 36.25,
         "familyId": "FAMILY_TEDDIURSA",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -68264,7 +67849,6 @@
         "weightStdDev": 7.5625,
         "familyId": "FAMILY_QWILFISH",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -68680,7 +68264,6 @@
         "weightStdDev": 2.6875,
         "familyId": "FAMILY_QUAXLY",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "evolutionBranch": [
           {
             "evolution": "QUAQUAVAL",
@@ -68737,7 +68320,6 @@
         "weightStdDev": 7.7375,
         "familyId": "FAMILY_QUAXLY",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -70131,7 +69713,6 @@
         "weightStdDev": 14.125,
         "familyId": "FAMILY_TADBULB",
         "kmBuddyDistance": 1.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -71268,7 +70849,6 @@
         "weightStdDev": 5.3625,
         "familyId": "FAMILY_BOMBIRDIER",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_FLYING",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -71810,7 +71390,6 @@
         "weightStdDev": 1.875,
         "familyId": "FAMILY_GREAVARD",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -71956,7 +71535,6 @@
         "weightStdDev": 87.5,
         "familyId": "FAMILY_CETODDLE",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -72197,7 +71775,6 @@
         "weightStdDev": 27.875,
         "familyId": "FAMILY_WOOPER",
         "kmBuddyDistance": 3.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -73078,7 +72655,6 @@
         "weightStdDev": 26.25,
         "familyId": "FAMILY_FRIGIBAX",
         "kmBuddyDistance": 5.0,
-        "buddySize": "BUDDY_BIG",
         "thirdMove": {
           "stardustToUnlock": 75000,
           "candyToUnlock": 75
@@ -73222,7 +72798,7 @@
           "GRASS_KNOT",
           "LEAF_STORM"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.5,
         "pokedexWeightKg": 74.2,
         "heightStdDev": 0.1875,
@@ -73268,7 +72844,7 @@
           "AVALANCHE",
           "BLIZZARD"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 1.9,
         "pokedexWeightKg": 152.2,
         "heightStdDev": 0.2375,
@@ -73313,7 +72889,7 @@
           "BULLDOZE",
           "EARTHQUAKE"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.7,
         "pokedexWeightKg": 669.7,
         "heightStdDev": 0.3375,
@@ -73359,7 +72935,7 @@
           "FLAME_CHARGE",
           "FLAME_WHEEL"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 0.4,
         "pokedexWeightKg": 4.9,
         "heightStdDev": 0.05,
@@ -73492,7 +73068,7 @@
           "CLOSE_COMBAT",
           "OUTRAGE"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 2.5,
         "pokedexWeightKg": 303.0,
         "heightStdDev": 0.3125,
@@ -73539,7 +73115,7 @@
           "THUNDER",
           "OUTRAGE"
         ],
-        "pokemonClass": "POKEMON_CLASS_LEGENDARY",
+        "pokemonClass": "legendary",
         "pokedexHeightM": 3.5,
         "pokedexWeightKg": 240.0,
         "heightStdDev": 0.4375,

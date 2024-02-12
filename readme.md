@@ -27,3 +27,8 @@
 ## Pokedex
 
 [Pokedex](https://g2384.github.io/pokemon-tools/pokedex.html)
+
+### Icons
+
+- icon_trade.png: https://github.com/PokeMiners/pogo_assets/blob/master/Images/Friends/trade_icon_small.png
+- icon_mythic.png: https://github.com/PokeMiners/pogo_assets/blob/master/Images/Filters/ic_mythical.png

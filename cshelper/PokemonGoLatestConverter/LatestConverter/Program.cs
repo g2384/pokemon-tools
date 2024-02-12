@@ -130,6 +130,7 @@ namespace ConsoleApp1
                         pokemonSettingsObj.Remove("modelScaleV2");
                         pokemonSettingsObj.Remove("candyToEvolve"); // reason: already in evolutionBranch
                         pokemonSettingsObj.Remove("raidBossDistanceOffset");
+                        pokemonSettingsObj.Remove("buddySize");
 
                         var type1 = ConvertPokemonType(pokemonSettingsObj["type"]);
                         if (pokemonSettingsObj.ContainsKey("type2"))
@@ -145,6 +146,10 @@ namespace ConsoleApp1
                         pokemonSettingsObj.Remove("type2");
 
                         pokemonSettingsObj["pokemonId"] = ConvertToTitleCase(pokemonSettingsObj["pokemonId"]);
+                        if (pokemonSettingsObj.ContainsKey("pokemonClass"))
+                        {
+                            pokemonSettingsObj["pokemonClass"] = ConvertToPokemonClass(pokemonSettingsObj["pokemonClass"]);
+                        }
                         if (pokemonSettingsObj.TryGetPropertyValue("encounter", out var encounter))
                         {
                             var encounterObj = encounter!.AsObject();
@@ -307,6 +312,13 @@ namespace ConsoleApp1
         {
             var str = jsonNode!.GetValue<string>().ToLowerInvariant();
             str = _textInfo.ToTitleCase(str);
+            return str;
+        }
+
+        private static JsonNode? ConvertToPokemonClass(JsonNode? jsonNode)
+        {
+            var str = jsonNode!.GetValue<string>();
+            str = str.Replace("POKEMON_CLASS_", "").ToLowerInvariant();
             return str;
         }
 
