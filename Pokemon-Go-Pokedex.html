@@ -86,6 +86,7 @@
             TableAdd("Quick Moves");
             TableAdd("Charged Moves");
             TableAdd("Form");
+            TableAdd("Buddy Candy Distance (km)");
 
             for (var i = 0; i < dataMoves.length; i++) {
                 var move = dataMoves[i];
@@ -118,9 +119,13 @@
                 var mythic = settings["pokemonClass"] != undefined;
                 var mythicIcon = "";
                 if (mythic) {
-                    mythicIcon = "(" + settings["pokemonClass"] + ")"; //getImage(settings["pokemonClass"], "icon");
+                    mythicIcon = " (" + settings["pokemonClass"] + ")"; //getImage(settings["pokemonClass"], "icon");
                 }
-                var nameHtml = "<div>" + name + getImage("trade", "icon") + mythicIcon + "</div>";
+                var tradableIcon = "";
+                if (tradable) {
+                    mythicIcon = getImage("trade", "icon");
+                }
+                var nameHtml = "<div>" + name + tradableIcon + mythicIcon + "</div>";
                 rowsRaw["Name"].push(nameHtml);
 
                 var types = settings["types"].map(element => {
@@ -167,6 +172,9 @@
                     form = form.replace(name.toUpperCase(), "").replace(/_/g, " ").toTitleCase();
                 }
                 rowsRaw["Form"].push(form);
+
+                var kmBuddyDistance = settings["kmBuddyDistance"];
+                rowsRaw["Buddy Candy Distance (km)"].push(kmBuddyDistance);
             }
 
             PrintTable();
