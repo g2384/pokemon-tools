@@ -226,9 +226,10 @@ namespace ConsoleApp1
             var oCopy = o.DeepClone();
             var settingsObj = oCopy["data"]!["pokemonSettings"]!.AsObject();
             var name = settingsObj["pokemonId"]!.GetValue<string>();
-            var form = settingsObj["form"]!.GetValue<string>().Replace(name.ToUpper(), "");
+            var formO = settingsObj["form"]!.GetValue<string>();
+            var form = formO.Replace(name.ToUpper(), "");
 
-            if (form.Contains("COPY_2019"))
+            if (formO.Contains("VENUSAUR_NORMAL"))
             {
 
             }
@@ -243,14 +244,14 @@ namespace ConsoleApp1
             {
                 settingsObj.Remove("disableTransferToPokemonHome");
             }
-            var canEvolve = settingsObj["evolutionIds"] != null;
+            var canEvolveO = settingsObj["evolutionIds"] != null || settingsObj["evolutionBranch"] != null;
 
             var pokemonForm = new PokemonForm()
             {
                 PokemonId = name,
                 Form = form.Replace("_", " ").Trim(),
                 DisableTransferToPokemonHome = toHome == true,
-                CanEvolve = canEvolve
+                CanEvolve = canEvolveO
             };
 
             var options = new JsonSerializerOptions { WriteIndented = true };
@@ -266,10 +267,15 @@ namespace ConsoleApp1
 
                 var pCopy = p.DeepClone();
                 var settingsObj2 = pCopy["data"]!["pokemonSettings"]!.AsObject();
-                if (!canEvolve)
+                if (!canEvolveO)
                 {
-                    settingsObj2.Remove("evolutionIds");
-                    settingsObj2.Remove("evolutionBranch");
+                    var canEvolve = settingsObj2["evolutionIds"] != null || settingsObj2["evolutionBranch"] != null;
+                    if (canEvolve)
+                    {
+                        settingsObj2.Remove("evolutionIds");
+                        settingsObj2.Remove("evolutionBranch");
+                        settingsObj2.Remove("allowNoevolveEvolution");
+                    }
                 }
 
                 if (!canTemplEvolveO)

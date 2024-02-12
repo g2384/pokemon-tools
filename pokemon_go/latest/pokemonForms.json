@@ -21,6 +21,16 @@
     "originalFormCanTempEvolveButThisCannot": true
   },
   {
+    "pokemonId": "Venusaur",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Charmander",
+    "form": "FALL 2019",
+    "disableTransferToPokemonHome": true
+  },
+  {
     "pokemonId": "Charmander",
     "form": "NORMAL",
     "canEvolve": true
@@ -37,6 +47,16 @@
     "originalFormCanTempEvolveButThisCannot": true
   },
   {
+    "pokemonId": "Charizard",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Squirtle",
+    "form": "FALL 2019",
+    "disableTransferToPokemonHome": true
+  },
+  {
     "pokemonId": "Squirtle",
     "form": "NORMAL",
     "canEvolve": true
@@ -47,12 +67,22 @@
     "canEvolve": true
   },
   {
+    "pokemonId": "Blastoise",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Weedle",
     "form": "NORMAL",
     "canEvolve": true
   },
   {
     "pokemonId": "Kakuna",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Beedrill",
     "form": "NORMAL",
     "canEvolve": true
   },
@@ -150,6 +180,11 @@
     "canEvolve": true
   },
   {
+    "pokemonId": "Golbat",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Oddish",
     "form": "NORMAL",
     "canEvolve": true
@@ -229,6 +264,11 @@
     "canEvolve": true
   },
   {
+    "pokemonId": "Alakazam",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Machop",
     "form": "NORMAL",
     "canEvolve": true
@@ -285,6 +325,17 @@
     "canEvolve": true
   },
   {
+    "pokemonId": "Slowbro",
+    "form": "2021",
+    "disableTransferToPokemonHome": true,
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Slowbro",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Magnemite",
     "form": "NORMAL",
     "canEvolve": true
@@ -310,6 +361,22 @@
   {
     "pokemonId": "Cloyster",
     "form": "NORMAL"
+  },
+  {
+    "pokemonId": "Gengar",
+    "form": "COSTUME 2020",
+    "disableTransferToPokemonHome": true,
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Gengar",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Onix",
+    "form": "NORMAL",
+    "canEvolve": true
   },
   {
     "pokemonId": "Drowzee",
@@ -374,7 +441,27 @@
     "canEvolve": true
   },
   {
+    "pokemonId": "Rhydon",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Tangela",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Kangaskhan",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Horsea",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Seadra",
     "form": "NORMAL",
     "canEvolve": true
   },
@@ -383,7 +470,32 @@
     "form": "NORMAL"
   },
   {
+    "pokemonId": "Scyther",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Electabuzz",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Magmar",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Pinsir",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Magikarp",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Gyarados",
     "form": "NORMAL",
     "canEvolve": true
   },
@@ -395,6 +507,11 @@
   {
     "pokemonId": "Lapras",
     "form": "NORMAL"
+  },
+  {
+    "pokemonId": "Porygon",
+    "form": "NORMAL",
+    "canEvolve": true
   },
   {
     "pokemonId": "Omanyte",
@@ -413,6 +530,16 @@
   {
     "pokemonId": "Kabutops",
     "form": "NORMAL"
+  },
+  {
+    "pokemonId": "Aerodactyl",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Aerodactyl",
+    "form": "SUMMER 2023",
+    "canEvolve": true
   },
   {
     "pokemonId": "Snorlax",
@@ -505,6 +632,11 @@
     "canEvolve": true
   },
   {
+    "pokemonId": "Ampharos",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Bellossom",
     "form": "NORMAL"
   },
@@ -527,6 +659,11 @@
     "form": "NORMAL"
   },
   {
+    "pokemonId": "Aipom",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Wooper",
     "form": "NORMAL",
     "canEvolve": true
@@ -534,6 +671,11 @@
   {
     "pokemonId": "Quagsire",
     "form": "NORMAL"
+  },
+  {
+    "pokemonId": "Murkrow",
+    "form": "NORMAL",
+    "canEvolve": true
   },
   {
     "pokemonId": "Slowking",
@@ -558,6 +700,16 @@
     "form": "NORMAL"
   },
   {
+    "pokemonId": "Gligar",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Steelix",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Snubbull",
     "form": "NORMAL",
     "canEvolve": true
@@ -571,8 +723,18 @@
     "form": "NORMAL"
   },
   {
+    "pokemonId": "Scizor",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Shuckle",
     "form": "NORMAL"
+  },
+  {
+    "pokemonId": "Sneasel",
+    "form": "NORMAL",
+    "canEvolve": true
   },
   {
     "pokemonId": "Teddiursa",
@@ -580,7 +742,17 @@
     "canEvolve": true
   },
   {
+    "pokemonId": "Ursaring",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Swinub",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Piloswine",
     "form": "NORMAL",
     "canEvolve": true
   },
@@ -603,8 +775,18 @@
     "canEvolve": true
   },
   {
+    "pokemonId": "Houndoom",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Kingdra",
     "form": "NORMAL"
+  },
+  {
+    "pokemonId": "Porygon2",
+    "form": "NORMAL",
+    "canEvolve": true
   },
   {
     "pokemonId": "Stantler",
@@ -641,6 +823,11 @@
     "canEvolve": true
   },
   {
+    "pokemonId": "Tyranitar",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Lugia",
     "form": "NORMAL"
   },
@@ -649,76 +836,343 @@
     "form": "NORMAL"
   },
   {
+    "pokemonId": "Torchic",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Combusken",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Blaziken",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Mudkip",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Marshtomp",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Swampert",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Poochyena",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Mightyena",
     "form": "NORMAL"
+  },
+  {
+    "pokemonId": "Zigzagoon",
+    "form": "NORMAL",
+    "canEvolve": true
   },
   {
     "pokemonId": "Linoone",
     "form": "NORMAL"
   },
   {
+    "pokemonId": "Seedot",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Nuzleaf",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Shiftry",
     "form": "NORMAL"
+  },
+  {
+    "pokemonId": "Ralts",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Kirlia",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Gardevoir",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Whismur",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Loudred",
+    "form": "NORMAL",
+    "canEvolve": true
   },
   {
     "pokemonId": "Exploud",
     "form": "NORMAL"
   },
   {
+    "pokemonId": "Makuhita",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Hariyama",
     "form": "NORMAL"
+  },
+  {
+    "pokemonId": "Sableye",
+    "form": "NORMAL",
+    "canEvolve": true
   },
   {
     "pokemonId": "Mawile",
     "form": "NORMAL"
   },
   {
+    "pokemonId": "Aron",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Lairon",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Aggron",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Electrike",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Manectric",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Carvanha",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Sharpedo",
     "form": "NORMAL"
+  },
+  {
+    "pokemonId": "Trapinch",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Vibrava",
+    "form": "NORMAL",
+    "canEvolve": true
   },
   {
     "pokemonId": "Flygon",
     "form": "NORMAL"
   },
   {
+    "pokemonId": "Cacnea",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Cacturne",
     "form": "NORMAL"
+  },
+  {
+    "pokemonId": "Lileep",
+    "form": "NORMAL",
+    "canEvolve": true
   },
   {
     "pokemonId": "Cradily",
     "form": "NORMAL"
   },
   {
+    "pokemonId": "Anorith",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Armaldo",
     "form": "NORMAL"
+  },
+  {
+    "pokemonId": "Shuppet",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Banette",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Duskull",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Dusclops",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Absol",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Spheal",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Sealeo",
+    "form": "NORMAL",
+    "canEvolve": true
   },
   {
     "pokemonId": "Walrein",
     "form": "NORMAL"
   },
   {
+    "pokemonId": "Bagon",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Shelgon",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Salamence",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Beldum",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Metang",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Metagross",
     "form": "NORMAL"
+  },
+  {
+    "pokemonId": "Latias",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Latias",
+    "form": "S",
+    "disableTransferToPokemonHome": true,
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Latios",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Latios",
+    "form": "S",
+    "disableTransferToPokemonHome": true,
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Turtwig",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Grotle",
+    "form": "NORMAL",
+    "canEvolve": true
   },
   {
     "pokemonId": "Torterra",
     "form": "NORMAL"
   },
   {
+    "pokemonId": "Chimchar",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Monferno",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Infernape",
     "form": "NORMAL"
+  },
+  {
+    "pokemonId": "Starly",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Staravia",
+    "form": "NORMAL",
+    "canEvolve": true
   },
   {
     "pokemonId": "Staraptor",
     "form": "NORMAL"
   },
   {
+    "pokemonId": "Bidoof",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Bibarel",
     "form": "NORMAL"
   },
   {
+    "pokemonId": "Burmy",
+    "form": "PLANT",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Cherrim",
     "form": "OVERCAST"
+  },
+  {
+    "pokemonId": "Shellos",
+    "form": "EAST SEA",
+    "canEvolve": true
   },
   {
     "pokemonId": "Ambipom",
@@ -733,16 +1187,56 @@
     "form": "NORMAL"
   },
   {
+    "pokemonId": "Stunky",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Skuntank",
     "form": "NORMAL"
+  },
+  {
+    "pokemonId": "Gible",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Gabite",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Garchomp",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Hippopotas",
+    "form": "NORMAL",
+    "canEvolve": true
   },
   {
     "pokemonId": "Hippowdon",
     "form": "NORMAL"
   },
   {
+    "pokemonId": "Skorupi",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Drapion",
     "form": "NORMAL"
+  },
+  {
+    "pokemonId": "Snover",
+    "form": "NORMAL",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Abomasnow",
+    "form": "NORMAL",
+    "canEvolve": true
   },
   {
     "pokemonId": "Weavile",
@@ -823,6 +1317,11 @@
   {
     "pokemonId": "Basculin",
     "form": "WHITE STRIPED"
+  },
+  {
+    "pokemonId": "Darumaka",
+    "form": "NORMAL",
+    "canEvolve": true
   },
   {
     "pokemonId": "Darmanitan",
@@ -982,6 +1481,16 @@
     "form": "TUNDRA"
   },
   {
+    "pokemonId": "Flabebe",
+    "form": "RED",
+    "canEvolve": true
+  },
+  {
+    "pokemonId": "Floette",
+    "form": "RED",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Florges",
     "form": "BLUE"
   },
@@ -1010,6 +1519,11 @@
     "form": "NORMAL"
   },
   {
+    "pokemonId": "Pumpkaboo",
+    "form": "SMALL",
+    "canEvolve": true
+  },
+  {
     "pokemonId": "Gourgeist",
     "form": "SMALL"
   },
@@ -1024,6 +1538,11 @@
   {
     "pokemonId": "Oricorio",
     "form": "BAILE"
+  },
+  {
+    "pokemonId": "Rockruff",
+    "form": "NORMAL",
+    "canEvolve": true
   },
   {
     "pokemonId": "Lycanroc",
