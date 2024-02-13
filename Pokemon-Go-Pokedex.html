@@ -97,6 +97,19 @@
         .candy-400 {
             background-color: #d53e4f;
         }
+
+        .evolution_quest_label {
+            border: #000 solid 1px;
+            border-radius: 5px;
+            padding: 2px;
+            display: inline-block;
+            background-color: #cfcfcf;
+            margin-right: 2px;
+        }
+
+        .evolution_quest_label img {
+            padding-right: 2px;
+        }
     </style>
 </head>
 
@@ -113,6 +126,7 @@
     <script>
         let dataPokemons = [];
         let dataMoves = [];
+        let dataEvolutionQuests = [];
         let rowsRaw = {};
         let columnHeaders = [];
         let trs = [];
@@ -289,7 +303,9 @@
                         if (es["questDisplay"] != undefined) {
                             for (var k = 0; k < es["questDisplay"].length; k++) {
                                 var quest = es["questDisplay"][k];
-                                questDisplay += "<div class='evolution_quest'>" + quest["questRequirementTemplateId"] + "</div>";
+                                var questId = quest["questRequirementTemplateId"];
+                                //console.log(questId)
+                                questDisplay += "<div class='evolution_quest'>" + getQuest(questId) + "</div>";
                             }
                         }
 
@@ -299,6 +315,9 @@
                     }
                     rowsRaw["Evolution"].push(evo.join("<br>"));
                 }
+                else{
+                    rowsRaw["Evolution"].push("");
+                }
             }
         }
 
@@ -306,6 +325,67 @@
             var tagHtml = tag?.length > 0 ? "<span class='move-tag elite-move'>" + tag + "</span>" : "";
             return "<div class='move'>" + getImage(movesDict[key], "type")
                 + "<div class='move_name'>" + moveName + "</div>" + tagHtml + "</div>";
+        }
+
+        function getQuest(questId) {
+            for (var i = 0; i < dataEvolutionQuests.length; i++) {
+                var q = dataEvolutionQuests[i];
+                if (q.templateId == questId) {
+                    var t = q.data.evolutionQuestTemplate;
+                    //console.log(q)
+                    var img = "<div class='evolution_quest_label'>" + getImage("quest", "icon") + "Quest</div>";
+                    switch (t.questType) {
+                        case "QUEST_BUDDY_EVOLUTION_WALK":
+                            if (t.goals.length > 1) {
+                                console.log("ERROR1", t);
+                            }
+                            return img + "walk " + t.goals[0].target + " km";
+                        case "QUEST_CATCH_POKEMON":
+                            if (t.goals.length > 1) {
+                                console.log("ERROR4", t);
+                            }
+                            g = t.goals[0];
+                            if (g.condition.length > 1) {
+                                console.log("ERROR3", t);
+                            }
+                            return img + "catch " + g.target + " " + g.condition[0].withPokemonType.pokemonType.join(", ").replace(/POKEMON_TYPE_/g, "").toLowerCase() + " pokemons";
+                        case "QUEST_USE_INCENSE":
+                            if (t.goals.length > 1) {
+                                console.log("ERROR5", t);
+                            }
+                            return img + "use " + t.goals[0].target + " incense";
+                        case "QUEST_BUDDY_FEED":
+                            if (t.goals.length > 1) {
+                                console.log("ERROR6", t);
+                            }
+                            return img + "feed " + t.goals[0].target + " times";
+                        case "QUEST_FIGHT_POKEMON":
+                            if (t.goals.length > 1) {
+                                console.log("ERROR7", t);
+                            }
+                            return img + "defeat " + t.goals[0].target + " " + t.goals[0].condition[0].withOpponentPokemonBattleStatus.opponentPokemonType.join(", ").replace(/POKEMON_TYPE_/g, "").toLowerCase() + " pokemons";
+                        case "QUEST_COMPLETE_RAID_BATTLE":
+                            if (t.goals.length > 1) {
+                                console.log("ERROR8", t);
+                            }
+                            return img + "win " + t.goals[0].target + " raid battles";
+                        case "QUEST_BUDDY_EARN_AFFECTION_POINTS":
+                            if (t.goals.length > 1) {
+                                console.log("ERROR9", t);
+                            }
+                            return img + "earn " + t.goals[0].target + " buddy hearts";
+                        case "QUEST_LAND_THROW":
+                            if (t.goals.length > 1) {
+                                console.log("ERROR10", t);
+                            }
+                            return img + "make " + t.goals[0].target + " " + t.goals[0].condition[0].withThrowType.throwType.replace("ACTIVITY_CATCH_", "").replace("_THROW", "").toLowerCase() + " throws";
+                        default:
+                            console.log("ERROR2", t.questType);
+                            break;
+                    }
+                }
+            }
+            return "";
         }
 
         function PrintTable() {
@@ -382,20 +462,25 @@
             document.querySelector("#checkbox-filters").innerHTML = html.join("\n");
         }
 
+        async function loadAllJsonFiles() {
+            try {
+                [dataMoves, dataEvolutionQuests, dataPokemons] = await Promise.all([
+                    fetch("./pokemon_go/latest/moves.json").then(response => response.json()),
+                    fetch("./pokemon_go/latest/evolutionQuests.json").then(response => response.json()),
+                    fetch("./pokemon_go/latest/pokemons.json").then(response => response.json())
+                ]);
+
+                LoadDex();
+                PrintTable();
+            } catch (error) {
+                console.error("Error loading JSON files:", error);
+                // Handle errors appropriately, e.g., display error messages to the user
+            }
+        }
+
         window.addEventListener('load',
             function () {
-                fetch("./pokemon_go/latest/moves.json")
-                    .then(response => response.json())
-                    .then(parsed_data => {
-                        dataMoves = parsed_data;
-                    });
-                fetch("./pokemon_go/latest/pokemons.json")
-                    .then(response => response.json())
-                    .then(parsed_data => {
-                        dataPokemons = parsed_data;
-                        LoadDex();
-                        PrintTable();
-                    });
+                loadAllJsonFiles();
 
                 AddFilters();
             });
