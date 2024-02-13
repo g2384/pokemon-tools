@@ -110,6 +110,21 @@
         .evolution_quest_label img {
             padding-right: 2px;
         }
+
+        .item_evolve {
+            border: #000 solid 1px;
+            border-radius: 5px;
+            padding: 2px;
+            display: block;
+            width: fit-content;
+            background-color: #cfcfcf;
+            margin-right: 2px;
+        }
+
+        .item_evolve img {
+            padding-right: 2px;
+            height: 20px;
+        }
     </style>
 </head>
 
@@ -175,8 +190,29 @@
                 id: "no_evolve_quest",
                 default: false,
                 filter: (x) => x.indexOf("evolution_quest") < 0
+            },
+            {
+                label: "Require Evolution Item",
+                type: "checkbox",
+                id: "evolve_item",
+                default: true,
+                filter: (x) => x.indexOf("item_evolve") > 0
+            },
+            {
+                label: "No Evolution Item",
+                type: "checkbox",
+                id: "no_evolve_item",
+                default: false,
+                filter: (x) => x.indexOf("item_evolve") < 0
             }
         ];
+
+        const itemLookUp = {
+            "KINGS_ROCK": "King's_Rock",
+            "SUN_STONE": "Sun_Stone",
+            "METAL_COAT": "Metal_Coat",
+            "GEN4_EVOLUTION_STONE": "Sinnoh_Stone"
+        }
 
         String.prototype.toTitleCase = function () {
             return this.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
@@ -309,15 +345,48 @@
                             }
                         }
 
-                        var evo2 = "<div class='evolution_info'>" + "<div class='candy_evolve candy-" + es["candyCost"] + "'>" + candyImage + es["candyCost"] + "</div> -> " + es["evolution"].toTitleCase()
-                            + purifiedCost + "<br>" + questDisplay + "</div>";
-                        evo.push(evo2);
+                        var requirements = [];
+                        if (es["kmBuddyDistanceRequirement"] != undefined) {
+                            requirements.push("walk as buddy " + es["kmBuddyDistanceRequirement"] + " km");
+                        }
+                        if (es["mustBeBuddy"] != undefined) {
+                            requirements.push("keep as buddy when evolving");
+                        }
+                        if (es["onlyDaytime"] != undefined) {
+                            requirements.push("during daytime");
+                        }
+                        if (es["onlyNighttime"] != undefined) {
+                            requirements.push("during nighttime");
+                        }
+
+                        var itemRequired = "";
+                        if (es["evolutionItemRequirement"] != undefined) {
+                            itemRequired = es["evolutionItemRequirement"].replace("ITEM_", "");
+                            if (itemLookUp[itemRequired] != undefined) {
+                                itemRequired = itemLookUp[itemRequired];
+                            }
+                            itemRequired = "<div class='item_evolve'>" + getRemoteImage(itemRequired, "item") + itemRequired.replace(/_/g, " ") + "</div>";
+                        }
+
+                        var candyInfo = "<div class='candy_evolve candy-" + es["candyCost"] + "'>" + candyImage + es["candyCost"] + "</div> -> " + es["evolution"].toTitleCase() + purifiedCost;
+                        var evo2 = [candyInfo, questDisplay, itemRequired, requirements.join("<br>")];
+                        evo.push("<div class='evolution_info'>" + evo2.join("\n") + "</div>");
                     }
                     rowsRaw["Evolution"].push(evo.join("<br>"));
                 }
-                else{
+                else {
                     rowsRaw["Evolution"].push("");
                 }
+            }
+        }
+
+        function getRemoteImage(value, type) {
+            if (type == "item") {
+                value1 = value.replace(/\s+/g, "_").replace("Upgrade", "Up-Grade");
+                if (itemLookUp[value1] != undefined) {
+                    value1 = itemLookUp[value1];
+                }
+                return "<img src=\"https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Items/Bag_" + value1 + "_Sprite.png\" />";
             }
         }
 
