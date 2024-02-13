@@ -32,3 +32,4 @@
 
 - icon_trade.png: https://github.com/PokeMiners/pogo_assets/blob/master/Images/Friends/trade_icon_small.png
 - icon_mythic.png: https://github.com/PokeMiners/pogo_assets/blob/master/Images/Filters/ic_mythical.png
+- icon_candy.png: https://github.com/PokeMiners/pogo_assets/blob/master/Images/Menu%20Icons/ic_candy.png

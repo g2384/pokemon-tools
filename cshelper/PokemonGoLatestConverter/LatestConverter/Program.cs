@@ -51,6 +51,7 @@ namespace ConsoleApp1
             var pokemons = new JsonArray();
             var moves = new JsonArray();
             var pokemonFamilies = new JsonArray();
+            var evolutionQuests = new JsonArray();
             var pokemonForms = new List<PokemonForm>();
             var ignoredSettingsRegex = new List<Regex>()
             {
@@ -132,6 +133,15 @@ namespace ConsoleApp1
                         pokemonSettingsObj.Remove("raidBossDistanceOffset");
                         pokemonSettingsObj.Remove("buddySize");
 
+                        var stats = pokemonSettingsObj["stats"]!.AsObject();
+                        if (stats.Count > 0)
+                        {
+                            var sValue = stats["baseStamina"]!.GetValue<int>();
+                            var aValue = stats["baseAttack"]!.GetValue<int>();
+                            var dValue = stats["baseDefense"]!.GetValue<int>();
+                            pokemonSettingsObj["stats"] = new JsonArray([sValue, aValue, dValue]); // Stamina, Attack, Defense
+                        }
+
                         var type1 = ConvertPokemonType(pokemonSettingsObj["type"]);
                         if (pokemonSettingsObj.ContainsKey("type2"))
                         {
@@ -197,6 +207,10 @@ namespace ConsoleApp1
                     }
                     moves.Add(oCopy);
                 }
+                else if (templateId.Contains("_EVOLUTION_QUEST"))
+                {
+                    evolutionQuests.Add(oCopy);
+                }
                 else
                 {
                     others.Add(oCopy);
@@ -214,6 +228,7 @@ namespace ConsoleApp1
             Save(animation, "animation.json");
             Save(pokemons, "pokemons.json");
             Save(moves, "moves.json");
+            Save(evolutionQuests, "evolutionQuests.json");
             Save(pokemonFamilies, "pokemonFamilies.json");
 
             var options = new JsonSerializerOptions
@@ -235,7 +250,7 @@ namespace ConsoleApp1
             var formO = settingsObj["form"]!.GetValue<string>();
             var form = formO.Replace(name.ToUpper(), "");
 
-            if (formO.Contains("VENUSAUR_NORMAL"))
+            if (formO.Contains("NIDORAN_NORMAL"))
             {
 
             }

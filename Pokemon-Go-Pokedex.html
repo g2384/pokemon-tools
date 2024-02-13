@@ -49,12 +49,60 @@
             background-color: #d3d3d3;
             border: 1px solid #707070;
         }
+
+        .inline {
+            display: inline-block;
+        }
+
+        .inline-input {
+            padding: 2px;
+            margin: 2px 5px;
+        }
+
+        .inline label {
+            padding-left: 3px;
+        }
+
+        .candy_evolve {
+            border: #000 solid 1px;
+            border-radius: 5px;
+            padding: 2px;
+            display: inline-block;
+        }
+
+        .candy_evolve img {
+            padding-right: 2px;
+        }
+
+        .candy-12 {
+            background-color: #74bde9;
+        }
+
+        .candy-25 {
+            background-color: #99d594;
+        }
+
+        .candy-50 {
+            background-color: #c9db6a;
+        }
+
+        .candy-100 {
+            background-color: #e7bf4e;
+        }
+
+        .candy-200 {
+            background-color: #fc8d59;
+        }
+
+        .candy-400 {
+            background-color: #d53e4f;
+        }
     </style>
 </head>
 
 <body>
     <div style="border: 1px solid #888; padding: 10px;">
-        <form id="types-filters" class="flex-container"> </form>
+        <form id="checkbox-filters" class="flex-container"> </form>
         <form id="lures-filters" class="flex-container"> </form>
         <form id="items-filters" class="flex-container"> </form>
         <form id="quest-filters" class="flex-container"> </form>
@@ -70,6 +118,51 @@
         let trs = [];
         let pokemonCount = 0;
         let movesDict = {};
+
+        let filterOptions = [
+            {
+                label: "Tradable",
+                type: "checkbox",
+                id: "tradable",
+                default: false,
+                filter: (x) => x.indexOf("icon_trade") > 0
+            },
+            {
+                label: "Not Tradable",
+                type: "checkbox",
+                id: "not_tradable",
+                default: false,
+                filter: (x) => x.indexOf("icon_trade") < 0
+            },
+            {
+                label: "Can Evolve",
+                type: "checkbox",
+                id: "can_evolve",
+                default: false,
+                filter: (x) => x.indexOf("evolution_info") > 0
+            },
+            {
+                label: "Cannot Evolve",
+                type: "checkbox",
+                id: "cannot_evolve",
+                default: false,
+                filter: (x) => x.indexOf("evolution_info") < 0
+            },
+            {
+                label: "Have Evolution Quest",
+                type: "checkbox",
+                id: "evolve_quest",
+                default: true,
+                filter: (x) => x.indexOf("evolution_quest") > 0
+            },
+            {
+                label: "No Evolution Quest",
+                type: "checkbox",
+                id: "no_evolve_quest",
+                default: false,
+                filter: (x) => x.indexOf("evolution_quest") < 0
+            }
+        ];
 
         String.prototype.toTitleCase = function () {
             return this.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
@@ -87,6 +180,7 @@
             TableAdd("Charged Moves");
             TableAdd("Form");
             TableAdd("Buddy Candy Distance (km)");
+            TableAdd("Evolution");
 
             for (var i = 0; i < dataMoves.length; i++) {
                 var move = dataMoves[i];
@@ -175,9 +269,37 @@
 
                 var kmBuddyDistance = settings["kmBuddyDistance"];
                 rowsRaw["Buddy Candy Distance (km)"].push(kmBuddyDistance);
-            }
 
-            PrintTable();
+                var candyImage = getImage("candy", "icon");
+                if (settings["evolutionBranch"] != undefined) {
+                    var evolutionSettings = settings["evolutionBranch"];
+                    var evo = [];
+                    for (var j = 0; j < evolutionSettings.length; j++) {
+                        var es = evolutionSettings[j];
+                        if (es["evolution"] == undefined) {
+                            continue;
+                        }
+
+                        var purifiedCost = "";
+                        if (es["candyCostPurified"] != undefined) {
+                            purifiedCost = " (purified cost <div class='candy_evolve candy-" + es["candyCost"] + "'>" + candyImage + es["candyCostPurified"] + "</div>)";
+                        }
+
+                        var questDisplay = "";
+                        if (es["questDisplay"] != undefined) {
+                            for (var k = 0; k < es["questDisplay"].length; k++) {
+                                var quest = es["questDisplay"][k];
+                                questDisplay += "<div class='evolution_quest'>" + quest["questRequirementTemplateId"] + "</div>";
+                            }
+                        }
+
+                        var evo2 = "<div class='evolution_info'>" + "<div class='candy_evolve candy-" + es["candyCost"] + "'>" + candyImage + es["candyCost"] + "</div> -> " + es["evolution"].toTitleCase()
+                            + purifiedCost + "<br>" + questDisplay + "</div>";
+                        evo.push(evo2);
+                    }
+                    rowsRaw["Evolution"].push(evo.join("<br>"));
+                }
+            }
         }
 
         function convertMoveToDiv(key, moveName, tag) {
@@ -187,7 +309,6 @@
         }
 
         function PrintTable() {
-            // Start building the HTML text
             var tableHtml = "<table class='table table-striped align-middle'>";
 
             tableHtml += "<thead><tr>";
@@ -196,6 +317,17 @@
             }
             tableHtml += "</tr></thead>";
 
+            var filterValues = [];
+            for (var i = 0; i < filterOptions.length; i++) {
+                var option = filterOptions[i];
+                if (option.type == "checkbox") {
+                    var checked = document.querySelector("#filter_" + option.id).checked;
+                    var id = option.id;
+                    if (checked) {
+                        filterValues.push(id);
+                    }
+                }
+            }
 
             if (trs.length == 0) {
                 for (var i = 0; i < pokemonCount; i++) {
@@ -204,6 +336,11 @@
                         tr += "<td>" + rowsRaw[columnHeaders[j]][i] + "</td>";
                     }
                     tr += "</tr>";
+
+                    if (!IsSelected(filterValues, tr)) {
+                        continue;
+                    }
+
                     trs.push(tr);
                 }
             }
@@ -215,9 +352,34 @@
             document.querySelector("#dex").innerHTML = tableHtml;
         }
 
+        function IsSelected(filterValues, tr) {
+            for (var i = 0; i < filterValues.length; i++) {
+                var id = filterValues[i];
+                var filterFunc = filterOptions.filter(x => x.id == id)[0].filter;
+                if (filterFunc(tr)) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         function TableAdd(str) {
             columnHeaders.push(str);
             rowsRaw[str] = [];
+        }
+
+        function AddFilters() {
+            var html = [];
+            for (var i = 0; i < filterOptions.length; i++) {
+                var option = filterOptions[i];
+                if (option.type == "checkbox") {
+                    var checked = option.default ? " checked" : "";
+                    var h = "<div class='inline inline-input'><input type='checkbox' id='filter_" + option.id + "' name='filter_" + option.id + "' " + checked + "><label for='filter_" + option.id + "'>" + option.label + "</label></div>";
+                    html.push(h)
+                }
+            }
+            document.querySelector("#checkbox-filters").innerHTML = html.join("\n");
         }
 
         window.addEventListener('load',
@@ -232,7 +394,10 @@
                     .then(parsed_data => {
                         dataPokemons = parsed_data;
                         LoadDex();
+                        PrintTable();
                     });
+
+                AddFilters();
             });
     </script>
 </body>
