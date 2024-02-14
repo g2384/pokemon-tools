@@ -8428,7 +8428,7 @@
           {
             "evolution": "MAGNEZONE",
             "candyCost": 100,
-            "lureItemRequirement": "ITEM_TROY_DISK_MAGNETIC",
+            "lureItemRequirement": "magnetic",
             "candyCostPurified": 90
           }
         ],
@@ -8500,7 +8500,7 @@
             "evolution": "MAGNEZONE",
             "candyCost": 100,
             "form": "MAGNEZONE_NORMAL",
-            "lureItemRequirement": "ITEM_TROY_DISK_MAGNETIC",
+            "lureItemRequirement": "magnetic",
             "candyCostPurified": 90
           }
         ],
@@ -12551,13 +12551,13 @@
           {
             "evolution": "LEAFEON",
             "candyCost": 25,
-            "lureItemRequirement": "ITEM_TROY_DISK_MOSSY",
+            "lureItemRequirement": "mossy",
             "priority": 200
           },
           {
             "evolution": "GLACEON",
             "candyCost": 25,
-            "lureItemRequirement": "ITEM_TROY_DISK_GLACIAL",
+            "lureItemRequirement": "glacial",
             "priority": 200
           },
           {
@@ -23831,7 +23831,7 @@
           {
             "evolution": "PROBOPASS",
             "candyCost": 50,
-            "lureItemRequirement": "ITEM_TROY_DISK_MAGNETIC",
+            "lureItemRequirement": "magnetic",
             "candyCostPurified": 45
           }
         ],
@@ -23895,7 +23895,7 @@
             "evolution": "PROBOPASS",
             "candyCost": 50,
             "form": "PROBOPASS_NORMAL",
-            "lureItemRequirement": "ITEM_TROY_DISK_MAGNETIC",
+            "lureItemRequirement": "magnetic",
             "candyCostPurified": 45
           }
         ],
@@ -54107,7 +54107,7 @@
           {
             "evolution": "GOODRA",
             "candyCost": 100,
-            "lureItemRequirement": "ITEM_TROY_DISK_RAINY"
+            "lureItemRequirement": "rainy"
           }
         ],
         "thirdMove": {
@@ -56996,7 +56996,7 @@
           {
             "evolution": "VIKAVOLT",
             "candyCost": 100,
-            "lureItemRequirement": "ITEM_TROY_DISK_MAGNETIC"
+            "lureItemRequirement": "magnetic"
           }
         ],
         "thirdMove": {
@@ -57107,7 +57107,7 @@
           {
             "evolution": "CRABOMINABLE",
             "candyCost": 50,
-            "lureItemRequirement": "ITEM_TROY_DISK_GLACIAL"
+            "lureItemRequirement": "glacial"
           }
         ],
         "thirdMove": {

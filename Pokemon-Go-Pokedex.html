@@ -128,6 +128,10 @@
             background-color: #d6f1d6;
         }
 
+        .traded_evolve {
+            background-color: #ceedf5;
+        }
+
         .evolve_requirement img {
             padding-right: 2px;
             height: 25px;
@@ -224,6 +228,34 @@
                 id: "no_evolve_lure",
                 default: false,
                 filter: (x) => x.indexOf("lure_evolve") < 0
+            },
+            {
+                label: "0 evolution cost for traded",
+                type: "checkbox",
+                id: "evolve_0_cost_traded",
+                default: true,
+                filter: (x) => x.indexOf("traded_evolve") > 0
+            },
+            {
+                label: "evolve during daytime",
+                type: "checkbox",
+                id: "evolve_daytime",
+                default: true,
+                filter: (x) => x.indexOf("during daytime") > 0
+            },
+            {
+                label: "evolve during nighttime",
+                type: "checkbox",
+                id: "evolve_nighttime",
+                default: true,
+                filter: (x) => x.indexOf("during nighttime") > 0
+            },
+            {
+                label: "evolve during full moon",
+                type: "checkbox",
+                id: "evolve_full_moon",
+                default: true,
+                filter: (x) => x.indexOf("during full moon") > 0
             }
         ];
 
@@ -374,14 +406,22 @@
                         if (es["kmBuddyDistanceRequirement"] != undefined) {
                             requirements.push("walk as buddy " + es["kmBuddyDistanceRequirement"] + " km");
                         }
-                        if (es["mustBeBuddy"] != undefined) {
+                        if (es["mustBeBuddy"] == true) {
                             requirements.push("keep as buddy when evolving");
                         }
-                        if (es["onlyDaytime"] != undefined) {
+                        if (es["onlyDaytime"] == true) {
                             requirements.push("during daytime");
                         }
-                        if (es["onlyNighttime"] != undefined) {
+                        if (es["onlyNighttime"] == true) {
                             requirements.push("during nighttime");
+                        }
+                        if (es["onlyFullMoon"] == true) {
+                            requirements.push("during full moon");
+                        }
+
+                        var noCostTraded = "";
+                        if (es["noCandyCostViaTrade"] == true) {
+                            noCostTraded = "<div class='evolve_requirement traded_evolve'>" + getImage("trade", "icon") + " 0 candies if traded</div>";
                         }
 
                         var itemRequired = "";
@@ -395,12 +435,12 @@
 
                         var lureRequired = "";
                         if (es["lureItemRequirement"] != undefined) {
-                            lureRequired = es["lureItemRequirement"].replace("ITEM_TROY_DISK_", "").toLowerCase();
+                            lureRequired = es["lureItemRequirement"];
                             lureRequired = "<div class='evolve_requirement lure_evolve'>" + getImage(lureRequired, "lure") + lureRequired + "</div>";
                         }
 
                         var candyInfo = "<div class='candy_evolve candy-" + es["candyCost"] + "'>" + candyImage + es["candyCost"] + "</div> -> " + es["evolution"].toTitleCase() + purifiedCost;
-                        var evo2 = [candyInfo, questDisplay, itemRequired, lureRequired, requirements.join("<br>")];
+                        var evo2 = [candyInfo, noCostTraded, questDisplay, itemRequired, lureRequired, "<div>" + requirements.join("</div><div>") + "</div>"];
                         evo.push("<div class='evolution_info'>" + evo2.join("\n") + "</div>");
                     }
                     rowsRaw["Evolution"].push(evo.join("<br>"));

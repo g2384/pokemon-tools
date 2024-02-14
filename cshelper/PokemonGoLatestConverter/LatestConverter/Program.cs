@@ -62,6 +62,24 @@ namespace ConsoleApp1
             var familyRegex = new Regex(@"^V\d+_FAMILY_", RegexOptions.Compiled);
             var pokemonRegex = new Regex(@"^V\d+_POKEMON_", RegexOptions.Compiled);
             var moveRegex = new Regex(@"^V\d+_MOVE_", RegexOptions.Compiled);
+            var allEvolutionRules = new HashSet<string>()
+            {
+                // known ones that are already handled in the webpage
+                "evolution",
+                "candyCost",
+                "form",
+                "candyCostPurified",
+                "evolutionItemRequirement",
+                "priority",
+                "questDisplay",
+                "noCandyCostViaTrade",
+                "lureItemRequirement",
+                "kmBuddyDistanceRequirement",
+                "mustBeBuddy",
+                "onlyDaytime",
+                "onlyNighttime",
+                "onlyFullMoon"
+            };
             foreach (var o in allNodes.AsArray())
             {
                 var oCopy = o.DeepClone();
@@ -173,6 +191,28 @@ namespace ConsoleApp1
                             encounterObj.Remove("dodgeDistance");
                             encounterObj.Remove("minPokemonActionFrequencyS");
                             encounterObj.Remove("maxPokemonActionFrequencyS");
+                        }
+                        if (pokemonSettingsObj.TryGetPropertyValue("evolutionBranch", out var evolutionBranch))
+                        {
+                            var evolutionBranchObj = evolutionBranch!.AsArray();
+                            foreach (var evolution in evolutionBranchObj)
+                            {
+                                var evolutionObj = evolution!.AsObject();
+                                if (evolutionObj.ContainsKey("lureItemRequirement"))
+                                {
+                                    var str2 = evolutionObj["lureItemRequirement"]!.GetValue<string>().ToLowerInvariant();
+                                    str2 = str2.Replace("item_troy_disk_", string.Empty);
+                                    evolutionObj["lureItemRequirement"] = str2;
+                                }
+
+                                foreach(var e in evolutionObj)
+                                {
+                                    if (allEvolutionRules.Add(e.Key))
+                                    {
+                                        Console.WriteLine($"Evolution keys: template = '{templateId}', key = '{e.Key}'");
+                                    }
+                                }
+                            }
                         }
 
                         hasForm = pokemonSettingsObj.ContainsKey("form");
