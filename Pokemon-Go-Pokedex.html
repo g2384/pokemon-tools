@@ -111,19 +111,26 @@
             padding-right: 2px;
         }
 
-        .item_evolve {
+        .evolve_requirement {
             border: #000 solid 1px;
             border-radius: 5px;
             padding: 2px;
             display: block;
             width: fit-content;
-            background-color: #cfcfcf;
             margin-right: 2px;
         }
 
-        .item_evolve img {
+        .item_evolve {
+            background-color: #bccddd;
+        }
+
+        .lure_evolve {
+            background-color: #d6f1d6;
+        }
+
+        .evolve_requirement img {
             padding-right: 2px;
-            height: 20px;
+            height: 25px;
         }
     </style>
 </head>
@@ -134,7 +141,7 @@
         <form id="lures-filters" class="flex-container"> </form>
         <form id="items-filters" class="flex-container"> </form>
         <form id="quest-filters" class="flex-container"> </form>
-        <input type="button" class="btn btn-outline-primary" value="Filter" onclick="show()" />
+        <input type="button" class="btn btn-outline-primary" value="Filter" onclick="PrintTable()" />
     </div>
 
     <div id="dex"></div>
@@ -144,7 +151,6 @@
         let dataEvolutionQuests = [];
         let rowsRaw = {};
         let columnHeaders = [];
-        let trs = [];
         let pokemonCount = 0;
         let movesDict = {};
 
@@ -204,6 +210,20 @@
                 id: "no_evolve_item",
                 default: false,
                 filter: (x) => x.indexOf("item_evolve") < 0
+            },
+            {
+                label: "Require Lure for Evolution",
+                type: "checkbox",
+                id: "evolve_lure",
+                default: true,
+                filter: (x) => x.indexOf("lure_evolve") > 0
+            },
+            {
+                label: "No Lure for Evolution",
+                type: "checkbox",
+                id: "no_evolve_lure",
+                default: false,
+                filter: (x) => x.indexOf("lure_evolve") < 0
             }
         ];
 
@@ -211,7 +231,12 @@
             "KINGS_ROCK": "King's_Rock",
             "SUN_STONE": "Sun_Stone",
             "METAL_COAT": "Metal_Coat",
-            "GEN4_EVOLUTION_STONE": "Sinnoh_Stone"
+            "GEN4_EVOLUTION_STONE": "Sinnoh_Stone",
+            "GEN5_EVOLUTION_STONE": "Unova_Stone",
+            "UP_GRADE": "Up-Grade",
+            "DRAGON_SCALE": "Dragon_Scale",
+            "OTHER_EVOLUTION_STONE_A": "Other_Stone_A",
+            "BEANS": "route_cell"
         }
 
         String.prototype.toTitleCase = function () {
@@ -365,11 +390,17 @@
                             if (itemLookUp[itemRequired] != undefined) {
                                 itemRequired = itemLookUp[itemRequired];
                             }
-                            itemRequired = "<div class='item_evolve'>" + getRemoteImage(itemRequired, "item") + itemRequired.replace(/_/g, " ") + "</div>";
+                            itemRequired = "<div class='evolve_requirement item_evolve'>" + getRemoteImage(itemRequired, "item") + itemRequired.replace(/_/g, " ") + "</div>";
+                        }
+
+                        var lureRequired = "";
+                        if (es["lureItemRequirement"] != undefined) {
+                            lureRequired = es["lureItemRequirement"].replace("ITEM_TROY_DISK_", "").toLowerCase();
+                            lureRequired = "<div class='evolve_requirement lure_evolve'>" + getImage(lureRequired, "lure") + lureRequired + "</div>";
                         }
 
                         var candyInfo = "<div class='candy_evolve candy-" + es["candyCost"] + "'>" + candyImage + es["candyCost"] + "</div> -> " + es["evolution"].toTitleCase() + purifiedCost;
-                        var evo2 = [candyInfo, questDisplay, itemRequired, requirements.join("<br>")];
+                        var evo2 = [candyInfo, questDisplay, itemRequired, lureRequired, requirements.join("<br>")];
                         evo.push("<div class='evolution_info'>" + evo2.join("\n") + "</div>");
                     }
                     rowsRaw["Evolution"].push(evo.join("<br>"));
@@ -382,7 +413,7 @@
 
         function getRemoteImage(value, type) {
             if (type == "item") {
-                value1 = value.replace(/\s+/g, "_").replace("Upgrade", "Up-Grade");
+                value1 = value.replace(/\s+/g, "_");
                 if (itemLookUp[value1] != undefined) {
                     value1 = itemLookUp[value1];
                 }
@@ -477,21 +508,21 @@
                     }
                 }
             }
+            console.log(filterValues);
 
-            if (trs.length == 0) {
-                for (var i = 0; i < pokemonCount; i++) {
-                    var tr = "<tr>";
-                    for (var j = 0; j < columnHeaders.length; j++) {
-                        tr += "<td>" + rowsRaw[columnHeaders[j]][i] + "</td>";
-                    }
-                    tr += "</tr>";
-
-                    if (!IsSelected(filterValues, tr)) {
-                        continue;
-                    }
-
-                    trs.push(tr);
+            let trs = [];
+            for (var i = 0; i < pokemonCount; i++) {
+                var tr = "<tr>";
+                for (var j = 0; j < columnHeaders.length; j++) {
+                    tr += "<td>" + rowsRaw[columnHeaders[j]][i] + "</td>";
                 }
+                tr += "</tr>";
+
+                if (!IsSelected(filterValues, tr)) {
+                    continue;
+                }
+
+                trs.push(tr);
             }
 
 
