@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Collections.Generic;
+using System.Globalization;
 using System.Net.Http.Headers;
 using System.Text.Json;
 using System.Text.Json.Nodes;
@@ -89,7 +90,11 @@ namespace ConsoleApp1
                 "mLowerBound",
                 "mUpperBound",
                 "xlUpperBound",
-                "xxlUpperBound"
+                "xxlUpperBound",
+                "xxsScaleMultiplier",
+                "xsScaleMultiplier",
+                "xlScaleMultiplier",
+                "xxlScaleMultiplier"
             };
             foreach (var o in allNodes.AsArray())
             {
@@ -142,18 +147,14 @@ namespace ConsoleApp1
                 {
                     pokemonFamilies.Add(oCopy);
                 }
-                else if (templateId.StartsWith("EXTENDED_POKEMON_"))
+                else if (templateId.StartsWith("EXTENDED_POKEMON_") || templateId.StartsWith("EXTENDED_V"))
                 {
                     if (obj["data"]!.AsObject().TryGetPropertyValue("pokemonExtendedSettings", out var pokemonSettings))
                     {
                         var pokemonSettingsObj = pokemonSettings!.AsObject();
                         var sizeSettings = pokemonSettingsObj["sizeSettings"]!.AsObject();
-                        var xxs = sizeSettings["xxsLowerBound"]!.GetValue<decimal>();
-                        var xs = sizeSettings["xsLowerBound"]!.GetValue<decimal>();
-                        var mL = sizeSettings["mLowerBound"]!.GetValue<decimal>();
-                        var mU = sizeSettings["mUpperBound"]!.GetValue<decimal>();
-                        var xl = sizeSettings["xlUpperBound"]!.GetValue<decimal>();
-                        var xxl = sizeSettings["xxlUpperBound"]!.GetValue<decimal>();
+                        var sizeBounds = GetSizeBounds(sizeSettings);
+                        var sizeScaleMultiplier = GetSizeScaleMultiplier(sizeSettings);
 
                         foreach (var e in sizeSettings)
                         {
@@ -163,7 +164,27 @@ namespace ConsoleApp1
                             }
                         }
 
-                        pokemonSettingsObj["sizeSettings"] = new JsonArray([xxs, xs, mL, mU, xl, xxl]);
+                        pokemonSettingsObj["sizeBounds"] = new JsonArray([sizeBounds.XXS, sizeBounds.XS, sizeBounds.MLower, sizeBounds.MUpper, sizeBounds.XL, sizeBounds.XXL]);
+                        sizeSettings.Remove("xxsLowerBound");
+                        sizeSettings.Remove("xsLowerBound");
+                        sizeSettings.Remove("mLowerBound");
+                        sizeSettings.Remove("mUpperBound");
+                        sizeSettings.Remove("xlUpperBound");
+                        sizeSettings.Remove("xxlUpperBound");
+
+                        if (!sizeScaleMultiplier.IsNone())
+                        {
+                            pokemonSettingsObj["sizeScaleMultiplier"] = new JsonArray([sizeScaleMultiplier.XXS, sizeScaleMultiplier.XS, sizeScaleMultiplier.XL, sizeScaleMultiplier.XXL]);
+                            sizeSettings.Remove("xxsScaleMultiplier");
+                            sizeSettings.Remove("xsScaleMultiplier");
+                            sizeSettings.Remove("xlScaleMultiplier");
+                            sizeSettings.Remove("xxlScaleMultiplier");
+                        }
+
+                        if (sizeSettings.Count == 0)
+                        {
+                            pokemonSettingsObj.Remove("sizeSettings");
+                        }
                     }
 
                     pokemonExtended.Add(oCopy);
@@ -317,6 +338,60 @@ namespace ConsoleApp1
             };
             var str = JsonSerializer.Serialize(pokemonForms, options);
             WriteToFile("pokemonForms.json", str);
+        }
+
+        private static SizeBounds GetSizeBounds(JsonObject sizeSettings)
+        {
+            var xxs = sizeSettings["xxsLowerBound"]!.GetValue<decimal>();
+            var xs = sizeSettings["xsLowerBound"]!.GetValue<decimal>();
+            var mL = sizeSettings["mLowerBound"]!.GetValue<decimal>();
+            var mU = sizeSettings["mUpperBound"]!.GetValue<decimal>();
+            var xl = sizeSettings["xlUpperBound"]!.GetValue<decimal>();
+            var xxl = sizeSettings["xxlUpperBound"]!.GetValue<decimal>();
+
+            return new SizeBounds
+            {
+                XXL = xxl,
+                XL = xl,
+                MLower = mL,
+                MUpper = mU,
+                XS = xs,
+                XXS = xxs,
+            };
+        }
+
+        private static SizeScaleMultiplier GetSizeScaleMultiplier(JsonObject sizeSettings)
+        {
+            var xxs = TryGetDecimal(sizeSettings, "xxsScaleMultiplier");
+            var xs = TryGetDecimal(sizeSettings, "xsScaleMultiplier");
+            var xl = TryGetDecimal(sizeSettings, "xlScaleMultiplier");
+            var xxl = TryGetDecimal(sizeSettings, "xxlScaleMultiplier");
+
+            if (xxs == null
+                || xs == null
+                || xl == null
+                || xxl == null)
+            {
+                return SizeScaleMultiplier.None;
+            }
+
+            return new SizeScaleMultiplier
+            {
+                XXL = xxl.Value,
+                XL = xl.Value,
+                XS = xs.Value,
+                XXS = xxs.Value,
+            };
+        }
+
+        private static decimal? TryGetDecimal(JsonObject obj, string key)
+        {
+            if (obj.ContainsKey(key))
+            {
+                return obj[key]!.GetValue<decimal>();
+            }
+
+            return null;
         }
 
         private static PokemonForm PokemonAdded(JsonArray pokemons, JsonNode o)
