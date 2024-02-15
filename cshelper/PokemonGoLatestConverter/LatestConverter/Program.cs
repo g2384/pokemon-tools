@@ -81,7 +81,8 @@ namespace ConsoleApp1
                 "mustBeBuddy",
                 "onlyDaytime",
                 "onlyNighttime",
-                "onlyFullMoon"
+                "onlyFullMoon",
+                "genderRequirement"
             };
             var sizeSettingsKeys = new HashSet<string>()
             {

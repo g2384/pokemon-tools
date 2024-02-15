@@ -256,6 +256,13 @@
                 id: "evolve_full_moon",
                 default: true,
                 filter: (x) => x.indexOf("during full moon") > 0
+            },
+            {
+                label: "evolve gender exclusive",
+                type: "checkbox",
+                id: "evolve_gender",
+                default: true,
+                filter: (x) => x.indexOf("requires gender: ") > 0
             }
         ];
 
@@ -418,6 +425,9 @@
                         if (es["onlyFullMoon"] == true) {
                             requirements.push("during full moon");
                         }
+                        if (es["genderRequirement"] != undefined) {
+                            requirements.push("requires gender: " + es["genderRequirement"].toLowerCase());
+                        }
 
                         var noCostTraded = "";
                         if (es["noCandyCostViaTrade"] == true) {
@@ -430,7 +440,11 @@
                             if (itemLookUp[itemRequired] != undefined) {
                                 itemRequired = itemLookUp[itemRequired];
                             }
-                            itemRequired = "<div class='evolve_requirement item_evolve'>" + getRemoteImage(itemRequired, "item") + itemRequired.replace(/_/g, " ") + "</div>";
+                            var itemAmount = "";
+                            if (es["evolutionItemRequirementCost"] != undefined) {
+                                itemAmount = "x" + es["evolutionItemRequirementCost"] + " ";
+                            }
+                            itemRequired = "<div class='evolve_requirement item_evolve'>" + itemAmount + getRemoteImage(itemRequired, "item") + itemRequired.replace(/_/g, " ") + "</div>";
                         }
 
                         var lureRequired = "";
@@ -457,6 +471,10 @@
                 if (itemLookUp[value1] != undefined) {
                     value1 = itemLookUp[value1];
                 }
+                if (value == "route_cell") {
+                    return "<img src=\"https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Items/item_route_cell.png\" />";
+                }
+
                 return "<img src=\"https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Items/Bag_" + value1 + "_Sprite.png\" />";
             }
         }
