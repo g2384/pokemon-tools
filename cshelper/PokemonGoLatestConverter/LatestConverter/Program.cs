@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Net.Http.Headers;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
@@ -81,6 +82,15 @@ namespace ConsoleApp1
                 "onlyNighttime",
                 "onlyFullMoon"
             };
+            var sizeSettingsKeys = new HashSet<string>()
+            {
+                "xxsLowerBound",
+                "xsLowerBound",
+                "mLowerBound",
+                "mUpperBound",
+                "xlUpperBound",
+                "xxlUpperBound"
+            };
             foreach (var o in allNodes.AsArray())
             {
                 var oCopy = o.DeepClone();
@@ -144,6 +154,16 @@ namespace ConsoleApp1
                         var mU = sizeSettings["mUpperBound"]!.GetValue<decimal>();
                         var xl = sizeSettings["xlUpperBound"]!.GetValue<decimal>();
                         var xxl = sizeSettings["xxlUpperBound"]!.GetValue<decimal>();
+
+                        foreach (var e in sizeSettings)
+                        {
+                            if (sizeSettingsKeys.Add(e.Key))
+                            {
+                                Console.WriteLine($"Size Settings keys: template = '{templateId}', key = '{e.Key}'");
+                            }
+                        }
+
+                        pokemonSettingsObj["sizeSettings"] = new JsonArray([xxs, xs, mL, mU, xl, xxl]);
                     }
 
                     pokemonExtended.Add(oCopy);
