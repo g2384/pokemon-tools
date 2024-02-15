@@ -258,11 +258,32 @@
                 filter: (x) => x.indexOf("during full moon") > 0
             },
             {
+                label: "evolve during dusk period",
+                type: "checkbox",
+                id: "evolve_dusk",
+                default: true,
+                filter: (x) => x.indexOf("during dusk period") > 0
+            },
+            {
                 label: "evolve gender exclusive",
                 type: "checkbox",
                 id: "evolve_gender",
                 default: true,
                 filter: (x) => x.indexOf("requires gender: ") > 0
+            },
+            {
+                label: "has elite charged move",
+                type: "checkbox",
+                id: "charged_move_elite",
+                default: false,
+                filter: (x) => x.indexOf("move-charged'>elite") > 0
+            },
+            {
+                label: "has elite quick move",
+                type: "checkbox",
+                id: "quick_move_elite",
+                default: false,
+                filter: (x) => x.indexOf("move-quick'>elite") > 0
             }
         ];
 
@@ -345,13 +366,13 @@
                 if (settings["quickMoves"] != undefined) {
                     quickMoves = settings["quickMoves"].map(e => {
                         var e2 = e.replace(/_/g, " ").replace("FAST", "").toTitleCase();
-                        return convertMoveToDiv(e, e2);
+                        return convertMoveToDiv(e, e2, "quick");
                     });
                 }
                 if (settings["eliteQuickMove"] != undefined) {
                     var eliteMoves = settings["eliteQuickMove"].map(e => {
                         var e2 = e.replace(/_/g, " ").replace("FAST", "").toTitleCase();
-                        return convertMoveToDiv(e, e2, "elite");
+                        return convertMoveToDiv(e, e2, "quick", "elite");
                     });
                     quickMoves = quickMoves.concat(eliteMoves);
                 }
@@ -361,13 +382,13 @@
                 if (settings["cinematicMoves"] != undefined) {
                     cinematicMoves = settings["cinematicMoves"].map(e => {
                         var e2 = e.replace(/_/g, " ").toTitleCase();
-                        return convertMoveToDiv(e, e2);
+                        return convertMoveToDiv(e, e2, "charged");
                     });
                 }
                 if (settings["eliteCinematicMove"] != undefined) {
                     var eliteMoves = settings["eliteCinematicMove"].map(e => {
                         var e2 = e.replace(/_/g, " ").toTitleCase();
-                        return convertMoveToDiv(e, e2, "elite");
+                        return convertMoveToDiv(e, e2, "charged", "elite");
                     });
                     cinematicMoves = cinematicMoves.concat(eliteMoves);
                 }
@@ -428,6 +449,9 @@
                         if (es["genderRequirement"] != undefined) {
                             requirements.push("requires gender: " + es["genderRequirement"].toLowerCase());
                         }
+                        if (es["onlyDuskPeriod"] == true){                            
+                            requirements.push("during dusk period");
+                        }
 
                         var noCostTraded = "";
                         if (es["noCandyCostViaTrade"] == true) {
@@ -479,8 +503,8 @@
             }
         }
 
-        function convertMoveToDiv(key, moveName, tag) {
-            var tagHtml = tag?.length > 0 ? "<span class='move-tag elite-move'>" + tag + "</span>" : "";
+        function convertMoveToDiv(key, moveName, type, tag) {
+            var tagHtml = tag?.length > 0 ? "<span class='move-tag elite-move move-"+ type+ "'>" + tag + "</span>" : "";
             return "<div class='move'>" + getImage(movesDict[key], "type")
                 + "<div class='move_name'>" + moveName + "</div>" + tagHtml + "</div>";
         }

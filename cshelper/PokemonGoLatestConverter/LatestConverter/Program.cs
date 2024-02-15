@@ -82,7 +82,9 @@ namespace ConsoleApp1
                 "onlyDaytime",
                 "onlyNighttime",
                 "onlyFullMoon",
-                "genderRequirement"
+                "genderRequirement",
+                "evolutionItemRequirementCost",
+                "onlyDuskPeriod"
             };
             var sizeSettingsKeys = new HashSet<string>()
             {
