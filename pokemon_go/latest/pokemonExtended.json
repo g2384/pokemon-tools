@@ -1,0 +1,74 @@
+[
+  {
+    "templateId": "EXTENDED_POKEMON_PIKACHU_GOTOUR_2024_A",
+    "data": {
+      "templateId": "EXTENDED_POKEMON_PIKACHU_GOTOUR_2024_A",
+      "pokemonExtendedSettings": {
+        "uniqueId": "PIKACHU",
+        "form": "PIKACHU_GOTOUR_2024_A",
+        "sizeSettings": {
+          "xxsLowerBound": 0.196,
+          "xsLowerBound": 0.2,
+          "mLowerBound": 0.3,
+          "mUpperBound": 0.5,
+          "xlUpperBound": 0.6,
+          "xxlUpperBound": 0.7
+        }
+      }
+    }
+  },
+  {
+    "templateId": "EXTENDED_POKEMON_PIKACHU_GOTOUR_2024_A_02",
+    "data": {
+      "templateId": "EXTENDED_POKEMON_PIKACHU_GOTOUR_2024_A_02",
+      "pokemonExtendedSettings": {
+        "uniqueId": "PIKACHU",
+        "form": "PIKACHU_GOTOUR_2024_A_02",
+        "sizeSettings": {
+          "xxsLowerBound": 0.196,
+          "xsLowerBound": 0.2,
+          "mLowerBound": 0.3,
+          "mUpperBound": 0.5,
+          "xlUpperBound": 0.6,
+          "xxlUpperBound": 0.7
+        }
+      }
+    }
+  },
+  {
+    "templateId": "EXTENDED_POKEMON_PIKACHU_GOTOUR_2024_B",
+    "data": {
+      "templateId": "EXTENDED_POKEMON_PIKACHU_GOTOUR_2024_B",
+      "pokemonExtendedSettings": {
+        "uniqueId": "PIKACHU",
+        "form": "PIKACHU_GOTOUR_2024_B",
+        "sizeSettings": {
+          "xxsLowerBound": 0.196,
+          "xsLowerBound": 0.2,
+          "mLowerBound": 0.3,
+          "mUpperBound": 0.5,
+          "xlUpperBound": 0.6,
+          "xxlUpperBound": 0.7
+        }
+      }
+    }
+  },
+  {
+    "templateId": "EXTENDED_POKEMON_PIKACHU_GOTOUR_2024_B_02",
+    "data": {
+      "templateId": "EXTENDED_POKEMON_PIKACHU_GOTOUR_2024_B_02",
+      "pokemonExtendedSettings": {
+        "uniqueId": "PIKACHU",
+        "form": "PIKACHU_GOTOUR_2024_B_02",
+        "sizeSettings": {
+          "xxsLowerBound": 0.196,
+          "xsLowerBound": 0.2,
+          "mLowerBound": 0.3,
+          "mUpperBound": 0.5,
+          "xlUpperBound": 0.6,
+          "xxlUpperBound": 0.7
+        }
+      }
+    }
+  }
+]

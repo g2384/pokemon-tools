@@ -53,6 +53,7 @@ namespace ConsoleApp1
             var pokemonFamilies = new JsonArray();
             var evolutionQuests = new JsonArray();
             var pokemonForms = new List<PokemonForm>();
+            var pokemonExtended = new JsonArray();
             var ignoredSettingsRegex = new List<Regex>()
             {
                 new Regex(@"COMBAT_RANKING_SETTINGS(_S\d+)?", RegexOptions.Compiled),
@@ -131,6 +132,22 @@ namespace ConsoleApp1
                 {
                     pokemonFamilies.Add(oCopy);
                 }
+                else if (templateId.StartsWith("EXTENDED_POKEMON_"))
+                {
+                    if (obj["data"]!.AsObject().TryGetPropertyValue("pokemonExtendedSettings", out var pokemonSettings))
+                    {
+                        var pokemonSettingsObj = pokemonSettings!.AsObject();
+                        var sizeSettings = pokemonSettingsObj["sizeSettings"]!.AsObject();
+                        var xxs = sizeSettings["xxsLowerBound"]!.GetValue<decimal>();
+                        var xs = sizeSettings["xsLowerBound"]!.GetValue<decimal>();
+                        var mL = sizeSettings["mLowerBound"]!.GetValue<decimal>();
+                        var mU = sizeSettings["mUpperBound"]!.GetValue<decimal>();
+                        var xl = sizeSettings["xlUpperBound"]!.GetValue<decimal>();
+                        var xxl = sizeSettings["xxlUpperBound"]!.GetValue<decimal>();
+                    }
+
+                    pokemonExtended.Add(oCopy);
+                }
                 else if (pokemonRegex.IsMatch(templateId))
                 {
                     var hasForm = false;
@@ -205,7 +222,7 @@ namespace ConsoleApp1
                                     evolutionObj["lureItemRequirement"] = str2;
                                 }
 
-                                foreach(var e in evolutionObj)
+                                foreach (var e in evolutionObj)
                                 {
                                     if (allEvolutionRules.Add(e.Key))
                                     {
@@ -270,6 +287,7 @@ namespace ConsoleApp1
             Save(moves, "moves.json");
             Save(evolutionQuests, "evolutionQuests.json");
             Save(pokemonFamilies, "pokemonFamilies.json");
+            Save(pokemonExtended, "pokemonExtended.json");
 
             var options = new JsonSerializerOptions
             {
