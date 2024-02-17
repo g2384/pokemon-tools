@@ -8,29 +8,6 @@ using System.Text.RegularExpressions;
 
 namespace ConsoleApp1
 {
-    public class PokemonForm
-    {
-        public string PokemonId { get; set; }
-
-        public string Form { get; set; }
-
-        public bool DisableTransferToPokemonHome { get; set; }
-
-        public bool CanEvolve { get; set; }
-
-        public bool OriginalFormCanTempEvolveButThisCannot { get; set; }
-
-        public static PokemonForm None = new PokemonForm()
-        {
-            PokemonId = "<none>"
-        };
-
-        public bool IsNone()
-        {
-            return PokemonId == "<none>";
-        }
-    }
-
     internal class Program
     {
         private static string _outputFolder = @"..\..\..\..\..\..\pokemon_go\latest";
@@ -301,11 +278,7 @@ namespace ConsoleApp1
                 }
                 else if (moveRegex.IsMatch(templateId))
                 {
-                    if (obj["data"]!.AsObject().TryGetPropertyValue("moveSettings", out var moveSettings))
-                    {
-                        var moveSettingsObj = moveSettings!.AsObject();
-                        moveSettingsObj["pokemonType"] = ConvertPokemonType(moveSettingsObj["pokemonType"]);
-                    }
+                    ModifyMoves(obj);
                     moves.Add(oCopy);
                 }
                 else if (templateId.Contains("_EVOLUTION_QUEST"))
@@ -341,6 +314,44 @@ namespace ConsoleApp1
             };
             var str = JsonSerializer.Serialize(pokemonForms, options);
             WriteToFile("pokemonForms.json", str);
+        }
+
+        private static void ModifyMoves(JsonObject obj)
+        {
+            if (obj["data"]!.AsObject().TryGetPropertyValue("moveSettings", out var moveSettings))
+            {
+                var moveSettingsObj = moveSettings!.AsObject();
+                moveSettingsObj["pokemonType"] = ConvertPokemonType(moveSettingsObj["pokemonType"]);
+                if (moveSettingsObj.ContainsKey("vfxName"))
+                {
+                    var vfxName = moveSettingsObj["vfxName"]!.GetValue<string>();
+                    var movementId = moveSettingsObj["movementId"]!.GetValue<string>();
+                    if (vfxName != movementId.ToLower())
+                    {
+                        if (vfxName != "aeroblast"
+                            && vfxName != "sacred_fire") // ignore those alias names
+                        {
+                            Console.WriteLine($"ERROR: moves vfxName({vfxName}) != movementId({movementId})");
+                        }
+                    }
+                    moveSettingsObj.Remove("vfxName");
+                }
+
+                RemoveCommonSetting(moveSettingsObj, "trainerLevelMin", 1);
+                RemoveCommonSetting(moveSettingsObj, "trainerLevelMax", 100);
+            }
+        }
+
+        private static void RemoveCommonSetting(JsonObject moveSettingsObj, string key, int defaultValue)
+        {
+            if (moveSettingsObj.ContainsKey(key))
+            {
+                if (moveSettingsObj[key]!.GetValue<int>() != defaultValue)
+                {
+                    Console.WriteLine($"ERROR: moves {key} != {defaultValue}");
+                }
+                moveSettingsObj.Remove(key);
+            }
         }
 
         private static SizeBounds GetSizeBounds(JsonObject sizeSettings)

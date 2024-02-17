@@ -187,6 +187,20 @@
                 filter: (x) => x.indexOf("icon_trade") < 0
             },
             {
+                label: "Deployable",
+                type: "checkbox",
+                id: "deployable",
+                default: false,
+                filter: (x) => x.indexOf("icon_deploy") > 0
+            },
+            {
+                label: "Not Deployable",
+                type: "checkbox",
+                id: "not_deployable",
+                default: false,
+                filter: (x) => x.indexOf("icon_deploy") < 0
+            },
+            {
                 label: "Mythic",
                 type: "checkbox",
                 id: "mythic",
@@ -345,7 +359,7 @@
         };
 
         function getImage(value, type) {
-            return "<img class='img_" + type + " img_v_" + value + "' src='./pokemon_go/img/" + type + "_" + value + ".png' />";
+            return "<img class='img_" + type + " img_v_" + value + "' src='./pokemon_go/img/" + type + "_" + value + ".png' alt='" + value + "'/>";
         }
 
         function LoadDex() {
