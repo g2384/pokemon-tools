@@ -67864,6 +67864,107 @@
     }
   },
   {
+    "templateId": "V0905_POKEMON_ENAMORUS",
+    "data": {
+      "templateId": "V0905_POKEMON_ENAMORUS",
+      "pokemonSettings": {
+        "pokemonId": "Enamorus",
+        "encounter": {
+          "movementType": "MOVEMENT_HOVERING",
+          "attackProbability": 0.1,
+          "dodgeProbability": 0.15,
+          "cameraDistance": 6.0,
+          "bonusXlCandyCaptureReward": 3
+        },
+        "stats": [
+          179,
+          281,
+          162
+        ],
+        "quickMoves": [
+          "ASTONISH_FAST",
+          "ZEN_HEADBUTT_FAST",
+          "FAIRY_WIND_FAST"
+        ],
+        "cinematicMoves": [
+          "DAZZLING_GLEAM",
+          "FLY",
+          "GRASS_KNOT"
+        ],
+        "evolutionPips": 1,
+        "pokemonClass": "legendary",
+        "pokedexHeightM": 1.6,
+        "pokedexWeightKg": 48.0,
+        "heightStdDev": 0.2,
+        "weightStdDev": 6.0,
+        "familyId": "FAMILY_ENAMORUS",
+        "kmBuddyDistance": 20.0,
+        "thirdMove": {
+          "stardustToUnlock": 100000,
+          "candyToUnlock": 100
+        },
+        "isTransferable": true,
+        "isDeployable": true,
+        "isTradable": true,
+        "types": [
+          "fairy",
+          "flying"
+        ]
+      }
+    }
+  },
+  {
+    "templateId": "V0905_POKEMON_ENAMORUS_THERIAN",
+    "data": {
+      "templateId": "V0905_POKEMON_ENAMORUS_THERIAN",
+      "pokemonSettings": {
+        "pokemonId": "Enamorus",
+        "encounter": {
+          "movementType": "MOVEMENT_HOVERING",
+          "attackProbability": 0.1,
+          "dodgeProbability": 0.15,
+          "cameraDistance": 6.0,
+          "bonusXlCandyCaptureReward": 3
+        },
+        "stats": [
+          179,
+          250,
+          201
+        ],
+        "quickMoves": [
+          "ASTONISH_FAST",
+          "ZEN_HEADBUTT_FAST",
+          "FAIRY_WIND_FAST"
+        ],
+        "cinematicMoves": [
+          "DAZZLING_GLEAM",
+          "FLY",
+          "GRASS_KNOT"
+        ],
+        "evolutionPips": 1,
+        "pokemonClass": "legendary",
+        "pokedexHeightM": 1.6,
+        "pokedexWeightKg": 48.0,
+        "heightStdDev": 0.2,
+        "weightStdDev": 6.0,
+        "familyId": "FAMILY_ENAMORUS",
+        "kmBuddyDistance": 20.0,
+        "form": "ENAMORUS_THERIAN",
+        "thirdMove": {
+          "stardustToUnlock": 100000,
+          "candyToUnlock": 100
+        },
+        "isTransferable": true,
+        "isDeployable": true,
+        "isTradable": true,
+        "types": [
+          "fairy",
+          "flying"
+        ]
+      }
+    }
+  },
+  {
     "templateId": "V0906_POKEMON_SPRIGATITO",
     "data": {
       "templateId": "V0906_POKEMON_SPRIGATITO",
