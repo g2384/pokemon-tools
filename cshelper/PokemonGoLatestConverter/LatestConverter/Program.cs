@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
 using System.Net.Http.Headers;
+using System.Numerics;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
@@ -339,16 +340,20 @@ namespace ConsoleApp1
 
                 RemoveCommonSetting(moveSettingsObj, "trainerLevelMin", 1);
                 RemoveCommonSetting(moveSettingsObj, "trainerLevelMax", 100);
+                RemoveCommonSetting(moveSettingsObj, "accuracyChance", 1.0);
+                //RemoveCommonSetting(moveSettingsObj, "staminaLossScalar", 0.01);
             }
         }
 
-        private static void RemoveCommonSetting(JsonObject moveSettingsObj, string key, int defaultValue)
+        private static void RemoveCommonSetting<T>(JsonObject moveSettingsObj, string key, T defaultValue)
+            where T : INumber<T>
         {
             if (moveSettingsObj.ContainsKey(key))
             {
-                if (moveSettingsObj[key]!.GetValue<int>() != defaultValue)
+                var value = moveSettingsObj[key]!.GetValue<T>();
+                if (value != defaultValue)
                 {
-                    Console.WriteLine($"ERROR: moves {key} != {defaultValue}");
+                    Console.WriteLine($"ERROR: moves {key}({value}) != {defaultValue}");
                 }
                 moveSettingsObj.Remove(key);
             }
