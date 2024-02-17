@@ -35,6 +35,8 @@
 
         .move {
             padding: 2px;
+            border: 1px solid #888;
+            margin: 5px 2px;
         }
 
         .move-tag {
@@ -165,11 +167,13 @@
     <script>
         let dataPokemons = [];
         let dataMoves = [];
+        let dataCombatMoves = [];
         let dataEvolutionQuests = [];
         let rowsRaw = {};
         let columnHeaders = [];
         let pokemonCount = 0;
         let movesDict = {};
+        let combatMovesDict = {};
 
         let filterOptions = [
             {
@@ -376,7 +380,14 @@
                 var settings = move["data"]["moveSettings"];
                 var type = settings["pokemonType"];
                 var id = settings["movementId"];
-                movesDict[id] = type;
+                movesDict[id] = settings;
+            }
+
+            for (var i = 0; i < dataCombatMoves.length; i++) {
+                var move = dataCombatMoves[i];
+                var settings = move["data"]["combatMove"];
+                var id = settings["uniqueId"];
+                combatMovesDict[id] = settings;
             }
 
             for (var i = 0; i < dataPokemons.length; i++) {
@@ -409,14 +420,12 @@
                 quickMoves = [];
                 if (settings["quickMoves"] != undefined) {
                     quickMoves = settings["quickMoves"].map(e => {
-                        var e2 = e.replace(/_/g, " ").replace("FAST", "").toTitleCase();
-                        return convertMoveToDiv(e, e2, "quick");
+                        return convertMoveToDiv(e, "quick");
                     });
                 }
                 if (settings["eliteQuickMove"] != undefined) {
                     var eliteMoves = settings["eliteQuickMove"].map(e => {
-                        var e2 = e.replace(/_/g, " ").replace("FAST", "").toTitleCase();
-                        return convertMoveToDiv(e, e2, "quick", "elite");
+                        return convertMoveToDiv(e, "quick", "elite");
                     });
                     quickMoves = quickMoves.concat(eliteMoves);
                 }
@@ -425,14 +434,12 @@
                 cinematicMoves = [];
                 if (settings["cinematicMoves"] != undefined) {
                     cinematicMoves = settings["cinematicMoves"].map(e => {
-                        var e2 = e.replace(/_/g, " ").toTitleCase();
-                        return convertMoveToDiv(e, e2, "charged");
+                        return convertMoveToDiv(e, "charged");
                     });
                 }
                 if (settings["eliteCinematicMove"] != undefined) {
                     var eliteMoves = settings["eliteCinematicMove"].map(e => {
-                        var e2 = e.replace(/_/g, " ").toTitleCase();
-                        return convertMoveToDiv(e, e2, "charged", "elite");
+                        return convertMoveToDiv(e, "charged", "elite");
                     });
                     cinematicMoves = cinematicMoves.concat(eliteMoves);
                 }
@@ -577,10 +584,48 @@
             }
         }
 
-        function convertMoveToDiv(key, moveName, type, tag) {
+        function convertMoveToDiv(key, type, tag) {
+            var moveName = "";
+            if (type == "quick") {
+                moveName = key.replace(/_/g, " ").replace("FAST", "").toTitleCase();
+            }
+            else {
+                moveName = key.replace(/_/g, " ").toTitleCase();
+            }
+
+            var pveStats = movesDict[key];
+            var pvpStats = combatMovesDict[key];
+            var pveEffect = "";
+            var pveDuration = "";
+            if (pvpStats["durationTurns"] != undefined) {
+                pveDuration = pvpStats["durationTurns"]
+            }
+            if (pvpStats["buffs"] != undefined) {
+                var targetAttackStat = pvpStats["buffs"]["targetAttackStatStageChange"];
+                if (targetAttackStat != undefined) {
+                    pveEffect = "target attack changes by " + targetAttackStat + "(" + +pvpStats["buffs"]["buffActivationChance"] * 100 + "%)";
+                }
+                var attackerAttackStat = pvpStats["buffs"]["attackerAttackStatStageChange"];
+                if (attackerAttackStat != undefined) {
+                    pveEffect = "attacker attack changes by " + attackerAttackStat + "(" + +pvpStats["buffs"]["buffActivationChance"] * 100 + "%)";
+                }
+                var targetDefenseStat = pvpStats["buffs"]["targetDefenseStatStageChange"];
+                if (targetDefenseStat != undefined) {
+                    pveEffect = "target defense changes by " + targetDefenseStat + "(" + +pvpStats["buffs"]["buffActivationChance"] * 100 + "%)";
+                }
+                var attackerDefenseStat = pvpStats["buffs"]["attackerDefenseStatStageChange"];
+                if (attackerDefenseStat != undefined) {
+                    pveEffect = "attacker defense changes by " + attackerDefenseStat + "(" + +pvpStats["buffs"]["buffActivationChance"] * 100 + "%)";
+                }
+            }
+
             var tagHtml = tag?.length > 0 ? "<span class='move-tag elite-move move-" + type + "'>" + tag + "</span>" : "";
-            return "<div class='move'>" + getImage(movesDict[key], "type")
-                + "<div class='move_name'>" + moveName + "</div>" + tagHtml + "</div>";
+            return "<div class='move'>" + getImage(pveStats["pokemonType"], "type")
+                + "<div class='move_name'>" + moveName + "</div>"
+                + tagHtml
+                + "<br>(PvE: " + pveStats["power"] + "/" + pveStats["energyDelta"] + "/" + pveStats["durationMs"] / 1000 + "s)"
+                + "<br>(PvP: " + pvpStats["power"] + "/" + pvpStats["energyDelta"] + "/" + pveEffect + pveDuration + ")"
+                + "</div>";
         }
 
         function getQuest(questId) {
@@ -720,8 +765,9 @@
 
         async function loadAllJsonFiles() {
             try {
-                [dataMoves, dataEvolutionQuests, dataPokemons] = await Promise.all([
+                [dataMoves, dataCombatMoves, dataEvolutionQuests, dataPokemons] = await Promise.all([
                     fetch("./pokemon_go/latest/moves.json").then(response => response.json()),
+                    fetch("./pokemon_go/latest/combatMoves.json").then(response => response.json()),
                     fetch("./pokemon_go/latest/evolutionQuests.json").then(response => response.json()),
                     fetch("./pokemon_go/latest/pokemons.json").then(response => response.json())
                 ]);
