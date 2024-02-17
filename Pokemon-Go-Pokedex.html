@@ -16,6 +16,11 @@
             margin-left: 2px;
         }
 
+        .pokemon_icon {
+            height: 40px;
+            margin-left: 2px;
+        }
+
         .move_name {
             display: inline-block;
         }
@@ -313,7 +318,6 @@
             TableAdd("Types");
             TableAdd("Quick Moves");
             TableAdd("Charged Moves");
-            TableAdd("Form");
             TableAdd("Buddy Candy Distance (km)");
             TableAdd("Evolution");
 
@@ -344,17 +348,7 @@
 
                 var settings = data["pokemonSettings"];
                 var name = settings["pokemonId"];
-                var tradable = settings["isTradable"] == true;
-                var mythic = settings["pokemonClass"] != undefined;
-                var mythicIcon = "";
-                if (mythic) {
-                    mythicIcon = " (" + settings["pokemonClass"] + ")"; //getImage(settings["pokemonClass"], "icon");
-                }
-                var tradableIcon = "";
-                if (tradable) {
-                    mythicIcon = getImage("trade", "icon");
-                }
-                var nameHtml = "<div>" + name + tradableIcon + mythicIcon + "</div>";
+                var nameHtml = getPokemonCell(index, name, settings);
                 rowsRaw["Name"].push(nameHtml);
 
                 var types = settings["types"].map(element => {
@@ -393,14 +387,6 @@
                     cinematicMoves = cinematicMoves.concat(eliteMoves);
                 }
                 rowsRaw["Charged Moves"].push(cinematicMoves.join(""));
-
-                var form = settings["form"];
-                if (form == undefined) {
-                    form = "";
-                } else {
-                    form = form.replace(name.toUpperCase(), "").replace(/_/g, " ").toTitleCase();
-                }
-                rowsRaw["Form"].push(form);
 
                 var kmBuddyDistance = settings["kmBuddyDistance"];
                 rowsRaw["Buddy Candy Distance (km)"].push(kmBuddyDistance);
@@ -449,7 +435,7 @@
                         if (es["genderRequirement"] != undefined) {
                             requirements.push("requires gender: " + es["genderRequirement"].toLowerCase());
                         }
-                        if (es["onlyDuskPeriod"] == true){                            
+                        if (es["onlyDuskPeriod"] == true) {
                             requirements.push("during dusk period");
                         }
 
@@ -489,6 +475,39 @@
             }
         }
 
+        function getSpriteName(id, form) {
+            form = form.toLowerCase();
+            if (form == "normal") {
+                return "pm" + id + ".icon.png";
+            }
+
+            return "pm" + id + ".f" + form.toUpperCase() + ".icon.png";
+        }
+
+        function getPokemonCell(id, name, settings) {
+            var tradable = settings["isTradable"] == true;
+            var mythic = settings["pokemonClass"] != undefined;
+            var mythicIcon = "";
+            if (mythic) {
+                mythicIcon = " (" + settings["pokemonClass"] + ")"; //getImage(settings["pokemonClass"], "icon");
+            }
+            var tradableIcon = "";
+            if (tradable) {
+                mythicIcon = getImage("trade", "icon");
+            }
+            var form = settings["form"];
+            if (form == undefined) {
+                form = "Normal";
+            } else {
+                form = form.replace(name.toUpperCase(), "").replace(/_/g, " ").trim().toTitleCase();
+            }
+            var iconName = getSpriteName(id, form);
+            var form = form == "Normal" ? "" : " <div class='pokemon_form'>(" + form + ")</div>";
+            var img = "<img class='pokemon_icon' src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable Assets/" + iconName + "' />";
+            nameHtml = "<div class='pokemon_name'>" + img + name + form + tradableIcon + mythicIcon + "</div>";
+            return nameHtml;
+        }
+
         function getRemoteImage(value, type) {
             if (type == "item") {
                 value1 = value.replace(/\s+/g, "_");
@@ -504,7 +523,7 @@
         }
 
         function convertMoveToDiv(key, moveName, type, tag) {
-            var tagHtml = tag?.length > 0 ? "<span class='move-tag elite-move move-"+ type+ "'>" + tag + "</span>" : "";
+            var tagHtml = tag?.length > 0 ? "<span class='move-tag elite-move move-" + type + "'>" + tag + "</span>" : "";
             return "<div class='move'>" + getImage(movesDict[key], "type")
                 + "<div class='move_name'>" + moveName + "</div>" + tagHtml + "</div>";
         }
