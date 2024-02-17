@@ -16,6 +16,14 @@
             margin-left: 2px;
         }
 
+        .img_v_deploy,
+        .img_v_candy,
+        .img_v_quest,
+        .img_v_legendary,
+        .img_v_mythic {
+            filter: invert(100%);
+        }
+
         .pokemon_icon {
             height: 40px;
             margin-left: 2px;
@@ -179,6 +187,34 @@
                 filter: (x) => x.indexOf("icon_trade") < 0
             },
             {
+                label: "Mythic",
+                type: "checkbox",
+                id: "mythic",
+                default: false,
+                filter: (x) => x.indexOf("icon_mythic") > 0
+            },
+            {
+                label: "Not Mythic",
+                type: "checkbox",
+                id: "not_mythic",
+                default: false,
+                filter: (x) => x.indexOf("icon_mythic") < 0
+            },
+            {
+                label: "Legendary",
+                type: "checkbox",
+                id: "legendary",
+                default: false,
+                filter: (x) => x.indexOf("icon_legendary") > 0
+            },
+            {
+                label: "Not Legendary",
+                type: "checkbox",
+                id: "not_legendary",
+                default: false,
+                filter: (x) => x.indexOf("icon_legendary") < 0
+            },
+            {
                 label: "Can Evolve",
                 type: "checkbox",
                 id: "can_evolve",
@@ -309,7 +345,7 @@
         };
 
         function getImage(value, type) {
-            return "<img class='img_" + type + "' src='./pokemon_go/img/" + type + "_" + value + ".png' />";
+            return "<img class='img_" + type + " img_v_" + value + "' src='./pokemon_go/img/" + type + "_" + value + ".png' />";
         }
 
         function LoadDex() {
@@ -486,14 +522,19 @@
 
         function getPokemonCell(id, name, settings) {
             var tradable = settings["isTradable"] == true;
+            var deployable = settings["isDeployable"] == true;
             var mythic = settings["pokemonClass"] != undefined;
             var mythicIcon = "";
             if (mythic) {
-                mythicIcon = " (" + settings["pokemonClass"] + ")"; //getImage(settings["pokemonClass"], "icon");
+                mythicIcon = getImage(settings["pokemonClass"], "icon");
             }
             var tradableIcon = "";
             if (tradable) {
-                mythicIcon = getImage("trade", "icon");
+                tradableIcon = getImage("trade", "icon");
+            }
+            var deployableIcon = "";
+            if (deployable) {
+                deployableIcon = getImage("deploy", "icon");
             }
             var form = settings["form"];
             if (form == undefined) {
@@ -504,7 +545,7 @@
             var iconName = getSpriteName(id, form);
             var form = form == "Normal" ? "" : " <div class='pokemon_form'>(" + form + ")</div>";
             var img = "<img class='pokemon_icon' src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable Assets/" + iconName + "' />";
-            nameHtml = "<div class='pokemon_name'>" + img + name + form + tradableIcon + mythicIcon + "</div>";
+            nameHtml = "<div class='pokemon_name'>" + img + name + form + tradableIcon + deployableIcon + mythicIcon + "</div>";
             return nameHtml;
         }
 

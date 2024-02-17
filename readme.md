@@ -34,3 +34,4 @@
 - icon_mythic.png: https://github.com/PokeMiners/pogo_assets/blob/master/Images/Filters/ic_mythical.png
 - icon_candy.png: https://github.com/PokeMiners/pogo_assets/blob/master/Images/Menu%20Icons/ic_candy.png
 - icon_quest.png: https://github.com/PokeMiners/pogo_assets/blob/master/Images/Menu%20Icons/QuestStar.png
+- icon_deploy.png: https://github.com/PokeMiners/pogo_assets/blob/master/Images/Pokestops%20and%20Gyms/ic_deploy.png
