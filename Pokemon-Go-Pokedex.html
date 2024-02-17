@@ -6,6 +6,11 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet" />
     <link href="./css/pokemon_types.css" rel="stylesheet" />
     <style>
+        body {
+            margin: 10px;
+            padding: 10px;
+        }
+
         .img_type {
             height: 20px;
             padding-right: 2px;
@@ -151,15 +156,23 @@
             padding-right: 2px;
             height: 25px;
         }
+
+        .filters {
+            border: 1px solid #888;
+            padding: 10px;
+        }
     </style>
 </head>
 
 <body>
-    <div style="border: 1px solid #888; padding: 10px;">
+    <div>
+        PvE fast move: Power / Energy / Duration turns<br>
+        PvE charged move: Power / Energy / Effect<br>
+        PvP fast move: Power / Energy / Duration<br>
+        PvP charged move: Power / Energy / Duration
+    </div>
+    <div class="filters">
         <form id="checkbox-filters" class="flex-container"> </form>
-        <form id="lures-filters" class="flex-container"> </form>
-        <form id="items-filters" class="flex-container"> </form>
-        <form id="quest-filters" class="flex-container"> </form>
         <input type="button" class="btn btn-outline-primary" value="Filter" onclick="PrintTable()" />
     </div>
 
