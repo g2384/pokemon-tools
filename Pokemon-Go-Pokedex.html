@@ -386,6 +386,7 @@
             TableAdd("Quick Moves");
             TableAdd("Charged Moves");
             TableAdd("Buddy Candy Distance (km)");
+            TableAdd("Catch");
             TableAdd("Evolution");
 
             for (var i = 0; i < dataMoves.length; i++) {
@@ -460,6 +461,30 @@
 
                 var kmBuddyDistance = settings["kmBuddyDistance"];
                 rowsRaw["Buddy Candy Distance (km)"].push(kmBuddyDistance);
+
+                var catchInfo = "";
+                var encounter = settings["encounter"]
+                if (encounter != undefined) {
+                    if (encounter["shadowBaseCaptureRate"] != undefined) {
+                        catchInfo += "<div class='catch_bonus shadow_base_capture_rate'>Shadow capture rate: " + encounter["shadowBaseCaptureRate"] + "</div>";
+                    }
+                    if (encounter["bonusStardustCaptureReward"] != undefined) {
+                        catchInfo += "<div class='catch_bonus bonus_stardust'>Bonus stardust: " + encounter["bonusStardustCaptureReward"] + "</div>";
+                    }
+                    var bonusCandy = encounter["bonusCandyCaptureReward"];
+                    var bonusXLCandy = encounter["bonusXlCandyCaptureReward"];
+                    var candyInfo = ""
+                    if (bonusCandy != undefined) {
+                        candyInfo += bonusCandy;
+                    }
+                    if (bonusXLCandy != undefined) {
+                        candyInfo += ", " + bonusXLCandy + " XL";
+                    }
+                    if (candyInfo.length > 0) {
+                        catchInfo += "<div class='catch_bonus bonus_candy'>Bonus candy: " + candyInfo + "</div>";
+                    }
+                }
+                rowsRaw["Catch"].push(catchInfo);
 
                 var candyImage = getImage("candy", "icon");
                 if (settings["evolutionBranch"] != undefined) {
