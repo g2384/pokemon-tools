@@ -141,6 +141,10 @@
             margin-right: 2px;
         }
 
+        .img_v_ultra_beast {
+            height: 30px;
+        }
+
         .item_evolve {
             background-color: #bccddd;
         }
@@ -296,6 +300,22 @@
                 filter: (x) => x.indexOf("icon_legendary") < 0
             },
             {
+                label: "Ultra Beast",
+                type: "checkbox",
+                id: "ultra_beast",
+                group: "checkbox-by-pokemon-property",
+                default: false,
+                filter: (x) => x.indexOf("icon_ultra_beast") > 0
+            },
+            {
+                label: "Not Ultra Beast",
+                type: "checkbox",
+                id: "not_ultra_beast",
+                group: "checkbox-by-pokemon-property",
+                default: false,
+                filter: (x) => x.indexOf("icon_ultra_beast") < 0
+            },
+            {
                 label: "Can Evolve",
                 type: "checkbox",
                 id: "can_evolve",
@@ -412,14 +432,14 @@
                 type: "checkbox",
                 id: "charged_move_elite",
                 default: false,
-                filter: (x) => x.indexOf("move-charged'>elite") > 0
+                filter: (x) => x.indexOf("elite-move move-charged") > 0
             },
             {
                 label: "has elite quick move",
                 type: "checkbox",
                 id: "quick_move_elite",
                 default: false,
-                filter: (x) => x.indexOf("move-quick'>elite") > 0
+                filter: (x) => x.indexOf("elite-move move-quick") > 0
             }
         ];
 
