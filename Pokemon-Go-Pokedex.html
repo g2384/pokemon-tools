@@ -161,6 +161,38 @@
             border: 1px solid #888;
             padding: 10px;
         }
+
+        .filters-group {
+            border: 1px solid #888;
+        }
+
+        .filter-group-btn {
+            margin-bottom: 10px;
+            margin-top: -5px;
+        }
+
+        .form-title {
+            display: inline-block;
+            border-radius: 5px 5px 0px 0px;
+            padding: 2px 10px;
+            color: #fff;
+        }
+
+        .evolution-filter-title {
+            background: #5bc06f;
+        }
+
+        .property-filter-title {
+            background: #ba62d0;
+        }
+
+        #checkbox-by-evolution {
+            background-color: #d9ffe0;
+        }
+
+        #checkbox-by-pokemon-property {
+            background-color: #daa6e7;
+        }
     </style>
 </head>
 
@@ -172,8 +204,17 @@
         PvP charged move: Power / Energy / Duration
     </div>
     <div class="filters">
-        <form id="checkbox-filters" class="flex-container"> </form>
-        <input type="button" class="btn btn-outline-primary" value="Filter" onclick="PrintTable()" />
+        <div class="form-title evolution-filter-title">Evolution Filters</div>
+        <form id="checkbox-by-evolution" class="flex-container filters-group"></form>
+        <input type="button" class="btn btn-outline-primary filter-group-btn" value="Clear All Evolution Filters"
+            onclick="ClearAll('checkbox-by-evolution')" />
+        <br>
+        <div class="form-title property-filter-title">Property Filters</div>
+        <form id="checkbox-by-pokemon-property" class="flex-container filters-group"></form>
+        <input type="button" class="btn btn-outline-primary filter-group-btn" value="Clear All Properties Filters"
+            onclick="ClearAll('checkbox-by-pokemon-property')" />
+        <form id="checkbox-filters" class="flex-container filters-group"> </form>
+        <input type="button" class="btn btn-outline-primary" value="Refresh Table" onclick="PrintTable()" />
     </div>
 
     <div id="dex"></div>
@@ -194,6 +235,7 @@
                 type: "checkbox",
                 id: "tradable",
                 default: false,
+                group: "checkbox-by-pokemon-property",
                 filter: (x) => x.indexOf("icon_trade") > 0
             },
             {
@@ -201,6 +243,7 @@
                 type: "checkbox",
                 id: "not_tradable",
                 default: false,
+                group: "checkbox-by-pokemon-property",
                 filter: (x) => x.indexOf("icon_trade") < 0
             },
             {
@@ -208,6 +251,7 @@
                 type: "checkbox",
                 id: "deployable",
                 default: false,
+                group: "checkbox-by-pokemon-property",
                 filter: (x) => x.indexOf("icon_deploy") > 0
             },
             {
@@ -215,6 +259,7 @@
                 type: "checkbox",
                 id: "not_deployable",
                 default: false,
+                group: "checkbox-by-pokemon-property",
                 filter: (x) => x.indexOf("icon_deploy") < 0
             },
             {
@@ -222,6 +267,7 @@
                 type: "checkbox",
                 id: "mythic",
                 default: false,
+                group: "checkbox-by-pokemon-property",
                 filter: (x) => x.indexOf("icon_mythic") > 0
             },
             {
@@ -229,12 +275,14 @@
                 type: "checkbox",
                 id: "not_mythic",
                 default: false,
+                group: "checkbox-by-pokemon-property",
                 filter: (x) => x.indexOf("icon_mythic") < 0
             },
             {
                 label: "Legendary",
                 type: "checkbox",
                 id: "legendary",
+                group: "checkbox-by-pokemon-property",
                 default: false,
                 filter: (x) => x.indexOf("icon_legendary") > 0
             },
@@ -242,6 +290,7 @@
                 label: "Not Legendary",
                 type: "checkbox",
                 id: "not_legendary",
+                group: "checkbox-by-pokemon-property",
                 default: false,
                 filter: (x) => x.indexOf("icon_legendary") < 0
             },
@@ -250,6 +299,7 @@
                 type: "checkbox",
                 id: "can_evolve",
                 default: false,
+                group: "checkbox-by-evolution",
                 filter: (x) => x.indexOf("evolution_info") > 0
             },
             {
@@ -257,6 +307,7 @@
                 type: "checkbox",
                 id: "cannot_evolve",
                 default: false,
+                group: "checkbox-by-evolution",
                 filter: (x) => x.indexOf("evolution_info") < 0
             },
             {
@@ -264,6 +315,7 @@
                 type: "checkbox",
                 id: "evolve_quest",
                 default: true,
+                group: "checkbox-by-evolution",
                 filter: (x) => x.indexOf("evolution_quest") > 0
             },
             {
@@ -271,6 +323,7 @@
                 type: "checkbox",
                 id: "no_evolve_quest",
                 default: false,
+                group: "checkbox-by-evolution",
                 filter: (x) => x.indexOf("evolution_quest") < 0
             },
             {
@@ -278,6 +331,7 @@
                 type: "checkbox",
                 id: "evolve_item",
                 default: true,
+                group: "checkbox-by-evolution",
                 filter: (x) => x.indexOf("item_evolve") > 0
             },
             {
@@ -285,6 +339,7 @@
                 type: "checkbox",
                 id: "no_evolve_item",
                 default: false,
+                group: "checkbox-by-evolution",
                 filter: (x) => x.indexOf("item_evolve") < 0
             },
             {
@@ -292,6 +347,7 @@
                 type: "checkbox",
                 id: "evolve_lure",
                 default: true,
+                group: "checkbox-by-evolution",
                 filter: (x) => x.indexOf("lure_evolve") > 0
             },
             {
@@ -299,6 +355,7 @@
                 type: "checkbox",
                 id: "no_evolve_lure",
                 default: false,
+                group: "checkbox-by-evolution",
                 filter: (x) => x.indexOf("lure_evolve") < 0
             },
             {
@@ -306,6 +363,7 @@
                 type: "checkbox",
                 id: "evolve_0_cost_traded",
                 default: true,
+                group: "checkbox-by-evolution",
                 filter: (x) => x.indexOf("traded_evolve") > 0
             },
             {
@@ -313,6 +371,7 @@
                 type: "checkbox",
                 id: "evolve_daytime",
                 default: true,
+                group: "checkbox-by-evolution",
                 filter: (x) => x.indexOf("during daytime") > 0
             },
             {
@@ -320,6 +379,7 @@
                 type: "checkbox",
                 id: "evolve_nighttime",
                 default: true,
+                group: "checkbox-by-evolution",
                 filter: (x) => x.indexOf("during nighttime") > 0
             },
             {
@@ -327,6 +387,7 @@
                 type: "checkbox",
                 id: "evolve_full_moon",
                 default: true,
+                group: "checkbox-by-evolution",
                 filter: (x) => x.indexOf("during full moon") > 0
             },
             {
@@ -334,6 +395,7 @@
                 type: "checkbox",
                 id: "evolve_dusk",
                 default: true,
+                group: "checkbox-by-evolution",
                 filter: (x) => x.indexOf("during dusk period") > 0
             },
             {
@@ -341,6 +403,7 @@
                 type: "checkbox",
                 id: "evolve_gender",
                 default: true,
+                group: "checkbox-by-evolution",
                 filter: (x) => x.indexOf("requires gender: ") > 0
             },
             {
@@ -727,6 +790,15 @@
             return "";
         }
 
+        function ClearAll(group) {
+            for (var i = 0; i < filterOptions.length; i++) {
+                var option = filterOptions[i];
+                if (option.type == "checkbox" && option.group == group) {
+                    document.querySelector("#filter_" + option.id).checked = false;
+                }
+            }
+        }
+
         function PrintTable() {
             var tableHtml = "<table class='table table-striped align-middle'>";
 
@@ -789,16 +861,32 @@
         }
 
         function AddFilters() {
-            var html = [];
+            const defaultFilterGroup = "checkbox-filters";
+            var dict = {
+                "checkbox-filters": []
+            };
+            var categories = [defaultFilterGroup];
             for (var i = 0; i < filterOptions.length; i++) {
                 var option = filterOptions[i];
                 if (option.type == "checkbox") {
+                    var group = option.group;
+                    if (group == undefined) {
+                        group = defaultFilterGroup
+                    }
+                    if (categories.indexOf(group) < 0) {
+                        categories.push(group);
+                        dict[group] = [];
+                    }
                     var checked = option.default ? " checked" : "";
-                    var h = "<div class='inline inline-input'><input type='checkbox' id='filter_" + option.id + "' name='filter_" + option.id + "' " + checked + "><label for='filter_" + option.id + "'>" + option.label + "</label></div>";
-                    html.push(h)
+                    var h = "<div class='inline inline-input'><input type='checkbox' class='form-check-input' id='filter_" + option.id + "' name='filter_" + option.id + "' " + checked + "><label for='filter_" + option.id + "' class='form-check-label'>" + option.label + "</label></div>";
+                    dict[group].push(h)
                 }
             }
-            document.querySelector("#checkbox-filters").innerHTML = html.join("\n");
+
+            console.log(categories);
+            for (var i = 0; i < categories.length; i++) {
+                document.querySelector("#" + categories[i]).innerHTML = dict[categories[i]].join("\n");
+            }
         }
 
         async function loadAllJsonFiles() {
