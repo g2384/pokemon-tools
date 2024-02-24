@@ -16,6 +16,9 @@
 - Find IV stats from CP
 - Top Attackers
 
+- `cp_multiplier.json` from https://pogoapi.net/api/v1/cp_multiplier.json
+- `moves_pokemon_list.json` from https://pogoapi.net/api/v1/current_pokemon_moves.json
+
 ### Evolution:
 
 1. get latest.json from https://raw.githubusercontent.com/PokeMiners/game_masters/master/latest/latest.json
@@ -35,3 +38,7 @@
 - icon_candy.png: https://github.com/PokeMiners/pogo_assets/blob/master/Images/Menu%20Icons/ic_candy.png
 - icon_quest.png: https://github.com/PokeMiners/pogo_assets/blob/master/Images/Menu%20Icons/QuestStar.png
 - icon_deploy.png: https://github.com/PokeMiners/pogo_assets/blob/master/Images/Pokestops%20and%20Gyms/ic_deploy.png
+
+### Best types
+
+- best_per_type.json: https://db.pokemongohub.net/pokemon-list/best-per-type/ -> `counters` Fetch/XHR

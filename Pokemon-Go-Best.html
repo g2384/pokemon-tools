@@ -1,0 +1,194 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .img_type {
+            height: 20px;
+            padding-right: 2px;
+        }
+
+        .form {
+            display: inline-block;
+            border: 1px solid #888;
+            border-radius: 5px;
+            padding: 0px 4px;
+        }
+
+        .form_mega {
+            background-color: #ffe8bf;
+        }
+
+        .form_shadow {
+            background-color: #dac7f7;
+        }
+
+        .form_elite {
+            background-color: #c7f7e5;
+        }
+
+        .img_icon {
+            height: 20px;
+            margin-left: 2px;
+        }
+
+        .img_v_deploy,
+        .img_v_candy,
+        .img_v_quest,
+        .img_v_legendary,
+        .img_v_mythic {
+            filter: invert(100%);
+        }
+
+        .pokemon_icon {
+            height: 40px;
+            margin-left: 2px;
+        }
+
+        .counter {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="result"></div>
+    <script>
+        let data = {};
+        let counter = {};
+        const counterNumber = ["", "★", "❷", "❸", "❹", "❺", "❻", "❼", "❽", "❾", "❿"];
+
+        function getImage(value, type) {
+            return "<img class='img_" + type + " img_v_" + value + "' src='./pokemon_go/img/" + type + "_" + value + ".png' alt='" + value + "'/>";
+        }
+
+        function getRemoteImage(value, type) {
+            if (type == "item") {
+                value1 = value.replace(/\s+/g, "_");
+                if (itemLookUp[value1] != undefined) {
+                    value1 = itemLookUp[value1];
+                }
+                if (value == "route_cell") {
+                    return "<img src=\"https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Items/item_route_cell.png\" />";
+                }
+
+                return "<img src=\"https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Items/Bag_" + value1 + "_Sprite.png\" />";
+            }
+        }
+
+        function printTable() {
+            let trs = `<tr><th>Name</th><th>Fast Attack</th><th>Charged Attack</th><th>DPS</th><th>TDO</th><th>t</th><th>PAX</th><th>Score</th><th>Faints</th></tr>`;
+            data.results.sort((a, b) => b.score - a.score);
+
+            let tds = [];
+            for (let item of data.results) {
+                if (counter[item.attacker.name] != undefined) {
+                    counter[item.attacker.name]++;
+                }
+                else {
+                    counter[item.attacker.name] = 1;
+                }
+                let td = `<tr>`;
+                td += `<td>${getPokemonCell(item.attacker)}</td>`;
+                td += `<td>${getMove(item.qm)}</td>`;
+                td += `<td>${getMove(item.cm)}</td>`;
+                td += `<td>${item.dps.toFixed(3)}</td>`;
+                td += `<td>${item.tdo.toFixed(3)}</td>`;
+                td += `<td>${item.t.toFixed(3)}</td>`;
+                td += `<td>${item.pax}</td>`;
+                td += `<td>${item.score.toFixed(3)}</td>`;
+                td += `<td>${item.faints.toFixed(3)}</td>`;
+                td += `</tr>`;
+                tds.push(td);
+            }
+
+            let table = `<table class='table table-striped align-middle' border="1">`
+                + trs
+                + tds.join("\n")
+                + `</table>`;
+
+            document.querySelector("#result").innerHTML = table;
+        }
+
+        function getMove(move) {
+            let form = "";
+            if (move.form != undefined || move.form != null) {
+                //form = `<div class='form form_${move.form.toLowerCase().replace(/ /g, "_")}'>` + move.form + "</div>";
+            }
+            if (move.isLegacy) {
+                form += `<div class='form form_elite'>Elite</div>`;
+            }
+            let html = `${getImage(move.type, "type")} ${move.name} ${form}`;
+            return html;
+        }
+
+        function getPokemonCell(settings) {
+            name = settings["name"];
+            var tradable = settings["isTradable"] == true;
+            var deployable = settings["is_deployable"] == true;
+            var mythic = settings["isMythical"] == 1;
+            var mythicIcon = "";
+            if (mythic) {
+                mythicIcon = getImage('mythic', "icon");
+            }
+            var tradableIcon = "";
+            if (tradable) {
+                tradableIcon = getImage("trade", "icon");
+            }
+            var deployableIcon = "";
+            if (deployable) {
+                deployableIcon = getImage("deploy", "icon");
+            }
+            var form = settings["form"];
+            if (form == undefined) {
+                form = "Normal";
+            }
+            var iconName = getSpriteName(settings["id"], form);
+            var form = form == "Normal" ? "" : ` <div class='form form_${form.toLowerCase()}'>` + form + "</div>";
+            var img = "<img class='pokemon_icon' src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable Assets/" + iconName + "' />";
+            nameHtml = "<div class='pokemon_name'>" + img + name + `<div class='counter'>${counterNumber[counter[name]]}</div>` + form + tradableIcon + deployableIcon + mythicIcon + "</div>";
+            return nameHtml;
+        }
+
+        function getSpriteName(id, form) {
+            form = form.toLowerCase();
+            if (form == "shadow") {
+                form = "normal";
+            }
+            form = form.replace(/\s+shadow/g, "");
+            if (form == "normal") {
+                return "pm" + id + ".icon.png";
+            }
+
+            return "pm" + id + ".f" + form.toUpperCase() + ".icon.png";
+        }
+
+        async function loadAllJsonFiles() {
+            try {
+                [data] = await Promise.all([
+                    fetch("./pokemon_go/best_per_type.json").then(response => response.json())
+                ]);
+
+                printTable();
+            } catch (error) {
+                console.error("Error loading JSON files:", error);
+                // Handle errors appropriately, e.g., display error messages to the user
+            }
+        }
+
+        window.addEventListener('load',
+            function () {
+                loadAllJsonFiles();
+            });
+    </script>
+</body>
+
+</html>
