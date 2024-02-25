@@ -55,6 +55,14 @@
         .counter {
             display: inline-block;
         }
+
+        .typedRanking {
+            display: inline-block;
+            border: 1px solid #888;
+            border-radius: 5px;
+            padding: 0px 4px;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -64,7 +72,12 @@
     <script>
         let data = {};
         let counter = {};
+        let typedRanking = {};
         const counterNumber = ["", "★", "❷", "❸", "❹", "❺", "❻", "❼", "❽", "❾", "❿"];
+        const typedRankingNumber = ["", "☆", "➁", "➂", "➃", "➄", "➅", "➆", "➇", "➈", "➉", "⑪", "⑫", "⑬", "⑭", "⑮", "⑯", "⑰", "⑱", "⑲",
+            "⑳", "㉑", "㉒", "㉓", "㉔", "㉕", "㉖", "㉗", "㉘", "㉙",
+            "㉚", "㉛", "㉜", "㉝", "㉞", "㉟", "㊱", "㊲", "㊳", "㊴",
+            "㊵", "㊶", "㊷", "㊸", "㊹", "㊺", "㊻", "㊼", "㊽", "㊾", "㊿"];
 
         function getImage(value, type) {
             return "<img class='img_" + type + " img_v_" + value + "' src='./pokemon_go/img/" + type + "_" + value + ".png' alt='" + value + "'/>";
@@ -96,8 +109,21 @@
                 else {
                     counter[item.attacker.name] = 1;
                 }
+
+                var cmType = item.cm.type;
+                if (typedRanking[cmType] != undefined) {
+                    typedRanking[cmType]++;
+                }
+                else {
+                    typedRanking[cmType] = 1;
+                }
+
+                if (typedRanking[cmType] > 50) {
+                    continue;
+                }
+
                 let td = `<tr>`;
-                td += `<td>${getPokemonCell(item.attacker)}</td>`;
+                td += `<td>${getPokemonCell(item.attacker, cmType)}</td>`;
                 td += `<td>${getMove(item.qm)}</td>`;
                 td += `<td>${getMove(item.cm)}</td>`;
                 td += `<td>${item.dps.toFixed(3)}</td>`;
@@ -130,7 +156,7 @@
             return html;
         }
 
-        function getPokemonCell(settings) {
+        function getPokemonCell(settings, cmType) {
             name = settings["name"];
             var tradable = settings["isTradable"] == true;
             var deployable = settings["is_deployable"] == true;
@@ -154,7 +180,7 @@
             var iconName = getSpriteName(settings["id"], form);
             var form = form == "Normal" ? "" : ` <div class='form form_${form.toLowerCase()}'>` + form + "</div>";
             var img = "<img class='pokemon_icon' src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable Assets/" + iconName + "' />";
-            nameHtml = "<div class='pokemon_name'>" + img + name + `<div class='counter'>${counterNumber[counter[name]]}</div>` + form + tradableIcon + deployableIcon + mythicIcon + "</div>";
+            nameHtml = "<div class='pokemon_name'>" + img + name + `<div class='counter'>${counterNumber[counter[name]]}</div>` + `<div class='typedRanking'>${getImage(cmType, "type")}${typedRankingNumber[typedRanking[cmType]]}</div>` + form + tradableIcon + deployableIcon + mythicIcon + "</div>";
             return nameHtml;
         }
 
