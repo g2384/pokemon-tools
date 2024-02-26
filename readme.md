@@ -38,6 +38,9 @@
 - icon_candy.png: https://github.com/PokeMiners/pogo_assets/blob/master/Images/Menu%20Icons/ic_candy.png
 - icon_quest.png: https://github.com/PokeMiners/pogo_assets/blob/master/Images/Menu%20Icons/QuestStar.png
 - icon_deploy.png: https://github.com/PokeMiners/pogo_assets/blob/master/Images/Pokestops%20and%20Gyms/ic_deploy.png
+- icon_shadow.png: https://github.com/PokeMiners/pogo_assets/blob/master/Images/Rocket/ic_shadow.png
+- icon_mega.png: https://github.com/PokeMiners/pogo_assets/blob/master/Images/Megas%20and%20Primals/pokemon_details_cp_mega.png
+- icon_primal.png: https://github.com/PokeMiners/pogo_assets/blob/master/Images/Raids/ActivityLogPrimalRaidLogo.png
 
 ### Best types
 

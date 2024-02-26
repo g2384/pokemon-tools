@@ -47,6 +47,10 @@
             filter: invert(100%);
         }
 
+        .pokemon_name .img_v_shadow {
+            height: 30px;
+        }
+
         .pokemon_icon {
             height: 40px;
             margin-left: 2px;
@@ -103,6 +107,10 @@
             background: #5bc06f;
         }
 
+        .type-filter-title {
+            background: #5b9fc0;
+        }
+
         .property-filter-title {
             background: #ba62d0;
         }
@@ -113,6 +121,14 @@
 
         #checkbox-by-pokemon-property {
             background-color: #daa6e7;
+        }
+
+        #checkbox-by-type {
+            background-color: #a4e1ff;
+        }
+
+        .inline-input img {
+            padding-left: 5px;
         }
     </style>
 </head>
@@ -379,7 +395,7 @@
                 id: "shadow",
                 default: false,
                 group: "checkbox-by-type",
-                filter: (x) => x.indexOf("form_shadow") > 0
+                filter: (x) => x.indexOf("icon_shadow") > 0
             },
             {
                 label: "Not Shadow",
@@ -387,7 +403,7 @@
                 id: "not_shadow",
                 default: false,
                 group: "checkbox-by-type",
-                filter: (x) => x.indexOf("form_shadow") < 0
+                filter: (x) => x.indexOf("icon_shadow") < 0
             },
             {
                 label: "Primal",
@@ -578,7 +594,12 @@
                 form = "Normal";
             }
             var iconName = getSpriteName(settings["id"], form);
-            var form = form == "Normal" ? "" : ` <div class='form form_${form.toLowerCase()}'>` + form + "</div>";
+            if (form == "Shadow") {
+                form = getImage("shadow", "icon");
+            }
+            else {
+                form = form == "Normal" ? "" : ` <div class='form form_${form.toLowerCase()}'>` + form + "</div>";
+            }
             var img = "<img class='pokemon_icon' src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable Assets/" + iconName + "' />";
             nameHtml = "<div class='pokemon_name'>" + img + name + `<div class='counter'>${counterNumber[counter[name]]}</div>` + `<div class='typedRanking type_${cmType}'>${getImage(cmType, "type")}${typedRankingNumber[typedRanking[cmType]]}</div>` + form + tradableIcon + deployableIcon + mythicIcon + "</div>";
             return nameHtml;
@@ -615,7 +636,14 @@
                         dict[group] = [];
                     }
                     var checked = option.default ? " checked" : "";
-                    var h = "<div class='inline inline-input'><input type='checkbox' class='form-check-input' id='filter_" + option.id + "' name='filter_" + option.id + "' " + checked + "><label for='filter_" + option.id + "' class='form-check-label'>" + option.label + "</label></div>";
+                    var img = "";
+                    if (group == "checkbox-by-type") {
+                        img = getImage(option.id, "type");
+                        if (option.id.indexOf("shadow") >= 0) {
+                            img = getImage("shadow", "icon");
+                        }
+                    }
+                    var h = "<div class='inline inline-input'><input type='checkbox' class='form-check-input' id='filter_" + option.id + "' name='filter_" + option.id + "' " + checked + ">" + img + "<label for='filter_" + option.id + "' class='form-check-label'>" + option.label + "</label></div>";
                     dict[group].push(h)
                 }
             }
