@@ -63,22 +63,358 @@
             padding: 0px 4px;
             font-weight: bold;
         }
+
+        .inline {
+            display: inline-block;
+        }
+
+        .inline-input {
+            padding: 2px;
+            margin: 2px 5px;
+        }
+
+        .inline label {
+            padding-left: 3px;
+        }
+
+        .filters {
+            border: 1px solid #888;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .filters-group {
+            border: 1px solid #888;
+        }
+
+        .filter-group-btn {
+            margin-bottom: 10px;
+            margin-top: -5px;
+        }
+
+        .form-title {
+            display: inline-block;
+            border-radius: 5px 5px 0px 0px;
+            padding: 2px 10px;
+            color: #fff;
+        }
+
+        .evolution-filter-title {
+            background: #5bc06f;
+        }
+
+        .property-filter-title {
+            background: #ba62d0;
+        }
+
+        #checkbox-by-evolution {
+            background-color: #d9ffe0;
+        }
+
+        #checkbox-by-pokemon-property {
+            background-color: #daa6e7;
+        }
     </style>
 </head>
 
 <body>
-
+    <div class="filters">
+        <div class="form-title type-filter-title">Type Filters</div>
+        <form id="checkbox-by-type" class="flex-container filters-group"></form>
+        <input type="button" class="btn btn-outline-primary filter-group-btn" value="Clear All Type Filters"
+            onclick="ClearAll('checkbox-by-type')" />
+        <br>
+        <div class="form-title evolution-filter-title">Evolution Filters</div>
+        <form id="checkbox-by-evolution" class="flex-container filters-group"></form>
+        <input type="button" class="btn btn-outline-primary filter-group-btn" value="Clear All Evolution Filters"
+            onclick="ClearAll('checkbox-by-evolution')" />
+        <br>
+        <div class="form-title property-filter-title">Property Filters</div>
+        <form id="checkbox-by-pokemon-property" class="flex-container filters-group"></form>
+        <input type="button" class="btn btn-outline-primary filter-group-btn" value="Clear All Properties Filters"
+            onclick="ClearAll('checkbox-by-pokemon-property')" />
+        <form id="checkbox-filters" class="flex-container filters-group"> </form>
+        <input type="button" class="btn btn-outline-primary" value="Refresh Table" onclick="printTable()" />
+    </div>
     <div id="result"></div>
     <script>
         let data = {};
         let counter = {};
         let typedRanking = {};
         let nonLegendaryPokemonCount = {};
+        let tdsCache = [];
         const counterNumber = ["", "★", "❷", "❸", "❹", "❺", "❻", "❼", "❽", "❾", "❿"];
         const typedRankingNumber = ["", "☆", "➁", "➂", "➃", "➄", "➅", "➆", "➇", "➈", "➉", "⑪", "⑫", "⑬", "⑭", "⑮", "⑯", "⑰", "⑱", "⑲",
             "⑳", "㉑", "㉒", "㉓", "㉔", "㉕", "㉖", "㉗", "㉘", "㉙",
             "㉚", "㉛", "㉜", "㉝", "㉞", "㉟", "㊱", "㊲", "㊳", "㊴",
             "㊵", "㊶", "㊷", "㊸", "㊹", "㊺", "㊻", "㊼", "㊽", "㊾", "㊿"];
+
+
+        let filterOptions = [
+            {
+                label: "Tradable",
+                type: "checkbox",
+                id: "tradable",
+                default: false,
+                group: "checkbox-by-pokemon-property",
+                filter: (x) => x.indexOf("icon_trade") > 0
+            },
+            {
+                label: "Not Tradable",
+                type: "checkbox",
+                id: "not_tradable",
+                default: false,
+                group: "checkbox-by-pokemon-property",
+                filter: (x) => x.indexOf("icon_trade") < 0
+            },
+            {
+                label: "Deployable",
+                type: "checkbox",
+                id: "deployable",
+                default: false,
+                group: "checkbox-by-pokemon-property",
+                filter: (x) => x.indexOf("icon_deploy") > 0
+            },
+            {
+                label: "Not Deployable",
+                type: "checkbox",
+                id: "not_deployable",
+                default: false,
+                group: "checkbox-by-pokemon-property",
+                filter: (x) => x.indexOf("icon_deploy") < 0
+            },
+            {
+                label: "Mythic",
+                type: "checkbox",
+                id: "mythic",
+                default: false,
+                group: "checkbox-by-pokemon-property",
+                filter: (x) => x.indexOf("icon_mythic") > 0
+            },
+            {
+                label: "Not Mythic",
+                type: "checkbox",
+                id: "not_mythic",
+                default: false,
+                group: "checkbox-by-pokemon-property",
+                filter: (x) => x.indexOf("icon_mythic") < 0
+            },
+            {
+                label: "Can Evolve",
+                type: "checkbox",
+                id: "can_evolve",
+                default: false,
+                group: "checkbox-by-evolution",
+                filter: (x) => x.indexOf("evolution_info") > 0
+            },
+            {
+                label: "Cannot Evolve",
+                type: "checkbox",
+                id: "cannot_evolve",
+                default: false,
+                group: "checkbox-by-evolution",
+                filter: (x) => x.indexOf("evolution_info") < 0
+            },
+            {
+                label: "has elite charged move",
+                type: "checkbox",
+                id: "charged_move_elite",
+                default: false,
+                filter: (x) => x.indexOf("charged form_elite") > 0
+            },
+            {
+                label: "has elite quick move",
+                type: "checkbox",
+                id: "quick_move_elite",
+                default: false,
+                filter: (x) => x.indexOf("quick form_elite") > 0
+            },
+            {
+                label: "Normal",
+                type: "checkbox",
+                id: "normal",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("typedRanking type_normal") > 0
+            },
+            {
+                label: "Flying",
+                type: "checkbox",
+                id: "flying",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("typedRanking type_flying") > 0
+            },
+            {
+                label: "Ground",
+                type: "checkbox",
+                id: "ground",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("typedRanking type_ground") > 0
+            },
+            {
+                label: "Bug",
+                type: "checkbox",
+                id: "bug",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("typedRanking type_bug") > 0
+            },
+            {
+                label: "Steel",
+                type: "checkbox",
+                id: "steel",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("typedRanking type_steel") > 0
+            },
+            {
+                label: "Water",
+                type: "checkbox",
+                id: "water",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("typedRanking type_water") > 0
+            },
+            {
+                label: "Electric",
+                type: "checkbox",
+                id: "electric",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("typedRanking type_electric") > 0
+            },
+            {
+                label: "Ice",
+                type: "checkbox",
+                id: "ice",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("typedRanking type_ice") > 0
+            },
+            {
+                label: "Dark",
+                type: "checkbox",
+                id: "dark",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("typedRanking type_dark") > 0
+            },
+            {
+                label: "Fighting",
+                type: "checkbox",
+                id: "fighting",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("typedRanking type_fighting") > 0
+            },
+            {
+                label: "Poison",
+                type: "checkbox",
+                id: "poison",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("typedRanking type_poison") > 0
+            },
+            {
+                label: "Rock",
+                type: "checkbox",
+                id: "rock",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("typedRanking type_rock") > 0
+            },
+            {
+                label: "Ghost",
+                type: "checkbox",
+                id: "ghost",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("typedRanking type_ghost") > 0
+            },
+            {
+                label: "Fire",
+                type: "checkbox",
+                id: "fire",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("typedRanking type_fire") > 0
+            },
+            {
+                label: "Grass",
+                type: "checkbox",
+                id: "grass",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("typedRanking type_grass") > 0
+            },
+            {
+                label: "Psychic",
+                type: "checkbox",
+                id: "psychic",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("typedRanking type_psychic") > 0
+            },
+            {
+                label: "Dragon",
+                type: "checkbox",
+                id: "dragon",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("typedRanking type_dragon") > 0
+            },
+            {
+                label: "Fairy",
+                type: "checkbox",
+                id: "fairy",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("typedRanking type_fairy") > 0
+            },
+            {
+                label: "Shadow",
+                type: "checkbox",
+                id: "shadow",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("form_shadow") > 0
+            },
+            {
+                label: "Not Shadow",
+                type: "checkbox",
+                id: "not_shadow",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("form_shadow") < 0
+            },
+            {
+                label: "Primal",
+                type: "checkbox",
+                id: "primal",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("form_primal") > 0
+            },
+            {
+                label: "Not Primal",
+                type: "checkbox",
+                id: "not_primal",
+                default: false,
+                group: "checkbox-by-type",
+                filter: (x) => x.indexOf("form_primal") < 0
+            }
+        ];
+
+        function ClearAll(group) {
+            for (var i = 0; i < filterOptions.length; i++) {
+                var option = filterOptions[i];
+                if (option.type == "checkbox" && option.group == group) {
+                    document.querySelector("#filter_" + option.id).checked = false;
+                }
+            }
+        }
 
         function getImage(value, type) {
             return "<img class='img_" + type + " img_v_" + value + "' src='./pokemon_go/img/" + type + "_" + value + ".png' alt='" + value + "'/>";
@@ -98,10 +434,7 @@
             }
         }
 
-        function printTable() {
-            let trs = `<tr><th>Name</th><th>Fast Attack</th><th>Charged Attack</th><th>DPS</th><th>TDO</th><th>t</th><th>PAX</th><th>Score</th><th>Faints</th></tr>`;
-            data.results.sort((a, b) => b.score - a.score);
-
+        function createTdsCache() {
             let tds = [];
             for (let item of data.results) {
                 if (counter[item.attacker.name] != undefined) {
@@ -140,8 +473,8 @@
 
                 let td = `<tr>`;
                 td += `<td>${nameCell}</td>`;
-                td += `<td>${getMove(item.qm)}</td>`;
-                td += `<td>${getMove(item.cm)}</td>`;
+                td += `<td>${getMove(item.qm, "quick")}</td>`;
+                td += `<td>${getMove(item.cm, "charged")}</td>`;
                 td += `<td>${item.dps.toFixed(3)}</td>`;
                 td += `<td>${item.tdo.toFixed(3)}</td>`;
                 td += `<td>${item.t.toFixed(3)}</td>`;
@@ -151,22 +484,73 @@
                 td += `</tr>`;
                 tds.push(td);
             }
+            tdsCache = tds;
+        }
+
+        function printTable() {
+            let trs = `<tr><th>Name</th><th>Fast Attack</th><th>Charged Attack</th><th>DPS</th><th>TDO</th><th>t</th><th>PAX</th><th>Score</th><th>Faints</th></tr>`;
+            data.results.sort((a, b) => b.score - a.score);
+
+            if (tdsCache.length == 0) {
+                createTdsCache()
+            }
+
+            var filterValues = [];
+            for (var i = 0; i < filterOptions.length; i++) {
+                var option = filterOptions[i];
+                if (option.type == "checkbox") {
+                    var checked = document.querySelector("#filter_" + option.id).checked;
+                    var id = option.id;
+                    if (checked) {
+                        filterValues.push(id);
+                    }
+                }
+            }
+            console.log(filterValues);
+
+            let trs2 = [];
+            for (var i = 0; i < tdsCache.length; i++) {
+                let tr = tdsCache[i];
+
+                if (!IsSelected(filterValues, tr)) {
+                    continue;
+                }
+
+                trs2.push(tr);
+            }
 
             let table = `<table class='table table-striped align-middle' border="1">`
                 + trs
-                + tds.join("\n")
+                + trs2.join("\n")
                 + `</table>`;
 
             document.querySelector("#result").innerHTML = table;
         }
 
-        function getMove(move) {
+        function IsSelected(filterValues, tr) {
+            if (filterValues.length == 0) {
+                return true;
+            }
+
+            let selected = 0;
+            for (var i = 0; i < filterValues.length; i++) {
+                var id = filterValues[i];
+                var filterFunc = filterOptions.filter(x => x.id == id)[0].filter;
+                if (filterFunc(tr)) {
+                    selected++;
+                }
+            }
+
+            return selected == filterValues.length;
+        }
+
+        function getMove(move, tag) {
             let form = "";
             if (move.form != undefined || move.form != null) {
                 //form = `<div class='form form_${move.form.toLowerCase().replace(/ /g, "_")}'>` + move.form + "</div>";
             }
             if (move.isLegacy) {
-                form += `<div class='form form_elite'>Elite</div>`;
+                form += `<div class='form ${tag} form_elite'>Elite</div>`;
             }
             let html = `${getImage(move.type, "type")} ${move.name} ${form}`;
             return html;
@@ -196,7 +580,7 @@
             var iconName = getSpriteName(settings["id"], form);
             var form = form == "Normal" ? "" : ` <div class='form form_${form.toLowerCase()}'>` + form + "</div>";
             var img = "<img class='pokemon_icon' src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable Assets/" + iconName + "' />";
-            nameHtml = "<div class='pokemon_name'>" + img + name + `<div class='counter'>${counterNumber[counter[name]]}</div>` + `<div class='typedRanking'>${getImage(cmType, "type")}${typedRankingNumber[typedRanking[cmType]]}</div>` + form + tradableIcon + deployableIcon + mythicIcon + "</div>";
+            nameHtml = "<div class='pokemon_name'>" + img + name + `<div class='counter'>${counterNumber[counter[name]]}</div>` + `<div class='typedRanking type_${cmType}'>${getImage(cmType, "type")}${typedRankingNumber[typedRanking[cmType]]}</div>` + form + tradableIcon + deployableIcon + mythicIcon + "</div>";
             return nameHtml;
         }
 
@@ -211,6 +595,35 @@
             }
 
             return "pm" + id + ".f" + form.toUpperCase() + ".icon.png";
+        }
+
+        function AddFilters() {
+            const defaultFilterGroup = "checkbox-filters";
+            var dict = {
+                "checkbox-filters": []
+            };
+            var categories = [defaultFilterGroup];
+            for (var i = 0; i < filterOptions.length; i++) {
+                var option = filterOptions[i];
+                if (option.type == "checkbox") {
+                    var group = option.group;
+                    if (group == undefined) {
+                        group = defaultFilterGroup
+                    }
+                    if (categories.indexOf(group) < 0) {
+                        categories.push(group);
+                        dict[group] = [];
+                    }
+                    var checked = option.default ? " checked" : "";
+                    var h = "<div class='inline inline-input'><input type='checkbox' class='form-check-input' id='filter_" + option.id + "' name='filter_" + option.id + "' " + checked + "><label for='filter_" + option.id + "' class='form-check-label'>" + option.label + "</label></div>";
+                    dict[group].push(h)
+                }
+            }
+
+            console.log(categories);
+            for (var i = 0; i < categories.length; i++) {
+                document.querySelector("#" + categories[i]).innerHTML = dict[categories[i]].join("\n");
+            }
         }
 
         async function loadAllJsonFiles() {
@@ -229,6 +642,7 @@
         window.addEventListener('load',
             function () {
                 loadAllJsonFiles();
+                AddFilters();
             });
     </script>
 </body>
