@@ -65,7 +65,6 @@
             border: 1px solid #888;
             border-radius: 5px;
             padding: 0px 4px;
-            font-weight: bold;
         }
 
         .inline {
@@ -163,11 +162,6 @@
         let tdsCache = [];
         let isSortByScore = true;
         const counterNumber = ["", "★", "❷", "❸", "❹", "❺", "❻", "❼", "❽", "❾", "❿"];
-        const typedRankingNumber = ["", "☆", "➁", "➂", "➃", "➄", "➅", "➆", "➇", "➈", "➉", "⑪", "⑫", "⑬", "⑭", "⑮", "⑯", "⑰", "⑱", "⑲",
-            "⑳", "㉑", "㉒", "㉓", "㉔", "㉕", "㉖", "㉗", "㉘", "㉙",
-            "㉚", "㉛", "㉜", "㉝", "㉞", "㉟", "㊱", "㊲", "㊳", "㊴",
-            "㊵", "㊶", "㊷", "㊸", "㊹", "㊺", "㊻", "㊼", "㊽", "㊾", "㊿"];
-
 
         let filterOptions = [
             {
@@ -635,10 +629,7 @@
             else {
                 form = form == "Normal" ? "" : ` <div class='form form_${form.toLowerCase()}'>` + form + "</div>";
             }
-            var rankingDiv = typedRankingNumber[typedRanking[cmType]];
-            if (rankingDiv == undefined) {
-                rankingDiv = ".."
-            }
+            var rankingDiv = typedRanking[cmType];
             var typeRankingDiv = `<div class='typedRanking type_${cmType}'>${getImage(cmType, "type")}${rankingDiv}</div>`;
             var img = "<img class='pokemon_icon' src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable Assets/" + iconName + "' />";
             nameHtml = "<div class='pokemon_name'>" + img + name + `<div class='counter'>${counterNumber[counter[name]]}</div>` + typeRankingDiv + form + tradableIcon + deployableIcon + mythicIcon + "</div>";
