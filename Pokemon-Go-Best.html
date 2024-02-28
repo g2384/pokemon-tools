@@ -151,6 +151,8 @@
             onclick="ClearAll('checkbox-by-pokemon-property')" />
         <form id="checkbox-filters" class="flex-container filters-group"> </form>
         <input type="button" class="btn btn-outline-primary" value="Refresh Table" onclick="printTable()" />
+        <input type="button" class="btn btn-outline-primary" value="Sort By Score" onclick="sortByScore()" />
+        <input type="button" class="btn btn-outline-primary" value="Sort By ID" onclick="sortById()" />
     </div>
     <div id="result"></div>
     <script>
@@ -159,6 +161,7 @@
         let typedRanking = {};
         let nonLegendaryPokemonCount = {};
         let tdsCache = [];
+        let isSortByScore = true;
         const counterNumber = ["", "★", "❷", "❸", "❹", "❺", "❻", "❼", "❽", "❾", "❿"];
         const typedRankingNumber = ["", "☆", "➁", "➂", "➃", "➄", "➅", "➆", "➇", "➈", "➉", "⑪", "⑫", "⑬", "⑭", "⑮", "⑯", "⑰", "⑱", "⑲",
             "⑳", "㉑", "㉒", "㉓", "㉔", "㉕", "㉖", "㉗", "㉘", "㉙",
@@ -423,6 +426,24 @@
             }
         ];
 
+        sortBy = (a, b) => (a > b) - (a < b);
+
+        function sortById() {
+            if (isSortByScore) {
+                isSortByScore = false;
+                tdsCache = [];
+            }
+            printTable();
+        }
+
+        function sortByScore() {
+            if (!isSortByScore) {
+                isSortByScore = true;
+                tdsCache = [];
+            }
+            printTable();
+        }
+
         function ClearAll(group) {
             for (var i = 0; i < filterOptions.length; i++) {
                 var option = filterOptions[i];
@@ -451,6 +472,9 @@
         }
 
         function createTdsCache() {
+            counter = {};
+            typedRanking = {};
+            nonLegendaryPokemonCount = {};
             let tds = [];
             for (let item of data.results) {
                 if (counter[item.attacker.name] != undefined) {
@@ -468,22 +492,26 @@
                     typedRanking[cmType] = 1;
                 }
 
-                if (typedRanking[cmType] > 50) {
-                    continue;
+                if (isSortByScore) {
+                    if (typedRanking[cmType] > 50) {
+                        continue;
+                    }
                 }
 
                 var nameCell = getPokemonCell(item.attacker, cmType);
                 let name = item.attacker["name"];
-                if (nameCell.indexOf("mythic") < 0 && nameCell.indexOf("form_shadow") < 0 && nameCell.indexOf("form_mega") < 0 && nameCell.indexOf("form_primal") < 0 && nameCell.indexOf("form_origin") < 0) {
-                    if (nonLegendaryPokemonCount[cmType] != undefined) {
-                        nonLegendaryPokemonCount[cmType]++;
-                    }
-                    else {
-                        nonLegendaryPokemonCount[cmType] = 1;
-                    }
+                if (isSortByScore) {
+                    if (nameCell.indexOf("mythic") < 0 && nameCell.indexOf("form_shadow") < 0 && nameCell.indexOf("form_mega") < 0 && nameCell.indexOf("form_primal") < 0 && nameCell.indexOf("form_origin") < 0) {
+                        if (nonLegendaryPokemonCount[cmType] != undefined) {
+                            nonLegendaryPokemonCount[cmType]++;
+                        }
+                        else {
+                            nonLegendaryPokemonCount[cmType] = 1;
+                        }
 
-                    if (nonLegendaryPokemonCount[cmType] > 10) {
-                        continue;
+                        if (nonLegendaryPokemonCount[cmType] > 10) {
+                            continue;
+                        }
                     }
                 }
 
@@ -505,9 +533,16 @@
 
         function printTable() {
             let trs = `<tr><th>Name</th><th>Fast Attack</th><th>Charged Attack</th><th>DPS</th><th>TDO</th><th>t</th><th>PAX</th><th>Score</th><th>Faints</th></tr>`;
-            data.results.sort((a, b) => b.score - a.score);
 
             if (tdsCache.length == 0) {
+                if (isSortByScore) {
+                    data.results.sort((a, b) => b.score - a.score);
+                }
+                else {
+                    data.results.sort(function (a, b) {
+                        return sortBy(a.attacker.id, b.attacker.id) || sortBy(b.score, a.score)
+                    })
+                }
                 createTdsCache()
             }
 
@@ -600,8 +635,13 @@
             else {
                 form = form == "Normal" ? "" : ` <div class='form form_${form.toLowerCase()}'>` + form + "</div>";
             }
+            var rankingDiv = typedRankingNumber[typedRanking[cmType]];
+            if (rankingDiv == undefined) {
+                rankingDiv = ".."
+            }
+            var typeRankingDiv = `<div class='typedRanking type_${cmType}'>${getImage(cmType, "type")}${rankingDiv}</div>`;
             var img = "<img class='pokemon_icon' src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable Assets/" + iconName + "' />";
-            nameHtml = "<div class='pokemon_name'>" + img + name + `<div class='counter'>${counterNumber[counter[name]]}</div>` + `<div class='typedRanking type_${cmType}'>${getImage(cmType, "type")}${typedRankingNumber[typedRanking[cmType]]}</div>` + form + tradableIcon + deployableIcon + mythicIcon + "</div>";
+            nameHtml = "<div class='pokemon_name'>" + img + name + `<div class='counter'>${counterNumber[counter[name]]}</div>` + typeRankingDiv + form + tradableIcon + deployableIcon + mythicIcon + "</div>";
             return nameHtml;
         }
 
