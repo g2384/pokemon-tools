@@ -158,6 +158,7 @@
         let data = {};
         let counter = {};
         let typedRanking = {};
+        let scoreLookup = {};
         let nonLegendaryPokemonCount = {};
         let tdsCache = [];
         let isSortByScore = true;
@@ -468,7 +469,34 @@
         function createTdsCache() {
             counter = {};
             typedRanking = {};
+            scoreLookup = {};
             nonLegendaryPokemonCount = {};
+            data.results.sort((a, b) => b.score - a.score);
+            for (let item of data.results) {
+                var cmType = item.cm.type;
+                if (typedRanking[cmType] != undefined) {
+                    typedRanking[cmType]++;
+                }
+                else {
+                    typedRanking[cmType] = 1;
+                }
+
+                let lookUpKey = item.score + cmType;
+                if (scoreLookup[lookUpKey] != undefined) {
+                    console.log("ERROR: duplicate scores, " + lookUpKey);
+                }
+                scoreLookup[lookUpKey] = typedRanking[cmType];
+            }
+
+            if (isSortByScore) {
+                //data.results.sort((a, b) => b.score - a.score);
+            }
+            else {
+                data.results.sort(function (a, b) {
+                    return sortBy(a.attacker.id, b.attacker.id) || sortBy(b.score, a.score)
+                })
+            }
+
             let tds = [];
             for (let item of data.results) {
                 if (counter[item.attacker.name] != undefined) {
@@ -479,20 +507,14 @@
                 }
 
                 var cmType = item.cm.type;
-                if (typedRanking[cmType] != undefined) {
-                    typedRanking[cmType]++;
-                }
-                else {
-                    typedRanking[cmType] = 1;
-                }
 
                 if (isSortByScore) {
-                    if (typedRanking[cmType] > 50) {
+                    if (scoreLookup[item.score + cmType] > 50) {
                         continue;
                     }
                 }
 
-                var nameCell = getPokemonCell(item.attacker, cmType);
+                var nameCell = getPokemonCell(item.attacker, cmType, item.score);
                 let name = item.attacker["name"];
                 if (isSortByScore) {
                     if (nameCell.indexOf("mythic") < 0 && nameCell.indexOf("form_shadow") < 0 && nameCell.indexOf("form_mega") < 0 && nameCell.indexOf("form_primal") < 0 && nameCell.indexOf("form_origin") < 0) {
@@ -510,6 +532,7 @@
                 }
 
                 let td = `<tr>`;
+                td += `<td>${item.attacker.id}</td>`;
                 td += `<td>${nameCell}</td>`;
                 td += `<td>${getMove(item.qm, "quick")}</td>`;
                 td += `<td>${getMove(item.cm, "charged")}</td>`;
@@ -526,17 +549,11 @@
         }
 
         function printTable() {
-            let trs = `<tr><th>Name</th><th>Fast Attack</th><th>Charged Attack</th><th>DPS</th><th>TDO</th><th>t</th><th>PAX</th><th>Score</th><th>Faints</th></tr>`;
+            let trs = "<tr><th>"
+                + ["No.", "Name", "Fast Attack", "Charged Attack", "DPS", "TDO", "t", "PAX", "Score", "Faints"].join("</th><th>")
+                + "</th></tr>";
 
             if (tdsCache.length == 0) {
-                if (isSortByScore) {
-                    data.results.sort((a, b) => b.score - a.score);
-                }
-                else {
-                    data.results.sort(function (a, b) {
-                        return sortBy(a.attacker.id, b.attacker.id) || sortBy(b.score, a.score)
-                    })
-                }
                 createTdsCache()
             }
 
@@ -601,7 +618,7 @@
             return html;
         }
 
-        function getPokemonCell(settings, cmType) {
+        function getPokemonCell(settings, cmType, score) {
             name = settings["name"];
             var tradable = settings["isTradable"] == true;
             var deployable = settings["is_deployable"] == true;
@@ -629,7 +646,7 @@
             else {
                 form = form == "Normal" ? "" : ` <div class='form form_${form.toLowerCase()}'>` + form + "</div>";
             }
-            var rankingDiv = typedRanking[cmType];
+            var rankingDiv = scoreLookup[score + cmType];
             var typeRankingDiv = `<div class='typedRanking type_${cmType}'>${getImage(cmType, "type")}${rankingDiv}</div>`;
             var img = "<img class='pokemon_icon' src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable Assets/" + iconName + "' />";
             nameHtml = "<div class='pokemon_name'>" + img + name + `<div class='counter'>${counterNumber[counter[name]]}</div>` + typeRankingDiv + form + tradableIcon + deployableIcon + mythicIcon + "</div>";
