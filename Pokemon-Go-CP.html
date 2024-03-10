@@ -61,7 +61,7 @@
 
         .evolved-mon div {
             display: inline-block;
-            padding: 0px 2px;
+            padding: 0px 3px;
             margin-left: 2px;
         }
 
@@ -162,14 +162,6 @@
 
         .flex-container>div {
             width: 150px;
-        }
-
-        .zoom_0_8 {
-            zoom: 0.8;
-            -moz-transform: scale(0.8);
-            width: fit-content;
-            padding: 3px 7px;
-            border: 1px solid #adadad;
         }
     </style>
     <script type="text/javascript" src="./pokemon_go/pokemon-dps-calcuator.js"></script>
@@ -298,7 +290,7 @@
             var dict = []
             for (const p of newPokemon) {
                 var filtered = {};
-                for (var i = 1; i <= 40; i += 0.5) {
+                for (var i = 1; i <= MAX_LEVEL; i += 0.5) {
                     var c = calculateCP(p.stats[1] + 15, p.stats[2] + 15, p.stats[0] + 15, i);
                     if (cp == c) {
                         filtered[p.index] = 1;
@@ -335,9 +327,9 @@
                 for (var sta_i = sta_init; sta_i <= sta_end; sta_i++)
                     for (var atk_i = sta_init; atk_i <= sta_end; atk_i++)
                         for (var def_i = sta_init; def_i <= sta_end; def_i++)
-                            for (var o = [sta_i, atk_i, def_i], i = 1; i <= 40; i += 0.5) {
+                            for (var o = [sta_i, atk_i, def_i], i = 1; i <= MAX_LEVEL; i += 0.5) {
                                 var c = calculateCP(st.atk + atk_i, st.def + def_i, st.sta + sta_i, i);
-                                var multiplier = data_cp_multiplier.find(item => item.level === i).multiplier;
+                                var multiplier = data_cp_multiplier[i];
                                 var l = getHp(multiplier, st.sta, sta_i);
                                 var hp_match = true;
                                 if (hp != null && hp != undefined && hp > 0) {
@@ -352,7 +344,7 @@
                                 }
                             }
                 console.log(filtered);
-                if (i > 40 && Object.keys(filtered).length == 0) {
+                if (i > MAX_LEVEL && Object.keys(filtered).length == 0) {
                     return `${name} with those stats couldn't be found.`;
                 }
                 return filtered;
@@ -378,7 +370,7 @@
                 if (p.name.toLowerCase() != d_code) {
                     continue;
                 }
-                for (var i = 1; i <= 40; i += 0.5) {
+                for (var i = 1; i <= MAX_LEVEL; i += 0.5) {
                     var c = calculateCP(stats.atk + 15, stats.def + 15, stats.sta + 15, i);
                     dict.push("<div class='cp100'>" + c + "</div>");
                 }
@@ -451,7 +443,7 @@
         function getEvolvedCPText(e) {
             var results = [];
             for (const eItem of e) {
-                var str = `<div class='evolved-mon'>${eItem.pokemon.name}: <div class='league1500 ${eItem[1500] > 1500 ? "exceeded" : ""}'>${eItem[1500]}</div><div class='league2500 ${eItem[2500] > 2500 ? "exceeded" : ""}'>${eItem[2500]}</div></div>`;
+                var str = `<div class='evolved-mon'>${eItem.pokemon.name}: <div class='league1500 ${eItem[1500] > 1500 ? "exceeded" : ""}'>${eItem[1500]} (${eItem["1500lvl"]})</div><div class='league2500 ${eItem[2500] > 2500 ? "exceeded" : ""}'>${eItem[2500]} (${eItem["2500lvl"]})</div></div>`;
                 results.push(str);
             }
             return results.join("");
@@ -517,14 +509,16 @@
                 if (iv[0] == 14 && iv[1] == 12 && iv[2] == 15) {
                     console.log(st);
                 }
-                for (var i = iv[3]; i <= 40; i += 0.5) {
+                for (var i = iv[3]; i <= MAX_LEVEL; i += 0.5) {
                     var c = calculateCP(st.atk + iv[0], st.def + iv[1], st.sta + iv[2], i);
 
                     if (c <= 1500 || !(1500 in maxCPs)) {
                         maxCPs[1500] = c;
+                        maxCPs["1500lvl"] = i;
                     }
                     if (c <= 2500 || !(2500 in maxCPs)) {
                         maxCPs[2500] = c;
+                        maxCPs["2500lvl"] = i;
                     }
                 }
                 results.push(maxCPs);
@@ -545,9 +539,14 @@
             return results;
         }
 
+        String.prototype.indexOfRegex = function (regex) {
+            var match = this.match(regex);
+            return match ? this.indexOf(match[0]) : -1;
+        }
+
         function getEvolvedPokemon(e) {
             for (const p of newPokemon) {
-                if (p.form == e.form && p.templateId.endsWith(e.form)) {
+                if (e.form.indexOf(p.form.toUpperCase()) >= 0 && p.templateId.endsWith(e.form)) {
                     return p;
                 }
 
@@ -555,17 +554,35 @@
                     if (p.templateId.endsWith(e.evolution)) {
                         return p;
                     }
-                }
 
-                console.log(e)
-
-                if (e.form.indexOf('_NORMAL')) {
-                    var form = e.form.replace(/_NORMAL/, "");
-                    if (p.templateId.endsWith(form)) {
+                    if (p.templateId.endsWith(e.name)) {
                         return p;
                     }
                 }
             }
+
+            if (e.form != undefined) {
+                if (e.form.indexOf('_NORMAL') >= 0) {
+                    var form = e.form.replace(/_NORMAL/, "");
+                    for (const p of newPokemon) {
+                        if (p.templateId.endsWith(form)) {
+                            return p;
+                        }
+                    }
+                    console.log("cannot find normal form", e);
+                }
+                else if (e.form.indexOfRegex(/_\d{4}/) >= 0) {
+                    var form = e.form.replace(/_\d{4}/, "");
+                    for (const p of newPokemon) {
+                        if (p.templateId.endsWith(form)) {
+                            return p;
+                        }
+                    }
+                    console.log("cannot find numerical form", e);
+                }
+
+            }
+            console.log("cannot find pokemon", e)
         }
 
         function clear100IV() {
@@ -719,54 +736,10 @@
         const DEFAULT_DAMAGE_CONST = 1;
 
         const MIN_LEVEL = 1;
-        const MAX_LEVEL = 51;
+        const MAX_LEVEL = 50;
 
         const MIN_IV = 0;
         const MAX_IV = 15;
-
-        const options = {
-            delay: null,
-            specific: null,
-            WEATHER_BOOSTS: false,
-            TRAINER_FRIEND: false,
-            TRAINER_FRIEND_LEVEL: 0,
-            POKEMON_DEF_OBJ: DEFAULT_POKEMON_DEF_OBJ,
-        };
-
-        const filters = {
-            showEliteMove: true,
-            showShadow: true,
-            showMega: true,
-            enableShadow: false,
-            enableElite: false,
-            enableMega: false,
-            enableBest: false,
-            enableDelay: false,
-            releasedGO: true,
-            bestOf: 3,
-            IV_ATK: 15,
-            IV_DEF: 15,
-            IV_HP: 15,
-            POKEMON_LEVEL: 40
-        };
-
-        function numberWithCommas(x, round) {
-            var parts = (Math.round(x * 10 ** round) / 10 ** round).toString().split(".");
-            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            return parts.join(".");
-        }
-
-        function getBarCharge(isRaid, energy) {
-            energy = Math.abs(energy);
-            if (isRaid) {
-                const bar = Math.ceil(100 / energy)
-                return bar > 3 ? 3 : bar;
-            } else return energy > 50 ? 1 : 2;
-        }
-
-        function capitalize(string) {
-            return string.charAt(0).toUpperCase() + string.slice(1);
-        }
 
         async function loadAllJsonFiles() {
             try {

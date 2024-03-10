@@ -25,7 +25,7 @@
    1. or https://github.com/PokeMiners/game_masters/blob/master/latest/latest.json
 2. run `pokemon_go/calculator_evolution.html`
 3. copy console to `latest_evolution_quest.json`
-4. `pokemon_evolutions.json` is from https://pogoapi.net/api/v1/pokemon_evolutions.json
+4. `pokemon_evolutions.json` from `latest.json["cpMultiplier"]` ~~is from https://pogoapi.net/api/v1/pokemon_evolutions.json~~
 
 ## Pokedex
 
