@@ -65,6 +65,15 @@
             text-align: center;
         }
 
+        .iv4 {
+            color: #d93300;
+        }
+
+        .iv4 .iv-group {
+            background-color: #ffcbbb;
+            border-color: #963700;
+        }
+
         .iv3 {
             color: #d97b00;
         }
@@ -284,31 +293,30 @@
         function calculateIVFromCP(name, code, cp, hp) {
             console.log(code, cp, hp)
             if (null !== code) {
-                var e = code.split(",");
-                var st = stats_table[code];
+                var st = {};
                 for (const p of newPokemon) {
-                    if(p.index == code && p.name == name){
-                        st = p.stats
+                    if (p.index == code && p.name == name) {
+                        st.atk = p.stats[1];
+                        st.sta = p.stats[0];
+                        st.def = p.stats[2];
                     }
                 }
-                var r = st;
                 var filtered = {};
-                var sta_init = 0;
-                var sta_end = 15;
-                for (var sta_i = 0; sta_i <= 15; sta_i++)
-                    for (var atk_i = 0; atk_i <= 15; atk_i++)
-                        for (var def_i = 0; def_i <= 15; def_i++)
+                const sta_init = 0;
+                const sta_end = 15;
+                for (var sta_i = sta_init; sta_i <= sta_end; sta_i++)
+                    for (var atk_i = sta_init; atk_i <= sta_end; atk_i++)
+                        for (var def_i = sta_init; def_i <= sta_end; def_i++)
                             for (var o = [sta_i, atk_i, def_i], i = 1; i <= 40; i += 0.5) {
                                 var c = calculateCP(st.atk + atk_i, st.def + def_i, st.sta + sta_i, i);
                                 var multiplier = data_cp_multiplier.find(item => item.level === i).multiplier;
-                                var l = getHp(multiplier, r, o);
+                                var l = getHp(multiplier, st, o);
                                 var hp_match = true;
                                 if (hp != null && hp != undefined && hp > 0) {
                                     hp_match = hp == l;
                                 }
                                 if (c === cp && hp_match) {
-                                    var arr = new Int32Array([sta_i, atk_i, def_i]);
-                                    arr.sort();
+                                    var arr = new Int32Array([atk_i, def_i, sta_i]);
                                     var key = arr.join(",");
                                     if (!(key in filtered)) {
                                         filtered[key] = arr;
@@ -317,7 +325,7 @@
                             }
                 console.log(filtered);
                 if (i > 40 && Object.keys(filtered).length == 0) {
-                    return "A Pokemon with those stats couldn't be found.";
+                    return `${name} with those stats couldn't be found.`;
                 }
                 return filtered;
             } else
@@ -392,6 +400,9 @@
                     }
                     if (key >= 80) {
                         cls = "iv3";
+                    }                    
+                    if (key == 100) {
+                        cls = "iv4";
                     }
                     str = "<div class='row " + cls + " align-items-center'><div class='col-sm-1 col-form-label'>" + key + ":</div>";
                     str += "<div class='col-sm-11'>" + value.map(x => "<div class='iv-group'>" + x.join(", ") + "</div>").join("") + "</div>";
@@ -486,7 +497,6 @@
 
         // Move sets:
         var data_cp_multiplier = {};
-        var stats_table = {};
         var evo_list = {};
 
         function toTitleCase(str) {
