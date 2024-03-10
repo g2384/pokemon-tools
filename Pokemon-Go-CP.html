@@ -54,6 +54,33 @@
             border: 0;
         }
 
+        .evolved-mon {
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .evolved-mon div {
+            display: inline-block;
+            padding: 0px 2px;
+            margin-left: 2px;
+        }
+
+        .league1500 {
+            background: #4d69d9;
+            color: #ff8e82;
+        }
+
+        .league2500 {
+            background: #515151;
+            color: #f5f574;
+        }
+
+        .exceeded {
+            text-decoration: line-through;
+            color: #d7d3d3;
+            background: #8f8f8f;
+        }
+
         .iv-group {
             margin: 2px 5px;
             background-color: #eee;
@@ -61,7 +88,6 @@
             border-radius: 2px;
             display: inline-block;
             padding: 2px 5px;
-            width: 100px;
             text-align: center;
         }
 
@@ -252,6 +278,7 @@
                 p.name = p.form == "Normal" ? p.pokemonId : p.pokemonId + `(${p.form})`
                 p.stats = pSettings.stats;
                 p.evolutionBranch = pSettings.evolutionBranch;
+                p.templateId = dataPokemons[i].templateId;
                 newPokemon.push(p);
             }
         }
@@ -299,6 +326,7 @@
                         st.atk = p.stats[1];
                         st.sta = p.stats[0];
                         st.def = p.stats[2];
+                        break;
                     }
                 }
                 var filtered = {};
@@ -316,7 +344,7 @@
                                     hp_match = hp == l;
                                 }
                                 if (c === cp && hp_match) {
-                                    var arr = new Int32Array([atk_i, def_i, sta_i]);
+                                    var arr = new Int32Array([atk_i, def_i, sta_i, i]);
                                     var key = arr.join(",");
                                     if (!(key in filtered)) {
                                         filtered[key] = arr;
@@ -379,10 +407,11 @@
                 r_div.innerHTML = result;
             }
             else {
+                var evoResults = calculateEvolutionsFromCP(d_name, d_code, result);
                 var str = ""
                 var grouped = {};
                 for (const [key, value] of Object.entries(result)) {
-                    var sum = value.reduce((x, a) => x + a, 0);
+                    var sum = [value[0], value[1], value[2]].reduce((x, a) => x + a, 0);
                     var percen = Math.round(sum * 100 / 45);
                     if (!(percen in grouped)) {
                         grouped[percen] = [value]
@@ -400,12 +429,12 @@
                     }
                     if (key >= 80) {
                         cls = "iv3";
-                    }                    
+                    }
                     if (key == 100) {
                         cls = "iv4";
                     }
                     str = "<div class='row " + cls + " align-items-center'><div class='col-sm-1 col-form-label'>" + key + ":</div>";
-                    str += "<div class='col-sm-11'>" + value.map(x => "<div class='iv-group'>" + x.join(", ") + "</div>").join("") + "</div>";
+                    str += "<div class='col-sm-11'>" + value.map(x => "<div class='iv-group'>" + [x[0], x[1], x[2]].join(", ") + ` (${x[3]})` + getEvolvedCPText(evoResults[x.join(",")]) + "</div>").join("") + "</div>";
                     str += "</div>";
                     str_a.push(str)
                 }
@@ -416,6 +445,126 @@
                 str_a.push(str);
                 str_a.reverse();
                 r_div.innerHTML = str_a.join("");
+            }
+        }
+
+        function getEvolvedCPText(e) {
+            var results = [];
+            for (const eItem of e) {
+                var str = `<div class='evolved-mon'>${eItem.pokemon.name}: <div class='league1500 ${eItem[1500] > 1500 ? "exceeded" : ""}'>${eItem[1500]}</div><div class='league2500 ${eItem[2500] > 2500 ? "exceeded" : ""}'>${eItem[2500]}</div></div>`;
+                results.push(str);
+            }
+            return results.join("");
+        }
+
+        function isEmpty(obj) {
+            return Object.keys(obj).length === 0;
+        }
+
+
+        function calculateEvolutionsFromCP(name, code, ivs) {
+            var pokemon = null;
+            for (const p of newPokemon) {
+                if (p.index == code && p.name == name) {
+                    pokemon = p;
+                    break;
+                }
+            }
+
+            if (pokemon == null) {
+                return [];
+            }
+
+            if (isEmpty(evolutionsList)) {
+                LoadEvolutions();
+            }
+
+            var allEvolves = [];
+
+            var preLength = allEvolves.length;
+            var newEvolves = getEvolutionListByCode(code);
+            allEvolves = allEvolves.concat(newEvolves);
+            while (preLength != allEvolves.length) {
+                preLength = allEvolves.length;
+                var newEvolves2 = [];
+                for (const e of newEvolves) {
+                    var n = getEvolutionListByCode(e.index);
+                    allEvolves = allEvolves.concat(n);
+                    newEvolves2 = newEvolves2.concat(n);
+                }
+                newEvolves = newEvolves2;
+            }
+
+            var results = {};
+            for (const [key, value] of Object.entries(ivs)) {
+                var r = getAllEvolvedCPByIV(value, allEvolves);
+                results[key] = r;
+            }
+
+            return results;
+        }
+
+        function getAllEvolvedCPByIV(iv, allEvolves) {
+            var results = []
+            for (const a of allEvolves) {
+                var maxCPs = {
+                    pokemon: a,
+                }
+                var st = {}
+                st.sta = a.stats[0];
+                st.atk = a.stats[1];
+                st.def = a.stats[2];
+                if (iv[0] == 14 && iv[1] == 12 && iv[2] == 15) {
+                    console.log(st);
+                }
+                for (var i = iv[3]; i <= 40; i += 0.5) {
+                    var c = calculateCP(st.atk + iv[0], st.def + iv[1], st.sta + iv[2], i);
+
+                    if (c <= 1500 || !(1500 in maxCPs)) {
+                        maxCPs[1500] = c;
+                    }
+                    if (c <= 2500 || !(2500 in maxCPs)) {
+                        maxCPs[2500] = c;
+                    }
+                }
+                results.push(maxCPs);
+            }
+
+            return results;
+        }
+
+        function getEvolutionListByCode(code) {
+            var results = []
+            if (code in evolutionsList) {
+                var e = evolutionsList[code];
+                for (const eItem of e) {
+                    var r = getEvolvedPokemon(eItem);
+                    results.push(r);
+                }
+            }
+            return results;
+        }
+
+        function getEvolvedPokemon(e) {
+            for (const p of newPokemon) {
+                if (p.form == e.form && p.templateId.endsWith(e.form)) {
+                    return p;
+                }
+
+                if (e.form == undefined) {
+                    if (p.templateId.endsWith(e.evolution)) {
+                        return p;
+                    }
+                }
+
+                console.log(e)
+
+                if (e.form.indexOf('_NORMAL')) {
+                    var form = e.form.replace(/_NORMAL/, "");
+                    if (p.templateId.endsWith(form)) {
+                        return p;
+                    }
+                }
             }
         }
 
@@ -471,28 +620,39 @@
             });
         }
 
-        function getEvoList(name) {
-            var prevo = [];
-            var prev = evo_list[name].prevo;
-            while (prev != null) {
-                prevo.push(prev);
-                prev = evo_list[prev].prevo;
-            }
-            prevo = prevo.reverse();
+        var evolutionsList = {};
 
-            var evos = evo_list[name].evos;
-            if (evos.length == 0 && prevo.length == 0) {
-                return "";
-            }
-            var result = prevo.concat([name]).concat(evos).map(x => {
-                num = evo_list[x].num;
-                var xdiv = x;
-                if (x == name) {
-                    xdiv = "<strong>" + x + "</strong>";
+        function LoadEvolutions() {
+            evolutionsList = {};
+            // Iterate through the JSON data and create rows for each Pokemon
+            for (const pokemon of newPokemon) {
+                if (pokemon.evolutionBranch == undefined) {
+                    continue;
                 }
-                return getImageElement(num, x) + xdiv;
-            }).join(" > ");
-            return "<div class='zoom_0_8'>" + result + "</div>";
+
+                var list = [];
+                for (var j = 0; j < pokemon.evolutionBranch.length; j++) {
+                    var evolution = pokemon.evolutionBranch[j];
+                    if (evolution.temporaryEvolution != undefined) {
+                        continue;
+                    }
+                    if (evolution.evolution == undefined) {
+                        console.log(evolution);
+                        continue;
+                    }
+
+                    var p = {};
+                    p.name = evolution.evolution;
+                    p.form = evolution.form;
+                    list.push(p);
+                }
+                if (pokemon.index in evolutionsList) {
+                    evolutionsList[pokemon.index] = list.concat(evolutionsList[pokemon.index])
+                }
+                else {
+                    evolutionsList[pokemon.index] = list;
+                }
+            }
         }
 
         // Move sets:
