@@ -281,12 +281,17 @@
             document.querySelector("#cp-pokemon-div").innerHTML = dict.join("<br>");
         }
 
-        function calculateIVFromCP(code, cp, hp) {
+        function calculateIVFromCP(name, code, cp, hp) {
             console.log(code, cp, hp)
             if (null !== code) {
                 var e = code.split(",");
                 var st = stats_table[code];
-                var r = [st.sta, st.atk, st.def];
+                for (const p of newPokemon) {
+                    if(p.index == code && p.name == name){
+                        st = p.stats
+                    }
+                }
+                var r = st;
                 var filtered = {};
                 var sta_init = 0;
                 var sta_end = 15;
@@ -325,7 +330,8 @@
 
         function find100CPFromPokemon() {
             var pn = document.querySelector("#pokemon-name2");
-            var d_code = pn.options[pn.selectedIndex].getAttribute("data-code");
+            var pnSelected = pn.options[pn.selectedIndex];
+            var d_code = pnSelected.getAttribute("data-code");
             var r_div = document.querySelector("#CP100_div");
             var dict = []
             for (const [key, stats] of Object.entries(stats_table)) {
@@ -346,12 +352,19 @@
 
         function findIVFromCP() {
             var pn = document.querySelector("#pokemon-name");
-            var d_code = pn.options[pn.selectedIndex].getAttribute("data-code");
+            var pnSelected = pn.options[pn.selectedIndex];
+            var d_code = pnSelected.getAttribute("data-code");
+            var d_name = pnSelected.getAttribute("value");
             var cp = document.querySelector("#cpValue").value;
             var hp = document.querySelector("#hpValue").value;
             cp = parseInt(cp);
             hp = parseInt(hp);
-            var result = calculateIVFromCP(d_code, cp, hp);
+            if (isNaN(cp)) {
+                cp = 10;
+                document.querySelector("#cpValue").value = 10;
+            }
+            console.log("findIVFromCP", cp, hp)
+            var result = calculateIVFromCP(d_name, d_code, cp, hp);
             var r_div = document.querySelector("#CP-IV-div");
             if (typeof result === 'string' || result instanceof String) {
                 console.log(result);
@@ -422,16 +435,16 @@
 
         function loadPokemonNames() {
             var s = "";
-            for (const value of processedPokemon) {
-                var name = value.label;
-                s += "<option value='" + name + "' data-code='" + value.code + "'>" + name + "</option>";
+            for (const value of newPokemon) {
+                var name = value.name;
+                s += "<option value='" + name + "' data-code='" + value.index + "'>" + name + "</option>";
             }
             document.querySelector("#pokemon-name").innerHTML = s;
 
             new TomSelect("#pokemon-name", {
                 create: false,
                 sortField: {
-                    field: "text",
+                    field: "data-code",
                     direction: "asc"
                 }
             });
@@ -441,7 +454,7 @@
             new TomSelect("#pokemon-name2", {
                 create: false,
                 sortField: {
-                    field: "text",
+                    field: "data-code",
                     direction: "asc"
                 }
             });
@@ -585,36 +598,6 @@
             return string.charAt(0).toUpperCase() + string.slice(1);
         }
 
-        function convertName(text) {
-            return text.toUpperCase()
-                .replace(/\-/g, "_")
-                .replace("NIDORAN_F", "NIDORAN_FEMALE")
-                .replace("NIDORAN_M", "NIDORAN_MALE")
-                .replace(/\u2019/g, "")
-                .replace(/\u0301/g, "")
-                .replace(/\./g, "")
-                .replace(/\:/g, "")
-                .replace(/ /g, "_")
-                .replace("É", "E")
-                .replace("PUMPKABOO_AVERAGE", "PUMPKABOO")
-                .replace("GOURGEIST_AVERAGE", "GOURGEIST")
-        };
-
-        function sortOnKeys(dict) {
-            var sorted = [];
-            for (var key in dict) {
-                sorted[sorted.length] = key;
-            }
-            sorted.sort();
-
-            var tempDict = {};
-            for (var i = 0; i < sorted.length; i++) {
-                tempDict[sorted[i]] = dict[sorted[i]];
-            }
-
-            return tempDict;
-        }
-
         async function loadAllJsonFiles() {
             try {
                 [dataPokemons] = await Promise.all([
@@ -622,6 +605,7 @@
                 ]);
 
                 PrepareData();
+                loadPokemonNames();
             } catch (error) {
                 console.error("Error loading JSON files:", error);
                 // Handle errors appropriately, e.g., display error messages to the user
