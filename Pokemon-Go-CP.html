@@ -1,0 +1,671 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Go Tools</title>
+    <link href="./css/tom-select.bootstrap5.min.css" rel="stylesheet" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./css/pokemon_types.css" rel="stylesheet" />
+    <style>
+        body {
+            padding: 10px;
+            margin: 0 auto;
+            max-width: 1000px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(224, 224, 224);
+        }
+
+        .form-control,
+        .full .ts-control {
+            background-color: #ededed;
+        }
+
+        img {
+            height: 20px;
+            padding-right: 2px;
+        }
+
+        .pokemon-name img {
+            height: 30px;
+        }
+
+        .stat-div {
+            line-height: 1em;
+            margin: 10 auto;
+            max-width: 500px;
+        }
+
+        .stat {
+            max-width: 80%;
+            margin: 0 auto 16px;
+        }
+
+        .cp100 {
+            display: inline-block;
+            padding: 10px;
+            width: 4em;
+            text-align: right;
+            font-family: monospace;
+        }
+
+        div {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        .iv-group {
+            margin: 2px 5px;
+            background-color: #eee;
+            border: 1px solid #888;
+            border-radius: 2px;
+            display: inline-block;
+            padding: 2px 5px;
+            width: 100px;
+            text-align: center;
+        }
+
+        .iv3 {
+            color: #d97b00;
+        }
+
+        .iv3 .iv-group {
+            background-color: #ffe2bb;
+            border-color: #965000;
+        }
+
+        .iv2 {
+            color: #209902;
+        }
+
+        .iv2 .iv-group {
+            background-color: #bdffb0;
+            border-color: #005e10;
+        }
+
+        .iv1 {
+            color: #0050b8;
+        }
+
+        .iv1 .iv-group {
+            background-color: #b0e2ff;
+            border-color: #0a3669;
+        }
+
+        .roundSpan {
+            text-align: center;
+            border-radius: 20px;
+            color: white;
+            padding: 2px 5px;
+            display: inline-block;
+            font-size: 14px;
+            margin: 2px;
+        }
+
+        .inline {
+            display: inline-block;
+        }
+
+        .inline-input {
+            padding: 2px;
+            margin: 2px 5px;
+        }
+
+        .inline label {
+            padding-left: 3px;
+        }
+
+        .not-released {
+            color: #a0c9ff;
+            background-color: #235597;
+        }
+
+        .move-tag {
+            color: #000;
+            font-size: 10px;
+            font-weight: 700;
+            text-align: center;
+            display: inline-block;
+            padding: 2px 5px;
+            border-radius: 5px;
+            margin-left: 3px;
+        }
+
+        .elite-move {
+            background-color: #f7f70d;
+            border: 1px solid #dfc300;
+        }
+
+        .shadow-move {
+            background-color: #e1caff;
+            border: 1px solid #826eed;
+        }
+
+        .purified-move {
+            background-color: #d3d3d3;
+            border: 1px solid #707070;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .flex-container>div {
+            width: 150px;
+        }
+
+        .zoom_0_8 {
+            zoom: 0.8;
+            -moz-transform: scale(0.8);
+            width: fit-content;
+            padding: 3px 7px;
+            border: 1px solid #adadad;
+        }
+    </style>
+    <script type="text/javascript" src="./pokemon_go/imagesConvert.js"></script>
+    <script type="text/javascript" src="./pokemon_go/pokemon-types.js"></script>
+    <script type="text/javascript" src="./pokemon_go/pokemon-dps-calcuator.js"></script>
+    <script type="text/javascript" src="./pokemon_go/md5.js"></script>
+    <script type="text/javascript" src="./js/tom-select.base.min.js"></script>
+</head>
+
+<body>
+    <h2>Find IV stats from CP</h2>
+    <div>
+        <div class="mb-3 row align-items-center">
+            <label for="pokemon-name" class="col-sm-2 col-form-label">Pokemon:</label>
+            <div class="col-sm-10">
+                <select id="pokemon-name" onchange="findIVFromCP()"></select>
+            </div>
+        </div>
+        <div class="mb-3 row align-items-center">
+            <label for="cpValue" class="col-sm-2 col-form-label">CP:</label>
+            <div class="col-sm-10">
+                <input id="cpValue" type="number" class="form-control" value="" min="10" max="99999"
+                    onkeyup="findIVFromCP()" />
+            </div>
+            <label for="hpValue" class="col-sm-2 col-form-label mt-3">HP:</label>
+            <div class="col-sm-10 mt-3">
+                <input id="hpValue" type="number" class="form-control" value="" min="0" max="99999"
+                    onkeyup="findIVFromCP()" />
+            </div>
+        </div>
+    </div>
+    <input type="button" class="btn btn-outline-primary" value="Show" onclick="findIVFromCP()" />
+    <input type="button" class="btn btn-outline-primary" value="Clear" onclick="clearIVFromCP()" />
+    <div id="CP-IV-div"></div>
+
+    <hr>
+
+    <h2>Find 100% CP from Pokemon</h2>
+    <div>
+        <div class="mb-3 row align-items-center">
+            <label for="pokemon-name2" class="col-sm-2 col-form-label">Pokemon:</label>
+            <div class="col-sm-10">
+                <select id="pokemon-name2" onchange="find100CPFromPokemon()"></select>
+            </div>
+        </div>
+    </div>
+    <input type="button" class="btn btn-outline-primary" value="Show" onclick="find100CPFromPokemon()" />
+    <input type="button" class="btn btn-outline-primary" value="Clear" onclick="clear100IV()" />
+    <div id="CP100_div"></div>
+
+    <hr>
+
+    <h2>Find Pokemon by 100% CP</h2>
+    <div>
+        <div class="mb-3 row align-items-center">
+            <label for="staticEmail" class="col-sm-2 col-form-label">CP:</label>
+            <div class="col-sm-10">
+                <input id="pok_cpValue" type="number" class="form-control" value="99" min="0" max="100"
+                    onkeyup="findPokemonFromCP()" />
+            </div>
+        </div>
+    </div>
+    <input type="button" class="btn btn-outline-primary" value="Show" onclick="findPokemonFromCP()" />
+    <input type="button" class="btn btn-outline-primary" value="Clear" onclick="clearIVPokeValue()" />
+    <div id="cp-pokemon-div" class="flex-container"> </div>
+
+    <script>
+        // (deprecated) https://pokemon.gameinfo.io/en/js/pokemon-base.js?v=451d06
+        // (deprecated) https://pokemon.gameinfo.io/en/js/pokemon-names.js?v=451d06 from: https://pokemon.gameinfo.io/en/tools/iv-calculator
+        // https://pokemon.gameinfo.io/en/js/movesets.js?v=451d06
+
+        // move.json: https://github.com/WHIZENx/PokeGoBreeze/tree/master/src/data/combat.json
+        // pokemon.json: https://github.com/WHIZENx/PokeGoBreeze/tree/master/src/data
+
+        function clearIVValue() {
+            document.querySelector(".stat-div").innerHTML = "";
+        }
+
+        String.prototype.toTitleCase = function () {
+            return this.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+        };
+
+        var pre_percentage = 0;
+        // calculate IV
+
+        var processedPokemon = [];
+        var dataPokemons = [];
+        var newPokemon = [];
+
+        function PrepareData() {
+            for (var i = 0; i < dataPokemons.length; i++) {
+                var p = {};
+                var d = dataPokemons[i].data;
+                if (d.pokemonSettings == undefined) {
+                    continue;
+                }
+                var index = d.templateId.split("_")[0].replace("V", "");
+                index = parseInt(index, 10);
+                var pSettings = d.pokemonSettings;
+                var form = pSettings["form"];
+                if (form == undefined) {
+                    form = "Normal";
+                } else {
+                    form = form.replace(pSettings.pokemonId.toUpperCase(), "").replace(/_/g, " ").trim().toTitleCase();
+                }
+                p.form = form;
+                p.index = index;
+                p.pokemonId = pSettings.pokemonId;
+                p.name = p.form == "Normal" ? p.pokemonId : p.pokemonId + `(${p.form})`
+                p.stats = pSettings.stats;
+                p.evolutionBranch = pSettings.evolutionBranch;
+                newPokemon.push(p);
+            }
+        }
+
+        function getSpriteName(id, form) {
+            form = form.toLowerCase();
+            if (form == "normal") {
+                return "pm" + id + ".icon.png";
+            }
+
+            return "pm" + id + ".f" + form.toUpperCase() + ".icon.png";
+        }
+
+        function findPokemonFromCP() {
+            var cp = parseInt(document.querySelector("#pok_cpValue").value);
+            console.log("findPokemonFromCP:", cp)
+            var dict = []
+            for (const p of newPokemon) {
+                var filtered = {};
+                for (var i = 1; i <= 40; i += 0.5) {
+                    var c = calculateCP(p.stats[1] + 15, p.stats[2] + 15, p.stats[0] + 15, i);
+                    if (cp == c) {
+                        filtered[p.index] = 1;
+                        break;
+                    }
+                    if (c > cp) {
+                        break;
+                    }
+                }
+                if (Object.keys(filtered).length > 0) {
+                    var iconName = getSpriteName(p.index, p.form);
+                    var img = "<img class='pokemon_icon' src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable Assets/" + iconName + "' />";
+                    dict.push("<div>" + img + p.name + "</div>");
+                }
+            }
+            document.querySelector("#cp-pokemon-div").innerHTML = dict.join("<br>");
+        }
+
+        function calculateIVFromCP(code, cp, hp) {
+            console.log(code, cp, hp)
+            if (null !== code) {
+                var e = code.split(",");
+                var st = stats_table[code];
+                var r = [st.sta, st.atk, st.def];
+                var filtered = {};
+                var sta_init = 0;
+                var sta_end = 15;
+                for (var sta_i = 0; sta_i <= 15; sta_i++)
+                    for (var atk_i = 0; atk_i <= 15; atk_i++)
+                        for (var def_i = 0; def_i <= 15; def_i++)
+                            for (var o = [sta_i, atk_i, def_i], i = 1; i <= 40; i += 0.5) {
+                                var c = calculateCP(st.atk + atk_i, st.def + def_i, st.sta + sta_i, i);
+                                var multiplier = data_cp_multiplier.find(item => item.level === i).multiplier;
+                                var l = getHp(multiplier, r, o);
+                                var hp_match = true;
+                                if (hp != null && hp != undefined && hp > 0) {
+                                    hp_match = hp == l;
+                                }
+                                if (c === cp && hp_match) {
+                                    var arr = new Int32Array([sta_i, atk_i, def_i]);
+                                    arr.sort();
+                                    var key = arr.join(",");
+                                    if (!(key in filtered)) {
+                                        filtered[key] = arr;
+                                    }
+                                }
+                            }
+                console.log(filtered);
+                if (i > 40 && Object.keys(filtered).length == 0) {
+                    return "A Pokemon with those stats couldn't be found.";
+                }
+                return filtered;
+            } else
+                return "You must select a Pokémon!";
+        }
+
+        function getHp(e, t, n) {
+            return Math.max(10, Math.floor((t[0] + n[0]) * e))
+        }
+
+        function find100CPFromPokemon() {
+            var pn = document.querySelector("#pokemon-name2");
+            var d_code = pn.options[pn.selectedIndex].getAttribute("data-code");
+            var r_div = document.querySelector("#CP100_div");
+            var dict = []
+            for (const [key, stats] of Object.entries(stats_table)) {
+                var p = newPokemon[key];
+                if (p == undefined) {
+                    continue;
+                }
+                if (p.name.toLowerCase() != d_code) {
+                    continue;
+                }
+                for (var i = 1; i <= 40; i += 0.5) {
+                    var c = calculateCP(stats.atk + 15, stats.def + 15, stats.sta + 15, i);
+                    dict.push("<div class='cp100'>" + c + "</div>");
+                }
+            }
+            r_div.innerHTML = dict.join("");
+        }
+
+        function findIVFromCP() {
+            var pn = document.querySelector("#pokemon-name");
+            var d_code = pn.options[pn.selectedIndex].getAttribute("data-code");
+            var cp = document.querySelector("#cpValue").value;
+            var hp = document.querySelector("#hpValue").value;
+            cp = parseInt(cp);
+            hp = parseInt(hp);
+            var result = calculateIVFromCP(d_code, cp, hp);
+            var r_div = document.querySelector("#CP-IV-div");
+            if (typeof result === 'string' || result instanceof String) {
+                console.log(result);
+                r_div.innerHTML = result;
+            }
+            else {
+                var str = ""
+                var grouped = {};
+                for (const [key, value] of Object.entries(result)) {
+                    var sum = value.reduce((x, a) => x + a, 0);
+                    var percen = Math.round(sum * 100 / 45);
+                    if (!(percen in grouped)) {
+                        grouped[percen] = [value]
+                    }
+                    else {
+                        grouped[percen].push(value);
+                    }
+                }
+
+                var str_a = [];
+                for (const [key, value] of Object.entries(grouped)) {
+                    var cls = "iv1";
+                    if (key >= 66) {
+                        cls = "iv2";
+                    }
+                    if (key >= 80) {
+                        cls = "iv3";
+                    }
+                    str = "<div class='row " + cls + " align-items-center'><div class='col-sm-1 col-form-label'>" + key + ":</div>";
+                    str += "<div class='col-sm-11'>" + value.map(x => "<div class='iv-group'>" + x.join(", ") + "</div>").join("") + "</div>";
+                    str += "</div>";
+                    str_a.push(str)
+                }
+                str = "<div class='row align-items-center'><div class='col-sm-1 col-form-label'><strong>IV %</strong></div>"
+                    + "<div class='col-sm-11'><strong>IV Stats</strong></div>"
+                    + "</div>"
+                    + "</div>";
+                str_a.push(str);
+                str_a.reverse();
+                r_div.innerHTML = str_a.join("");
+            }
+        }
+
+        function clear100IV() {
+            var pn = document.querySelector("#CP100_div");
+            pn.innerHTML = "";
+        }
+
+        function clearIVFromCP() {
+            var pn = document.querySelector("#CP-IV-div");
+            pn.innerHTML = "";
+        }
+
+        function clearIVPokeValue() {
+            var pn = document.querySelector("#cp-pokemon-div");
+            pn.innerHTML = "";
+        }
+
+        function clearCounterList() {
+            var pn = document.querySelector("#Counters-div");
+            pn.innerHTML = "";
+        }
+
+        function clearCounterUniqueList() {
+            var pn = document.querySelector("#Counters-Unique-div");
+            pn.innerHTML = "";
+        }
+
+        function loadPokemonNames() {
+            var s = "";
+            for (const value of processedPokemon) {
+                var name = value.label;
+                s += "<option value='" + name + "' data-code='" + value.code + "'>" + name + "</option>";
+            }
+            document.querySelector("#pokemon-name").innerHTML = s;
+
+            new TomSelect("#pokemon-name", {
+                create: false,
+                sortField: {
+                    field: "text",
+                    direction: "asc"
+                }
+            });
+
+            document.querySelector("#pokemon-name2").innerHTML = s;
+
+            new TomSelect("#pokemon-name2", {
+                create: false,
+                sortField: {
+                    field: "text",
+                    direction: "asc"
+                }
+            });
+        }
+
+        function getEvoList(name) {
+            var prevo = [];
+            var prev = evo_list[name].prevo;
+            while (prev != null) {
+                prevo.push(prev);
+                prev = evo_list[prev].prevo;
+            }
+            prevo = prevo.reverse();
+
+            var evos = evo_list[name].evos;
+            if (evos.length == 0 && prevo.length == 0) {
+                return "";
+            }
+            var result = prevo.concat([name]).concat(evos).map(x => {
+                num = evo_list[x].num;
+                var xdiv = x;
+                if (x == name) {
+                    xdiv = "<strong>" + x + "</strong>";
+                }
+                return getImageElement(num, x) + xdiv;
+            }).join(" > ");
+            return "<div class='zoom_0_8'>" + result + "</div>";
+        }
+
+        // Move sets:
+        var data_cp_multiplier = {};
+        var stats_table = {};
+        var evo_list = {};
+
+        function toTitleCase(str) {
+            return str.replace(
+                /\w\S*/g,
+                function (txt) {
+                    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+                }
+            );
+        }
+
+        Object.defineProperty(Array.prototype, "find", {
+            value: function find(cond) {
+                for (var i of this) {
+                    if (cond(i)) {
+                        return i;
+                    }
+                }
+            },
+            writable: true,
+            configurable: true,
+        });
+
+        Object.defineProperty(Array.prototype, "includes", {
+            value: function includes(text) {
+                for (var i of this) {
+                    if (i == text) {
+                        return true;
+                    }
+                }
+                return false;
+            },
+            writable: true,
+            configurable: true,
+        });
+
+        Object.defineProperty(Array.prototype, "includesAny", {
+            value: function includesAny(arr) {
+                for (var i of this) {
+                    for (var j of arr) {
+                        if (i == j) {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            },
+            writable: true,
+            configurable: true,
+        });
+
+        const DEFAULT_POKEMON_DEF_OBJ = 160;
+        const DEFAULT_POKEMON_SHADOW = false;
+        const DEFAULT_TRAINER_FRIEND = false;
+        const DEFAULT_WEATHER_BOOSTS = false;
+        const DEFAULT_POKEMON_FRIEND_LEVEL = 0;
+
+        const DEFAULT_ENERYGY_PER_HP_LOST = 0.5;
+        const DEFAULT_DAMAGE_MULTIPLY = 0.5;
+        const DEFAULT_DAMAGE_CONST = 1;
+
+        const MIN_LEVEL = 1;
+        const MAX_LEVEL = 51;
+
+        const MIN_IV = 0;
+        const MAX_IV = 15;
+
+        const options = {
+            delay: null,
+            specific: null,
+            WEATHER_BOOSTS: false,
+            TRAINER_FRIEND: false,
+            TRAINER_FRIEND_LEVEL: 0,
+            POKEMON_DEF_OBJ: DEFAULT_POKEMON_DEF_OBJ,
+        };
+
+        const filters = {
+            showEliteMove: true,
+            showShadow: true,
+            showMega: true,
+            enableShadow: false,
+            enableElite: false,
+            enableMega: false,
+            enableBest: false,
+            enableDelay: false,
+            releasedGO: true,
+            bestOf: 3,
+            IV_ATK: 15,
+            IV_DEF: 15,
+            IV_HP: 15,
+            POKEMON_LEVEL: 40
+        };
+
+        function numberWithCommas(x, round) {
+            var parts = (Math.round(x * 10 ** round) / 10 ** round).toString().split(".");
+            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            return parts.join(".");
+        }
+
+        function getBarCharge(isRaid, energy) {
+            energy = Math.abs(energy);
+            if (isRaid) {
+                const bar = Math.ceil(100 / energy)
+                return bar > 3 ? 3 : bar;
+            } else return energy > 50 ? 1 : 2;
+        }
+
+        function capitalize(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        function convertName(text) {
+            return text.toUpperCase()
+                .replace(/\-/g, "_")
+                .replace("NIDORAN_F", "NIDORAN_FEMALE")
+                .replace("NIDORAN_M", "NIDORAN_MALE")
+                .replace(/\u2019/g, "")
+                .replace(/\u0301/g, "")
+                .replace(/\./g, "")
+                .replace(/\:/g, "")
+                .replace(/ /g, "_")
+                .replace("É", "E")
+                .replace("PUMPKABOO_AVERAGE", "PUMPKABOO")
+                .replace("GOURGEIST_AVERAGE", "GOURGEIST")
+        };
+
+        function sortOnKeys(dict) {
+            var sorted = [];
+            for (var key in dict) {
+                sorted[sorted.length] = key;
+            }
+            sorted.sort();
+
+            var tempDict = {};
+            for (var i = 0; i < sorted.length; i++) {
+                tempDict[sorted[i]] = dict[sorted[i]];
+            }
+
+            return tempDict;
+        }
+
+        async function loadAllJsonFiles() {
+            try {
+                [dataPokemons] = await Promise.all([
+                    fetch("./pokemon_go/latest/pokemons.json").then(response => response.json())
+                ]);
+
+                PrepareData();
+            } catch (error) {
+                console.error("Error loading JSON files:", error);
+                // Handle errors appropriately, e.g., display error messages to the user
+            }
+        }
+
+        window.addEventListener('load', function () {
+            loadAllJsonFiles();
+            fetch("./pokemon_go/cp_multiplier.json")
+                .then(response => response.json())
+                .then(parsed_data => {
+                    data_cp_multiplier = parsed_data;
+                });
+        })
+    </script>
+</body>
+
+</html>

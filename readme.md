@@ -45,3 +45,11 @@
 ### Best types
 
 - best_per_type.json: https://db.pokemongohub.net/pokemon-list/best-per-type/ -> `counters` Fetch/XHR
+
+### CP calculator:
+
+https://pokemon.gameinfo.io/en/tools/cp-calculator
+
+### Best PVP team:
+
+open Team_Builder.html, run `InterfaceMaster.getInstance().SearchBestTeam()`
