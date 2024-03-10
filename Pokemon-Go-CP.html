@@ -338,7 +338,7 @@
                             for (var o = [sta_i, atk_i, def_i], i = 1; i <= 40; i += 0.5) {
                                 var c = calculateCP(st.atk + atk_i, st.def + def_i, st.sta + sta_i, i);
                                 var multiplier = data_cp_multiplier.find(item => item.level === i).multiplier;
-                                var l = getHp(multiplier, st, o);
+                                var l = getHp(multiplier, st.sta, sta_i);
                                 var hp_match = true;
                                 if (hp != null && hp != undefined && hp > 0) {
                                     hp_match = hp == l;
@@ -361,7 +361,7 @@
         }
 
         function getHp(e, t, n) {
-            return Math.max(10, Math.floor((t[0] + n[0]) * e))
+            return Math.max(10, Math.floor((t + n) * e))
         }
 
         function find100CPFromPokemon() {
@@ -479,7 +479,7 @@
                 LoadEvolutions();
             }
 
-            var allEvolves = [];
+            var allEvolves = [pokemon];
 
             var preLength = allEvolves.length;
             var newEvolves = getEvolutionListByCode(code);
