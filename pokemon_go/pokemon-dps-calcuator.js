@@ -1,5 +1,5 @@
 function calculateCP(atk, def, sta, level) {
-    return Math.floor(Math.max(10, (atk * (def ** 0.5) * (sta ** 0.5) * data_cp_multiplier[level] ** 2) / 10))
+    return Math.floor(Math.max(10, (atk * (def ** 0.5) * (sta ** 0.5) * data_cp_multiplier.find(item => item.level === level).multiplier ** 2) / 10))
 }
 
 function calculateStatsByTag(baseStats, tag) {

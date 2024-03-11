@@ -81,6 +81,12 @@
             background: #8f8f8f;
         }
 
+        .glow {
+            -webkit-box-shadow: 0px 0px 8px 2px rgb(0 0 0);
+            -moz-box-shadow: 0px 0px 8px 2px rgb(0 0 0);
+            box-shadow: 0px 0px 8px 2px rgb(0 0 0);
+        }
+
         .iv-group {
             margin: 2px 5px;
             background-color: #eee;
@@ -330,6 +336,7 @@
                 const sta_init = 0;
                 const sta_end = 15;
                 console.log("stats", st);
+                console.log("attach isNaN", isNaN(attack));
                 for (var sta_i = sta_init; sta_i <= sta_end; sta_i++) {
                     for (var atk_i = sta_init; atk_i <= sta_end; atk_i++) {
                         if (!isNaN(attack)) {
@@ -340,7 +347,7 @@
                         for (var def_i = sta_init; def_i <= sta_end; def_i++)
                             for (var o = [sta_i, atk_i, def_i], i = 1; i <= MAX_LEVEL; i += 0.5) {
                                 var c = calculateCP(st.atk + atk_i, st.def + def_i, st.sta + sta_i, i);
-                                var multiplier = data_cp_multiplier[i];
+                                var multiplier = data_cp_multiplier.find(item => item.level === i).multiplier;
                                 var l = getHp(multiplier, st.sta, sta_i);
                                 var hp_match = true;
                                 if (hp != null && hp != undefined && hp > 0) {
@@ -458,7 +465,9 @@
         function getEvolvedCPText(e) {
             var results = [];
             for (const eItem of e) {
-                var str = `<div class='evolved-mon'>${eItem.pokemon.name}: <div class='league1500 ${eItem[1500] > 1500 ? "exceeded" : ""}'>${eItem[1500]} (${eItem["1500lvl"]})</div><div class='league2500 ${eItem[2500] > 2500 ? "exceeded" : ""}'>${eItem[2500]} (${eItem["2500lvl"]})</div></div>`;
+                var class1500 = eItem[1500] > 1500 ? "exceeded" : (eItem[1500] >= 1499 ? "glow" : "");
+                var class2500 = eItem[2500] > 2500 ? "exceeded" : (eItem[2500] >= 2499 ? "glow" : "");
+                var str = `<div class='evolved-mon'>${eItem.pokemon.name}: <div class='league1500 ${class1500}'>${eItem[1500]} (${eItem["1500lvl"]})</div><div class='league2500 ${class2500}'>${eItem[2500]} (${eItem["2500lvl"]})</div></div>`;
                 results.push(str);
             }
             return results.join("");
@@ -751,7 +760,7 @@
         const DEFAULT_DAMAGE_CONST = 1;
 
         const MIN_LEVEL = 1;
-        const MAX_LEVEL = 50;
+        const MAX_LEVEL = 45;
 
         const MIN_IV = 0;
         const MAX_IV = 15;
