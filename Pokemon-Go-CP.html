@@ -616,6 +616,9 @@
 
         function clearIVFromCP() {
             var pn = document.querySelector("#CP-IV-div");
+            document.querySelector("#cpValue").value = "";
+            document.querySelector("#hpValue").value = "";
+            document.querySelector("#attackValue").value = "";
             pn.innerHTML = "";
         }
 
