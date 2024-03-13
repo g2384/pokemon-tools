@@ -365,7 +365,17 @@
                 }
                 console.log(filtered);
                 if (i > MAX_LEVEL && Object.keys(filtered).length == 0) {
-                    return `${name} with those stats couldn't be found.`;
+                    var stats = [];
+                    if (!isNaN(cp)) {
+                        stats.push(`CP = ${cp}`);
+                    }
+                    if (!isNaN(hp)) {
+                        stats.push(`HP = ${hp}`);
+                    }
+                    if (!isNaN(attack)) {
+                        stats.push(`Atk = ${attack}`);
+                    }
+                    return `${name} with ${stats.join(", ")} couldn't be found.`;
                 }
                 return filtered;
             } else
@@ -399,6 +409,8 @@
         }
 
         function findIVFromCP() {
+            var r_div = document.querySelector("#CP-IV-div");
+            r_div.innerHTML = "Calculating...";
             var pn = document.querySelector("#pokemon-name");
             var pnSelected = pn.options[pn.selectedIndex];
             var d_code = pnSelected.getAttribute("data-code");
@@ -411,11 +423,9 @@
             attack = parseInt(attack);
             if (isNaN(cp)) {
                 cp = 10;
-                document.querySelector("#cpValue").value = 10;
             }
             console.log("findIVFromCP", cp, hp)
             var result = calculateIVFromCP(d_name, d_code, cp, hp, attack);
-            var r_div = document.querySelector("#CP-IV-div");
             if (typeof result === 'string' || result instanceof String) {
                 console.log(result);
                 r_div.innerHTML = result;
@@ -604,7 +614,6 @@
                     }
                     console.log("cannot find numerical form", e);
                 }
-
             }
             console.log("cannot find pokemon", e)
         }
@@ -687,7 +696,13 @@
 
                     var p = {};
                     p.name = evolution.evolution;
-                    p.form = evolution.form;
+
+                    // special cases
+                    var form = evolution.form;
+                    if (form == "JELLICENT_FEMALE") {
+                        form = "JELLICENT_NORMAL"
+                    }
+                    p.form = form;
                     list.push(p);
                 }
                 if (pokemon.index in evolutionsList) {
