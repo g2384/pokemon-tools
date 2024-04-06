@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <style>
+        body {
+            padding: 10px;
+            margin: 0 auto;
+            max-width: 1000px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(224, 224, 224);
+        }
+
+        textarea {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Exclude PvP Pokemons</h2>
+    <textarea rows="10" id="results"></textarea>
+    <script>
+        let evolutions = [];
+
+        function generateStrings(rankings) {
+            const names = new Set();
+            for (let i = 0; i < rankings.length; i++) {
+                var r = rankings[i];
+                var minLength = Math.min(100, r.length);
+                for (let j = 0; j < r.length; j++) {
+                    let name = rankings[i][j].speciesName;
+                    name = name.replace(/\([\w\-%\s']+\)/g, "");
+                    name = name.trim();
+                    names.add(name);
+                }
+                console.log([...names]);
+            }
+            document.querySelector("#results").innerHTML = "!+" + [...names].join(",!+");
+        }
+
+        async function loadAllJsonFiles() {
+            try {
+                Promise.all([
+                    fetch("./pokemon_go/pvp_rankings/rankings-1500-great.json").then(response => response.json()),
+                    fetch("./pokemon_go/pvp_rankings/rankings-1500-jungle.json").then(response => response.json()),
+                    fetch("./pokemon_go/pvp_rankings/rankings-1500-spring.json").then(response => response.json()),
+                    fetch("./pokemon_go/pvp_rankings/rankings-2500-ultra.json").then(response => response.json()),
+                    fetch("./pokemon_go/pvp_rankings/rankings-10000-master.json").then(response => response.json())
+                ]).then(([rankings1, rankings2, rankings3, rankings4, rankings5]) => {
+                    // Do something with evolutions, rankings1, rankings2, ...
+                    generateStrings([rankings1, rankings2, rankings3, rankings4, rankings5]);
+                });
+            } catch (error) {
+                console.error("Error loading JSON files:", error);
+                // Handle errors appropriately, e.g., display error messages to the user
+            }
+        }
+
+        window.addEventListener('load', function () {
+            loadAllJsonFiles();
+        })
+    </script>
+</body>
+
+</html>

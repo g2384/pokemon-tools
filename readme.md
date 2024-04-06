@@ -53,3 +53,4 @@ https://pokemon.gameinfo.io/en/tools/cp-calculator
 ### Best PVP team:
 
 open Team_Builder.html, run `InterfaceMaster.getInstance().SearchBestTeam()`
+PVP rankings: `https://pvpoke.com/rankings/jungle/1500/overall/steelix/` -> jungle.json
