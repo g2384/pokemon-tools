@@ -42,7 +42,8 @@
                 oldSize = newNames.size;
                 newNames = replaceEvolutions(evolutions, newNames);
             }
-            document.querySelector("#results").innerHTML = "!+" + [...newNames].join(",!+");
+            var html = "!+" + [...newNames].join(",!+");
+            document.querySelector("#results").innerHTML = html;
         }
 
         function replaceEvolutions(evolutions, names) {
@@ -54,7 +55,7 @@
                     for (const e of evo.evolutions) {
                         if (namesArray[i] == e.pokemon_name) {
                             // console.log("replacing " + e.pokemon_name + " with " + evo.pokemon_name);
-                            newNames.add(evo.pokemon_name);
+                            newNames.add(evo.pokemon_name.replace("\u2640", "").replace("\u2642", ""));
                             added = true;
                         }
                         if (added) {
