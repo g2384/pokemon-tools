@@ -42,7 +42,7 @@
                 oldSize = newNames.size;
                 newNames = replaceEvolutions(evolutions, newNames);
             }
-            var html = "!+" + [...newNames].join(",!+");
+            var html = "!+" + [...newNames].join("&!+");
             document.querySelector("#results").innerHTML = html;
         }
 
