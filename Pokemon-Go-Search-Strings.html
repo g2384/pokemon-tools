@@ -19,15 +19,25 @@
 <body>
     <h2>Exclude PvP Pokemons</h2>
     <textarea rows="10" id="results"></textarea>
+    Get top <input type="number" id="rankings_num" value="50" /> from the ranking list.
+    <input type="button" value="Generate" onclick="generateStrings()" />
     <script>
         let evolutions = [];
+        let rankings1 = [];
+        let rankings2 = [];
+        let rankings3 = [];
+        let rankings4 = [];
+        let rankings5 = [];
 
-        function generateStrings(evolutions, rankings) {
+        function generateStrings() {
             const names = new Set();
+            let num = document.querySelector("#rankings_num").value;
+            console.log(num)
+            const rankings = [rankings1, rankings2, rankings3, rankings4, rankings5];
             for (let i = 0; i < rankings.length; i++) {
                 var r = rankings[i];
-                var minLength = Math.min(100, r.length);
-                for (let j = 0; j < r.length; j++) {
+                var minLength = Math.min(num, r.length);
+                for (let j = 0; j < minLength; j++) {
                     let name = rankings[i][j].speciesName;
                     name = name.replace(/\([\w\-%\s']+\)/g, "");
                     name = name.trim();
@@ -83,8 +93,14 @@
                     fetch("./pokemon_go/pvp_rankings/rankings-1500-spring.json").then(response => response.json()),
                     fetch("./pokemon_go/pvp_rankings/rankings-2500-ultra.json").then(response => response.json()),
                     fetch("./pokemon_go/pvp_rankings/rankings-10000-master.json").then(response => response.json())
-                ]).then(([evolutions, rankings1, rankings2, rankings3, rankings4, rankings5]) => {
-                    generateStrings(evolutions, [rankings1, rankings2, rankings3, rankings4, rankings5]);
+                ]).then(([e1, r1, r2, r3, r4, r5]) => {
+                    evolutions = e1;
+                    rankings1 = r1;
+                    rankings2 = r2;
+                    rankings3 = r3;
+                    rankings4 = r4;
+                    rankings5 = r5;
+                    generateStrings();
                 });
             } catch (error) {
                 console.error("Error loading JSON files:", error);
