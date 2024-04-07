@@ -57,7 +57,7 @@
             }
             var html = "!+" + [...newNames].join("&!+");
             document.querySelector("#results_ex").innerHTML = html;
-            document.querySelector("#results_in").innerHTML = html.replace(/&/g, ",");
+            document.querySelector("#results_in").innerHTML = html.replace(/&!/g, ",").substr(1);
         }
 
         function replaceEvolutions(evolutions, names) {
