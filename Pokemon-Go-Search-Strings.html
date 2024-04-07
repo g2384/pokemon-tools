@@ -17,10 +17,13 @@
 </head>
 
 <body>
-    <h2>Exclude PvP Pokemons</h2>
-    <textarea rows="10" id="results"></textarea>
+    <h2>PvP Pokemons</h2>
     Get top <input type="number" id="rankings_num" value="50" /> from the ranking list.
     <input type="button" value="Generate" onclick="generateStrings()" />
+    <h2>Show non-PvP Pokemons</h2>
+    <textarea rows="10" id="results_ex"></textarea>
+    <h2>Show PvP Pokemons</h2>
+    <textarea rows="10" id="results_in"></textarea>
     <script>
         let evolutions = [];
         let rankings1 = [];
@@ -53,7 +56,8 @@
                 newNames = replaceEvolutions(evolutions, newNames);
             }
             var html = "!+" + [...newNames].join("&!+");
-            document.querySelector("#results").innerHTML = html;
+            document.querySelector("#results_ex").innerHTML = html;
+            document.querySelector("#results_in").innerHTML = html.replace(/&/g, ",");
         }
 
         function replaceEvolutions(evolutions, names) {
