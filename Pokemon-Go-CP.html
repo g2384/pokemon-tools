@@ -501,20 +501,29 @@
                 return [];
             }
 
-            if (isEmpty(evolutionsList)) {
+            var evoList = evolutionsList;
+            if (name.indexOf("Galarian") >= 0) {
+                evoList = evolutionsListGalarian
+            }
+
+            if (isEmpty(evoList)) {
                 LoadEvolutions();
+                var evoList = evolutionsList;
+                if (name.indexOf("Galarian") >= 0) {
+                    evoList = evolutionsListGalarian
+                }
             }
 
             var allEvolves = [pokemon];
 
             var preLength = allEvolves.length;
-            var newEvolves = getEvolutionListByCode(code);
+            var newEvolves = getEvolutionListByCode(code, evoList);
             allEvolves = allEvolves.concat(newEvolves);
             while (preLength != allEvolves.length) {
                 preLength = allEvolves.length;
                 var newEvolves2 = [];
                 for (const e of newEvolves) {
-                    var n = getEvolutionListByCode(e.index);
+                    var n = getEvolutionListByCode(e.index, evoList);
                     allEvolves = allEvolves.concat(n);
                     newEvolves2 = newEvolves2.concat(n);
                 }
@@ -561,10 +570,10 @@
             return results;
         }
 
-        function getEvolutionListByCode(code) {
+        function getEvolutionListByCode(code, evoList) {
             var results = []
-            if (code in evolutionsList) {
-                var e = evolutionsList[code];
+            if (code in evoList) {
+                var e = evoList[code];
                 for (const eItem of e) {
                     var r = getEvolvedPokemon(eItem);
                     results.push(r);
@@ -597,6 +606,7 @@
 
             if (e.form != undefined) {
                 if (e.form.indexOf('_NORMAL') >= 0) {
+                    console.log("finding normal form", e);
                     var form = e.form.replace(/_NORMAL/, "");
                     for (const p of newPokemon) {
                         if (p.templateId.endsWith(form)) {
@@ -606,6 +616,7 @@
                     console.log("cannot find normal form", e);
                 }
                 else if (e.form.indexOfRegex(/_\d{4}/) >= 0) {
+                    console.log("finding numerical form", e);
                     var form = e.form.replace(/_\d{4}/, "");
                     for (const p of newPokemon) {
                         if (p.templateId.endsWith(form)) {
@@ -613,6 +624,16 @@
                         }
                     }
                     console.log("cannot find numerical form", e);
+                }
+                else if (e.form.indexOf('_STANDARD') >= 0) {
+                    console.log("finding standard form", e);
+                    var form = e.form.replace(/_STANDARD/, "");
+                    for (const p of newPokemon) {
+                        if (p.templateId.endsWith(form)) {
+                            return p;
+                        }
+                    }
+                    console.log("cannot find standard form", e);
                 }
             }
             console.log("cannot find pokemon", e)
@@ -674,12 +695,36 @@
         }
 
         var evolutionsList = {};
+        var evolutionsListGalarian = {};
 
         function LoadEvolutions() {
-            evolutionsList = {};
+            console.log("loading evolution list")
+            evolutionsList = LoadEvolutionsList("", ["GALARIAN"]);
+            evolutionsListGalarian = LoadEvolutionsList("GALARIAN", []);
+        }
+
+        function doesNotContainPhrase(np, phraseList) {
+            for (let j = 0; j < phraseList.length; j++) {
+                const phrase = phraseList[j];
+                if (np.includes(phrase)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function LoadEvolutionsList(filter, notContains) {
+            evoList = {};
             // Iterate through the JSON data and create rows for each Pokemon
             for (const pokemon of newPokemon) {
                 if (pokemon.evolutionBranch == undefined) {
+                    continue;
+                }
+
+                if (pokemon.templateId.indexOf(filter) >= 0 && doesNotContainPhrase(pokemon.templateId, notContains)) {
+
+                }
+                else {
                     continue;
                 }
 
@@ -705,13 +750,15 @@
                     p.form = form;
                     list.push(p);
                 }
-                if (pokemon.index in evolutionsList) {
-                    evolutionsList[pokemon.index] = list.concat(evolutionsList[pokemon.index])
+                if (pokemon.index in evoList) {
+                    evoList[pokemon.index] = list.concat(evoList[pokemon.index])
                 }
                 else {
-                    evolutionsList[pokemon.index] = list;
+                    evoList[pokemon.index] = list;
                 }
             }
+
+            return evoList;
         }
 
         // Move sets:
