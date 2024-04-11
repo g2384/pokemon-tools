@@ -503,7 +503,13 @@
 
             var evoList = evolutionsList;
             if (name.indexOf("Galarian") >= 0) {
-                evoList = evolutionsListGalarian
+                evoList = evolutionsListGalarian;
+            }
+            else if (name.indexOf("Alola") >= 0) {
+                evoList = evolutionsListAlola;
+            }
+            else if (name.indexOf("Hisuian") >= 0) {
+                evoList = evolutionsListHisuian;
             }
 
             if (isEmpty(evoList)) {
@@ -511,6 +517,12 @@
                 var evoList = evolutionsList;
                 if (name.indexOf("Galarian") >= 0) {
                     evoList = evolutionsListGalarian
+                }
+                else if (name.indexOf("Alola") >= 0) {
+                    evoList = evolutionsListAlola;
+                }
+                else if (name.indexOf("Hisuian") >= 0) {
+                    evoList = evolutionsListHisuian;
                 }
             }
 
@@ -696,11 +708,15 @@
 
         var evolutionsList = {};
         var evolutionsListGalarian = {};
+        var evolutionsListAlola = {};
+        var evolutionsListHisuian = {};
 
         function LoadEvolutions() {
             console.log("loading evolution list")
-            evolutionsList = LoadEvolutionsList("", ["GALARIAN"]);
+            evolutionsList = LoadEvolutionsList("", ["GALARIAN", "ALOLA", "HISUIAN"]);
             evolutionsListGalarian = LoadEvolutionsList("GALARIAN", []);
+            evolutionsListAlola = LoadEvolutionsList("ALOLA", []);
+            evolutionsListHisuian = LoadEvolutionsList("HISUIAN", []);
         }
 
         function doesNotContainPhrase(np, phraseList) {
