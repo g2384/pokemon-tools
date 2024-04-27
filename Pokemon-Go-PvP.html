@@ -23,6 +23,19 @@
             margin-left: 2px;
         }
 
+        .move {
+            padding: 2px;
+            border: 1px solid #888;
+            margin: 5px 2px;
+            display: inline-block;
+            min-width: 12em;
+        }
+
+        .move-header {
+            display: inline-block;
+            min-width: 5em;
+        }
+
         .move-tag {
             color: #000;
             font-size: 10px;
@@ -148,12 +161,13 @@
                 var move2 = getMoveString(move[1], combatMovesDict, eliteChargedMove);
                 var move3 = getMoveString(move[2], combatMovesDict, eliteChargedMove);
                 var moveStr = `${move1}; ${move2}, ${move3}`;
+                var moveSum = moveStr;
                 if (preMove == moveStr) {
-                    strs.push(`${key.split('_')[0]} (${value.rank}): (ditto)`);
+                    moveSum = "(ditto)";
                 }
                 else {
-                    strs.push(`${key.split('_')[0]} (${value.rank}): ${moveStr}`);
                 }
+                strs.push(`<div class='move-header'>${key.split('_')[0]} (${value.rank})</div>: ${moveSum}`);
                 preMove = moveStr;
 
             }
@@ -172,7 +186,7 @@
             var type = combatMovesDict[move].type.replace("POKEMON_TYPE_", "").toLowerCase();
             var tags = eliteMoves.includes(move) ? `<span class='move-tag elite-move move-${type}'>Elite</span>` : '';
             var moveName = toTitleCase(move.replace("_", " "));
-            return getImage(type, "type") + `${moveName}${tags}`;
+            return "<div class='move'>" + getImage(type, "type") + `${moveName}${tags}</div>`;
         }
 
         async function loadAllJsonFiles() {
