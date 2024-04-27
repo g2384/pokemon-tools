@@ -3,6 +3,7 @@
 <head>
     <link href="./css/tom-select.bootstrap5.min.css" rel="stylesheet" />
     <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./css/pokemon_types.css" rel="stylesheet" />
     <style>
         body {
             padding: 10px;
@@ -10,6 +11,16 @@
             max-width: 1000px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: rgb(224, 224, 224);
+        }
+
+        .img_type {
+            height: 20px;
+            padding-right: 2px;
+        }
+
+        .img_icon {
+            height: 20px;
+            margin-left: 2px;
         }
 
         .move-tag {
@@ -46,14 +57,24 @@
     <input type="button" value="Generate" onclick="generateTable()" />
     <div id="results"></div>
     <script>
-        let evolutions = [];
+        let pokemons = [];
+        let dataCombatMoves = [];
         let rankings_great = [];
         let rankings_jungle = [];
         let rankings_spring = [];
         let rankings_ultra = [];
         let rankings_master = [];
+        let combatMovesDict = {};
 
         function generateTable() {
+            combatMovesDict = {};
+            for (var i = 0; i < dataCombatMoves.length; i++) {
+                var move = dataCombatMoves[i];
+                var settings = move["data"]["combatMove"];
+                var id = settings["uniqueId"];
+                combatMovesDict[id] = settings;
+            }
+
             const namesDict = {};
             let num = document.querySelector("#rankings_num").value;
             console.log(num)
@@ -71,6 +92,7 @@
                     let name = value[j].speciesName;
                     name = name.replace(/\([\w\-%\s']+\)/g, "");
                     name = name.trim();
+                    name = name.toUpperCase();
                     if (!namesDict[name]) {
                         namesDict[name] = {};
                     }
@@ -79,19 +101,53 @@
             }
 
             const rows = [];
+            var eliteQuickMove = [];
+            var eliteChargedMove = [];
             for (const [key, value] of Object.entries(namesDict)) {
-                rows.push(`<td>${key}</td><td>${getMovesCell(value)}</td>`);
+                for (const p of pokemons) {
+                    if (p.templateId.includes(key)) {
+                        var ee = p.data?.pokemonSettings?.eliteCinematicMove;
+                        if (ee != undefined) {
+                            eliteChargedMove = ee;
+                        };
+                        ee = p.data?.pokemonSettings?.eliteQuickMove;
+                        if (ee != undefined) {
+                            eliteQuickMove = ee;
+                        }
+                        break;
+                    }
+                }
+                var name = toTitleCase(key);
+                rows.push(`<td>${name}</td><td>${getMovesCell(value, eliteQuickMove, eliteChargedMove, combatMovesDict)}</td>`);
             }
-            var html = `<table><tr><th>Pokemon</th><th>Moves</th></tr><tr>${rows.join("</tr><tr>")}</tr></table>`;
+            var html = `<table class='table table-striped align-middle'><tr><th>Pokemon</th><th>Moves</th></tr><tr>${rows.join("</tr><tr>")}</tr></table>`;
             document.querySelector("#results").innerHTML = html;
         }
 
-        function getMovesCell(moves) {
+        function toTitleCase(str) {
+            // Split the string into an array of words
+            const words = str.toLowerCase().split(' ');
+
+            // Capitalize the first letter of each word
+            const titleCaseWords = words.map(word => {
+                return word.charAt(0).toUpperCase() + word.slice(1);
+            });
+
+            // Join the words back into a single string
+            const titleCaseString = titleCaseWords.join(' ');
+
+            return titleCaseString;
+        }
+
+        function getMovesCell(moves, eliteQuickMove, eliteChargedMove, combatMovesDict) {
             var strs = [];
             var preMove = "";
             for (const [key, value] of Object.entries(moves)) {
                 var move = value.moveset;
-                var moveStr = `${move[0]}; ${move[1]}, ${move[2]}`;
+                var move1 = getMoveString(move[1], combatMovesDict, eliteQuickMove);
+                var move2 = getMoveString(move[1], combatMovesDict, eliteChargedMove);
+                var move3 = getMoveString(move[2], combatMovesDict, eliteChargedMove);
+                var moveStr = `${move1}; ${move2}, ${move3}`;
                 if (preMove == moveStr) {
                     strs.push(`${key.split('_')[0]} (${value.rank}): (ditto)`);
                 }
@@ -104,17 +160,34 @@
             return strs.join("<br>");
         }
 
+        function getImage(value, type) {
+            return "<img class='img_" + type + " img_v_" + value + "' src='./pokemon_go/img/" + type + "_" + value + ".png' alt='" + value + "'/>";
+        }
+
+        function getMoveString(move, combatMovesDict, eliteMoves) {
+            // special cases
+            if (move == "FUTURE_SIGHT") {
+                move = "FUTURESIGHT";
+            }
+            var type = combatMovesDict[move].type.replace("POKEMON_TYPE_", "").toLowerCase();
+            var tags = eliteMoves.includes(move) ? `<span class='move-tag elite-move move-${type}'>Elite</span>` : '';
+            var moveName = toTitleCase(move.replace("_", " "));
+            return getImage(type, "type") + `${moveName}${tags}`;
+        }
+
         async function loadAllJsonFiles() {
             try {
                 Promise.all([
-                    fetch("./pokemon_go/pokemon_evolutions.json").then(response => response.json()),
+                    fetch("./pokemon_go/latest/pokemons.json").then(response => response.json()),
+                    fetch("./pokemon_go/latest/combatMoves.json").then(response => response.json()),
                     fetch("./pokemon_go/pvp_rankings/rankings-1500-great.json").then(response => response.json()),
                     fetch("./pokemon_go/pvp_rankings/rankings-1500-jungle.json").then(response => response.json()),
                     fetch("./pokemon_go/pvp_rankings/rankings-1500-spring.json").then(response => response.json()),
                     fetch("./pokemon_go/pvp_rankings/rankings-2500-ultra.json").then(response => response.json()),
                     fetch("./pokemon_go/pvp_rankings/rankings-10000-master.json").then(response => response.json())
-                ]).then(([e1, r1, r2, r3, r4, r5]) => {
-                    evolutions = e1;
+                ]).then(([e1, m1, r1, r2, r3, r4, r5]) => {
+                    pokemons = e1;
+                    dataCombatMoves = m1;
                     rankings_great = r1;
                     rankings_jungle = r2;
                     rankings_spring = r3;
