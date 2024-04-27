@@ -1245,7 +1245,10 @@
           "movementType": "MOVEMENT_JUMP",
           "attackProbability": 0.1,
           "dodgeProbability": 0.15,
-          "cameraDistance": 1.89
+          "cameraDistance": 1.89,
+          "shadowBaseCaptureRate": 0.5,
+          "shadowAttackProbability": 0.7,
+          "shadowDodgeProbability": 0.2
         },
         "stats": [
           120,
@@ -1274,7 +1277,8 @@
         "evolutionBranch": [
           {
             "evolution": "PIDGEOTTO",
-            "candyCost": 12
+            "candyCost": 12,
+            "candyCostPurified": 10
           }
         ],
         "thirdMove": {
@@ -1284,6 +1288,12 @@
         "isTransferable": true,
         "isDeployable": true,
         "isTradable": true,
+        "shadow": {
+          "purificationStardustNeeded": 1000,
+          "purificationCandyNeeded": 1,
+          "purifiedChargeMove": "RETURN",
+          "shadowChargeMove": "FRUSTRATION"
+        },
         "buddyWalkedMegaEnergyAward": 5,
         "types": [
           "normal",
@@ -1305,7 +1315,10 @@
           "attackProbability": 0.1,
           "dodgeProbability": 0.15,
           "cameraDistance": 4.0,
-          "bonusXlCandyCaptureReward": 1
+          "bonusXlCandyCaptureReward": 1,
+          "shadowBaseCaptureRate": 0.25,
+          "shadowAttackProbability": 0.7,
+          "shadowDodgeProbability": 0.2
         },
         "stats": [
           160,
@@ -1335,7 +1348,8 @@
         "evolutionBranch": [
           {
             "evolution": "PIDGEOT",
-            "candyCost": 50
+            "candyCost": 50,
+            "candyCostPurified": 45
           }
         ],
         "thirdMove": {
@@ -1345,6 +1359,12 @@
         "isTransferable": true,
         "isDeployable": true,
         "isTradable": true,
+        "shadow": {
+          "purificationStardustNeeded": 1000,
+          "purificationCandyNeeded": 1,
+          "purifiedChargeMove": "RETURN",
+          "shadowChargeMove": "FRUSTRATION"
+        },
         "buddyWalkedMegaEnergyAward": 5,
         "types": [
           "normal",
@@ -1366,7 +1386,10 @@
           "attackProbability": 0.2,
           "dodgeProbability": 0.15,
           "cameraDistance": 5.4,
-          "bonusXlCandyCaptureReward": 2
+          "bonusXlCandyCaptureReward": 2,
+          "shadowBaseCaptureRate": 0.125,
+          "shadowAttackProbability": 0.7,
+          "shadowDodgeProbability": 0.2
         },
         "stats": [
           195,
@@ -1405,6 +1428,12 @@
         "isTransferable": true,
         "isDeployable": true,
         "isTradable": true,
+        "shadow": {
+          "purificationStardustNeeded": 1000,
+          "purificationCandyNeeded": 1,
+          "purifiedChargeMove": "RETURN",
+          "shadowChargeMove": "FRUSTRATION"
+        },
         "eliteQuickMove": [
           "WING_ATTACK_FAST",
           "GUST_FAST"
@@ -2062,6 +2091,57 @@
     }
   },
   {
+    "templateId": "V0025_POKEMON_PIKACHU_DOCTOR",
+    "data": {
+      "templateId": "V0025_POKEMON_PIKACHU_DOCTOR",
+      "pokemonSettings": {
+        "pokemonId": "Pikachu",
+        "encounter": {
+          "movementType": "MOVEMENT_JUMP",
+          "attackProbability": 0.05,
+          "dodgeProbability": 0.3,
+          "cameraDistance": 2.775
+        },
+        "stats": [
+          111,
+          112,
+          96
+        ],
+        "quickMoves": [
+          "THUNDER_SHOCK_FAST",
+          "CHARM_FAST"
+        ],
+        "cinematicMoves": [
+          "THUNDER_PUNCH",
+          "PLAY_ROUGH"
+        ],
+        "evolutionPips": 1,
+        "pokedexHeightM": 0.4,
+        "pokedexWeightKg": 6.0,
+        "parentPokemonId": "PICHU",
+        "heightStdDev": 0.05,
+        "weightStdDev": 0.75,
+        "familyId": "FAMILY_PIKACHU",
+        "kmBuddyDistance": 1.0,
+        "form": "PIKACHU_DOCTOR",
+        "thirdMove": {
+          "stardustToUnlock": 10000,
+          "candyToUnlock": 25
+        },
+        "isTransferable": true,
+        "isDeployable": true,
+        "isTradable": true,
+        "eliteQuickMove": [
+          "PRESENT_FAST"
+        ],
+        "disableTransferToPokemonHome": true,
+        "types": [
+          "electric"
+        ]
+      }
+    }
+  },
+  {
     "templateId": "V0025_POKEMON_PIKACHU_FLYING_01",
     "data": {
       "templateId": "V0025_POKEMON_PIKACHU_FLYING_01",
@@ -2203,6 +2283,59 @@
         "familyId": "FAMILY_PIKACHU",
         "kmBuddyDistance": 1.0,
         "form": "PIKACHU_FLYING_03",
+        "thirdMove": {
+          "stardustToUnlock": 10000,
+          "candyToUnlock": 25
+        },
+        "isTransferable": true,
+        "isDeployable": true,
+        "isTradable": true,
+        "eliteQuickMove": [
+          "PRESENT_FAST"
+        ],
+        "disableTransferToPokemonHome": true,
+        "types": [
+          "electric"
+        ]
+      }
+    }
+  },
+  {
+    "templateId": "V0025_POKEMON_PIKACHU_FLYING_04",
+    "data": {
+      "templateId": "V0025_POKEMON_PIKACHU_FLYING_04",
+      "pokemonSettings": {
+        "pokemonId": "Pikachu",
+        "encounter": {
+          "movementType": "MOVEMENT_FLYING",
+          "attackProbability": 0.05,
+          "dodgeProbability": 0.3,
+          "cameraDistance": 2.775
+        },
+        "stats": [
+          111,
+          112,
+          96
+        ],
+        "quickMoves": [
+          "THUNDER_SHOCK_FAST",
+          "QUICK_ATTACK_FAST"
+        ],
+        "cinematicMoves": [
+          "DISCHARGE",
+          "THUNDERBOLT",
+          "WILD_CHARGE",
+          "FLY"
+        ],
+        "evolutionPips": 1,
+        "pokedexHeightM": 0.4,
+        "pokedexWeightKg": 6.0,
+        "parentPokemonId": "PICHU",
+        "heightStdDev": 0.05,
+        "weightStdDev": 0.75,
+        "familyId": "FAMILY_PIKACHU",
+        "kmBuddyDistance": 1.0,
+        "form": "PIKACHU_FLYING_04",
         "thirdMove": {
           "stardustToUnlock": 10000,
           "candyToUnlock": 25
@@ -2512,6 +2645,58 @@
         "isTransferable": true,
         "isDeployable": true,
         "isTradable": true,
+        "disableTransferToPokemonHome": true,
+        "types": [
+          "electric"
+        ]
+      }
+    }
+  },
+  {
+    "templateId": "V0025_POKEMON_PIKACHU_HORIZONS",
+    "data": {
+      "templateId": "V0025_POKEMON_PIKACHU_HORIZONS",
+      "pokemonSettings": {
+        "pokemonId": "Pikachu",
+        "encounter": {
+          "movementType": "MOVEMENT_JUMP",
+          "attackProbability": 0.1,
+          "dodgeProbability": 0.15,
+          "cameraDistance": 2.775
+        },
+        "stats": [
+          111,
+          112,
+          96
+        ],
+        "quickMoves": [
+          "THUNDER_SHOCK_FAST",
+          "QUICK_ATTACK_FAST"
+        ],
+        "cinematicMoves": [
+          "DISCHARGE",
+          "THUNDERBOLT",
+          "WILD_CHARGE"
+        ],
+        "evolutionPips": 1,
+        "pokedexHeightM": 0.4,
+        "pokedexWeightKg": 6.0,
+        "parentPokemonId": "PICHU",
+        "heightStdDev": 0.05,
+        "weightStdDev": 0.75,
+        "familyId": "FAMILY_PIKACHU",
+        "kmBuddyDistance": 1.0,
+        "form": "PIKACHU_HORIZONS",
+        "thirdMove": {
+          "stardustToUnlock": 10000,
+          "candyToUnlock": 25
+        },
+        "isTransferable": true,
+        "isDeployable": true,
+        "isTradable": true,
+        "eliteCinematicMove": [
+          "VOLT_TACKLE"
+        ],
         "disableTransferToPokemonHome": true,
         "types": [
           "electric"
@@ -3084,6 +3269,55 @@
     }
   },
   {
+    "templateId": "V0025_POKEMON_PIKACHU_TSHIRT_03",
+    "data": {
+      "templateId": "V0025_POKEMON_PIKACHU_TSHIRT_03",
+      "pokemonSettings": {
+        "pokemonId": "Pikachu",
+        "encounter": {
+          "movementType": "MOVEMENT_JUMP",
+          "attackProbability": 0.1,
+          "dodgeProbability": 0.15,
+          "cameraDistance": 2.775
+        },
+        "stats": [
+          111,
+          112,
+          96
+        ],
+        "quickMoves": [
+          "THUNDER_SHOCK_FAST",
+          "QUICK_ATTACK_FAST"
+        ],
+        "cinematicMoves": [
+          "DISCHARGE",
+          "THUNDERBOLT",
+          "WILD_CHARGE"
+        ],
+        "evolutionPips": 1,
+        "pokedexHeightM": 0.4,
+        "pokedexWeightKg": 6.0,
+        "parentPokemonId": "PICHU",
+        "heightStdDev": 0.05,
+        "weightStdDev": 0.75,
+        "familyId": "FAMILY_PIKACHU",
+        "kmBuddyDistance": 1.0,
+        "form": "PIKACHU_TSHIRT_03",
+        "thirdMove": {
+          "stardustToUnlock": 10000,
+          "candyToUnlock": 25
+        },
+        "isTransferable": true,
+        "isDeployable": true,
+        "isTradable": true,
+        "disableTransferToPokemonHome": true,
+        "types": [
+          "electric"
+        ]
+      }
+    }
+  },
+  {
     "templateId": "V0025_POKEMON_PIKACHU_VS_2019",
     "data": {
       "templateId": "V0025_POKEMON_PIKACHU_VS_2019",
@@ -3384,7 +3618,8 @@
         ],
         "quickMoves": [
           "SCRATCH_FAST",
-          "MUD_SHOT_FAST"
+          "MUD_SHOT_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "DIG",
@@ -3524,7 +3759,8 @@
         ],
         "quickMoves": [
           "METAL_CLAW_FAST",
-          "MUD_SHOT_FAST"
+          "MUD_SHOT_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "EARTHQUAKE",
@@ -5135,7 +5371,8 @@
         ],
         "quickMoves": [
           "MUD_SLAP_FAST",
-          "SCRATCH_FAST"
+          "SCRATCH_FAST",
+          "MUD_SHOT_FAST"
         ],
         "cinematicMoves": [
           "DIG",
@@ -5201,7 +5438,8 @@
         ],
         "quickMoves": [
           "MUD_SLAP_FAST",
-          "METAL_CLAW_FAST"
+          "METAL_CLAW_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "DIG",
@@ -5269,7 +5507,8 @@
         ],
         "quickMoves": [
           "SUCKER_PUNCH_FAST",
-          "MUD_SLAP_FAST"
+          "MUD_SLAP_FAST",
+          "MUD_SHOT_FAST"
         ],
         "cinematicMoves": [
           "EARTHQUAKE",
@@ -5325,7 +5564,8 @@
         ],
         "quickMoves": [
           "METAL_CLAW_FAST",
-          "MUD_SLAP_FAST"
+          "MUD_SLAP_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "EARTHQUAKE",
@@ -5383,7 +5623,8 @@
         ],
         "quickMoves": [
           "SUCKER_PUNCH_FAST",
-          "MUD_SLAP_FAST"
+          "MUD_SLAP_FAST",
+          "MUD_SHOT_FAST"
         ],
         "cinematicMoves": [
           "EARTHQUAKE",
@@ -7412,7 +7653,8 @@
         ],
         "quickMoves": [
           "ROCK_THROW_FAST",
-          "MUD_SLAP_FAST"
+          "MUD_SLAP_FAST",
+          "MUD_SHOT_FAST"
         ],
         "cinematicMoves": [
           "DIG",
@@ -7560,7 +7802,8 @@
         ],
         "quickMoves": [
           "ROCK_THROW_FAST",
-          "MUD_SLAP_FAST"
+          "MUD_SLAP_FAST",
+          "MUD_SHOT_FAST"
         ],
         "cinematicMoves": [
           "STONE_EDGE",
@@ -8336,7 +8579,8 @@
         "quickMoves": [
           "SPARK_FAST",
           "THUNDER_SHOCK_FAST",
-          "VOLT_SWITCH_FAST"
+          "VOLT_SWITCH_FAST",
+          "METAL_SOUND_FAST"
         ],
         "cinematicMoves": [
           "DISCHARGE",
@@ -8408,7 +8652,8 @@
           "SPARK_FAST",
           "CHARGE_BEAM_FAST",
           "THUNDER_SHOCK_FAST",
-          "VOLT_SWITCH_FAST"
+          "VOLT_SWITCH_FAST",
+          "METAL_SOUND_FAST"
         ],
         "cinematicMoves": [
           "ZAP_CANNON",
@@ -8479,7 +8724,8 @@
           "SPARK_FAST",
           "CHARGE_BEAM_FAST",
           "THUNDER_SHOCK_FAST",
-          "VOLT_SWITCH_FAST"
+          "VOLT_SWITCH_FAST",
+          "METAL_SOUND_FAST"
         ],
         "cinematicMoves": [
           "ZAP_CANNON",
@@ -11663,7 +11909,8 @@
           "POWER_GEM",
           "PSYCHIC",
           "THUNDER",
-          "ICE_BEAM"
+          "ICE_BEAM",
+          "PSYBEAM"
         ],
         "evolutionPips": 1,
         "pokedexHeightM": 1.1,
@@ -11713,7 +11960,8 @@
         "quickMoves": [
           "CONFUSION_FAST",
           "ZEN_HEADBUTT_FAST",
-          "MAGICAL_LEAF_FAST"
+          "MAGICAL_LEAF_FAST",
+          "PSYWAVE_FAST"
         ],
         "cinematicMoves": [
           "PSYBEAM",
@@ -14659,7 +14907,8 @@
         "quickMoves": [
           "WATERFALL_FAST",
           "BITE_FAST",
-          "ICE_FANG_FAST"
+          "ICE_FANG_FAST",
+          "SHADOW_CLAW_FAST"
         ],
         "cinematicMoves": [
           "CRUNCH",
@@ -17216,7 +17465,8 @@
         ],
         "quickMoves": [
           "ASTONISH_FAST",
-          "HEX_FAST"
+          "HEX_FAST",
+          "PSYWAVE_FAST"
         ],
         "cinematicMoves": [
           "SHADOW_SNEAK",
@@ -17279,7 +17529,8 @@
         ],
         "quickMoves": [
           "ASTONISH_FAST",
-          "HEX_FAST"
+          "HEX_FAST",
+          "PSYWAVE_FAST"
         ],
         "cinematicMoves": [
           "SHADOW_SNEAK",
@@ -18244,6 +18495,13 @@
         "weightStdDev": 6.75,
         "familyId": "FAMILY_HERACROSS",
         "kmBuddyDistance": 3.0,
+        "evolutionBranch": [
+          {
+            "temporaryEvolution": "TEMP_EVOLUTION_MEGA",
+            "temporaryEvolutionEnergyCost": 200,
+            "temporaryEvolutionEnergyCostSubsequent": 40
+          }
+        ],
         "thirdMove": {
           "stardustToUnlock": 50000,
           "candyToUnlock": 50
@@ -18251,6 +18509,43 @@
         "isTransferable": true,
         "isDeployable": true,
         "isTradable": true,
+        "tempEvoOverrides": [
+          {
+            "tempEvoId": "TEMP_EVOLUTION_MEGA",
+            "stats": {
+              "baseStamina": 190,
+              "baseAttack": 334,
+              "baseDefense": 223
+            },
+            "averageHeightM": 1.7,
+            "averageWeightKg": 62.5,
+            "typeOverride1": "POKEMON_TYPE_BUG",
+            "typeOverride2": "POKEMON_TYPE_FIGHTING",
+            "camera": {
+              "cylinderRadiusM": 1.0,
+              "cylinderHeightM": 1.8
+            },
+            "modelScaleV2": 1.0,
+            "modelHeight": 1.7,
+            "buddyOffsetMale": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "buddyOffsetFemale": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "buddyPortraitOffset": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "raidBossDistanceOffset": 2.0
+          }
+        ],
+        "buddyWalkedMegaEnergyAward": 15,
         "types": [
           "bug",
           "fighting"
@@ -21599,7 +21894,8 @@
         ],
         "quickMoves": [
           "TACKLE_FAST",
-          "ROCK_SMASH_FAST"
+          "ROCK_SMASH_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "DIG",
@@ -21730,7 +22026,8 @@
         ],
         "quickMoves": [
           "SHADOW_CLAW_FAST",
-          "TACKLE_FAST"
+          "TACKLE_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "DIG",
@@ -22763,7 +23060,8 @@
           "PSYCHIC",
           "DISARMING_VOICE",
           "SHADOW_SNEAK",
-          "TRIPLE_AXEL"
+          "TRIPLE_AXEL",
+          "DRAINING_KISS"
         ],
         "evolutionPips": 1,
         "pokedexHeightM": 0.79,
@@ -25739,7 +26037,8 @@
         ],
         "quickMoves": [
           "MUD_SHOT_FAST",
-          "STRUGGLE_BUG_FAST"
+          "STRUGGLE_BUG_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "SAND_TOMB",
@@ -25806,7 +26105,8 @@
         ],
         "quickMoves": [
           "MUD_SHOT_FAST",
-          "DRAGON_BREATH_FAST"
+          "DRAGON_BREATH_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "SAND_TOMB",
@@ -25875,7 +26175,8 @@
         ],
         "quickMoves": [
           "MUD_SHOT_FAST",
-          "DRAGON_TAIL_FAST"
+          "DRAGON_TAIL_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "EARTHQUAKE",
@@ -25937,7 +26238,8 @@
         ],
         "quickMoves": [
           "POISON_STING_FAST",
-          "SUCKER_PUNCH_FAST"
+          "SUCKER_PUNCH_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "GRASS_KNOT",
@@ -26005,7 +26307,8 @@
         ],
         "quickMoves": [
           "POISON_JAB_FAST",
-          "SUCKER_PUNCH_FAST"
+          "SUCKER_PUNCH_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "DARK_PULSE",
@@ -26300,7 +26603,8 @@
         ],
         "quickMoves": [
           "ROCK_THROW_FAST",
-          "CONFUSION_FAST"
+          "CONFUSION_FAST",
+          "PSYWAVE_FAST"
         ],
         "cinematicMoves": [
           "PSYCHIC",
@@ -26347,7 +26651,8 @@
         ],
         "quickMoves": [
           "ROCK_THROW_FAST",
-          "CONFUSION_FAST"
+          "CONFUSION_FAST",
+          "PSYWAVE_FAST"
         ],
         "cinematicMoves": [
           "PSYCHIC",
@@ -26758,7 +27063,8 @@
         ],
         "quickMoves": [
           "ACID_FAST",
-          "INFESTATION_FAST"
+          "INFESTATION_FAST",
+          "BULLET_SEED_FAST"
         ],
         "cinematicMoves": [
           "GRASS_KNOT",
@@ -28339,6 +28645,11 @@
         "isTransferable": true,
         "isDeployable": true,
         "isTradable": true,
+        "buddyPortraitRotation": [
+          0.0,
+          180.0,
+          0.0
+        ],
         "types": [
           "water"
         ]
@@ -29444,7 +29755,10 @@
           "attackProbability": 0.1,
           "dodgeProbability": 0.15,
           "cameraDistance": 6.0,
-          "bonusXlCandyCaptureReward": 3
+          "bonusXlCandyCaptureReward": 3,
+          "shadowBaseCaptureRate": 0.02,
+          "shadowAttackProbability": 0.7,
+          "shadowDodgeProbability": 0.2
         },
         "stats": [
           205,
@@ -29481,6 +29795,12 @@
         },
         "isTransferable": true,
         "isTradable": true,
+        "shadow": {
+          "purificationStardustNeeded": 20000,
+          "purificationCandyNeeded": 20,
+          "purifiedChargeMove": "RETURN",
+          "shadowChargeMove": "FRUSTRATION"
+        },
         "eliteCinematicMove": [
           "FIRE_PUNCH",
           "PRECIPICE_BLADES"
@@ -30432,7 +30752,8 @@
         ],
         "quickMoves": [
           "WATERFALL_FAST",
-          "METAL_CLAW_FAST"
+          "METAL_CLAW_FAST",
+          "STEEL_WING_FAST"
         ],
         "cinematicMoves": [
           "HYDRO_PUMP",
@@ -30493,7 +30814,8 @@
         ],
         "quickMoves": [
           "TACKLE_FAST",
-          "QUICK_ATTACK_FAST"
+          "QUICK_ATTACK_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "AERIAL_ACE",
@@ -30560,7 +30882,8 @@
         ],
         "quickMoves": [
           "WING_ATTACK_FAST",
-          "QUICK_ATTACK_FAST"
+          "QUICK_ATTACK_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "AERIAL_ACE",
@@ -30629,7 +30952,8 @@
         ],
         "quickMoves": [
           "WING_ATTACK_FAST",
-          "QUICK_ATTACK_FAST"
+          "QUICK_ATTACK_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "BRAVE_BIRD",
@@ -31790,7 +32114,8 @@
         ],
         "quickMoves": [
           "CONFUSION_FAST",
-          "BUG_BITE_FAST"
+          "BUG_BITE_FAST",
+          "METAL_SOUND_FAST"
         ],
         "cinematicMoves": [
           "PSYBEAM",
@@ -32471,7 +32796,8 @@
         "cinematicMoves": [
           "WATER_PULSE",
           "EARTH_POWER",
-          "BODY_SLAM"
+          "BODY_SLAM",
+          "EARTHQUAKE"
         ],
         "evolutionPips": 1,
         "pokedexHeightM": 0.9,
@@ -32523,7 +32849,8 @@
         "cinematicMoves": [
           "WATER_PULSE",
           "EARTH_POWER",
-          "BODY_SLAM"
+          "BODY_SLAM",
+          "EARTHQUAKE"
         ],
         "evolutionPips": 1,
         "pokedexHeightM": 0.9,
@@ -32896,7 +33223,8 @@
         "quickMoves": [
           "SUCKER_PUNCH_FAST",
           "HEX_FAST",
-          "MAGICAL_LEAF_FAST"
+          "MAGICAL_LEAF_FAST",
+          "PSYWAVE_FAST"
         ],
         "cinematicMoves": [
           "SHADOW_BALL",
@@ -33366,7 +33694,8 @@
         ],
         "quickMoves": [
           "FEINT_ATTACK_FAST",
-          "CONFUSION_FAST"
+          "CONFUSION_FAST",
+          "METAL_SOUND_FAST"
         ],
         "cinematicMoves": [
           "FLASH_CANNON",
@@ -34065,7 +34394,8 @@
         ],
         "quickMoves": [
           "TACKLE_FAST",
-          "BITE_FAST"
+          "BITE_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "DIG",
@@ -34132,7 +34462,8 @@
           "FIRE_FANG_FAST",
           "BITE_FAST",
           "THUNDER_FANG_FAST",
-          "ICE_FANG_FAST"
+          "ICE_FANG_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "EARTHQUAKE",
@@ -34881,7 +35212,8 @@
         "quickMoves": [
           "SPARK_FAST",
           "CHARGE_BEAM_FAST",
-          "VOLT_SWITCH_FAST"
+          "VOLT_SWITCH_FAST",
+          "METAL_SOUND_FAST"
         ],
         "cinematicMoves": [
           "ZAP_CANNON",
@@ -35589,7 +35921,7 @@
           "bonusStardustCaptureReward": 400,
           "attackProbability": 0.2,
           "dodgeProbability": 0.3,
-          "cameraDistance": 3.0,
+          "cameraDistance": 4.0,
           "bonusXlCandyCaptureReward": 2,
           "shadowBaseCaptureRate": 0.05,
           "shadowAttackProbability": 0.7,
@@ -35667,7 +35999,8 @@
         "quickMoves": [
           "CONFUSION_FAST",
           "LOW_KICK_FAST",
-          "CHARM_FAST"
+          "CHARM_FAST",
+          "PSYCHO_CUT_FAST"
         ],
         "cinematicMoves": [
           "CLOSE_COMBAT",
@@ -36396,9 +36729,9 @@
         ],
         "evolutionPips": 1,
         "pokemonClass": "legendary",
-        "pokedexHeightM": 5.4,
-        "pokedexWeightKg": 683.0,
-        "heightStdDev": 0.675,
+        "pokedexHeightM": 7.0,
+        "pokedexWeightKg": 850.0,
+        "heightStdDev": 0.875,
         "weightStdDev": 85.375,
         "familyId": "FAMILY_DIALGA",
         "kmBuddyDistance": 20.0,
@@ -36496,9 +36829,9 @@
         ],
         "evolutionPips": 1,
         "pokemonClass": "legendary",
-        "pokedexHeightM": 4.2,
-        "pokedexWeightKg": 336.0,
-        "heightStdDev": 0.525,
+        "pokedexHeightM": 6.3,
+        "pokedexWeightKg": 660.0,
+        "heightStdDev": 0.7875,
         "weightStdDev": 42.0,
         "familyId": "FAMILY_PALKIA",
         "kmBuddyDistance": 20.0,
@@ -38701,7 +39034,8 @@
         ],
         "quickMoves": [
           "TACKLE_FAST",
-          "TAKE_DOWN_FAST"
+          "TAKE_DOWN_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "THUNDERBOLT",
@@ -38756,7 +39090,8 @@
         ],
         "quickMoves": [
           "LICK_FAST",
-          "TAKE_DOWN_FAST"
+          "TAKE_DOWN_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "THUNDERBOLT",
@@ -38813,7 +39148,8 @@
         "quickMoves": [
           "LICK_FAST",
           "TAKE_DOWN_FAST",
-          "ICE_FANG_FAST"
+          "ICE_FANG_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "WILD_CHARGE",
@@ -40481,7 +40817,8 @@
         "cinematicMoves": [
           "FOCUS_BLAST",
           "LOW_SWEEP",
-          "BODY_SLAM"
+          "BODY_SLAM",
+          "BRICK_BREAK"
         ],
         "evolutionPips": 1,
         "pokedexHeightM": 1.3,
@@ -40536,7 +40873,8 @@
         "cinematicMoves": [
           "FOCUS_BLAST",
           "LOW_SWEEP",
-          "BODY_SLAM"
+          "BODY_SLAM",
+          "BRICK_BREAK"
         ],
         "evolutionPips": 1,
         "pokedexHeightM": 1.4,
@@ -41281,7 +41619,8 @@
         "cinematicMoves": [
           "EARTHQUAKE",
           "CRUNCH",
-          "OUTRAGE"
+          "OUTRAGE",
+          "BRICK_BREAK"
         ],
         "evolutionPips": 1,
         "pokedexHeightM": 1.5,
@@ -41443,7 +41782,10 @@
           "attackProbability": 0.1,
           "dodgeProbability": 0.15,
           "cameraDistance": 5.0,
-          "bonusXlCandyCaptureReward": 1
+          "bonusXlCandyCaptureReward": 1,
+          "shadowBaseCaptureRate": 0.125,
+          "shadowAttackProbability": 0.7,
+          "shadowDodgeProbability": 0.2
         },
         "stats": [
           233,
@@ -41476,6 +41818,12 @@
         "isTransferable": true,
         "isDeployable": true,
         "isTradable": true,
+        "shadow": {
+          "purificationStardustNeeded": 3000,
+          "purificationCandyNeeded": 3,
+          "purifiedChargeMove": "RETURN",
+          "shadowChargeMove": "FRUSTRATION"
+        },
         "types": [
           "fire"
         ]
@@ -41495,7 +41843,10 @@
           "attackProbability": 0.1,
           "dodgeProbability": 0.15,
           "cameraDistance": 5.0,
-          "bonusXlCandyCaptureReward": 1
+          "bonusXlCandyCaptureReward": 1,
+          "shadowBaseCaptureRate": 0.125,
+          "shadowAttackProbability": 0.7,
+          "shadowDodgeProbability": 0.2
         },
         "stats": [
           233,
@@ -41527,6 +41878,12 @@
         "isTransferable": true,
         "isDeployable": true,
         "isTradable": true,
+        "shadow": {
+          "purificationStardustNeeded": 3000,
+          "purificationCandyNeeded": 3,
+          "purifiedChargeMove": "RETURN",
+          "shadowChargeMove": "FRUSTRATION"
+        },
         "types": [
           "ice"
         ]
@@ -41546,7 +41903,10 @@
           "attackProbability": 0.1,
           "dodgeProbability": 0.15,
           "cameraDistance": 5.0,
-          "bonusXlCandyCaptureReward": 1
+          "bonusXlCandyCaptureReward": 1,
+          "shadowBaseCaptureRate": 0.125,
+          "shadowAttackProbability": 0.7,
+          "shadowDodgeProbability": 0.2
         },
         "stats": [
           233,
@@ -41578,6 +41938,12 @@
         "isTransferable": true,
         "isDeployable": true,
         "isTradable": true,
+        "shadow": {
+          "purificationStardustNeeded": 3000,
+          "purificationCandyNeeded": 3,
+          "purifiedChargeMove": "RETURN",
+          "shadowChargeMove": "FRUSTRATION"
+        },
         "types": [
           "ice",
           "fire"
@@ -41623,7 +41989,10 @@
           "attackProbability": 0.1,
           "dodgeProbability": 0.15,
           "cameraDistance": 4.0,
-          "bonusXlCandyCaptureReward": 1
+          "bonusXlCandyCaptureReward": 1,
+          "shadowBaseCaptureRate": 0.125,
+          "shadowAttackProbability": 0.7,
+          "shadowDodgeProbability": 0.2
         },
         "stats": [
           233,
@@ -41657,6 +42026,12 @@
         "isTransferable": true,
         "isDeployable": true,
         "isTradable": true,
+        "shadow": {
+          "purificationStardustNeeded": 3000,
+          "purificationCandyNeeded": 3,
+          "purifiedChargeMove": "RETURN",
+          "shadowChargeMove": "FRUSTRATION"
+        },
         "types": [
           "fire",
           "psychic"
@@ -42707,7 +43082,10 @@
           "movementType": "MOVEMENT_JUMP",
           "attackProbability": 0.1,
           "dodgeProbability": 0.15,
-          "cameraDistance": 2.0
+          "cameraDistance": 2.0,
+          "shadowBaseCaptureRate": 0.5,
+          "shadowAttackProbability": 0.7,
+          "shadowDodgeProbability": 0.2
         },
         "stats": [
           128,
@@ -42733,7 +43111,8 @@
         "evolutionBranch": [
           {
             "evolution": "GOTHORITA",
-            "candyCost": 25
+            "candyCost": 25,
+            "candyCostPurified": 22
           }
         ],
         "thirdMove": {
@@ -42743,6 +43122,12 @@
         "isTransferable": true,
         "isDeployable": true,
         "isTradable": true,
+        "shadow": {
+          "purificationStardustNeeded": 3000,
+          "purificationCandyNeeded": 3,
+          "purifiedChargeMove": "RETURN",
+          "shadowChargeMove": "FRUSTRATION"
+        },
         "types": [
           "psychic"
         ]
@@ -42762,7 +43147,10 @@
           "attackProbability": 0.1,
           "dodgeProbability": 0.15,
           "cameraDistance": 2.5,
-          "bonusXlCandyCaptureReward": 1
+          "bonusXlCandyCaptureReward": 1,
+          "shadowBaseCaptureRate": 0.05,
+          "shadowAttackProbability": 0.7,
+          "shadowDodgeProbability": 0.2
         },
         "stats": [
           155,
@@ -42789,7 +43177,8 @@
         "evolutionBranch": [
           {
             "evolution": "GOTHITELLE",
-            "candyCost": 100
+            "candyCost": 100,
+            "candyCostPurified": 90
           }
         ],
         "thirdMove": {
@@ -42799,6 +43188,12 @@
         "isTransferable": true,
         "isDeployable": true,
         "isTradable": true,
+        "shadow": {
+          "purificationStardustNeeded": 3000,
+          "purificationCandyNeeded": 3,
+          "purifiedChargeMove": "RETURN",
+          "shadowChargeMove": "FRUSTRATION"
+        },
         "types": [
           "psychic"
         ]
@@ -42818,7 +43213,10 @@
           "attackProbability": 0.1,
           "dodgeProbability": 0.15,
           "cameraDistance": 5.0,
-          "bonusXlCandyCaptureReward": 2
+          "bonusXlCandyCaptureReward": 2,
+          "shadowBaseCaptureRate": 0.05,
+          "shadowAttackProbability": 0.7,
+          "shadowDodgeProbability": 0.2
         },
         "stats": [
           172,
@@ -42849,6 +43247,12 @@
         "isTransferable": true,
         "isDeployable": true,
         "isTradable": true,
+        "shadow": {
+          "purificationStardustNeeded": 3000,
+          "purificationCandyNeeded": 3,
+          "purifiedChargeMove": "RETURN",
+          "shadowChargeMove": "FRUSTRATION"
+        },
         "types": [
           "psychic"
         ]
@@ -42865,7 +43269,10 @@
           "movementType": "MOVEMENT_HOVERING",
           "attackProbability": 0.1,
           "dodgeProbability": 0.15,
-          "cameraDistance": 2.25
+          "cameraDistance": 2.25,
+          "shadowBaseCaptureRate": 0.5,
+          "shadowAttackProbability": 0.7,
+          "shadowDodgeProbability": 0.2
         },
         "stats": [
           128,
@@ -42891,7 +43298,8 @@
         "evolutionBranch": [
           {
             "evolution": "DUOSION",
-            "candyCost": 25
+            "candyCost": 25,
+            "candyCostPurified": 22
           }
         ],
         "thirdMove": {
@@ -42901,6 +43309,12 @@
         "isTransferable": true,
         "isDeployable": true,
         "isTradable": true,
+        "shadow": {
+          "purificationStardustNeeded": 3000,
+          "purificationCandyNeeded": 3,
+          "purifiedChargeMove": "RETURN",
+          "shadowChargeMove": "FRUSTRATION"
+        },
         "types": [
           "psychic"
         ]
@@ -42920,7 +43334,10 @@
           "attackProbability": 0.1,
           "dodgeProbability": 0.15,
           "cameraDistance": 2.5,
-          "bonusXlCandyCaptureReward": 1
+          "bonusXlCandyCaptureReward": 1,
+          "shadowBaseCaptureRate": 0.05,
+          "shadowAttackProbability": 0.7,
+          "shadowDodgeProbability": 0.2
         },
         "stats": [
           163,
@@ -42947,7 +43364,8 @@
         "evolutionBranch": [
           {
             "evolution": "REUNICLUS",
-            "candyCost": 100
+            "candyCost": 100,
+            "candyCostPurified": 90
           }
         ],
         "thirdMove": {
@@ -42957,6 +43375,12 @@
         "isTransferable": true,
         "isDeployable": true,
         "isTradable": true,
+        "shadow": {
+          "purificationStardustNeeded": 3000,
+          "purificationCandyNeeded": 3,
+          "purifiedChargeMove": "RETURN",
+          "shadowChargeMove": "FRUSTRATION"
+        },
         "types": [
           "psychic"
         ]
@@ -42976,7 +43400,10 @@
           "attackProbability": 0.1,
           "dodgeProbability": 0.15,
           "cameraDistance": 6.0,
-          "bonusXlCandyCaptureReward": 2
+          "bonusXlCandyCaptureReward": 2,
+          "shadowBaseCaptureRate": 0.05,
+          "shadowAttackProbability": 0.7,
+          "shadowDodgeProbability": 0.2
         },
         "stats": [
           242,
@@ -43007,6 +43434,12 @@
         "isTransferable": true,
         "isDeployable": true,
         "isTradable": true,
+        "shadow": {
+          "purificationStardustNeeded": 3000,
+          "purificationCandyNeeded": 3,
+          "purifiedChargeMove": "RETURN",
+          "shadowChargeMove": "FRUSTRATION"
+        },
         "types": [
           "psychic"
         ]
@@ -44427,7 +44860,8 @@
         ],
         "quickMoves": [
           "VOLT_SWITCH_FAST",
-          "CHARGE_BEAM_FAST"
+          "CHARGE_BEAM_FAST",
+          "METAL_SOUND_FAST"
         ],
         "cinematicMoves": [
           "VICE_GRIP",
@@ -44482,7 +44916,8 @@
         ],
         "quickMoves": [
           "THUNDER_SHOCK_FAST",
-          "CHARGE_BEAM_FAST"
+          "CHARGE_BEAM_FAST",
+          "METAL_SOUND_FAST"
         ],
         "cinematicMoves": [
           "VICE_GRIP",
@@ -44538,7 +44973,8 @@
         ],
         "quickMoves": [
           "THUNDER_SHOCK_FAST",
-          "CHARGE_BEAM_FAST"
+          "CHARGE_BEAM_FAST",
+          "METAL_SOUND_FAST"
         ],
         "cinematicMoves": [
           "HYPER_BEAM",
@@ -52023,7 +52459,8 @@
         "quickMoves": [
           "TAKE_DOWN_FAST",
           "BITE_FAST",
-          "SUCKER_PUNCH_FAST"
+          "SUCKER_PUNCH_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "SURF",
@@ -52079,7 +52516,8 @@
         "quickMoves": [
           "TAKE_DOWN_FAST",
           "BITE_FAST",
-          "SUCKER_PUNCH_FAST"
+          "SUCKER_PUNCH_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "SURF",
@@ -52136,7 +52574,8 @@
         "quickMoves": [
           "TAKE_DOWN_FAST",
           "BITE_FAST",
-          "SUCKER_PUNCH_FAST"
+          "SUCKER_PUNCH_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "SURF",
@@ -52194,7 +52633,8 @@
         "quickMoves": [
           "TAKE_DOWN_FAST",
           "BITE_FAST",
-          "SUCKER_PUNCH_FAST"
+          "SUCKER_PUNCH_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "SURF",
@@ -52252,7 +52692,8 @@
         "quickMoves": [
           "TAKE_DOWN_FAST",
           "BITE_FAST",
-          "SUCKER_PUNCH_FAST"
+          "SUCKER_PUNCH_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "SURF",
@@ -52310,7 +52751,8 @@
         "quickMoves": [
           "TAKE_DOWN_FAST",
           "BITE_FAST",
-          "SUCKER_PUNCH_FAST"
+          "SUCKER_PUNCH_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "SURF",
@@ -52368,7 +52810,8 @@
         "quickMoves": [
           "TAKE_DOWN_FAST",
           "BITE_FAST",
-          "SUCKER_PUNCH_FAST"
+          "SUCKER_PUNCH_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "SURF",
@@ -52426,7 +52869,8 @@
         "quickMoves": [
           "TAKE_DOWN_FAST",
           "BITE_FAST",
-          "SUCKER_PUNCH_FAST"
+          "SUCKER_PUNCH_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "SURF",
@@ -52483,7 +52927,8 @@
         "quickMoves": [
           "TAKE_DOWN_FAST",
           "BITE_FAST",
-          "SUCKER_PUNCH_FAST"
+          "SUCKER_PUNCH_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "SURF",
@@ -52541,7 +52986,8 @@
         "quickMoves": [
           "TAKE_DOWN_FAST",
           "BITE_FAST",
-          "SUCKER_PUNCH_FAST"
+          "SUCKER_PUNCH_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "SURF",
@@ -53111,7 +53557,8 @@
         ],
         "quickMoves": [
           "PECK_FAST",
-          "TACKLE_FAST"
+          "TACKLE_FAST",
+          "PSYWAVE_FAST"
         ],
         "cinematicMoves": [
           "PSYBEAM",
@@ -53166,7 +53613,8 @@
         ],
         "quickMoves": [
           "PECK_FAST",
-          "PSYCHO_CUT_FAST"
+          "PSYCHO_CUT_FAST",
+          "PSYWAVE_FAST"
         ],
         "cinematicMoves": [
           "PSYBEAM",
@@ -54151,7 +54599,8 @@
           "DRACO_METEOR",
           "SLUDGE_WAVE",
           "MUDDY_WATER",
-          "POWER_WHIP"
+          "POWER_WHIP",
+          "AQUA_TAIL"
         ],
         "pokedexHeightM": 2.0,
         "pokedexWeightKg": 150.5,
@@ -56440,7 +56889,8 @@
           "FIRE_BLAST",
           "FLAME_CHARGE",
           "DARK_PULSE",
-          "BLAZE_KICK"
+          "BLAZE_KICK",
+          "DARKEST_LARIAT"
         ],
         "pokedexHeightM": 1.8,
         "pokedexWeightKg": 83.0,
@@ -56480,6 +56930,9 @@
           0.0,
           0.0,
           0.0
+        ],
+        "eliteCinematicMove": [
+          "BLAST_BURN"
         ],
         "types": [
           "fire",
@@ -57095,7 +57548,8 @@
         "cinematicMoves": [
           "POWER_UP_PUNCH",
           "CRABHAMMER",
-          "PAYBACK"
+          "PAYBACK",
+          "BRICK_BREAK"
         ],
         "pokedexHeightM": 0.6,
         "pokedexWeightKg": 7.0,
@@ -57151,7 +57605,8 @@
           "POWER_UP_PUNCH",
           "CRABHAMMER",
           "PAYBACK",
-          "ICE_PUNCH"
+          "ICE_PUNCH",
+          "BRICK_BREAK"
         ],
         "pokedexHeightM": 1.7,
         "pokedexWeightKg": 180.0,
@@ -58107,7 +58562,8 @@
         "cinematicMoves": [
           "BUG_BUZZ",
           "BUBBLE_BEAM",
-          "MIRROR_COAT"
+          "MIRROR_COAT",
+          "WATER_PULSE"
         ],
         "pokedexHeightM": 1.8,
         "pokedexWeightKg": 82.0,
@@ -59040,7 +59496,8 @@
         ],
         "quickMoves": [
           "ASTONISH_FAST",
-          "MUD_SHOT_FAST"
+          "MUD_SHOT_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "SAND_TOMB",
@@ -59096,7 +59553,8 @@
         ],
         "quickMoves": [
           "ASTONISH_FAST",
-          "MUD_SHOT_FAST"
+          "MUD_SHOT_FAST",
+          "SAND_ATTACK_FAST"
         ],
         "cinematicMoves": [
           "SAND_TOMB",
@@ -60946,7 +61404,8 @@
         "cinematicMoves": [
           "DRAGON_CLAW",
           "BRICK_BREAK",
-          "DRAGON_PULSE"
+          "DRAGON_PULSE",
+          "BRICK_BREAK"
         ],
         "pokedexHeightM": 1.2,
         "pokedexWeightKg": 47.0,
@@ -61003,7 +61462,8 @@
           "DRAGON_CLAW",
           "CLOSE_COMBAT",
           "FLAMETHROWER",
-          "BOOMBURST"
+          "BOOMBURST",
+          "BRICK_BREAK"
         ],
         "pokedexHeightM": 1.6,
         "pokedexWeightKg": 78.2,
@@ -61067,6 +61527,9 @@
         },
         "isTransferable": true,
         "isTradable": true,
+        "eliteCinematicMove": [
+          "NATURES_MADNESS"
+        ],
         "types": [
           "electric",
           "fairy"
@@ -61115,6 +61578,9 @@
         },
         "isTransferable": true,
         "isTradable": true,
+        "eliteCinematicMove": [
+          "NATURES_MADNESS"
+        ],
         "types": [
           "psychic",
           "fairy"
@@ -62038,10 +62504,10 @@
       "pokemonSettings": {
         "pokemonId": "Poipole",
         "encounter": {
-          "movementType": "MOVEMENT_JUMP",
+          "movementType": "MOVEMENT_HOVERING",
           "attackProbability": 0.1,
           "dodgeProbability": 0.15,
-          "cameraDistance": 4.0,
+          "cameraDistance": 2.5,
           "bonusXlCandyCaptureReward": 3
         },
         "stats": [
@@ -62065,12 +62531,6 @@
         "weightStdDev": 0.225,
         "familyId": "FAMILY_POIPOLE",
         "kmBuddyDistance": 20.0,
-        "evolutionBranch": [
-          {
-            "evolution": "NAGANADEL",
-            "candyCost": 200
-          }
-        ],
         "thirdMove": {
           "stardustToUnlock": 100000,
           "candyToUnlock": 100
@@ -62090,7 +62550,7 @@
       "pokemonSettings": {
         "pokemonId": "Naganadel",
         "encounter": {
-          "movementType": "MOVEMENT_JUMP",
+          "movementType": "MOVEMENT_FLYING",
           "bonusCandyCaptureReward": 2,
           "bonusStardustCaptureReward": 200,
           "attackProbability": 0.1,
@@ -62116,7 +62576,6 @@
         "pokemonClass": "ultra_beast",
         "pokedexHeightM": 3.6,
         "pokedexWeightKg": 150.0,
-        "parentPokemonId": "POIPOLE",
         "heightStdDev": 0.45,
         "weightStdDev": 18.75,
         "familyId": "FAMILY_POIPOLE",
@@ -67904,7 +68363,6 @@
           "candyToUnlock": 100
         },
         "isTransferable": true,
-        "isDeployable": true,
         "isTradable": true,
         "types": [
           "fairy",
@@ -67955,7 +68413,6 @@
           "candyToUnlock": 100
         },
         "isTransferable": true,
-        "isDeployable": true,
         "isTradable": true,
         "types": [
           "fairy",
@@ -69582,7 +70039,8 @@
         "encounter": {
           "movementType": "MOVEMENT_JUMP",
           "attackProbability": 0.1,
-          "dodgeProbability": 0.15
+          "dodgeProbability": 0.15,
+          "cameraDistance": 4.0
         },
         "stats": [
           120,
@@ -69607,11 +70065,23 @@
         "evolutionBranch": [
           {
             "evolution": "ARMAROUGE",
-            "candyCost": 50
+            "candyCost": 50,
+            "priority": 1,
+            "questDisplay": [
+              {
+                "questRequirementTemplateId": "CHARCADET_ARMAROUGE_EVOLUTION_QUEST"
+              }
+            ]
           },
           {
             "evolution": "CERULEDGE",
-            "candyCost": 50
+            "candyCost": 50,
+            "priority": 1,
+            "questDisplay": [
+              {
+                "questRequirementTemplateId": "CHARCADET_CERULEDGE_EVOLUTION_QUEST"
+              }
+            ]
           }
         ],
         "thirdMove": {
@@ -69639,6 +70109,7 @@
           "bonusStardustCaptureReward": 200,
           "attackProbability": 0.1,
           "dodgeProbability": 0.15,
+          "cameraDistance": 5.0,
           "bonusXlCandyCaptureReward": 1
         },
         "stats": [
@@ -69689,6 +70160,7 @@
           "bonusStardustCaptureReward": 200,
           "attackProbability": 0.1,
           "dodgeProbability": 0.15,
+          "cameraDistance": 5.0,
           "bonusXlCandyCaptureReward": 1
         },
         "stats": [
@@ -70830,7 +71302,8 @@
         "pokemonId": "Wiglett",
         "encounter": {
           "attackProbability": 0.1,
-          "dodgeProbability": 0.15
+          "dodgeProbability": 0.15,
+          "cameraDistance": 5.0
         },
         "stats": [
           67,
@@ -70882,6 +71355,7 @@
           "bonusStardustCaptureReward": 200,
           "attackProbability": 0.1,
           "dodgeProbability": 0.15,
+          "cameraDistance": 5.0,
           "bonusXlCandyCaptureReward": 1
         },
         "stats": [

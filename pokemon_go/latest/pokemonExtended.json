@@ -72,6 +72,24 @@
     }
   },
   {
+    "templateId": "EXTENDED_POKEMON_PIKACHU_HORIZONS",
+    "data": {
+      "templateId": "EXTENDED_POKEMON_PIKACHU_HORIZONS",
+      "pokemonExtendedSettings": {
+        "uniqueId": "PIKACHU",
+        "form": "PIKACHU_HORIZONS",
+        "sizeBounds": [
+          0.196,
+          0.2,
+          0.3,
+          0.5,
+          0.6,
+          0.7
+        ]
+      }
+    }
+  },
+  {
     "templateId": "EXTENDED_V0001_POKEMON_BULBASAUR",
     "data": {
       "templateId": "EXTENDED_V0001_POKEMON_BULBASAUR",
@@ -1122,6 +1140,24 @@
     }
   },
   {
+    "templateId": "EXTENDED_V0025_POKEMON_PIKACHU_DOCTOR",
+    "data": {
+      "templateId": "EXTENDED_V0025_POKEMON_PIKACHU_DOCTOR",
+      "pokemonExtendedSettings": {
+        "uniqueId": "PIKACHU",
+        "form": "PIKACHU_DOCTOR",
+        "sizeBounds": [
+          0.196,
+          0.2,
+          0.3,
+          0.5,
+          0.6,
+          0.7
+        ]
+      }
+    }
+  },
+  {
     "templateId": "EXTENDED_V0025_POKEMON_PIKACHU_FALL_2019",
     "data": {
       "templateId": "EXTENDED_V0025_POKEMON_PIKACHU_FALL_2019",
@@ -1182,6 +1218,24 @@
       "pokemonExtendedSettings": {
         "uniqueId": "PIKACHU",
         "form": "PIKACHU_FLYING_03",
+        "sizeBounds": [
+          0.196,
+          0.2,
+          0.3,
+          0.5,
+          0.6,
+          0.7
+        ]
+      }
+    }
+  },
+  {
+    "templateId": "EXTENDED_V0025_POKEMON_PIKACHU_FLYING_04",
+    "data": {
+      "templateId": "EXTENDED_V0025_POKEMON_PIKACHU_FLYING_04",
+      "pokemonExtendedSettings": {
+        "uniqueId": "PIKACHU",
+        "form": "PIKACHU_FLYING_04",
         "sizeBounds": [
           0.196,
           0.2,
@@ -1362,6 +1416,24 @@
       "pokemonExtendedSettings": {
         "uniqueId": "PIKACHU",
         "form": "PIKACHU_TSHIRT_02",
+        "sizeBounds": [
+          0.196,
+          0.2,
+          0.3,
+          0.5,
+          0.6,
+          0.7
+        ]
+      }
+    }
+  },
+  {
+    "templateId": "EXTENDED_V0025_POKEMON_PIKACHU_TSHIRT_03",
+    "data": {
+      "templateId": "EXTENDED_V0025_POKEMON_PIKACHU_TSHIRT_03",
+      "pokemonExtendedSettings": {
+        "uniqueId": "PIKACHU",
+        "form": "PIKACHU_TSHIRT_03",
         "sizeBounds": [
           0.196,
           0.2,
@@ -8014,6 +8086,19 @@
       "templateId": "EXTENDED_V0214_POKEMON_HERACROSS",
       "pokemonExtendedSettings": {
         "uniqueId": "HERACROSS",
+        "tempEvoOverrides": [
+          {
+            "tempEvoId": "TEMP_EVOLUTION_MEGA",
+            "sizeSettings": {
+              "xxsLowerBound": 0.833,
+              "xsLowerBound": 0.85,
+              "mLowerBound": 1.275,
+              "mUpperBound": 2.125,
+              "xlUpperBound": 2.55,
+              "xxlUpperBound": 2.975
+            }
+          }
+        ],
         "sizeBounds": [
           0.735,
           0.75,

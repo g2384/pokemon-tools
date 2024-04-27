@@ -52,6 +52,68 @@
     }
   },
   {
+    "templateId": "CHARCADET_ARMAROUGE_EVOLUTION_QUEST",
+    "data": {
+      "templateId": "CHARCADET_ARMAROUGE_EVOLUTION_QUEST",
+      "evolutionQuestTemplate": {
+        "questTemplateId": "CHARCADET_ARMAROUGE_EVOLUTION_QUEST",
+        "questType": "QUEST_FIGHT_POKEMON",
+        "goals": [
+          {
+            "condition": [
+              {
+                "type": "WITH_OPPONENT_POKEMON_BATTLE_STATUS",
+                "withOpponentPokemonBattleStatus": {
+                  "requireDefeat": true,
+                  "opponentPokemonType": [
+                    "POKEMON_TYPE_PSYCHIC"
+                  ]
+                }
+              }
+            ],
+            "target": 30
+          }
+        ],
+        "context": "EVOLUTION_QUEST",
+        "display": {
+          "description": "quest_fight_type_psychic_plural",
+          "title": "quest_fight_type_psychic_plural"
+        }
+      }
+    }
+  },
+  {
+    "templateId": "CHARCADET_CERULEDGE_EVOLUTION_QUEST",
+    "data": {
+      "templateId": "CHARCADET_CERULEDGE_EVOLUTION_QUEST",
+      "evolutionQuestTemplate": {
+        "questTemplateId": "CHARCADET_CERULEDGE_EVOLUTION_QUEST",
+        "questType": "QUEST_FIGHT_POKEMON",
+        "goals": [
+          {
+            "condition": [
+              {
+                "type": "WITH_OPPONENT_POKEMON_BATTLE_STATUS",
+                "withOpponentPokemonBattleStatus": {
+                  "requireDefeat": true,
+                  "opponentPokemonType": [
+                    "POKEMON_TYPE_GHOST"
+                  ]
+                }
+              }
+            ],
+            "target": 30
+          }
+        ],
+        "context": "EVOLUTION_QUEST",
+        "display": {
+          "description": "quest_fight_type_ghost_plural",
+          "title": "quest_fight_type_ghost_plural"
+        }
+      }
+    }
+  },
+  {
     "templateId": "ESPEON_EVOLUTION_QUEST",
     "data": {
       "templateId": "ESPEON_EVOLUTION_QUEST",

@@ -4870,6 +4870,23 @@
     }
   },
   {
+    "templateId": "V0390_MOVE_NATURES_MADNESS",
+    "data": {
+      "templateId": "V0390_MOVE_NATURES_MADNESS",
+      "moveSettings": {
+        "movementId": "NATURES_MADNESS",
+        "animationId": 5,
+        "pokemonType": "fairy",
+        "power": 90.0,
+        "staminaLossScalar": 0.01,
+        "durationMs": 2100,
+        "damageWindowStartMs": 1400,
+        "damageWindowEndMs": 2000,
+        "energyDelta": -50
+      }
+    }
+  },
+  {
     "templateId": "V0391_MOVE_TRIPLE_AXEL",
     "data": {
       "templateId": "V0391_MOVE_TRIPLE_AXEL",
@@ -5002,6 +5019,91 @@
         "damageWindowStartMs": 2000,
         "damageWindowEndMs": 3400,
         "energyDelta": -33
+      }
+    }
+  },
+  {
+    "templateId": "V0399_MOVE_VOLT_TACKLE",
+    "data": {
+      "templateId": "V0399_MOVE_VOLT_TACKLE",
+      "moveSettings": {
+        "movementId": "VOLT_TACKLE",
+        "animationId": 5,
+        "pokemonType": "electric",
+        "power": 90.0,
+        "staminaLossScalar": 0.01,
+        "durationMs": 3400,
+        "damageWindowStartMs": 2000,
+        "damageWindowEndMs": 2500,
+        "energyDelta": -33
+      }
+    }
+  },
+  {
+    "templateId": "V0400_MOVE_DARKEST_LARIAT",
+    "data": {
+      "templateId": "V0400_MOVE_DARKEST_LARIAT",
+      "moveSettings": {
+        "movementId": "DARKEST_LARIAT",
+        "animationId": 5,
+        "pokemonType": "dark",
+        "power": 80.0,
+        "staminaLossScalar": 0.01,
+        "durationMs": 2000,
+        "damageWindowStartMs": 1200,
+        "damageWindowEndMs": 2000,
+        "energyDelta": -50
+      }
+    }
+  },
+  {
+    "templateId": "V0401_MOVE_PSYWAVE_FAST",
+    "data": {
+      "templateId": "V0401_MOVE_PSYWAVE_FAST",
+      "moveSettings": {
+        "movementId": "PSYWAVE_FAST",
+        "animationId": 4,
+        "pokemonType": "psychic",
+        "power": 4.0,
+        "staminaLossScalar": 0.01,
+        "durationMs": 500,
+        "damageWindowStartMs": 300,
+        "damageWindowEndMs": 600,
+        "energyDelta": 7
+      }
+    }
+  },
+  {
+    "templateId": "V0402_MOVE_METAL_SOUND_FAST",
+    "data": {
+      "templateId": "V0402_MOVE_METAL_SOUND_FAST",
+      "moveSettings": {
+        "movementId": "METAL_SOUND_FAST",
+        "animationId": 4,
+        "pokemonType": "steel",
+        "power": 6.0,
+        "staminaLossScalar": 0.01,
+        "durationMs": 700,
+        "damageWindowStartMs": 400,
+        "damageWindowEndMs": 900,
+        "energyDelta": 9
+      }
+    }
+  },
+  {
+    "templateId": "V0403_MOVE_SAND_ATTACK_FAST",
+    "data": {
+      "templateId": "V0403_MOVE_SAND_ATTACK_FAST",
+      "moveSettings": {
+        "movementId": "SAND_ATTACK_FAST",
+        "animationId": 4,
+        "pokemonType": "ground",
+        "power": 4.0,
+        "staminaLossScalar": 0.01,
+        "durationMs": 500,
+        "damageWindowStartMs": 300,
+        "damageWindowEndMs": 600,
+        "energyDelta": 7
       }
     }
   }
