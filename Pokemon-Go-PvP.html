@@ -1,0 +1,136 @@
+<html>
+
+<head>
+    <link href="./css/tom-select.bootstrap5.min.css" rel="stylesheet" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            padding: 10px;
+            margin: 0 auto;
+            max-width: 1000px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(224, 224, 224);
+        }
+
+        .move-tag {
+            color: #000;
+            font-size: 10px;
+            font-weight: 700;
+            text-align: center;
+            display: inline-block;
+            padding: 2px 5px;
+            border-radius: 5px;
+            margin-left: 3px;
+        }
+
+        .elite-move {
+            background-color: #f7f70d;
+            border: 1px solid #dfc300;
+        }
+
+        .shadow-move {
+            background-color: #e1caff;
+            border: 1px solid #826eed;
+        }
+
+        .purified-move {
+            background-color: #d3d3d3;
+            border: 1px solid #707070;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>PvP Pokemons</h2>
+    Get top <input type="number" id="rankings_num" value="50" /> from the ranking list.
+    <input type="button" value="Generate" onclick="generateTable()" />
+    <div id="results"></div>
+    <script>
+        let evolutions = [];
+        let rankings_great = [];
+        let rankings_jungle = [];
+        let rankings_spring = [];
+        let rankings_ultra = [];
+        let rankings_master = [];
+
+        function generateTable() {
+            const namesDict = {};
+            let num = document.querySelector("#rankings_num").value;
+            console.log(num)
+            const rankings = {
+                "great": rankings_great,
+                "jungle": rankings_jungle,
+                "spring": rankings_spring,
+                "ultra": rankings_ultra,
+                "master": rankings_master
+            };
+            for (const [key, value] of Object.entries(rankings)) {
+                var r = value;
+                var minLength = Math.min(num, r.length);
+                for (let j = 0; j < minLength; j++) {
+                    let name = value[j].speciesName;
+                    name = name.replace(/\([\w\-%\s']+\)/g, "");
+                    name = name.trim();
+                    if (!namesDict[name]) {
+                        namesDict[name] = {};
+                    }
+                    namesDict[name][`${key}_${j + 1}`] = { "moveset": value[j].moveset, "rank": j + 1 };
+                }
+            }
+
+            const rows = [];
+            for (const [key, value] of Object.entries(namesDict)) {
+                rows.push(`<td>${key}</td><td>${getMovesCell(value)}</td>`);
+            }
+            var html = `<table><tr><th>Pokemon</th><th>Moves</th></tr><tr>${rows.join("</tr><tr>")}</tr></table>`;
+            document.querySelector("#results").innerHTML = html;
+        }
+
+        function getMovesCell(moves) {
+            var strs = [];
+            var preMove = "";
+            for (const [key, value] of Object.entries(moves)) {
+                var move = value.moveset;
+                var moveStr = `${move[0]}; ${move[1]}, ${move[2]}`;
+                if (preMove == moveStr) {
+                    strs.push(`${key.split('_')[0]} (${value.rank}): (ditto)`);
+                }
+                else {
+                    strs.push(`${key.split('_')[0]} (${value.rank}): ${moveStr}`);
+                }
+                preMove = moveStr;
+
+            }
+            return strs.join("<br>");
+        }
+
+        async function loadAllJsonFiles() {
+            try {
+                Promise.all([
+                    fetch("./pokemon_go/pokemon_evolutions.json").then(response => response.json()),
+                    fetch("./pokemon_go/pvp_rankings/rankings-1500-great.json").then(response => response.json()),
+                    fetch("./pokemon_go/pvp_rankings/rankings-1500-jungle.json").then(response => response.json()),
+                    fetch("./pokemon_go/pvp_rankings/rankings-1500-spring.json").then(response => response.json()),
+                    fetch("./pokemon_go/pvp_rankings/rankings-2500-ultra.json").then(response => response.json()),
+                    fetch("./pokemon_go/pvp_rankings/rankings-10000-master.json").then(response => response.json())
+                ]).then(([e1, r1, r2, r3, r4, r5]) => {
+                    evolutions = e1;
+                    rankings_great = r1;
+                    rankings_jungle = r2;
+                    rankings_spring = r3;
+                    rankings_ultra = r4;
+                    rankings_master = r5;
+                    generateTable();
+                });
+            } catch (error) {
+                console.error("Error loading JSON files:", error);
+            }
+        }
+
+        window.addEventListener('load', function () {
+            loadAllJsonFiles();
+        })
+    </script>
+</body>
+
+</html>
