@@ -8,7 +8,7 @@
         body {
             padding: 10px;
             margin: 0 auto;
-            max-width: 1000px;
+            max-width: 2000px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: rgb(224, 224, 224);
         }
@@ -20,6 +20,11 @@
 
         .img_icon {
             height: 20px;
+            margin-left: 2px;
+        }
+
+        .pokemon_icon {
+            height: 40px;
             margin-left: 2px;
         }
 
@@ -89,6 +94,7 @@
             }
 
             const namesDict = {};
+            const fullNameDict = {};
             let num = document.querySelector("#rankings_num").value;
             console.log(num)
             const rankings = {
@@ -103,22 +109,28 @@
                 var minLength = Math.min(num, r.length);
                 for (let j = 0; j < minLength; j++) {
                     let name = value[j].speciesName;
+                    let speciesName = name;
                     name = name.replace(/\([\w\-%\s']+\)/g, "");
                     name = name.trim();
                     name = name.toUpperCase();
-                    if (!namesDict[name]) {
-                        namesDict[name] = {};
+                    fullNameDict[speciesName] = name;
+                    if (!namesDict[speciesName]) {
+                        namesDict[speciesName] = {};
                     }
-                    namesDict[name][`${key}_${j + 1}`] = { "moveset": value[j].moveset, "rank": j + 1 };
+                    namesDict[speciesName][`${key}_${j + 1}`] = { "moveset": value[j].moveset, "rank": j + 1 };
                 }
             }
 
             const rows = [];
-            var eliteQuickMove = [];
-            var eliteChargedMove = [];
             for (const [key, value] of Object.entries(namesDict)) {
+                var eliteQuickMove = [];
+                var eliteChargedMove = [];
+                var n = extractForms(fullNameDict[key]);
+                var name = n.name;
+                name = name.replace(/-/g, "_");
+                var id = 0;
                 for (const p of pokemons) {
-                    if (p.templateId.includes(key)) {
+                    if (p.templateId.includes(name)) {
                         var ee = p.data?.pokemonSettings?.eliteCinematicMove;
                         if (ee != undefined) {
                             eliteChargedMove = ee;
@@ -127,14 +139,49 @@
                         if (ee != undefined) {
                             eliteQuickMove = ee;
                         }
+                        var idStr = p.templateId.split("_")[0].replace("V", "");
+                        id = parseInt(idStr, 10);
                         break;
                     }
                 }
-                var name = toTitleCase(key);
-                rows.push(`<td>${name}</td><td>${getMovesCell(value, eliteQuickMove, eliteChargedMove, combatMovesDict)}</td>`);
+                var form = n.forms[0];
+                if (form == undefined) {
+                    form = "Normal";
+                }
+                else if (form == "Shadow") {
+                    form = "Normal";
+                } else {
+                    form = form.trim().toTitleCase();
+                }
+                var iconName = getSpriteName(id, form);
+                var img = "<img class='pokemon_icon' src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable Assets/" + iconName + "' />";
+                rows.push(`<td>${img}${key}</td><td>${getMovesCell(value, eliteQuickMove, eliteChargedMove, combatMovesDict)}</td>`);
             }
             var html = `<table class='table table-striped align-middle'><tr><th>Pokemon</th><th>Moves</th></tr><tr>${rows.join("</tr><tr>")}</tr></table>`;
             document.querySelector("#results").innerHTML = html;
+        }
+
+        function extractForms(str) {
+            const regex = /\(([^)]+)\)/g;
+            const forms = [];
+            let match;
+            let nonFormText = str;
+
+            while ((match = regex.exec(str)) !== null) {
+                forms.push(match[1]);
+                nonFormText = nonFormText.replace(match[0], '');
+            }
+
+            return { name: nonFormText.trim(), forms };
+        }
+
+        function getSpriteName(id, form) {
+            form = form.toLowerCase();
+            if (form == "normal") {
+                return "pm" + id + ".icon.png";
+            }
+
+            return "pm" + id + ".f" + form.toUpperCase() + ".icon.png";
         }
 
         function toTitleCase(str) {
@@ -157,9 +204,9 @@
             var preMove = "";
             for (const [key, value] of Object.entries(moves)) {
                 var move = value.moveset;
-                var move1 = getMoveString(move[1], combatMovesDict, eliteQuickMove);
-                var move2 = getMoveString(move[1], combatMovesDict, eliteChargedMove);
-                var move3 = getMoveString(move[2], combatMovesDict, eliteChargedMove);
+                var move1 = getMoveString(move[0], combatMovesDict, eliteQuickMove, true);
+                var move2 = getMoveString(move[1], combatMovesDict, eliteChargedMove, false);
+                var move3 = getMoveString(move[2], combatMovesDict, eliteChargedMove, false);
                 var moveStr = `${move1}; ${move2}, ${move3}`;
                 var moveSum = moveStr;
                 if (preMove == moveStr) {
@@ -178,12 +225,19 @@
             return "<img class='img_" + type + " img_v_" + value + "' src='./pokemon_go/img/" + type + "_" + value + ".png' alt='" + value + "'/>";
         }
 
-        function getMoveString(move, combatMovesDict, eliteMoves) {
+        function getMoveString(move, combatMovesDict, eliteMoves, isFast) {
             // special cases
-            if (move == "FUTURE_SIGHT") {
-                move = "FUTURESIGHT";
+            var moveKey = move;
+            if (moveKey == "FUTURE_SIGHT") {
+                moveKey = "FUTURESIGHT";
             }
-            var type = combatMovesDict[move].type.replace("POKEMON_TYPE_", "").toLowerCase();
+            else if (isFast) {
+                moveKey = moveKey + "_FAST";
+            }
+            if (combatMovesDict[moveKey] == undefined) {
+                console.log(move, moveKey);
+            }
+            var type = combatMovesDict[moveKey].type.replace("POKEMON_TYPE_", "").toLowerCase();
             var tags = eliteMoves.includes(move) ? `<span class='move-tag elite-move move-${type}'>Elite</span>` : '';
             var moveName = toTitleCase(move.replace("_", " "));
             return "<div class='move'>" + getImage(type, "type") + `${moveName}${tags}</div>`;
