@@ -125,8 +125,8 @@
             for (const [key, value] of Object.entries(namesDict)) {
                 var eliteQuickMove = [];
                 var eliteChargedMove = [];
-                var n = extractForms(fullNameDict[key]);
-                var name = n.name;
+                var n = extractForms(key);
+                var name = n.name.toUpperCase();
                 name = name.replace(/-/g, "_");
                 var id = 0;
                 for (const p of pokemons) {
@@ -151,7 +151,10 @@
                 else if (form == "Shadow") {
                     form = "Normal";
                 } else {
-                    form = form.trim().toTitleCase();
+                    if (form == "Alolan") {
+                        form = "Alola";
+                    }
+                    form = toTitleCase(form.trim());
                 }
                 var iconName = getSpriteName(id, form);
                 var img = "<img class='pokemon_icon' src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable Assets/" + iconName + "' />";
@@ -162,17 +165,14 @@
         }
 
         function extractForms(str) {
-            const regex = /\(([^)]+)\)/g;
-            const forms = [];
-            let match;
-            let nonFormText = str;
+            const formRegex = /\(([^)]+)\)/g;
+            const forms = str.match(formRegex) || [];
+            const nonFormText = forms.reduce((acc, curr) => acc.replace(curr, ''), str).trim();
 
-            while ((match = regex.exec(str)) !== null) {
-                forms.push(match[1]);
-                nonFormText = nonFormText.replace(match[0], '');
-            }
-
-            return { name: nonFormText.trim(), forms };
+            return {
+                name: nonFormText,
+                forms: forms.map(form => form.slice(1, -1))
+            };
         }
 
         function getSpriteName(id, form) {
