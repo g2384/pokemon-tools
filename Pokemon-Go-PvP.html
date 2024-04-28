@@ -76,7 +76,6 @@
     <div id="results"></div>
     <script>
         let pokemons = [];
-        let dataCombatMoves = [];
         let rankings_great = [];
         let rankings_jungle = [];
         let rankings_spring = [];
@@ -85,14 +84,6 @@
         let combatMovesDict = {};
 
         function generateTable() {
-            combatMovesDict = {};
-            for (var i = 0; i < dataCombatMoves.length; i++) {
-                var move = dataCombatMoves[i];
-                var settings = move["data"]["combatMove"];
-                var id = settings["uniqueId"];
-                combatMovesDict[id] = settings;
-            }
-
             const namesDict = {};
             const fullNameDict = {};
             let num = document.querySelector("#rankings_num").value;
@@ -158,7 +149,7 @@
                 }
                 var iconName = getSpriteName(id, form);
                 var img = "<img class='pokemon_icon' src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable Assets/" + iconName + "' />";
-                rows.push(`<td>${img}${key}</td><td>${getMovesCell(value, eliteQuickMove, eliteChargedMove, combatMovesDict)}</td>`);
+                rows.push(`<td>${img}${key}</td><td>${getMovesCell(value, eliteQuickMove, eliteChargedMove)}</td>`);
             }
             var html = `<table class='table table-striped align-middle'><tr><th>Pokemon</th><th>Moves</th></tr><tr>${rows.join("</tr><tr>")}</tr></table>`;
             document.querySelector("#results").innerHTML = html;
@@ -199,14 +190,14 @@
             return titleCaseString;
         }
 
-        function getMovesCell(moves, eliteQuickMove, eliteChargedMove, combatMovesDict) {
+        function getMovesCell(moves, eliteQuickMove, eliteChargedMove) {
             var strs = [];
             var preMove = "";
             for (const [key, value] of Object.entries(moves)) {
                 var move = value.moveset;
-                var move1 = getMoveString(move[0], combatMovesDict, eliteQuickMove, true);
-                var move2 = getMoveString(move[1], combatMovesDict, eliteChargedMove, false);
-                var move3 = getMoveString(move[2], combatMovesDict, eliteChargedMove, false);
+                var move1 = getMoveString(move[0], eliteQuickMove, true);
+                var move2 = getMoveString(move[1], eliteChargedMove, false);
+                var move3 = getMoveString(move[2], eliteChargedMove, false);
                 var moveStr = `${move1}; ${move2}, ${move3}`;
                 var moveSum = moveStr;
                 if (preMove == moveStr) {
@@ -225,11 +216,14 @@
             return "<img class='img_" + type + " img_v_" + value + "' src='./pokemon_go/img/" + type + "_" + value + ".png' alt='" + value + "'/>";
         }
 
-        function getMoveString(move, combatMovesDict, eliteMoves, isFast) {
+        function getMoveString(move, eliteMoves, isFast) {
             // special cases
             var moveKey = move;
             if (moveKey == "FUTURE_SIGHT") {
                 moveKey = "FUTURESIGHT";
+            }
+            else if (moveKey == "HIDDEN_POWER_FLYING") {
+                moveKey = "HIDDEN_POWER_FAST";
             }
             else if (isFast) {
                 moveKey = moveKey + "_FAST";
@@ -255,12 +249,21 @@
                     fetch("./pokemon_go/pvp_rankings/rankings-10000-master.json").then(response => response.json())
                 ]).then(([e1, m1, r1, r2, r3, r4, r5]) => {
                     pokemons = e1;
-                    dataCombatMoves = m1;
                     rankings_great = r1;
                     rankings_jungle = r2;
                     rankings_spring = r3;
                     rankings_ultra = r4;
                     rankings_master = r5;
+
+                    combatMovesDict = {};
+                    console.log(m1)
+                    var len = m1.length;
+                    for (const move of m1) {
+                        var settings = move["data"]["combatMove"];
+                        var id = settings["uniqueId"];
+                        combatMovesDict[id] = settings;
+                    }
+
                     generateTable();
                 });
             } catch (error) {

@@ -1,0 +1,5322 @@
+[
+  {
+    "templateId": "V0001_FAMILY_BULBASAUR",
+    "data": {
+      "templateId": "V0001_FAMILY_BULBASAUR",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BULBASAUR",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "VENUSAUR"
+      }
+    }
+  },
+  {
+    "templateId": "V0004_FAMILY_CHARMANDER",
+    "data": {
+      "templateId": "V0004_FAMILY_CHARMANDER",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CHARMANDER",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "CHARIZARD"
+      }
+    }
+  },
+  {
+    "templateId": "V0007_FAMILY_SQUIRTLE",
+    "data": {
+      "templateId": "V0007_FAMILY_SQUIRTLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SQUIRTLE",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "BLASTOISE"
+      }
+    }
+  },
+  {
+    "templateId": "V0010_FAMILY_CATERPIE",
+    "data": {
+      "templateId": "V0010_FAMILY_CATERPIE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CATERPIE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0013_FAMILY_WEEDLE",
+    "data": {
+      "templateId": "V0013_FAMILY_WEEDLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_WEEDLE",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "BEEDRILL"
+      }
+    }
+  },
+  {
+    "templateId": "V0016_FAMILY_PIDGEY",
+    "data": {
+      "templateId": "V0016_FAMILY_PIDGEY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PIDGEY",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "PIDGEOT"
+      }
+    }
+  },
+  {
+    "templateId": "V0019_FAMILY_RATTATA",
+    "data": {
+      "templateId": "V0019_FAMILY_RATTATA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_RATTATA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0021_FAMILY_SPEAROW",
+    "data": {
+      "templateId": "V0021_FAMILY_SPEAROW",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SPEAROW",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0023_FAMILY_EKANS",
+    "data": {
+      "templateId": "V0023_FAMILY_EKANS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_EKANS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0025_FAMILY_PIKACHU",
+    "data": {
+      "templateId": "V0025_FAMILY_PIKACHU",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PIKACHU",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0027_FAMILY_SANDSHREW",
+    "data": {
+      "templateId": "V0027_FAMILY_SANDSHREW",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SANDSHREW",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0029_FAMILY_NIDORAN",
+    "data": {
+      "templateId": "V0029_FAMILY_NIDORAN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_NIDORAN_FEMALE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0032_FAMILY_NIDORAN",
+    "data": {
+      "templateId": "V0032_FAMILY_NIDORAN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_NIDORAN_MALE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0035_FAMILY_CLEFAIRY",
+    "data": {
+      "templateId": "V0035_FAMILY_CLEFAIRY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CLEFAIRY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0037_FAMILY_VULPIX",
+    "data": {
+      "templateId": "V0037_FAMILY_VULPIX",
+      "pokemonFamily": {
+        "familyId": "FAMILY_VULPIX",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0039_FAMILY_JIGGLYPUFF",
+    "data": {
+      "templateId": "V0039_FAMILY_JIGGLYPUFF",
+      "pokemonFamily": {
+        "familyId": "FAMILY_JIGGLYPUFF",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0041_FAMILY_ZUBAT",
+    "data": {
+      "templateId": "V0041_FAMILY_ZUBAT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ZUBAT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0043_FAMILY_ODDISH",
+    "data": {
+      "templateId": "V0043_FAMILY_ODDISH",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ODDISH",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0046_FAMILY_PARAS",
+    "data": {
+      "templateId": "V0046_FAMILY_PARAS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PARAS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0048_FAMILY_VENONAT",
+    "data": {
+      "templateId": "V0048_FAMILY_VENONAT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_VENONAT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0050_FAMILY_DIGLETT",
+    "data": {
+      "templateId": "V0050_FAMILY_DIGLETT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DIGLETT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0052_FAMILY_MEOWTH",
+    "data": {
+      "templateId": "V0052_FAMILY_MEOWTH",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MEOWTH",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0054_FAMILY_PSYDUCK",
+    "data": {
+      "templateId": "V0054_FAMILY_PSYDUCK",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PSYDUCK",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0056_FAMILY_MANKEY",
+    "data": {
+      "templateId": "V0056_FAMILY_MANKEY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MANKEY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0058_FAMILY_GROWLITHE",
+    "data": {
+      "templateId": "V0058_FAMILY_GROWLITHE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GROWLITHE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0060_FAMILY_POLIWAG",
+    "data": {
+      "templateId": "V0060_FAMILY_POLIWAG",
+      "pokemonFamily": {
+        "familyId": "FAMILY_POLIWAG",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0063_FAMILY_ABRA",
+    "data": {
+      "templateId": "V0063_FAMILY_ABRA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ABRA",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "ALAKAZAM"
+      }
+    }
+  },
+  {
+    "templateId": "V0066_FAMILY_MACHOP",
+    "data": {
+      "templateId": "V0066_FAMILY_MACHOP",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MACHOP",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0069_FAMILY_BELLSPROUT",
+    "data": {
+      "templateId": "V0069_FAMILY_BELLSPROUT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BELLSPROUT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0072_FAMILY_TENTACOOL",
+    "data": {
+      "templateId": "V0072_FAMILY_TENTACOOL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TENTACOOL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0074_FAMILY_GEODUDE",
+    "data": {
+      "templateId": "V0074_FAMILY_GEODUDE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GEODUDE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0077_FAMILY_PONYTA",
+    "data": {
+      "templateId": "V0077_FAMILY_PONYTA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PONYTA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0079_FAMILY_SLOWPOKE",
+    "data": {
+      "templateId": "V0079_FAMILY_SLOWPOKE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SLOWPOKE",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "SLOWBRO"
+      }
+    }
+  },
+  {
+    "templateId": "V0081_FAMILY_MAGNEMITE",
+    "data": {
+      "templateId": "V0081_FAMILY_MAGNEMITE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MAGNEMITE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0083_FAMILY_FARFETCHD",
+    "data": {
+      "templateId": "V0083_FAMILY_FARFETCHD",
+      "pokemonFamily": {
+        "familyId": "FAMILY_FARFETCHD",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0084_FAMILY_DODUO",
+    "data": {
+      "templateId": "V0084_FAMILY_DODUO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DODUO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0086_FAMILY_SEEL",
+    "data": {
+      "templateId": "V0086_FAMILY_SEEL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SEEL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0088_FAMILY_GRIMER",
+    "data": {
+      "templateId": "V0088_FAMILY_GRIMER",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GRIMER",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0090_FAMILY_SHELLDER",
+    "data": {
+      "templateId": "V0090_FAMILY_SHELLDER",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SHELLDER",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0092_FAMILY_GASTLY",
+    "data": {
+      "templateId": "V0092_FAMILY_GASTLY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GASTLY",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "GENGAR"
+      }
+    }
+  },
+  {
+    "templateId": "V0095_FAMILY_ONIX",
+    "data": {
+      "templateId": "V0095_FAMILY_ONIX",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ONIX",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "STEELIX"
+      }
+    }
+  },
+  {
+    "templateId": "V0096_FAMILY_DROWZEE",
+    "data": {
+      "templateId": "V0096_FAMILY_DROWZEE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DROWZEE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0098_FAMILY_KRABBY",
+    "data": {
+      "templateId": "V0098_FAMILY_KRABBY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_KRABBY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0100_FAMILY_VOLTORB",
+    "data": {
+      "templateId": "V0100_FAMILY_VOLTORB",
+      "pokemonFamily": {
+        "familyId": "FAMILY_VOLTORB",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0102_FAMILY_EXEGGCUTE",
+    "data": {
+      "templateId": "V0102_FAMILY_EXEGGCUTE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_EXEGGCUTE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0104_FAMILY_CUBONE",
+    "data": {
+      "templateId": "V0104_FAMILY_CUBONE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CUBONE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0108_FAMILY_LICKITUNG",
+    "data": {
+      "templateId": "V0108_FAMILY_LICKITUNG",
+      "pokemonFamily": {
+        "familyId": "FAMILY_LICKITUNG",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0109_FAMILY_KOFFING",
+    "data": {
+      "templateId": "V0109_FAMILY_KOFFING",
+      "pokemonFamily": {
+        "familyId": "FAMILY_KOFFING",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0111_FAMILY_RHYHORN",
+    "data": {
+      "templateId": "V0111_FAMILY_RHYHORN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_RHYHORN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0113_FAMILY_CHANSEY",
+    "data": {
+      "templateId": "V0113_FAMILY_CHANSEY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CHANSEY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0114_FAMILY_TANGELA",
+    "data": {
+      "templateId": "V0114_FAMILY_TANGELA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TANGELA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0115_FAMILY_KANGASKHAN",
+    "data": {
+      "templateId": "V0115_FAMILY_KANGASKHAN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_KANGASKHAN",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "KANGASKHAN"
+      }
+    }
+  },
+  {
+    "templateId": "V0116_FAMILY_HORSEA",
+    "data": {
+      "templateId": "V0116_FAMILY_HORSEA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_HORSEA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0118_FAMILY_GOLDEEN",
+    "data": {
+      "templateId": "V0118_FAMILY_GOLDEEN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GOLDEEN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0120_FAMILY_STARYU",
+    "data": {
+      "templateId": "V0120_FAMILY_STARYU",
+      "pokemonFamily": {
+        "familyId": "FAMILY_STARYU",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0122_FAMILY_MR_MIME",
+    "data": {
+      "templateId": "V0122_FAMILY_MR_MIME",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MR_MIME",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0123_FAMILY_SCYTHER",
+    "data": {
+      "templateId": "V0123_FAMILY_SCYTHER",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SCYTHER",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "SCIZOR"
+      }
+    }
+  },
+  {
+    "templateId": "V0124_FAMILY_JYNX",
+    "data": {
+      "templateId": "V0124_FAMILY_JYNX",
+      "pokemonFamily": {
+        "familyId": "FAMILY_JYNX",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0125_FAMILY_ELECTABUZZ",
+    "data": {
+      "templateId": "V0125_FAMILY_ELECTABUZZ",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ELECTABUZZ",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0126_FAMILY_MAGMAR",
+    "data": {
+      "templateId": "V0126_FAMILY_MAGMAR",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MAGMAR",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0127_FAMILY_PINSIR",
+    "data": {
+      "templateId": "V0127_FAMILY_PINSIR",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PINSIR",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "PINSIR"
+      }
+    }
+  },
+  {
+    "templateId": "V0128_FAMILY_TAUROS",
+    "data": {
+      "templateId": "V0128_FAMILY_TAUROS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TAUROS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0129_FAMILY_MAGIKARP",
+    "data": {
+      "templateId": "V0129_FAMILY_MAGIKARP",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MAGIKARP",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "GYARADOS"
+      }
+    }
+  },
+  {
+    "templateId": "V0131_FAMILY_LAPRAS",
+    "data": {
+      "templateId": "V0131_FAMILY_LAPRAS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_LAPRAS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0132_FAMILY_DITTO",
+    "data": {
+      "templateId": "V0132_FAMILY_DITTO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DITTO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0133_FAMILY_EEVEE",
+    "data": {
+      "templateId": "V0133_FAMILY_EEVEE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_EEVEE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0137_FAMILY_PORYGON",
+    "data": {
+      "templateId": "V0137_FAMILY_PORYGON",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PORYGON",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0138_FAMILY_OMANYTE",
+    "data": {
+      "templateId": "V0138_FAMILY_OMANYTE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_OMANYTE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0140_FAMILY_KABUTO",
+    "data": {
+      "templateId": "V0140_FAMILY_KABUTO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_KABUTO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0142_FAMILY_AERODACTYL",
+    "data": {
+      "templateId": "V0142_FAMILY_AERODACTYL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_AERODACTYL",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "AERODACTYL"
+      }
+    }
+  },
+  {
+    "templateId": "V0143_FAMILY_SNORLAX",
+    "data": {
+      "templateId": "V0143_FAMILY_SNORLAX",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SNORLAX",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0144_FAMILY_ARTICUNO",
+    "data": {
+      "templateId": "V0144_FAMILY_ARTICUNO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ARTICUNO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0145_FAMILY_ZAPDOS",
+    "data": {
+      "templateId": "V0145_FAMILY_ZAPDOS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ZAPDOS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0146_FAMILY_MOLTRES",
+    "data": {
+      "templateId": "V0146_FAMILY_MOLTRES",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MOLTRES",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0147_FAMILY_DRATINI",
+    "data": {
+      "templateId": "V0147_FAMILY_DRATINI",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DRATINI",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0150_FAMILY_MEWTWO",
+    "data": {
+      "templateId": "V0150_FAMILY_MEWTWO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MEWTWO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0151_FAMILY_MEW",
+    "data": {
+      "templateId": "V0151_FAMILY_MEW",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MEW",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0152_FAMILY_CHIKORITA",
+    "data": {
+      "templateId": "V0152_FAMILY_CHIKORITA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CHIKORITA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0155_FAMILY_CYNDAQUIL",
+    "data": {
+      "templateId": "V0155_FAMILY_CYNDAQUIL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CYNDAQUIL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0158_FAMILY_TOTODILE",
+    "data": {
+      "templateId": "V0158_FAMILY_TOTODILE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TOTODILE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0161_FAMILY_SENTRET",
+    "data": {
+      "templateId": "V0161_FAMILY_SENTRET",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SENTRET",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0163_FAMILY_HOOTHOOT",
+    "data": {
+      "templateId": "V0163_FAMILY_HOOTHOOT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_HOOTHOOT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0165_FAMILY_LEDYBA",
+    "data": {
+      "templateId": "V0165_FAMILY_LEDYBA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_LEDYBA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0167_FAMILY_SPINARAK",
+    "data": {
+      "templateId": "V0167_FAMILY_SPINARAK",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SPINARAK",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0170_FAMILY_CHINCHOU",
+    "data": {
+      "templateId": "V0170_FAMILY_CHINCHOU",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CHINCHOU",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0175_FAMILY_TOGEPI",
+    "data": {
+      "templateId": "V0175_FAMILY_TOGEPI",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TOGEPI",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0177_FAMILY_NATU",
+    "data": {
+      "templateId": "V0177_FAMILY_NATU",
+      "pokemonFamily": {
+        "familyId": "FAMILY_NATU",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0179_FAMILY_MAREEP",
+    "data": {
+      "templateId": "V0179_FAMILY_MAREEP",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MAREEP",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "AMPHAROS"
+      }
+    }
+  },
+  {
+    "templateId": "V0183_FAMILY_MARILL",
+    "data": {
+      "templateId": "V0183_FAMILY_MARILL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MARILL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0185_FAMILY_SUDOWOODO",
+    "data": {
+      "templateId": "V0185_FAMILY_SUDOWOODO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SUDOWOODO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0187_FAMILY_HOPPIP",
+    "data": {
+      "templateId": "V0187_FAMILY_HOPPIP",
+      "pokemonFamily": {
+        "familyId": "FAMILY_HOPPIP",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0190_FAMILY_AIPOM",
+    "data": {
+      "templateId": "V0190_FAMILY_AIPOM",
+      "pokemonFamily": {
+        "familyId": "FAMILY_AIPOM",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0191_FAMILY_SUNKERN",
+    "data": {
+      "templateId": "V0191_FAMILY_SUNKERN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SUNKERN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0193_FAMILY_YANMA",
+    "data": {
+      "templateId": "V0193_FAMILY_YANMA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_YANMA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0194_FAMILY_WOOPER",
+    "data": {
+      "templateId": "V0194_FAMILY_WOOPER",
+      "pokemonFamily": {
+        "familyId": "FAMILY_WOOPER",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0198_FAMILY_MURKROW",
+    "data": {
+      "templateId": "V0198_FAMILY_MURKROW",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MURKROW",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0200_FAMILY_MISDREAVUS",
+    "data": {
+      "templateId": "V0200_FAMILY_MISDREAVUS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MISDREAVUS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0201_FAMILY_UNOWN",
+    "data": {
+      "templateId": "V0201_FAMILY_UNOWN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_UNOWN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0202_FAMILY_WOBBUFFET",
+    "data": {
+      "templateId": "V0202_FAMILY_WOBBUFFET",
+      "pokemonFamily": {
+        "familyId": "FAMILY_WOBBUFFET",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0203_FAMILY_GIRAFARIG",
+    "data": {
+      "templateId": "V0203_FAMILY_GIRAFARIG",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GIRAFARIG",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0204_FAMILY_PINECO",
+    "data": {
+      "templateId": "V0204_FAMILY_PINECO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PINECO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0206_FAMILY_DUNSPARCE",
+    "data": {
+      "templateId": "V0206_FAMILY_DUNSPARCE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DUNSPARCE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0207_FAMILY_GLIGAR",
+    "data": {
+      "templateId": "V0207_FAMILY_GLIGAR",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GLIGAR",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0209_FAMILY_SNUBBULL",
+    "data": {
+      "templateId": "V0209_FAMILY_SNUBBULL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SNUBBULL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0211_FAMILY_QWILFISH",
+    "data": {
+      "templateId": "V0211_FAMILY_QWILFISH",
+      "pokemonFamily": {
+        "familyId": "FAMILY_QWILFISH",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0213_FAMILY_SHUCKLE",
+    "data": {
+      "templateId": "V0213_FAMILY_SHUCKLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SHUCKLE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0214_FAMILY_HERACROSS",
+    "data": {
+      "templateId": "V0214_FAMILY_HERACROSS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_HERACROSS",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "HERACROSS"
+      }
+    }
+  },
+  {
+    "templateId": "V0215_FAMILY_SNEASEL",
+    "data": {
+      "templateId": "V0215_FAMILY_SNEASEL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SNEASEL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0216_FAMILY_TEDDIURSA",
+    "data": {
+      "templateId": "V0216_FAMILY_TEDDIURSA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TEDDIURSA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0218_FAMILY_SLUGMA",
+    "data": {
+      "templateId": "V0218_FAMILY_SLUGMA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SLUGMA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0220_FAMILY_SWINUB",
+    "data": {
+      "templateId": "V0220_FAMILY_SWINUB",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SWINUB",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0222_FAMILY_CORSOLA",
+    "data": {
+      "templateId": "V0222_FAMILY_CORSOLA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CORSOLA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0223_FAMILY_REMORAID",
+    "data": {
+      "templateId": "V0223_FAMILY_REMORAID",
+      "pokemonFamily": {
+        "familyId": "FAMILY_REMORAID",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0225_FAMILY_DELIBIRD",
+    "data": {
+      "templateId": "V0225_FAMILY_DELIBIRD",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DELIBIRD",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0226_FAMILY_MANTINE",
+    "data": {
+      "templateId": "V0226_FAMILY_MANTINE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MANTINE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0227_FAMILY_SKARMORY",
+    "data": {
+      "templateId": "V0227_FAMILY_SKARMORY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SKARMORY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0228_FAMILY_HOUNDOUR",
+    "data": {
+      "templateId": "V0228_FAMILY_HOUNDOUR",
+      "pokemonFamily": {
+        "familyId": "FAMILY_HOUNDOUR",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "HOUNDOOM"
+      }
+    }
+  },
+  {
+    "templateId": "V0231_FAMILY_PHANPY",
+    "data": {
+      "templateId": "V0231_FAMILY_PHANPY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PHANPY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0234_FAMILY_STANTLER",
+    "data": {
+      "templateId": "V0234_FAMILY_STANTLER",
+      "pokemonFamily": {
+        "familyId": "FAMILY_STANTLER",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0235_FAMILY_SMEARGLE",
+    "data": {
+      "templateId": "V0235_FAMILY_SMEARGLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SMEARGLE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0236_FAMILY_TYROGUE",
+    "data": {
+      "templateId": "V0236_FAMILY_TYROGUE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TYROGUE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0241_FAMILY_MILTANK",
+    "data": {
+      "templateId": "V0241_FAMILY_MILTANK",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MILTANK",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0243_FAMILY_RAIKOU",
+    "data": {
+      "templateId": "V0243_FAMILY_RAIKOU",
+      "pokemonFamily": {
+        "familyId": "FAMILY_RAIKOU",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0244_FAMILY_ENTEI",
+    "data": {
+      "templateId": "V0244_FAMILY_ENTEI",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ENTEI",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0245_FAMILY_SUICUNE",
+    "data": {
+      "templateId": "V0245_FAMILY_SUICUNE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SUICUNE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0246_FAMILY_LARVITAR",
+    "data": {
+      "templateId": "V0246_FAMILY_LARVITAR",
+      "pokemonFamily": {
+        "familyId": "FAMILY_LARVITAR",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "TYRANITAR"
+      }
+    }
+  },
+  {
+    "templateId": "V0249_FAMILY_LUGIA",
+    "data": {
+      "templateId": "V0249_FAMILY_LUGIA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_LUGIA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0250_FAMILY_HO_OH",
+    "data": {
+      "templateId": "V0250_FAMILY_HO_OH",
+      "pokemonFamily": {
+        "familyId": "FAMILY_HO_OH",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0251_FAMILY_CELEBI",
+    "data": {
+      "templateId": "V0251_FAMILY_CELEBI",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CELEBI",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0252_FAMILY_TREECKO",
+    "data": {
+      "templateId": "V0252_FAMILY_TREECKO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TREECKO",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "SCEPTILE"
+      }
+    }
+  },
+  {
+    "templateId": "V0255_FAMILY_TORCHIC",
+    "data": {
+      "templateId": "V0255_FAMILY_TORCHIC",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TORCHIC",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "BLAZIKEN"
+      }
+    }
+  },
+  {
+    "templateId": "V0258_FAMILY_MUDKIP",
+    "data": {
+      "templateId": "V0258_FAMILY_MUDKIP",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MUDKIP",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "SWAMPERT"
+      }
+    }
+  },
+  {
+    "templateId": "V0261_FAMILY_POOCHYENA",
+    "data": {
+      "templateId": "V0261_FAMILY_POOCHYENA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_POOCHYENA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0263_FAMILY_ZIGZAGOON",
+    "data": {
+      "templateId": "V0263_FAMILY_ZIGZAGOON",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ZIGZAGOON",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0265_FAMILY_WURMPLE",
+    "data": {
+      "templateId": "V0265_FAMILY_WURMPLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_WURMPLE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0270_FAMILY_LOTAD",
+    "data": {
+      "templateId": "V0270_FAMILY_LOTAD",
+      "pokemonFamily": {
+        "familyId": "FAMILY_LOTAD",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0273_FAMILY_SEEDOT",
+    "data": {
+      "templateId": "V0273_FAMILY_SEEDOT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SEEDOT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0276_FAMILY_TAILLOW",
+    "data": {
+      "templateId": "V0276_FAMILY_TAILLOW",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TAILLOW",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0278_FAMILY_WINGULL",
+    "data": {
+      "templateId": "V0278_FAMILY_WINGULL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_WINGULL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0280_FAMILY_RALTS",
+    "data": {
+      "templateId": "V0280_FAMILY_RALTS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_RALTS",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "GARDEVOIR"
+      }
+    }
+  },
+  {
+    "templateId": "V0283_FAMILY_SURSKIT",
+    "data": {
+      "templateId": "V0283_FAMILY_SURSKIT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SURSKIT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0285_FAMILY_SHROOMISH",
+    "data": {
+      "templateId": "V0285_FAMILY_SHROOMISH",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SHROOMISH",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0287_FAMILY_SLAKOTH",
+    "data": {
+      "templateId": "V0287_FAMILY_SLAKOTH",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SLAKOTH",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0290_FAMILY_NINCADA",
+    "data": {
+      "templateId": "V0290_FAMILY_NINCADA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_NINCADA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0293_FAMILY_WHISMUR",
+    "data": {
+      "templateId": "V0293_FAMILY_WHISMUR",
+      "pokemonFamily": {
+        "familyId": "FAMILY_WHISMUR",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0296_FAMILY_MAKUHITA",
+    "data": {
+      "templateId": "V0296_FAMILY_MAKUHITA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MAKUHITA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0299_FAMILY_NOSEPASS",
+    "data": {
+      "templateId": "V0299_FAMILY_NOSEPASS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_NOSEPASS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0300_FAMILY_SKITTY",
+    "data": {
+      "templateId": "V0300_FAMILY_SKITTY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SKITTY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0302_FAMILY_SABLEYE",
+    "data": {
+      "templateId": "V0302_FAMILY_SABLEYE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SABLEYE",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "SABLEYE"
+      }
+    }
+  },
+  {
+    "templateId": "V0303_FAMILY_MAWILE",
+    "data": {
+      "templateId": "V0303_FAMILY_MAWILE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MAWILE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0304_FAMILY_ARON",
+    "data": {
+      "templateId": "V0304_FAMILY_ARON",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ARON",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "AGGRON"
+      }
+    }
+  },
+  {
+    "templateId": "V0307_FAMILY_MEDITITE",
+    "data": {
+      "templateId": "V0307_FAMILY_MEDITITE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MEDITITE",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "MEDICHAM"
+      }
+    }
+  },
+  {
+    "templateId": "V0309_FAMILY_ELECTRIKE",
+    "data": {
+      "templateId": "V0309_FAMILY_ELECTRIKE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ELECTRIKE",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "MANECTRIC"
+      }
+    }
+  },
+  {
+    "templateId": "V0311_FAMILY_PLUSLE",
+    "data": {
+      "templateId": "V0311_FAMILY_PLUSLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PLUSLE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0312_FAMILY_MINUN",
+    "data": {
+      "templateId": "V0312_FAMILY_MINUN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MINUN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0313_FAMILY_VOLBEAT",
+    "data": {
+      "templateId": "V0313_FAMILY_VOLBEAT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_VOLBEAT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0314_FAMILY_ILLUMISE",
+    "data": {
+      "templateId": "V0314_FAMILY_ILLUMISE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ILLUMISE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0315_FAMILY_ROSELIA",
+    "data": {
+      "templateId": "V0315_FAMILY_ROSELIA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ROSELIA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0316_FAMILY_GULPIN",
+    "data": {
+      "templateId": "V0316_FAMILY_GULPIN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GULPIN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0318_FAMILY_CARVANHA",
+    "data": {
+      "templateId": "V0318_FAMILY_CARVANHA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CARVANHA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0320_FAMILY_WAILMER",
+    "data": {
+      "templateId": "V0320_FAMILY_WAILMER",
+      "pokemonFamily": {
+        "familyId": "FAMILY_WAILMER",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0322_FAMILY_NUMEL",
+    "data": {
+      "templateId": "V0322_FAMILY_NUMEL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_NUMEL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0324_FAMILY_TORKOAL",
+    "data": {
+      "templateId": "V0324_FAMILY_TORKOAL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TORKOAL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0325_FAMILY_SPOINK",
+    "data": {
+      "templateId": "V0325_FAMILY_SPOINK",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SPOINK",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0327_FAMILY_SPINDA",
+    "data": {
+      "templateId": "V0327_FAMILY_SPINDA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SPINDA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0328_FAMILY_TRAPINCH",
+    "data": {
+      "templateId": "V0328_FAMILY_TRAPINCH",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TRAPINCH",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0331_FAMILY_CACNEA",
+    "data": {
+      "templateId": "V0331_FAMILY_CACNEA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CACNEA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0333_FAMILY_SWABLU",
+    "data": {
+      "templateId": "V0333_FAMILY_SWABLU",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SWABLU",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "ALTARIA"
+      }
+    }
+  },
+  {
+    "templateId": "V0335_FAMILY_ZANGOOSE",
+    "data": {
+      "templateId": "V0335_FAMILY_ZANGOOSE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ZANGOOSE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0336_FAMILY_SEVIPER",
+    "data": {
+      "templateId": "V0336_FAMILY_SEVIPER",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SEVIPER",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0337_FAMILY_LUNATONE",
+    "data": {
+      "templateId": "V0337_FAMILY_LUNATONE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_LUNATONE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0338_FAMILY_SOLROCK",
+    "data": {
+      "templateId": "V0338_FAMILY_SOLROCK",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SOLROCK",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0339_FAMILY_BARBOACH",
+    "data": {
+      "templateId": "V0339_FAMILY_BARBOACH",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BARBOACH",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0341_FAMILY_CORPHISH",
+    "data": {
+      "templateId": "V0341_FAMILY_CORPHISH",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CORPHISH",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0343_FAMILY_BALTOY",
+    "data": {
+      "templateId": "V0343_FAMILY_BALTOY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BALTOY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0345_FAMILY_LILEEP",
+    "data": {
+      "templateId": "V0345_FAMILY_LILEEP",
+      "pokemonFamily": {
+        "familyId": "FAMILY_LILEEP",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0347_FAMILY_ANORITH",
+    "data": {
+      "templateId": "V0347_FAMILY_ANORITH",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ANORITH",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0349_FAMILY_FEEBAS",
+    "data": {
+      "templateId": "V0349_FAMILY_FEEBAS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_FEEBAS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0351_FAMILY_CASTFORM",
+    "data": {
+      "templateId": "V0351_FAMILY_CASTFORM",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CASTFORM",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0352_FAMILY_KECLEON",
+    "data": {
+      "templateId": "V0352_FAMILY_KECLEON",
+      "pokemonFamily": {
+        "familyId": "FAMILY_KECLEON",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0353_FAMILY_SHUPPET",
+    "data": {
+      "templateId": "V0353_FAMILY_SHUPPET",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SHUPPET",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "BANETTE"
+      }
+    }
+  },
+  {
+    "templateId": "V0355_FAMILY_DUSKULL",
+    "data": {
+      "templateId": "V0355_FAMILY_DUSKULL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DUSKULL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0357_FAMILY_TROPIUS",
+    "data": {
+      "templateId": "V0357_FAMILY_TROPIUS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TROPIUS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0358_FAMILY_CHIMECHO",
+    "data": {
+      "templateId": "V0358_FAMILY_CHIMECHO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CHIMECHO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0359_FAMILY_ABSOL",
+    "data": {
+      "templateId": "V0359_FAMILY_ABSOL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ABSOL",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "ABSOL"
+      }
+    }
+  },
+  {
+    "templateId": "V0361_FAMILY_SNORUNT",
+    "data": {
+      "templateId": "V0361_FAMILY_SNORUNT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SNORUNT",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "GLALIE"
+      }
+    }
+  },
+  {
+    "templateId": "V0363_FAMILY_SPHEAL",
+    "data": {
+      "templateId": "V0363_FAMILY_SPHEAL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SPHEAL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0366_FAMILY_CLAMPERL",
+    "data": {
+      "templateId": "V0366_FAMILY_CLAMPERL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CLAMPERL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0369_FAMILY_RELICANTH",
+    "data": {
+      "templateId": "V0369_FAMILY_RELICANTH",
+      "pokemonFamily": {
+        "familyId": "FAMILY_RELICANTH",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0370_FAMILY_LUVDISC",
+    "data": {
+      "templateId": "V0370_FAMILY_LUVDISC",
+      "pokemonFamily": {
+        "familyId": "FAMILY_LUVDISC",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0371_FAMILY_BAGON",
+    "data": {
+      "templateId": "V0371_FAMILY_BAGON",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BAGON",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "SALAMENCE"
+      }
+    }
+  },
+  {
+    "templateId": "V0374_FAMILY_BELDUM",
+    "data": {
+      "templateId": "V0374_FAMILY_BELDUM",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BELDUM",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0377_FAMILY_REGIROCK",
+    "data": {
+      "templateId": "V0377_FAMILY_REGIROCK",
+      "pokemonFamily": {
+        "familyId": "FAMILY_REGIROCK",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0378_FAMILY_REGICE",
+    "data": {
+      "templateId": "V0378_FAMILY_REGICE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_REGICE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0379_FAMILY_REGISTEEL",
+    "data": {
+      "templateId": "V0379_FAMILY_REGISTEEL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_REGISTEEL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0380_FAMILY_LATIAS",
+    "data": {
+      "templateId": "V0380_FAMILY_LATIAS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_LATIAS",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "LATIAS"
+      }
+    }
+  },
+  {
+    "templateId": "V0381_FAMILY_LATIOS",
+    "data": {
+      "templateId": "V0381_FAMILY_LATIOS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_LATIOS",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "LATIOS"
+      }
+    }
+  },
+  {
+    "templateId": "V0382_FAMILY_KYOGRE",
+    "data": {
+      "templateId": "V0382_FAMILY_KYOGRE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_KYOGRE",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "KYOGRE"
+      }
+    }
+  },
+  {
+    "templateId": "V0383_FAMILY_GROUDON",
+    "data": {
+      "templateId": "V0383_FAMILY_GROUDON",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GROUDON",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "GROUDON"
+      }
+    }
+  },
+  {
+    "templateId": "V0384_FAMILY_RAYQUAZA",
+    "data": {
+      "templateId": "V0384_FAMILY_RAYQUAZA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_RAYQUAZA",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "RAYQUAZA"
+      }
+    }
+  },
+  {
+    "templateId": "V0385_FAMILY_JIRACHI",
+    "data": {
+      "templateId": "V0385_FAMILY_JIRACHI",
+      "pokemonFamily": {
+        "familyId": "FAMILY_JIRACHI",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0386_FAMILY_DEOXYS",
+    "data": {
+      "templateId": "V0386_FAMILY_DEOXYS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DEOXYS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0387_FAMILY_TURTWIG",
+    "data": {
+      "templateId": "V0387_FAMILY_TURTWIG",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TURTWIG",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0390_FAMILY_CHIMCHAR",
+    "data": {
+      "templateId": "V0390_FAMILY_CHIMCHAR",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CHIMCHAR",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0393_FAMILY_PIPLUP",
+    "data": {
+      "templateId": "V0393_FAMILY_PIPLUP",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PIPLUP",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0396_FAMILY_STARLY",
+    "data": {
+      "templateId": "V0396_FAMILY_STARLY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_STARLY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0399_FAMILY_BIDOOF",
+    "data": {
+      "templateId": "V0399_FAMILY_BIDOOF",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BIDOOF",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0401_FAMILY_KRICKETOT",
+    "data": {
+      "templateId": "V0401_FAMILY_KRICKETOT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_KRICKETOT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0403_FAMILY_SHINX",
+    "data": {
+      "templateId": "V0403_FAMILY_SHINX",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SHINX",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0408_FAMILY_CRANIDOS",
+    "data": {
+      "templateId": "V0408_FAMILY_CRANIDOS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CRANIDOS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0410_FAMILY_SHIELDON",
+    "data": {
+      "templateId": "V0410_FAMILY_SHIELDON",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SHIELDON",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0412_FAMILY_BURMY",
+    "data": {
+      "templateId": "V0412_FAMILY_BURMY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BURMY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0415_FAMILY_COMBEE",
+    "data": {
+      "templateId": "V0415_FAMILY_COMBEE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_COMBEE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0417_FAMILY_PACHIRISU",
+    "data": {
+      "templateId": "V0417_FAMILY_PACHIRISU",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PACHIRISU",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0418_FAMILY_BUIZEL",
+    "data": {
+      "templateId": "V0418_FAMILY_BUIZEL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BUIZEL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0420_FAMILY_CHERUBI",
+    "data": {
+      "templateId": "V0420_FAMILY_CHERUBI",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CHERUBI",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0422_FAMILY_SHELLOS",
+    "data": {
+      "templateId": "V0422_FAMILY_SHELLOS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SHELLOS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0425_FAMILY_DRIFLOON",
+    "data": {
+      "templateId": "V0425_FAMILY_DRIFLOON",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DRIFLOON",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0427_FAMILY_BUNEARY",
+    "data": {
+      "templateId": "V0427_FAMILY_BUNEARY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BUNEARY",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "LOPUNNY"
+      }
+    }
+  },
+  {
+    "templateId": "V0431_FAMILY_GLAMEOW",
+    "data": {
+      "templateId": "V0431_FAMILY_GLAMEOW",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GLAMEOW",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0434_FAMILY_STUNKY",
+    "data": {
+      "templateId": "V0434_FAMILY_STUNKY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_STUNKY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0436_FAMILY_BRONZOR",
+    "data": {
+      "templateId": "V0436_FAMILY_BRONZOR",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BRONZOR",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0441_FAMILY_CHATOT",
+    "data": {
+      "templateId": "V0441_FAMILY_CHATOT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CHATOT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0442_FAMILY_SPIRITOMB",
+    "data": {
+      "templateId": "V0442_FAMILY_SPIRITOMB",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SPIRITOMB",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0443_FAMILY_GIBLE",
+    "data": {
+      "templateId": "V0443_FAMILY_GIBLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GIBLE",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "GARCHOMP"
+      }
+    }
+  },
+  {
+    "templateId": "V0448_FAMILY_LUCARIO",
+    "data": {
+      "templateId": "V0448_FAMILY_LUCARIO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_LUCARIO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0449_FAMILY_HIPPOPOTAS",
+    "data": {
+      "templateId": "V0449_FAMILY_HIPPOPOTAS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_HIPPOPOTAS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0451_FAMILY_SKORUPI",
+    "data": {
+      "templateId": "V0451_FAMILY_SKORUPI",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SKORUPI",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0453_FAMILY_CROAGUNK",
+    "data": {
+      "templateId": "V0453_FAMILY_CROAGUNK",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CROAGUNK",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0455_FAMILY_CARNIVINE",
+    "data": {
+      "templateId": "V0455_FAMILY_CARNIVINE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CARNIVINE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0456_FAMILY_FINNEON",
+    "data": {
+      "templateId": "V0456_FAMILY_FINNEON",
+      "pokemonFamily": {
+        "familyId": "FAMILY_FINNEON",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0459_FAMILY_SNOVER",
+    "data": {
+      "templateId": "V0459_FAMILY_SNOVER",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SNOVER",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "ABOMASNOW"
+      }
+    }
+  },
+  {
+    "templateId": "V0479_FAMILY_ROTOM",
+    "data": {
+      "templateId": "V0479_FAMILY_ROTOM",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ROTOM",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0480_FAMILY_UXIE",
+    "data": {
+      "templateId": "V0480_FAMILY_UXIE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_UXIE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0481_FAMILY_MESPRIT",
+    "data": {
+      "templateId": "V0481_FAMILY_MESPRIT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MESPRIT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0482_FAMILY_AZELF",
+    "data": {
+      "templateId": "V0482_FAMILY_AZELF",
+      "pokemonFamily": {
+        "familyId": "FAMILY_AZELF",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0483_FAMILY_DIALGA",
+    "data": {
+      "templateId": "V0483_FAMILY_DIALGA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DIALGA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0484_FAMILY_PALKIA",
+    "data": {
+      "templateId": "V0484_FAMILY_PALKIA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PALKIA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0485_FAMILY_HEATRAN",
+    "data": {
+      "templateId": "V0485_FAMILY_HEATRAN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_HEATRAN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0486_FAMILY_REGIGIGAS",
+    "data": {
+      "templateId": "V0486_FAMILY_REGIGIGAS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_REGIGIGAS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0487_FAMILY_GIRATINA",
+    "data": {
+      "templateId": "V0487_FAMILY_GIRATINA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GIRATINA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0488_FAMILY_CRESSELIA",
+    "data": {
+      "templateId": "V0488_FAMILY_CRESSELIA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CRESSELIA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0489_FAMILY_PHIONE",
+    "data": {
+      "templateId": "V0489_FAMILY_PHIONE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PHIONE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0490_FAMILY_MANAPHY",
+    "data": {
+      "templateId": "V0490_FAMILY_MANAPHY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MANAPHY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0491_FAMILY_DARKRAI",
+    "data": {
+      "templateId": "V0491_FAMILY_DARKRAI",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DARKRAI",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0492_FAMILY_SHAYMIN",
+    "data": {
+      "templateId": "V0492_FAMILY_SHAYMIN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SHAYMIN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0493_FAMILY_ARCEUS",
+    "data": {
+      "templateId": "V0493_FAMILY_ARCEUS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ARCEUS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0494_FAMILY_VICTINI",
+    "data": {
+      "templateId": "V0494_FAMILY_VICTINI",
+      "pokemonFamily": {
+        "familyId": "FAMILY_VICTINI",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0495_FAMILY_SNIVY",
+    "data": {
+      "templateId": "V0495_FAMILY_SNIVY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SNIVY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0498_FAMILY_TEPIG",
+    "data": {
+      "templateId": "V0498_FAMILY_TEPIG",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TEPIG",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0501_FAMILY_OSHAWOTT",
+    "data": {
+      "templateId": "V0501_FAMILY_OSHAWOTT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_OSHAWOTT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0504_FAMILY_PATRAT",
+    "data": {
+      "templateId": "V0504_FAMILY_PATRAT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PATRAT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0506_FAMILY_LILLIPUP",
+    "data": {
+      "templateId": "V0506_FAMILY_LILLIPUP",
+      "pokemonFamily": {
+        "familyId": "FAMILY_LILLIPUP",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0509_FAMILY_PURRLOIN",
+    "data": {
+      "templateId": "V0509_FAMILY_PURRLOIN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PURRLOIN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0511_FAMILY_PANSAGE",
+    "data": {
+      "templateId": "V0511_FAMILY_PANSAGE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PANSAGE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0513_FAMILY_PANSEAR",
+    "data": {
+      "templateId": "V0513_FAMILY_PANSEAR",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PANSEAR",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0515_FAMILY_PANPOUR",
+    "data": {
+      "templateId": "V0515_FAMILY_PANPOUR",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PANPOUR",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0517_FAMILY_MUNNA",
+    "data": {
+      "templateId": "V0517_FAMILY_MUNNA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MUNNA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0519_FAMILY_PIDOVE",
+    "data": {
+      "templateId": "V0519_FAMILY_PIDOVE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PIDOVE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0522_FAMILY_BLITZLE",
+    "data": {
+      "templateId": "V0522_FAMILY_BLITZLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BLITZLE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0524_FAMILY_ROGGENROLA",
+    "data": {
+      "templateId": "V0524_FAMILY_ROGGENROLA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ROGGENROLA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0527_FAMILY_WOOBAT",
+    "data": {
+      "templateId": "V0527_FAMILY_WOOBAT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_WOOBAT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0529_FAMILY_DRILBUR",
+    "data": {
+      "templateId": "V0529_FAMILY_DRILBUR",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DRILBUR",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0531_FAMILY_AUDINO",
+    "data": {
+      "templateId": "V0531_FAMILY_AUDINO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_AUDINO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0532_FAMILY_TIMBURR",
+    "data": {
+      "templateId": "V0532_FAMILY_TIMBURR",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TIMBURR",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0535_FAMILY_TYMPOLE",
+    "data": {
+      "templateId": "V0535_FAMILY_TYMPOLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TYMPOLE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0538_FAMILY_THROH",
+    "data": {
+      "templateId": "V0538_FAMILY_THROH",
+      "pokemonFamily": {
+        "familyId": "FAMILY_THROH",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0539_FAMILY_SAWK",
+    "data": {
+      "templateId": "V0539_FAMILY_SAWK",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SAWK",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0540_FAMILY_SEWADDLE",
+    "data": {
+      "templateId": "V0540_FAMILY_SEWADDLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SEWADDLE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0543_FAMILY_VENIPEDE",
+    "data": {
+      "templateId": "V0543_FAMILY_VENIPEDE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_VENIPEDE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0546_FAMILY_COTTONEE",
+    "data": {
+      "templateId": "V0546_FAMILY_COTTONEE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_COTTONEE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0548_FAMILY_PETILIL",
+    "data": {
+      "templateId": "V0548_FAMILY_PETILIL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PETILIL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0550_FAMILY_BASCULIN",
+    "data": {
+      "templateId": "V0550_FAMILY_BASCULIN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BASCULIN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0551_FAMILY_SANDILE",
+    "data": {
+      "templateId": "V0551_FAMILY_SANDILE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SANDILE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0554_FAMILY_DARUMAKA",
+    "data": {
+      "templateId": "V0554_FAMILY_DARUMAKA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DARUMAKA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0556_FAMILY_MARACTUS",
+    "data": {
+      "templateId": "V0556_FAMILY_MARACTUS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MARACTUS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0557_FAMILY_DWEBBLE",
+    "data": {
+      "templateId": "V0557_FAMILY_DWEBBLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DWEBBLE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0559_FAMILY_SCRAGGY",
+    "data": {
+      "templateId": "V0559_FAMILY_SCRAGGY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SCRAGGY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0561_FAMILY_SIGILYPH",
+    "data": {
+      "templateId": "V0561_FAMILY_SIGILYPH",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SIGILYPH",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0562_FAMILY_YAMASK",
+    "data": {
+      "templateId": "V0562_FAMILY_YAMASK",
+      "pokemonFamily": {
+        "familyId": "FAMILY_YAMASK",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0564_FAMILY_TIRTOUGA",
+    "data": {
+      "templateId": "V0564_FAMILY_TIRTOUGA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TIRTOUGA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0566_FAMILY_ARCHEN",
+    "data": {
+      "templateId": "V0566_FAMILY_ARCHEN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ARCHEN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0568_FAMILY_TRUBBISH",
+    "data": {
+      "templateId": "V0568_FAMILY_TRUBBISH",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TRUBBISH",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0570_FAMILY_ZORUA",
+    "data": {
+      "templateId": "V0570_FAMILY_ZORUA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ZORUA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0572_FAMILY_MINCCINO",
+    "data": {
+      "templateId": "V0572_FAMILY_MINCCINO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MINCCINO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0574_FAMILY_GOTHITA",
+    "data": {
+      "templateId": "V0574_FAMILY_GOTHITA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GOTHITA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0577_FAMILY_SOLOSIS",
+    "data": {
+      "templateId": "V0577_FAMILY_SOLOSIS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SOLOSIS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0580_FAMILY_DUCKLETT",
+    "data": {
+      "templateId": "V0580_FAMILY_DUCKLETT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DUCKLETT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0582_FAMILY_VANILLITE",
+    "data": {
+      "templateId": "V0582_FAMILY_VANILLITE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_VANILLITE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0585_FAMILY_DEERLING",
+    "data": {
+      "templateId": "V0585_FAMILY_DEERLING",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DEERLING",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0587_FAMILY_EMOLGA",
+    "data": {
+      "templateId": "V0587_FAMILY_EMOLGA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_EMOLGA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0588_FAMILY_KARRABLAST",
+    "data": {
+      "templateId": "V0588_FAMILY_KARRABLAST",
+      "pokemonFamily": {
+        "familyId": "FAMILY_KARRABLAST",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0590_FAMILY_FOONGUS",
+    "data": {
+      "templateId": "V0590_FAMILY_FOONGUS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_FOONGUS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0592_FAMILY_FRILLISH",
+    "data": {
+      "templateId": "V0592_FAMILY_FRILLISH",
+      "pokemonFamily": {
+        "familyId": "FAMILY_FRILLISH",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0594_FAMILY_ALOMOMOLA",
+    "data": {
+      "templateId": "V0594_FAMILY_ALOMOMOLA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ALOMOMOLA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0595_FAMILY_JOLTIK",
+    "data": {
+      "templateId": "V0595_FAMILY_JOLTIK",
+      "pokemonFamily": {
+        "familyId": "FAMILY_JOLTIK",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0597_FAMILY_FERROSEED",
+    "data": {
+      "templateId": "V0597_FAMILY_FERROSEED",
+      "pokemonFamily": {
+        "familyId": "FAMILY_FERROSEED",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0599_FAMILY_KLINK",
+    "data": {
+      "templateId": "V0599_FAMILY_KLINK",
+      "pokemonFamily": {
+        "familyId": "FAMILY_KLINK",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0602_FAMILY_TYNAMO",
+    "data": {
+      "templateId": "V0602_FAMILY_TYNAMO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TYNAMO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0605_FAMILY_ELGYEM",
+    "data": {
+      "templateId": "V0605_FAMILY_ELGYEM",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ELGYEM",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0607_FAMILY_LITWICK",
+    "data": {
+      "templateId": "V0607_FAMILY_LITWICK",
+      "pokemonFamily": {
+        "familyId": "FAMILY_LITWICK",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0610_FAMILY_AXEW",
+    "data": {
+      "templateId": "V0610_FAMILY_AXEW",
+      "pokemonFamily": {
+        "familyId": "FAMILY_AXEW",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0613_FAMILY_CUBCHOO",
+    "data": {
+      "templateId": "V0613_FAMILY_CUBCHOO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CUBCHOO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0615_FAMILY_CRYOGONAL",
+    "data": {
+      "templateId": "V0615_FAMILY_CRYOGONAL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CRYOGONAL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0616_FAMILY_SHELMET",
+    "data": {
+      "templateId": "V0616_FAMILY_SHELMET",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SHELMET",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0618_FAMILY_STUNFISK",
+    "data": {
+      "templateId": "V0618_FAMILY_STUNFISK",
+      "pokemonFamily": {
+        "familyId": "FAMILY_STUNFISK",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0619_FAMILY_MIENFOO",
+    "data": {
+      "templateId": "V0619_FAMILY_MIENFOO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MIENFOO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0621_FAMILY_DRUDDIGON",
+    "data": {
+      "templateId": "V0621_FAMILY_DRUDDIGON",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DRUDDIGON",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0622_FAMILY_GOLETT",
+    "data": {
+      "templateId": "V0622_FAMILY_GOLETT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GOLETT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0624_FAMILY_PAWNIARD",
+    "data": {
+      "templateId": "V0624_FAMILY_PAWNIARD",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PAWNIARD",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0626_FAMILY_BOUFFALANT",
+    "data": {
+      "templateId": "V0626_FAMILY_BOUFFALANT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BOUFFALANT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0627_FAMILY_RUFFLET",
+    "data": {
+      "templateId": "V0627_FAMILY_RUFFLET",
+      "pokemonFamily": {
+        "familyId": "FAMILY_RUFFLET",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0629_FAMILY_VULLABY",
+    "data": {
+      "templateId": "V0629_FAMILY_VULLABY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_VULLABY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0631_FAMILY_HEATMOR",
+    "data": {
+      "templateId": "V0631_FAMILY_HEATMOR",
+      "pokemonFamily": {
+        "familyId": "FAMILY_HEATMOR",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0632_FAMILY_DURANT",
+    "data": {
+      "templateId": "V0632_FAMILY_DURANT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DURANT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0633_FAMILY_DEINO",
+    "data": {
+      "templateId": "V0633_FAMILY_DEINO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DEINO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0636_FAMILY_LARVESTA",
+    "data": {
+      "templateId": "V0636_FAMILY_LARVESTA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_LARVESTA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0638_FAMILY_COBALION",
+    "data": {
+      "templateId": "V0638_FAMILY_COBALION",
+      "pokemonFamily": {
+        "familyId": "FAMILY_COBALION",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0639_FAMILY_TERRAKION",
+    "data": {
+      "templateId": "V0639_FAMILY_TERRAKION",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TERRAKION",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0640_FAMILY_VIRIZION",
+    "data": {
+      "templateId": "V0640_FAMILY_VIRIZION",
+      "pokemonFamily": {
+        "familyId": "FAMILY_VIRIZION",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0641_FAMILY_TORNADUS",
+    "data": {
+      "templateId": "V0641_FAMILY_TORNADUS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TORNADUS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0642_FAMILY_THUNDURUS",
+    "data": {
+      "templateId": "V0642_FAMILY_THUNDURUS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_THUNDURUS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0643_FAMILY_RESHIRAM",
+    "data": {
+      "templateId": "V0643_FAMILY_RESHIRAM",
+      "pokemonFamily": {
+        "familyId": "FAMILY_RESHIRAM",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0644_FAMILY_ZEKROM",
+    "data": {
+      "templateId": "V0644_FAMILY_ZEKROM",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ZEKROM",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0645_FAMILY_LANDORUS",
+    "data": {
+      "templateId": "V0645_FAMILY_LANDORUS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_LANDORUS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0646_FAMILY_KYUREM",
+    "data": {
+      "templateId": "V0646_FAMILY_KYUREM",
+      "pokemonFamily": {
+        "familyId": "FAMILY_KYUREM",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0647_FAMILY_KELDEO",
+    "data": {
+      "templateId": "V0647_FAMILY_KELDEO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_KELDEO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0648_FAMILY_MELOETTA",
+    "data": {
+      "templateId": "V0648_FAMILY_MELOETTA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MELOETTA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0649_FAMILY_GENESECT",
+    "data": {
+      "templateId": "V0649_FAMILY_GENESECT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GENESECT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0650_FAMILY_CHESPIN",
+    "data": {
+      "templateId": "V0650_FAMILY_CHESPIN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CHESPIN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0653_FAMILY_FENNEKIN",
+    "data": {
+      "templateId": "V0653_FAMILY_FENNEKIN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_FENNEKIN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0656_FAMILY_FROAKIE",
+    "data": {
+      "templateId": "V0656_FAMILY_FROAKIE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_FROAKIE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0659_FAMILY_BUNNELBY",
+    "data": {
+      "templateId": "V0659_FAMILY_BUNNELBY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BUNNELBY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0661_FAMILY_FLETCHLING",
+    "data": {
+      "templateId": "V0661_FAMILY_FLETCHLING",
+      "pokemonFamily": {
+        "familyId": "FAMILY_FLETCHLING",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0664_FAMILY_SCATTERBUG",
+    "data": {
+      "templateId": "V0664_FAMILY_SCATTERBUG",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SCATTERBUG",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0667_FAMILY_LITLEO",
+    "data": {
+      "templateId": "V0667_FAMILY_LITLEO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_LITLEO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0669_FAMILY_FLABEBE",
+    "data": {
+      "templateId": "V0669_FAMILY_FLABEBE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_FLABEBE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0672_FAMILY_SKIDDO",
+    "data": {
+      "templateId": "V0672_FAMILY_SKIDDO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SKIDDO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0674_FAMILY_PANCHAM",
+    "data": {
+      "templateId": "V0674_FAMILY_PANCHAM",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PANCHAM",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0676_FAMILY_FURFROU",
+    "data": {
+      "templateId": "V0676_FAMILY_FURFROU",
+      "pokemonFamily": {
+        "familyId": "FAMILY_FURFROU",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0677_FAMILY_ESPURR",
+    "data": {
+      "templateId": "V0677_FAMILY_ESPURR",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ESPURR",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0679_FAMILY_HONEDGE",
+    "data": {
+      "templateId": "V0679_FAMILY_HONEDGE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_HONEDGE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0682_FAMILY_SPRITZEE",
+    "data": {
+      "templateId": "V0682_FAMILY_SPRITZEE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SPRITZEE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0684_FAMILY_SWIRLIX",
+    "data": {
+      "templateId": "V0684_FAMILY_SWIRLIX",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SWIRLIX",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0686_FAMILY_INKAY",
+    "data": {
+      "templateId": "V0686_FAMILY_INKAY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_INKAY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0688_FAMILY_BINACLE",
+    "data": {
+      "templateId": "V0688_FAMILY_BINACLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BINACLE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0690_FAMILY_SKRELP",
+    "data": {
+      "templateId": "V0690_FAMILY_SKRELP",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SKRELP",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0692_FAMILY_CLAUNCHER",
+    "data": {
+      "templateId": "V0692_FAMILY_CLAUNCHER",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CLAUNCHER",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0694_FAMILY_HELIOPTILE",
+    "data": {
+      "templateId": "V0694_FAMILY_HELIOPTILE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_HELIOPTILE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0696_FAMILY_TYRUNT",
+    "data": {
+      "templateId": "V0696_FAMILY_TYRUNT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TYRUNT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0698_FAMILY_AMAURA",
+    "data": {
+      "templateId": "V0698_FAMILY_AMAURA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_AMAURA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0701_FAMILY_HAWLUCHA",
+    "data": {
+      "templateId": "V0701_FAMILY_HAWLUCHA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_HAWLUCHA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0702_FAMILY_DEDENNE",
+    "data": {
+      "templateId": "V0702_FAMILY_DEDENNE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DEDENNE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0703_FAMILY_CARBINK",
+    "data": {
+      "templateId": "V0703_FAMILY_CARBINK",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CARBINK",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0704_FAMILY_GOOMY",
+    "data": {
+      "templateId": "V0704_FAMILY_GOOMY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GOOMY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0707_FAMILY_KLEFKI",
+    "data": {
+      "templateId": "V0707_FAMILY_KLEFKI",
+      "pokemonFamily": {
+        "familyId": "FAMILY_KLEFKI",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0708_FAMILY_PHANTUMP",
+    "data": {
+      "templateId": "V0708_FAMILY_PHANTUMP",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PHANTUMP",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0710_FAMILY_PUMPKABOO",
+    "data": {
+      "templateId": "V0710_FAMILY_PUMPKABOO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PUMPKABOO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0712_FAMILY_BERGMITE",
+    "data": {
+      "templateId": "V0712_FAMILY_BERGMITE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BERGMITE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0714_FAMILY_NOIBAT",
+    "data": {
+      "templateId": "V0714_FAMILY_NOIBAT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_NOIBAT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0716_FAMILY_XERNEAS",
+    "data": {
+      "templateId": "V0716_FAMILY_XERNEAS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_XERNEAS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0717_FAMILY_YVELTAL",
+    "data": {
+      "templateId": "V0717_FAMILY_YVELTAL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_YVELTAL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0718_FAMILY_ZYGARDE",
+    "data": {
+      "templateId": "V0718_FAMILY_ZYGARDE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ZYGARDE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0719_FAMILY_DIANCIE",
+    "data": {
+      "templateId": "V0719_FAMILY_DIANCIE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DIANCIE",
+        "candyPerXlCandy": 100,
+        "megaEvolvablePokemonId": "DIANCIE"
+      }
+    }
+  },
+  {
+    "templateId": "V0720_FAMILY_HOOPA",
+    "data": {
+      "templateId": "V0720_FAMILY_HOOPA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_HOOPA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0721_FAMILY_VOLCANION",
+    "data": {
+      "templateId": "V0721_FAMILY_VOLCANION",
+      "pokemonFamily": {
+        "familyId": "FAMILY_VOLCANION",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0722_FAMILY_ROWLET",
+    "data": {
+      "templateId": "V0722_FAMILY_ROWLET",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ROWLET",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0725_FAMILY_LITTEN",
+    "data": {
+      "templateId": "V0725_FAMILY_LITTEN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_LITTEN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0728_FAMILY_POPPLIO",
+    "data": {
+      "templateId": "V0728_FAMILY_POPPLIO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_POPPLIO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0731_FAMILY_PIKIPEK",
+    "data": {
+      "templateId": "V0731_FAMILY_PIKIPEK",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PIKIPEK",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0734_FAMILY_YUNGOOS",
+    "data": {
+      "templateId": "V0734_FAMILY_YUNGOOS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_YUNGOOS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0736_FAMILY_GRUBBIN",
+    "data": {
+      "templateId": "V0736_FAMILY_GRUBBIN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GRUBBIN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0739_FAMILY_CRABRAWLER",
+    "data": {
+      "templateId": "V0739_FAMILY_CRABRAWLER",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CRABRAWLER",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0741_FAMILY_ORICORIO",
+    "data": {
+      "templateId": "V0741_FAMILY_ORICORIO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ORICORIO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0742_FAMILY_CUTIEFLY",
+    "data": {
+      "templateId": "V0742_FAMILY_CUTIEFLY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CUTIEFLY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0744_FAMILY_ROCKRUFF",
+    "data": {
+      "templateId": "V0744_FAMILY_ROCKRUFF",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ROCKRUFF",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0746_FAMILY_WISHIWASHI",
+    "data": {
+      "templateId": "V0746_FAMILY_WISHIWASHI",
+      "pokemonFamily": {
+        "familyId": "FAMILY_WISHIWASHI",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0747_FAMILY_MAREANIE",
+    "data": {
+      "templateId": "V0747_FAMILY_MAREANIE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MAREANIE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0749_FAMILY_MUDBRAY",
+    "data": {
+      "templateId": "V0749_FAMILY_MUDBRAY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MUDBRAY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0751_FAMILY_DEWPIDER",
+    "data": {
+      "templateId": "V0751_FAMILY_DEWPIDER",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DEWPIDER",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0753_FAMILY_FOMANTIS",
+    "data": {
+      "templateId": "V0753_FAMILY_FOMANTIS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_FOMANTIS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0755_FAMILY_MORELULL",
+    "data": {
+      "templateId": "V0755_FAMILY_MORELULL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MORELULL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0757_FAMILY_SALANDIT",
+    "data": {
+      "templateId": "V0757_FAMILY_SALANDIT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SALANDIT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0759_FAMILY_STUFFUL",
+    "data": {
+      "templateId": "V0759_FAMILY_STUFFUL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_STUFFUL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0761_FAMILY_BOUNSWEET",
+    "data": {
+      "templateId": "V0761_FAMILY_BOUNSWEET",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BOUNSWEET",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0764_FAMILY_COMFEY",
+    "data": {
+      "templateId": "V0764_FAMILY_COMFEY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_COMFEY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0765_FAMILY_ORANGURU",
+    "data": {
+      "templateId": "V0765_FAMILY_ORANGURU",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ORANGURU",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0766_FAMILY_PASSIMIAN",
+    "data": {
+      "templateId": "V0766_FAMILY_PASSIMIAN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PASSIMIAN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0767_FAMILY_WIMPOD",
+    "data": {
+      "templateId": "V0767_FAMILY_WIMPOD",
+      "pokemonFamily": {
+        "familyId": "FAMILY_WIMPOD",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0769_FAMILY_SANDYGAST",
+    "data": {
+      "templateId": "V0769_FAMILY_SANDYGAST",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SANDYGAST",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0771_FAMILY_PYUKUMUKU",
+    "data": {
+      "templateId": "V0771_FAMILY_PYUKUMUKU",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PYUKUMUKU",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0772_FAMILY_TYPE_NULL",
+    "data": {
+      "templateId": "V0772_FAMILY_TYPE_NULL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TYPE_NULL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0774_FAMILY_MINIOR",
+    "data": {
+      "templateId": "V0774_FAMILY_MINIOR",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MINIOR",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0775_FAMILY_KOMALA",
+    "data": {
+      "templateId": "V0775_FAMILY_KOMALA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_KOMALA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0776_FAMILY_TURTONATOR",
+    "data": {
+      "templateId": "V0776_FAMILY_TURTONATOR",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TURTONATOR",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0777_FAMILY_TOGEDEMARU",
+    "data": {
+      "templateId": "V0777_FAMILY_TOGEDEMARU",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TOGEDEMARU",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0778_FAMILY_MIMIKYU",
+    "data": {
+      "templateId": "V0778_FAMILY_MIMIKYU",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MIMIKYU",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0779_FAMILY_BRUXISH",
+    "data": {
+      "templateId": "V0779_FAMILY_BRUXISH",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BRUXISH",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0780_FAMILY_DRAMPA",
+    "data": {
+      "templateId": "V0780_FAMILY_DRAMPA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DRAMPA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0781_FAMILY_DHELMISE",
+    "data": {
+      "templateId": "V0781_FAMILY_DHELMISE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DHELMISE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0782_FAMILY_JANGMO_O",
+    "data": {
+      "templateId": "V0782_FAMILY_JANGMO_O",
+      "pokemonFamily": {
+        "familyId": "FAMILY_JANGMO_O",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0785_FAMILY_TAPU_KOKO",
+    "data": {
+      "templateId": "V0785_FAMILY_TAPU_KOKO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TAPU_KOKO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0786_FAMILY_TAPU_LELE",
+    "data": {
+      "templateId": "V0786_FAMILY_TAPU_LELE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TAPU_LELE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0787_FAMILY_TAPU_BULU",
+    "data": {
+      "templateId": "V0787_FAMILY_TAPU_BULU",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TAPU_BULU",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0788_FAMILY_TAPU_FINI",
+    "data": {
+      "templateId": "V0788_FAMILY_TAPU_FINI",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TAPU_FINI",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0789_FAMILY_COSMOG",
+    "data": {
+      "templateId": "V0789_FAMILY_COSMOG",
+      "pokemonFamily": {
+        "familyId": "FAMILY_COSMOG",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0793_FAMILY_NIHILEGO",
+    "data": {
+      "templateId": "V0793_FAMILY_NIHILEGO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_NIHILEGO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0794_FAMILY_BUZZWOLE",
+    "data": {
+      "templateId": "V0794_FAMILY_BUZZWOLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BUZZWOLE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0795_FAMILY_PHEROMOSA",
+    "data": {
+      "templateId": "V0795_FAMILY_PHEROMOSA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PHEROMOSA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0796_FAMILY_XURKITREE",
+    "data": {
+      "templateId": "V0796_FAMILY_XURKITREE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_XURKITREE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0797_FAMILY_CELESTEELA",
+    "data": {
+      "templateId": "V0797_FAMILY_CELESTEELA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CELESTEELA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0798_FAMILY_KARTANA",
+    "data": {
+      "templateId": "V0798_FAMILY_KARTANA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_KARTANA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0799_FAMILY_GUZZLORD",
+    "data": {
+      "templateId": "V0799_FAMILY_GUZZLORD",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GUZZLORD",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0800_FAMILY_NECROZMA",
+    "data": {
+      "templateId": "V0800_FAMILY_NECROZMA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_NECROZMA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0801_FAMILY_MAGEARNA",
+    "data": {
+      "templateId": "V0801_FAMILY_MAGEARNA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MAGEARNA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0802_FAMILY_MARSHADOW",
+    "data": {
+      "templateId": "V0802_FAMILY_MARSHADOW",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MARSHADOW",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0803_FAMILY_POIPOLE",
+    "data": {
+      "templateId": "V0803_FAMILY_POIPOLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_POIPOLE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0805_FAMILY_STAKATAKA",
+    "data": {
+      "templateId": "V0805_FAMILY_STAKATAKA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_STAKATAKA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0806_FAMILY_BLACEPHALON",
+    "data": {
+      "templateId": "V0806_FAMILY_BLACEPHALON",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BLACEPHALON",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0807_FAMILY_ZERAORA",
+    "data": {
+      "templateId": "V0807_FAMILY_ZERAORA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ZERAORA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0808_FAMILY_MELTAN",
+    "data": {
+      "templateId": "V0808_FAMILY_MELTAN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MELTAN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0810_FAMILY_GROOKEY",
+    "data": {
+      "templateId": "V0810_FAMILY_GROOKEY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GROOKEY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0813_FAMILY_SCORBUNNY",
+    "data": {
+      "templateId": "V0813_FAMILY_SCORBUNNY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SCORBUNNY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0816_FAMILY_SOBBLE",
+    "data": {
+      "templateId": "V0816_FAMILY_SOBBLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SOBBLE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0819_FAMILY_SKWOVET",
+    "data": {
+      "templateId": "V0819_FAMILY_SKWOVET",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SKWOVET",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0821_FAMILY_ROOKIDEE",
+    "data": {
+      "templateId": "V0821_FAMILY_ROOKIDEE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ROOKIDEE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0824_FAMILY_BLIPBUG",
+    "data": {
+      "templateId": "V0824_FAMILY_BLIPBUG",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BLIPBUG",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0827_FAMILY_NICKIT",
+    "data": {
+      "templateId": "V0827_FAMILY_NICKIT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_NICKIT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0829_FAMILY_GOSSIFLEUR",
+    "data": {
+      "templateId": "V0829_FAMILY_GOSSIFLEUR",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GOSSIFLEUR",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0831_FAMILY_WOOLOO",
+    "data": {
+      "templateId": "V0831_FAMILY_WOOLOO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_WOOLOO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0833_FAMILY_CHEWTLE",
+    "data": {
+      "templateId": "V0833_FAMILY_CHEWTLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CHEWTLE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0835_FAMILY_YAMPER",
+    "data": {
+      "templateId": "V0835_FAMILY_YAMPER",
+      "pokemonFamily": {
+        "familyId": "FAMILY_YAMPER",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0837_FAMILY_ROLYCOLY",
+    "data": {
+      "templateId": "V0837_FAMILY_ROLYCOLY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ROLYCOLY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0840_FAMILY_APPLIN",
+    "data": {
+      "templateId": "V0840_FAMILY_APPLIN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_APPLIN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0843_FAMILY_SILICOBRA",
+    "data": {
+      "templateId": "V0843_FAMILY_SILICOBRA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SILICOBRA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0845_FAMILY_CRAMORANT",
+    "data": {
+      "templateId": "V0845_FAMILY_CRAMORANT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CRAMORANT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0846_FAMILY_ARROKUDA",
+    "data": {
+      "templateId": "V0846_FAMILY_ARROKUDA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ARROKUDA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0848_FAMILY_TOXEL",
+    "data": {
+      "templateId": "V0848_FAMILY_TOXEL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TOXEL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0850_FAMILY_SIZZLIPEDE",
+    "data": {
+      "templateId": "V0850_FAMILY_SIZZLIPEDE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SIZZLIPEDE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0852_FAMILY_CLOBBOPUS",
+    "data": {
+      "templateId": "V0852_FAMILY_CLOBBOPUS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CLOBBOPUS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0854_FAMILY_SINISTEA",
+    "data": {
+      "templateId": "V0854_FAMILY_SINISTEA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SINISTEA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0856_FAMILY_HATENNA",
+    "data": {
+      "templateId": "V0856_FAMILY_HATENNA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_HATENNA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0859_FAMILY_IMPIDIMP",
+    "data": {
+      "templateId": "V0859_FAMILY_IMPIDIMP",
+      "pokemonFamily": {
+        "familyId": "FAMILY_IMPIDIMP",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0868_FAMILY_MILCERY",
+    "data": {
+      "templateId": "V0868_FAMILY_MILCERY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MILCERY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0870_FAMILY_FALINKS",
+    "data": {
+      "templateId": "V0870_FAMILY_FALINKS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_FALINKS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0871_FAMILY_PINCURCHIN",
+    "data": {
+      "templateId": "V0871_FAMILY_PINCURCHIN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PINCURCHIN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0872_FAMILY_SNOM",
+    "data": {
+      "templateId": "V0872_FAMILY_SNOM",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SNOM",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0874_FAMILY_STONJOURNER",
+    "data": {
+      "templateId": "V0874_FAMILY_STONJOURNER",
+      "pokemonFamily": {
+        "familyId": "FAMILY_STONJOURNER",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0875_FAMILY_EISCUE",
+    "data": {
+      "templateId": "V0875_FAMILY_EISCUE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_EISCUE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0876_FAMILY_INDEEDEE",
+    "data": {
+      "templateId": "V0876_FAMILY_INDEEDEE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_INDEEDEE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0877_FAMILY_MORPEKO",
+    "data": {
+      "templateId": "V0877_FAMILY_MORPEKO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MORPEKO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0878_FAMILY_CUFANT",
+    "data": {
+      "templateId": "V0878_FAMILY_CUFANT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CUFANT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0880_FAMILY_DRACOZOLT",
+    "data": {
+      "templateId": "V0880_FAMILY_DRACOZOLT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DRACOZOLT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0881_FAMILY_ARCTOZOLT",
+    "data": {
+      "templateId": "V0881_FAMILY_ARCTOZOLT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ARCTOZOLT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0882_FAMILY_DRACOVISH",
+    "data": {
+      "templateId": "V0882_FAMILY_DRACOVISH",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DRACOVISH",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0883_FAMILY_ARCTOVISH",
+    "data": {
+      "templateId": "V0883_FAMILY_ARCTOVISH",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ARCTOVISH",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0884_FAMILY_DURALUDON",
+    "data": {
+      "templateId": "V0884_FAMILY_DURALUDON",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DURALUDON",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0885_FAMILY_DREEPY",
+    "data": {
+      "templateId": "V0885_FAMILY_DREEPY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DREEPY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0888_FAMILY_ZACIAN",
+    "data": {
+      "templateId": "V0888_FAMILY_ZACIAN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ZACIAN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0889_FAMILY_ZAMAZENTA",
+    "data": {
+      "templateId": "V0889_FAMILY_ZAMAZENTA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ZAMAZENTA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0890_FAMILY_ETERNATUS",
+    "data": {
+      "templateId": "V0890_FAMILY_ETERNATUS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ETERNATUS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0891_FAMILY_KUBFU",
+    "data": {
+      "templateId": "V0891_FAMILY_KUBFU",
+      "pokemonFamily": {
+        "familyId": "FAMILY_KUBFU",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0893_FAMILY_ZARUDE",
+    "data": {
+      "templateId": "V0893_FAMILY_ZARUDE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ZARUDE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0894_FAMILY_REGIELEKI",
+    "data": {
+      "templateId": "V0894_FAMILY_REGIELEKI",
+      "pokemonFamily": {
+        "familyId": "FAMILY_REGIELEKI",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0895_FAMILY_REGIDRAGO",
+    "data": {
+      "templateId": "V0895_FAMILY_REGIDRAGO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_REGIDRAGO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0896_FAMILY_GLASTRIER",
+    "data": {
+      "templateId": "V0896_FAMILY_GLASTRIER",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GLASTRIER",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0897_FAMILY_SPECTRIER",
+    "data": {
+      "templateId": "V0897_FAMILY_SPECTRIER",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SPECTRIER",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0898_FAMILY_CALYREX",
+    "data": {
+      "templateId": "V0898_FAMILY_CALYREX",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CALYREX",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0905_FAMILY_ENAMORUS",
+    "data": {
+      "templateId": "V0905_FAMILY_ENAMORUS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ENAMORUS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0906_FAMILY_SPRIGATITO",
+    "data": {
+      "templateId": "V0906_FAMILY_SPRIGATITO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SPRIGATITO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0909_FAMILY_FUECOCO",
+    "data": {
+      "templateId": "V0909_FAMILY_FUECOCO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_FUECOCO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0912_FAMILY_QUAXLY",
+    "data": {
+      "templateId": "V0912_FAMILY_QUAXLY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_QUAXLY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0915_FAMILY_LECHONK",
+    "data": {
+      "templateId": "V0915_FAMILY_LECHONK",
+      "pokemonFamily": {
+        "familyId": "FAMILY_LECHONK",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0917_FAMILY_TAROUNTULA",
+    "data": {
+      "templateId": "V0917_FAMILY_TAROUNTULA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TAROUNTULA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0919_FAMILY_NYMBLE",
+    "data": {
+      "templateId": "V0919_FAMILY_NYMBLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_NYMBLE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0921_FAMILY_PAWMI",
+    "data": {
+      "templateId": "V0921_FAMILY_PAWMI",
+      "pokemonFamily": {
+        "familyId": "FAMILY_PAWMI",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0924_FAMILY_TANDEMAUS",
+    "data": {
+      "templateId": "V0924_FAMILY_TANDEMAUS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TANDEMAUS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0926_FAMILY_FIDOUGH",
+    "data": {
+      "templateId": "V0926_FAMILY_FIDOUGH",
+      "pokemonFamily": {
+        "familyId": "FAMILY_FIDOUGH",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0928_FAMILY_SMOLIV",
+    "data": {
+      "templateId": "V0928_FAMILY_SMOLIV",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SMOLIV",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0931_FAMILY_SQUAWKABILLY",
+    "data": {
+      "templateId": "V0931_FAMILY_SQUAWKABILLY",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SQUAWKABILLY",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0932_FAMILY_NACLI",
+    "data": {
+      "templateId": "V0932_FAMILY_NACLI",
+      "pokemonFamily": {
+        "familyId": "FAMILY_NACLI",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0935_FAMILY_CHARCADET",
+    "data": {
+      "templateId": "V0935_FAMILY_CHARCADET",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CHARCADET",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0938_FAMILY_TADBULB",
+    "data": {
+      "templateId": "V0938_FAMILY_TADBULB",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TADBULB",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0940_FAMILY_WATTREL",
+    "data": {
+      "templateId": "V0940_FAMILY_WATTREL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_WATTREL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0942_FAMILY_MASCHIFF",
+    "data": {
+      "templateId": "V0942_FAMILY_MASCHIFF",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MASCHIFF",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0944_FAMILY_SHROODLE",
+    "data": {
+      "templateId": "V0944_FAMILY_SHROODLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SHROODLE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0946_FAMILY_BRAMBLIN",
+    "data": {
+      "templateId": "V0946_FAMILY_BRAMBLIN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BRAMBLIN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0948_FAMILY_TOEDSCOOL",
+    "data": {
+      "templateId": "V0948_FAMILY_TOEDSCOOL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TOEDSCOOL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0950_FAMILY_KLAWF",
+    "data": {
+      "templateId": "V0950_FAMILY_KLAWF",
+      "pokemonFamily": {
+        "familyId": "FAMILY_KLAWF",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0951_FAMILY_CAPSAKID",
+    "data": {
+      "templateId": "V0951_FAMILY_CAPSAKID",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CAPSAKID",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0953_FAMILY_RELLOR",
+    "data": {
+      "templateId": "V0953_FAMILY_RELLOR",
+      "pokemonFamily": {
+        "familyId": "FAMILY_RELLOR",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0955_FAMILY_FLITTLE",
+    "data": {
+      "templateId": "V0955_FAMILY_FLITTLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_FLITTLE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0957_FAMILY_TINKATINK",
+    "data": {
+      "templateId": "V0957_FAMILY_TINKATINK",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TINKATINK",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0960_FAMILY_WIGLETT",
+    "data": {
+      "templateId": "V0960_FAMILY_WIGLETT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_WIGLETT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0962_FAMILY_BOMBIRDIER",
+    "data": {
+      "templateId": "V0962_FAMILY_BOMBIRDIER",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BOMBIRDIER",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0963_FAMILY_FINIZEN",
+    "data": {
+      "templateId": "V0963_FAMILY_FINIZEN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_FINIZEN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0965_FAMILY_VAROOM",
+    "data": {
+      "templateId": "V0965_FAMILY_VAROOM",
+      "pokemonFamily": {
+        "familyId": "FAMILY_VAROOM",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0967_FAMILY_CYCLIZAR",
+    "data": {
+      "templateId": "V0967_FAMILY_CYCLIZAR",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CYCLIZAR",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0968_FAMILY_ORTHWORM",
+    "data": {
+      "templateId": "V0968_FAMILY_ORTHWORM",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ORTHWORM",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0969_FAMILY_GLIMMET",
+    "data": {
+      "templateId": "V0969_FAMILY_GLIMMET",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GLIMMET",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0971_FAMILY_GREAVARD",
+    "data": {
+      "templateId": "V0971_FAMILY_GREAVARD",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GREAVARD",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0973_FAMILY_FLAMIGO",
+    "data": {
+      "templateId": "V0973_FAMILY_FLAMIGO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_FLAMIGO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0974_FAMILY_CETODDLE",
+    "data": {
+      "templateId": "V0974_FAMILY_CETODDLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CETODDLE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0976_FAMILY_VELUZA",
+    "data": {
+      "templateId": "V0976_FAMILY_VELUZA",
+      "pokemonFamily": {
+        "familyId": "FAMILY_VELUZA",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0977_FAMILY_DONDOZO",
+    "data": {
+      "templateId": "V0977_FAMILY_DONDOZO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_DONDOZO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0978_FAMILY_TATSUGIRI",
+    "data": {
+      "templateId": "V0978_FAMILY_TATSUGIRI",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TATSUGIRI",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0984_FAMILY_GREATTUSK",
+    "data": {
+      "templateId": "V0984_FAMILY_GREATTUSK",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GREATTUSK",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0985_FAMILY_SCREAMTAIL",
+    "data": {
+      "templateId": "V0985_FAMILY_SCREAMTAIL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SCREAMTAIL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0986_FAMILY_BRUTEBONNET",
+    "data": {
+      "templateId": "V0986_FAMILY_BRUTEBONNET",
+      "pokemonFamily": {
+        "familyId": "FAMILY_BRUTEBONNET",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0987_FAMILY_FLUTTERMANE",
+    "data": {
+      "templateId": "V0987_FAMILY_FLUTTERMANE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_FLUTTERMANE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0988_FAMILY_SLITHERWING",
+    "data": {
+      "templateId": "V0988_FAMILY_SLITHERWING",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SLITHERWING",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0989_FAMILY_SANDYSHOCKS",
+    "data": {
+      "templateId": "V0989_FAMILY_SANDYSHOCKS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_SANDYSHOCKS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0990_FAMILY_IRONTREADS",
+    "data": {
+      "templateId": "V0990_FAMILY_IRONTREADS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_IRONTREADS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0991_FAMILY_IRONBUNDLE",
+    "data": {
+      "templateId": "V0991_FAMILY_IRONBUNDLE",
+      "pokemonFamily": {
+        "familyId": "FAMILY_IRONBUNDLE",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0992_FAMILY_IRONHANDS",
+    "data": {
+      "templateId": "V0992_FAMILY_IRONHANDS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_IRONHANDS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0993_FAMILY_IRONJUGULIS",
+    "data": {
+      "templateId": "V0993_FAMILY_IRONJUGULIS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_IRONJUGULIS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0994_FAMILY_IRONMOTH",
+    "data": {
+      "templateId": "V0994_FAMILY_IRONMOTH",
+      "pokemonFamily": {
+        "familyId": "FAMILY_IRONMOTH",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0995_FAMILY_IRONTHORNS",
+    "data": {
+      "templateId": "V0995_FAMILY_IRONTHORNS",
+      "pokemonFamily": {
+        "familyId": "FAMILY_IRONTHORNS",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0996_FAMILY_FRIGIBAX",
+    "data": {
+      "templateId": "V0996_FAMILY_FRIGIBAX",
+      "pokemonFamily": {
+        "familyId": "FAMILY_FRIGIBAX",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V0999_FAMILY_GIMMIGHOUL",
+    "data": {
+      "templateId": "V0999_FAMILY_GIMMIGHOUL",
+      "pokemonFamily": {
+        "familyId": "FAMILY_GIMMIGHOUL",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V1001_FAMILY_WOCHIEN",
+    "data": {
+      "templateId": "V1001_FAMILY_WOCHIEN",
+      "pokemonFamily": {
+        "familyId": "FAMILY_WOCHIEN",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V1002_FAMILY_CHIENPAO",
+    "data": {
+      "templateId": "V1002_FAMILY_CHIENPAO",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CHIENPAO",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V1003_FAMILY_TINGLU",
+    "data": {
+      "templateId": "V1003_FAMILY_TINGLU",
+      "pokemonFamily": {
+        "familyId": "FAMILY_TINGLU",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V1004_FAMILY_CHIYU",
+    "data": {
+      "templateId": "V1004_FAMILY_CHIYU",
+      "pokemonFamily": {
+        "familyId": "FAMILY_CHIYU",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V1005_FAMILY_ROARINGMOON",
+    "data": {
+      "templateId": "V1005_FAMILY_ROARINGMOON",
+      "pokemonFamily": {
+        "familyId": "FAMILY_ROARINGMOON",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V1006_FAMILY_IRONVALIANT",
+    "data": {
+      "templateId": "V1006_FAMILY_IRONVALIANT",
+      "pokemonFamily": {
+        "familyId": "FAMILY_IRONVALIANT",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V1007_FAMILY_KORAIDON",
+    "data": {
+      "templateId": "V1007_FAMILY_KORAIDON",
+      "pokemonFamily": {
+        "familyId": "FAMILY_KORAIDON",
+        "candyPerXlCandy": 100
+      }
+    }
+  },
+  {
+    "templateId": "V1008_FAMILY_MIRAIDON",
+    "data": {
+      "templateId": "V1008_FAMILY_MIRAIDON",
+      "pokemonFamily": {
+        "familyId": "FAMILY_MIRAIDON",
+        "candyPerXlCandy": 100
+      }
+    }
+  }
+]
