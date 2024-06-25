@@ -35,15 +35,30 @@
     ],
     "Pidgeotto(Normal)": "Pidgey(Normal)",
     "Pidgeot(Normal)": "Pidgey(Normal)",
-    "Rattata(Normal)": "Rattata(Normal)",
-    "Rattata(Alola)": "Rattata(Alola)",
-    "Raticate(Normal)": "Raticate(Normal)",
-    "Raticate(Alola)": "Raticate(Alola)",
-    "Spearow(Normal)": "Spearow(Normal)",
-    "Fearow(Normal)": "Fearow(Normal)",
-    "Ekans(Normal)": "Ekans(Normal)",
-    "Arbok(Normal)": "Arbok(Normal)",
-    "Pikachu(Normal)": "Pikachu(Normal)",
+    "Rattata(Normal)": [
+        false,
+        100
+    ],
+    "Rattata(Alola)": [
+        true,
+        98
+    ],
+    "Raticate(Normal)": "Rattata(Normal)",
+    "Raticate(Alola)": "Rattata(Alola)",
+    "Spearow(Normal)": [
+        true,
+        98
+    ],
+    "Fearow(Normal)": "Spearow(Normal)",
+    "Ekans(Normal)": [
+        false,
+        96
+    ],
+    "Arbok(Normal)": "Ekans(Normal)",
+    "Pikachu(Normal)": [
+        false,
+        96
+    ],
     "Pikachu(Costume 2020)": "Pikachu(Costume 2020)",
     "Pikachu(Doctor)": "Pikachu(Doctor)",
     "Pikachu(Flying 01)": "Pikachu(Flying 01)",
@@ -72,28 +87,58 @@
     "Pikachu(Vs 2019)": "Pikachu(Vs 2019)",
     "Pikachu(Wcs 2022)": "Pikachu(Wcs 2022)",
     "Pikachu(Wcs 2023)": "Pikachu(Wcs 2023)",
-    "Raichu(Normal)": "Raichu(Normal)",
-    "Raichu(Alola)": "Raichu(Alola)",
-    "Sandshrew(Normal)": "Sandshrew(Normal)",
-    "Sandshrew(Alola)": "Sandshrew(Alola)",
-    "Sandslash(Normal)": "Sandslash(Normal)",
-    "Sandslash(Alola)": "Sandslash(Alola)",
-    "Nidoran_Female(Normal)": "Nidoran_Female(Normal)",
-    "Nidorina(Normal)": "Nidorina(Normal)",
-    "Nidoqueen(Normal)": "Nidoqueen(Normal)",
-    "Nidoran_Male(Normal)": "Nidoran_Male(Normal)",
-    "Nidorino(Normal)": "Nidorino(Normal)",
-    "Nidoking(Normal)": "Nidoking(Normal)",
-    "Clefairy(Normal)": "Clefairy(Normal)",
-    "Clefable(Normal)": "Clefable(Normal)",
-    "Vulpix(Normal)": "Vulpix(Normal)",
-    "Vulpix(Alola)": "Vulpix(Alola)",
-    "Ninetales(Normal)": "Ninetales(Normal)",
-    "Ninetales(Alola)": "Ninetales(Alola)",
-    "Jigglypuff(Normal)": "Jigglypuff(Normal)",
-    "Wigglytuff(Normal)": "Wigglytuff(Normal)",
-    "Zubat(Normal)": "Zubat(Normal)",
-    "Golbat(Normal)": "Golbat(Normal)",
+    "Raichu(Normal)": "Pikachu(Normal)",
+    "Raichu(Alola)": [
+        false,
+        96
+    ],
+    "Sandshrew(Normal)": [
+        false,
+        96
+    ],
+    "Sandshrew(Alola)": [
+        false,
+        93
+    ],
+    "Sandslash(Normal)": "Sandshrew(Normal)",
+    "Sandslash(Alola)": "Sandshrew(Alola)",
+    "Nidoran_Female(Normal)": [
+        true,
+        93
+    ],
+    "Nidorina(Normal)": "Nidoran_Female(Normal)",
+    "Nidoqueen(Normal)": "Nidoran_Female(Normal)",
+    "Nidoran_Male(Normal)": [
+        true,
+        98
+    ],
+    "Nidorino(Normal)": "Nidoran_Male(Normal)",
+    "Nidoking(Normal)": "Nidoran_Male(Normal)",
+    "Clefairy(Normal)": [
+        true,
+        98
+    ],
+    "Clefable(Normal)": "Clefairy(Normal)",
+    "Vulpix(Normal)": [
+        false,
+        100
+    ],
+    "Vulpix(Alola)": [
+        false,
+        93
+    ],
+    "Ninetales(Normal)": "Vulpix(Normal)",
+    "Ninetales(Alola)": "Vulpix(Alola)",
+    "Jigglypuff(Normal)": [
+        false,
+        91
+    ],
+    "Wigglytuff(Normal)": "Jigglypuff(Normal)",
+    "Zubat(Normal)": [
+        false,
+        93
+    ],
+    "Golbat(Normal)": "Zubat(Normal)",
     "Oddish(Normal)": "Oddish(Normal)",
     "Gloom(Normal)": "Gloom(Normal)",
     "Vileplume(Normal)": "Vileplume(Normal)",
