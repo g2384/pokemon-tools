@@ -1,0 +1,281 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex for Pokemon Go</title>
+    <link href="./css/tom-select.bootstrap5.min.css" rel="stylesheet" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .img_type {
+            height: 20px;
+            padding-right: 2px;
+        }
+
+        .img_icon {
+            height: 20px;
+            margin-left: 2px;
+        }
+
+        .img_v_deploy,
+        .img_v_candy,
+        .img_v_quest,
+        .img_v_legendary,
+        .img_v_mythic {
+            filter: invert(100%);
+        }
+
+        .pokemon_icon {
+            height: 40px;
+            margin-left: 2px;
+        }
+
+        .inline {
+            display: inline-block;
+        }
+
+        .inline-input {
+            padding: 2px;
+            margin: 2px 5px;
+        }
+
+        .inline label {
+            padding-left: 3px;
+        }
+
+        .img_v_ultra_beast {
+            height: 30px;
+        }
+
+        .item_evolve {
+            background-color: #bccddd;
+        }
+
+        .lure_evolve {
+            background-color: #d6f1d6;
+        }
+
+        .traded_evolve {
+            background-color: #ceedf5;
+        }
+
+        .evolve_requirement img {
+            padding-right: 2px;
+            height: 25px;
+        }
+
+        .filters {
+            border: 1px solid #888;
+            padding: 10px;
+        }
+
+        .filters-group {
+            border: 1px solid #888;
+        }
+
+        .filter-group-btn {
+            margin-bottom: 10px;
+            margin-top: -5px;
+        }
+
+        .form-title {
+            display: inline-block;
+            border-radius: 5px 5px 0px 0px;
+            padding: 2px 10px;
+            color: #fff;
+        }
+
+        .evolution-filter-title {
+            background: #5bc06f;
+        }
+
+        .property-filter-title {
+            background: #ba62d0;
+        }
+
+        #checkbox-by-evolution {
+            background-color: #d9ffe0;
+        }
+
+        #checkbox-by-pokemon-property {
+            background-color: #daa6e7;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dex"></div>
+    <script>
+        let dataPokemons = [];
+        let rowsRaw = {};
+        let columnHeaders = [];
+        let pokemonCount = 0;
+        let pokemonNames = [];
+        let mydex = {};
+
+        String.prototype.toTitleCase = function () {
+            return this.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+        };
+
+        function getImage(value, type) {
+            return "<img class='img_" + type + " img_v_" + value + "' src='./pokemon_go/img/" + type + "_" + value + ".png' alt='" + value + "'/>";
+        }
+
+        function LoadDex() {
+            TableAdd("No.");
+            TableAdd("Name");
+            TableAdd("NameKey");
+            TableAdd("HasLucky");
+            TableAdd("BestCP");
+
+            for (var i = 0; i < dataPokemons.length; i++) {
+                var pokemon = dataPokemons[i];
+                var data = pokemon["data"];
+                if (data["pokemonSettings"] == undefined) {
+                    console.log(pokemon);
+                    continue;
+                }
+
+                if (data["templateId"] == "V0009_POKEMON_BLASTOISE_COPY_2019") {
+                    continue;
+                }
+
+                pokemonCount++;
+                var index = data["templateId"].split("_")[0].replace("V", "");
+                index = parseInt(index, 10);
+                var settings = data["pokemonSettings"];
+                var name = settings["pokemonId"];
+                var nameHtml = getPokemonCell(index, name, settings);
+
+                if (nameHtml.length > 0) {
+                    rowsRaw["No."].push(index);
+                    rowsRaw["Name"].push(nameHtml);
+                    var pokemonName = pokemonNames[pokemonNames.length - 1];
+                    rowsRaw["NameKey"].push(pokemonName);
+                    if (mydex.hasOwnProperty(pokemonName)) {
+                        //console.log("has property " + pokemonName);
+                        var value = mydex[pokemonName];
+                        if (typeof value === 'string') {
+                            var dexInfo = mydex[value];
+                        } else if (Array.isArray(value)) {
+                            var dexInfo = value;
+                        }
+
+                        rowsRaw["HasLucky"].push(dexInfo[0]);
+                        rowsRaw["BestCP"].push(dexInfo[1])
+                    }
+                }
+            }
+        }
+
+        function getSpriteName(id, form) {
+            form = form.toLowerCase();
+            if (form == "normal") {
+                return "pm" + id + ".icon.png";
+            }
+
+            return "pm" + id + ".f" + form.toUpperCase() + ".icon.png";
+        }
+
+        function getPokemonCell(id, name, settings) {
+            var tradable = settings["isTradable"] == true;
+            var deployable = settings["isDeployable"] == true;
+            var mythic = settings["pokemonClass"] != undefined;
+            var mythicIcon = "";
+            if (mythic) {
+                mythicIcon = getImage(settings["pokemonClass"], "icon");
+            }
+            var form = settings["form"];
+            if (form == undefined) {
+                form = "Normal";
+            } else {
+                form = form.replace(name.toUpperCase(), "").replace(/_/g, " ").trim().toTitleCase();
+            }
+            var iconName = getSpriteName(id, form);
+            var nameForm = `${name}(${form})`;
+            if (pokemonNames.includes(nameForm)) {
+                console.log(`Duplicate: ${nameForm}`);
+                return "";
+            }
+            else {
+                pokemonNames.push(nameForm);
+                var form = form == "Normal" ? "" : " <div class='pokemon_form'>(" + form + ")</div>";
+                var img = "<img class='pokemon_icon' src='https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable Assets/" + iconName + "' />";
+                nameHtml = "<div class='pokemon_name'>" + img + name + form + mythicIcon + "</div>";
+                return nameHtml;
+            }
+        }
+
+        function getRemoteImage(value, type) {
+            if (type == "item") {
+                value1 = value.replace(/\s+/g, "_");
+                if (itemLookUp[value1] != undefined) {
+                    value1 = itemLookUp[value1];
+                }
+                if (value == "route_cell") {
+                    return "<img src=\"https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Items/item_route_cell.png\" />";
+                }
+
+                return "<img src=\"https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Items/Bag_" + value1 + "_Sprite.png\" />";
+            }
+        }
+
+        function PrintTable() {
+            var tableHtml = "<table class='table table-striped align-middle'>";
+
+            tableHtml += "<thead><tr>";
+            for (var i = 0; i < columnHeaders.length; i++) {
+                tableHtml += "<th>" + columnHeaders[i] + "</th>";
+            }
+            tableHtml += "</tr></thead>";
+
+            let trs = [];
+            for (var i = 0; i < pokemonCount; i++) {
+                var tr = "<tr>";
+                for (var j = 0; j < columnHeaders.length; j++) {
+                    tr += "<td>" + rowsRaw[columnHeaders[j]][i] + "</td>";
+                }
+                tr += "</tr>";
+
+                trs.push(tr);
+            }
+
+
+            tableHtml += trs.join("");
+            tableHtml += "</table>";
+
+            document.querySelector("#dex").innerHTML = tableHtml;
+        }
+
+        function TableAdd(str) {
+            columnHeaders.push(str);
+            rowsRaw[str] = [];
+        }
+
+        async function loadAllJsonFiles() {
+            try {
+                [dataPokemons, mydex] = await Promise.all([
+                    fetch("./pokemon_go/latest/pokemons.json").then(response => response.json()),
+                    fetch("./pokemon_go/mydex.json").then(response => response.json())
+                ]);
+
+                LoadDex();
+                PrintTable();
+            } catch (error) {
+                console.error("Error loading JSON files:", error);
+                // Handle errors appropriately, e.g., display error messages to the user
+            }
+        }
+
+        window.addEventListener('load',
+            function () {
+                loadAllJsonFiles();
+            });
+    </script>
+</body>
+
+</html>
