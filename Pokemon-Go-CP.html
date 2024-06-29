@@ -354,7 +354,7 @@
                                     hp_match = hp == l;
                                 }
                                 if (c === cp && hp_match) {
-                                    var arr = new Int32Array([atk_i, def_i, sta_i, i]);
+                                    var arr = [atk_i, def_i, sta_i, i];
                                     var key = arr.join(",");
                                     if (!(key in filtered)) {
                                         filtered[key] = arr;
